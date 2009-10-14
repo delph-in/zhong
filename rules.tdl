@@ -1,0 +1,103 @@
+head-comp := head-comp-phrase.
+
+subj-head := subj-head-phrase.
+
+;;subj-head-nd := subj-head-nondecl-phrase.
+
+head-spec := head-spec-phrase.
+
+head-spec-hs := head-spec-h-sem-phrase.
+
+bare-np := bare-np-phrase.
+
+comp-head := comp-head-phrase.
+
+; Rule instances for head-modifier structures. Corresponding types
+; are defined in matrix.tdl.  The matrix customization script did
+; not need to add any further constraints, so no corresponding tyes
+; appear in mandarin chinese.tdl
+
+head-adj-int := head-adj-int-phrase.
+
+adj-head-int := adj-head-int-mc.
+head-adj-scop := head-adj-scop-phrase.
+
+adj-head-scop := adj-head-scop-phrase.
+
+n1-top-coord := n1-top-coord-rule.
+
+n1-mid-coord := n1-mid-coord-rule.
+
+n1-bottom-coord := n1-bottom-coord-rule.
+
+vp2-top-coord := vp2-top-coord-rule.
+
+vp2-bottom-coord := vp2-bottom-coord-rule.
+
+n3-top-coord := n3-top-coord-rule.
+
+n3-bottom-coord := n3-bottom-coord-rule.
+
+np3-top-coord := np3-top-coord-rule.
+
+np3-bottom-coord := np3-bottom-coord-rule.
+
+vp3-top-coord := vp3-top-coord-rule.
+
+vp3-bottom-coord := vp3-bottom-coord-rule.
+
+s3-top-coord := s3-top-coord-rule.
+
+s3-bottom-coord := s3-bottom-coord-rule.
+
+n4-top-coord := n4-top-coord-rule.
+
+n4-mid-coord := n4-mid-coord-rule.
+
+n4-bottom-coord := n4-bottom-coord-rule.
+
+n5-top-coord := n5-top-coord-rule.
+
+n5-mid-coord := n5-mid-coord-rule.
+
+n5-bottom-coord := n5-bottom-coord-rule.
+
+np5-top-coord := np5-top-coord-rule.
+
+np5-mid-coord := np5-mid-coord-rule.
+
+np5-bottom-coord := np5-bottom-coord-rule.
+
+vp5-top-coord := vp5-top-coord-rule.
+
+vp5-mid-coord := vp5-mid-coord-rule.
+
+vp5-bottom-coord := vp5-bottom-coord-rule.
+
+s5-top-coord := s5-top-coord-rule.
+
+s5-mid-coord := s5-mid-coord-rule.
+
+s5-bottom-coord := s5-bottom-coord-rule.
+
+s6-top-coord := s6-top-coord-rule.
+
+s6-mid-coord := s6-mid-coord-rule.
+
+s6-bottom-coord := s6-bottom-coord-rule.
+
+s7-top-coord := s7-top-coord-rule.
+
+s7-mid-coord := s7-mid-coord-rule.
+
+s7-bottom-coord := s7-bottom-coord-rule.
+
+basic-head-opt-comp := basic-head-opt-comp-phrase.
+
+comp-head-final := comp-head-final-phrase.
+
+head-filler := head-filler-phrase.
+
+extracted-comp := extracted-comp-phrase.
+
+extracted-subj := extracted-subj-phrase.

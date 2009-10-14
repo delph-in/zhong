@@ -1,0 +1,21 @@
+;;_perf_aspect-suffix :=
+;;%suffix (* 了)
+;;_perf_aspect-lex-rule.
+
+
+dur_aspect-suffix :=
+%suffix (* 着)
+dur_aspect-lex-rule.
+
+exp_aspect-suffix :=
+%suffix (* 过)
+exp_aspect-lex-rule.
+
+
+n1-bottom :=
+  %suffix (* 和)
+  n1-bottom-coord-rule.
+
+n4-bottom :=
+  %suffix (* 跟)
+  n4-bottom-coord-rule.
