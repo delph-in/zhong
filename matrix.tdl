@@ -1525,7 +1525,7 @@ basic-filler-phrase := binary-phrase & phrasal &
 					SPR olist ],
 			      CTXT.ACTIVATED + ],
 		      NON-LOCAL.SLASH 0-dlist ] ],
-	   [ SYNSEM [ LOCAL.CAT [ VAL.COMPS olist ],
+	   [ SYNSEM [ LOCAL.CAT [VAL.COMPS olist ],
 		      NON-LOCAL [ SLASH 1-dlist &
 					[ LIST [ FIRST #slash,
 						 REST < > & #last ],
@@ -3254,7 +3254,9 @@ basic-s-mid-coord-rule := s-coord-phrase &
 	     HCONS <! !> ]].
 
 s-bottom-coord-phrase := bottom-coord-phrase &
-  [ SYNSEM.LOCAL.CAT [ HEAD verb,
+  [ SYNSEM[LOCAL.CAT [ HEAD verb,
                        VAL.SUBJ < > ],
-    NONCONJ-DTR.SYNSEM.LOCAL.CAT [ HEAD verb,
-                                   VAL.SUBJ < > ]].
+	   NON-LOCAL #nonloc],
+    NONCONJ-DTR.SYNSEM[LOCAL.CAT [ HEAD verb,
+                                   VAL.SUBJ < > ],
+		       NON-LOCAL #nonloc]].
