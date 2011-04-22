@@ -24,6 +24,7 @@ head-adj-scop := head-adj-scop-phrase.
 
 adj-head-scop := adj-head-scop-phrase.
 
+#|
 n1-top-coord := n1-top-coord-rule.
 
 n1-mid-coord := n1-mid-coord-rule.
@@ -91,6 +92,7 @@ s7-top-coord := s7-top-coord-rule.
 s7-mid-coord := s7-mid-coord-rule.
 
 s7-bottom-coord := s7-bottom-coord-rule.
+|#
 
 basic-head-opt-comp := basic-head-opt-comp-phrase.
 

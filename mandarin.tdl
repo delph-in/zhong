@@ -13,11 +13,13 @@
 
 noun-lex := basic-noun-lex & basic-one-arg & no-hcons-lex-item &
   [ ARG-ST < #spr >,
-    SYNSEM.LOCAL.CAT.VAL [ COMPS < >,
-                           SUBJ < >,
-                           SPR < #spr &
+    SYNSEM [ LOCAL.CAT.VAL [ COMPS < >,
+			     SUBJ < >,
+			     SPR < #spr &
                                  [ LOCAL.CAT [ HEAD det,
-					       VAL.SPR < > ] ] > ] ].
+					       VAL.SPR < > ] ] > ],
+	     NON-LOCAL.SLASH 0-dlist ] ].
+
 count-noun-lex := noun-lex &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SPECI + ].
 
@@ -28,16 +30,14 @@ mass-noun-lex := noun-lex &
 proper-noun-lex := basic-noun-lex & basic-one-arg & no-hcons-lex-item &
   [ SYNSEM [ LOCAL.CAT.VAL [ COMPS < >,
 			     SUBJ < >,
-			     SPR < >,
-			     SPEC < > ],
+			     SPR < > ],
 	     LKEYS.KEYREL named-relation ] ].
 
 basic-pronoun-lex :=  basic-one-arg &
   [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
 			   VAL [ COMPS < >,
 				 SUBJ < >,
-				 SPR < >,
-				 SPEC < > ] ],
+				 SPR < > ] ],
 		     CONT.RELS.LIST.FIRST #rel ],
 	     LKEYS.KEYREL noun-relation & #rel & [ PRED "pronoun_n_rel" ] ] ].
 
@@ -64,6 +64,9 @@ pronoun-lex := basic-pronoun-lex & no-hcons-lex-item & norm-hook-lex-item &
 
 3pl-pronoun-noun-lex := pronoun-lex &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl ].
+
+3-pronoun-noun-lex := pronoun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ].
 
 wh-pronoun := basic-pronoun-lex &
   [SYNSEM [ LOCAL.CONT [ HOOK.INDEX #ind & [ PNG.PERNUM 3rd ],
@@ -131,8 +134,44 @@ s-comp-verb-lex := main-verb-lex  & basic-two-arg-no-hcons &
 		     CONT.HOOK.LTOP #ltop],
 	       OPT -]> ].
 
+vp-comp-verb-lex := main-verb-lex  & basic-two-arg-no-hcons &
+  [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp >,
+	     LKEYS.KEYREL [ARG1 #ind,
+			   ARG2 #ltop]],
+    ARG-ST < [ LOCAL[CAT.HEAD noun,
+		     CONT.HOOK.INDEX #ind]],
+             #comp &
+             [ LOCAL[CAT [ VAL [SUBJ < [] >,
+				SPR < >,
+				COMPS < > ],
+                           HEAD verb ],
+		     CONT.HOOK.LTOP #ltop],
+	       OPT -]> ].
 
+vp-comp-verb-seq-lex := vp-comp-verb-lex &
+  [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [ LOCAL.CONT.HOOK.XARG #xarg ] >,
+		   CONT.HOOK.XARG #xarg ] ].
 
+np-vp-comp-verb-lex := main-verb-lex  & basic-three-arg-no-hcons &
+  [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp1, #comp2 >,
+	     LKEYS.KEYREL [ARG1 #ind,
+			   ARG2 #ind2,
+			   ARG3 #ltop]],
+    ARG-ST < [ LOCAL[CAT.HEAD noun,
+		     CONT.HOOK.INDEX #ind]],
+	     #comp1 &
+	     [ LOCAL[CAT.HEAD noun,
+		     CONT.HOOK.INDEX #ind2]],
+             #comp2 &
+             [ LOCAL[CAT [ VAL [SUBJ < [] >,
+				SPR < >,
+				COMPS < > ],
+                           HEAD verb ],
+		     CONT.HOOK.LTOP #ltop],
+	       OPT -]> ].
+np-vp-comp-verb-oeq-lex := np-vp-comp-verb-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CONT.HOOK.INDEX #xarg ],
+				 [ LOCAL.CONT.HOOK.XARG #xarg ] > ].
 
 ditrans-verb-lex := ditransitive-lex-item & main-verb-lex &
 [SYNSEM.LOCAL.CAT.VAL.COMPS < #comp1,#comp2>,
@@ -175,6 +214,10 @@ ARG-ST  < [ LOCAL[CAT.HEAD noun,
 v_intrans-verb-lex := intransitive-verb-lex.
 
 v_trans-verb-lex := transitive-verb-lex.
+
+v_s-equi-lex := vp-comp-verb-seq-lex.
+
+v_o-equi-lex := np-vp-comp-verb-oeq-lex.
 
 v_prep-lex-item := basic-two-arg-no-hcons & main-verb-lex &
    [ ARG-ST < [ LOCAL.CONT.HOOK.INDEX ref-ind & #ind1 ],
@@ -298,10 +341,28 @@ int-adv-v-post :=  intersective-mod-lex &
 			       SPR < >],
 			 POSTHEAD + ],
 		   CONT [ HOOK #hook,
-			  RELS <! !> ] ] ] ].
+			  RELS <! !> ] ],
+	    NON-LOCAL.SLASH 0-dlist ] ].
+
+int-adv-v-pre :=  intersective-mod-lex &
+  [ SYNSEM [LOCAL [CAT [ HEAD adv & [ MOD < lex-synsem & 
+					    [ LOCAL.CONT.HOOK #hook ] > ],
+			 VAL [ COMPS < >,
+			       SUBJ < >,
+			       SPR < >],
+			 POSTHEAD - ],
+		   CONT [ HOOK #hook,
+			  RELS <! !> ] ],
+	    NON-LOCAL.SLASH 0-dlist ] ].
 
 le-pfv-v-post := int-adv-v-post & 
   [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective]>].
+
+adv-exp-v-post := int-adv-v-post & 
+  [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT experiential]>].
+
+adv-dur-v-pre := int-adv-v-pre & 
+  [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT durative]>].
 
 ;; Postverbal adverbs 
 
@@ -390,15 +451,16 @@ no-obj-drop-verb-lex := lex-item.
 ;;; SPEC is non-empty, and already specified by basic-determiner-lex.
 
 determiner-lex := basic-determiner-lex & basic-zero-arg &
-  [ SYNSEM.LOCAL [ CAT.VAL [ SPR < >,
-			     COMPS < [ LOCAL [ CAT.HEAD classifier,
-					       CONT.HOOK [ INDEX #index,
-							   LTOP #ltop ] ],
-				       OPT - ] >,
-			     SUBJ < >,
-			     SPEC < [ LOCAL.CONT.HOOK.LTOP #ltop ] > ],
-		   CONT [ HOOK.INDEX #index,
-			  RELS <! relation !> ] ] ].
+  [ SYNSEM [ LOCAL [ CAT.VAL [ SPR < >,
+			       COMPS < [ LOCAL [ CAT.HEAD classifier,
+						 CONT.HOOK [ INDEX #index,
+							     LTOP #ltop ] ],
+					 OPT - ] >,
+			       SUBJ < >,
+			       SPEC < [ LOCAL.CONT.HOOK.LTOP #ltop ] > ],
+		     CONT [ HOOK.INDEX #index,
+			    RELS <! relation !> ] ],
+	     NON-LOCAL.SLASH 0-dlist ] ].
 
 prox_demons-determiner-lex := determiner-lex.
 
@@ -458,6 +520,7 @@ perfective := aspect.
 imperfective := aspect.
 experiential := aspect.
 delimitative := aspect.
+durative := aspect.
 
 ;;; Phrasal types
 
@@ -583,13 +646,15 @@ classifier-lex := norm-ltop-lex-item & single-rel-lex-item &
 							     SUBJ < > ],
 						       HEAD num & 
 							   [ MOD < > ] ],
-						 CONT.HOOK.INDEX #index ],
+						 CONT.HOOK [ LTOP #ltop,
+							     INDEX #index ] ],
 					 OPT - ] >,
 				 SUBJ < >,
 				 COMPS < > ],
 			   POSTHEAD - ],
 		     CONT.HOOK [ INDEX #index & ref-ind,
 				 LTOP #ltop ] ],	      
+	     NON-LOCAL.SLASH 0-dlist,
 	     LKEYS.KEYREL.ARG1 #index ] ].
 
 classifier-plural-lex := classifier-lex &
@@ -603,6 +668,7 @@ num-adj-lex := single-rel-lex-item &
 		     CONT [ HOOK [ LTOP #lbl, 
 				   INDEX #index ],
 			    RELS <! #rel !> ] ],
+	     NON-LOCAL.SLASH 0-dlist,
 	     LKEYS.KEYREL #rel & [ LBL #lbl,
 				   ARG1 #index ] ] ].
 
@@ -837,7 +903,8 @@ head-filler-phrase := basic-head-filler-phrase & head-final &
     C-CONs-coord-phraseT.HOOK #hook ].
 
 extracted-comp-phrase := basic-extracted-comp-phrase &
-  [ HEAD-DTR.SYNSEM.LOCAL.CONT.HOOK #hook,
+  [ HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD verb,
+			    CONT.HOOK #hook ],
     C-CONT [ HOOK #hook,
 	     RELS <! !>,
 	     HCONS <! !> ] ].
@@ -861,7 +928,7 @@ coord-phrase :+
 basic-determiner-lex := norm-hook-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD det,
 			   VAL.SPEC.FIRST.LOCAL.CONT.HOOK [ INDEX #ind,
-							    LTOP #larg ] ],
+							      LTOP #larg ] ],
 		     CONT.HCONS <! qeq &
 				 [ HARG #harg,
 				   LARG #larg ] !> ],
@@ -959,6 +1026,9 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
 
 ;; Note here, the syntactic head is the semantic head
 ;; note, we deleted NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < > : this is already specified in the heads
+;; 
+;;; DPF 21-dec-09 - use head-compositional etc instead...
+
 head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
   [HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd,
 			    CONT.HOOK #hook ],
@@ -970,7 +1040,8 @@ head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
 
 ;; MATRIX REDEFINITION
 ;; Note: we removed the SPEC <> constraint
-;; 
+;;; DPF - motivate? - shouldn't the head at least propagate SPEC to mother?
+
 basic-bare-np-phrase := head-only &
   [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
 			   SUBJ < >,
