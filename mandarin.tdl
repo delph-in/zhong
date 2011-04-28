@@ -545,7 +545,7 @@ comp-head-final-phrase := basic-head-1st-comp-phrase & head-final &
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD adp ].
 
 subj-head-phrase := decl-head-subj-phrase & head-final &
-  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SPR < >,
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SPR olist,
 				    COMPS < > ],
     NON-HEAD-DTR.SYNSEM.NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
 				    REL 0-dlist ] ].
@@ -876,7 +876,7 @@ prep-no-mod-lex := prep-lex &
 prep-mod-lex := prep-lex & 
   [ SYNSEM[LOCAL[CAT.HEAD.MOD <[LOCAL[CAT[HEAD verb,
 					 VAL [COMPS <>,
-					      SUBJ <>]],
+					      SUBJ <[]>]],
 				     CONT.HOOK [LTOP #ltop,
 						INDEX #ind]]]>,
 		 CONT.HOOK [LTOP #ltop]],
@@ -1081,15 +1081,20 @@ prep := adp &
 			  HEAD verb ] ] ] > ].
 ;;Below is for locative marker zai4
 basic-loc-lex := adposition-lex &
-  [ SYNSEM.LOCAL.CAT [ HEAD prep,
-		       VAL [ SPR < >,
-			     COMPS < #comps >,
-			     SUBJ < #subj > ] ],
-    ARG-ST < #subj & [ LOCAL.CAT.HEAD noun ],
+  [ SYNSEM [ LOCAL [ CAT [ HEAD prep,
+			   VAL [ SPR < >,
+				 COMPS < #comps >,
+				 SUBJ < #subj > ] ] ],
+	     LKEYS.KEYREL [ARG1 #ind2]],
+    ARG-ST < #subj & [ LOCAL [ CAT [ HEAD noun,
+				     VAL.SPR < > ],
+			       CONT.HOOK.INDEX #ind ] ],
 	     #comps & phr-synsem &
-		    [ LOCAL.CAT [ VAL [ SPR < >,
-					COMPS < > ],
-				  HEAD postp ] ,
+		    [ LOCAL [ CAT [ VAL [ SPR < >,
+					  COMPS < > ],
+				    HEAD postp ],
+			      CONT.HOOK [ XARG #ind,
+					  INDEX #ind2 ] ],
 		      NON-LOCAL.SLASH <!!>,
 		      OPT - ] > ].
 
@@ -1126,17 +1131,19 @@ basic-loc-mark-lex := norm-sem-lex-item &
 			     COMPS < > ] ] ].
 
 basic-postp-lex := adposition-lex & 
-  [ SYNSEM.LOCAL[CAT [ HEAD postp,
-		       VAL [ SPR < #spr >,
-			     COMPS < #comp >,
-			     SUBJ < > ] ],
-		 CONT.HOOK.XARG #ind],
+  [ SYNSEM [ LOCAL[CAT [ HEAD postp,
+			 VAL [ SPR < #spr >,
+			       COMPS < #comp >,
+			       SUBJ < > ] ],
+		   CONT.HOOK.XARG #ind1],
+	     LKEYS.KEYREL [ ARG1 #ind1,
+			    ARG2 #ind2 ] ],
     ARG-ST < #spr &
 	     [LOCAL[CAT [ VAL [ SPR < >,
 				COMPS < >,
 				SUBJ < > ],
 			  HEAD noun ],
-		    CONT.HOOK.INDEX #ind]],
+		    CONT.HOOK.INDEX #ind2]],
 	     
 	     #comp & 
 	     [ LOCAL.CAT.HEAD loc-mark] > ].

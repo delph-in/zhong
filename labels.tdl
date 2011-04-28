@@ -132,7 +132,7 @@ s-bottom-label := label &
              LABEL-NAME "S-B"].
 
 s-label := label &
-           [ SYNSEM.LOCAL [ CAT [ HEAD verb,
+           [ SYNSEM.LOCAL [ CAT [ HEAD +vjp,
                                   VAL [ COMPS < >,
                                         SUBJ < > ] ],
                             COORD-STRAT "" ],

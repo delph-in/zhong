@@ -162,6 +162,9 @@
   [ STEM < "进去" >,
     SYNSEM.LKEYS.KEYREL.PRED "_jin4qu4_v_rel" ].
 
+打赌_v := s-comp-verb-lex &
+  [ STEM < "打赌" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_da3du3_v_rel" ].
 
 ;;;Adjectives
 
@@ -406,6 +409,10 @@ SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
   [ STEM < "由" >,
     SYNSEM.LKEYS.KEYREL.PRED "_you2_p_rel"].
 
+用_p := prep-mod-lex &
+  [ STEM < "用" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_yong4_p_rel"].
+
 ;其中_p := prep-no-mod-lex &
 ;  [ STEM < "其中" >,
 ;    SYNSEM.LKEYS.KEYREL.PRED "_qi2zhong1_p_rel"].
@@ -527,9 +534,10 @@ SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
   [ STEM < "照片" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zhao4pian4_n_rel" ].
 
-用_v := v_trans-verb-lex &
-  [ STEM < "用" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_yong4_v_rel" ].
+; Should be a preposition (instrumental)
+;用_v := v_trans-verb-lex &
+;  [ STEM < "用" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_yong4_v_rel" ].
 
 ;;Note, can also take an S complement
 
@@ -674,9 +682,9 @@ SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
   [ STEM < "打算" >,
     SYNSEM.LKEYS.KEYREL.PRED "_da3suan0_v_rel" ].
 
-打算_v3 := v_o-equi-lex &
-  [ STEM < "打算" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_da3suan0_v_rel" ].
+;打算_v3 := v_o-equi-lex &
+;  [ STEM < "打算" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_da3suan0_v_rel" ].
 
 打开_v := v_trans-verb-lex &
   [ STEM < "打开" >,
@@ -686,7 +694,7 @@ SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
   [ STEM < "打扰" >,
     SYNSEM.LKEYS.KEYREL.PRED "_da3rao3_v_rel" ].
 
-打赌_v := v_intrans-verb-lex &
+打赌_v2 := v_intrans-verb-lex &
   [ STEM < "打赌" >,
     SYNSEM.LKEYS.KEYREL.PRED "_da3du3_v_rel" ].
 
@@ -750,7 +758,7 @@ SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
   [ STEM < "认为" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ren2wei2_v_rel" ].
 
-让_v := v_trans-verb-lex &
+让_v := v_o-equi-lex &
   [ STEM < "让" >,
     SYNSEM.LKEYS.KEYREL.PRED "_rang4_v_rel" ].
 

@@ -24,13 +24,13 @@ head-adj-scop := head-adj-scop-phrase.
 
 adj-head-scop := adj-head-scop-phrase.
 
-#|
 n1-top-coord := n1-top-coord-rule.
 
 n1-mid-coord := n1-mid-coord-rule.
 
 n1-bottom-coord := n1-bottom-coord-rule.
 
+#|
 vp2-top-coord := vp2-top-coord-rule.
 
 vp2-bottom-coord := vp2-bottom-coord-rule.
