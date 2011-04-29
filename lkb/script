@@ -96,7 +96,7 @@
 ;;; can also be run from the expanded LKB top menu, under
 ;;; Generate.
 ;;;
-(index-for-generator)
+;(index-for-generator)
 
 ;;;
 ;;; For the MMT system.  Uncomment semi.vpm line when adding such

@@ -522,6 +522,10 @@ SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
   [ STEM < "给" >,
     SYNSEM.LKEYS.KEYREL.PRED "_gei3_v_rel" ].
 
+给_v2 := v_light-verb-lex &
+  [ STEM < "给" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_gei3_v_lt_rel" ].
+
 点_n := noun-lex &
   [ STEM < "点" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dian3_n_rel" ].
@@ -643,6 +647,10 @@ SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
     SYNSEM.LKEYS.KEYREL.PRED "_xiang1yan1_n_rel" ].
 
 递_v := v_trans-verb-lex &
+  [ STEM < "递" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_di4_v_rel" ].
+
+递_v2 := v_np-vp_light-lex &
   [ STEM < "递" >,
     SYNSEM.LKEYS.KEYREL.PRED "_di4_v_rel" ].
 

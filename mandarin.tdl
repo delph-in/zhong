@@ -31,6 +31,7 @@ proper-noun-lex := basic-noun-lex & basic-one-arg & no-hcons-lex-item &
   [ SYNSEM [ LOCAL.CAT.VAL [ COMPS < >,
 			     SUBJ < >,
 			     SPR < > ],
+	     NON-LOCAL.SLASH 0-dlist,
 	     LKEYS.KEYREL named-relation ] ].
 
 basic-pronoun-lex :=  basic-one-arg &
@@ -173,6 +174,11 @@ np-vp-comp-verb-oeq-lex := np-vp-comp-verb-lex &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CONT.HOOK.INDEX #xarg ],
 				 [ LOCAL.CONT.HOOK.XARG #xarg ] > ].
 
+np-vp-comp-verb-light-lex := np-vp-comp-verb-lex &
+  [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [ ],
+		 		   [ LOCAL.CONT.HOOK.XARG #event ] >,
+		   CONT.HOOK.INDEX #event ] ].
+
 ditrans-verb-lex := ditransitive-lex-item & main-verb-lex &
 [SYNSEM.LOCAL.CAT.VAL.COMPS < #comp1,#comp2>,
 ARG-ST  < [ LOCAL.CAT.HEAD noun ],
@@ -215,9 +221,27 @@ v_intrans-verb-lex := intransitive-verb-lex.
 
 v_trans-verb-lex := transitive-verb-lex.
 
+v_light-verb-lexeme := main-verb-lex & basic-two-arg-no-hcons &
+  [ SYNSEM [ LOCAL [ CAT.VAL.COMPS < #comp >,
+		     CONT.HOOK.XARG #arg1 ],
+	     LKEYS.KEYREL [ ARG1 #arg1,
+			    ARG2 #ind2 ] ],
+    ARG-ST < unexpressed & [ LOCAL.CAT.HEAD noun ],
+             #comp &
+             [ LOCAL [ CAT [ VAL [ SPR < >,
+				   COMPS < > ],
+			     HEAD noun ],
+		       CONT.HOOK.INDEX ref-ind & #ind2 ] ] > ].
+
+v_light-verb-lex := v_light-verb-lexeme &
+  [ SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY #pred,
+             LKEYS.KEYREL.PRED #pred ] ].
+
 v_s-equi-lex := vp-comp-verb-seq-lex.
 
 v_o-equi-lex := np-vp-comp-verb-oeq-lex.
+
+v_np-vp_light-lex := np-vp-comp-verb-light-lex.
 
 v_prep-lex-item := basic-two-arg-no-hcons & main-verb-lex &
    [ ARG-ST < [ LOCAL.CONT.HOOK.INDEX ref-ind & #ind1 ],
