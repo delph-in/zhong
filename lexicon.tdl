@@ -539,9 +539,9 @@ SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
     SYNSEM.LKEYS.KEYREL.PRED "_zhao4pian4_n_rel" ].
 
 ; Should be a preposition (instrumental)
-;用_v := v_trans-verb-lex &
-;  [ STEM < "用" >,
-;    SYNSEM.LKEYS.KEYREL.PRED "_yong4_v_rel" ].
+用_v := v_trans-verb-lex &
+  [ STEM < "用" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_yong4_v_rel" ].
 
 ;;Note, can also take an S complement
 
@@ -779,6 +779,10 @@ SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
     SYNSEM.LKEYS.KEYREL.PRED "_hua4_n_rel" ].
 
 自己_n := noun-lex &
+  [ STEM < "自己" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zi4ji3_n_rel" ].
+
+自己_a := attr-adj-posthd-lex &
   [ STEM < "自己" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zi4ji3_n_rel" ].
 

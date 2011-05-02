@@ -603,10 +603,8 @@ neg-adv-lex := basic-scopal-adverb-lex &
 ;; Adjectives
 
 basic-attr-adj-lex := basic-int-mod-adj-lex & 
-  [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ LOCAL [ CAT [ HEAD noun, 
-						      VAL.SPR < [] > ],
-						CONT.HOOK.INDEX #index ] ] >, 
-			   POSTHEAD - ],
+  [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ LOCAL [ CAT.HEAD noun,
+						CONT.HOOK.INDEX #index ] ] > ],
 		     CONT [ HOOK.INDEX #arg0,
 			    RELS <! #rel !> ] ], 
 	     LKEYS.KEYREL #rel & 
@@ -614,9 +612,19 @@ basic-attr-adj-lex := basic-int-mod-adj-lex &
 		     ARG1 #index ] ] ].
 
 attr-adj-lex := basic-attr-adj-lex &
-  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < >,
-			   SPR < >,
-			   SUBJ < > ] ].
+  [ SYNSEM.LOCAL.CAT [ POSTHEAD -,
+		       HEAD.MOD < [ LOCAL.CAT.VAL.SPR < [] > ] >,
+		       VAL [ COMPS < >,
+			     SPR < >,
+			     SUBJ < > ] ] ].
+
+attr-adj-posthd-lex := basic-attr-adj-lex &
+  [ SYNSEM.LOCAL.CAT [ POSTHEAD +,
+		       HEAD.MOD < [ LOCAL.CAT.VAL.SPR < > ] >,
+		       VAL [ COMPS < >,
+			     SPR < >,
+			     SUBJ < > ] ] ].
+
 
 basic-pred-adj-lex := basic-adjective-lex & 
   [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < [ LOCAL [ CAT [ HEAD noun, 
@@ -1091,6 +1099,10 @@ bare-np-phrase := basic-bare-np-phrase &
 	     NON-LOCAL.SLASH 0-dlist ],
     C-CONT.RELS <! [ PRED "exist_q_rel" ] !> ].
 
+;; MATRIX REDEFINITION - intersective adjectives must not have their index
+;; identified with that of the noun they modify
+;;basic-mod-adj-lex := basic-adjective-lex & raise-index-mod-lex-item.
+basic-mod-adj-lex := basic-adjective-lex & norm-ltop-lex-item.
 
 ;; The following represent prepositions and post-positions, used in locative 
 ;; phrases
