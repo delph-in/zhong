@@ -10,6 +10,9 @@ head-spec-hs := head-spec-h-sem-phrase.
 
 bare-np := bare-np-phrase.
 
+bare-nom-cl := bare-nominal-classifier-phrase.
+bare-nom-det := bare-nominal-det-phrase.
+
 comp-head := comp-head-phrase.
 
 ; Rule instances for head-modifier structures. Corresponding types

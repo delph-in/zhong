@@ -317,9 +317,9 @@
   [ stem <"条">,
     SYNSEM.LKEYS.KEYREL.PRED "tiao1_x_rel"].
 
-些 := classifier-plural-lex &
-[ STEM < "些" >,
-SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
+些 := classifier-quant-lex &
+  [ STEM < "些" >,
+    SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
 
 
 ;;; Auxiliaries
@@ -746,7 +746,7 @@ SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
   [ STEM < "时候" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shi2hou0_n_rel" ].
 
-有_v := v_trans-verb-lex &
+有_v := v_exist-lex &
   [ STEM < "有" >,
     SYNSEM.LKEYS.KEYREL.PRED "_you3_v_rel" ].
 

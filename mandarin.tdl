@@ -221,6 +221,31 @@ v_intrans-verb-lex := intransitive-verb-lex.
 
 v_trans-verb-lex := transitive-verb-lex.
 
+v_exist-lex := basic-two-arg & verb-lex & basic-verb-lex &
+  [ SYNSEM [ LOCAL [ CAT.VAL [ SUBJ < >,
+			       COMPS #comps ],
+		     CONT [ HOOK [ LTOP #lbl,
+				   INDEX #event ],
+			    RELS <! #keyrel !>,
+			    HCONS <! qeq & [ HARG #arg2,
+					     LARG #vltop ] !> ] ],
+	     LKEYS.KEYREL #keyrel &
+		          [ LBL #lbl,
+			    ARG0 #event,
+			    ARG1 #arg1,
+			    ARG2 #arg2 ] ],
+    ARG-ST #comps &
+  	   < [ LOCAL [ CAT [ VAL [ SPR < >,
+				   COMPS < > ],
+			     HEAD noun ],
+		       CONT.HOOK.INDEX #arg1 ] ],
+	     [ LOCAL [ CAT [ VAL [ SUBJ < [ ] >,
+				   SPR < >,
+				   COMPS < > ],
+			     HEAD verb ],
+		       CONT.HOOK [ LTOP #vltop,
+				   XARG #arg1 ] ] ] > ].
+
 v_light-verb-lexeme := main-verb-lex & basic-two-arg-no-hcons &
   [ SYNSEM [ LOCAL [ CAT.VAL.COMPS < #comp >,
 		     CONT.HOOK.XARG #arg1 ],
@@ -306,20 +331,14 @@ v_weather_type_lex := verb-lex &
 			  LBL #ltop,
 			  ARG1 #ind]!>]],
 	LKEYS.KEYREL #keyrel,
-	NON-LOCAL.SLASH <!!>]].
-
-		   
-		   
-			
-	
-					    
-					    
+	NON-LOCAL.SLASH 0-dlist ] ].
 					    
 
 ;;;Adverbs
 
 basic-int-adverb-lex :+
-  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >] ].
+  [ SYNSEM [ LOCAL.CAT.VAL [ SUBJ < > ],
+	     NON-LOCAL.SLASH 0-dlist ] ].
 
 basic-scopal-adverb-lex :+
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >,
@@ -571,8 +590,9 @@ comp-head-final-phrase := basic-head-1st-comp-phrase & head-final &
 subj-head-phrase := decl-head-subj-phrase & head-final &
   [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SPR olist,
 				    COMPS < > ],
-    NON-HEAD-DTR.SYNSEM.NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
-				    REL 0-dlist ] ].
+    NON-HEAD-DTR.SYNSEM [ LOCAL.CAT.NONSUBJ -,
+			  NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
+				      REL 0-dlist ] ] ].
 			
 ;; comp-head-phrase requires things that are [ HEAD comp ].
 
@@ -667,8 +687,8 @@ nom-adj-lex := basic-pred-adj-lex &
 
 classifier := +jd.
 
-classifier-lex := norm-ltop-lex-item & single-rel-lex-item & 
-		  intersective-mod-lex &
+basic-classifier-lex := norm-ltop-lex-item & single-rel-lex-item & 
+			intersective-mod-lex &
   [ SYNSEM [ LOCAL [ CAT [ HEAD classifier & 
 			    [ MOD < [ LOCAL [ CONT.HOOK [ INDEX #index,
 							  LTOP #ltop ],
@@ -679,8 +699,7 @@ classifier-lex := norm-ltop-lex-item & single-rel-lex-item &
 						       HEAD num & 
 							   [ MOD < > ] ],
 						 CONT.HOOK [ LTOP #ltop,
-							     INDEX #index ] ],
-					 OPT - ] >,
+							     INDEX #index ]]]>,
 				 SUBJ < >,
 				 COMPS < > ],
 			   POSTHEAD - ],
@@ -689,8 +708,16 @@ classifier-lex := norm-ltop-lex-item & single-rel-lex-item &
 	     NON-LOCAL.SLASH 0-dlist,
 	     LKEYS.KEYREL.ARG1 #index ] ].
 
-classifier-plural-lex := classifier-lex &
-[SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl].
+classifier-lex := basic-classifier-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.SPR < [ OPT - ] > ].
+
+;; Add feature NONSUBJ to distinguish quantifiers which cannot appear alone
+;; as subjects, but can appear without numeral in non-subj position.
+
+cat :+ [ NONSUBJ bool ].
+
+classifier-quant-lex := basic-classifier-lex &
+  [ SYNSEM.LOCAL.CAT.NONSUBJ + ].
 
 num-adj-lex := single-rel-lex-item & 
   [ SYNSEM [ LOCAL [ CAT [ VAL [ COMPS < >,
@@ -856,7 +883,9 @@ s7-bottom-coord-rule := conj-first-bottom-coord-rule & s-bottom-coord-phrase &
 ;; We treat question particles as complementizers.
 ;; Here is the lexical type for complementizers.
 
-adj-head-int-mc := adj-head-int-phrase.
+adj-head-int-mc := adj-head-int-phrase &
+  [ SYNSEM.LOCAL.CAT.NONSUBJ #ns,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns ].
 
 complementizer-lex-item := raise-sem-lex-item & basic-one-arg &
   [ SYNSEM.LOCAL.CAT [ HEAD comp &
@@ -943,7 +972,7 @@ extracted-comp-phrase := basic-extracted-comp-phrase &
 
 extracted-subj-phrase := basic-extracted-subj-phrase &
   [ SYNSEM.LOCAL.CAT.MC -,
-    HEAD-DTR.SYNSEM.LOCAL [ CAT.VAL.COMPS < >,
+    HEAD-DTR.SYNSEM.LOCAL [ CAT.VAL.SUBJ < [ LOCAL.CAT.NONSUBJ - ] >,
 			    CONT.HOOK #hook ],
     C-CONT [ HOOK #hook,
 	     RELS <! !>,
@@ -1095,9 +1124,50 @@ basic-bare-np-phrase := head-only &
 		    LTOP #ltop ] ] ].
 
 bare-np-phrase := basic-bare-np-phrase &
-  [ SYNSEM [ LOCAL.CAT.HEAD noun,
+  [ SYNSEM [ LOCAL.CAT [ HEAD noun,
+			 NONSUBJ #ns ],
 	     NON-LOCAL.SLASH 0-dlist ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns,
     C-CONT.RELS <! [ PRED "exist_q_rel" ] !> ].
+
+;; CL-phrase => nominal phrase
+basic_bare-nominal-phrase := unary-phrase &
+  [ SYNSEM.LOCAL [ CAT [ HEAD noun,
+			 VAL [ SPR < [ LOCAL.CAT.HEAD det,
+				       OPT + ] >,
+			       SUBJ < >,
+			       COMPS < > ],
+			 NONSUBJ #ns ],
+		   COORD -,
+		   CONT.HOOK #hook ],
+    ARGS < [ SYNSEM.LOCAL.CAT [ VAL [ SUBJ < >,
+				      SPR olist,
+				      COMPS < > ],
+				NONSUBJ #ns ] ] >,
+    C-CONT [ RELS <! noun-relation &
+		   [ PRED "generic_nom_rel",
+		     LBL #ltop,
+		     ARG0 #index ] !>,
+	     HCONS <! !>,
+	     HOOK #hook &
+		  [ LTOP #ltop,
+		    INDEX #index ] ] ].
+
+bare-nominal-classifier-phrase := basic_bare-nominal-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD +jd &
+			 [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
+						     INDEX #index ] ] > ] ] >,
+    C-CONT.HOOK [ LTOP #ltop,
+		  INDEX #index ] ].
+
+bare-nominal-det-phrase := basic_bare-nominal-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT [ HEAD det,
+				VAL.SPEC < [ LOCAL.CONT.HOOK 
+						   [ LTOP #ltop,
+						     INDEX #index ] ] > ] ] >,
+    C-CONT.HOOK [ LTOP #ltop,
+		  INDEX #index ] ].
+
 
 ;; MATRIX REDEFINITION - intersective adjectives must not have their index
 ;; identified with that of the noun they modify
