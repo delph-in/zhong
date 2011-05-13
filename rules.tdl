@@ -106,3 +106,7 @@ head-filler := head-filler-phrase.
 extracted-comp := extracted-comp-phrase.
 
 extracted-subj := extracted-subj-phrase.
+
+imper := imperative-phrase.
+
+n-n-compound := noun-noun-compound-phrase.

@@ -378,7 +378,8 @@ deg-int-adv-vp-pre := int-adv-vp-pre &
 
 int-adv-v-post :=  intersective-mod-lex &
   [ SYNSEM [LOCAL [CAT [ HEAD adv & [ MOD < lex-synsem & 
-					    [ LOCAL.CONT.HOOK #hook ] > ],
+					    [ LOCAL [ CAT.POSTHEAD -,
+						      CONT.HOOK #hook ] ] > ],
 			 VAL [ COMPS < >,
 			       SUBJ < >,
 			       SPR < >],
@@ -588,8 +589,9 @@ comp-head-final-phrase := basic-head-1st-comp-phrase & head-final &
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD adp ].
 
 subj-head-phrase := decl-head-subj-phrase & head-final &
-  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SPR olist,
-				    COMPS < > ],
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT [ VAL [ SPR olist,
+				      COMPS < > ],
+				POSTHEAD + ],
     NON-HEAD-DTR.SYNSEM [ LOCAL.CAT.NONSUBJ -,
 			  NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
 				      REL 0-dlist ] ] ].
@@ -647,9 +649,11 @@ attr-adj-posthd-lex := basic-attr-adj-lex &
 
 
 basic-pred-adj-lex := basic-adjective-lex & 
-  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < [ LOCAL [ CAT [ HEAD noun, 
-							VAL.SPR < > ],
-						  CONT.HOOK.INDEX #index ] ] >,
+  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < [ LOCAL [ CAT [ HEAD +nv, 
+							VAL [ SPR < >,
+							      COMPS < > ] ],
+						  CONT.HOOK.INDEX #index &
+						      [ SF prop-or-ques ] ] ] >,
 				 COMPS < > ] ],
 		     CONT [ HOOK [ LTOP #lbl, 
 				   INDEX #arg0 ],
@@ -666,7 +670,7 @@ pred-adj-lex := basic-pred-adj-lex &
 		   CONT.HOOK #hook ] ].
 
 nom-adj-lex := basic-pred-adj-lex &
-  [ SYNSEM.LOCAL [ CAT [ VAL [ SPR < [ LOCAL.CAT [ VAL [ SUBJ < >,
+  [ SYNSEM.LOCAL [ CAT [ VAL [ SPR < [ LOCAL.CAT [ VAL [ SUBJ olist,
 							 COMPS < >,
 							 SPR < > ],
 						   HEAD +vjp ],
@@ -679,8 +683,7 @@ nom-adj-lex := basic-pred-adj-lex &
 			 POSTHEAD -,
 			 HEAD.MOD < [ LOCAL intersective-mod & 
 					    [ CAT [ HEAD noun,
-						    VAL [ SPR < [] >,
-							  COMPS < >,
+						    VAL [ COMPS < >,
 							  SUBJ < > ] ],
 					      CONT.HOOK.INDEX #index ] ] > ],
 		   CONT.HOOK.INDEX event ] ].
@@ -932,7 +935,9 @@ prep-lex := adposition-lex &
 	       OPT - ] > ].
 
 prep-no-mod-lex := prep-lex & 
-  [ SYNSEM.LOCAL.CAT.HEAD.MOD < > ].
+  [ SYNSEM.LOCAL.CAT [ HEAD.MOD < >,
+		       VAL.SUBJ < [ LOCAL [ CAT [ HEAD noun, 
+						  VAL.SPR < > ] ] ] > ] ].
 
 prep-mod-lex := prep-lex & 
   [ SYNSEM[LOCAL[CAT.HEAD.MOD <[LOCAL[CAT[HEAD verb,
@@ -1137,6 +1142,7 @@ basic_bare-nominal-phrase := unary-phrase &
 				       OPT + ] >,
 			       SUBJ < >,
 			       COMPS < > ],
+			 POSTHEAD +,
 			 NONSUBJ #ns ],
 		   COORD -,
 		   CONT.HOOK #hook ],
@@ -1168,7 +1174,41 @@ bare-nominal-det-phrase := basic_bare-nominal-phrase &
     C-CONT.HOOK [ LTOP #ltop,
 		  INDEX #index ] ].
 
+imperative-phrase := imp-head-opt-subj-phrase &
+  [ SYNSEM.NON-LOCAL.SLASH 0-dlist ].
 
+noun-noun-compound-phrase := head-final &
+  [ SYNSEM [ LOCAL.CAT #cat,
+	     NON-LOCAL #nonloc ],
+    HEAD-DTR.SYNSEM [ LOCAL [ CAT #cat & 
+				  [ HEAD noun,
+				    VAL [ SPR < [ ] >,
+					  COMPS < > ] ],
+			      CONT.HOOK [ LTOP #ltop,
+					  INDEX #hind ] ],
+		      MODIFIED notmod,
+		      NON-LOCAL #nonloc ],
+    NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun,
+				      VAL [ SPR < [ ] >,
+					    COMPS < > ],
+				      POSTHEAD - ],
+				CONT.HOOK [ LTOP #nhltop,
+					    INDEX #nhind ] ],
+    C-CONT [ HOOK [ LTOP #ltop,
+		    INDEX #hind ],
+	     RELS <! arg12-relation &
+		     [ PRED "noun-noun-cpd-rel",
+		       LBL #ltop,
+		       ARG1 #hind,
+		       ARG2 #nhind ],
+		     quant-relation &
+		     [ ARG0 #nhind,
+		       RSTR #rstr ] !>,
+	     HCONS <! qeq & [ HARG #rstr,
+			      LARG #nhltop ] !> ] ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 ;; MATRIX REDEFINITION - intersective adjectives must not have their index
 ;; identified with that of the noun they modify
 ;;basic-mod-adj-lex := basic-adjective-lex & raise-index-mod-lex-item.
@@ -1307,3 +1347,10 @@ attr-to-pred-adj-lex-rule := pred-adj-lex & lexeme-to-lexeme-rule &
  DTR attr-adj-lex &
       [ STEM < #stem>,
 	SYNSEM.LKEYS.KEYREL.PRED #pred ]].
+
+;; MATRIX change: promoted SF feature from event-only to all individuals,
+;; in order to simplify allowing sentential subjects while still excluding
+;; imperatives
+individual :+
+  [ SF iforce ].
+
