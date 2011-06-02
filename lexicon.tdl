@@ -466,17 +466,17 @@
 还有_c := conj-lex &
   [ STEM < "还有" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
-    CFORM "5" ].
+    CFORM "1" ].
 
 而且_c := conj-lex &
   [ STEM < "而且" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
-    CFORM "6" ].
+    CFORM "1" ].
 
 但是_c := conj-lex &
   [ STEM < "但是" >,
     SYNSEM.LKEYS.KEYREL.PRED "_but_coord_rel",
-    CFORM "7" ].
+    CFORM "1" ].
 
 因为_sc := subord-conj-lex &
   [ STEM < "因为" >,
@@ -586,15 +586,11 @@
   [ STEM < "分钟" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fen1zhong1_n_rel" ].
 
-到_v := v_intrans-verb-lex &
-  [ STEM < "到" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_dao4_v_rel" ].
-
 跑_v := v_intrans-verb-lex &
   [ STEM < "跑" >,
     SYNSEM.LKEYS.KEYREL.PRED "_pao3_v_rel" ].
 
-到_v2 := v_trans-verb-lex &
+到_v := v_trans-verb-lex &
   [ STEM < "到" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dao4_v_rel" ].
 

@@ -20,6 +20,10 @@ comp-head := comp-head-phrase.
 ; not need to add any further constraints, so no corresponding tyes
 ; appear in mandarin chinese.tdl
 
+#|
+head-adj-int := head-adj-int-phrase &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+|#
 head-adj-int := head-adj-int-phrase.
 
 adj-head-int := adj-head-int-mc.
@@ -31,13 +35,16 @@ n1-top-coord := n1-top-coord-rule.
 
 n1-mid-coord := n1-mid-coord-rule.
 
-n1-bottom-coord := n1-bottom-coord-rule.
+;;n1-bottom-coord := n1-bottom-coord-rule.
+
+conj-coord := bottom-coord-rule.
+
+
+vp1-top-coord := vp1-top-coord-rule.
+
+;;vp1-bottom-coord := vp1-bottom-coord-rule.
 
 #|
-vp2-top-coord := vp2-top-coord-rule.
-
-vp2-bottom-coord := vp2-bottom-coord-rule.
-
 n3-top-coord := n3-top-coord-rule.
 
 n3-bottom-coord := n3-bottom-coord-rule.

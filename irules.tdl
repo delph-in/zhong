@@ -12,6 +12,7 @@ exp_aspect-suffix :=
 exp_aspect-lex-rule.
 
 
+#|
 n1-bottom :=
   %suffix (* 和)
   n1-bottom-coord-rule.
@@ -19,3 +20,4 @@ n1-bottom :=
 n4-bottom :=
   %suffix (* 跟)
   n4-bottom-coord-rule.
+|#
