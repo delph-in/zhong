@@ -1,1 +1,2 @@
 pred-adj-lex-rule := attr-to-pred-adj-lex-rule.
+pred-adj-asp-lex-rule := attr-to-pred-adj-aspect-lex-rule.

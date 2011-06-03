@@ -192,7 +192,7 @@
   [ STEM <"久">,
 	SYNSEM.LKEYS.KEYREL.PRED "_jiu3_a_rel" ].
 	
-以前_j1 := int-adv-vp-pre &
+以前_j1 := int-adv-s-pre &
   [ STEM <"以前">,
     SYNSEM.LKEYS.KEYREL.PRED "_yi3qian2_a_rel" ].
 
@@ -750,6 +750,10 @@
   [ STEM < "没" >,
     SYNSEM.LKEYS.KEYREL.PRED "_mei2_r_rel" ].
 
+没_polar_r := v-not-v-adv-lex &
+  [ STEM < "没" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_mei2_r_rel" ].
+
 要_v2 := v_trans-verb-lex &
   [ STEM < "要" >,
     SYNSEM.LKEYS.KEYREL.PRED "_yao4_v_rel" ].
@@ -795,6 +799,10 @@
 ;    SYNSEM.LKEYS.KEYREL.PRED "_hui4_v_rel" ].
 
 保证_v := v_trans-verb-lex &
+  [ STEM < "保证" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_bao3zheng4_v_rel" ].
+
+保证_v2 := pp-s-comp-verb-lex &
   [ STEM < "保证" >,
     SYNSEM.LKEYS.KEYREL.PRED "_bao3zheng4_v_rel" ].
 

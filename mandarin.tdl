@@ -153,7 +153,7 @@ vp-comp-verb-seq-lex := vp-comp-verb-lex &
   [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [ LOCAL.CONT.HOOK.XARG #xarg ] >,
 		   CONT.HOOK.XARG #xarg ] ].
 
-np-vp-comp-verb-lex := main-verb-lex  & basic-three-arg-no-hcons &
+np-vp-comp-verb-lex := main-verb-lex & basic-three-arg-no-hcons &
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp1, #comp2 >,
 	     LKEYS.KEYREL [ARG1 #ind,
 			   ARG2 #ind2,
@@ -178,6 +178,24 @@ np-vp-comp-verb-light-lex := np-vp-comp-verb-lex &
   [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [ ],
 		 		   [ LOCAL.CONT.HOOK.XARG #event ] >,
 		   CONT.HOOK.INDEX #event ] ].
+
+pp-s-comp-verb-lex := main-verb-lex & basic-three-arg-no-hcons &
+  [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp1, #comp2 >,
+	     LKEYS.KEYREL [ARG1 #ind,
+			   ARG2 #ind2,
+			   ARG3 #ltop]],
+    ARG-ST < [ LOCAL[CAT.HEAD noun,
+		     CONT.HOOK.INDEX #ind]],
+	     #comp1 &
+	     [ LOCAL[CAT.HEAD adp,
+		     CONT.HOOK.INDEX #ind2]],
+             #comp2 &
+             [ LOCAL[CAT [ VAL [SUBJ < >,
+				SPR < >,
+				COMPS < > ],
+                           HEAD verb ],
+		     CONT.HOOK.LTOP #ltop],
+	       OPT -]> ].
 
 ditrans-verb-lex := ditransitive-lex-item & main-verb-lex &
 [SYNSEM.LOCAL.CAT.VAL.COMPS < #comp1,#comp2>,
@@ -342,8 +360,7 @@ basic-int-adverb-lex :+
 
 basic-scopal-adverb-lex :+
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >,
-			   SPR < >,
-			   COMPS < > ] ].
+			   SPR < > ] ].
 
 ;;Non-moveable manner adverbs
 
@@ -408,6 +425,20 @@ adv-exp-v-post := int-adv-v-post &
 adv-dur-v-pre := int-adv-v-pre & 
   [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT durative]>].
 
+int-adv-s-pre :=  intersective-mod-lex &
+  [ SYNSEM [LOCAL [CAT [ HEAD adv & [ MOD < [ LOCAL [ CAT [ HEAD +vjp,
+							    VAL [ SUBJ < >,
+								  SPR olist,
+								  COMPS < > ] ],
+						      CONT.HOOK #hook ] ] > ],
+			 VAL [ COMPS < >,
+			       SUBJ < >,
+			       SPR < >],
+			 POSTHEAD - ],
+		   CONT [ HOOK #hook,
+			  RELS <! !> ] ],
+	    NON-LOCAL.SLASH 0-dlist ] ].
+
 ;; Postverbal adverbs 
 
 int-adv-s-post := basic-int-adverb-lex &
@@ -427,6 +458,7 @@ scop-adv-lex  := basic-scopal-adverb-lex &
   [ SYNSEM.LOCAL.CAT [ HEAD.MOD < [ LOCAL scopal-mod &
 					  [ CAT [ HEAD verb,
 						  VAL.COMPS < > ] ] ] >,
+		       VAL.COMPS < >,
 		       POSTHEAD - ] ].
 	  
 ;; Conjunctions
@@ -604,13 +636,22 @@ comp-head-phrase := basic-head-1st-comp-phrase & head-final &
 ;; Type for negative adverbs.
 
 neg-adv-lex := basic-scopal-adverb-lex &
-  [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
-                             COMPS < >,
-                             SUBJ < > ],
+  [ SYNSEM.LOCAL.CAT [ VAL.COMPS < >,
                        POSTHEAD -,
                        HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
                                                 VAL [ SUBJ cons,
                                                       COMPS null ] ] ] > ] ].
+
+; For polar questions
+v-not-v-adv-lex := basic-scopal-adverb-lex &
+  [ SYNSEM [ LOCAL [ CAT [ VAL.COMPS < lex-synsem &
+				       [ LOCAL.CAT.HEAD verb,
+					 LKEYS.KEYREL.PRED #pred ] >,
+			   POSTHEAD +,
+			   HEAD.MOD < lex-synsem &
+				      [ LOCAL.CAT.HEAD verb,
+					LKEYS.KEYREL.PRED #pred ] > ],
+		     CONT.HOOK.INDEX.SF ques ] ] ].
 
 ; This grammar includes head-modifier rules.  To keep
 ; out extraneous parses, constrain the value of MOD on
@@ -649,12 +690,11 @@ attr-adj-posthd-lex := basic-attr-adj-lex &
 
 
 basic-pred-adj-lex := basic-adjective-lex & 
-  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < [ LOCAL [ CAT [ HEAD +nv, 
-							VAL [ SPR < >,
-							      COMPS < > ] ],
-						  CONT.HOOK.INDEX #index &
-						      [ SF prop-or-ques ] ] ] >,
-				 COMPS < > ] ],
+  [ SYNSEM [ LOCAL [ CAT.VAL.SUBJ < [ LOCAL [ CAT [ HEAD +nv, 
+						    VAL [ SPR < >,
+							  COMPS < > ] ],
+					      CONT.HOOK.INDEX #index &
+						  [ SF prop-or-ques ] ] ] >,
 		     CONT [ HOOK [ LTOP #lbl, 
 				   INDEX #arg0 ],
 			    RELS <! #rel !> ] ],
@@ -664,9 +704,10 @@ basic-pred-adj-lex := basic-adjective-lex &
 
 pred-adj-lex := basic-pred-adj-lex &
   [ SYNSEM.LOCAL [ CAT [ HEAD.MOD < >,
-			 VAL.SPR < [ LOCAL [ CAT.HEAD adv,
-					     CONT.HOOK #hook ],
-				     OPT - ] > ],
+			 VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
+					       CONT.HOOK #hook ],
+				       OPT - ] >,
+			       COMPS < > ] ],
 		   CONT.HOOK #hook ] ].
 
 nom-adj-lex := basic-pred-adj-lex &
@@ -741,7 +782,7 @@ num-adj-lex := single-rel-lex-item &
 s-coord-phrase :+ 
 [ SYNSEM.LOCAL.CAT.MC #mc,
   LCOORD-DTR.SYNSEM.LOCAL.CAT.MC #mc,
-    RCOORD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
+  RCOORD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
  
 
 ;;; Coordination Strategy 1
@@ -808,12 +849,14 @@ vp3-bottom-coord-rule := unary-bottom-coord-rule & vp-bottom-coord-phrase &
 
 ;;; Coordination Strategy 3
 
-s3-top-coord-rule := basic-s-top-coord-rule & apoly-top-coord-rule &
-  [ SYNSEM.LOCAL.COORD-STRAT "3" ].
+s1-top-coord-rule := basic-s-top-coord-rule & apoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
 
+#|
 s3-bottom-coord-rule := unary-bottom-coord-rule & s-bottom-coord-phrase &
-  [ SYNSEM.LOCAL [ COORD-STRAT "3",
+  [ SYNSEM.LOCAL [ COORD-STRAT "1",
                    COORD-REL.PRED "_and_coord_rel" ] ].
+|#
 
 ;;; Coordination Strategy 4
 
@@ -1188,7 +1231,8 @@ bare-nominal-det-phrase := basic_bare-nominal-phrase &
 		  INDEX #index ] ].
 
 imperative-phrase := imp-head-opt-subj-phrase &
-  [ SYNSEM.NON-LOCAL.SLASH 0-dlist ].
+  [ SYNSEM [ LOCAL.CAT.HEAD verb,
+	     NON-LOCAL.SLASH 0-dlist ] ].
 
 noun-noun-compound-phrase := head-final &
   [ SYNSEM [ LOCAL.CAT #cat,
@@ -1356,10 +1400,27 @@ adv_prefix_form_lex := adv_affix_form_lex &
 
 attr-to-pred-adj-lex-rule := pred-adj-lex & lexeme-to-lexeme-rule &
 [STEM < #stem>,
- SYNSEM.LKEYS.KEYREL.PRED #pred ,
+ SYNSEM.LKEYS.KEYREL.PRED #pred,
  DTR attr-adj-lex &
       [ STEM < #stem>,
 	SYNSEM.LKEYS.KEYREL.PRED #pred ]].
+
+attr-to-pred-adj-aspect-lex-rule := basic-pred-adj-lex & lexeme-to-lexeme-rule &
+[STEM < #stem>,
+ SYNSEM [ LKEYS.KEYREL.PRED #pred,
+	  LOCAL [ CAT [ HEAD.MOD < >,
+			VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
+					      CONT.HOOK #hook ] ] >,
+			      COMPS < [ LOCAL 
+					[ CAT [ HEAD adv &
+						[ MOD < [ LOCAL.CAT.VAL.SUBJ 
+								   < > ] > ] ],
+					  CONT.HOOK #hook ],
+					OPT - ] > ] ],
+		  CONT.HOOK #hook ] ],
+ DTR attr-adj-lex &
+      [ STEM < #stem>,
+	SYNSEM.LKEYS.KEYREL.PRED #pred ] ].
 
 ;; MATRIX change: promoted SF feature from event-only to all individuals,
 ;; in order to simplify allowing sentential subjects while still excluding
