@@ -427,8 +427,7 @@ adv-dur-v-pre := int-adv-v-pre &
 
 int-adv-s-pre :=  intersective-mod-lex &
   [ SYNSEM [LOCAL [CAT [ HEAD adv & [ MOD < [ LOCAL [ CAT [ HEAD +vjp,
-							    VAL [ SUBJ < >,
-								  SPR olist,
+							    VAL [ SPR olist,
 								  COMPS < > ] ],
 						      CONT.HOOK #hook ] ] > ],
 			 VAL [ COMPS < >,
@@ -710,6 +709,13 @@ pred-adj-lex := basic-pred-adj-lex &
 			       COMPS < > ] ],
 		   CONT.HOOK #hook ] ].
 
+;; DPF 2011-06-03 - We might instead want to treat relative clauses as 
+;; lacking a gap, with the burden of linking the modified noun's index instead
+;; left to pragmatics.  Then we wouldn't need extraction for relative clauses,
+;; so its main motivation would then be for topicalization.  Consider
+;; "I wash car de towel wet" meaning something like "the towel with which I
+;; washed the car is wet".
+;;
 nom-adj-lex := basic-pred-adj-lex &
   [ SYNSEM.LOCAL [ CAT [ VAL [ SPR < [ LOCAL.CAT [ VAL [ SUBJ olist,
 							 COMPS < >,
@@ -1031,8 +1037,19 @@ extracted-comp-phrase := basic-extracted-comp-phrase &
 	     RELS <! !>,
 	     HCONS <! !> ] ].
 
+;; DPF 2011-06-03 - Given current analysis of relative clauses as containing
+;; exactly one extracted element (which is thus relativized), we need subject
+;; extr at least for e.g. MRS:53
+;; DPF 2011-06-03 - HACK: stamped SPEC < [] > on mother, to avoid immediate
+;; filler-head-rule application for embedded clause in "I think dog chase cat".
+;; This `works' because the filler-head rule already demands that the hd-dtr
+;; have empty SPEC value; note that when an extracted-subj clause is picked
+;; up as a complement, the SPEC value is ignored higher up, since the verb
+;; selecting the S/NP does not pass up that SPEC value, of course.
+;;
 extracted-subj-phrase := basic-extracted-subj-phrase &
-  [ SYNSEM.LOCAL.CAT.MC -,
+  [ SYNSEM.LOCAL.CAT [ MC -,
+		       VAL.SPEC < [] > ],
     HEAD-DTR.SYNSEM.LOCAL [ CAT.VAL.SUBJ < [ LOCAL.CAT.NONSUBJ - ] >,
 			    CONT.HOOK #hook ],
     C-CONT [ HOOK #hook,
@@ -1405,6 +1422,13 @@ attr-to-pred-adj-lex-rule := pred-adj-lex & lexeme-to-lexeme-rule &
       [ STEM < #stem>,
 	SYNSEM.LKEYS.KEYREL.PRED #pred ]].
 
+;; DPF 2011-06-03 - Adverb complement may need to be restricted to aspect
+;; markers, but note that "cat old de very" is okay, and likewise for other
+;; normally pre-head (degree) adverbs ("cat old de unbearable").  Hypothesis 
+;; is that this `de' simply combines with a pre-head (degree) adverb or
+;; degree-clause ("(so) angry that we can hardly imagine")
+;; to produce a post-head adv.
+;;
 attr-to-pred-adj-aspect-lex-rule := basic-pred-adj-lex & lexeme-to-lexeme-rule &
 [STEM < #stem>,
  SYNSEM [ LKEYS.KEYREL.PRED #pred,
@@ -1414,7 +1438,8 @@ attr-to-pred-adj-aspect-lex-rule := basic-pred-adj-lex & lexeme-to-lexeme-rule &
 			      COMPS < [ LOCAL 
 					[ CAT [ HEAD adv &
 						[ MOD < [ LOCAL.CAT.VAL.SUBJ 
-								   < > ] > ] ],
+								   < > ] > ],
+						POSTHEAD + ],
 					  CONT.HOOK #hook ],
 					OPT - ] > ] ],
 		  CONT.HOOK #hook ] ],
