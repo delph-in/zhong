@@ -117,3 +117,4 @@
 (if (eq (length *last-parses*) 1)
    (setf *last-parses* '("我追赶了他。" "它叫了。")))
 
+(lkb::lui-shutdown)

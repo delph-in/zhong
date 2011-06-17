@@ -48,6 +48,10 @@
   [ STEM < "狗" >,
     SYNSEM.LKEYS.KEYREL.PRED "_gou3_n_rel" ].
 
+五_n := count-noun-lex &
+  [ STEM < "五" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_wu3_a_rel" ].
+
 猫_n := count-noun-lex &
   [ STEM < "猫" >,
     SYNSEM.LKEYS.KEYREL.PRED "_mao1_n_rel" ].
@@ -254,6 +258,10 @@
   [ STEM <"大概">,
 	SYNSEM.LKEYS.KEYREL.PRED "_da4gai4_a_rel" ].
 	
+明显_r := scop-adv-lex &
+  [ STEM < "明显" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel" ].
+
 都_r := scop-adv-lex &
   [ STEM <"都">,
     SYNSEM.LKEYS.KEYREL.PRED "_dou1_a_rel" ].
@@ -774,7 +782,7 @@
   [ STEM < "试" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shi4_v_rel" ].
 
-话，_n := noun-lex &
+话_n := noun-lex &
   [ STEM < "话" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hua4_n_rel" ].
 
