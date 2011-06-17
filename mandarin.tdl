@@ -359,8 +359,10 @@ basic-int-adverb-lex :+
 	     NON-LOCAL.SLASH 0-dlist ] ].
 
 basic-scopal-adverb-lex :+
-  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >,
-			   SPR < > ] ].
+  [ SYNSEM.LOCAL [ CAT.VAL [ SUBJ < >,
+			   SPR < [ LOCAL [ CAT.HEAD adv,
+					   CONT.HOOK #hook ] ] > ],
+		   CONT.HOOK #hook ] ].
 
 ;;Non-moveable manner adverbs
 
@@ -689,25 +691,41 @@ attr-adj-posthd-lex := basic-attr-adj-lex &
 
 
 basic-pred-adj-lex := basic-adjective-lex & 
-  [ SYNSEM [ LOCAL [ CAT.VAL.SUBJ < [ LOCAL [ CAT [ HEAD +nv, 
-						    VAL [ SPR < >,
-							  COMPS < > ] ],
-					      CONT.HOOK.INDEX #index &
-						  [ SF prop-or-ques ] ] ] >,
-		     CONT [ HOOK [ LTOP #lbl, 
-				   INDEX #arg0 ],
-			    RELS <! #rel !> ] ],
+  [ SYNSEM [ LOCAL.CONT [ HOOK [ LTOP #lbl, 
+				 INDEX #arg0 ],
+			  RELS <! #rel !> ],
 	     LKEYS.KEYREL #rel & [ LBL #lbl,
-				   ARG0 #arg0,
-				   ARG1 #index ] ] ].
+				   ARG0 #arg0 ] ] ].
 
 pred-adj-lex := basic-pred-adj-lex &
-  [ SYNSEM.LOCAL [ CAT [ HEAD.MOD < >,
-			 VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
-					       CONT.HOOK #hook ],
-				       OPT - ] >,
-			       COMPS < > ] ],
-		   CONT.HOOK #hook ] ].
+  [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < >,
+			   VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
+						 CONT.HOOK.LTOP #lbl ],
+					 OPT - ] >,
+				 SUBJ < [LOCAL [CAT [HEAD +nv, 
+						   VAL.SPR < > ],
+					      CONT.HOOK.INDEX #index &
+						  [ SF prop-or-ques ] ] ] >,
+				 COMPS < > ] ],
+		     CONT.HOOK.LTOP #lbl ],
+	     LKEYS.KEYREL.ARG1 #index ] ].
+
+;; DPF 2011-06-17 - For now, we attach the degree specifier higher than any
+;; complements, even though this seems counter-intuitive, especially compared
+;; to the structure for adverbs with degree specifiers.  Maybe
+;; FIX? later
+s-comp-adj-lex := basic-pred-adj-lex &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < >,
+			   VAL [ SUBJ < >,
+				 SPR < [ LOCAL [ CAT.HEAD adv,
+						 CONT.HOOK.LTOP #ltop ] ] >,
+				 COMPS < [ LOCAL[CAT [ VAL [SUBJ < >,
+							    SPR < >,
+							    COMPS < > ],
+						     HEAD verb ],
+					       CONT.HOOK.LTOP #cltop ] ] > ] ],
+		     CONT.HOOK.LTOP #ltop ],
+	     LKEYS.KEYREL.ARG1 #cltop ] ].
 
 ;; DPF 2011-06-03 - We might instead want to treat relative clauses as 
 ;; lacking a gap, with the burden of linking the modified noun's index instead
@@ -717,7 +735,7 @@ pred-adj-lex := basic-pred-adj-lex &
 ;; washed the car is wet".
 ;;
 nom-adj-lex := basic-pred-adj-lex &
-  [ SYNSEM.LOCAL [ CAT [ VAL [ SPR < [ LOCAL.CAT [ VAL [ SUBJ olist,
+  [ SYNSEM [ LOCAL [ CAT [ VAL [ SPR < [ LOCAL.CAT [ VAL [ SUBJ olist,
 							 COMPS < >,
 							 SPR < > ],
 						   HEAD +vjp ],
@@ -725,7 +743,11 @@ nom-adj-lex := basic-pred-adj-lex &
 					      <! [ CONT.HOOK.INDEX #index ] !>,
 				       OPT - ] >,
 			       SUBJ < canonical-synsem & 
-				      [ LOCAL.CONT.HOOK.INDEX #index ] >,
+				      [ LOCAL [ CAT [ HEAD +nv,
+                                                    VAL [ SPR < >,
+                                                          COMPS < > ] ],
+                                              CONT.HOOK.INDEX #index &
+                                                  [ SF prop-or-ques ] ] ] >,
 			       COMPS < > ],
 			 POSTHEAD -,
 			 HEAD.MOD < [ LOCAL intersective-mod & 
@@ -733,7 +755,8 @@ nom-adj-lex := basic-pred-adj-lex &
 						    VAL [ COMPS < >,
 							  SUBJ < > ] ],
 					      CONT.HOOK.INDEX #index ] ] > ],
-		   CONT.HOOK.INDEX event ] ].
+		   CONT.HOOK.INDEX event ],
+	     LKEYS.KEYREL.ARG1 #index ] ].
 
 classifier := +jd.
 

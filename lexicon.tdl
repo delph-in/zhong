@@ -734,6 +734,10 @@
   [ STEM < "明显" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel" ].
 
+明显_j2 := s-comp-adj-lex &
+  [ STEM < "明显" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel" ].
+
 星期二_n := noun-lex &
   [ STEM < "星期二" >,
     SYNSEM.LKEYS.KEYREL.PRED "_xing1qi1er4_n_rel" ].
