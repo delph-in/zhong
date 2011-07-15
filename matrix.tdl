@@ -370,7 +370,8 @@ mrs := mrs-min &
 ;    XARG                  ; The external (controlled) argument of a phrase
 
 hook := avm &
-  [ LTOP handle,
+  [ GTOP handle,
+    LTOP handle,
     INDEX individual,
     XARG individual ].
 

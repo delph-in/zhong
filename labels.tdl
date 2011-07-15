@@ -16,6 +16,17 @@
 ;;; the more specific one must appear first in this list, or
 ;;; it will never get used.
 
+np-label := label & 
+            [ SYNSEM.LOCAL [ CAT [ HEAD noun,
+                                   VAL.SPR < > ],
+                             COORD-STRAT "" ],
+              LABEL-NAME "NP" ].
+
+np-top-label := label & 
+	    [ SYNSEM.LOCAL.CAT [ HEAD noun,
+				 VAL.SPR < > ],
+	      LABEL-NAME "NP-T" ].
+
 n-mid-label := label &
             [ SYNSEM.LOCAL [ CAT [ HEAD noun,
                                    VAL.SPR < [ ] > ],
@@ -52,17 +63,6 @@ np-bottom-label := label &
                                    VAL.SPR < > ],
                              COORD + ],
               LABEL-NAME "NP-B" ].
-
-np-label := label & 
-            [ SYNSEM.LOCAL [ CAT [ HEAD noun,
-                                   VAL.SPR < > ],
-                             COORD-STRAT "" ],
-              LABEL-NAME "NP" ].
-
-np-top-label := label & 
-	    [ SYNSEM.LOCAL.CAT [ HEAD noun,
-				 VAL.SPR < > ],
-	      LABEL-NAME "NP-T" ].
 
 v-mid-label := label &
 	   [ SYNSEM.LOCAL [ CAT [ HEAD verb,
@@ -137,7 +137,7 @@ adj-label := label &
 	     LABEL-NAME "ADJ" ].
 
 s-label := label &
-           [ SYNSEM.LOCAL [ CAT [ HEAD +vjp,
+           [ SYNSEM.LOCAL [ CAT [ HEAD +vjp & [ MOD < > ],
                                   VAL [ COMPS < >,
                                         SUBJ < > ] ],
                             COORD-STRAT "" ],
@@ -234,4 +234,10 @@ classifier-label := label &
 loc-mark-label := label &
 	    [ SYNSEM.LOCAL.CAT [ HEAD loc-mark],
 	     LABEL-NAME "LM" ].
+
+slash := meta &
+  [ SYNSEM.NON-LOCAL.SLASH 1-dlist &
+			   [ LIST < local > ],
+    META-PREFIX "/",
+    META-SUFFIX "" ].
 

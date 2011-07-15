@@ -8,10 +8,14 @@ head-spec := head-spec-phrase.
 
 head-spec-hs := head-spec-h-sem-phrase.
 
+headn-spec-hs := head-nom-spec-h-sem-phrase.
+
 bare-np := bare-np-phrase.
 
 bare-nom-cl := bare-nominal-classifier-phrase.
 bare-nom-det := bare-nominal-det-phrase.
+
+meas-np := meas-np-phrase.
 
 comp-head := comp-head-phrase.
 
@@ -101,7 +105,7 @@ s7-mid-coord := s7-mid-coord-rule.
 s7-bottom-coord := s7-bottom-coord-rule.
 |#
 
-basic-head-opt-comp := basic-head-opt-comp-phrase.
+head-opt-comp := head-opt-comp-phrase.
 
 comp-head-final := comp-head-final-phrase.
 
@@ -114,3 +118,5 @@ extracted-subj := extracted-subj-phrase.
 imper := imperative-phrase.
 
 n-n-compound := noun-noun-compound-phrase.
+
+np-adp := np-adp-phrase.
