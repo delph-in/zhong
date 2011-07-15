@@ -117,6 +117,9 @@ extracted-subj := extracted-subj-phrase.
 
 imper := imperative-phrase.
 
+;; Overenthusiastic
+;;sent-subj := sent-subj-phrase.
+
 n-n-compound := noun-noun-compound-phrase.
 
 np-adp := np-adp-phrase.

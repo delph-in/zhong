@@ -204,11 +204,11 @@
   [ STEM <"轻">,
     SYNSEM.LKEYS.KEYREL.PRED "_qing1_a_rel" ].
 
-久_j1 := int-adv-vp-pre &
+久_r1 := int-adv-vp-pre &
   [ STEM <"久">,
 	SYNSEM.LKEYS.KEYREL.PRED "_jiu3_a_rel" ].
 	
-以前_j1 := int-adv-s-pre &
+以前_r1 := int-adv-s-pre &
   [ STEM <"以前">,
     SYNSEM.LKEYS.KEYREL.PRED "_yi3qian2_a_rel" ].
 
@@ -232,7 +232,7 @@
   [ STEM <"反复">,
     SYNSEM.LKEYS.KEYREL.PRED "_fan3fu4_a_rel" ].
 
-差不多_r := int-adv-vp-pre & 
+差不多_r := scop-adv-lex &
   [ STEM <"差不多">,
     SYNSEM.LKEYS.KEYREL.PRED "_cha4－bu-duo1_a_rel" ].
 
@@ -433,7 +433,6 @@
   [ STEM < "所有" >,
     SYNSEM.LKEYS.KEYREL.PRED "every_q_rel" ].
 
-
 吗_qp := qpart-lex-item &
   [ STEM < "吗" > ].
 
@@ -462,7 +461,7 @@
   [ STEM < "为" >,
     SYNSEM.LKEYS.KEYREL.PRED "_wei2_p_rel"].
 
-从_p  := v-mod-loc-lex &
+从_p  := prep-vmod-pre-lex &
   [ STEM < "从" >,
     SYNSEM.LKEYS.KEYREL.PRED "_cong2_p_rel"].
 
@@ -471,7 +470,7 @@
   [ STEM < "在" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zai4_p_rel"].
 
-到_loc := v-mod-loc-lex &
+到_loc := prep-vmod-lex &
  [ STEM < "到" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dao4_p_rel"].
 
@@ -571,6 +570,10 @@
   [ STEM < "点" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dian3_n_rel" ].
 
+分_n := bound-time-noun-lex &
+  [ STEM < "分" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fen1_n_rel" ].
+
 烟草_n := mass-noun-lex &
   [ STEM < "烟草" >,
     SYNSEM.LKEYS.KEYREL.PRED "_yan1cao3_n_rel" ].
@@ -610,6 +613,9 @@
   [ STEM < "多" >,
     SYNSEM.LKEYS.KEYREL.PRED "_duo1_n_rel" ].
 
+有多_r :=  deg-int-adv-vp-pre &
+  [ STEM < "有", "多" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_you3+duo1_n_rel" ].
 
 张_n := proper-noun-lex &
   [ STEM < "张" >,
@@ -902,3 +908,12 @@
 五_j := num-adj-lex &
   [ STEM < "五" >,
     SYNSEM.LKEYS.KEYREL.PRED "_wu3_a_rel" ].
+
+二十_j := num-adj-lex &
+  [ STEM < "二十" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_er4shi2_a_rel" ].
+
+是不是_r := tag-adv-lex &
+  [ STEM <"是", "不", "是">,
+    SYNSEM.LKEYS.KEYREL.PRED "_shi4+bu4+shi4_a_rel" ].
+

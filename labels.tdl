@@ -137,7 +137,8 @@ adj-label := label &
 	     LABEL-NAME "ADJ" ].
 
 s-label := label &
-           [ SYNSEM.LOCAL [ CAT [ HEAD +vjp & [ MOD < > ],
+           [ SYNSEM.LOCAL [ CAT [ HEAD +vjp,
+				  POSTHEAD +,
                                   VAL [ COMPS < >,
                                         SUBJ < > ] ],
                             COORD-STRAT "" ],
@@ -158,6 +159,7 @@ pp-label := label &
 	    [ SYNSEM.LOCAL.CAT [ HEAD adp,
 				 VAL.COMPS < > ],
 	      LABEL-NAME "PP" ].
+
 
 c-label := label &
 	   [ SYNSEM.LOCAL.CAT [ HEAD comp,
