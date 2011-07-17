@@ -133,7 +133,7 @@
        ALTS.LE-PFV - ].
 
 做_v := v_trans-verb-lex &
-  [ STEM <"做">,
+  [ STEM < "做" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zuo4_v_rel" ].
 
 执行_v := v_trans-verb-lex &
@@ -154,11 +154,19 @@
   [ STEM <"下">,
     SYNSEM.LKEYS.KEYREL.PRED "_xia4_v_rel"].
 
-觉得 := s-comp-verb-lex &
+觉得_v := s-comp-verb-lex &
   [ STEM <"觉得">,
     SYNSEM.LKEYS.KEYREL.PRED "_jue3de_v_rel"].
 
-认为 := s-comp-verb-lex &
+觉得_v2 := np-ap-comp-verb-lex &
+  [ STEM <"觉得">,
+    SYNSEM.LKEYS.KEYREL.PRED "_jue3de_v_rel"].
+
+认为_v := v_trans-verb-lex &
+  [ STEM < "认为" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ren2wei2_v_rel" ].
+
+认为_v2 := s-comp-verb-lex &
   [ STEM <"认为">,
     SYNSEM.LKEYS.KEYREL.PRED "_ren4wei4_v_rel"].
 
@@ -237,6 +245,10 @@
     SYNSEM.LKEYS.KEYREL.PRED "_cha4－bu-duo1_a_rel" ].
 
 好像_r := int-adv-vp-pre & 
+  [ STEM <"好像">,
+    SYNSEM.LKEYS.KEYREL.PRED "_hao3xiang4_a_rel" ].
+
+好像_r2 := int-adv-s-pre & 
   [ STEM <"好像">,
     SYNSEM.LKEYS.KEYREL.PRED "_hao3xiang4_a_rel" ].
 
@@ -344,10 +356,6 @@
 
 ;;; Auxiliaries
 
-能_v := v_aux-aux-lex &
-  [ STEM < "能" > ,
-    SYNSEM.LKEYS.KEYREL.PRED "neng3_v_aux_rel" ].
-
 会_v :=  v_aux-aux-lex &
   [ STEM < "会" > ,
 	SYNSEM.LKEYS.KEYREL.PRED "hui4_v_aux_rel" ].
@@ -360,7 +368,7 @@
   [ STEM < "可以" > ,
     SYNSEM.LKEYS.KEYREL.PRED "ke3yi3_v_aux_rel" ].
 
-能_v2 := v_aux-aux-lex &
+能_v := v_aux-aux-lex &
   [ STEM <"能">,
     SYNSEM.LKEYS.KEYREL.PRED "_neng2_v_rel" ].
 
@@ -669,6 +677,10 @@
   [ STEM < "坐" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zuo4_v_rel" ].
 
+坐_v2 := v_a-equi-lex &
+  [ STEM < "坐" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zuo4_v_rel" ].
+
 干净_j := pred-adj-lex &
   [ STEM < "干净" >,
     SYNSEM.LKEYS.KEYREL.PRED "_gan1jing4_a_rel" ].
@@ -749,6 +761,10 @@
   [ STEM < "打赌" >,
     SYNSEM.LKEYS.KEYREL.PRED "_da3du3_v_rel" ].
 
+打扰_v3 := cp-subj-verb-lex &
+  [ STEM < "打扰" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_da3rao3_v_rel" ].
+
 挤_v := v_trans-verb-lex &
   [ STEM < "挤" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ji3_v_rel" ].
@@ -761,7 +777,7 @@
   [ STEM < "擦" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ca1_v_rel" ].
 
-擦_v2 := np-ap-comp-verb-lex &
+擦_v2 := np-ap-comp-ba-verb-lex &
   [ STEM < "擦" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ca1_v_rel" ].
 
@@ -828,10 +844,6 @@
 老_j := attr-adj-lex &
   [ STEM < "老" >,
     SYNSEM.LKEYS.KEYREL.PRED "_lao3_a_rel" ].
-
-认为_v := v_trans-verb-lex &
-  [ STEM < "认为" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_ren2wei2_v_rel" ].
 
 让_v := v_o-equi-lex &
   [ STEM < "让" >,

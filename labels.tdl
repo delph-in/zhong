@@ -42,7 +42,7 @@ n-bottom-label := label &
 
 n-label := label & 
 	   [ SYNSEM.LOCAL [ CAT [ HEAD noun,
-                                  VAL.SPR < [ ] > ],
+                                  VAL.SPR < [ ], ... > ],
                             COORD-STRAT "" ],
              LABEL-NAME "N" ].
 
