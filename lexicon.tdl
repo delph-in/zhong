@@ -371,7 +371,7 @@
 要_v :=  v_aux-aux-lex &
   [ STEM < "要" > ,
 	SYNSEM.LKEYS.KEYREL.PRED "yao4_v_aux_rel" ].
-	
+
 可以_v := v_aux-aux-lex &
   [ STEM < "可以" > ,
     SYNSEM.LKEYS.KEYREL.PRED "ke3yi3_v_aux_rel" ].
@@ -937,10 +937,6 @@
   [ STEM < "三" >,
     SYNSEM.LKEYS.KEYREL.PRED "_san1_a_rel" ].
 
-三点_n := time-noun-lex &
-  [ STEM < "三点" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_san1dian3_n_rel" ].
-
 三号_n := time-noun-lex &
   [ STEM < "三号" >,
     SYNSEM.LKEYS.KEYREL.PRED "_san1hao4_n_rel" ].
@@ -952,10 +948,6 @@
 事_n := noun-lex &
   [ STEM < "事" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shi4_n_rel" ].
-
-二十分_n := time-noun-lex &
-  [ STEM < "二十分" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_er4shi2fen1_n_rel" ].
 
 五_j := num-adj-lex &
   [ STEM < "五" >,
