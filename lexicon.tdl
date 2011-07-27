@@ -968,4 +968,3 @@
 是不是_r := tag-adv-lex &
   [ STEM <"是", "不", "是">,
     SYNSEM.LKEYS.KEYREL.PRED "_shi4+bu4+shi4_a_rel" ].
-
