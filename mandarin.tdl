@@ -140,7 +140,8 @@ nominalizer-lex := basic-one-arg &
 				 SPR < #spr &
 				   [ LOCAL [ CAT [ HEAD +vj & [ MOD < > ],
 						   VAL.COMPS < > ],
-					     CONT.HOOK.LTOP #spltop ],
+					     CONT.HOOK [ LTOP #spltop,
+							 INDEX.SF prop ] ],
 				     NON-LOCAL.SLASH 0-dlist ],
 				       anti-synsem > ] ],
 		     CONT [ HOOK [ LTOP #ltop,
@@ -736,10 +737,11 @@ cop-verb-lex :=  transitive-verb-lex &
 
 cop-verb-cpsubj-lex :=  main-verb-lex & basic-two-arg-no-hcons &
    [ SYNSEM [ LOCAL.CAT.VAL [ SUBJ < [ LOCAL.CAT.HEAD +vjp ] >,
-			      COMPS < #comp &
+			      COMPS < #comp & canonical-synsem &
 				      [ LOCAL.CAT [ VAL [ SPR < >,
 							  COMPS < > ],
-						    HEAD noun ] ] > ],
+						    HEAD noun ],
+					NON-LOCAL.SLASH 0-dlist ] > ],
 	      LKEYS.KEYREL [ ARG1 #arg1,
 			     ARG2 #ind2 ] ],
      ARG-ST < [ LOCAL.CONT.HOOK.LTOP #arg1 ],
@@ -880,12 +882,14 @@ neg-adv-lex := basic-scopal-adverb-lex &
 v-not-v-adv-lex := basic-scopal-adverb-lex &
   [ SYNSEM [ LOCAL [ CAT [ VAL.COMPS < lex-synsem &
 				       [ LOCAL.CAT.HEAD verb,
+					 NON-LOCAL.SLASH 0-dlist,
 					 LKEYS.KEYREL.PRED #pred ] >,
 			   POSTHEAD +,
 			   HEAD.MOD < lex-synsem &
 				      [ LOCAL.CAT.HEAD verb,
 					LKEYS.KEYREL.PRED #pred ] > ],
-		     CONT.HOOK.INDEX.SF ques ] ] ].
+		     CONT.HOOK.INDEX.SF ques ],
+	     NON-LOCAL.SLASH 0-dlist ] ].
 
 ; This grammar includes head-modifier rules.  To keep
 ; out extraneous parses, constrain the value of MOD on
@@ -1212,7 +1216,8 @@ s7-bottom-coord-rule := conj-first-bottom-coord-rule & s-bottom-coord-phrase &
 
 adj-head-int-mc := adj-head-int-phrase &
   [ SYNSEM.LOCAL.CAT.NONSUBJ #ns,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns ].
+    HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns ].
 
 complementizer-lex-item := raise-sem-lex-item & basic-one-arg &
   [ SYNSEM.LOCAL.CAT [ HEAD comp &
@@ -1387,6 +1392,7 @@ basic-head-subj-phrase := head-valence-phrase & binary-headed-phrase &
 ;;
 
 ;;We changed the head daughter's comps list to the empty list, rather than olist
+#|
 basic-head-spec-phrase := head-valence-phrase & phrasal &
 			  binary-headed-phrase &
   [ INFLECTED +,
@@ -1441,6 +1447,66 @@ head-nom-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
   [ HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
 			    CONT.HOOK #hook ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +vjp,
+    C-CONT.HOOK #hook ].
+|#
+
+basic-head-spec-phrase := head-valence-phrase & phrasal &
+			  binary-headed-phrase &
+  [ INFLECTED +,
+    SYNSEM phr-synsem & [ LOCAL.CAT [ VAL [ SUBJ #subj,
+					    SPR #spr,
+					    SPEC #spec ],
+				      POSTHEAD #ph ],
+			  MODIFIED #modif ],
+    HEAD-DTR [ INFLECTED +,
+               SYNSEM [ LOCAL [ CAT [ HEAD #head,
+                                      VAL [ SUBJ #subj,
+                                            COMPS <> & #comps,
+                                            SPR < #synsem & 
+                                                  canonical-synsem . #spr >,
+                                            SPEC #spec ],
+                                      POSTHEAD #ph ],
+                                CONT.HOOK #hdhook ],
+                        MODIFIED #hmodif ] ],
+    NON-HEAD-DTR.SYNSEM #synsem &
+	 [ LOCAL.CAT.VAL [ SPEC < [ LOCAL [ CAT [ HEAD #head,
+						  VAL.COMPS #comps ],
+					    CONT.HOOK #hdhook ],
+				    MODIFIED #hmodif ] > ],
+	   MODIFIED #modif ],
+    C-CONT [ RELS <! !>,
+	     HCONS <! !> ] ].
+
+head-spec-phrase := basic-head-spec-phrase & head-final &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
+    NON-HEAD-DTR.SYNSEM [ LOCAL [ CAT [ VAL.SUBJ < >,
+					HEAD det ],
+				  CONT.HOOK #hook ] ],
+    C-CONT.HOOK #hook ].
+
+;; Note here, the syntactic head is the semantic head
+;; note, we deleted NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < > : this is already specified in the heads
+;; 
+;;; DPF 21-dec-09 - use head-compositional etc instead...
+
+head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
+    HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd,
+			    CONT.HOOK #hook ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
+    C-CONT.HOOK #hook ].
+
+; For nominalizer head `de', which must be [HEAD noun], but which is also the
+; semantic head.  Cannot easily collapse with either of the other two head-spec
+; rules, since the non-head-dtr can be [HEAD det] in the hspec-hs rule where
+; the head is a classifier.  FIX someday?
+;
+head-nom-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
+    HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
+			    CONT.HOOK #hook ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD +vjp,
+				    VAL.COMPS #spcomps ],
     C-CONT.HOOK #hook ].
 
 ;; Bare NP phrase.  Consider modifying the PRED value of the quantifier 
@@ -1517,11 +1583,14 @@ bare-nominal-det-phrase := basic_bare-nominal-phrase &
     C-CONT.HOOK [ LTOP #ltop,
 		  INDEX #index ] ].
 
+; Restrict head-dtr to non-empty SPR, to avoid spurious ambiguity.
+;
 meas-np-phrase := head-final & head-valence-phrase & phrasal &
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >,
 			   SPR < >,
 			   COMPS < > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD num,
+    NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD num,
+				      VAL.SPR < > ],
 				CONT.HOOK [ LTOP #ltop,
 					    INDEX #nhind ] ],
     HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
