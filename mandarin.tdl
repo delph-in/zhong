@@ -1614,6 +1614,9 @@ imperative-phrase := imp-head-opt-subj-phrase &
   [ SYNSEM [ LOCAL.CAT.HEAD verb,
 	     NON-LOCAL.SLASH 0-dlist ] ].
 
+;; DPF 27-jul-11 - Removed HEAD-DTR..MODIFIED notmod to allow "old dog who 
+;; can bark" |一 只 会 叫 的 老 狗|
+;;
 noun-noun-compound-phrase := head-final &
   [ SYNSEM [ LOCAL.CAT #cat,
 	     NON-LOCAL #nonloc ],
@@ -1623,7 +1626,6 @@ noun-noun-compound-phrase := head-final &
 					  COMPS < > ] ],
 			      CONT.HOOK [ LTOP #ltop,
 					  INDEX #hind ] ],
-		      MODIFIED notmod,
 		      NON-LOCAL #nonloc ],
     NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun,
 				      VAL [ SPR < [ ] >,

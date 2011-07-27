@@ -140,6 +140,10 @@
   [ STEM <"执行">,
     SYNSEM.LKEYS.KEYREL.PRED "_zhi2xing2_v_rel" ].
 
+爬_v := v_trans-verb-lex &
+  [ STEM < "爬" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pa2_v_rel" ].
+
 组成_v := v_prep-lex-item &
   [ STEM <"组成">,
     SYNSEM.LKEYS.KEYREL.PRED "_zu3cheng2_v_rel"].
@@ -251,6 +255,10 @@
 好像_r2 := int-adv-s-pre & 
   [ STEM <"好像">,
     SYNSEM.LKEYS.KEYREL.PRED "_hao3xiang4_a_rel" ].
+
+一次_r1 := int-adv-s-pre &
+  [ STEM <"一次">,
+    SYNSEM.LKEYS.KEYREL.PRED "_yi1ci4_a_rel" ].
 
 在_r := int-adv-vp-pre-no-rel & 
   [ STEM <"在">,
@@ -697,6 +705,10 @@
   [ STEM < "高兴" >,
     SYNSEM.LKEYS.KEYREL.PRED "_gao1xing4_a_rel" ].
 
+高_j := attr-adj-lex &
+  [ STEM < "高" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_gao1_a_rel" ].
+
 香烟_n := count-noun-lex &
   [ STEM < "香烟" >,
     SYNSEM.LKEYS.KEYREL.PRED "_xiang1yan1_n_rel" ].
@@ -712,6 +724,14 @@
 陈_n := proper-noun-lex &
   [ STEM < "陈" >,
     SYNSEM.LKEYS.KEYREL.CARG "_chen2_n_rel" ].
+
+方鸿渐_n := proper-noun-lex &
+  [ STEM < "方鸿渐" >,
+    SYNSEM.LKEYS.KEYREL.CARG "fang1hong2jian4" ].
+
+唐晓芙_n := proper-noun-lex &
+  [ STEM < "唐晓芙" >,
+    SYNSEM.LKEYS.KEYREL.CARG "tang2xiao3fu1" ].
 
 雨_n := mass-noun-lex &
   [ STEM < "雨" >,
@@ -849,6 +869,22 @@
   [ STEM < "让" >,
     SYNSEM.LKEYS.KEYREL.PRED "_rang4_v_rel" ].
 
+推荐_v1 := v_o-equi-lex &
+  [ STEM < "推荐" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ tui1jian4_v_rel" ].
+
+推荐_v2 := s-comp-verb-lex &
+  [ STEM < "推荐" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ tui1jian4_v_rel" ].
+
+请_v1 := v_o-equi-lex &
+  [ STEM < "请" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ qing3_v_rel" ].
+
+请_v2 := s-comp-verb-lex &
+  [ STEM < "请" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ qing3_v_rel" ].
+
 试_v := v_intrans-verb-lex &
   [ STEM < "试" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shi4_v_rel" ].
@@ -876,6 +912,10 @@
 花园_n := count-noun-lex &
   [ STEM < "花园" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hua1yuan2_n_rel" ].
+
+山_n := count-noun-lex &
+  [ STEM < "山" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shan1_n_rel" ].
 
 ;会_v := v_trans-verb-lex &
 ;  [ STEM < "会" >,
