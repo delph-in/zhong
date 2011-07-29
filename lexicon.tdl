@@ -437,9 +437,9 @@
  [ STEM < "的" >,
     SYNSEM.LKEYS.KEYREL.PRED "_de_n_demons_rel" ].
 
-的_NOM_nj := nom-adj-lex &
-  [ STEM < "的" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_de_a_rel" ].
+;的_NOM_nj := nom-adj-lex &
+;  [ STEM < "的" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_de_a_rel" ].
 
 的_nominalizer_n := nominalizer-lex &
   [ STEM < "的" >,

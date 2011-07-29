@@ -132,6 +132,7 @@ wh-pronoun := basic-pronoun-lex &
 	    NON-LOCAL.QUE 1-dlist ] ].
 
 ; For `de' as in MRS 55
+#|
 nominalizer-lex := basic-one-arg &
   [ ARG-ST < #spr >,
     SYNSEM [ LOCAL [ CAT [ HEAD noun,
@@ -139,7 +140,8 @@ nominalizer-lex := basic-one-arg &
 				 SUBJ < >,
 				 SPR < #spr &
 				   [ LOCAL [ CAT [ HEAD +vj & [ MOD < > ],
-						   VAL.COMPS < > ],
+						   VAL [ SUBJ olist,
+						         COMPS < > ] ],
 					     CONT.HOOK [ LTOP #spltop,
 							 INDEX.SF prop ] ],
 				     NON-LOCAL.SLASH 0-dlist ],
@@ -154,6 +156,35 @@ nominalizer-lex := basic-one-arg &
 	     LKEYS.KEYREL #keyrel &
 		          [ ARG0.PNG.PERNUM 3rd,
 			    ARG1 #spltop ] ] ].
+|#
+
+nominalizer-lex := lex-item &
+  [ ARG-ST < #spr >,
+    SYNSEM [ LOCAL [ CAT [ HEAD noun,
+			   VAL [ COMPS < >,
+				 SUBJ < >,
+				 SPR < #spr &
+				   [ LOCAL [ CAT [ HEAD +vjp & [ MOD < > ],
+						   VAL [ SUBJ olist,
+							 SPR olist,
+						         COMPS < > ] ],
+					     CONT.HOOK [ LTOP #spltop,
+							 INDEX.SF prop ] ] ],
+				       anti-synsem > ] ],
+		     CONT [ HOOK [ LTOP #ltop,
+				   INDEX #index & [ SORT nontime-s ] ],
+			    RELS <! relation & #keyrel & 
+				  [ LBL #ltop,
+				    ARG0 #index ] !>,
+			    HCONS <! !> ] ],
+	     NON-LOCAL [ SLASH 0-dlist,
+	                 REL 0-dlist,
+			 QUE 0-dlist ],
+	     LKEYS.KEYREL #keyrel &
+		          [ ARG0.PNG.PERNUM 3rd,
+			    ARG1 #spltop ] ] ].
+
+
 ; Partitive determiner
 ;
 partitive-lex := basic-one-arg &
@@ -973,7 +1004,11 @@ s-comp-adj-lex := basic-pred-adj-lex &
 ;; so its main motivation would then be for topicalization.  Consider
 ;; "I wash car de towel wet" meaning something like "the towel with which I
 ;; washed the car is wet".
+;; DPF 2011-07-29 - Okay, we've dropped this entry, and adjusted the nominalizer
+;; `de' to allow both slashed and nonslashed specifier.  Should now do all of
+;; the work.
 ;;
+#|
 nom-adj-lex := basic-pred-adj-lex &
   [ SYNSEM [ LOCAL [ CAT [ VAL [ SPR < [ LOCAL [ CAT [ VAL [ SUBJ olist,
 							     COMPS < >,
@@ -1000,6 +1035,7 @@ nom-adj-lex := basic-pred-adj-lex &
 		     CONT.HOOK [ LTOP #ltop,
 				 INDEX event ] ],
 	     LKEYS.KEYREL.ARG1 #index ] ].
+|#
 
 classifier := +jd.
 
@@ -1620,7 +1656,8 @@ imperative-phrase := imp-head-opt-subj-phrase &
 noun-noun-compound-phrase := head-final &
   [ SYNSEM [ LOCAL.CAT #cat,
 	     NON-LOCAL #nonloc ],
-    HEAD-DTR.SYNSEM [ LOCAL [ CAT #cat & 
+    HEAD-DTR.SYNSEM lex-synsem &
+	            [ LOCAL [ CAT #cat & 
 				  [ HEAD noun,
 				    VAL [ SPR < synsem >,
 					  COMPS < > ] ],
@@ -1628,7 +1665,37 @@ noun-noun-compound-phrase := head-final &
 					  INDEX #hind ] ],
 		      NON-LOCAL #nonloc ],
     NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun,
-				      VAL [ SPR < [ ] >,
+				      VAL [ SPR < synsem >,
+					    COMPS < > ],
+				      POSTHEAD - ],
+				CONT.HOOK [ LTOP #larg,
+					    INDEX #nhind ] ],
+    C-CONT [ HOOK [ LTOP #ltop,
+		    INDEX #hind ],
+	     RELS <! arg12-relation &
+		     [ PRED "noun-noun-cpd-rel",
+		       LBL #ltop,
+		       ARG1 #hind,
+		       ARG2 #nhind ],
+		     quant-relation &
+		     [ PRED "exist_q_rel",
+		       ARG0 #nhind,
+		       RSTR #harg ] !>,
+	     HCONS <! qeq & [ HARG #harg,
+			      LARG #larg ] !> ] ].
+
+nom-de-noun-compound-phrase := head-final &
+  [ SYNSEM phr-synsem &
+	   [ LOCAL.CAT #cat,
+	     NON-LOCAL #nonloc ],
+    HEAD-DTR.SYNSEM [ LOCAL [ CAT #cat & 
+				  [ HEAD noun,
+				    VAL [ COMPS < > ] ],
+			      CONT.HOOK [ LTOP #ltop,
+					  INDEX #hind ] ],
+		      NON-LOCAL #nonloc ],
+    NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun,
+				      VAL [ SPR < anti-synsem >,
 					    COMPS < > ],
 				      POSTHEAD - ],
 				CONT.HOOK [ LTOP #larg,
@@ -1786,10 +1853,10 @@ basic-postp-lex := adposition-lex &
 				COMPS < >,
 				SUBJ < > ],
 			  HEAD noun ],
-		    CONT.HOOK.INDEX #ind2]],
-	     
+		    CONT.HOOK.INDEX #ind2],
+	      OPT - ],
 	     #comp & 
-	     [ LOCAL.CAT.HEAD loc-mark] > ].
+	     [ LOCAL.CAT.HEAD loc-mark ] > ].
 
 	    
 ;;; Lexical rule types for aspect

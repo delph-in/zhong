@@ -121,5 +121,6 @@ imper := imperative-phrase.
 ;;sent-subj := sent-subj-phrase.
 
 n-n-compound := noun-noun-compound-phrase.
+de-n-compound := nom-de-noun-compound-phrase.
 
 np-adp := np-adp-phrase.
