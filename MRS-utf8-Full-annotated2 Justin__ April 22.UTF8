@@ -1,0 +1,1194 @@
+﻿Id: 1           
+Source: MRS           
+Vetted: t           
+Judgment: g            
+Phenom: tam  
+Comment: The frequently omitted subject should be somehting like "the sky"; thus the internal VP relation should be "V + Accusative N"   
+      
+下 了 雨
+xia4 le yu3
+pour PFV rain 
+It rained.           
+           
+Id: 2           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+张三 叫 了
+Zhang1san1 jiao4 le         
+Zhangsan bark PFV         
+Zhangsan barked.           
+           
+Id: 3           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+窗户 打开 了
+Chuang1-hu da3-kai1 le         
+Window open PFV          
+The window opened.           
+           
+Id: 4           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+张三 追赶 了 李四
+Zhang1san1 zhui1-gan3 le Li3si4        
+Zhangsan chase PFV Lisi        
+Zhangsan chased Lisi.           
+           
+Id: 5           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: comps / dat
+
+张三 给 了 李四 香烟
+Zhang1san1 gei3 le  Li3si4 xiang1-yan1       
+Zhangsan give PFV Lisi cigarette       
+Zhangsan handed Lisi the cigarette.           
+           
+Id: 6           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: comps / dat
+
+张三 把 香烟 递 给 了 李四
+Zhang1san1 ba3 xiang1-yan1 di4 gei3 le Li3si4     
+Zhangsan BA cigarette pass to PFV Lisi     
+Zhangsan handed the cigarette to Lisi.           
+           
+Id: 7           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: comps
+
+张三 用 一 根 香烟 跟 李四 打赌 下 过 雨
+Zhang1san1 yong4 yi1 gen1 xiang1-yan1 gen1 Li3si4 Da3-du3 xia4 guo4 yu3 
+Zhangsan   use one stick cigarette with Lisi bet pour EXP rain 
+Zhangsan bet Lisi a cigarette that it rained.           
+           
+Id: 8           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 知道 下 过 雨
+Zhang1san1 zhi1-dao4 xia4 guo4 yu3       
+Zhangsan know pour EXP  rain       
+Zhangsan knew that it rained.           
+           
+Id: 9           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d   
+
+张三 打算 叫
+Zhang1san1 da3-suan jiao4         
+Zhangsan plan bark         
+Zhangsan intended to bark.           
+           
+Id: 10           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d   
+Comment: original sentence unacceptable
+
+张三 打算 让 李四 叫        
+Zhang1san1 da3-suan Rang4 Li3si4 jiao4        
+Zhangsan plan let Lisi bark        
+Zhangsan intended Lisi to bark.           
+           
+Id: 11           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: Quant 
+Comment: original sentence unacceptable
+
+每 一 只 猫 都 叫 了
+Mei3 yi1 zhi1 mao1 dou1 jiao4 le
+Every one CL cat all bark PFV
+Every cat barked.           
+           
+Id: 12           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: Quant
+
+每 一 只 猫 都 追赶 了 某 条 狗
+Mei3 yi1 zhi1 mao1 dou1 zhui1-gan3 le mou3 tiao2 gou3  
+Every one CL cat all chase PFV certain CL dog  
+Every cat chased some dog.         
+           
+Id: 13           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: GEN
+
+我 的 猫 叫 了
+Wo3 de mao1 jiao4 le
+I GEN cat bark PFV
+My cat barked.           
+           
+Id: 14           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: Gender
+Comment: original sentence embody no gender info. In Chinese the 3rd singular has 3 forms (他-he;她-she;它-it)           
+
+她 叫 了
+Ta1 jiao4 le        
+She bark PFV      
+She barked.
+           
+Id: 15           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: gender 
+Comment: no gender info. in original sentence;two pronouns with different genders included in the new one
+
+她 追赶 了 他        
+Ta1 zhui1-gan3 le ta1        
+She chase PFV him        
+She chased him.           
+           
+Id: 16           
+Source: MRS           
+Vetted: t         
+Judgment: g        
+Phenom: refl 
+       
+猫 追赶 了 它 自己       
+Mao1 zhui1-gan3 le ta zi4ji3       
+Cat chase PFV it self       
+The cat chased itself.
+           
+Id: 17           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: pn  
+          
+猫 追赶 了 一 只
+Mao1 zhui1-gan3 le yi1 zhi1
+Cat chase PFV one CL
+The cat chased one.
+           
+Id: 18           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: gen
+
+我 的 叫 了
+Wo3 de jiao4 le
+I GEN bark PFV
+Mine barked.
+           
+Id: 19           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: pn
+Comment: ? pn; add le 
+
+那 个 打开 了
+Na4 ge da3-kai1 le       
+That CL open PFV        
+That opened.           
+           
+Id: 20       
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: agr
+ 
+猫 叫
+Mao1 jiao4          
+Cat bark          
+Cats bark.
+           
+Id: 21           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: agr
+
+烟草 到 了
+Yan1-cao3 dao4 le         
+Tobacco arrive PFV        
+Tobacco arrived.           
+           
+Id: 22           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: pn
+
+有 些 叫
+You3 xie1 jiao4
+Exist few bark         
+Some bark.
+           
+Id: 23           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: pn
+
+有 些 猫 叫
+You3 xie1 mao1 jiao4        
+Exist some cat bark        
+Some of the cats bark.
+           
+Id: 24           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: pn      
+Comment: refer to Lv Shuxiang for the negation of a sentence with le1
+     
+一 只 猫 也 没 叫
+Yi1 zhi1 mao1 ye3 mei2 jiao4      
+One CL cat even not bark      
+No cat barked.           
+           
+Id: 25           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: q
+
+狗 叫 了 吗 ？
+Gou3 jiao4 le ma ?        
+dog bark PFV Q ?        
+Did the dog bark?           
+           
+Id: 26           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: q
+
+哪 一 只 狗 叫 了 ？
+Na3 yi1 zhi1 gou3 jiao4 le ?      
+Which one CL dog bark PFV ?      
+Which dog barked?           
+           
+Id: 27           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: q
+
+谁 的 狗 叫 了 ？
+Shei2 de gou3 jiao4 le ?       
+Who GEN dog bark PFV ?       
+Whose dog barked?           
+           
+Id: 28           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: imp
+
+追赶 张三 ！
+Zhui1-gan3 Zhang1san1 ！         
+Chase Zhangsan !         
+Chase Zhangsan!           
+           
+Id: 29           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: imp
+
+张三 想 知道 是 哪 只 狗 叫 了
+Zhang1san1 xiang3 zhi1-dao4 shi4 na3 yi1 zhi1 gou3 jiao4 le
+Zhangsan want know be which one CL dog bark PFV
+Zhangsan wondered which dog barked.
+           
+Id: 30           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 想 知道 李四 叫 没 叫     
+Zhang1san1 xiang3 zhi1-dao4 Li3si4 jiao4 mei2 jiao4     
+Zhangsan want know Lisi bark not bark     
+Zhangsan wondered whether Lisi barked.
+           
+Id: 31           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: Nom
+
+那 只 张三 追赶 的 狗 叫 了
+Na4 zhi1 Zhang1san1 zhui1-gan3 de gou3 jiao4 le   
+That CL Zhangsan chase NOM dog bark PFV   
+The dog that Zhangsan chased barked.           
+           
+Id: 32           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: Nom
+
+Comment: not faithful translation          
+要 追赶 的 那 只 狗 在 叫
+Yao4 zhui1-gan3 de na4 zhi1 gou3 zai4 jiao4  
+Want chase NOM that CL dog DUR bark
+The dog to chase is barking.           
+           
+Id: 33           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: Pass
+
+那 只 狗 被 张三 追赶
+Na4 zhi1 gou3 bei4 zhang1san1 zhui1-gan3      
+That CL dog BEI Zhangsan chase      
+The dog was chased by Zhangsan.           
+           
+Id: 34           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: Pass
+
+那 只 被 张三 追赶 的 狗 叫 了
+Na4 zhi1 bei4 Zhang1san1 zhui1-gan3 de gou3 jiao4 le
+That CL BEI Zhangsan chase NOM dog bark PFV
+The dog chased by Zhangsan barked.           
+           
+Id: 35           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+狗 在 叫
+Gou3 zai4 jiao4         
+Dog DUR bark         
+The dog is barking.     
+           
+Id: 36           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+狗 叫 过
+Gou3 jiao4 guo4         
+Dog bark EXP         
+The dog has barked.           
+           
+Id: 37           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+狗 一直 在 叫
+Gou3 yi1-zhi2 zai4 jiao4     
+Dog always DUR bark PFV much long CRS     
+The dog has been barking.    
+           
+Id: 38           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam     
+Comment: tricky to faithfully translate the past perfect
+     
+狗 以前 一直 叫
+Gou3 yi3qian2 yi1-zhi2 jiao4    
+Dog before always bark  
+The dog had been barking.           
+           
+Id: 39           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+狗 要 叫
+Gou3 yao4 jiao4         
+Dog will bark         
+The dog will bark.           
+           
+Id: 40           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+狗 要 叫
+Gou3 yao4 jiao4         
+Dog will bark         
+The dog is going to bark.           
+           
+Id: 41           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: infin
+
+狗 可能 会 叫
+Gou3 ke3neng2 hui4 jiao4        
+Dog possibly will bark        
+The dog could bark.           
+           
+Id: 42           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: infin
+
+狗 以前 不 会 叫
+Gou3 yi3qian2 bu4 hui4 jiao4       
+Dog before not able bark       
+The dog couldn’t bark.           
+           
+Id: 43           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adj
+
+老 狗 叫 了
+Lao3 gou3 jiao4 le       
+Old dog bark PFV        
+The old dog barked.           
+           
+Id: 44           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adv
+
+狗 轻轻 地 叫 了     
+Gou3 qing1-qing1 de jiao4 le      
+Dog soft ly bark PFV
+The dog barked softly.           
+           
+Id: 45           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adv
+
+狗 很 可能 叫 了
+Gou3 hen3 ke3-neng2 jiao4 le 
+Dog very perhaps bark PFV        
+The dog probably barked.           
+           
+Id: 46           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: loc
+
+狗 在 花园 里 叫 了
+Gou3 zai4 hua1-yuan2 li3 jiao4 le
+Dog LOC garden in bark PFV
+The dog barked in the garden.            
+           
+Id: 47           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+现在 狗 叫 了
+Xian4-zai4 gou3 jiao4 le
+Now dog bark CRS
+The dog barks now.  
+           
+Id: 48           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: cpd
+Comment: for compound
+
+花园 里 的 狗 叫 了      
+Hua1-yuan2 li3 de gou3 jiao4  le     
+Garden in ASSOC dog bark PFV      
+The garden dog barked.           
+           
+Id: 49           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: ppmod
+Comment: for prepositional modifier
+
+烟草 花园 里 的 狗 叫 了
+yan1-cao3 Hua1-yuan2 li3 de gou3 jiao4 le
+tobacco garden in ASSOC dog bark PFV
+The dog in the tobacco garden barked.
+           
+Id: 50           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adj
+
+猫 老 了
+Mao1 lao3 le
+Cat very old CRS
+The cat is old.           
+           
+Id: 51           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: prd
+Comment: for predicative
+
+猫 在 花园 里       
+Mao1 zai4 hua1-yuan2 li3       
+Cat LOC garden in       
+The cat is in the garden.
+           
+Id: 52           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: det, adj
+
+正在 叫 的 狗 追赶 了 张三
+Zheng4-zai4 jiao4 de gou3 zhui1-gan3 le Zhang1san1     
+Right-now bark NOM dog chase PFV Zhangsan     
+The barking dog chased Zhangsan.
+           
+Id: 53           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: det, pass 
+Comment: usually in paralellism, eg“被打的丫鬟笑，打人的主子哭”
+
+被 追赶 的 狗 叫
+Bei4 zhui1-gan3 de gou3 jiao4       
+BEI chase NOM dog bark       
+Chased dogs bark.           
+           
+Id: 54           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adj
+
+追赶 猫 很 无聊
+zhui1-gan3 mao1 hen3 wu2liao2        
+chase cat very boring        
+Chasing the cat is old.           
+           
+Id: 55           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+猫 追赶 张三 是 很 显然 的
+mao1 zhui1-gan3 Zhang1san1 shi4 hen3 xian3-ran2 de     
+Cat chase Zhangsan is very obvious NOM
+That the cat chases Zhangsan is obvious.           
+           
+Id: 56           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: indef
+
+狗 追赶 所有 会 叫 的     
+Gou3  zhui1-gan3 suo2-you3 hui4 jiao4 de     
+Dog chase all able bark NOM     
+Dogs chase whatever barks.
+           
+Id: 57           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: quant
+
+以前 狗 每 天 都 叫      
+Yi3qian2 gou3  mei3 tian1 dou1 jiao4      
+Before dog every day all bark      
+The dog barked every day.           
+           
+Id: 58           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: q
+
+以前 狗 什么 时候 叫 ?
+Yi3qian2 gou3 shen2-me shi2-hou jiao4 ?       
+Befere dog what time bark ?       
+When did the dog bark?           
+           
+Id: 59           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: det
+
+其中 的 三 只 狗 会 叫
+qi2zhong1 de san1 zhi1 Gou3 hui4 jiao4     
+among ASSOC three CL Dog able bark     
+Three of the dogs bark.           
+           
+Id: 60           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: numcl
+
+三 只 会 叫
+San1 zhi1 hui4 jiao4        
+Three CL able bark        
+Three bark.           
+           
+Id: 61           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: det
+
+张三 的 狗 会 叫
+Zhang1san1 de gou3 hui4 jiao4        
+Zhangsan GEN dog able bark        
+Zhang’s dog barks.           
+           
+Id: 62           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: det
+
+张三 的 会 叫
+Zhang1san1 de hui4 jiao4         
+Zhangsan GEN able bark         
+Zhang's barks.           
+           
+Id: 63           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: numcl
+
+23 只 狗 会 叫
+23 zhi1 gou3 hui4 jiao4        
+23 CL dog able bark        
+Twenty three dogs bark.
+           
+Id: 64           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: numcl
+
+220 只 狗 会 叫
+220 zhi1 gou3 hui4 jiao4       
+220 CL dog able bark       
+Two hundred twenty dogs bark.           
+           
+Id: 65           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: pro-d
+
+张三 坐 汽车 到 了
+Zhang1san1 zuo4 qi4che1 dao4 le
+Zhangsan be take car arrive PFV
+Zhangsan arrived by car.
+           
+Id: 66           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adv
+
+张三 反复 地 叫
+Zhang1san1 fan3fu4 de jiao4        
+Zhangsan repeatedly -ly bark        
+Zhangsan kept barking.
+           
+Id: 67           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: pro-d
+Comment: No difference in Chinese between a noun before and after a particle
+ 
+张三 把 猫 挤 进去
+Zhang1san1 ba3 mao1 ji3 jin4-qu4       
+Zhang1san1 BA cat squeeze enter         
+Zhangsan squeezed the cat in.           
+           
+Id: 68           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: pro-d
+
+张三 把 猫 挤 进去
+Zhang1san1 ba3 mao1 ji3 jin4-qu4       
+Zhang1san1 BA cat squeeze enter        
+Zhangsan squeezed in the cat.           
+           
+Id: 69           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: det
+
+张三 的 照片 到 了       
+Zhang1san1 de zhao4-pian4 dao4 le       
+Zhangsan GEN picture arrive PFV       
+The picture of Zhangsan arrived.           
+           
+Id: 70           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: res
+Comment: for resultative
+
+张三 把 桌子 擦 干净 了
+Zhang1san1 ba3 zhuo1zi ca1 gan1-jing4 le   
+Zhangsan BA table wipe clean PFV
+Zhangsan wiped the table clean.           
+           
+Id: 71           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: pro-d
+
+张三 把 李四 放 在 了 花园 里
+Zhang1san1 ba3 Li3si4 fang4 zai4 le hua1-yuan2 li3
+Zhangsan BA Lisi place LOC PFV garden in     
+Zhangsan put Lisi in the garden.
+           
+Id: 72           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam 
+Comment: "pct" for punctuation
+
+如果 张三 到 了 ， 狗 会 叫
+Ru2guo3 Zhang1san1 dao4 le pct gou3 hui4 jiao4   
+If Zhangsan arrive CRS pct dog will bark   
+The dog will bark if Zhangsan arrives.           
+           
+Id: 73           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: crd
+
+张三 和 李四 到 了
+Zhang1san1 he2 Li3si4 dao4 le      
+Zhangsan and Lisi arrive PFV      
+Zhangsan and Lisi arrived.           
+           
+Id: 74           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: crd
+
+张三 李四 和 狗 到 了
+Zhang1san1 Li3si4 he2 gou3 dao4 le
+Zhangsan Lisi and dog arrive PFV
+Zhangsan, Lisi and the dog arrived.          
+           
+Id: 75           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: crd
+
+狗 到 了 而且 叫 了
+Gou3 dao4 le er2-qie3 jiao4 le     
+Dog arrive PFV and bark PFV     
+The dog arrived and barked.        
+           
+Id: 76           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: crd
+
+狗 到 了 而且 张三 叫 了
+Gou3 dao4 le er2-qie3 Zhang1san1 jiao4 le
+Dog arrive PFV and Zhangsan bark PFV    
+The dog arrived and Zhangsan barked.           
+           
+Id: 77           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: q
+
+狗 叫 了 , 是 不 是 ? 
+Gou3 jiao4 le , shi4 bu4 shi4 ?    
+Dog bark PFV , be not be ?     
+The dog barked, didn't it?          
+           
+Id: 78           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+很 明显 狗 叫 了
+hen3 ming2-xian3 Gou3 jiao4 le       
+very obvious Dog bark PFV       
+It is obvious that the dog barked.           
+           
+Id: 79           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 向 李四 保证 他 会 叫
+Zhang1san1 xiang4 Li3si4 bao3-zheng4 ta1 hui4 jiao4     
+Zhangsan to Lisi promised he able bark     
+Zhangsan promised Lisi to bark.           
+           
+Id: 80           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+好像 张三 要 叫
+Hao3xiang4 Zhang1san1 yao4 jiao4       
+seemingly Zhangsan will bark       
+Zhangsan seems to bark.           
+           
+Id: 81           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 认为 李四 在 叫
+Zhang1san1 ren2-wei2 Li3si4 zai4 jiao4       
+Zhangsan believe Lisi DUR bark       
+Zhangsan believes Lisi to be barking.           
+           
+Id: 82           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 叫 打扰 了 李四
+Zhang1san1 jiao4 da3-rao3 le Li3si4      
+Zhangsan bark bother PFV Lisi      
+It bothered Lisi that Zhangsan barked.           
+           
+Id: 83           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 花 了 十 分钟 到
+Zhang1san1 hua1 le shi2 fen1-zhong1 dao4       
+Zhangsan spend PFV ten o'clock arrive       
+It took Zhangsan 10 minutes to arrive.           
+           
+Id: 84           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 让 李四 叫
+Zhang1san1 rang4 Li3si4 jiao4
+Zhangsan let Lisi bark.
+Zhangsan left it to Lisi to bark.     
+           
+Id: 85           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 觉得 李四 老
+Zhang1san1 jue2de Li3si4 lao3
+Zhangsan consider Lisi old  
+Lisi strikes Zhangsan as old.
+           
+Id: 86           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d 
+Comment: tans. revised to be more faithful
+
+张三 觉得 李四 老
+Zhang1san1 jue2de Li3si4 lao3
+Zhangsan consider Lisi old
+Zhangsan considers Lisi as old.
+           
+Id: 87           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 喜欢 李四 会 叫 的 想法
+Zhang1san1 xi3-huan1 Li3si4 hui4 jiao4 de xiang3-fa3    
+Zhangsan like Lisi able bark ASSOC idea     
+Zhangsan liked the idea that Lisi could bark.
+           
+Id: 88           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: prep
+
+张三 从 10 点 叫 到 3 点
+Zhang1san1 cong2 10 dian3 jiao4 dao4 3 dian3    
+Zhangsan from 10 o’clock bark to 3 o’clock    
+Zhangsan barked from 10 to 3.           
+           
+Id: 89           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adj
+
+以前 张三 很 老
+Yi3qian2 Zhang1san1 hen3 lao3       
+Before Zhangsan very old       
+Zhangsan was very old.           
+           
+Id: 90           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adv
+
+差不多 每 一 只 狗 都 叫 了
+Cha4－bu-duo1 mei3 yi1 zhi1 gou3 dou1 jiao4 le
+Almost every one CL dog all bark PFV
+Nearly every dog barked.           
+           
+Id: 91           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adv
+
+张三 很 轻 地 叫
+Zhang1san1 hen3 qing1 de jiao4        
+Zhangsan very soft ly bark        
+Zhangsan barked very softly.
+           
+Id: 92           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 追赶 猫 打扰 了 李四   
+Zhang1san1 zhui1-gan3 mao1 da3-rao3 le Li3si4  
+Zhangsan chase cat bother PFV Lisi   
+Zhang's chasing of cats botherd Lisi.          
+           
+Id: 93           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: emb-d
+
+张三 追赶 猫 打扰 了 李四      
+Zhang1san1 zhui1-gan3 mao1 da3-rao3 le Li3si4     
+Zhangsan chase cat bother PFV Lisi      
+It bothered Lisi that Zhangsan chased cats.           
+           
+Id: 94           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adv
+
+六月 三号 到 了
+Liu4-yue3 san1-hao4 dao4 le         
+June 3-rd arrive PFV        
+June 3rd arrived.           
+           
+Id: 95           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adv
+
+张三 三点 二十分 到 了
+Zhang1san1 san1-dian3 er2-shi2-fen1 dao4 le
+Zhangsan 3-hour 20-minute arrive PFV
+Zhangsan arrived at three twenty.           
+           
+Id: 96           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adv
+
+张三 星期二 早上 到 了
+Zhang1san1 xing1-qi1-er2 zao3-shang4 dao4 le      
+Zhangsan Tuesday morning arrive PFV
+Zhangsan arrived on Tuesday morning.           
+           
+Id: 97           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: det
+
+那 些 猫 找到 了 叫 的 方法
+Na4 xie1 mao1 zhao3-dao4 le jiao4 de fang1-fa3     
+That few cat find PFV bark NOM method     
+The cats found a way to bark.    
+           
+Id: 98           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adv
+
+那 只 比较 快乐 的 狗 追赶 了 张三
+Na4 zhi1 bi3-jiao4 kuai4-le4 de gou3 zhui1-gan3 le Zhang1san1   
+that CL Comparative happy ASSOC dog chase PFV Zhangsan   
+The happier dog chased Zhangsan.
+           
+Id: 99           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+以前 花园 里 有 猫       
+Yi3qian2 hua1-yuan2 li3 you3 mao1       
+Before garden in exist cat       
+There were cats in the garden.
+           
+Id: 100           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: det
+
+那 只 狗 追赶 了 张三
+Na4 zhi1 gou3 zhui1-gan3 le Zhang1san1      
+That CL dog chase PFV Zhangsan      
+That dog chased Zhangsan.           
+           
+Id: 101           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: det
+
+有 人 追赶 了 张三
+You3 ren2 zhui1-gan3 le Zhang1san1       
+Exist man chase PFV Zhangsan       
+Somebody chased Zhangsan.
+           
+Id: 102           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: q
+
+张三 有 多 高兴 ?
+Zhang1san1 you3 duo1 gao1-xing4       
+Zhangsan have how-much happy       
+How happy was Zhangsan?           
+           
+Id: 103           
+Source: MRS           
+Vetted: t           
+Judgment: g
+Phenom: tam, agency
+
+号码 五 困扰 张三
+Hao4-ma3 wu3 kun4-rao3 Zhang1san1       
+Number 5 bother zhangsan.        
+The number five bothers Zhangsan.
+           
+Id: 104           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+张三 能
+Zhang1san1 neng2          
+Zhangsan can           
+Zhangsan could.
+           
+Id: 105           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+Comment: unacceptable without le unless in imperative clause
+
+张三 试 了
+Zhang1san1 shi4 le        
+Zhangsan try PFV         
+Zhangsan tried.           
+           
+Id: 106           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: tam
+
+别 叫 !
+Bie2 jiao4          
+Don’t bark          
+Don’t bark!           
+           
+Id: 107           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenom: adv
+
+狗 到 的 时候 在 叫
+gou3 dao4 de  shi2-hou zai4 jiao4      
+dog arrive ASSOC time DUR bark      
+The dog arrived barking.
