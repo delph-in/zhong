@@ -19,6 +19,6 @@
 ;;; the list lexicographically before output.
 ;;;
 
-(((:path . "lab2") (:content . "Test suite created in lab 2")))
+(((:path . "mrs") (:content . "The MRS testsuite")))
 
  
