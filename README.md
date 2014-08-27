@@ -18,3 +18,4 @@ which is based on the [Grammar Matrix](http://www.delph-in.net/matrix/).
   * [Traditional](cmn/hant/)
   * [Simplified](cmn/hans/)
 * [Cantonese](yue/)
+* Min (forthcoming)
