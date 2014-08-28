@@ -1,0 +1,6 @@
+;;;; settings for CHEAP -*- Mode: TDL; Coding: utf-8 -*-
+
+;;; created by Sanghoun Song (SSH, 2014-08-25)
+
+include "flop".
+include "pet".

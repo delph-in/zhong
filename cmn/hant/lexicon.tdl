@@ -1,0 +1,60 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+
+;;; created by Sanghoun Song (SSH, 2014-08-25)
+
+;;; Nouns
+我_n := 1sg-pronoun-noun-lex &
+  [ STEM < "我" >].
+
+張三_n := proper-noun-lex &
+  [ STEM < "張三" >,
+    SYNSEM.LKEYS.KEYREL.CARG "Zhang1san1" ].
+
+李四_n := proper-noun-lex &
+  [ STEM < "李四" >,
+    SYNSEM.LKEYS.KEYREL.CARG "Li3si4" ].
+
+;;; Verbs
+
+叫_v := v_intrans-verb-lex &
+  [ STEM < "叫" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_jiao4_v_1_rel" ].
+
+追趕_v := v_trans-verb-lex &
+  [ STEM < "追趕" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zhui1gan3_v_rel" ].
+
+
+;;;Adjectives
+
+
+了_crs := int-adv-s-post & 
+  [ STEM <"了">,
+    SYNSEM.LKEYS.KEYREL.PRED "_le_a_rel" ].
+
+了_pfv := le-pfv-v-post &
+  [ STEM <"了">].
+
+
+;;Classifiers
+
+
+
+;;; Auxiliaries
+
+
+
+;;; Particles
+
+;;Conjunctions
+
+
+
+;;; Additions
+
+
+
+;;Interesting features here
+
+
+
