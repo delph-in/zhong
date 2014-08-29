@@ -1,3 +1,4 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
 ; A basic VPM for Matrix grammars.
 event          <> e
 ref-ind        <> x
@@ -35,3 +36,14 @@ COG-ST : COG-ST
   activ-or-less <> activ-or-less
   * <> *
 
+;PNG : PNG
+;  * <> *
+
+;E.TENSE : E.TENSE
+;  * <> *
+
+;E.ASPECT : E.ASPECT
+;  * <> *
+
+;E.MOOD : E.MOOD
+;  * <> *

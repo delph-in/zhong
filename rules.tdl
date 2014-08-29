@@ -1,3 +1,5 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+
 head-comp := head-comp-phrase.
 
 subj-head := subj-head-phrase.
@@ -109,7 +111,7 @@ head-opt-comp := head-opt-comp-phrase.
 
 comp-head-final := comp-head-final-phrase.
 
-head-filler := head-filler-phrase.
+filler-head := filler-head-phrase.
 
 extracted-comp := extracted-comp-phrase.
 
