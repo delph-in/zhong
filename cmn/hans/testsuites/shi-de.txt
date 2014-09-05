@@ -1,0 +1,38 @@
+Id: sh-1
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenom: shi...de
+Comment: focus on an adverb, intransitive verb
+
+我 是 昨天 来 的 。
+Wo3 shi4 zuo2tian1 lai2 de .
+I am yesterday come NOM .
+It was yesterday that I came.
+
+
+Id: sh-2
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenom: shi...de
+Comment: focus on an adverb, transitive verb
+
+我 是 昨天 来 学校 的 。
+Wo3 shi4 zuo2tian1 lai2 xue2xiao4 de.
+I am yesterday come school NOM
+It was yesterday that I came to school.
+
+
+Id: sh-3
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenom: shi...de
+Comment: This is another type of shi...de constrctions. In this type, 是 is a copula.
+
+电脑 是 我 的 。
+Dian4nao3 shi4 wo3 de .
+Computer is I NOM .
+The computer is mine.
+

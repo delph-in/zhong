@@ -1,0 +1,103 @@
+Id: le-1
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenom: le
+Comment: 了 can be used twice in a single sentence.
+
+张三 吃 了 饭 了 。
+Zhang1san1 chi1 le fan4 le .
+Zhangsan eat PFV meal CRS .
+Zhangsan has eaten.
+
+
+Id: le-2
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenom: le
+Comment: 了 can be used twice in a single sentence.
+
+张三 已经 吃 了 饭 了 。
+Zhang1san1 yi3jing chi1 le fan4 le .
+Zhangsan already eat PFV meal CRS .
+Zhangsan has already eaten.
+
+
+Id: le-3
+Source: NTU compling
+Vetted: t
+Judgment:u
+Phenom: le
+Comment: 了 cannot be used sequentially.
+
+张三 叫 了 了 。
+Zhang1san1 jiao4 le le .
+Zhangsan scream PFV CRS .
+Zhangsan screamed.
+
+
+Id: le-4
+Source: NTU compling
+Vetted: t
+Judgment: u
+Phenom: le
+Comment: 了 cannot be used sequentially.
+
+张三 吃 饭 了 了 。
+Zhang1san1 chi1 fan4 le le .
+Zhangsan eat meal PFV CRS
+Zhangsan has eaten.
+
+
+Id: le-5
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenom: le
+Comment: 了 can co-occur with 吗.
+
+张三 吃 饭 了 吗 ？
+Zhang1san1 chi1 fan4 le ma ?
+Zhangsan eat meal PFV Q ?
+Has Zhangsan eaten?
+
+
+Id: le-6
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenom: le
+Comment: 了 can appear right after the verb in Y/N questions.
+
+张三 吃 了 饭 吗 ？
+Zhang1san1 chi1 le fan4 ma ?
+Zhangsan eat PFV meal Q ?
+Has Zhangsan eaten?
+
+
+Id: le-7
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenom: le
+Comment: 了 can appear twice and with 吗.
+
+张三 吃 了 饭 了 吗 ？
+Zhang1san1 chi1 le fan4 le ma ?
+Zhangsan eat PFV meal CRS Q ?
+Has Zhangsan eaten?
+
+
+Id: le-8
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenom: le
+Comment: 吗 can be used without 了.
+
+张三 吃 饭 吗 ？
+Zhang1san1 chi1 fan4 ma ?
+Zhangsan eat meal Q ?
+Does Zhangsan (want to) eat?
+

@@ -1,0 +1,117 @@
+Id: tc-1
+Source: NTU compling  
+Vetted: t 
+Judgment: g 
+Phenom: topic-comment 
+Comment: This construction is sometimes called "Possessive-Raising" (i.e., Zhangsan's height is tall.) (Ura, 1996).  It may have two different readings.
+
+张三 个子 很 高 。
+Zhang1san1 ge4zi hen3 gao1 .
+Zhangsan height very tall .
+As for Zhangsan, he is very tall. / Zhangsan’s stature is very tall.
+
+
+Id: tc-2
+Source: NTU compling  
+Vetted: t 
+Judgment: g 
+Phenom: topic-comment 
+Comment: The first NP and the second NP can be combined with each other in possessive relation.
+
+张三 的 个子 很 高 。
+Zhang1san1 de ge4zi hen3 gao1 .
+Zhangsan NOM height very tall .
+Zhangsan’s stature  is very tall.
+
+
+Id: tc-3
+Source: NTU compling  
+Vetted: t 
+Judgment: g 
+Phenom: topic-comment 
+Comment: There seems no possessive relation betweeh the first two NPs.
+
+张三 桌子 做 得 很 好 。
+Zhang1san1 zhuo1zi zuo4 de hen3 hao1 .
+Zhangsan table make DE very good .
+As for Zhangsan, he makes tables very well.
+
+
+Id: tc-4
+Source: NTU compling  
+Vetted: t 
+Judgment: g 
+Phenom: topic-comment 
+Comment: 的 can be inserted between the first two NPs to form possessive raising. 
+
+张三 的 桌子 做 得 很 好 。
+Zhang1san1 de zhuo1zi zuo4 de hen3 hao1 .
+Zhangsan NOM table make DE very good .
+Zhangsan’s table is very well made.
+
+
+Id: tc-5
+Source: NTU compling  
+Vetted: t 
+Judgment: g 
+Phenom: topic-comment 
+Comment: This is another type of topic-comment constructions. The subject and the verb are inverted. This sentence cannot involve possesive raising.
+
+张三 死 了 父亲 。
+Zhang1san1 si3 le fu4qin .
+Zhangsan die PFV father .
+Zhangsan’s father is dead.
+As for Zhangsan, his father is dead.
+
+
+Id: tc-6 
+Source: NTU compling  
+Vetted: t 
+Judgment: g 
+Phenom: topic-comment 
+Comment: This sentence (without inversion) can be ambiguously read.
+
+张三 父亲 死 了 。
+Zhang1san1 fu4qin si3 le .
+Zhangsan father die PFV .
+As for Zhangsan, his father is dead.
+
+
+Id: tc-7
+Source: NTU compling  
+Vetted: t 
+Judgment: g 
+Phenom: topic-comment 
+Comment: 的 can be inserted between the first two NPs, if there is no inversion.
+
+张三 的 父亲 死 了 。
+Zhang1san1 de fu4qin si3 le .
+Zhangsan  NOM father die PFV .
+Zhangsan’s father is dead.
+
+
+Id: tc-8
+Source: NTU compling  
+Vetted: t 
+Judgment: g 
+Phenom: topic-comment 
+Comment: OSV, when the object is associated with topic. In this case, 这本书 should be analyzed as the object (ARG2) of the main verb, and the topicalized constituent can the rest of sentence are combined with each other as head-filler-phrase. 
+
+这 本 书 我 看 了 。
+zhe4 ben3 shu1 wo3 kan4 le .
+This CL book I read PFV .
+This book, I have read it.
+
+
+Id: tc-9
+Source: NTU compling  
+Vetted: t 
+Judgment: g 
+Phenom: topic-comment 
+Comment: OSV, when the object is associated with topic. This sentence looks like a resultative construction.
+
+衣服 张三 洗 干净 了 。
+yi1fu Zhang1san1 xi3 gan1jing4 le .
+Clothes Zhangsan wash clean PFV .
+About the clothes, Zhangsan has washed them clean.
+
