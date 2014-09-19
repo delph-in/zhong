@@ -1,101 +1,1345 @@
-Id: le-1
+Language: Mandarin Chinese (simplified)
+Language code: cmn
+Lines: orth translit gloss translat
+Author: Sanghoun Song, Bo Chen, Luis Morgado da Costa
+Date: 2014-09-04
+
+### 
+Source:  an experiment with native speakers
+Vetted: t
+Judgment: g
+Phenomena: le, guo, yao, negation
+我 不 去 。
+wo3 bu4 qu4 .
+I NEG go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 不 去 了。
+wo3 bu4 qu4 了。
+I NEG go 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 没 去 过 。
+wo3 mei2 qu4 guo4 .
+I NEG(PFV) go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 要 去 。
+wo3 yao4 qu4 .
+I want/will go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去 北京 了。
+wo3 qu4 Bei3jing1 了。
+I go Beijing 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去 了 北京 。
+wo3 qu4 le Bei3jing1 .
+I go PFV Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 没 去 北京 。
+wo3 mei2 qu4 Bei3jing1 .
+I NEG(PFV) go Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去 过 北京 。
+wo3 qu4 guo4 Bei3jing1 .
+I go EXP Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 要 去 北京 。
+wo3 yao4 qu4 Bei3jing1 .
+I want/will go Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去。
+wo3 去。
+I 去。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去 了。
+wo3 qu4 了。
+I go 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 没 去 。
+wo3 mei2 qu4 .
+I NEG(PFV) go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 要 去 了 。
+wo3 yao4 qu4 le .
+I want/will go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去 北京 。
+wo3 qu4 Bei3jing1 .
+I go Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 不 去 北京 。
+wo3 bu4 qu4 Bei3jing1 .
+I NEG go Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 不 去 北京 了。
+wo3 bu4 qu4 Bei3jing1 了。
+I NEG go Beijing 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去 过 北京 了 。
+wo3 qu4 guo4 Bei3jing1 le .
+I go EXP Beijing PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+北京 我 去 过 。
+Bei3jing1 wo3 qu4 guo4 .
+Beijing I go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+北京 我 去 过 了 。
+Bei3jing1 wo3 qu4 guo4 le .
+Beijing I go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 没 去 过 北京 。
+wo3 mei2 qu4 guo4 Bei3jing1 .
+I NEG(PFV) go EXP Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+北京 我 没 去 过 。
+Bei3jing1 wo3 mei2 qu4 guo4 .
+Beijing I NEG(PFV) go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 要 去 北京 了 。
+wo3 yao4 qu4 Bei3jing1 le .
+I want/will go Beijing PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去 过 。
+wo3 qu4 guo4 .
+I go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去 过 了 。
+wo3 qu4 guo4 le .
+I go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+北京 我 没 去 。
+Bei3jing1 wo3 mei2 qu4 .
+Beijing I NEG(PFV) go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+北京 我 要 去 。
+Bei3jing1 wo3 yao4 qu4 .
+Beijing I want/will go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去 了 北京 了 。
+wo3 qu4 le Bei3jing1 le .
+I go PFV Beijing PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+北京 我 不 去 。
+Bei3jing1 wo3 bu4 qu4 .
+Beijing I NEG go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+北京 我 不 去 了。
+Bei3jing1 wo3 bu4 qu4 了。
+Beijing I NEG go 了。
+TRANSLATION
+
+### This sentence is marginal (79%).
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+北京 我 去 了。
+Bei3jing1 wo3 qu4 了。
+Beijing I go 了。
+TRANSLATION
+
+### This sentence is marginal (71%).
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+北京 我 去 。
+Bei3jing1 wo3 qu4 .
+Beijing I go .
+TRANSLATION
+
+### This sentence is marginal (71%).
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: g
+Phenomena: le, guo, yao, negation 
+我 去 过 了 北京 。
+wo3 qu4 guo4 le Bei3jing1 .
+I go EXP PFV Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 我 没 去 了。
+Bei3jing1 wo3 mei2 qu4 了。
+Beijing I NEG(PFV) go 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 没 去 。
+wo3 Bei3jing1 mei2 qu4 .
+I Beijing NEG(PFV) go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 没 去 过 。
+wo3 Bei3jing1 mei2 qu4 guo4 .
+I Beijing NEG(PFV) go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 不 去 了。
+wo3 Bei3jing1 bu4 qu4 了。
+I Beijing NEG go 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 去 过 了 。
+wo3 Bei3jing1 qu4 guo4 le .
+I Beijing go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 去 了。
+wo3 Bei3jing1 qu4 了。
+I Beijing go 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 我 要 去 了 。
+Bei3jing1 wo3 yao4 qu4 le .
+Beijing I want/will go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 没 去 了 。
+wo3 mei2 qu4 le .
+I NEG(PFV) go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 没 去 北京 了。
+wo3 mei2 qu4 Bei3jing1 了。
+I NEG(PFV) go Beijing 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 去 过 。
+wo3 Bei3jing1 qu4 guo4 .
+I Beijing go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 不 去 。
+wo3 Bei3jing1 bu4 qu4 .
+I Beijing NEG go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 去 。
+wo3 Bei3jing1 qu4 .
+I Beijing go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 北京 去 。
+wo3 yao4 Bei3jing1 qu4 .
+I want/will Beijing go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 北京 去 了 。
+wo3 yao4 Bei3jing1 qu4 le .
+I want/will Beijing go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 要 去 。
+wo3 Bei3jing1 yao4 qu4 .
+I Beijing want/will go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 没 去 过 了 。
+wo3 mei2 qu4 guo4 le .
+I NEG(PFV) go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 没 去 了。
+wo3 Bei3jing1 mei2 qu4 了。
+I Beijing NEG(PFV) go 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 去 过 了 北京 了 。
+wo3 qu4 guo4 le Bei3jing1 le .
+I go EXP PFV Beijing PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 我 没 去 过 了 。
+Bei3jing1 wo3 mei2 qu4 guo4 le .
+Beijing I NEG(PFV) go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 去 。
+wo3 yao4 le qu4 .
+I want/will PFV go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 要 去 了 。
+wo3 Bei3jing1 yao4 qu4 le .
+I Beijing want/will go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 没 去 过 北京 了 。
+wo3 mei2 qu4 guo4 Bei3jing1 le .
+I NEG(PFV) go EXP Beijing PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 没 去 过 了 。
+wo3 Bei3jing1 mei2 qu4 guo4 le .
+I Beijing NEG(PFV) go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 去 北京 。
+wo3 yao4 le qu4 Bei3jing1 .
+I want/will PFV go Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 去 了 北京 。
+wo3 yao4 qu4 le Bei3jing1 .
+I want/will go PFV Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 去 过 了 。
+wo3 yao4 le qu4 guo4 le .
+I want/will PFV go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 去 了 北京 。
+wo3 yao4 le qu4 le Bei3jing1 .
+I want/will PFV go PFV Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 我 要 了 去 。
+Bei3jing1 wo3 yao4 le qu4 .
+Beijing I want/will PFV go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 我 要 了 去 了 。
+Bei3jing1 wo3 yao4 le qu4 le .
+Beijing I want/will PFV go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 去 了 。
+wo3 yao4 le qu4 le .
+I want/will PFV go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 去 过 。
+wo3 yao4 qu4 guo4 .
+I want/will go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 去 了 过 。
+wo3 yao4 qu4 le guo4 .
+I want/will go PFV EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 去 过 。
+wo3 yao4 le qu4 guo4 .
+I want/will PFV go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 去 。
+wo3 Bei3jing1 le qu4 .
+I Beijing PFV go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 不 去 了 北京 了。
+wo3 bu4 qu4 le Bei3jing1 了。
+I NEG go PFV Beijing 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 没 去 了 北京 了。
+wo3 mei2 qu4 le Bei3jing1 了。
+I NEG(PFV) go PFV Beijing 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 去 了 北京 了。
+wo3 yao4 qu4 le Bei3jing1 了。
+I want/will go PFV Beijing 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 去 北京 了 。
+wo3 yao4 le qu4 Bei3jing1 le .
+I want/will PFV go Beijing PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 去 了 北京 了 。
+wo3 yao4 le qu4 le Bei3jing1 le .
+I want/will PFV go PFV Beijing PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 北京 去 。
+wo3 yao4 le Bei3jing1 qu4 .
+I want/will PFV Beijing go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 北京 去 了 。
+wo3 yao4 le Bei3jing1 qu4 le .
+I want/will PFV Beijing go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 要 了 去 了 。
+Bei3jing1 le wo3 yao4 le qu4 le .
+Beijing PFV I want/will PFV go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 不 去 过 。
+wo3 bu4 qu4 guo4 .
+I NEG go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 不 去 过 了 。
+wo3 bu4 qu4 guo4 le .
+I NEG go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 不 去 了 过 。
+wo3 bu4 qu4 le guo4 .
+I NEG go PFV EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 不 去 了 过 了 。
+wo3 bu4 qu4 le guo4 le .
+I NEG go PFV EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 没 去 了 过 。
+wo3 mei2 qu4 le guo4 .
+I NEG(PFV) go PFV EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 没 去 了 过 了 。
+wo3 mei2 qu4 le guo4 le .
+I NEG(PFV) go PFV EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 去 过 了 。
+wo3 yao4 qu4 guo4 le .
+I want/will go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 去 了 过 了 。
+wo3 yao4 qu4 le guo4 le .
+I want/will go PFV EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 去 了 过 。
+wo3 yao4 le qu4 le guo4 .
+I want/will PFV go PFV EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 去 了 过 了 。
+wo3 yao4 le qu4 le guo4 le .
+I want/will PFV go PFV EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 去 了 。
+wo3 Bei3jing1 le qu4 le .
+I Beijing PFV go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 去 。
+Bei3jing1 le wo3 qu4 .
+Beijing PFV I go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 去 了 。
+Bei3jing1 le wo3 qu4 le .
+Beijing PFV I go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 不 去 了 。
+wo3 Bei3jing1 le bu4 qu4 le .
+I Beijing PFV NEG go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 不 去 了 。
+Bei3jing1 le wo3 bu4 qu4 le .
+Beijing PFV I NEG go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 没 去 了 。
+wo3 Bei3jing1 le mei2 qu4 le .
+I Beijing PFV NEG(PFV) go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 没 去 了 。
+Bei3jing1 le wo3 mei2 qu4 le .
+Beijing PFV I NEG(PFV) go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 去 过 。
+wo3 Bei3jing1 le qu4 guo4 .
+I Beijing PFV go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 去 过 了 。
+wo3 Bei3jing1 le qu4 guo4 le .
+I Beijing PFV go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 我 了 去 过 。
+Bei3jing1 wo3 le qu4 guo4 .
+Beijing I PFV go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 去 过 了 。
+Bei3jing1 le wo3 qu4 guo4 le .
+Beijing PFV I go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 不 去 过 北京 。
+wo3 bu4 qu4 guo4 Bei3jing1 .
+I NEG go EXP Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 不 去 过 北京 了 。
+wo3 bu4 qu4 guo4 Bei3jing1 le .
+I NEG go EXP Beijing PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 不 去 过 了 北京 。
+wo3 bu4 qu4 guo4 le Bei3jing1 .
+I NEG go EXP PFV Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 不 去 过 了 北京 了 。
+wo3 bu4 qu4 guo4 le Bei3jing1 le .
+I NEG go EXP PFV Beijing PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 不 去 过 。
+wo3 Bei3jing1 bu4 qu4 guo4 .
+I Beijing NEG go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 不 去 过 了 。
+wo3 Bei3jing1 bu4 qu4 guo4 le .
+I Beijing NEG go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 不 去 过 。
+wo3 Bei3jing1 le bu4 qu4 guo4 .
+I Beijing PFV NEG go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 不 去 过 了 。
+wo3 Bei3jing1 le bu4 qu4 guo4 le .
+I Beijing PFV NEG go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 我 不 去 过 。
+Bei3jing1 wo3 bu4 qu4 guo4 .
+Beijing I NEG go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 我 不 去 过 了 。
+Bei3jing1 wo3 bu4 qu4 guo4 le .
+Beijing I NEG go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 我 了 不 去 过 。
+Bei3jing1 wo3 le bu4 qu4 guo4 .
+Beijing I PFV NEG go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 不 去 过 了 。
+Bei3jing1 le wo3 bu4 qu4 guo4 le .
+Beijing PFV I NEG go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 没 去 过 了 北京 。
+wo3 mei2 qu4 guo4 le Bei3jing1 .
+I NEG(PFV) go EXP PFV Beijing .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 没 去 过 了 北京 了 。
+wo3 mei2 qu4 guo4 le Bei3jing1 le .
+I NEG(PFV) go EXP PFV Beijing PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 没 去 过 。
+wo3 Bei3jing1 le mei2 qu4 guo4 .
+I Beijing PFV NEG(PFV) go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 没 去 过 了 。
+wo3 Bei3jing1 le mei2 qu4 guo4 le .
+I Beijing PFV NEG(PFV) go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 我 了 没 去 过 。
+Bei3jing1 wo3 le mei2 qu4 guo4 .
+Beijing I PFV NEG(PFV) go EXP .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 没 去 过 了 。
+Bei3jing1 le wo3 mei2 qu4 guo4 le .
+Beijing PFV I NEG(PFV) go EXP PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 北京 了 去 。
+wo3 yao4 le Bei3jing1 le qu4 .
+I want/will PFV Beijing PFV go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 了 北京 了 去  了。
+wo3 yao4 le Bei3jing1 le qu4 了。
+I want/will PFV Beijing PFV go 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 北京 了 去 。
+wo3 yao4 Bei3jing1 le qu4 .
+I want/will Beijing PFV go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 要 北京 了 去 了。
+wo3 yao4 Bei3jing1 le qu4 了。
+I want/will Beijing PFV go 了。
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 要 了 去 。
+wo3 Bei3jing1 yao4 le qu4 .
+I Beijing want/will PFV go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 要 了 去 了 。
+wo3 Bei3jing1 yao4 le qu4 le .
+I Beijing want/will PFV go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 要 去 。
+wo3 Bei3jing1 le yao4 qu4 .
+I Beijing PFV want/will go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 要 去 了 。
+wo3 Bei3jing1 le yao4 qu4 le .
+I Beijing PFV want/will go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 要 了 去 。
+wo3 Bei3jing1 le yao4 le qu4 .
+I Beijing PFV want/will PFV go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+我 北京 了 要 了 去 了 。
+wo3 Bei3jing1 le yao4 le qu4 le .
+I Beijing PFV want/will PFV go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 要 去 。
+Bei3jing1 le wo3 yao4 qu4 .
+Beijing PFV I want/will go .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 要 去 了 。
+Bei3jing1 le wo3 yao4 qu4 le .
+Beijing PFV I want/will go PFV .
+TRANSLATION
+
+### 
+Source:  an experiment with native speakers 
+Vetted: t 
+Judgment: u
+Phenomena: le, guo, yao, negation 
+北京 了 我 要 了 去 。
+Bei3jing1 le wo3 yao4 le qu4 .
+Beijing PFV I want/will PFV go .
+TRANSLATION
+
+
+### 了 can be used twice in a single sentence.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: le
-Comment: 了 can be used twice in a single sentence.
-
+Phenomena: le
 张三 吃 了 饭 了 。
 Zhang1san1 chi1 le fan4 le .
 Zhangsan eat PFV meal CRS .
 Zhangsan has eaten.
 
-
-Id: le-2
+### 了 can be used twice in a single sentence.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: le
-Comment: 了 can be used twice in a single sentence.
-
+Phenomena: le
 张三 已经 吃 了 饭 了 。
 Zhang1san1 yi3jing chi1 le fan4 le .
 Zhangsan already eat PFV meal CRS .
 Zhangsan has already eaten.
 
-
-Id: le-3
+### 了 cannot be used sequentially.
 Source: NTU compling
 Vetted: t
 Judgment:u
-Phenom: le
-Comment: 了 cannot be used sequentially.
-
+Phenomena: le
 张三 叫 了 了 。
 Zhang1san1 jiao4 le le .
 Zhangsan scream PFV CRS .
 Zhangsan screamed.
 
-
-Id: le-4
+### 了 cannot be used sequentially.
 Source: NTU compling
 Vetted: t
 Judgment: u
-Phenom: le
-Comment: 了 cannot be used sequentially.
-
+Phenomena: le
 张三 吃 饭 了 了 。
 Zhang1san1 chi1 fan4 le le .
 Zhangsan eat meal PFV CRS
 Zhangsan has eaten.
 
-
-Id: le-5
+### 了 can co-occur with 吗.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: le
-Comment: 了 can co-occur with 吗.
-
+Phenomena: le
 张三 吃 饭 了 吗 ？
 Zhang1san1 chi1 fan4 le ma ?
 Zhangsan eat meal PFV Q ?
 Has Zhangsan eaten?
 
-
-Id: le-6
+### 了 can appear right after the verb in Y/N questions.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: le
-Comment: 了 can appear right after the verb in Y/N questions.
-
+Phenomena: le
 张三 吃 了 饭 吗 ？
 Zhang1san1 chi1 le fan4 ma ?
 Zhangsan eat PFV meal Q ?
 Has Zhangsan eaten?
 
-
-Id: le-7
+### 了 can appear twice and with 吗.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: le
-Comment: 了 can appear twice and with 吗.
-
+Phenomena: le
 张三 吃 了 饭 了 吗 ？
 Zhang1san1 chi1 le fan4 le ma ?
 Zhangsan eat PFV meal CRS Q ?
 Has Zhangsan eaten?
 
-
-Id: le-8
+### 吗 can be used without 了.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: le
-Comment: 吗 can be used without 了.
-
+Phenomena: le
 张三 吃 饭 吗 ？
 Zhang1san1 chi1 fan4 ma ?
 Zhangsan eat meal Q ?

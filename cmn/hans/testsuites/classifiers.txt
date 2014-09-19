@@ -1,88 +1,75 @@
-Id: cl-1
+Language: Mandarin Chinese (simplified)
+Language code: cmn
+Lines: orth translit gloss translat
+Author: Sanghoun Song, Bo Chen, Luis Morgado da Costa
+Date: 2014-09-04
+
+### 个 is the default classifier.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: classifiers
-Comment: 个 is the default classifier.
-
+Phenomena: classifiers
 张三 卖 了 两 个 电脑 。
 Zhang1san1 mai4 le liang3 ge4 dian4nao3 .
 Zhangsan sell PFV two CL computer .
 Zhangsan sold two computers.
 
-
-Id: cl-2
+### 台 can be used with something like a box, including computers, cars, machine.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: classifiers
-Comment: 台 can be used with something like a box, including computers, cars, machine.
-
+Phenomena: classifiers
 张三 卖 了 两 台 电脑 。
 Zhang1san1 mai4 le liang3 tai2 dian4nao3 .
 Zhangsan sell PFV two CL computer .
 Zhangsan sold two computers.
 
-
-Id: cl-3
+### 瓶 means bottle (... bottle of ...)
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: classifiers
-Comment: 瓶 means bottle (... bottle of ...)
-
+Phenomena: classifiers
 张三卖 了 两 瓶 酒 。
 Zhang1san1 mai4 le liang3 ping2 jiu3 .
 Zhangsan sell PFV two bottle(CL) wine .
 Zhangsan sold two bottles of wine.
 
-
-Id: cl-4
+### 张 can be used with something flat.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: classifiers
-Comment: 张 can be used with something flat.
-
+Phenomena: classifiers
 张三 卖 了 两 张 桌子 。
 Zhang1san1 mai4 le liang3 zhang1 zhuo1zi .
 Zhangsan sell PFV two CL table .
 Zhangsan sold two tables.
 
-
-Id: cl-5
+### 支 can be used with something like sticks, candles, and cigarette.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: classifiers
-Comment: 支 can be used with something like sticks, candles, and cigarette.
-
+Phenomena: classifiers
 张三 卖 了 两 支 笔 。
 Zhang1san1 mai4 le liang3 zhi1 bi3 .
 Zhangsan sell PFV two CL pen sell PFV .
 Zhangsan sold two pens.
 
-
-Id: cl-6
+### 本 is a classifier for books and magazines.
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: classifiers
-Comment: 本 is a classifier for books and magazines.
-
+Phenomena: classifiers
 张三 卖 了 两 本 书 。
 Zhang1san1 mai4 le liang3 ben3 shu1 .
 Zhangsan sell PFV two CL book .
 Zhangsan sold two books.
 
 
-Id: cl-7
+### classifiers in a different construction
 Source: NTU compling
 Vetted: t
 Judgment: g
-Phenom: classifiers
-Comment: classifiers in a different construction
-
+Phenomena: classifiers
 张三 的 两 个 电脑 卖 了 。
 Zhang1san1 de liang3 ge4 dian4nao3 mai4 le .
 Zhangsan NOM two CL computer sell PFV .
