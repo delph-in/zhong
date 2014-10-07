@@ -1,18 +1,121 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
 ;;; created by Sanghoun Song (SSH, 2014-08-25)
+;;; SSH 2014-10-07: converted from lexicon.tdl of hans, 
+;;; using http://www.chinese-tools.com/tools/converter-simptrad.html
+
+;;; Proper names in MatrixMrsTestSuiteZhTw
+
+小明_n := proper-noun-lex &
+  [ STEM < "小明" >,
+    SYNSEM.LKEYS.KEYREL.CARG "Xiao3ming2" ].
+
+老王_n := proper-noun-lex &
+  [ STEM < "老王" >,
+    SYNSEM.LKEYS.KEYREL.CARG "Lao3wang2" ].
 
 ;;; Nouns
 我_n := 1sg-pronoun-noun-lex &
   [ STEM < "我" >].
 
+你_n := 2sg-pronoun-noun-lex &
+  [ STEM < "你" >].
+
+他_n := 3sg-pronoun-noun-lex &
+  [ STEM < "他" >].
+
+她_n := 3sg-pronoun-noun-lex &
+  [ STEM < "她" >].
+
+它_n := 3sg-pronoun-noun-lex &
+  [ STEM < "它" >].
+
+我們_n := 1pl-pronoun-incl-noun-lex &
+  [ STEM < "我們" >].
+
+咱們_n := 1pl-pronoun-excl-noun-lex &
+  [ STEM < "咱們" >].
+
+你們_n := 2pl-pronoun-noun-lex &
+  [ STEM < "你們" >].
+
+他們_n := 3pl-pronoun-noun-lex &
+  [ STEM < "他們" >].
+
+她們_n := 3pl-pronoun-noun-lex &
+  [ STEM < "她們" >].
+
+它們_n := 3pl-pronoun-noun-lex &
+  [ STEM < "它們" >].
+
+其中_n := 3-pronoun-noun-lex &
+  [ STEM < "其中" > ].
+
+誰_n := wh-pronoun &
+  [ STEM <"誰">].
+
+什麼_n := wh-pronoun &
+  [ STEM <"什麼">].     
+
+哪_n := wh-pronoun &
+[ STEM <"哪">].
+
+狗_n := count-noun-lex &
+  [ STEM < "狗" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_gou3_n_rel" ].
+
+五_n := count-noun-lex &
+  [ STEM < "五" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_wu3_a_rel" ].
+
+貓_n := count-noun-lex &
+  [ STEM < "貓" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_mao1_n_rel" ].
+
+想法_n := count-noun-lex &
+  [ STEM < "想法" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xiang3fa3_n_rel" ].
+
+飯_n := mass-noun-lex &
+  [ STEM < "飯" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fan4_n_rel" ].
+
+人_n := count-noun-lex &
+  [ STEM < "人" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ren2_n_rel" ].
+
+主席_n := count-noun-lex &
+  [ STEM < "主席" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zhu3xi2_n_rel" ].
+
+家_n := count-noun-lex &
+  [ STEM < "家" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_jia1_n_rel" ].
+
+常務_n := mass-noun-lex &
+  [ STEM <"常務">,
+    SYNSEM.LKEYS.KEYREL.PRED "_chang2wu4_n_rel" ].
+
+劉_n := proper-noun-lex &
+  [ STEM < "劉" >,
+    SYNSEM.LKEYS.KEYREL.CARG "Liu2" ].
+
 張三_n := proper-noun-lex &
   [ STEM < "張三" >,
     SYNSEM.LKEYS.KEYREL.CARG "Zhang1san1" ].
 
+奧申委_n :=  proper-noun-lex &
+  [ STEM < "奧申委" >,
+    SYNSEM.LKEYS.KEYREL.CARG "Ao4shen1wei3" ].
+
 李四_n := proper-noun-lex &
   [ STEM < "李四" >,
     SYNSEM.LKEYS.KEYREL.CARG "Li3si4" ].
+
+水_n := mass-noun-lex &
+  [ STEM < "水" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shui3_n_rel" ].
+
 
 ;;; Verbs
 
@@ -20,41 +123,918 @@
   [ STEM < "叫" >,
     SYNSEM.LKEYS.KEYREL.PRED "_jiao4_v_1_rel" ].
 
-追趕_v := v_trans-verb-lex &
-  [ STEM < "追趕" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_zhui1gan3_v_rel" ].
+來_v := v_intrans-verb-lex &
+  [ STEM < "來" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_lai2_v_1_rel" ].
 
+去_v := v_intrans-verb-lex &
+  [ STEM < "去" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_qu4_v_1_rel" ].
+
+吃_v := v_trans-verb-lex &
+  [ STEM < "吃" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_chi1_v_1_rel" ].
+
+愛_v :=  v_trans-verb-lex &
+  [ STEM <"愛">,
+    SYNSEM.LKEYS.KEYREL.PRED "_ai4_v_rel" ].
+
+追_v := v_trans-verb-lex &
+  [ STEM < "追" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zhui1_v_rel" ].
+
+喜歡_v := v_trans-verb-lex &
+  [ STEM <"喜歡">,
+    SYNSEM.LKEYS.KEYREL.PRED "_xi3huan1_v_rel",
+       ALTS.LE-PFV - ].
+
+做_v := v_trans-verb-lex &
+  [ STEM < "做" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zuo4_v_rel" ].
+
+執行_v := v_trans-verb-lex &
+  [ STEM <"執行">,
+    SYNSEM.LKEYS.KEYREL.PRED "_zhi2xing2_v_rel" ].
+
+爬_v := v_trans-verb-lex &
+  [ STEM < "爬" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pa2_v_rel" ].
+
+組成_v := v_prep-lex-item &
+  [ STEM <"組成">,
+    SYNSEM.LKEYS.KEYREL.PRED "_zu3cheng2_v_rel"].
+
+被_v := v_bei_type_lex &
+  [ STEM <"被">].
+
+把_v1 := v_ba_type_lex &
+  [ STEM <"把">].
+
+下_v := v_weather_type_lex &
+  [ STEM <"下">,
+    SYNSEM.LKEYS.KEYREL.PRED "_xia4_v_rel"].
+
+覺得_v := s-comp-verb-lex &
+  [ STEM <"覺得">,
+    SYNSEM.LKEYS.KEYREL.PRED "_jue3de_v_rel"].
+
+覺得_v2 := np-ap-comp-verb-lex &
+  [ STEM <"覺得">,
+    SYNSEM.LKEYS.KEYREL.PRED "_jue3de_v_rel"].
+
+認為_v := v_trans-verb-lex &
+  [ STEM < "認為" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ren2wei2_v_rel" ].
+
+認為_v2 := s-comp-verb-lex &
+  [ STEM <"認為">,
+    SYNSEM.LKEYS.KEYREL.PRED "_ren4wei4_v_rel"].
+
+相信_v := v_trans-verb-lex &
+  [ STEM < "相信" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xiang1xin4_v_rel" ].
+
+相信_v2 := s-comp-verb-lex &
+  [ STEM <"相信">,
+    SYNSEM.LKEYS.KEYREL.PRED "_xiang1xin4_v_rel"].
+
+說_v := s-comp-verb-lex &
+  [ STEM < "說" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shuo1_v_rel" ].
+
+放進_v  := trans-loc-verb-lex &
+  [ STEM < "放進" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fang4jin4_v_rel" ].
+
+進_v  := v_a-equi-lex &
+  [ STEM < "進" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_jin4_v_rel" ].
+
+進來_v := v_intrans-verb-lex &
+  [ STEM < "進來" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_jin4lai2_v_1_rel" ].
+
+操心_v := v_intrans-verb-lex &
+  [ STEM < "操心" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cao1xin1_v_1_rel" ].
+
+打賭_v := s-comp-verb-lex &
+  [ STEM < "打賭" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_da3du3_v_rel" ].
 
 ;;;Adjectives
 
+紅色_j := pred-adj-lex &
+  [ STEM <"紅色">,
+    SYNSEM.LKEYS.KEYREL.PRED "_hong2se4_a_rel" ].
+
+無聊_j := pred-adj-lex &
+  [ STEM <"無聊">,
+    SYNSEM.LKEYS.KEYREL.PRED "_wu2liao2_a_rel" ].
+
+76_j := num-adj-lex &
+  [ STEM <"76">,
+    SYNSEM.LKEYS.KEYREL.PRED "_76_a_rel" ].
+
+副_j := attr-adj-lex &
+  [ STEM <"副">,
+    SYNSEM.LKEYS.KEYREL.PRED "_fu_a_rel" ].
+
+輕_j := attr-adj-lex &
+  [ STEM <"輕">,
+    SYNSEM.LKEYS.KEYREL.PRED "_qing1_a_rel" ].
+
+久_r1 := int-adv-vp-pre &
+  [ STEM <"久">,
+	SYNSEM.LKEYS.KEYREL.PRED "_jiu3_a_rel" ].
+	
+以前_r1 := int-adv-s-pre &
+  [ STEM <"以前">,
+    SYNSEM.LKEYS.KEYREL.PRED "_yi3qian2_a_rel" ].
+
+小聲_r := int-adv-vp-pre & 
+  [ STEM <"小聲">,
+    SYNSEM.LKEYS.KEYREL.PRED "_xiao3sheng1_a_rel" ].
+
+就_r := int-adv-vp-pre & 
+  [ STEM <"就">,
+	SYNSEM.LKEYS.KEYREL.PRED "_jiu4_a_rel" ].
+
+也_r := int-adv-vp-pre & 
+  [ STEM <"也">,
+    SYNSEM.LKEYS.KEYREL.PRED "_ye3_a_rel" ].
+
+一直_r := int-adv-vp-pre & 
+  [ STEM <"一直">,
+    SYNSEM.LKEYS.KEYREL.PRED "_yi1zhi2_a_rel" ].
+
+已經_r := int-adv-vp-pre & 
+  [ STEM <"已經">,
+    SYNSEM.LKEYS.KEYREL.PRED "_yi3jing_a_rel" ].
+
+非常_r := int-adv-vp-pre & 
+  [ STEM <"非常">,
+    SYNSEM.LKEYS.KEYREL.PRED "_fei1chang2_a_rel" ].
+
+反復_r := int-adv-vp-pre & 
+  [ STEM <"反復">,
+    SYNSEM.LKEYS.KEYREL.PRED "_fan3fu4_a_rel" ].
+
+幾乎_r := scop-adv-lex &
+  [ STEM <"幾乎">,
+    SYNSEM.LKEYS.KEYREL.PRED "_ji1hu1_a_rel" ].
+
+好像_r := int-adv-vp-pre & 
+  [ STEM <"好像">,
+    SYNSEM.LKEYS.KEYREL.PRED "_hao3xiang4_a_rel" ].
+
+好像_r2 := int-adv-s-pre & 
+  [ STEM <"好像">,
+    SYNSEM.LKEYS.KEYREL.PRED "_hao3xiang4_a_rel" ].
+
+看起來_r := int-adv-vp-pre & 
+  [ STEM <"看起來">,
+    SYNSEM.LKEYS.KEYREL.PRED "_kan4qi3lai2_a_rel" ].
+
+看起來_r2 := int-adv-s-pre & 
+  [ STEM <"看起來">,
+    SYNSEM.LKEYS.KEYREL.PRED "_kan4qi3lai2_a_rel" ].
+
+一次_r1 := int-adv-s-pre &
+  [ STEM <"一次">,
+    SYNSEM.LKEYS.KEYREL.PRED "_yi1ci4_a_rel" ].
+
+在_r := int-adv-vp-pre-no-rel & 
+  [ STEM <"在">,
+    SYNSEM.LKEYS.KEYREL.PRED "_zai4_a_rel" ].
+
+正在_r := int-adv-vp-pre-no-rel & 
+  [ STEM <"正在">,
+    SYNSEM.LKEYS.KEYREL.PRED "_zheng4zai4_a_rel" ].
 
 了_crs := int-adv-s-post & 
   [ STEM <"了">,
     SYNSEM.LKEYS.KEYREL.PRED "_le_a_rel" ].
 
+;了_crs := int-adv-s-post & 
+;  [ STEM <"了">,
+;    SYNSEM [ LKEYS.KEYREL.PRED "_le_a_rel",
+;	     LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT imperfective ] > ] ].
+
+
 了_pfv := le-pfv-v-post &
   [ STEM <"了">].
+
+過_exp := adv-exp-v-post &
+  [ STEM <"過">].
+  
+今天_r := scop-adv-lex &
+  [ STEM <"今天">,
+    SYNSEM.LKEYS.KEYREL.PRED "_jin1tian1_a_rel" ].
+
+昨天_r := scop-adv-lex &
+  [ STEM <"昨天">,
+    SYNSEM.LKEYS.KEYREL.PRED "_zuo2tian1_a_rel" ].
+
+大概_r := scop-adv-lex &
+  [ STEM <"大概">,
+	SYNSEM.LKEYS.KEYREL.PRED "_da4gai4_a_rel" ].
+	
+明顯_r := scop-adv-lex &
+  [ STEM < "明顯" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel" ].
+
+都_r := scop-adv-posthd-lex &
+  [ STEM <"都">,
+    SYNSEM.LKEYS.KEYREL.PRED "_dou1_a_rel" ].
+
+現在_r := scop-adv-lex &
+  [ STEM <"現在">,
+    SYNSEM.LKEYS.KEYREL.PRED "_xian4zai4_a_rel" ].
+
+可能_r := scop-adv-lex &
+  [ STEM <"可能">,
+    SYNSEM.LKEYS.KEYREL.PRED "_ke3neng2_a_rel" ].
+
+到底_r := scop-adv-lex &
+  [ STEM <"到底">,
+    SYNSEM.LKEYS.KEYREL.PRED "_dao4di3_a_rel" ].
+
+很_r := deg-int-adv-vp-pre &
+  [ STEM < "很" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hen3_a_rel" ].
+
+最_r := deg-int-adv-vp-pre &
+  [ STEM < "最" >,
+	SYNSEM.LKEYS.KEYREL.PRED "_zui4_a_rel" ].
+	
+比較_r := deg-int-adv-vp-pre &
+  [ STEM < "比較" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_bi3jiao4_a_rel" ].
+
+地_r := adv_suffix_form_lex &
+[ STEM < "地" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_de_a_rel" ].
+
+得_r := adv_prefix_form_lex &
+[ STEM < "得" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_de_a_rel" ].
+
+
+
 
 
 ;;Classifiers
 
+個_cl := classifier-lex &
+  [ STEM < "個" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ge_x_rel" ].
+
+根_cl := classifier-lex &
+  [ STEM < "根" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_gen_x_rel" ].
+
+隻_cl := classifier-lex &
+  [ STEM < "隻" >,
+    SYNSEM.LKEYS.KEYREL.PRED "zhi_x_rel" ].
+
+件_cl := classifier-lex &
+  [ STEM < "件" >,
+    SYNSEM.LKEYS.KEYREL.PRED "jian_x_rel" ].
+
+條_cl := classifier-lex &
+  [ stem <"條">,
+    SYNSEM.LKEYS.KEYREL.PRED "tiao1_x_rel"].
+
+些 := classifier-quant-lex &
+  [ STEM < "些" >,
+    SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
 
 
 ;;; Auxiliaries
 
+會_v :=  v_aux-aux-lex &
+  [ STEM < "會" > ,
+	SYNSEM.LKEYS.KEYREL.PRED "hui4_v_aux_rel" ].
+	
+要_v :=  v_aux-aux-lex &
+  [ STEM < "要" > ,
+	SYNSEM.LKEYS.KEYREL.PRED "yao4_v_aux_rel" ].
+
+可以_v := v_aux-aux-lex &
+  [ STEM < "可以" > ,
+    SYNSEM.LKEYS.KEYREL.PRED "ke3yi3_v_aux_rel" ].
+
+能_v := v_aux-aux-lex &
+  [ STEM <"能">,
+    SYNSEM.LKEYS.KEYREL.PRED "_neng2_v_rel" ].
+
+
+別_v := imperative-aux-lex &
+[ STEM <"別">,
+  SYNSEM.LKEYS.KEYREL.PRED "neg_x_rel" ].
+
+是_v := cop-verb-lex &
+  [ STEM < "是" > ,
+    SYNSEM.LKEYS.KEYREL.PRED "shi4_v_cop_rel" ].
+
+是_v2 := cop-verb-cpsubj-lex &
+  [ STEM < "是" > ,
+    SYNSEM.LKEYS.KEYREL.PRED "shi4_v_cop_rel" ].
+
+是_v3 := cop-verb-cpcomp-lex &
+  [ STEM < "是" >,
+    SYNSEM.LKEYS.KEYREL.PRED "shi4_v_cop_rel" ].
 
 
 ;;; Particles
 
+這_d := prox_demons-determiner-lex &
+  [ STEM < "這" >,
+	SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ].
+
+那_d := dist_demons-determiner-lex &
+  [ STEM < "那" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ].
+
+每_d := determiner-lex &
+  [ STEM < "每" >,
+	SYNSEM.LKEYS.KEYREL.PRED "every_q_rel" ].
+	
+所有_d := determiner-lex &
+  [ STEM < "所有" >,
+    SYNSEM.LKEYS.KEYREL.PRED "every_q_rel" ].
+
+某_d := determiner-lex &
+  [ STEM < "某" >,
+	SYNSEM.LKEYS.KEYREL.PRED "some_q_rel" ].
+	
+些_d := determiner-lex &
+  [ STEM < "些" >,
+	SYNSEM.LKEYS.KEYREL.PRED "some_q_rel" ].
+
+
+哪_d := determiner-lex &
+  [ STEM < "哪" >,
+    SYNSEM.LKEYS.KEYREL.PRED "which_q_rel" ].
+
+什麼_d := determiner-lex &
+  [ STEM < "什麼" >,
+    SYNSEM.LKEYS.KEYREL.PRED "which_q_rel" ].
+
+的_ASSOC_d := poss-det-lex &
+ [ STEM < "的" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_de_n_demons_rel" ].
+
+;的_NOM_nj := nom-adj-lex &
+;  [ STEM < "的" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_de_a_rel" ].
+
+的_nominalizer_n := nominalizer-lex &
+  [ STEM < "的" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_de_n_nom_rel" ].
+
+所有_partitive_d := partitive-lex &
+  [ STEM < "所有" >,
+    SYNSEM.LKEYS.KEYREL.PRED "every_q_rel" ].
+
+嗎_qp := qpart-lex-item &
+  [ STEM < "嗎" > ].
+
+不_r := neg-adv-lex &
+  [ STEM < "不" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_neg_r_rel" ].
+
+又_c := conj-lex &
+  [ STEM < "又" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
+    CFORM "2" ].
+
+由_p := prep-no-mod-lex &
+  [ STEM < "由" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_you2_p_rel"].
+
+用_p := prep-mod-lex &
+  [ STEM < "用" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_yong4_p_rel"].
+
+;其中_p := prep-no-mod-lex &
+;  [ STEM < "其中" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_qi2zhong1_p_rel"].
+
+為_p := prep-no-mod-lex &
+  [ STEM < "為" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_wei2_p_rel"].
+
+從_p  := prep-vmod-pre-lex &
+  [ STEM < "從" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cong2_p_rel"].
+
+
+在_loc := basic-loc-lex & 
+  [ STEM < "在" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zai4_p_rel"].
+
+到_loc := prep-vmod-lex &
+ [ STEM < "到" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_dao4_p_rel"].
+
+中_p := basic-postp-lex & 
+  [ STEM < "中" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zhong1_p_rel"].
+
+裡_p := basic-postp-lex & 
+  [ STEM < "裡" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_li3_p_rel"].
+
+裡面_p := basic-postp-lex & 
+  [ STEM < "裡面" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_li3mian4_p_rel"].
+ 
+前_p := basic-postp-lex & 
+  [ STEM < "前" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_qian2_p_rel"].
+
+下_p  := basic-postp-lex & 
+  [ STEM < "下" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xia4_p_rel"].
+
+
+邊_lm := basic-loc-mark-lex & 
+  [ STEM < "邊" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_bian0_p_rel"].
+
+
 ;;Conjunctions
+
+和_c := conj-lex &
+  [ STEM < "和" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel"].
+
+跟_c := conj-lex &
+  [ STEM < "跟" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_with_coord_rel"].
+
+
+還有_c := conj-lex &
+  [ STEM < "還有" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
+    CFORM "1" ].
+
+而且_c := conj-lex &
+  [ STEM < "而且" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
+    CFORM "1" ].
+
+但是_c := conj-lex &
+  [ STEM < "但是" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_but_coord_rel",
+    CFORM "1" ].
+
+因為_sc := subord-conj-lex &
+  [ STEM < "因為" >,
+     SYNSEM.LKEYS.KEYREL.PRED "_yin1wei1_coord_rel"].
+
+假如_sc := subord-conj-lex &
+  [ STEM < "假如" >,
+     SYNSEM.LKEYS.KEYREL.PRED "_jia3ru2_coord_rel"].
+
+如果_sc := subord-conj-lex &
+  [ STEM < "如果" >,
+     SYNSEM.LKEYS.KEYREL.PRED "_ru2guo3_coord_rel"].
+
+然后_sc := subord-conj-lex &
+  [ STEM < "然后" >,
+     SYNSEM.LKEYS.KEYREL.PRED "_ran3hou4_coord_rel"].
 
 
 
 ;;; Additions
 
+對_p := prep-no-mod-lex &
+  [ STEM < "對" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_dui4_p_rel" ].
+
+10_j := num-adj-lex &
+  [ STEM < "10" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_10_a_rel" ].
+
+十_j := num-adj-lex &
+  [ STEM < "十" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_10_a_rel" ].
+
+220_j := num-adj-lex &
+  [ STEM < "220" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_220_a_rel" ].
+
+兩百二十_j := num-adj-lex &
+  [ STEM < "兩百二十" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_220_a_rel" ].
+
+23_j := num-adj-lex &
+  [ STEM < "23" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_23_a_rel" ].
+
+二十三_j := num-adj-lex &
+  [ STEM < "二十三" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_23_a_rel" ].
+
+3_j := num-adj-lex &
+  [ STEM < "3" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_3_a_rel" ].
+
+給_v := ditrans-verb-lex &
+  [ STEM < "給" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_gei3_v_rel" ].
+
+給_v2 := v_light-verb-lex &
+  [ STEM < "給" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_gei3_v_lt_rel" ].
+
+點_n := bound-time-noun-lex &
+  [ STEM < "點" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_dian3_n_rel" ].
+
+分_n := bound-time-noun-lex &
+  [ STEM < "分" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fen1_n_rel" ].
+
+煙草_n := mass-noun-lex &
+  [ STEM < "煙草" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_yan1cao3_n_rel" ].
+
+照片_n := count-noun-lex &
+  [ STEM < "照片" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zhao4pian4_n_rel" ].
+
+; Should be a preposition (instrumental)
+用_v := v_trans-verb-lex &
+  [ STEM < "用" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_yong4_v_rel" ].
+
+;;Note, can also take an S complement
+
+知道_v := v_trans-verb-lex &
+  [ STEM < "知道" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zhi1dao4_v_rel" ].
+
+知道_v2 := s-comp-verb-lex &
+  [ STEM < "知道" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zhi1dao4_v_rel" ].
+
+
+窗戶_n := count-noun-lex &
+  [ STEM < "窗戶" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_chuang1hu0_n_rel" ].
+
+天_n := time-noun-lex &
+  [ STEM < "天" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_tian1_n_rel" ].
 
 
 ;;Interesting features here
 
+多_r :=  deg-int-adv-vp-pre &
+  [ STEM < "多" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_duo1_n_rel" ].
 
+有多_r :=  deg-int-adv-vp-pre &
+  [ STEM < "有", "多" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_you3+duo1_n_rel" ].
+
+張_n := proper-noun-lex &
+  [ STEM < "張" >,
+    SYNSEM.LKEYS.KEYREL.CARG "_zhang1_n_rel" ].
+
+像_v := v_trans-verb-lex &
+  [ STEM < "像" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xiang4_v_rel" ].
+
+六月_n := time-noun-lex &
+  [ STEM < "六月" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_liu4yue3_n_rel" ].
+
+分鐘_n := bound-time-noun-lex &
+  [ STEM < "分鐘" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fen1zhong1_n_rel" ].
+
+跑_v := v_intrans-verb-lex &
+  [ STEM < "跑" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pao3_v_rel" ].
+
+到_v := v_trans-verb-lex &
+  [ STEM < "到" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_dao4_v_rel" ].
+
+十_j := num-adj-lex &
+  [ STEM < "十" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shi2_a_rel" ].
+
+號碼_n := count-noun-lex &
+  [ STEM < "號碼" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hao4ma3_n_rel" ].
+
+向_p := prep-no-mod-lex &
+  [ STEM < "向" >,
+	SYNSEM.LKEYS.KEYREL.PRED "_xiang4_p_rel" ].
+
+給_p := prep-no-mod-lex &
+  [ STEM < "給" >,
+	SYNSEM.LKEYS.KEYREL.PRED "_gei3_p_rel" ].
+
+困擾_v := v_trans-verb-lex &
+  [ STEM < "困擾" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_kun4rao3_v_rel" ].
+
+快樂_j := pred-adj-lex &
+  [ STEM < "快樂" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_kuai4le04_a_rel" ].
+
+坐_v := v_trans-verb-lex &
+  [ STEM < "坐" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zuo4_v_rel" ].
+
+坐_v2 := v_a-equi-lex &
+  [ STEM < "坐" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zuo4_v_rel" ].
+
+幹淨_j := pred-adj-lex &
+  [ STEM < "幹淨" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_gan1jing4_a_rel" ].
+
+好_j := pred-adj-lex &
+  [ STEM < "好" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hao3_a_rel" ].
+
+多_j := pred-adj-lex &
+  [ STEM < "多" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_duo1_a_rel" ].
+
+高興_j := pred-adj-lex &
+  [ STEM < "高興" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_gao1xing4_a_rel" ].
+
+開心_j := pred-adj-lex &
+  [ STEM < "開心" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_kai1xin1_a_rel" ].
+
+高_j := attr-adj-lex &
+  [ STEM < "高" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_gao1_a_rel" ].
+
+香菸_n := count-noun-lex &
+  [ STEM < "香菸" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xiang1yan1_n_rel" ].
+
+遞_v := v_trans-verb-lex &
+  [ STEM < "遞" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_di4_v_rel" ].
+
+遞_v2 := v_np-vp_light-lex &
+  [ STEM < "遞" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_di4_v_rel" ].
+
+陳_n := proper-noun-lex &
+  [ STEM < "陳" >,
+    SYNSEM.LKEYS.KEYREL.CARG "_chen2_n_rel" ].
+
+方鴻漸_n := proper-noun-lex &
+  [ STEM < "方鴻漸" >,
+    SYNSEM.LKEYS.KEYREL.CARG "fang1hong2jian4" ].
+
+唐曉芙_n := proper-noun-lex &
+  [ STEM < "唐曉芙" >,
+    SYNSEM.LKEYS.KEYREL.CARG "tang2xiao3fu1" ].
+
+雨_n := mass-noun-lex &
+  [ STEM < "雨" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_yu3_n_rel" ].
+
+桌子_n := count-noun-lex &
+  [ STEM < "桌子" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zhuo1zi_n_rel" ].
+
+汽車_n := count-noun-lex &
+  [ STEM < "汽車" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_qi4che1_n_rel" ].
+
+想_v := v_trans-verb-lex &
+  [ STEM < "想" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xiang3_v_rel" ].
+
+想_v_v2 := v_s-equi-lex &
+  [ STEM < "想" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xiang3_v_rel" ].
+
+找到_v := v_trans-verb-lex &
+  [ STEM < "找到" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zhao3dao4_v_rel" ].
+
+打算_v := v_trans-verb-lex &
+  [ STEM < "打算" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_da3suan0_v_rel" ].
+
+打算_v2 := v_s-equi-lex &
+  [ STEM < "打算" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_da3suan0_v_rel" ].
+
+;打算_v3 := v_o-equi-lex &
+;  [ STEM < "打算" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_da3suan0_v_rel" ].
+
+打開_v := v_trans-verb-lex &
+  [ STEM < "打開" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_da3kai1_v_rel" ].
+
+打擾_v := v_trans-verb-lex &
+  [ STEM < "打擾" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_da3rao3_v_rel" ].
+
+打賭_v2 := v_intrans-verb-lex &
+  [ STEM < "打賭" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_da3du3_v_rel" ].
+
+打擾_v3 := cp-subj-verb-lex &
+  [ STEM < "打擾" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_da3rao3_v_rel" ].
+
+擠_v := v_trans-verb-lex &
+  [ STEM < "擠" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ji3_v_rel" ].
+
+擠_v2 := v_o-equi-lex &
+  [ STEM < "擠" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ji3_v_rel" ].
+
+擦_v := v_trans-verb-lex &
+  [ STEM < "擦" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ca1_v_rel" ].
+
+擦_v2 := np-ap-comp-ba-verb-lex &
+  [ STEM < "擦" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ca1_v_rel" ].
+
+方法_n := count-noun-lex &
+  [ STEM < "方法" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fang1fa3_n_rel" ].
+
+顯然_r := scop-adv-lex &
+  [ STEM < "顯然" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xian3ran2_a_rel" ].
+
+顯然_j := pred-adj-lex &
+  [ STEM < "顯然" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xian3ran2_a_rel" ].
+
+顯然_j2 := s-comp-adj-lex &
+  [ STEM < "顯然" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xian3ran2_a_rel" ].
+
+顯得_v := v_intrans-verb-lex &
+  [ STEM < "顯得" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_suan4_v_rel" ].
+
+明顯_j := pred-adj-lex &
+  [ STEM < "明顯" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel" ].
+
+明顯_j2 := s-comp-adj-lex &
+  [ STEM < "明顯" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel" ].
+
+星期二_n := time-noun-lex &
+  [ STEM < "星期二" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_xing1qi1er4_n_rel" ].
+
+早上_n := time-noun-lex &
+  [ STEM < "早上" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zao3shang4_n_rel" ].
+
+時_n := time-noun-lex &
+  [ STEM < "時" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shi2_n_rel" ].
+
+時候_n := time-noun-lex &
+  [ STEM < "時候" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shi2hou0_n_rel" ].
+
+有_v := v_exist-lex &
+  [ STEM < "有" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_you3_v_rel" ].
+
+沒_r := neg-adv-lex &
+  [ STEM < "沒" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_mei2_r_rel" ].
+
+沒_polar_r := v-not-v-adv-lex &
+  [ STEM < "沒" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_mei2_r_rel" ].
+
+要_v2 := v_trans-verb-lex &
+  [ STEM < "要" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_yao4_v_rel" ].
+
+老_j := attr-adj-lex &
+  [ STEM < "老" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_lao3_a_rel" ].
+
+讓_v := v_o-equi-lex &
+  [ STEM < "讓" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_rang4_v_rel" ].
+
+推薦_v1 := v_o-equi-lex &
+  [ STEM < "推薦" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ tui1jian4_v_rel" ].
+
+推薦_v2 := s-comp-verb-lex &
+  [ STEM < "推薦" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ tui1jian4_v_rel" ].
+
+請_v1 := v_o-equi-lex &
+  [ STEM < "請" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ qing3_v_rel" ].
+
+請_v2 := s-comp-verb-lex &
+  [ STEM < "請" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ qing3_v_rel" ].
+
+試_v := v_intrans-verb-lex &
+  [ STEM < "試" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shi4_v_rel" ].
+
+話_n := noun-lex &
+  [ STEM < "話" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hua4_n_rel" ].
+
+自己_n := noun-lex &
+  [ STEM < "自己" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zi4ji3_n_rel" ].
+
+自己_a := attr-adj-posthd-lex &
+  [ STEM < "自己" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_zi4ji3_n_rel" ].
+
+花_v := v_trans-verb-lex &
+  [ STEM < "花" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hua1_v_rel" ].
+
+花_v2 := v_a-equi-lex &
+  [ STEM < "花" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hua1_v_rel" ].
+
+花園_n := count-noun-lex &
+  [ STEM < "花園" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hua1yuan2_n_rel" ].
+
+山_n := count-noun-lex &
+  [ STEM < "山" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shan1_n_rel" ].
+
+;會_v := v_trans-verb-lex &
+;  [ STEM < "會" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_hui4_v_rel" ].
+
+保証_v := v_trans-verb-lex &
+  [ STEM < "保証" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_bao3zheng4_v_rel" ].
+
+保証_v2 := pp-s-comp-verb-lex &
+  [ STEM < "保証" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_bao3zheng4_v_rel" ].
+
+承若_v2 := pp-s-comp-verb-lex &
+  [ STEM < "承若" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cheng2ruo4_v_rel" ].
+
+一_j := num-adj-lex &
+  [ STEM < "一" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_yi1_a_rel" ].
+
+三_j := num-adj-lex &
+  [ STEM < "三" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_san1_a_rel" ].
+
+三號_n := time-noun-lex &
+  [ STEM < "三號" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_san1hao4_n_rel" ].
+
+東西_n := noun-lex &
+  [ STEM < "東西" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_dong1xi1_n_rel" ].
+
+事_n := noun-lex &
+  [ STEM < "事" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shi4_n_rel" ].
+
+五_j := num-adj-lex &
+  [ STEM < "五" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_wu3_a_rel" ].
+
+二十_j := num-adj-lex &
+  [ STEM < "二十" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_er4shi2_a_rel" ].
+
+是不是_r := tag-adv-lex &
+  [ STEM <"是", "不", "是">,
+    SYNSEM.LKEYS.KEYREL.PRED "_shi4+bu4+shi4_a_rel" ].
 

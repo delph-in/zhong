@@ -2,9 +2,9 @@ Language: Mandarin Chinese (simplified)
 Language code: cmn
 Lines: orth translit gloss translat
 Author: Sanghoun Song, Bo Chen, Luis Morgado da Costa
-Date: 2014-09-04
+Date: 2014-10-07
 
-### 
+### simple negation 不 interacting with a verb (no AGR2)
 Source:  an experiment with native speakers
 Vetted: t
 Judgment: g
@@ -12,9 +12,9 @@ Phenomena: le, guo, yao, negation
 我 不 去 。
 wo3 bu4 qu4 .
 I NEG go .
-TRANSLATION
+I don’t go. (I won’t go there.)
 
-### 
+### simple negation 不 interacting with 了 (post verbal / sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -22,9 +22,9 @@ Phenomena: le, guo, yao, negation
 我 不 去 了。
 wo3 bu4 qu4 了。
 I NEG go 了。
-TRANSLATION
+I don’t go. (I won’t go there.)
 
-### 
+### perfective negation (?) 没 interacting with an experiential marker 过
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -32,9 +32,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 过 。
 wo3 mei2 qu4 guo4 .
 I NEG(PFV) go EXP .
-TRANSLATION
+I haven’t been there. 
 
-### 
+### want/will 要 interacting with verb (no ARG2)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -42,9 +42,9 @@ Phenomena: le, guo, yao, negation
 我 要 去 。
 wo3 yao4 qu4 .
 I want/will go .
-TRANSLATION
+I want to go. ( I will go.)
 
-### 
+### verb + ARG2 interacting with 了 (sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -52,9 +52,9 @@ Phenomena: le, guo, yao, negation
 我 去 北京 了。
 wo3 qu4 Bei3jing1 了。
 I go Beijing 了。
-TRANSLATION
+I went to Beijing. 
 
-### 
+### post-verb 了 with an ARG2
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -62,9 +62,9 @@ Phenomena: le, guo, yao, negation
 我 去 了 北京 。
 wo3 qu4 le Bei3jing1 .
 I go PFV Beijing .
-TRANSLATION
+I went to Beijing. 
 
-### 
+### perfective negation (?) 没 interacting with verb + ARG2
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -72,9 +72,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 北京 。
 wo3 mei2 qu4 Bei3jing1 .
 I NEG(PFV) go Beijing .
-TRANSLATION
+I didn’t go to Beijing. 
 
-### 
+###  experiential marker 过 interacting with verb + ARG2
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -82,9 +82,9 @@ Phenomena: le, guo, yao, negation
 我 去 过 北京 。
 wo3 qu4 guo4 Bei3jing1 .
 I go EXP Beijing .
-TRANSLATION
+I have been to Beijing.
 
-### 
+### want/will 要 interacting with verb + ARG2
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -92,19 +92,19 @@ Phenomena: le, guo, yao, negation
 我 要 去 北京 。
 wo3 yao4 qu4 Bei3jing1 .
 I want/will go Beijing .
-TRANSLATION
+I want to go to Beijing.
 
-### 
+### subject + verb (no ARG2)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
 Phenomena: le, guo, yao, negation 
-我 去。
-wo3 去。
-I 去。
-TRANSLATION
+我 去 。
+wo3 qu4 .
+I go . 
+I go / I'll go.
 
-### 
+### verb (no ARG2) + 了 (post verbal / sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -112,9 +112,9 @@ Phenomena: le, guo, yao, negation
 我 去 了。
 wo3 qu4 了。
 I go 了。
-TRANSLATION
+I went to.
 
-### 
+### 没 (perfective negation ?) interacting with verb (no ARG2)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -122,9 +122,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 。
 wo3 mei2 qu4 .
 I NEG(PFV) go .
-TRANSLATION
+I didn't go.
 
-### 
+### want/will 要 interacting with verb + 了 (sentence final position) - ? immediate future
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -132,9 +132,9 @@ Phenomena: le, guo, yao, negation
 我 要 去 了 。
 wo3 yao4 qu4 le .
 I want/will go PFV .
-TRANSLATION
+I will go.
 
-### 
+### verb + ARG2
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -142,9 +142,9 @@ Phenomena: le, guo, yao, negation
 我 去 北京 。
 wo3 qu4 Bei3jing1 .
 I go Beijing .
-TRANSLATION
+I go to Beijing .
 
-### 
+### simple negation 不 interacting with verb + ARG2
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -152,19 +152,19 @@ Phenomena: le, guo, yao, negation
 我 不 去 北京 。
 wo3 bu4 qu4 Bei3jing1 .
 I NEG go Beijing .
-TRANSLATION
+I don't go to Beijing.
 
-### 
+### simple negation 不 interacting with verb + ARG2 + 了 (sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
 Phenomena: le, guo, yao, negation 
-我 不 去 北京 了。
-wo3 bu4 qu4 Bei3jing1 了。
-I NEG go Beijing 了。
-TRANSLATION
+我 不 去 北京 了 。
+wo3 bu4 qu4 Bei3jing1 了 。
+I NEG go Beijing 了 。
+I don't go to Beijing.
 
-### 
+### experiential marker 过 interacting with verb + ARG2 + 了 (sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -172,9 +172,9 @@ Phenomena: le, guo, yao, negation
 我 去 过 北京 了 。
 wo3 qu4 guo4 Bei3jing1 le .
 I go EXP Beijing PFV .
-TRANSLATION
+I have been to Beijing.
 
-### 
+### experiential marker 过 interacting with verb + ARG2 (topicalized)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -182,9 +182,9 @@ Phenomena: le, guo, yao, negation
 北京 我 去 过 。
 Bei3jing1 wo3 qu4 guo4 .
 Beijing I go EXP .
-TRANSLATION
+I have been to Beijing.
 
-### 
+### experiential marker 过 interacting with verb + ARG2 (topicalized) + 了 (sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -192,9 +192,9 @@ Phenomena: le, guo, yao, negation
 北京 我 去 过 了 。
 Bei3jing1 wo3 qu4 guo4 le .
 Beijing I go EXP PFV .
-TRANSLATION
+About Beijing, I have been there.
 
-### 
+### 过 (experiential marker) interacting with 没 (perfective negation ?) +  verb + ARG2 
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -202,9 +202,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 过 北京 。
 wo3 mei2 qu4 guo4 Bei3jing1 .
 I NEG(PFV) go EXP Beijing .
-TRANSLATION
+I haven't been to Beijing.
 
-### 
+### 没 (perfective negation ?) interacting with 过 (experiential marker) + ARG2 (topicalized)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -212,9 +212,9 @@ Phenomena: le, guo, yao, negation
 北京 我 没 去 过 。
 Bei3jing1 wo3 mei2 qu4 guo4 .
 Beijing I NEG(PFV) go EXP .
-TRANSLATION
+About Beijing, I haven't been there.
 
-### 
+### want/will 要 interacting with verb + ARG2 + 了 (sentence final position) - ? immediate future
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -222,9 +222,9 @@ Phenomena: le, guo, yao, negation
 我 要 去 北京 了 。
 wo3 yao4 qu4 Bei3jing1 le .
 I want/will go Beijing PFV .
-TRANSLATION
+I will go to Beijing.(mostly, 要…了，means will.)
 
-### 
+### verb (no ARG2) interacting with 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -232,9 +232,9 @@ Phenomena: le, guo, yao, negation
 我 去 过 。
 wo3 qu4 guo4 .
 I go EXP .
-TRANSLATION
+I have been there.
 
-### 
+### verb (no ARG2) interacting with 过 (experiential marker) + 了 (sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -242,9 +242,9 @@ Phenomena: le, guo, yao, negation
 我 去 过 了 。
 wo3 qu4 guo4 le .
 I go EXP PFV .
-TRANSLATION
+I have been there.
 
-### 
+### 没 (perfective negation ?) interacting with verb + ARG2 (topicalized)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -252,9 +252,9 @@ Phenomena: le, guo, yao, negation
 北京 我 没 去 。
 Bei3jing1 wo3 mei2 qu4 .
 Beijing I NEG(PFV) go .
-TRANSLATION
+About Beijing, I didn't go there.
 
-### 
+### want/will 要 interacting with verb + ARG2 (topicalized)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -262,9 +262,9 @@ Phenomena: le, guo, yao, negation
 北京 我 要 去 。
 Bei3jing1 wo3 yao4 qu4 .
 Beijing I want/will go .
-TRANSLATION
+About Beijing, I want to/ will go there.
 
-### 
+### verb interacting with 了 (post verbal position) + ARG2 + 了 (sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -272,9 +272,9 @@ Phenomena: le, guo, yao, negation
 我 去 了 北京 了 。
 wo3 qu4 le Bei3jing1 le .
 I go PFV Beijing PFV .
-TRANSLATION
+I went to Beijing.
 
-### 
+### simple negation 不 interacting with verb + AGR2 (topicalized)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -282,9 +282,10 @@ Phenomena: le, guo, yao, negation
 北京 我 不 去 。
 Bei3jing1 wo3 bu4 qu4 .
 Beijing I NEG go .
-TRANSLATION
+About Beijing, I don't go there.
 
-### 
+
+### simple negation 不 interacting with verb + AGR2 (topicalized) + 了 (post verbal / sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -292,9 +293,9 @@ Phenomena: le, guo, yao, negation
 北京 我 不 去 了。
 Bei3jing1 wo3 bu4 qu4 了。
 Beijing I NEG go 了。
-TRANSLATION
+About Beijing, I don't go there.
 
-### This sentence is marginal (79%).
+### This sentence is marginal (79%).  verb + AGR2 (topicalized) + 了 (post verbal / sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -302,9 +303,9 @@ Phenomena: le, guo, yao, negation
 北京 我 去 了。
 Bei3jing1 wo3 qu4 了。
 Beijing I go 了。
-TRANSLATION
+About Beijing, I went there.
 
-### This sentence is marginal (71%).
+### This sentence is marginal (71%). verb + AGR2 (topicalized)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -312,9 +313,9 @@ Phenomena: le, guo, yao, negation
 北京 我 去 。
 Bei3jing1 wo3 qu4 .
 Beijing I go .
-TRANSLATION
+About Beijing, I will go there.
 
-### This sentence is marginal (71%).
+### This sentence is marginal (71%). 过 (experiential marker) interacting with 了 (post 过 position) + ARG2
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: g
@@ -322,9 +323,9 @@ Phenomena: le, guo, yao, negation
 我 去 过 了 北京 。
 wo3 qu4 guo4 le Bei3jing1 .
 I go EXP PFV Beijing .
-TRANSLATION
+I have been to Beijing.
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and 了 (post verbal / sentence final position) + ARG2 (topicalized)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -332,9 +333,9 @@ Phenomena: le, guo, yao, negation
 北京 我 没 去 了。
 Bei3jing1 wo3 mei2 qu4 了。
 Beijing I NEG(PFV) go 了。
-TRANSLATION
+About Beijing, I won’t go there.
 
-### 
+### ungrammatical: ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -342,9 +343,9 @@ Phenomena: le, guo, yao, negation
 我 北京 没 去 。
 wo3 Bei3jing1 mei2 qu4 .
 I Beijing NEG(PFV) go .
-TRANSLATION
+I didn't go to Beijing.
 
-### 
+### ungrammatical: ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -352,9 +353,9 @@ Phenomena: le, guo, yao, negation
 我 北京 没 去 过 。
 wo3 Bei3jing1 mei2 qu4 guo4 .
 I Beijing NEG(PFV) go EXP .
-TRANSLATION
+I haven't been to Beijing.
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 了 (post verbal / sentence final position); and ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -362,9 +363,9 @@ Phenomena: le, guo, yao, negation
 我 北京 不 去 了。
 wo3 Bei3jing1 bu4 qu4 了。
 I Beijing NEG go 了。
-TRANSLATION
+I don't go to Beijing.
 
-### 
+### ungrammatical: ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -372,9 +373,9 @@ Phenomena: le, guo, yao, negation
 我 北京 去 过 了 。
 wo3 Bei3jing1 qu4 guo4 le .
 I Beijing go EXP PFV .
-TRANSLATION
+I have been to Beijing.
 
-### 
+### ungrammatical: ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -382,9 +383,9 @@ Phenomena: le, guo, yao, negation
 我 北京 去 了。
 wo3 Bei3jing1 qu4 了。
 I Beijing go 了。
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: ARG2 topicalization using the 要 ... 了 construction?
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -392,9 +393,9 @@ Phenomena: le, guo, yao, negation
 北京 我 要 去 了 。
 Bei3jing1 wo3 yao4 qu4 le .
 Beijing I want/will go PFV .
-TRANSLATION
+About Beijing, I will go there.
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and 了 (post verbal / sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -402,19 +403,19 @@ Phenomena: le, guo, yao, negation
 我 没 去 了 。
 wo3 mei2 qu4 le .
 I NEG(PFV) go PFV .
-TRANSLATION
+I haven't been there.
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and 了 (sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
 Phenomena: le, guo, yao, negation 
 我 没 去 北京 了。
-wo3 mei2 qu4 Bei3jing1 了。
-I NEG(PFV) go Beijing 了。
-TRANSLATION
+wo3 mei2 qu4 Bei3jing1 了 。
+I NEG(PFV) go Beijing 了 。
+I won’t go to Beijing.
 
-### 
+### ungrammatical: ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -422,9 +423,9 @@ Phenomena: le, guo, yao, negation
 我 北京 去 过 。
 wo3 Bei3jing1 qu4 guo4 .
 I Beijing go EXP .
-TRANSLATION
+I have been to Beijing.
 
-### 
+### ungrammatical: ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -432,9 +433,9 @@ Phenomena: le, guo, yao, negation
 我 北京 不 去 。
 wo3 Bei3jing1 bu4 qu4 .
 I Beijing NEG go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -442,9 +443,9 @@ Phenomena: le, guo, yao, negation
 我 北京 去 。
 wo3 Bei3jing1 qu4 .
 I Beijing go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -452,9 +453,9 @@ Phenomena: le, guo, yao, negation
 我 要 北京 去 。
 wo3 yao4 Bei3jing1 qu4 .
 I want/will Beijing go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: ARG2 between subject and verb; ??? could this have the reading "I want that beijing goes"?
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -462,9 +463,9 @@ Phenomena: le, guo, yao, negation
 我 要 北京 去 了 。
 wo3 yao4 Bei3jing1 qu4 le .
 I want/will Beijing go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -472,9 +473,10 @@ Phenomena: le, guo, yao, negation
 我 北京 要 去 。
 wo3 Bei3jing1 yao4 qu4 .
 I Beijing want/will go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+
+### ungrammatical interaction between 没 (perfective negation ?) and 过 (experiential marker) + 了 (post verbal / sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -482,9 +484,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 过 了 。
 wo3 mei2 qu4 guo4 le .
 I NEG(PFV) go EXP PFV .
-TRANSLATION
+I haven’t been to Beijing.
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and 了 (post verbal / sentence final position); and ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -492,9 +494,9 @@ Phenomena: le, guo, yao, negation
 我 北京 没 去 了。
 wo3 Bei3jing1 mei2 qu4 了。
 I Beijing NEG(PFV) go 了。
-TRANSLATION
+I don’t go to Beijing.
 
-### 
+### ungrammatical interaction between 过 (experiential marker) and both 了 (post verbal) +  了 (sentence final position); any one 了 seems to be ok, both seems to be ungrammatical.
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -502,9 +504,9 @@ Phenomena: le, guo, yao, negation
 我 去 过 了 北京 了 。
 wo3 qu4 guo4 le Bei3jing1 le .
 I go EXP PFV Beijing PFV .
-TRANSLATION
+I had been to Beijing.
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and 了 (post verbal / sentence final position) with ARG2 topicalized
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -512,9 +514,9 @@ Phenomena: le, guo, yao, negation
 北京 我 没 去 过 了 。
 Bei3jing1 wo3 mei2 qu4 guo4 le .
 Beijing I NEG(PFV) go EXP PFV .
-TRANSLATION
+I haven’t been to Beijing.
 
-### 
+### ungrammatical:  了 (post 要), in 要 + verb constructions; need to check this with other verbs
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -522,9 +524,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 去 。
 wo3 yao4 le qu4 .
 I want/will PFV go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -532,9 +534,9 @@ Phenomena: le, guo, yao, negation
 我 北京 要 去 了 。
 wo3 Bei3jing1 yao4 qu4 le .
 I Beijing want/will go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and 了 (sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -542,9 +544,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 过 北京 了 。
 wo3 mei2 qu4 guo4 Bei3jing1 le .
 I NEG(PFV) go EXP Beijing PFV .
-TRANSLATION
+I haven’t  been to Beijing.
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and 了 (sentence final position); and ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -552,9 +554,9 @@ Phenomena: le, guo, yao, negation
 我 北京 没 去 过 了 。
 wo3 Bei3jing1 mei2 qu4 guo4 le .
 I Beijing NEG(PFV) go EXP PFV .
-TRANSLATION
+I haven’t  been to Beijing.
 
-### 
+### ungrammatical:  了 (post 要), in 要 + verb constructions; need to check this with other verbs
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -562,9 +564,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 去 北京 。
 wo3 yao4 le qu4 Bei3jing1 .
 I want/will PFV go Beijing .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post verbal), in 要 + verb + ARG2 constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -572,9 +574,9 @@ Phenomena: le, guo, yao, negation
 我 要 去 了 北京 。
 wo3 yao4 qu4 le Bei3jing1 .
 I want/will go PFV Beijing .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between  过 (experiential marker) and 要 ... 了 construction
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -582,9 +584,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 去 过 了 。
 wo3 yao4 le qu4 guo4 le .
 I want/will PFV go EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical:  了 (post 要), in 要 + verb constructions; and 了 (post verbal), in 要 + verb + ARG2 constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -592,9 +594,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 去 了 北京 。
 wo3 yao4 le qu4 le Bei3jing1 .
 I want/will PFV go PFV Beijing .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical:  了 (post 要), in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -602,9 +604,9 @@ Phenomena: le, guo, yao, negation
 北京 我 要 了 去 。
 Bei3jing1 wo3 yao4 le qu4 .
 Beijing I want/will PFV go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical:  了 (post 要), in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -612,9 +614,9 @@ Phenomena: le, guo, yao, negation
 北京 我 要 了 去 了 。
 Bei3jing1 wo3 yao4 le qu4 le .
 Beijing I want/will PFV go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post 要), in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -622,9 +624,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 去 了 。
 wo3 yao4 le qu4 le .
 I want/will PFV go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between  过 (experiential marker) and 要 ... 了 construction
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -632,9 +634,9 @@ Phenomena: le, guo, yao, negation
 我 要 去 过 。
 wo3 yao4 qu4 guo4 .
 I want/will go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post verbal), in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -642,9 +644,9 @@ Phenomena: le, guo, yao, negation
 我 要 去 了 过 。
 wo3 yao4 qu4 le guo4 .
 I want/will go PFV EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post 要), in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -652,9 +654,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 去 过 。
 wo3 yao4 le qu4 guo4 .
 I want/will PFV go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post object, pre verbal), with topicalized ARG2
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -662,19 +664,19 @@ Phenomena: le, guo, yao, negation
 我 北京 了 去 。
 wo3 Bei3jing1 le qu4 .
 I Beijing PFV go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and both 了 (post verbal) +  了 (sentence final position); any one 了 seems to be ok, both seems to be ungrammatical.
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
 Phenomena: le, guo, yao, negation 
-我 不 去 了 北京 了。
-wo3 bu4 qu4 le Bei3jing1 了。
-I NEG go PFV Beijing 了。
-TRANSLATION
+我 不 去 了 北京 了 。
+wo3 bu4 qu4 le Bei3jing1 了 .
+I NEG go PFV Beijing 了 .
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) with any or both 了 (post verbal / sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -682,9 +684,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 了 北京 了。
 wo3 mei2 qu4 le Bei3jing1 了。
 I NEG(PFV) go PFV Beijing 了。
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post verbal), in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -692,9 +694,9 @@ Phenomena: le, guo, yao, negation
 我 要 去 了 北京 了。
 wo3 yao4 qu4 le Bei3jing1 了。
 I want/will go PFV Beijing 了。
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post 要), in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -702,9 +704,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 去 北京 了 。
 wo3 yao4 le qu4 Bei3jing1 le .
 I want/will PFV go Beijing PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post 要), in 要 + verb constructions; and  了 (post verbal), in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -712,9 +714,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 去 了 北京 了 。
 wo3 yao4 le qu4 le Bei3jing1 le .
 I want/will PFV go PFV Beijing PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### 了 (post 要), in 要 + verb constructions; and  ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -722,9 +724,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 北京 去 。
 wo3 yao4 le Bei3jing1 qu4 .
 I want/will PFV Beijing go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ### 了 (post 要), in 要 + verb constructions; and  ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -732,9 +734,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 北京 去 了 。
 wo3 yao4 le Bei3jing1 qu4 le .
 I want/will PFV Beijing go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post object, pre verbal), with topicalized ARG2
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -742,9 +744,9 @@ Phenomena: le, guo, yao, negation
 北京 了 我 要 了 去 了 。
 Bei3jing1 le wo3 yao4 le qu4 le .
 Beijing PFV I want/will PFV go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -752,9 +754,9 @@ Phenomena: le, guo, yao, negation
 我 不 去 过 。
 wo3 bu4 qu4 guo4 .
 I NEG go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -762,9 +764,10 @@ Phenomena: le, guo, yao, negation
 我 不 去 过 了 。
 wo3 bu4 qu4 guo4 le .
 I NEG go EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -772,9 +775,9 @@ Phenomena: le, guo, yao, negation
 我 不 去 了 过 。
 wo3 bu4 qu4 le guo4 .
 I NEG go PFV EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -782,9 +785,9 @@ Phenomena: le, guo, yao, negation
 我 不 去 了 过 了 。
 wo3 bu4 qu4 le guo4 le .
 I NEG go PFV EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and 了 (post verbal position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -792,9 +795,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 了 过 。
 wo3 mei2 qu4 le guo4 .
 I NEG(PFV) go PFV EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) with any of both 了 (post verbal / sentence final position)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -802,9 +805,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 了 过 了 。
 wo3 mei2 qu4 le guo4 le .
 I NEG(PFV) go PFV EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between  过 (experiential marker) and 要 ... 了 construction
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -812,9 +815,9 @@ Phenomena: le, guo, yao, negation
 我 要 去 过 了 。
 wo3 yao4 qu4 guo4 le .
 I want/will go EXP PFV .
-TRANSLATION
+NO NO TRANSLATION
 
-### 
+### ungrammatical interaction between  过 (experiential marker) and 要 ... 了 construction
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -822,9 +825,9 @@ Phenomena: le, guo, yao, negation
 我 要 去 了 过 了 。
 wo3 yao4 qu4 le guo4 le .
 I want/will go PFV EXP PFV .
-TRANSLATION
+NO NO TRANSLATION
 
-### 
+### ungrammatical interaction between  过 (experiential marker) and 要 ... 了 construction
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -832,9 +835,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 去 了 过 。
 wo3 yao4 le qu4 le guo4 .
 I want/will PFV go PFV EXP .
-TRANSLATION
+NO NO TRANSLATION
 
-### 
+### ungrammatical interaction between  过 (experiential marker) and 要 ... 了 construction
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -842,9 +845,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 去 了 过 了 。
 wo3 yao4 le qu4 le guo4 le .
 I want/will PFV go PFV EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre verbal), with ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -852,9 +855,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 去 了 。
 wo3 Bei3jing1 le qu4 le .
 I Beijing PFV go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre subject), with ARG2 before subject
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -862,9 +865,9 @@ Phenomena: le, guo, yao, negation
 北京 了 我 去 。
 Bei3jing1 le wo3 qu4 .
 Beijing PFV I go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre subject), with ARG2 before subject
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -872,9 +875,9 @@ Phenomena: le, guo, yao, negation
 北京 了 我 去 了 。
 Bei3jing1 le wo3 qu4 le .
 Beijing PFV I go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre verbal), with ARG2 between subject and verb; and interaction between 不 (simple negation) and 了 (post verbal / sentence final position);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -882,9 +885,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 不 去 了 。
 wo3 Bei3jing1 le bu4 qu4 le .
 I Beijing PFV NEG go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre verbal), with ARG2 before subject;  and interaction between 不 (simple negation) and 了 (post verbal / sentence final position);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -892,9 +895,9 @@ Phenomena: le, guo, yao, negation
 北京 了 我 不 去 了 。
 Bei3jing1 le wo3 bu4 qu4 le .
 Beijing PFV I NEG go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre verbal), with ARG2 between subject and verb; and interaction between 没 (perfective negation ?) and 了 (post verbal / sentence final position);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -902,9 +905,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 没 去 了 。
 wo3 Bei3jing1 le mei2 qu4 le .
 I Beijing PFV NEG(PFV) go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre subject), with ARG2 before subject; and interaction between 没 (perfective negation ?) and 了 (post verbal / sentence final position);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -912,9 +915,9 @@ Phenomena: le, guo, yao, negation
 北京 了 我 没 去 了 。
 Bei3jing1 le wo3 mei2 qu4 le .
 Beijing PFV I NEG(PFV) go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre verbal), with ARG2 between subject and verb; 
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -922,9 +925,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 去 过 。
 wo3 Bei3jing1 le qu4 guo4 .
 I Beijing PFV go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre verbal), with ARG2 between subject and verb; 
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -932,9 +935,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 去 过 了 。
 wo3 Bei3jing1 le qu4 guo4 le .
 I Beijing PFV go EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post subject)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -942,9 +945,9 @@ Phenomena: le, guo, yao, negation
 北京 我 了 去 过 。
 Bei3jing1 wo3 le qu4 guo4 .
 Beijing I PFV go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre subject), with ARG2 before subject; 
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -952,9 +955,9 @@ Phenomena: le, guo, yao, negation
 北京 了 我 去 过 了 。
 Bei3jing1 le wo3 qu4 guo4 le .
 Beijing PFV I go EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -962,9 +965,9 @@ Phenomena: le, guo, yao, negation
 我 不 去 过 北京 。
 wo3 bu4 qu4 guo4 Bei3jing1 .
 I NEG go EXP Beijing .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -972,9 +975,9 @@ Phenomena: le, guo, yao, negation
 我 不 去 过 北京 了 。
 wo3 bu4 qu4 guo4 Bei3jing1 le .
 I NEG go EXP Beijing PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -982,9 +985,9 @@ Phenomena: le, guo, yao, negation
 我 不 去 过 了 北京 。
 wo3 bu4 qu4 guo4 le Bei3jing1 .
 I NEG go EXP PFV Beijing .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -992,9 +995,9 @@ Phenomena: le, guo, yao, negation
 我 不 去 过 了 北京 了 。
 wo3 bu4 qu4 guo4 le Bei3jing1 le .
 I NEG go EXP PFV Beijing PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker); and  ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1002,9 +1005,9 @@ Phenomena: le, guo, yao, negation
 我 北京 不 去 过 。
 wo3 Bei3jing1 bu4 qu4 guo4 .
 I Beijing NEG go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker); and  ARG2 between subject and verb
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1012,9 +1015,9 @@ Phenomena: le, guo, yao, negation
 我 北京 不 去 过 了 。
 wo3 Bei3jing1 bu4 qu4 guo4 le .
 I Beijing NEG go EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker); and  ARG2 between subject and verb; and 了 (post object)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1022,9 +1025,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 不 去 过 。
 wo3 Bei3jing1 le bu4 qu4 guo4 .
 I Beijing PFV NEG go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker); and  ARG2 between subject and verb; and 了 (post object)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1032,9 +1035,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 不 去 过 了 。
 wo3 Bei3jing1 le bu4 qu4 guo4 le .
 I Beijing PFV NEG go EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1042,9 +1045,9 @@ Phenomena: le, guo, yao, negation
 北京 我 不 去 过 。
 Bei3jing1 wo3 bu4 qu4 guo4 .
 Beijing I NEG go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1052,9 +1055,9 @@ Phenomena: le, guo, yao, negation
 北京 我 不 去 过 了 。
 Bei3jing1 wo3 bu4 qu4 guo4 le .
 Beijing I NEG go EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1062,9 +1065,9 @@ Phenomena: le, guo, yao, negation
 北京 我 了 不 去 过 。
 Bei3jing1 wo3 le bu4 qu4 guo4 .
 Beijing I PFV NEG go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 不 (simple negation) and 过 (experiential marker); 了 (post object, pre subject), with ARG2 before subject
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1072,9 +1075,9 @@ Phenomena: le, guo, yao, negation
 北京 了 我 不 去 过 了 。
 Bei3jing1 le wo3 bu4 qu4 guo4 le .
 Beijing PFV I NEG go EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and any 了 (post verbal / sentence final position);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1082,9 +1085,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 过 了 北京 。
 wo3 mei2 qu4 guo4 le Bei3jing1 .
 I NEG(PFV) go EXP PFV Beijing .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and any 了 (post verbal / sentence final position);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1092,9 +1095,9 @@ Phenomena: le, guo, yao, negation
 我 没 去 过 了 北京 了 。
 wo3 mei2 qu4 guo4 le Bei3jing1 le .
 I NEG(PFV) go EXP PFV Beijing PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and any 了 (post verbal / sentence final position);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1102,9 +1105,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 没 去 过 。
 wo3 Bei3jing1 le mei2 qu4 guo4 .
 I Beijing PFV NEG(PFV) go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical interaction between 没 (perfective negation ?) and any 了 (post verbal / sentence final position);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1112,9 +1115,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 没 去 过 了 。
 wo3 Bei3jing1 le mei2 qu4 guo4 le .
 I Beijing PFV NEG(PFV) go EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post subject); and  interaction between 没 (perfective negation ?) and any 了 (post verbal / sentence final position);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1122,9 +1125,9 @@ Phenomena: le, guo, yao, negation
 北京 我 了 没 去 过 。
 Bei3jing1 wo3 le mei2 qu4 guo4 .
 Beijing I PFV NEG(PFV) go EXP .
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre subject), with ARG2 before subject; and  interaction between 没 (perfective negation ?) and any 了 (post verbal / sentence final position);
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1132,9 +1135,9 @@ Phenomena: le, guo, yao, negation
 北京 了 我 没 去 过 了 。
 Bei3jing1 le wo3 mei2 qu4 guo4 le .
 Beijing PFV I NEG(PFV) go EXP PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post 要), in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1142,9 +1145,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 北京 了 去 。
 wo3 yao4 le Bei3jing1 le qu4 .
 I want/will PFV Beijing PFV go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post 要), in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1152,9 +1155,9 @@ Phenomena: le, guo, yao, negation
 我 要 了 北京 了 去  了。
 wo3 yao4 le Bei3jing1 le qu4 了。
 I want/will PFV Beijing PFV go 了。
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post object, pre verbal), with ARG2 between 要 and the verb in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1162,9 +1165,9 @@ Phenomena: le, guo, yao, negation
 我 要 北京 了 去 。
 wo3 yao4 Bei3jing1 le qu4 .
 I want/will Beijing PFV go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post object, pre verbal), with ARG2 between 要 and the verb in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1172,9 +1175,9 @@ Phenomena: le, guo, yao, negation
 我 要 北京 了 去 了。
 wo3 yao4 Bei3jing1 le qu4 了。
 I want/will Beijing PFV go 了。
-TRANSLATION
+NO TRANSLATION
 
-### 
+###  ungrammatical: 了 (post 要); and ARG2 between subject and 要 and in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1182,9 +1185,9 @@ Phenomena: le, guo, yao, negation
 我 北京 要 了 去 。
 wo3 Bei3jing1 yao4 le qu4 .
 I Beijing want/will PFV go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post 要); and ARG2 between subject and 要 and in 要 + verb constructions
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1192,9 +1195,9 @@ Phenomena: le, guo, yao, negation
 我 北京 要 了 去 了 。
 wo3 Bei3jing1 yao4 le qu4 le .
 I Beijing want/will PFV go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post object, pre verbal); and ARG2 between subject and 要 and in 要 + verb constructions 
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1202,9 +1205,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 要 去 。
 wo3 Bei3jing1 le yao4 qu4 .
 I Beijing PFV want/will go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post object, pre verbal); and ARG2 between subject and 要 and in 要 + verb constructions 
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1212,9 +1215,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 要 去 了 。
 wo3 Bei3jing1 le yao4 qu4 le .
 I Beijing PFV want/will go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post object, pre verbal); and ARG2 between subject and 要 and in 要 + verb constructions; and 了 (post 要)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1222,9 +1225,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 要 了 去 。
 wo3 Bei3jing1 le yao4 le qu4 .
 I Beijing PFV want/will PFV go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post object, pre verbal); and ARG2 between subject and 要 and in 要 + verb constructions; and 了 (post 要)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1232,9 +1235,9 @@ Phenomena: le, guo, yao, negation
 我 北京 了 要 了 去 了 。
 wo3 Bei3jing1 le yao4 le qu4 le .
 I Beijing PFV want/will PFV go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post object, pre subject), with ARG2 before subject
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1242,9 +1245,9 @@ Phenomena: le, guo, yao, negation
 北京 了 我 要 去 。
 Bei3jing1 le wo3 yao4 qu4 .
 Beijing PFV I want/will go .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post object, pre subject), with ARG2 before subject
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1252,9 +1255,9 @@ Phenomena: le, guo, yao, negation
 北京 了 我 要 去 了 。
 Bei3jing1 le wo3 yao4 qu4 le .
 Beijing PFV I want/will go PFV .
-TRANSLATION
+NO TRANSLATION
 
-### 
+### ungrammatical: 了 (post object, pre subject), with ARG2 before subject; and 了 (post 要)
 Source:  an experiment with native speakers 
 Vetted: t 
 Judgment: u
@@ -1262,7 +1265,7 @@ Phenomena: le, guo, yao, negation
 北京 了 我 要 了 去 。
 Bei3jing1 le wo3 yao4 le qu4 .
 Beijing PFV I want/will PFV go .
-TRANSLATION
+NO TRANSLATION
 
 
 ### 了 can be used twice in a single sentence.

@@ -1,0 +1,107 @@
+11	下 雨 了	It rained.
+21	小明 叫 了	Abrams barked.
+31	窗戶 打開 了	The window opened.
+41	小明 追 了 老王	Abrams chased Browne.
+51	小明 給 了 老王 香菸	Abrams handed Browne the cigarette.
+61	小明 把 香菸 給 了 老王	Abrams handed the cigarette to Browne.
+71	小明 用 一 根 香菸 跟 老王 打賭 下 過 雨 了	Abrams bet Browne a cigarette that it rained.
+81	小明 已經 知道 下 過 雨 了	Abrams knew that it rained.
+91	小明 打算 要 叫	Abrams intended to bark.
+101	小明 打算 讓 老王 叫	Abrams intended Browne to bark.
+111	所有 的 貓 都 叫 了	Every cat barked.
+121	所有 的 貓 都 追 了 一 些 狗	Every cat chased some dog.
+131	我 的 貓 叫 了	My cat barked.
+141	它 叫 了	It barked.
+151	貓 追 了 它	The cat chased it.
+161	貓 追 了 自己	The cat chased itself.
+171	貓 追 了 一 個 東西	The cat chased one.
+181	我 的 叫 了	Mine barked.
+191	那 個 打開 了	That opened.
+201	貓 叫	Cats bark.
+211	香菸 到 了	Tobacco arrived.
+221	有 些 東西 叫	Some bark.
+231	有 些 貓 叫	Some of the cats bark.
+241	沒 有 貓 叫 了	No cat barked.
+251	狗 叫 了	Did the dog bark?
+261	哪 隻 狗 叫 了	Which dog barked?
+271	哪 些 狗 叫 了	Whose dog barked?
+281	追 老王	Chase Browne!
+291	小明 想 知道 哪 隻 狗 叫 了	Abrams wondered which dog barked.
+301	小明 想 知道 老王 有 沒 有 叫 了	Abrams wondered whether Browne barked.
+311	老王 追 了 的 狗 叫 了	The dog that Browne chased barked.
+321	該 追 的 狗 在 叫	The dog to chase is barking.
+331	被 老王 追 的 狗	The dog was chased by Browne.
+341	被 老王 追 的 狗 叫 了	The dog chased by Browne barked.
+351	狗 在 叫	The dog is barking.
+361	狗 已經 叫 了	The dog has barked.
+371	狗 一直 在 叫	The dog has been barking.
+381	狗 之前 一直 在 叫	The dog had been barking.
+391	狗 會 叫	The dog will bark.
+401	狗 會 叫	The dog is going to bark.
+411	狗 可以 叫	The dog could bark.
+421	狗 不 可以 叫	The dog couldn't bark.
+431	老 狗 叫 了	The old dog barked.
+441	狗 小聲 地 叫	The dog barked softly.
+451	狗 大概 叫 了	The dog probably barked.
+461	狗 在 花園 叫 了	The dog barked in the garden.
+471	狗 現在 在 叫	The dog barks now.
+481	花園 狗 叫 了	The garden dog barked.
+491	香菸 花園 狗 叫 了	The tobacco garden dog barked.
+501	貓 很 老	The cat is old.
+511	貓 在 花園	The cat is in the garden.
+521	現在 在 叫 的 狗 追 了 老王	The barking dog chased Browne.
+531	被 追 了 的 狗 叫	Chased dogs bark.
+541	追 貓 很 無聊	Chasing the cat is old.
+551	那 隻 在 追 老王 的 貓 很 老	That the cat chases Browne is old.
+561	狗 會 追 任何 會 叫 的 東西	Dogs chase whatever barks.
+571	狗 每 天 叫	The dog barked every day.
+581	狗 什麼 時候 叫	When did the dog bark?
+591	其中 三 隻 狗 叫	Three of the dogs bark.
+601	三 個 叫	Three bark.
+611	老王 的 狗 叫	Browne's dog barks.
+621	老王 的 叫	Browne's barks.
+631	二十三 隻 狗 叫	Twenty three dogs bark.
+641	兩百二十 隻 狗 叫	Two hundred twenty dogs bark.
+651	小明 搭車 到 了	Abrams arrived by car.
+661	小明 不停 的 叫	Abrams kept barking.
+671	老王 把 貓 擠 了 進來	Browne squeezed the cat in.
+681	老王 把 貓 擠 了 進來	Browne squeezed in the cat.
+691	小明 的 照片 到 了	The picture of Abrams arrived.
+701	小明 把 桌子 擦 幹淨 了	Abrams wiped the table clean.
+711	小明 把 老王 放進 花園 中	Abrams put Browne in the garden.
+721	當 老王 到 的 時候 狗 會 叫	The dog will bark if Browne arrives.
+731	小明 和 老王 到 了	Abrams and Browne arrived.
+741	小明 ， 老王 和 狗 到 了	Abrams, Browne, and the dog arrived.
+751	狗 到 了 也 叫 了	The dog arrived and barked.
+761	狗 到 了 ， 老王 叫 了	The dog arrived and Browne barked.
+771	狗 叫 了 不 是 嗎	The dog barked, didn't it?
+781	很 明顯 的 狗 叫 了	It is obvious that the dog barked.
+791	小明 承若 老王 會 叫	Abrams promised Browne to bark.
+801	小明 看起來 要 叫	Abrams seems to bark.
+811	小明 相信 老王 在 叫	Abrams believes Browne to be barking.
+821	老王 叫 了 讓 小明 操心	It bothered Abrams that Browne barked.
+831	小明 花 了 十 分 鐘才 到	It took Abrams ten minutes to arrive.
+841	小明 把 它 留給 老王 去 叫	Abrams left it to Browne to bark.
+851	老王 讓 小明 覺得 他 很 老	Abrams strikes Browne as old.
+861	老王 認為 小明 很 老	Browne considers Abrams old.
+871	小明 喜歡 老王 可以 叫 的 想法	Abrams liked the idea that Browne could bark.
+881	小明 從 三 叫 到 十	Abrams barked from ten to three.
+891	小明 很 老	Abrams was very old.
+901	幾乎 所有 的 狗 都 叫 了	Nearly every dog barked.
+911	小明 非常 小聲 地 叫 了	Abrams barked very softly.
+921	老王 追 貓 的 舉動 讓 小明 操心	Browne's chasing of cats bothered Abrams.
+931	小明 追 貓 的 舉動 讓 老王 操心	It bothered Browne that Abrams chased cats.
+941	六月 三號 到 了	June third arrived.
+951	小明 在 三 點 二十 分 到 了	Abrams arrived at three twenty.
+961	老王 星期二 早上 到 了	Browne arrived on Tuesday morning.
+971	貓 找到 了 一 個 方法 來 叫	The cats found a way to bark.
+981	那 隻 比較 開心 的 狗 追 了 老王	The happier dog chased Browne.
+991	花園 裡面 有 貓	There were cats in the garden.
+1001	那 隻 狗 追 了 老王	That dog chased Browne.
+1011	某 人 追 了 小明	Somebody chased Abrams.
+1021	小明 是 多 開心 呢 ？	How happy was Abrams?
+1031	五 號 讓 老王 操心	The number five bothers Browne.
+1041	小明 可以	Abrams could.
+1051	老王 試著 去	Browne tried to.
+1061	不 要 叫	Don't bark!
+1071	狗 到 了 的 時候 在 叫	The dog arrived barking.
