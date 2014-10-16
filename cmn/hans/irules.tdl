@@ -1,15 +1,19 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+
 ;;_perf_aspect-suffix :=
 ;;%suffix (* 了)
 ;;_perf_aspect-lex-rule.
 
 
-dur_aspect-suffix :=
-%suffix (* 着)
-dur_aspect-lex-rule.
+;; SSH 2014-09-02: I changed this into a lexical item (着_dur in lexicon.tdl).
+; dur_aspect-suffix :=
+; %suffix (* 着)
+; dur_aspect-lex-rule.
 
-exp_aspect-suffix :=
-%suffix (* 过)
-exp_aspect-lex-rule.
+;; SSH 2014-09-02: The same item is included in lexicon.tdl (过_exp)
+; exp_aspect-suffix :=
+; %suffix (* 过)
+; exp_aspect-lex-rule.
 
 
 #|

@@ -1,14 +1,146 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 ;;; Semantically Empty Lexical Entries
 
-了_PFV_rule := generator_rule &
- [ CONTEXT [ RELS <! [ PRED never_unify_rel ] !> ],
-   FLAGS.TRIGGER "了_PFV" ]. 
+period-marker_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.SF prop ] !>,
+  FLAGS.TRIGGER "period-marker" ]. 
 
-吗_QP_rule := generator_rule &
- [ CONTEXT [ RELS <! [ PRED never_unify_rel ] !> ],
-   FLAGS.TRIGGER "吗_QP" ]. 
+question-marker_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.SF ques ] !>,
+  FLAGS.TRIGGER "question-marker" ]. 
 
-在_R_rule := generator_rule &
- [ CONTEXT [ RELS <! [ PRED never_unify_rel ] !> ],
-   FLAGS.TRIGGER "在_R" ]. 
+了_pfv_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.E.ASPECT perfective ] !>,
+  FLAGS.TRIGGER "了_pfv" ]. 
+
+过_exp_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.E.ASPECT experiential ] !>,
+  FLAGS.TRIGGER "过_exp" ].
+
+着_dur_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.E.ASPECT durative ] !>,
+  FLAGS.TRIGGER "着_dur" ].
+
+吗_qp_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.SF ques ] !>,
+  FLAGS.TRIGGER "吗_qp" ]. 
+
+在_r_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.E.ASPECT imperfective ] !>,
+  FLAGS.TRIGGER "在_r" ].
+
+正在_r_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.E.ASPECT imperfective ] !>,
+  FLAGS.TRIGGER "正在_r" ].
+
+被_v_gr_1 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG1 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "被_v" ] ].
+
+被_v_gr_2 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG2 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "被_v" ] ].
+
+被_v_gr_3 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG3 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "被_v" ] ].
+
+; 被_v_gr := generator_rule &
+; [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+;   FLAGS.TRIGGER "被_v" ].
+
+
+把_v1_gr_1 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG1 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "把_v1" ] ].
+
+把_v1_gr_2 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG2 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "把_v1" ] ].
+
+把_v1_gr_3 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG3 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "把_v1" ] ].
+
+; 把_v1_gr := generator_rule &
+; [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+;   FLAGS.TRIGGER "把_v1" ].
+
+以前_r1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "以前_r1" ].
+
+
+一次_r1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "一次_r1" ].
+
+
+好像_r2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "好像_r2" ].
+
+#|
+以前_r1_gr_1 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG1 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "以前_r1" ] ].
+
+以前_r1_gr_2 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG2 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "以前_r1" ] ].
+
+以前_r1_gr_3 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG3 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "以前_r1" ] ].
+
+一次_r1_gr_1 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG1 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "一次_r1" ] ].
+
+一次_r1_gr_2 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG2 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "一次_r1" ] ].
+
+一次_r1_gr_3 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG3 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "一次_r1" ] ].
+
+好像_r2_gr_1 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG1 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "好像_r2" ] ].
+
+好像_r2_gr_2 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG2 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "好像_r2" ] ].
+
+好像_r2_gr_3 := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG3 individual & #i ] !>,
+  FLAGS [ SUBSUME < #i >,
+	  TRIGGER "好像_r2" ] ].
+|#
+
+了_pfv_robust_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "了_pfv_robust" ]. 
+
+着_dur_robust_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "着_dur_robust" ]. 
+
+过_exp_robust_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "过_exp_robust" ]. 

@@ -1,16 +1,16 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
-head-comp := head-comp-phrase.
+head-comp := head-comp-phrase & [ STYLE robust ].
 
-subj-head := subj-head-phrase.
+subj-head := subj-head-phrase & [ STYLE robust ].
 
 ;;subj-head-nd := subj-head-nondecl-phrase.
 
-head-spec := head-spec-phrase.
+head-spec := head-spec-phrase & [ STYLE robust ]. 
 
-head-spec-hs := head-spec-h-sem-phrase.
+head-spec-hs := head-spec-h-sem-phrase & [ STYLE robust ].
 
-headn-spec-hs := head-nom-spec-h-sem-phrase.
+headn-spec-hs := head-nom-spec-h-sem-phrase & [ STYLE robust ].
 
 bare-np := bare-np-phrase.
 
@@ -19,7 +19,10 @@ bare-nom-det := bare-nominal-det-phrase.
 
 meas-np := meas-np-phrase.
 
-comp-head := comp-head-phrase.
+;; SSH 2014-09-04: STYLE 
+comp-head := comp-head-phrase &
+  [ STYLE #style,
+    HEAD-DTR.STYLE #style ].
 
 ; Rule instances for head-modifier structures. Corresponding types
 ; are defined in matrix.tdl.  The matrix customization script did
@@ -30,23 +33,25 @@ comp-head := comp-head-phrase.
 head-adj-int := head-adj-int-phrase &
   [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
 |#
-head-adj-int := head-adj-int-phrase.
+head-adj-int := head-adj-int-phrase & 
+  [ STYLE #style,
+    NON-HEAD-DTR.STYLE #style ].
 
-adj-head-int := adj-head-int-mc.
-head-adj-scop := head-adj-scop-phrase.
+adj-head-int := adj-head-int-mc & [ STYLE robust ].
+head-adj-scop := head-adj-scop-phrase & [ STYLE robust ].
 
-adj-head-scop := adj-head-scop-phrase.
+adj-head-scop := adj-head-scop-phrase & [ STYLE robust ].
 
-n1-top-coord := n1-top-coord-rule.
+n1-top-coord := n1-top-coord-rule & [ STYLE robust ].
 
-n1-mid-coord := n1-mid-coord-rule.
+n1-mid-coord := n1-mid-coord-rule & [ STYLE robust ].
 
-conj-coord := bottom-coord-rule.
+conj-coord := bottom-coord-rule & [ STYLE robust ].
 
 
-vp1-top-coord := vp1-top-coord-rule.
+vp1-top-coord := vp1-top-coord-rule & [ STYLE robust ].
 
-s1-top-coord := s1-top-coord-rule.
+s1-top-coord := s1-top-coord-rule & [ STYLE robust ].
 
 #|
 n3-top-coord := n3-top-coord-rule.
@@ -107,17 +112,17 @@ s7-mid-coord := s7-mid-coord-rule.
 s7-bottom-coord := s7-bottom-coord-rule.
 |#
 
-head-opt-comp := head-opt-comp-phrase.
+head-opt-comp := head-opt-comp-phrase & [ STYLE robust ].
 
-comp-head-final := comp-head-final-phrase.
+comp-head-final := comp-head-final-phrase & [ STYLE robust ].
 
-filler-head := filler-head-phrase.
+filler-head := filler-head-phrase & [ STYLE robust ].
 
-extracted-comp := extracted-comp-phrase.
+extracted-comp := extracted-comp-phrase & [ STYLE robust ].
 
-extracted-subj := extracted-subj-phrase.
+extracted-subj := extracted-subj-phrase & [ STYLE robust ].
 
-imper := imperative-phrase.
+imper := imperative-phrase & [ STYLE robust ].
 
 ;; Overenthusiastic
 ;;sent-subj := sent-subj-phrase.
@@ -126,3 +131,6 @@ n-n-compound := noun-noun-compound-phrase.
 de-n-compound := nom-de-noun-compound-phrase.
 
 np-adp := np-adp-phrase.
+
+comp-marker := comp-marker-phrase.
+

@@ -1,0 +1,22 @@
+;;;-*- Mode: TDL; Coding: utf-8 -*-
+
+;;;This_file_includes_the_list_of_items_that_should_be_igonored_in
+;;;generation_when_the_processor_is_ACE.
+;;;
+;;;created_by_Sanghoun_Song_(SSH,_2014-09-08)
+;;;
+;;;Note_that_in_this_file_the_symbol_;_for_comment_does_not_work. 
+
+
+;;;Blocking_Generation_(lexicons)
+;;The_entry_name_should_be_listed_here.
+
+其中_n
+了_pfv_robust 着_dur_robust 过_exp_robust
+
+;;;Blocking_Generation_(rules)
+;;The_rules_names_should_be_listed_here.
+
+;comp-head
+
+

@@ -111,3 +111,30 @@
 
 ;(setf *lex-rule-suffix* nil)
 
+
+;; SSH 2014-09-08
+;;; Make generation faster 
+(setf *gen-packing-p* t)
+(setf *gen-filtering-p* t)
+(setf *packing-restrictor*  '(RELS HCONS ORTH STEM RULE-NAME))
+
+;;; Blocking Generation (lexicons)
+(setf *duplicate-lex-ids*
+  '(
+    其中_n
+    了_pfv_robust 着_dur_robust 过_exp_robust
+    ))
+
+;;; Blocking Generation (rules)
+(setf *gen-ignore-rules*
+  '(
+    ))
+
+
+; output all complete generated results
+(setf *bypass-equality-check* t)
+
+; prefer results with MRS subsumed by the input
+; but if none exist then output all complete generated results
+(setf *bypass-equality-check* :filter)
+

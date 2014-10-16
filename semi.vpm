@@ -17,7 +17,9 @@ SF : SF
   prop-or-ques >> prop-or-ques
   prop << prop-or-ques
   comm <> comm
-  * <> *
+;; SSH 2014-09-03: to block 下 了 雨 -> 下 了 雨 吗
+;  * <> *
+  * >> prop
 
 COG-ST : COG-ST
   type-id <> type-id
@@ -36,14 +38,44 @@ COG-ST : COG-ST
   activ-or-less <> activ-or-less
   * <> *
 
-;PNG : PNG
-;  * <> *
+PNG.PERNUM : PNG.PERNUM
+  3pl <> 3pl
+  2pl <> 2pl
+  1pl_excl <> 1pl_excl
+  1pl_incl <> 1pl_incl
+  1pl <> 1pl
+  3indet <> 3indet
+  2indet <> 2indet
+  1indet <> 1indet
+  3sg <> 3sg
+  2sg <> 2sg
+  1sg <> 1sg
+  3rd <> 3rd
+  2nd <> 2nd
+  1st <> 1st
+  pl <> pl
+  indet <> indet
+  sg <> sg
+  * <> *
+
+PNG.GENDER : PNG.GENDER
+  * <> *
+
+PNG.ANIMACY : PNG.ANIMACY
+  * <> *
 
 ;E.TENSE : E.TENSE
 ;  * <> *
-
-;E.ASPECT : E.ASPECT
-;  * <> *
+	  
+E.ASPECT : E.ASPECT
+;  has-aspect >> perfective
+  perfective <> perfective
+  imperfective <> imperfective
+  experiential <> experiential
+  delimitative <> delimitative
+  durative <> durative
+  non-aspect <> non-aspect
+  * <> *
 
 ;E.MOOD : E.MOOD
 ;  * <> *

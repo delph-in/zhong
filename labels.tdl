@@ -16,6 +16,21 @@
 ;;; the more specific one must appear first in this list, or
 ;;; it will never get used.
 
+
+;; SSH 2014-09-26: Following the Penn Tagset 。？！are tagged as '.'.
+
+; comma-label := label & 
+;             [ SYNSEM.LOCAL [ CAT [ HEAD comma,
+;                                    VAL.SPR < > ],
+;                              COORD-STRAT "" ],
+;               LABEL-NAME "," ].
+
+punct-label := label & 
+            [ SYNSEM.LOCAL [ CAT [ HEAD punct,
+                                   VAL.SPR < > ],
+                             COORD-STRAT "" ],
+              LABEL-NAME "." ].
+
 np-label := label & 
             [ SYNSEM.LOCAL [ CAT [ HEAD noun,
                                    VAL.SPR < > ],
@@ -39,6 +54,14 @@ n-bottom-label := label &
                                    VAL.SPR < [ ] > ],
                              COORD + ],
               LABEL-NAME "NP-B" ].
+
+;; SSH 2014-10-10 Nominalizer 的 'de'
+;; According to Rose, this item cannot be labeled as 'N'. 
+nm-label := label &
+	   [ SYNSEM.LOCAL [ CAT [ HEAD nm,
+                                  VAL.SPR < [ ], anti-synsem > ],
+                            COORD-STRAT "" ],
+             LABEL-NAME "NM" ].
 
 n-label := label & 
 	   [ SYNSEM.LOCAL [ CAT [ HEAD noun,
@@ -174,6 +197,36 @@ cp-label := label &
 det-label := label &
 	     [ SYNSEM.LOCAL.CAT.HEAD det,
 	       LABEL-NAME "D"].
+
+; SSH 2014-10-16: aspectual markers (了, 着, 过)
+le-pfv-label := label & 
+	    [ STEM <"了">,
+	      SYNSEM [ R-PERIPH na-or--,
+		       LOCAL [ CAT.HEAD adv,
+			       COORD-STRAT "" ] ],
+	      LABEL-NAME "AM" ].
+
+zhe-label := label & 
+	    [ STEM <"着">,
+	      SYNSEM [ R-PERIPH na-or--,
+		       LOCAL [ CAT.HEAD adv,
+			       COORD-STRAT "" ] ],
+	      LABEL-NAME "AM" ].
+
+guo-label := label & 
+	    [ STEM <"过">,
+	      SYNSEM [ R-PERIPH na-or--,
+		       LOCAL [ CAT.HEAD adv,
+			       COORD-STRAT "" ] ],
+	      LABEL-NAME "AM" ].
+
+; SSH 2014-10-16: Sentence-final particles (了)
+le-crs-label := label &
+	     [ STEM <"了">,
+	      SYNSEM [ R-PERIPH +,
+			LOCAL [ CAT.HEAD adv,
+				COORD-STRAT "" ] ],
+               LABEL-NAME "SF" ].
 
 adv-mid-label := label & 
 	   [ SYNSEM.LOCAL [ CAT.HEAD adv,
