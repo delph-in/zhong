@@ -2325,3 +2325,39 @@ comp-marker-phrase := basic-marker-comp-phrase & marker-final-phrase & head-init
     MARKER-DTR.SYNSEM [ L-PERIPH #lperiph,
 			R-PERIPH #rperiph,
 			PUNCTUATED #punctuated ] ].
+
+
+;; DPF 2014-08-01 - Added unary and binary bridging rules to accommodate robust
+;; full-forest treebanking.  The strategy is to pump each normal edge in the
+;; chart to a "bridge head" edge via the unary rule, and then combine two
+;; adjacent such bridge-head edges using the binary rule.  This strategy,
+;; proposed by Woodley Packard, results in a mere doubling of the number of
+;; edges in each cell of the chart, rather than the square of the number of
+;; normal edges that resulted from trying just a binary bridging rule that
+;; accepted either bridge or normal edges.
+;;
+bridge-head := head.
+
+bridge-binary-phrase := basic-binary-phrase &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD bridge-head & [ MOD < > ],
+			   VAL [ SUBJ < >,
+				 SPR < >,
+				 COMPS < > ] ] ],
+	     NON-LOCAL non-local-none ],
+    C-CONT [ RELS <! !>,
+	     HCONS <! !>,
+	     ICONS <! !> ],
+    ARGS < [ SYNSEM.LOCAL.CAT.HEAD bridge-head],
+	   [ SYNSEM.LOCAL.CAT.HEAD bridge-head ] > ].
+
+bridge-unary-phrase := basic-unary-phrase &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD bridge-head & [ MOD < > ],
+			   VAL [ SUBJ < >,
+				 SPR < >,
+				 COMPS < > ] ] ],
+	     NON-LOCAL non-local-none ],
+    C-CONT [ RELS <! !>,
+	     HCONS <! !>,
+	     ICONS <! !> ],
+    ARGS < [ SYNSEM.LOCAL.CAT.HEAD +nvjrpcdo ] > ].
+

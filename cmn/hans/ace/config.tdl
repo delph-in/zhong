@@ -20,7 +20,8 @@ lex-pred-path             := SYNSEM LKEYS KEYREL PRED.
 rule-rels-path            := C-CONT RELS.
 label-path                := LABEL-NAME.
 
-parsing-roots             := root.
+;;; SSH 2014-10-31: root-bridge should be used only for robust parsing.
+parsing-roots             := root root-bridge.
 generation-roots          := root.
 
 semarg-type               := semarg.
