@@ -27,9 +27,6 @@ spoken := robust &
 unproductive := robust.
 dialect := robust. 
 
-synsem :+ 
- [ PUNCTUATED luk ].
-
 lex-rule :+ 
  [ STYLE #style,
    DTR.STYLE #style ].
@@ -37,6 +34,39 @@ lex-rule :+
 basic-unary-phrase :+ 
   [ STYLE #style,
     ARGS < [ STYLE #style ] > ].
+
+synsem :+ 
+ [ PUNCTUATED luk ].
+
+
+card_rel := named_rel.
+
+card-relation := named-relation & arg1-relation &
+  [ PRED card_rel ].
+
+
+; SSH 2014-10-20: type hiearchy for classifers
+classifier_x_rel := predsort.
+个_x_rel := classifier_x_rel.
+只_x_rel := 个_x_rel.
+匹_x_rel := 只_x_rel.
+条_x_rel := 只_x_rel.
+台_x_rel := 个_x_rel. 
+根_x_rel := 个_x_rel.
+件_x_rel := 个_x_rel.
+些_x_rel := 个_x_rel.
+
+#|
+lex-sense-default := lex-item &
+ [ SYNSEM.LOCAL.CAT.HEAD.KEYS.KEY 个_x_rel ].
+lex-sense-animal := lex-sense-default &
+ [ SYNSEM.LOCAL.CAT.HEAD.KEYS.KEY 只_x_rel ].
+lex-sense-horse := lex-sense-animal &
+ [ SYNSEM.LOCAL.CAT.HEAD.KEYS.KEY 匹_x_rel ].
+lex-sense-machine := lex-sense-default &
+ [ SYNSEM.LOCAL.CAT.HEAD.KEYS.KEY 台_x_rel ].
+|#
+
 
 lzg := avm. 
 le := lzg.
@@ -59,7 +89,10 @@ nm := noun.
 
 hon-lex := lex-item &
   [ SYNSEM.LOCAL.CAT.HEAD.HON + ]. 
-  
+
+num :+ 
+ [ CARDINAL bool ].
+
 ;;; Lexical types
 
 ;;; Nouns
@@ -1097,49 +1130,49 @@ basic-adjective-lex :+ basic-icons-lex-item.
 
 basic-attr-adj-lex := basic-int-mod-adj-lex & 
   [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ LOCAL [ CAT.HEAD noun,
-                        CONT.HOOK.INDEX #index ] ] > ],
-             CONT [ HOOK.INDEX #arg0,
-                RELS <! #rel !> ] ], 
-         LKEYS.KEYREL #rel & 
-           [ ARG0 #arg0, 
-             ARG1 #index ] ] ].
+						CONT.HOOK.INDEX #index ] ] > ],
+		     CONT [ HOOK.INDEX #arg0,
+			    RELS <! #rel !> ] ], 
+	     LKEYS.KEYREL #rel & 
+		   [ ARG0 #arg0, 
+		     ARG1 #index ] ] ].
 
 attr-adj-lex := basic-attr-adj-lex &
   [ SYNSEM.LOCAL.CAT [ POSTHEAD -,
-               HEAD.MOD < [ LOCAL.CAT.VAL.SPR < [] > ] >,
-               VAL [ COMPS < >,
-                 SPR < >,
-                 SUBJ < > ] ] ].
+		       HEAD.MOD < [ LOCAL.CAT.VAL.SPR < [] > ] >,
+		       VAL [ COMPS < >,
+			     SPR < >,
+		     SUBJ < > ] ] ].
 
 attr-adj-posthd-lex := basic-attr-adj-lex &
   [ SYNSEM.LOCAL.CAT [ POSTHEAD +,
-               HEAD.MOD < [ LOCAL.CAT.VAL.SPR < > ] >,
-               VAL [ COMPS < >,
-                 SPR < >,
-                 SUBJ < > ] ] ].
+		       HEAD.MOD < [ LOCAL.CAT.VAL.SPR < > ] >,
+		       VAL [ COMPS < >,
+			     SPR < >,
+			     SUBJ < > ] ] ].
 
 basic-pred-adj-lex := basic-adjective-lex & 
   [ SYNSEM [ LOCAL [ CAT.HEAD.LZG no-lzg,
-					 CONT [ HOOK [ LTOP #lbl, 
-								   INDEX #arg0 ],
-							RELS <! #rel !> ] ],
-			 LKEYS.KEYREL #rel & [ LBL #lbl,
-							   ARG0 #arg0 ] ] ].
+		     CONT [ HOOK [ LTOP #lbl, 
+				   INDEX #arg0 ],
+			    RELS <! #rel !> ] ],
+	     LKEYS.KEYREL #rel & [ LBL #lbl,
+				   ARG0 #arg0 ] ] ].
 
 pred-adj-lex := basic-pred-adj-lex &
   [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD <>,
-						   VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
-												 CONT.HOOK.LTOP #lbl ],
-										 OPT - ] >,
-								 SUBJ < [LOCAL [CAT [HEAD +nv, 
-													 VAL.SPR < > ],
-												CONT.HOOK.INDEX #index &
-													[ SF prop-or-ques ] ],
-										 NON-LOCAL.SLASH #slash ] >,
-								 COMPS < > ] ],
-					 CONT.HOOK.LTOP #lbl ],
-			 NON-LOCAL.SLASH #slash, 
-			 LKEYS.KEYREL.ARG1 #index ] ].
+			   VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
+						 CONT.HOOK.LTOP #lbl ],
+					 OPT - ] >,
+				 SUBJ < [LOCAL [CAT [HEAD +nv, 
+						     VAL.SPR < > ],
+						CONT.HOOK.INDEX #index &
+						    [ SF prop-or-ques ] ],
+					 NON-LOCAL.SLASH #slash ] >,
+				 COMPS < > ] ],
+		     CONT.HOOK.LTOP #lbl ],
+	     NON-LOCAL.SLASH #slash, 
+	     LKEYS.KEYREL.ARG1 #index ] ].
 
 ;; DPF 2011-06-17 - For now, we attach the degree specifier higher than any
 ;; complements, even though this seems counter-intuitive, especially compared
@@ -1203,23 +1236,25 @@ classifier := +jd.
 basic-classifier-lex := norm-ltop-lex-item & single-rel-lex-item & 
                         intersective-mod-lex & no-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD classifier & 
-                [ MOD < [ LOCAL [ CONT.HOOK [ INDEX #index,
-                              LTOP #ltop ],
-                          CAT [ HEAD noun,
-                            VAL.SPR < [] > ] ] ] > ], 
-               VAL [ SPR < [ LOCAL [ CAT [ VAL [ COMPS < >,
-                                 SUBJ < > ],
-                               HEAD num & 
-                               [ MOD < > ] ],
-                         CONT.HOOK [ LTOP #ltop,
-                                 INDEX #index ]]]>,
-                 SUBJ < >,
-                 COMPS < > ],
-               POSTHEAD - ],
-             CONT.HOOK [ INDEX #index & ref-ind,
-                 LTOP #ltop ] ],          
-         NON-LOCAL.SLASH 0-dlist,
-         LKEYS.KEYREL.ARG1 #index ] ].
+				[ KEYS.KEY #sense,
+				  MOD < [ LOCAL [ CONT.HOOK [ INDEX #index,
+							      LTOP #ltop ],
+						  CAT [ HEAD noun & [ KEYS.KEY #sense ],
+							VAL.SPR < [] > ] ] ] > ], 
+			   VAL [ SPR < [ LOCAL [ CAT [ VAL [ COMPS < >,
+							     SUBJ < > ],
+						       HEAD num & 
+							   [ MOD < > ] ],
+						 CONT.HOOK [ LTOP #ltop,
+							     INDEX #index ]]]>,
+				 SUBJ < >,
+				 COMPS < > ],
+			   POSTHEAD - ],
+		     CONT.HOOK [ INDEX #index & ref-ind,
+				 LTOP #ltop ] ],          
+	     NON-LOCAL.SLASH 0-dlist,
+	     LKEYS.KEYREL [ PRED #sense,
+			    ARG1 #index ] ] ].
 
 classifier-lex := basic-classifier-lex &
   [ SYNSEM.LOCAL.CAT.VAL.SPR < [ OPT - ] > ].
@@ -1234,15 +1269,18 @@ classifier-quant-lex := basic-classifier-lex &
 
 num-adj-lex := single-rel-lex-item & basic-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ VAL [ COMPS < >,
-                 SUBJ < >,
-                 SPR < > ],
-               HEAD num & [ MOD < > ] ],
-             CONT [ HOOK [ LTOP #lbl, 
-                   INDEX #index ],
-                RELS <! #rel !> ] ],
-         NON-LOCAL.SLASH 0-dlist,
-         LKEYS.KEYREL #rel & [ LBL #lbl,
-                   ARG1 #index ] ] ].
+				 SUBJ < >,
+				 SPR < > ],
+			   HEAD num & [ CARDINAL +,
+					MOD < > ] ],
+		     CONT [ HOOK [ LTOP #lbl, 
+				   INDEX #index ],
+			    RELS <! #rel !> ] ],
+	     NON-LOCAL.SLASH 0-dlist,
+	     LKEYS.KEYREL card-relation & #rel & [ LBL #lbl,
+						   ARG1 #index ] ] ].
+
+
 
 ;;To write, after understanding of coordination classes
 ;;conj-np-lex := conj-lex &

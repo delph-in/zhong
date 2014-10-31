@@ -73,7 +73,18 @@ question-marker := punctuation &
 
 狗_n := count-noun-lex &
   [ STEM < "狗" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_gou3_n_rel" ].
+    SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 只_x_rel,
+	     LKEYS.KEYREL.PRED "_gou3_n_rel" ] ]. 
+
+马_n := count-noun-lex &
+  [ STEM < "马" >,
+    SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 匹_x_rel,
+	     LKEYS.KEYREL.PRED "_ma3_n_rel" ] ]. 
+
+电脑_n := count-noun-lex & 
+  [ STEM < "电脑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 台_x_rel,
+	     LKEYS.KEYREL.PRED "_dian4nao3_n_rel" ] ].
 
 五_n := count-noun-lex &
   [ STEM < "五" >,
@@ -158,6 +169,11 @@ question-marker := punctuation &
   [ STEM < "吃" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_chi1_v_1_rel" ] ].
+
+卖_v :=  v_trans-verb-lex &
+  [ STEM <"卖">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_mai4_v_rel" ] ].
 
 爱_v :=  v_trans-verb-lex &
   [ STEM <"爱">,
@@ -260,10 +276,6 @@ question-marker := punctuation &
 无聊_j := pred-adj-lex &
   [ STEM <"无聊">,
     SYNSEM.LKEYS.KEYREL.PRED "_wu2liao2_a_rel" ].
-
-76_j := num-adj-lex &
-  [ STEM <"76">,
-    SYNSEM.LKEYS.KEYREL.PRED "_76_a_rel" ].
 
 副_j := attr-adj-lex &
   [ STEM <"副">,
@@ -422,27 +434,35 @@ question-marker := punctuation &
 
 个_cl := classifier-lex &
   [ STEM < "个" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_ge_x_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED 个_x_rel ].
 
 根_cl := classifier-lex &
   [ STEM < "根" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_gen_x_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED 根_x_rel ].
 
 只_cl := classifier-lex &
   [ STEM < "只" >,
-    SYNSEM.LKEYS.KEYREL.PRED "zhi_x_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED 只_x_rel ].
+
+匹_cl := classifier-lex &
+  [ STEM < "匹" >,
+    SYNSEM.LKEYS.KEYREL.PRED 匹_x_rel ].
 
 件_cl := classifier-lex &
   [ STEM < "件" >,
-    SYNSEM.LKEYS.KEYREL.PRED "jian_x_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED 件_x_rel ].
 
 条_cl := classifier-lex &
   [ stem <"条">,
-    SYNSEM.LKEYS.KEYREL.PRED "tiao1_x_rel"].
+    SYNSEM.LKEYS.KEYREL.PRED 条_x_rel ].
+
+台_cl := classifier-lex & 
+  [ stem <"台">,
+    SYNSEM.LKEYS.KEYREL.PRED 台_x_rel ].
 
 些 := classifier-quant-lex &
   [ STEM < "些" >,
-    SYNSEM.LKEYS.KEYREL.PRED "xie1_x_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED 些_x_rel ].
 
 
 ;;; Auxiliaries
@@ -651,22 +671,6 @@ comma_c := conj-lex &
   [ STEM < "对" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dui4_p_rel" ].
 
-10_j := num-adj-lex &
-  [ STEM < "10" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_10_a_rel" ].
-
-220_j := num-adj-lex &
-  [ STEM < "220" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_220_a_rel" ].
-
-23_j := num-adj-lex &
-  [ STEM < "23" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_23_a_rel" ].
-
-3_j := num-adj-lex &
-  [ STEM < "3" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_3_a_rel" ].
-
 给_v := ditrans-verb-lex &
   [ STEM < "给" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
@@ -756,10 +760,6 @@ comma_c := conj-lex &
   [ STEM < "到" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_dao4_v_rel" ] ].
-
-十_j := num-adj-lex &
-  [ STEM < "十" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_shi2_a_rel" ].
 
 号码_n := count-noun-lex &
   [ STEM < "号码" >,
@@ -1053,13 +1053,73 @@ comma_c := conj-lex &
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_bao3zheng4_v_rel" ] ].
 
+
 一_j := num-adj-lex &
-  [ STEM < "一" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_yi1_a_rel" ].
+  [ STEM < "一" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "1" ].
+
+两_j := num-adj-lex &
+  [ STEM < "两" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "2" ].
 
 三_j := num-adj-lex &
-  [ STEM < "三" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_san1_a_rel" ].
+  [ STEM < "三" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "3" ].
+
+四_j := num-adj-lex &
+  [ STEM < "四" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "4" ].
+
+五_j := num-adj-lex &
+  [ STEM < "五" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "5" ].
+
+六_j := num-adj-lex &
+  [ STEM < "六" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "6" ].
+
+七_j := num-adj-lex &
+  [ STEM < "七" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "7" ].
+
+八_j := num-adj-lex &
+  [ STEM < "八" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "8" ].
+ 
+九_j := num-adj-lex &
+  [ STEM < "九" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "9" ]. 
+
+十_j := num-adj-lex &
+  [ STEM < "十" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "10" ].
+
+二十_j := num-adj-lex &
+  [ STEM < "二十" > ].
+
+; 二十_j := num-adj-lex &
+;   [ STEM < "二十" >,
+;     SYNSEM.LKEYS.KEYREL.PRED "_er4shi2_a_rel" ].
+
+; 10_j := num-adj-lex &
+;   [ STEM < "10" >,
+;     SYNSEM.LKEYS.KEYREL.PRED "_10_a_rel" ].
+
+; 76_j := num-adj-lex &
+;   [ STEM <"76"> ].
+
+; 220_j := num-adj-lex &
+;   [ STEM < "220" >,
+;     SYNSEM.LKEYS.KEYREL.PRED "_220_a_rel" ].
+
+; 23_j := num-adj-lex &
+;   [ STEM < "23" >,
+;     SYNSEM.LKEYS.KEYREL.PRED "_23_a_rel" ].
+
+; 3_j := num-adj-lex &
+;   [ STEM < "3" >,
+;     SYNSEM.LKEYS.KEYREL.PRED "_3_a_rel" ].
+
 
 三号_n := time-noun-lex &
   [ STEM < "三号" >,
@@ -1072,14 +1132,6 @@ comma_c := conj-lex &
 事_n := noun-lex &
   [ STEM < "事" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shi4_n_rel" ].
-
-五_j := num-adj-lex &
-  [ STEM < "五" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_wu3_a_rel" ].
-
-二十_j := num-adj-lex &
-  [ STEM < "二十" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_er4shi2_a_rel" ].
 
 是不是_r := tag-adv-lex &
   [ STEM <"是", "不", "是">,

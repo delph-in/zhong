@@ -75,3 +75,91 @@ Zhang1san1 de liang3 ge4 dian4nao3 mai4 le .
 Zhangsan NOM two CL computer sell PFV .
 Zhangsan sold two computers.
 
+
+### specifiers can be used instead of numerals
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenomena: classifiers
+张三 卖 了 这 台 电脑 。
+Zhang1san1 mai4 le zhe4 tai2 dian4nao3 .
+Zhangsan sell PFV this CL computer .
+Zhangsan sold this computer.
+
+
+### specifiers can be used instead of numerals
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenomena: classifiers
+张三 卖 了 那 台 电脑 。
+Zhang1san1 mai4 le na4 tai2 dian4nao3 .
+Zhangsan sell PFV that CL computer .
+Zhangsan sold that computer.
+
+
+### wh-words can be used instead of numerals
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenomena: classifiers
+张三 卖 了 哪 台 电脑 ？
+Zhang1san1 mai4 le na3 tai2 dian4nao3 ?
+Zhangsan sell PFV which CL computer ?
+Which computer did Zhangsan sell?
+
+
+### specifiers can be used with numerals
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenomena: classifiers
+张三 卖 了 这 两 台 电脑 。
+Zhang1san1 mai4 le zhe4 liang3 tai2 dian4nao3 .
+Zhangsan sell PFV this two CL computer .
+Zhangsan sold these two computers.
+
+
+### specifiers can be used with numerals
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenomena: classifiers
+张三 卖 了 那 两 台 电脑 。
+Zhang1san1 mai4 le na4 liang3 tai2 dian4nao3 .
+Zhangsan sell PFV that two CL computer .
+Zhangsan sold those two computers.
+
+
+### specifiers can be used with numerals
+Source: NTU compling
+Vetted: t
+Judgment: g
+Phenomena: classifiers
+张三 卖 了 哪 两 台 电脑 ？
+Zhang1san1 mai4 le na3 liang3 tai2 dian4nao3 .
+Zhangsan sell PFV which two CL computer .
+Which two computers did Zhangsan sell?
+
+
+### specifiers should be in front of numerals.
+Source: NTU compling
+Vetted: t
+Judgment: u
+Phenomena: classifiers
+张三 卖 了 两 这 台 电脑 。
+Zhang1san1 mai4 le liang3 zhe4 tai2 dian4nao3 .
+Zhangsan sell PFV two this CL computer .
+Zhangsan sold those two computers.
+
+
+### specifiers should be in front of numerals.
+Source: NTU compling
+Vetted: t
+Judgment: u
+Phenomena: classifiers
+张三 卖 了 两 那 台 电脑 。
+Zhang1san1 mai4 le liang3 na4 tai2 dian4nao3 .
+Zhangsan sell PFV two those CL computer .
+Zhangsan sold those two computers.
+
