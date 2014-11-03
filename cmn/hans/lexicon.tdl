@@ -505,11 +505,23 @@ question-marker := punctuation &
 
 这_d := prox_demons-determiner-lex &
   [ STEM < "这" >,
-	SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ].
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
+	     LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ] ].
 
 那_d := dist_demons-determiner-lex &
   [ STEM < "那" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ].
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
+	     LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ] ].
+
+这些_d := prox_demons-determiner-lex &
+  [ STEM < "这些" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ] ].
+
+那些_d := dist_demons-determiner-lex &
+  [ STEM < "那些" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ] ].
 
 每_d := determiner-lex &
   [ STEM < "每" >,
@@ -525,12 +537,27 @@ question-marker := punctuation &
 	
 些_d := determiner-lex &
   [ STEM < "些" >,
-	SYNSEM.LKEYS.KEYREL.PRED "some_q_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "some_q_rel" ].
 
+一些_d := determiner-lex &
+  [ STEM < "一些" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED "some_q_rel" ] ].
+
+有些_d := determiner-lex &
+  [ STEM < "有些" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED "some_q_rel" ] ].
 
 哪_d := determiner-lex &
   [ STEM < "哪" >,
-    SYNSEM.LKEYS.KEYREL.PRED "which_q_rel" ].
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
+	     LKEYS.KEYREL.PRED "which_q_rel" ] ].
+
+哪些_d := determiner-lex &
+  [ STEM < "哪些" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED "which_q_rel" ] ].
 
 什么_d := determiner-lex &
   [ STEM < "什么" >,

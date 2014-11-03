@@ -14,6 +14,8 @@
 :include "head-types".
 :include "matrix".
 :include "trung".
+:include "trung-lextypes".
+:include "trung-letypes".
 :include "zung".
 :include "mtr".
 

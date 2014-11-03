@@ -3,8 +3,6 @@
 ;;; $Id: pet.tdl,v 1.2 2008-05-23 01:44:21 sfd Exp $
 ;;;
 
-;;; created by Sanghoun Song (SSH, 2014-08-25)
-
 :begin :type.
 
 ;;
@@ -17,7 +15,7 @@
 :include "trung-lextypes".
 :include "trung-letypes".
 :include "zhong".
-:include "hant".
+:include "hans".
 :include "mtr".
 
 :end :type.
@@ -36,6 +34,7 @@
 
 :begin :instance :status rule.
 :include "rules".
+:include "rules-robust".
 :end :instance.
 
 :begin :instance :status lex-rule.

@@ -134,8 +134,3 @@ np-adp := np-adp-phrase.
 
 comp-marker := comp-marker-phrase.
 
-; SSH 2014-10-31: rules for bridge phrases
-xp-xp-bridge-c := bridge-binary-phrase.
-xp-bridge-c := bridge-unary-phrase.
-
-
