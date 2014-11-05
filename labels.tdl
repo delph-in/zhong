@@ -301,10 +301,10 @@ slash := meta &
     META-SUFFIX "" ].
 
 ;; SSH 2014-10-31 for robust parsing 
-bridge-binary := label &
-  [ SYNSEM.LOCAL.CAT.HEAD bridge-head,
-    LABEL-NAME "BP" ].
-
 bridge-unary := label &
-  [ SYNSEM [ LOCAL.CAT.HEAD bridge-head],
+  [ SYNSEM.LOCAL.CAT.HEAD bridge-head & [ BRIDGED - ],
     LABEL-NAME "BX" ].
+
+bridge-binary := label &
+  [ SYNSEM.LOCAL.CAT.HEAD bridge-head & [ BRIDGED + ],
+    LABEL-NAME "BP" ].

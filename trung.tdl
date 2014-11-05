@@ -978,28 +978,39 @@ comp-marker-phrase := basic-marker-comp-phrase & marker-final-phrase & head-init
 ;; normal edges that resulted from trying just a binary bridging rule that
 ;; accepted either bridge or normal edges.
 ;;
-bridge-head := head.
+
+bridge-head := head-min &
+  [ BRIDGED luk ].
 
 bridge-binary-phrase := basic-binary-phrase &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD bridge-head & [ MOD < > ],
-			   VAL [ SUBJ < >,
-				 SPR < >,
-				 COMPS < > ] ] ],
-	     NON-LOCAL non-local-none ],
-    C-CONT [ RELS <! !>,
-	     HCONS <! !>,
+  [ SYNSEM [ LOCAL [ CAT [ HEAD bridge-head & [ BRIDGED + ],
+                           VAL [ SUBJ < >,
+                                 SPR < >,
+                                 COMPS < > ] ] ],
+             NON-LOCAL non-local-none ],
+    C-CONT [ HOOK [ LTOP #lbl, INDEX #arg0 ],
+	     RELS <! [ LBL #lbl,
+		       PRED "bridge_x_rel",
+		       ARG0 #arg0,
+		       ARG1 #ind,
+		       ARG2 #rind ] !>,
+             HCONS <! !>,
 	     ICONS <! !> ],
-    ARGS < [ SYNSEM.LOCAL.CAT.HEAD bridge-head],
-	   [ SYNSEM.LOCAL.CAT.HEAD bridge-head ] > ].
+    ARGS < [ SYNSEM.LOCAL [ CAT.HEAD bridge-head & [ BRIDGED - ],
+			    CONT.HOOK.INDEX #ind ] ],
+           [ SYNSEM.LOCAL [ CAT.HEAD bridge-head,
+			    CONT.HOOK.INDEX #rind ] ] > ].
 
 bridge-unary-phrase := basic-unary-phrase &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD bridge-head & [ MOD < > ],
-			   VAL [ SUBJ < >,
-				 SPR < >,
-				 COMPS < > ] ] ],
-	     NON-LOCAL non-local-none ],
-    C-CONT [ RELS <! !>,
-	     HCONS <! !>,
+  [ SYNSEM [ LOCAL [ CAT [ HEAD bridge-head,
+                           VAL [ SUBJ < >,
+                                 SPR < >,
+                                 COMPS < > ] ] ],
+             NON-LOCAL non-local-none ],
+    C-CONT [ HOOK #hook,
+	     RELS <! !>,
+             HCONS <! !>,
 	     ICONS <! !> ],
-    ARGS < [ SYNSEM.LOCAL.CAT.HEAD +nvjrpcdo ] > ].
+    ARGS < [ SYNSEM.LOCAL [ CAT.HEAD head,
+			    CONT.HOOK #hook ] ] > ].
 
