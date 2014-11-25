@@ -39,14 +39,15 @@
 ;;;
 (read-tdl-type-files-aux
 (list
-(lkb-pathname (parent-directory) "matrix.tdl")
-(lkb-pathname (parent-directory) "head-types.tdl")
-(lkb-pathname (parent-directory) "trung.tdl")
-(lkb-pathname (parent-directory) "trung-lextypes.tdl")
-(lkb-pathname (parent-directory) "trung-letypes.tdl")
-(lkb-pathname (parent-directory) "zhong.tdl")
-(lkb-pathname (parent-directory) "hans.tdl")
-(lkb-pathname (parent-directory) "mtr.tdl")
+ (lkb-pathname (parent-directory) "matrix.tdl")
+ (lkb-pathname (parent-directory) "head-types.tdl")
+ (lkb-pathname (parent-directory) "trung.tdl")
+ (lkb-pathname (parent-directory) "trung-lextypes.tdl")
+ (lkb-pathname (parent-directory) "trung-letypes.tdl")
+ (lkb-pathname (parent-directory) "zhong.tdl")
+ (lkb-pathname (parent-directory) "hans.tdl")
+ (lkb-pathname (parent-directory) "mtr.tdl")
+ (lkb-pathname (parent-directory) "tmt.tdl") 
 ))
 
 ;;;
@@ -54,7 +55,18 @@
 ;;; (some grammars with larger lexica organize them into multiple files).
 ;;;
 
-(read-tdl-lex-file-aux (list (lkb-pathname (parent-directory) "lexicon.tdl")))
+;; SSH 2014-11-24: Generic Lexical Entries
+;;(read-tdl-lex-file-aux (list (lkb-pathname (parent-directory) "lexicon.tdl")))
+(if (and (boundp '*lexdb-params*) *lexdb-params*)
+    (progn
+      (load-lexdb-from-script)
+      (read-cached-sublex-if-available 
+       "gle" (lkb-pathname (parent-directory) "gle.tdl")))
+    (read-cached-lex-if-available 
+     (list
+      (lkb-pathname (parent-directory) "lexicon.tdl")
+      (lkb-pathname (parent-directory) "gle.tdl"))))
+
 
 ;;; For grammars with small lexicons, no need to use a cache file:
 ;;; Once your lexicon has >1000 words or so, consider using the

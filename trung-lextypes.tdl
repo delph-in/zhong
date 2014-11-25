@@ -64,22 +64,22 @@ bound-time-noun-lex := basic-time-noun-lex &
 
 proper-noun-lex := basic-one-arg & basic-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
-               VAL [ COMPS < >,
-                 SUBJ < >,
-                 SPR < > ] ],
-             CONT [ HOOK.INDEX #index & [ SORT nontime-s ],
-                RELS <! relation & #keyrel & 
-                  [ LBL #larg,
-                    ARG0 #index ],
-                    quant-relation &
-                    [ PRED "proper_q_rel",
-                      ARG0 #index,
-                      RSTR #harg ] !>,
-                HCONS <! qeq & 
-                   [ HARG #harg,
-                     LARG #larg ] !> ] ],
-         NON-LOCAL.SLASH 0-dlist,
-         LKEYS.KEYREL #keyrel & named-relation ] ].
+			   VAL [ COMPS < >,
+				 SUBJ < >,
+				 SPR < > ] ],
+		     CONT [ HOOK.INDEX #index & [ SORT nontime-s ],
+			    RELS <! relation & #keyrel & 
+				  [ LBL #larg,
+				    ARG0 #index ],
+				  quant-relation &
+				  [ PRED "proper_q_rel",
+				    ARG0 #index,
+				    RSTR #harg ] !>,
+			    HCONS <! qeq & 
+				   [ HARG #harg,
+				     LARG #larg ] !> ] ],
+	     NON-LOCAL.SLASH 0-dlist,
+	     LKEYS.KEYREL #keyrel & named-relation ] ].
 
 
 ;; SSH 2014-09-11: Locative Proper Names (e.g. 北京).
@@ -87,64 +87,77 @@ proper-noun-lex := basic-one-arg & basic-icons-lex-item &
 ;; *我 要 去 李四 / 我 要 去 李四 的 家
 loc-proper-noun-lex := proper-noun-lex.
 
-
-basic-pronoun-lex :=  basic-one-arg & 
+;; SSH 2014-11-13: pronouns introduce a quant-relation. 
+basic-pronoun-lex :=  basic-one-arg & norm-hook-lex-item & 
   [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
-               VAL [ COMPS < >,
-                 SUBJ < >,
-                 SPR < > ] ],
-             CONT [ HOOK.INDEX.SORT nontime-s,
-                RELS.LIST.FIRST #rel ] ],
-         LKEYS.KEYREL noun-relation & #rel & [ PRED "pronoun_n_rel" ] ] ].
+			   VAL [ COMPS < >,
+				 SUBJ < >,
+				 SPR < > ] ],
+		     CONT [ HOOK.INDEX #index & [ SORT nontime-s ],
+			    RELS <! #rel &
+				  [ LBL #larg ],
+				  quant-relation & 
+				  [ ARG0 #index,
+				    RSTR #harg ] !>,
+			    HCONS <! qeq & 
+				   [ HARG #harg, 
+				     LARG #larg ] !> ] ],
+	     LKEYS.KEYREL noun-relation & #rel & [ PRED "pron_rel" ] ] ].
 
-pronoun-lex := basic-pronoun-lex & no-hcons-lex-item & 
-               norm-hook-lex-item & basic-icons-lex-item &
-  [ SYNSEM.LOCAL.CONT.RELS <! relation !> ].
 
-1sg-pronoun-noun-lex := pronoun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1sg ].
+personal-pronoun-lex := basic-pronoun-lex & basic-icons-lex-item &
+  [ SYNSEM.LOCAL.CONT.RELS <! relation, 
+			    [ PRED "pronoun_q_rel" ] !> ].
 
-2sg-pronoun-noun-lex := pronoun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2sg ].
+; 1sg-pronoun-noun-lex := pronoun-lex &
+;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1sg ].
 
-2sg-pronoun-noun-hon-lex := 2sg-pronoun-noun-lex & hon-lex.
+; 2sg-pronoun-noun-lex := pronoun-lex &
+;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2sg ].
 
-3sg-pronoun-noun-lex := pronoun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3sg ].
+; 2sg-pronoun-noun-hon-lex := 2sg-pronoun-noun-lex & hon-lex.
 
-1pl-pronoun-incl-noun-lex := pronoun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl & 1pl_incl ].
+; 3sg-pronoun-noun-lex := pronoun-lex &
+;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3sg ].
+
+; 1pl-pronoun-incl-noun-lex := pronoun-lex &
+;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl & 1pl_incl ].
  
-1pl-pronoun-excl-noun-lex := pronoun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl & 1pl_excl ].
+; 1pl-pronoun-excl-noun-lex := pronoun-lex &
+;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl & 1pl_excl ].
 
-2pl-pronoun-noun-lex := pronoun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2pl ].
+; 2pl-pronoun-noun-lex := pronoun-lex &
+;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2pl ].
 
-3pl-pronoun-noun-lex := pronoun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl ].
+; 3pl-pronoun-noun-lex := pronoun-lex &
+;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl ].
 
-3-pronoun-noun-lex := pronoun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ].
+; 3-pronoun-noun-lex := pronoun-lex &
+;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ].
 
 wh-pronoun := basic-pronoun-lex & 
-  [SYNSEM [ LOCAL.CONT [ HOOK [ INDEX #ind & [ PNG.PERNUM 3rd ],
+  [SYNSEM [ LOCAL.CONT [ HOOK [ INDEX #index & [ PNG.PERNUM 3rd ],
                                 ICONS-KEY #icons,
 				CLAUSE-KEY #clause ],
-                         RELS <! relation & 
-                               [ LBL #larg,
-                                 ARG0 #ind ],
-                               quant-relation &
-                               [ ARG0 #ind,
-                                 RSTR #harg,
-                                 PRED "which_q_rel" ] !>,
-                         HCONS <! qeq &
-                                [ HARG #harg,
-                                  LARG #larg ] !>,
+                         RELS <! relation,
+			       [ PRED "which_q_rel" ] !>,
                          ICONS <! semantic-focus & #icons &
-                                [ TARGET #ind,
+                                [ TARGET #index,
 				  CLAUSE #clause ] !> ],
             NON-LOCAL.QUE 1-dlist ] ].
+
+
+;; SSH 2014-11-13: 大家 (everyone), etc.
+quant-pronoun-lex := basic-pronoun-lex & 
+		     basic-icons-lex-item &
+  [ SYNSEM [ LOCAL.CONT.RELS <! relation,
+			      #altkeyrel !>,
+	     LKEYS.ALTKEYREL #altkeyrel ] ].
+
+
+
+
+
 
 ; For `de' as in MRS 55
 #|
@@ -551,10 +564,10 @@ v_np-vp_light-lex := np-vp-comp-verb-light-lex.
 
 v_prep-lex-item := basic-two-arg-no-hcons & main-verb-lex & basic-icons-lex-item &
    [ ARG-ST < [ LOCAL.CONT.HOOK.INDEX ref-ind & #ind1 ],
-          [ LOCAL.CONT.HOOK.INDEX ref-ind & #ind2 ] >,
+	      [ LOCAL.CONT.HOOK.INDEX ref-ind & #ind2 ] >,
      SYNSEM [ LKEYS.KEYREL [ ARG1 #ind1,
-                 ARG2 #ind2 ],
-          LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD adp ] > ] ].
+			     ARG2 #ind2 ],
+	      LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD adp ] > ] ].
 
 ;; SSH 2014-09-02: To block overgeneration (e.g. *李四 被 了 张三 追赶),
 ;; I added [POSTHEAD +].
@@ -624,23 +637,23 @@ v_weather_type_lex := verb-lex & basic-icons-lex-item & aspect-rule-dtr &
 
 basic-int-adverb-lex :+
   [ SYNSEM [ LOCAL.CAT.VAL [ SUBJ < > ],
-         NON-LOCAL.SLASH 0-dlist ] ].
+	     NON-LOCAL.SLASH 0-dlist ] ].
 
 basic-scopal-adverb-lex :+
   [ SYNSEM.LOCAL [ CAT.VAL [ SUBJ < >,
-                 SPR < [ LOCAL [ CAT.HEAD adv,
-                         CONT.HOOK #hook ] ] > ],
-           CONT.HOOK #hook ] ].
+			     SPR < [ LOCAL [ CAT.HEAD adv,
+					     CONT.HOOK #hook ] ] > ],
+		   CONT.HOOK #hook ] ].
 
 ;;Non-moveable manner adverbs
 
 int-adv-vp-pre := basic-int-adverb-lex &
   [ SYNSEM [ LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
-												  VAL [ SUBJ < [] >,
-														COMPS < > ] ] ] >,
-						 VAL [ COMPS < >,
-							   SPR < > ],
-						 POSTHEAD - ] ] ].
+						  VAL [ SUBJ < [] >,
+							COMPS < > ] ] ] >,
+			 VAL [ COMPS < >,
+			       SPR < > ],
+			 POSTHEAD - ] ] ].
 
 ;; SSH 2014-09-02: To block generation (e.g., 狗 在 在 在 ... 叫), I
 ;; added [MODIFIED notmod].
@@ -749,11 +762,26 @@ scop-adv-lex  := basic-scopal-adverb-lex &
                VAL.COMPS < >,
                POSTHEAD - ] ].
 
+;; SSH 2014-11-10: 都 (dou) 
+;; Added [SUBJ < [] >] for * 三 只 猫 都 我们 不 追赶 。
+;; Added [COMPS < >] for blocking 我们 [[都 喜欢] 烟草] 。
+scop-adv-prehd-lex := basic-scopal-adverb-lex &
+  [ SYNSEM [ LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT [ HEAD +vj,
+						  VAL [ SUBJ < [] >, 
+							COMPS < >,
+							SPR < > ] ] ] >,
+			 VAL [ COMPS < >,
+			       SPEC < > ],
+			 POSTHEAD - ],
+	     MODIFIED notmod ] ].
+
+
 scop-adv-posthd-lex := basic-scopal-adverb-lex &
   [ SYNSEM.LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT [ HEAD +nv,
-                        VAL.SPR < > ] ] >,
-               VAL.COMPS < >,
-               POSTHEAD + ] ].
+						VAL.SPR < > ] ] >,
+		       VAL.COMPS < >,
+		       POSTHEAD + ] ].
+
 
 tag-adv-lex := scop-adv-posthd-lex &
   [ SYNSEM [ LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
@@ -844,16 +872,20 @@ no-obj-drop-verb-lex := lex-item.
 ;;; Determiners
 ;;; SPEC is non-empty, and already specified by basic-determiner-lex.
 
+
+;; SSH 2014-11-11: added [MODIFIED notmod] to block [每 [[一 只] 猫]].
+;; [[每 [一 只]] 猫] is correct.
 determiner-lex := basic-determiner-lex & basic-zero-arg &
   [ SYNSEM [ LOCAL [ CAT.VAL [ SPR < >,
-                   COMPS < [ LOCAL [ CAT.HEAD classifier,
-                         CONT.HOOK [ INDEX #index,
-                                 LTOP #ltop ] ],
-                     OPT - ] >,
-                   SUBJ < >,
-                   SPEC < [ LOCAL.CONT.HOOK.LTOP #ltop ] > ],
-             CONT [ HOOK.INDEX #index,
-                RELS <! relation !> ] ],
+			       COMPS < [ LOCAL [ CAT.HEAD classifier,
+						 CONT.HOOK [ INDEX #index,
+							     LTOP #ltop ] ],
+					 OPT - ] >,
+			       SUBJ < >,
+			       SPEC < [ MODIFIED notmod,
+					LOCAL.CONT.HOOK.LTOP #ltop ] > ],
+		     CONT [ HOOK.INDEX #index,
+			    RELS <! relation !> ] ],
          NON-LOCAL.SLASH 0-dlist ] ].
 
 prox_demons-determiner-lex := determiner-lex.
@@ -1065,7 +1097,8 @@ num-adj-lex := single-rel-lex-item & basic-icons-lex-item &
 					MOD < > ] ],
 		     CONT [ HOOK [ LTOP #lbl, 
 				   INDEX #index ],
-			    RELS <! #rel !> ] ],
+			    RELS <! #rel !>,
+			    HCONS <! !> ] ],
 	     NON-LOCAL.SLASH 0-dlist,
 	     LKEYS.KEYREL card-relation & #rel & [ LBL #lbl,
 						   ARG1 #index ] ] ].
@@ -1344,8 +1377,7 @@ vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule &
                        ARG1 #xarg ] !> ] ].
 
 
-punct := head & 
-  [ MOD <> ].
+
 
 ; comma := punct.
 

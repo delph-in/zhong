@@ -1885,8 +1885,8 @@ basic-head-opt-comp-phrase := head-valence-phrase & head-only &
 			MODIFIED #mod ] ],
     C-CONT [ RELS <! !>,
 	     HCONS <! !>,
-	     ICONS.LIST.FIRST #ikey & non-focus & [ TARGET #index,
-						    CLAUSE #ckey ] ] ].
+	     ICONS <! #ikey & non-focus & [ TARGET #index,
+					    CLAUSE #ckey ] !> ] ].
 
 
 ; ERB 2004-05-10 For languages that allow "pro-drop" of subjects.
@@ -1934,8 +1934,8 @@ basic-head-opt-subj-phrase := head-valence-phrase & head-only &
 			MODIFIED #mod ] ],
     C-CONT [ RELS <! !>,
 	     HCONS <! !>,
-	     ICONS.LIST.FIRST #ikey & non-focus & [ TARGET #index,
-						    CLAUSE #ckey ] ] ].
+	     ICONS <! #ikey & non-focus & [ TARGET #index,
+					    CLAUSE #ckey ] !> ] ].
 
 ; ERB 2007-01-21 Subtypes for declaratives and imperatives
 

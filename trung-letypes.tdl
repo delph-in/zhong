@@ -7,3 +7,28 @@
 ;;;            Zhenzhen Fan (ZZF)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+n_-_pr-1sg_le := personal-pronoun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1sg ].
+
+n_-_pr-1pl-incl_le := personal-pronoun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl_incl ].
+
+n_-_pr-1pl-excl_le :=  personal-pronoun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl_excl ].
+
+n_-_pr-2sg_le := personal-pronoun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2sg ].
+
+n_-_pr-2pl_le := personal-pronoun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2pl ].
+
+n_-_pr-2sg-hon_le := personal-pronoun-lex & hon-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2sg ].
+
+n_-_pr-3sg_le := personal-pronoun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3sg ].
+
+n_-_pr-3pl_le := personal-pronoun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl ].
+
+d_-_le := determiner-lex.

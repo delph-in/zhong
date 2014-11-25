@@ -39,6 +39,17 @@ synsem :+
  [ PUNCTUATED luk ].
 
 
+;; SSH 2014-10-24: for chart mapping
+;; MATRIX REDEFINITION
+;; make STEM of type orthog(raphy) to pass up from/to/form
+sign-min := avm &
+  [ STEM orthog ].
+
+orthog := cons &
+  [ FROM string,
+    TO string ].
+
+
 card_rel := named_rel.
 
 card-relation := named-relation & arg1-relation &
@@ -80,6 +91,11 @@ le+zhe+guo := le & zhe & guo.
 
 +vjp :+
  [ LZG lzg ].
+
+marker-or-punct := head & 
+  [ MOD <> ].
+marker := marker-or-punct.
+punct := marker-or-punct.
 
 noun :+ 
  [ HON bool ].
@@ -133,9 +149,10 @@ fem := gender.
 ;;; SSH 2014-09-02
 ;;; Animacy
 animacy := *top*.
-animate := animacy.
-human := animate.
-inanimate := animacy.
+human := animacy.
+non-human := animacy.
+animate := non-human.
+inanimate := non-human.
 
 ;;; Form
 
@@ -167,9 +184,11 @@ basic-head-comp-phrase :+
 
 basic-head-mod-phrase-simple :+ 
   [ SYNSEM.LOCAL [ CAT.MC #mc,
-           CONT.HOOK.INDEX #ind ],
+		   CONT.HOOK.INDEX #ind ],
     HEAD-DTR.SYNSEM.LOCAL.CONT.HOOK.INDEX #ind,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
+
+
 
 ; SSH 2014-08-25 Zhong specific head-adj-phrase This consraint was in
 ; the previous version of matrix.tdl, but it was removed by Antske
@@ -384,8 +403,12 @@ s7-bottom-coord-rule := conj-first-bottom-coord-rule & s-bottom-coord-phrase &
 ;; We treat question particles as complementizers.
 ;; Here is the lexical type for complementizers.
 
-adj-head-int-phrase :+ 
+adj-head-phrase :+ 
   [ HEAD-DTR.SYNSEM.L-PERIPH na-or-- ].
+
+adj-head-phrase :+ 
+  [ SYNSEM.LOCAL.CAT.MC #mc,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
 
 adj-head-int-mc := adj-head-int-phrase &
   [ SYNSEM.LOCAL.CAT.NONSUBJ #ns,
@@ -588,7 +611,7 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
 
 head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
   [ HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd,
-                CONT.HOOK #hook ],
+			    CONT.HOOK #hook ],
     C-CONT.HOOK #hook ].
 
 ; For nominalizer head `de', which must be [HEAD noun], but which is also the
@@ -652,7 +675,7 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
 head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
     HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd,
-                CONT.HOOK #hook ],
+			    CONT.HOOK #hook ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
     C-CONT.HOOK #hook ].
 
@@ -955,8 +978,8 @@ basic-head-opt-comp-phrase := head-valence-phrase & head-only &
                         MODIFIED #mod ] ],
     C-CONT [ RELS <! !>,
              HCONS <! !>,
-             ICONS.LIST.FIRST #ikey & non-focus & [ TARGET #index,
-                                                    CLAUSE #ckey ] ] ].
+             ICONS <! #ikey & non-focus & [ TARGET #index,
+					    CLAUSE #ckey ] !> ] ].
 
 
 comp-marker-phrase := basic-marker-comp-phrase & marker-final-phrase & head-initial &
@@ -967,7 +990,6 @@ comp-marker-phrase := basic-marker-comp-phrase & marker-final-phrase & head-init
     MARKER-DTR.SYNSEM [ L-PERIPH #lperiph,
 			R-PERIPH #rperiph,
 			PUNCTUATED #punctuated ] ].
-
 
 ;; DPF 2014-08-01 - Added unary and binary bridging rules to accommodate robust
 ;; full-forest treebanking.  The strategy is to pump each normal edge in the

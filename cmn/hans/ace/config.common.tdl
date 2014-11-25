@@ -48,3 +48,23 @@ mrs-icons-list := ICONS LIST.
 icons-left := CLAUSE.
 icons-right := TARGET.
 
+
+;;;Token Mapping
+;; token settings
+token-mapping := enabled.
+lexicon-tokens-path := TOKENS +LIST.
+lexicon-last-token-path := TOKENS +LAST.
+token-type			:= token.
+token-form-path     := +FORM.       ; [required] string for lexical lookup
+token-id-path       := +ID.         ; [optional] list of external ids
+token-from-path     := +FROM.       ; [optional] surface start position
+token-to-path       := +TO.         ; [optional] surface end position
+token-postags-path  := +POS +TAGS.  ; [optional] list of POS tags
+token-posprobs-path := +POS +PRBS.  ; [optional] list of POS probabilities
+
+;; lattice mapping settings
+lattice-mapping-input-path := +INPUT.
+lattice-mapping-output-path := +OUTPUT.
+lattice-mapping-context-path := +CONTEXT.
+lattice-mapping-position-path := +POSITION.
+
