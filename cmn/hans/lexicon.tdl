@@ -80,263 +80,268 @@ question-marker := punctuation &
   [ STEM < "其中" >,
     TRAITS native_token_list ].
 
-谁_n := wh-pronoun &
+谁_n := n_-_pr-wh_le &
   [ STEM <"谁">,
     TRAITS native_token_list ].
 
-什么_n := wh-pronoun &
+什么_n := n_-_pr-wh_le &
   [ STEM <"什么">,
     TRAITS native_token_list ].     
 
-哪_n := wh-pronoun &
+哪_n := n_-_pr-wh_le &
 [ STEM <"哪">,
     TRAITS native_token_list ].
 
-大家_n := quant-pronoun-lex &
+大家_n := n_-_pr-q_le &
  [ STEM < "大家" >,
    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
 	    LKEYS [ ALTKEYREL.PRED "every_q_rel" ] ],
    TRAITS native_token_list ].
 
-一切_n := quant-pronoun-lex &
+一切_n := n_-_pr-q_le &
  [ STEM < "一切" >,
    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate,
 	    LKEYS [ ALTKEYREL.PRED "every_q_rel" ] ],
    TRAITS native_token_list ].
 
-狗_n := count-noun-lex &
+狗_n := n_-_c_le &
   [ STEM < "狗" >,
     SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 只_x_rel,
 	     LKEYS.KEYREL.PRED "_gou3_n_rel" ],
     TRAITS native_token_list ]. 
 
-马_n := count-noun-lex &
+马_n := n_-_c_le &
   [ STEM < "马" >,
     SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 匹_x_rel,
 	     LKEYS.KEYREL.PRED "_ma3_n_rel" ],
     TRAITS native_token_list ]. 
 
-电脑_n := count-noun-lex & 
+电脑_n := n_-_c_le & 
   [ STEM < "电脑" >,
     SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 台_x_rel,
 	     LKEYS.KEYREL.PRED "_dian4nao3_n_rel" ],
     TRAITS native_token_list ].
 
-五_n := count-noun-lex &
+五_n := n_-_c_le &
   [ STEM < "五" >,
     SYNSEM.LKEYS.KEYREL.PRED "_wu3_a_rel",
     TRAITS native_token_list ].
 
-猫_n := count-noun-lex &
+猫_n := n_-_c_le &
   [ STEM < "猫" >,
     SYNSEM.LKEYS.KEYREL.PRED "_mao1_n_rel",
     TRAITS native_token_list ].
 
-想法_n := count-noun-lex &
+想法_n := n_-_c_le &
   [ STEM < "想法" >,
     SYNSEM.LKEYS.KEYREL.PRED "_xiang3fa3_n_rel",
     TRAITS native_token_list ].
 
-饭_n := mass-noun-lex &
+饭_n := n_-_m_le &
   [ STEM < "饭" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fan4_n_rel",
     TRAITS native_token_list ].
 
-人_n := count-noun-lex &
+人_n := n_-_c_le &
   [ STEM < "人" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ren2_n_rel",
     TRAITS native_token_list ].
 
-主席_n := count-noun-lex &
+主席_n := n_-_c_le &
   [ STEM < "主席" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zhu3xi2_n_rel",
     TRAITS native_token_list ].
 
-家_n := count-noun-lex &
+家_n := n_-_c_le &
   [ STEM < "家" >,
     SYNSEM.LKEYS.KEYREL.PRED "_jia1_n_rel",
     TRAITS native_token_list ].
 
-常务_n := mass-noun-lex &
+常务_n := n_-_m_le &
   [ STEM <"常务">,
     SYNSEM.LKEYS.KEYREL.PRED "_chang2wu4_n_rel",
     TRAITS native_token_list ].
 
-刘_n := proper-noun-lex &
+刘_n := n_-_s_pn_le &
   [ STEM < "刘" >,
     SYNSEM.LKEYS.KEYREL.CARG "Liu2",
     TRAITS native_token_list ].
 
-张三_n := proper-noun-lex &
+张三_n := n_-_h_pn_le &
   [ STEM < "张三" >,
     SYNSEM.LKEYS.KEYREL.CARG "Zhang1san1",
     TRAITS native_token_list ].
 
-奥申委_n :=  proper-noun-lex &
+奥申委_n := n_-_pn_le &
   [ STEM < "奥申委" >,
     SYNSEM.LKEYS.KEYREL.CARG "Ao4shen1wei3",
     TRAITS native_token_list ].
 
-李四_n := proper-noun-lex &
+李四_n := n_-_h_pn_le &
   [ STEM < "李四" >,
     SYNSEM.LKEYS.KEYREL.CARG "Li3si4",
     TRAITS native_token_list ].
 
-水_n := mass-noun-lex &
+水_n := n_-_m_le &
   [ STEM < "水" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shui3_n_rel",
     TRAITS native_token_list ].
 
-北京_n := loc-proper-noun-lex &
+北京_n := n_-_l_pn_le &
   [ STEM < "北京" >,
     SYNSEM.LKEYS.KEYREL.CARG "Bei3jing1",
+    TRAITS native_token_list ].
+
+上海_n := n_-_l_pn_le &
+  [ STEM < "上海" >,
+    SYNSEM.LKEYS.KEYREL.CARG "Shang4hai3",
     TRAITS native_token_list ].
 
 
 ;;; Verbs
 
-叫_v := v_intrans-verb-lex &
+叫_v := v_-_le &
   [ STEM < "叫" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_jiao4_v_1_rel" ],
     TRAITS native_token_list ].
 
-来_v := v_intrans-verb-lex &
+来_v := v_-_le &
   [ STEM < "来" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_lai2_v_1_rel" ],
     TRAITS native_token_list ].
 
-去_v1 := v_intrans-verb-lex &
+去_v1 := v_-_le &
   [ STEM < "去" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
 	     LKEYS.KEYREL.PRED "_qu4_v_1_rel" ],
     TRAITS native_token_list ].
 
-去_v2 := v_trans-verb-lex &
+去_v2 := v_np_le &
   [ STEM < "去" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
 	     LKEYS.KEYREL.PRED "_qu4_v_2_rel" ],
     TRAITS native_token_list ].
 
-吃_v := v_trans-verb-lex &
+吃_v := v_np_le &
   [ STEM < "吃" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_chi1_v_1_rel" ],
     TRAITS native_token_list ].
 
-卖_v :=  v_trans-verb-lex &
+卖_v :=  v_np_le &
   [ STEM <"卖">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_mai4_v_rel" ],
     TRAITS native_token_list ].
 
-爱_v :=  v_trans-verb-lex &
+爱_v :=  v_np_le &
   [ STEM <"爱">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_ai4_v_rel" ],
     TRAITS native_token_list ].
 
-追赶_v := v_trans-verb-lex &
+追赶_v := v_np_le &
   [ STEM < "追赶" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_zhui1gan3_v_rel" ],
     TRAITS native_token_list ].
 
-喜欢_v := v_trans-verb-lex &
+喜欢_v := v_np_le &
   [ STEM <"喜欢">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_xi3huan1_v_rel" ],
     ALTS.LE-PFV -,
     TRAITS native_token_list ].
 
-做_v := v_trans-verb-lex &
+做_v := v_np_le &
   [ STEM < "做" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_zuo4_v_rel" ],
     TRAITS native_token_list ].
 
-执行_v := v_trans-verb-lex &
+执行_v := v_np_le &
   [ STEM <"执行">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_zhi2xing2_v_rel" ],
     TRAITS native_token_list ].
 
-爬_v := v_trans-verb-lex &
+爬_v := v_np_le &
   [ STEM < "爬" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_pa2_v_rel" ],
     TRAITS native_token_list ].
 
-组成_v := v_prep-lex-item &
+组成_v := v_pp-pre_le &
   [ STEM <"组成">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_zu3cheng2_v_rel" ],
     TRAITS native_token_list ].
 
-被_v := v_bei_type_lex &
+被_v := x_bei_le &
   [ STEM <"被">,
     TRAITS native_token_list ].
 
-把_v1 := v_ba_type_lex &
+把_v1 := x_ba_le &
   [ STEM <"把">,
     TRAITS native_token_list ].
 
-下_v := v_weather_type_lex &
+下_v := v_weather_le &
   [ STEM <"下">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_xia4_v_rel"],
     TRAITS native_token_list ].
 
-觉得_v := s-comp-verb-lex &
+觉得_v := v_s_le &
   [ STEM <"觉得">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_jue3de_v_rel"],
     TRAITS native_token_list ].
 
-觉得_v2 := np-ap-comp-verb-lex &
+觉得_v2 := v_np-ap_le &
   [ STEM <"觉得">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_jue3de_v_rel" ],
     TRAITS native_token_list ].
 
-认为_v := v_trans-verb-lex &
+认为_v := v_np_le &
   [ STEM < "认为" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_ren2wei2_v_rel" ],
     TRAITS native_token_list ].
 
-认为_v2 := s-comp-verb-lex &
+认为_v2 := v_s_le &
   [ STEM <"认为">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_ren4wei4_v_rel" ],
     TRAITS native_token_list ].
 
-说_v := s-comp-verb-lex &
+说_v := v_s_le &
   [ STEM < "说" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_shuo1_v_rel" ],
     TRAITS native_token_list ].
 
-放_v  := trans-loc-verb-lex &
+放_v  := v_np-pp_le &
   [ STEM < "放" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_fang4_v_rel" ],
     TRAITS native_token_list ].
 
-进_v  := v_a-equi-lex &
+进_v  := v_np-vp_aequi_le &
   [ STEM < "进" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_jin4_v_rel" ],
     TRAITS native_token_list ].
 
-进去_v := v_intrans-verb-lex &
+进去_v := v_-_le &
   [ STEM < "进去" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_jin4qu4_v_1_rel" ],
     TRAITS native_token_list ].
 
-打赌_v := s-comp-verb-lex &
+打赌_v := v_s_le &
   [ STEM < "打赌" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_da3du3_v_rel" ],
@@ -344,85 +349,85 @@ question-marker := punctuation &
 
 ;;;Adjectives
 
-红色_j := pred-adj-lex &
+红色_j := a_-_pred_le &
   [ STEM <"红色">,
     SYNSEM.LKEYS.KEYREL.PRED "_hong2se4_a_rel",
     TRAITS native_token_list ].
 
-无聊_j := pred-adj-lex &
+无聊_j := a_-_pred_le &
   [ STEM <"无聊">,
     SYNSEM.LKEYS.KEYREL.PRED "_wu2liao2_a_rel",
     TRAITS native_token_list ].
 
-副_j := attr-adj-lex &
+副_j := a_-_att_le &
   [ STEM <"副">,
     SYNSEM.LKEYS.KEYREL.PRED "_fu_a_rel",
     TRAITS native_token_list ].
 
-轻_j := attr-adj-lex &
+轻_j := a_-_att_le &
   [ STEM <"轻">,
     SYNSEM.LKEYS.KEYREL.PRED "_qing1_a_rel",
     TRAITS native_token_list ].
 
-久_r1 := int-adv-vp-pre &
+久_r1 := adv_-_vp-pre_le &
   [ STEM <"久">,
 	SYNSEM.LKEYS.KEYREL.PRED "_jiu3_a_rel",
     TRAITS native_token_list ].
 	
-以前_r1 := int-adv-s-pre &
+以前_r1 := adv_-_s-pre_le &
   [ STEM <"以前">,
     TRAITS native_token_list ].
 
-轻轻_r := int-adv-vp-pre & 
+轻轻_r := adv_-_vp-pre_le & 
   [ STEM <"轻轻">,
     SYNSEM.LKEYS.KEYREL.PRED "_qing1qing1_a_rel",
     TRAITS native_token_list ].
 
-就_r := int-adv-vp-pre & 
+就_r := adv_-_vp-pre_le & 
   [ STEM <"就">,
 	SYNSEM.LKEYS.KEYREL.PRED "_jiu4_a_rel",
     TRAITS native_token_list ].
 
-也_r := int-adv-vp-pre & 
+也_r := adv_-_vp-pre_le & 
   [ STEM <"也">,
     SYNSEM.LKEYS.KEYREL.PRED "_ye3_a_rel",
     TRAITS native_token_list ].
 
-一直_r := int-adv-vp-pre & 
+一直_r := adv_-_vp-pre_le & 
   [ STEM <"一直">,
     SYNSEM.LKEYS.KEYREL.PRED "_yi1zhi2_a_rel",
     TRAITS native_token_list ].
 
-反复_r := int-adv-vp-pre & 
+反复_r := adv_-_vp-pre_le & 
   [ STEM <"反复">,
     SYNSEM.LKEYS.KEYREL.PRED "_fan3fu4_a_rel",
     TRAITS native_token_list ].
 
-差不多_r := scop-adv-lex &
+差不多_r := adv_-_scop_le &
   [ STEM <"差不多">,
     SYNSEM.LKEYS.KEYREL.PRED "_cha4－bu-duo1_a_rel",
     TRAITS native_token_list ].
 
-好像_r := int-adv-vp-pre & 
+好像_r := adv_-_vp-pre_le & 
   [ STEM <"好像">,
     SYNSEM.LKEYS.KEYREL.PRED "_hao3xiang4_a_rel",
     TRAITS native_token_list ].
 
-好像_r2 := int-adv-s-pre & 
+好像_r2 := adv_-_s-pre_le & 
   [ STEM <"好像">,
     SYNSEM.LKEYS.KEYREL.PRED "_hao3xiang4_a_rel",
     TRAITS native_token_list ].
 
-一次_r1 := int-adv-s-pre &
+一次_r1 := adv_-_s-pre_le &
   [ STEM <"一次">,
     SYNSEM.LKEYS.KEYREL.PRED "_yi1ci4_a_rel",
     TRAITS native_token_list ].
 
-在_r := int-adv-vp-pre-no-rel & 
+在_r := adv_-_vp-pre-norel_le & 
   [ STEM <"在">,
     TRAITS native_token_list ].
 
-正在_r := int-adv-vp-pre-no-rel & 
+正在_r := adv_-_vp-pre-norel_le & 
   [ STEM <"正在">,
     TRAITS native_token_list ].
 
@@ -473,67 +478,67 @@ question-marker := punctuation &
     SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.LZG le+zhe ] >,
     TRAITS native_token_list ].
 
-今天_r := scop-adv-lex &
+今天_r := adv_-_scop_le &
   [ STEM <"今天">,
     SYNSEM.LKEYS.KEYREL.PRED "_jin1tian1_a_rel",
     TRAITS native_token_list ].
 
-昨天_r := scop-adv-lex &
+昨天_r := adv_-_scop_le &
   [ STEM <"昨天">,
     SYNSEM.LKEYS.KEYREL.PRED "_zuo2tian1_a_rel",
     TRAITS native_token_list ].
 
-大概_r := scop-adv-lex &
+大概_r := adv_-_scop_le &
   [ STEM <"大概">,
 	SYNSEM.LKEYS.KEYREL.PRED "_da4gai4_a_rel",
     TRAITS native_token_list ].
 	
-明显_r := scop-adv-lex &
+明显_r := adv_-_scop_le &
   [ STEM < "明显" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel",
     TRAITS native_token_list ].
 
-都_r := scop-adv-prehd-lex &
+都_r := adv_-_scop-prehd_le &
   [ STEM <"都">,
     SYNSEM.LKEYS.KEYREL.PRED "_dou1_a_rel",
     TRAITS native_token_list ].
 
-现在_r := scop-adv-lex &
+现在_r := adv_-_scop_le &
   [ STEM <"现在">,
     SYNSEM.LKEYS.KEYREL.PRED "_xian4zai4_a_rel",
     TRAITS native_token_list ].
 
-可能_r := scop-adv-lex &
+可能_r := adv_-_scop_le &
   [ STEM <"可能">,
     SYNSEM.LKEYS.KEYREL.PRED "_ke3neng2_a_rel",
     TRAITS native_token_list ].
 
-到底_r := scop-adv-lex &
+到底_r := adv_-_scop_le &
   [ STEM <"到底">,
     SYNSEM.LKEYS.KEYREL.PRED "_dao4di3_a_rel",
     TRAITS native_token_list ].
 
-很_r := deg-int-adv-vp-pre &
+很_r := adv_-_deg-pre_le &
   [ STEM < "很" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hen3_a_rel",
     TRAITS native_token_list ].
 
-最_r := deg-int-adv-vp-pre &
+最_r := adv_-_deg-pre_le &
   [ STEM < "最" >,
 	SYNSEM.LKEYS.KEYREL.PRED "_zui4_a_rel",
     TRAITS native_token_list ].
 	
-比较_r := deg-int-adv-vp-pre &
+比较_r := adv_-_deg-pre_le &
   [ STEM < "比较" >,
     SYNSEM.LKEYS.KEYREL.PRED "_bi3jiao4_a_rel",
     TRAITS native_token_list ].
 
-地_r := adv_suffix_form_lex &
+地_r := x_-_suf-adv_le &
 [ STEM < "地" >,
     SYNSEM.LKEYS.KEYREL.PRED "_de_a_rel",
     TRAITS native_token_list ].
 
-得_r := adv_prefix_form_lex &
+得_r := x_-_pre-adv_le &
 [ STEM < "得" >,
     SYNSEM.LKEYS.KEYREL.PRED "_de_a_rel",
     TRAITS native_token_list ].
@@ -544,86 +549,86 @@ question-marker := punctuation &
 
 ;;Classifiers
 
-个_cl := classifier-lex &
+个_cl := c_-_le &
   [ STEM < "个" >,
     SYNSEM.LKEYS.KEYREL.PRED 个_x_rel,
     TRAITS native_token_list ].
 
-根_cl := classifier-lex &
+根_cl := c_-_le &
   [ STEM < "根" >,
     SYNSEM.LKEYS.KEYREL.PRED 根_x_rel,
     TRAITS native_token_list ].
 
-只_cl := classifier-lex &
+只_cl := c_-_le &
   [ STEM < "只" >,
     SYNSEM.LKEYS.KEYREL.PRED 只_x_rel,
     TRAITS native_token_list ].
 
-匹_cl := classifier-lex &
+匹_cl := c_-_le &
   [ STEM < "匹" >,
     SYNSEM.LKEYS.KEYREL.PRED 匹_x_rel,
     TRAITS native_token_list ].
 
-件_cl := classifier-lex &
+件_cl := c_-_le &
   [ STEM < "件" >,
     SYNSEM.LKEYS.KEYREL.PRED 件_x_rel,
     TRAITS native_token_list ].
 
-条_cl := classifier-lex &
+条_cl := c_-_le &
   [ stem <"条">,
     SYNSEM.LKEYS.KEYREL.PRED 条_x_rel,
     TRAITS native_token_list ].
 
-台_cl := classifier-lex & 
+台_cl := c_-_le & 
   [ stem <"台">,
     SYNSEM.LKEYS.KEYREL.PRED 台_x_rel,
     TRAITS native_token_list ].
 
-些 := classifier-quant-lex &
-  [ STEM < "些" >,
-    SYNSEM.LKEYS.KEYREL.PRED 些_x_rel,
-    TRAITS native_token_list ].
+;;些 := classifier-quant-lex &
+;;  [ STEM < "些" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED 些_x_rel,
+;;   TRAITS native_token_list ].
 
 
 ;;; Auxiliaries
 
-会_v :=  v_aux-aux-lex &
+会_v :=  v_vp_aux_le &
   [ STEM < "会" >,
 	SYNSEM.LKEYS.KEYREL.PRED "hui4_v_aux_rel",
     TRAITS native_token_list ].
 	
-要_v :=  v_aux-aux-lex &
+要_v :=  v_vp_aux_le &
   [ STEM < "要" >,
 	SYNSEM.LKEYS.KEYREL.PRED "yao4_v_aux_rel",
     TRAITS native_token_list ].
 
-可以_v := v_aux-aux-lex &
+可以_v := v_vp_aux_le &
   [ STEM < "可以" >,
     SYNSEM.LKEYS.KEYREL.PRED "ke3yi3_v_aux_rel",
     TRAITS native_token_list ].
 
-能_v := v_aux-aux-lex &
+能_v := v_vp_aux_le &
   [ STEM <"能">,
     SYNSEM.LKEYS.KEYREL.PRED "_neng2_v_rel",
     TRAITS native_token_list ].
 
 
-别_v := imperative-aux-lex &
+别_v := adv_-_imp_le &
 [ STEM <"别">,
   SYNSEM.LKEYS.KEYREL.PRED "neg_x_rel",
     TRAITS native_token_list ].
 
-是_v := cop-verb-lex &
+是_v := v_np_cop_le &
   [ STEM < "是" >,
     SYNSEM.LKEYS.KEYREL.PRED "shi4_v_cop_rel",
     TRAITS native_token_list ].
 
-是_v2 := cop-verb-cpsubj-lex &
+是_v2 := v_inv-shide_le &
   [ STEM < "是" >,
     SYNSEM.LKEYS.KEYREL.PRED "shi4_v_cop_rel",
     TRAITS native_token_list ].
 
-是_v3 := cop-verb-cpcomp-lex &
+是_v3 := v_shide_le &
   [ STEM < "是" >,
     SYNSEM.LKEYS.KEYREL.PRED "shi4_v_cop_rel",
     TRAITS native_token_list ].
@@ -631,80 +636,80 @@ question-marker := punctuation &
 
 ;;; Particles
 
-这_d := prox_demons-determiner-lex &
+这_d := d_-_d-prox_le &
   [ STEM < "这" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
 	     LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ],
     TRAITS native_token_list ].
 
-那_d := dist_demons-determiner-lex &
+那_d := d_-_d-dist_le &
   [ STEM < "那" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
 	     LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ],
     TRAITS native_token_list ].
 
-这些_d := prox_demons-determiner-lex &
+这些_d := d_-_d-prox_le &
   [ STEM < "这些" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
 	     LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ],
     TRAITS native_token_list ].
 
-那些_d := dist_demons-determiner-lex &
+那些_d := d_-_d-dist_le &
   [ STEM < "那些" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
 	     LKEYS.KEYREL.PRED "_pronoun_n_demons_rel" ],
     TRAITS native_token_list ].
 
-每_d := determiner-lex &
+每_d := d_-_le &
   [ STEM < "每" >,
 	SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
     TRAITS native_token_list ].
 	
-所有_d := determiner-lex &
+所有_d := d_-_le &
   [ STEM < "所有" >,
     SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
     TRAITS native_token_list ].
 
-某_d := determiner-lex &
+某_d := d_-_le &
   [ STEM < "某" >,
 	SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
     TRAITS native_token_list ].
 	
-些_d := determiner-lex &
+些_d := d_-_le &
   [ STEM < "些" >,
     SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
     TRAITS native_token_list ].
 
-一些_d := determiner-lex &
+一些_d := d_-_le &
   [ STEM < "一些" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
 	     LKEYS.KEYREL.PRED "some_q_rel" ],
     TRAITS native_token_list ].
 
-有些_d := determiner-lex &
+有些_d := d_-_le &
   [ STEM < "有些" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
 	     LKEYS.KEYREL.PRED "some_q_rel" ],
     TRAITS native_token_list ].
 
-哪_d := determiner-lex &
+哪_d := d_-_le &
   [ STEM < "哪" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
 	     LKEYS.KEYREL.PRED "which_q_rel" ],
     TRAITS native_token_list ].
 
-哪些_d := determiner-lex &
+哪些_d := d_-_le &
   [ STEM < "哪些" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
 	     LKEYS.KEYREL.PRED "which_q_rel" ],
     TRAITS native_token_list ].
 
-什么_d := determiner-lex &
+什么_d := d_-_le &
   [ STEM < "什么" >,
     SYNSEM.LKEYS.KEYREL.PRED "which_q_rel",
     TRAITS native_token_list ].
 
-的_ASSOC_d := poss-det-lex &
+的_ASSOC_d := x_-_poss-de_le &
  [ STEM < "的" >,
     SYNSEM.LKEYS.KEYREL.PRED "_de_n_demons_rel",
     TRAITS native_token_list ].
@@ -714,17 +719,17 @@ question-marker := punctuation &
 ;    SYNSEM.LKEYS.KEYREL.PRED "_de_a_rel",
 ;    TRAITS native_token_list ].
 
-的_nominalizer_n := nominalizer-lex &
+的_nominalizer_n := x_-_nom-de_le &
   [ STEM < "的" >,
     SYNSEM.LKEYS.KEYREL.PRED "_de_n_nom_rel",
     TRAITS native_token_list ].
 
-所有_partitive_d := partitive-lex &
+所有_partitive_d := d_-_prt_le &
   [ STEM < "所有" >,
     SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
     TRAITS native_token_list ].
 
-吗_qp := qpart-lex-item &
+吗_qp := x_-_qpart_le &
   [ STEM < "吗" >,
     TRAITS native_token_list ].
 
@@ -732,72 +737,72 @@ question-marker := punctuation &
 ;; 不 去 过) 我 不 去 了 is possible, but 了 in this sentence is
 ;; the sentence-final le.
 
-不_r := neg-adv-lex &
+不_r := adv_-_neg_le &
   [ STEM < "不" >,
     SYNSEM [ LKEYS.KEYREL.PRED "_neg_r_rel",
 	     LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT non-aspect ] > ],
     TRAITS native_token_list ].
 
-又_c := conj-lex &
+又_c := conj_-_le &
   [ STEM < "又" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     CFORM "2",
     TRAITS native_token_list ].
 
-由_p := prep-no-mod-lex &
+由_p := p_-_nomod_le &
   [ STEM < "由" >,
     SYNSEM.LKEYS.KEYREL.PRED "_you2_p_rel",
     TRAITS native_token_list ].
 
-用_p := prep-mod-lex &
+用_p := p_-_mod_le &
   [ STEM < "用" >,
     SYNSEM.LKEYS.KEYREL.PRED "_yong4_p_rel",
     TRAITS native_token_list ].
 
-;其中_p := prep-no-mod-lex &
+;其中_p := p_-_nomod_le &
 ;  [ STEM < "其中" >,
 ;    SYNSEM.LKEYS.KEYREL.PRED "_qi2zhong1_p_rel",
 ;    TRAITS native_token_list ].
 
-为_p := prep-no-mod-lex &
+为_p := p_-_nomod_le &
   [ STEM < "为" >,
     SYNSEM.LKEYS.KEYREL.PRED "_wei2_p_rel",
     TRAITS native_token_list ].
 
-从_p  := prep-vmod-pre-lex &
+从_p  := p_-_v-pre_le &
   [ STEM < "从" >,
     SYNSEM.LKEYS.KEYREL.PRED "_cong2_p_rel",
     TRAITS native_token_list ].
 
-
-在_loc := basic-loc-lex & 
+在_loc := p_loc_zai_le & 
   [ STEM < "在" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le,
 			 LKEYS.KEYREL.PRED "_zai4_p_rel" ],
     TRAITS native_token_list ].
 
-到_loc := prep-vmod-lex &
+到_loc := p_-_v_le &
  [ STEM < "到" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dao4_p_rel",
     TRAITS native_token_list ].
 
-里_p := basic-postp-lex & 
+里_p := p_loc_post_le & 
   [ STEM < "里" >,
     SYNSEM.LKEYS.KEYREL.PRED "_li3_p_rel",
     TRAITS native_token_list ].
  
-前_p := basic-postp-lex & 
+前_p := p_loc_post_le & 
   [ STEM < "前" >,
     SYNSEM.LKEYS.KEYREL.PRED "_qian2_p_rel",
     TRAITS native_token_list ].
 
-下_p  := basic-postp-lex & 
+下_p  := p_loc_post_le & 
   [ STEM < "下" >,
     SYNSEM.LKEYS.KEYREL.PRED "_xia4_p_rel",
     TRAITS native_token_list ].
 
-
-边_lm := basic-loc-mark-lex & 
+;; SSH/ZZF 2014-11-26
+;;边_lm := basic-loc-mark-lex & 
+边_lm := p_loc_post_le &
   [ STEM < "边" >,
     SYNSEM.LKEYS.KEYREL.PRED "_bian0_p_rel",
     TRAITS native_token_list ].
@@ -805,56 +810,56 @@ question-marker := punctuation &
 
 ;;Conjunctions
 
-comma_c := conj-lex &
+comma_c := conj_-_le &
   [ STEM < "、" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     TRAITS native_token_list ].
 
-和_c := conj-lex &
+和_c := conj_-_le &
   [ STEM < "和" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     TRAITS native_token_list ].
 
-跟_c := conj-lex &
+跟_c := conj_-_le &
   [ STEM < "跟" >,
     SYNSEM.LKEYS.KEYREL.PRED "_with_coord_rel",
     TRAITS native_token_list ].
 
 
-还有_c := conj-lex &
+还有_c := conj_-_le &
   [ STEM < "还有" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     CFORM "1",
     TRAITS native_token_list ].
 
-而且_c := conj-lex &
+而且_c := conj_-_le &
   [ STEM < "而且" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     CFORM "1",
     TRAITS native_token_list ].
 
-但是_c := conj-lex &
+但是_c := conj_-_le &
   [ STEM < "但是" >,
     SYNSEM.LKEYS.KEYREL.PRED "_but_coord_rel",
     CFORM "1",
     TRAITS native_token_list ].
 
-因为_sc := subord-conj-lex &
+因为_sc := conj_-_sub_le &
   [ STEM < "因为" >,
      SYNSEM.LKEYS.KEYREL.PRED "_yin1wei1_coord_rel",
     TRAITS native_token_list ].
 
-假如_sc := subord-conj-lex &
+假如_sc := conj_-_sub_le &
   [ STEM < "假如" >,
      SYNSEM.LKEYS.KEYREL.PRED "_jia3ru2_coord_rel",
     TRAITS native_token_list ].
 
-如果_sc := subord-conj-lex &
+如果_sc := conj_-_sub_le &
   [ STEM < "如果" >,
      SYNSEM.LKEYS.KEYREL.PRED "_ru2guo3_coord_rel",
     TRAITS native_token_list ].
 
-然后_sc := subord-conj-lex &
+然后_sc := conj_-_sub_le &
   [ STEM < "然后" >,
      SYNSEM.LKEYS.KEYREL.PRED "_ran3hou4_coord_rel",
     TRAITS native_token_list ].
@@ -863,44 +868,44 @@ comma_c := conj-lex &
 
 ;;; Additions
 
-对_p := prep-no-mod-lex &
+对_p := p_-_nomod_le &
   [ STEM < "对" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dui4_p_rel",
     TRAITS native_token_list ].
 
-给_v := ditrans-verb-lex &
+给_v := v_np-np_le &
   [ STEM < "给" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_gei3_v_rel" ],
     TRAITS native_token_list ].
 
-给_v2 := v_light-verb-lex &
+给_v2 := v_np_light_le &
   [ STEM < "给" >,
     SYNSEM.LKEYS.KEYREL.PRED "_gei3_v_lt_rel",
     TRAITS native_token_list ].
 
-点_n := bound-time-noun-lex &
+点_n := n_-_tm-bound_le &
   [ STEM < "点" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dian3_n_rel",
     TRAITS native_token_list ].
 
-分_n := bound-time-noun-lex &
+分_n := n_-_tm-bound_le &
   [ STEM < "分" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fen1_n_rel",
     TRAITS native_token_list ].
 
-烟草_n := mass-noun-lex &
+烟草_n := n_-_m_le &
   [ STEM < "烟草" >,
     SYNSEM.LKEYS.KEYREL.PRED "_yan1cao3_n_rel",
     TRAITS native_token_list ].
 
-照片_n := count-noun-lex &
+照片_n := n_-_c_le &
   [ STEM < "照片" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zhao4pian4_n_rel",
     TRAITS native_token_list ].
 
 ; Should be a preposition (instrumental)
-用_v := v_trans-verb-lex &
+用_v := v_np_le &
   [ STEM < "用" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_yong4_v_rel" ],
@@ -908,25 +913,25 @@ comma_c := conj-lex &
 
 ;;Note, can also take an S complement
 
-知道_v := v_trans-verb-lex &
+知道_v := v_np_le &
   [ STEM < "知道" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_zhi1dao4_v_rel" ],
     TRAITS native_token_list ].
 
-知道_v2 := s-comp-verb-lex &
+知道_v2 := v_s_le &
   [ STEM < "知道" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_zhi1dao4_v_rel" ],
     TRAITS native_token_list ].
 
 
-窗户_n := count-noun-lex &
+窗户_n := n_-_c_le &
   [ STEM < "窗户" >,
     SYNSEM.LKEYS.KEYREL.PRED "_chuang1hu0_n_rel",
     TRAITS native_token_list ].
 
-天_n := time-noun-lex &
+天_n := n_-_tm_le &
   [ STEM < "天" >,
     SYNSEM.LKEYS.KEYREL.PRED "_tian1_n_rel",
     TRAITS native_token_list ].
@@ -934,509 +939,511 @@ comma_c := conj-lex &
 
 ;;Interesting features here
 
-多_r :=  deg-int-adv-vp-pre &
+多_r :=  adv_-_deg-pre_le &
   [ STEM < "多" >,
     SYNSEM.LKEYS.KEYREL.PRED "_duo1_n_rel",
     TRAITS native_token_list ].
 
-有多_r :=  deg-int-adv-vp-pre &
+有多_r :=  adv_-_deg-pre_le &
   [ STEM < "有", "多" >,
     SYNSEM.LKEYS.KEYREL.PRED "_you3+duo1_n_rel",
     TRAITS native_token_list ].
 
-张_n := proper-noun-lex &
+张_n := n_-_s_pn_le &
   [ STEM < "张" >,
     SYNSEM.LKEYS.KEYREL.CARG "_zhang1_n_rel",
     TRAITS native_token_list ].
 
-像_v := v_trans-verb-lex &
+像_v := v_np_le &
   [ STEM < "像" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_xiang4_v_rel" ],
     TRAITS native_token_list ].
 
-六月_n := time-noun-lex &
+六月_n := n_-_tm_le &
   [ STEM < "六月" >,
     SYNSEM.LKEYS.KEYREL.PRED "_liu4yue3_n_rel",
     TRAITS native_token_list ].
 
-分钟_n := bound-time-noun-lex &
+分钟_n := n_-_tm-bound_le &
   [ STEM < "分钟" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fen1zhong1_n_rel",
     TRAITS native_token_list ].
 
-跑_v := v_intrans-verb-lex &
+跑_v := v_-_le &
   [ STEM < "跑" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_pao3_v_rel" ],
     TRAITS native_token_list ].
 
-到_v := v_trans-verb-lex &
+到_v := v_np_le &
   [ STEM < "到" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_dao4_v_rel" ],
     TRAITS native_token_list ].
 
-号码_n := count-noun-lex &
+号码_n := n_-_c_le &
   [ STEM < "号码" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hao4ma3_n_rel",
     TRAITS native_token_list ].
 
-向_p := prep-no-mod-lex &
+向_p := p_-_nomod_le &
   [ STEM < "向" >,
 	SYNSEM.LKEYS.KEYREL.PRED "_xiang4_p_rel",
     TRAITS native_token_list ].
 
-给_p := prep-no-mod-lex &
+给_p := p_-_nomod_le &
   [ STEM < "给" >,
 	SYNSEM.LKEYS.KEYREL.PRED "_gei3_p_rel",
     TRAITS native_token_list ].
 
-困扰_v := v_trans-verb-lex &
+困扰_v := v_np_le &
   [ STEM < "困扰" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_kun4rao3_v_rel" ],
     TRAITS native_token_list ].
 
-快乐_j := pred-adj-lex &
+快乐_j := a_-_pred_le &
   [ STEM < "快乐" >,
     SYNSEM.LKEYS.KEYREL.PRED "_kuai4le04_a_rel",
     TRAITS native_token_list ].
 
-坐_v := v_trans-verb-lex &
+坐_v := v_np_le &
   [ STEM < "坐" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_zuo4_v_rel" ],
     TRAITS native_token_list ].
 
-坐_v2 := v_a-equi-lex &
+坐_v2 := v_np-vp_aequi_le &
   [ STEM < "坐" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zuo4_v_rel",
     TRAITS native_token_list ].
 
-干净_j := pred-adj-lex &
+干净_j := a_-_pred_le &
   [ STEM < "干净" >,
     SYNSEM.LKEYS.KEYREL.PRED "_gan1jing4_a_rel",
     TRAITS native_token_list ].
 
-好_j := pred-adj-lex &
+好_j := a_-_pred_le &
   [ STEM < "好" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hao3_a_rel",
     TRAITS native_token_list ].
 
-多_j := pred-adj-lex &
+多_j := a_-_pred_le &
   [ STEM < "多" >,
     SYNSEM.LKEYS.KEYREL.PRED "_duo1_a_rel",
     TRAITS native_token_list ].
 
-高兴_j := pred-adj-lex &
+高兴_j := a_-_pred_le &
   [ STEM < "高兴" >,
     SYNSEM.LKEYS.KEYREL.PRED "_gao1xing4_a_rel",
     TRAITS native_token_list ].
 
-高_j := attr-adj-lex &
+高_j := a_-_att_le &
   [ STEM < "高" >,
     SYNSEM.LKEYS.KEYREL.PRED "_gao1_a_rel",
     TRAITS native_token_list ].
 
-香烟_n := count-noun-lex &
+香烟_n := n_-_c_le &
   [ STEM < "香烟" >,
     SYNSEM.LKEYS.KEYREL.PRED "_xiang1yan1_n_rel",
     TRAITS native_token_list ].
 
-递_v := v_trans-verb-lex &
+递_v := v_np_le &
   [ STEM < "递" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_di4_v_rel" ],
     TRAITS native_token_list ].
 
-递_v2 := v_np-vp_light-lex &
+递_v2 := v_np-vp_light_le &
   [ STEM < "递" >,
     SYNSEM.LKEYS.KEYREL.PRED "_di4_v_rel",
     TRAITS native_token_list ].
 
-陈_n := proper-noun-lex &
+陈_n := n_-_s_pn_le &
   [ STEM < "陈" >,
     SYNSEM.LKEYS.KEYREL.CARG "_chen2_n_rel",
     TRAITS native_token_list ].
 
-方鸿渐_n := proper-noun-lex &
+方鸿渐_n := n_-_h_pn_le &
   [ STEM < "方鸿渐" >,
     SYNSEM.LKEYS.KEYREL.CARG "fang1hong2jian4",
     TRAITS native_token_list ].
 
-唐晓芙_n := proper-noun-lex &
+唐晓芙_n := n_-_h_pn_le &
   [ STEM < "唐晓芙" >,
     SYNSEM.LKEYS.KEYREL.CARG "tang2xiao3fu1",
     TRAITS native_token_list ].
 
-雨_n := mass-noun-lex &
+雨_n := n_-_m_le &
   [ STEM < "雨" >,
     SYNSEM.LKEYS.KEYREL.PRED "_yu3_n_rel",
     TRAITS native_token_list ].
 
-桌子_n := count-noun-lex &
+桌子_n := n_-_c_le &
   [ STEM < "桌子" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zhuo1zi_n_rel",
     TRAITS native_token_list ].
 
-汽车_n := count-noun-lex &
+汽车_n := n_-_c_le &
   [ STEM < "汽车" >,
     SYNSEM.LKEYS.KEYREL.PRED "_qi4che1_n_rel",
     TRAITS native_token_list ].
 
-想_v := v_trans-verb-lex &
+想_v := v_np_le &
   [ STEM < "想" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_xiang3_v_rel" ],
     TRAITS native_token_list ].
 
-想_v_v2 := v_s-equi-lex &
+想_v_v2 := v_vp_sequi_le &
   [ STEM < "想" >,
     SYNSEM.LKEYS.KEYREL.PRED "_xiang3_v_rel",
     TRAITS native_token_list ].
 
-找到_v := v_trans-verb-lex &
+找到_v := v_np_le &
   [ STEM < "找到" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_zhao3dao4_v_rel" ],
     TRAITS native_token_list ].
 
-打算_v := v_trans-verb-lex &
+打算_v := v_np_le &
   [ STEM < "打算" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_da3suan0_v_rel" ],
     TRAITS native_token_list ].
 
-打算_v2 := v_s-equi-lex &
+打算_v2 := v_vp_sequi_le &
   [ STEM < "打算" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_da3suan0_v_rel" ],
     TRAITS native_token_list ].
 
-;打算_v3 := v_o-equi-lex &
+;打算_v3 := v_np-vp_oequi_le &
 ;  [ STEM < "打算" >,
 ;    SYNSEM.LKEYS.KEYREL.PRED "_da3suan0_v_rel",
 ;    TRAITS native_token_list ].
 
-打开_v := v_trans-verb-lex &
+打开_v := v_np_le &
   [ STEM < "打开" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_da3kai1_v_rel" ],
     TRAITS native_token_list ].
 
-打扰_v := v_trans-verb-lex &
+打扰_v := v_np_le &
   [ STEM < "打扰" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_da3rao3_v_rel" ],
     TRAITS native_token_list ].
 
-打赌_v2 := v_intrans-verb-lex &
+打赌_v2 := v_-_le &
   [ STEM < "打赌" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_da3du3_v_rel" ],
     TRAITS native_token_list ].
 
-打扰_v3 := cp-subj-verb-lex &
+打扰_v3 := v_np_cs_le &
   [ STEM < "打扰" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_da3rao3_v_rel" ],
     TRAITS native_token_list ].
 
-挤_v := v_trans-verb-lex &
+挤_v := v_np_le &
   [ STEM < "挤" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_ji3_v_rel" ],
     TRAITS native_token_list ].
 
-挤_v2 := v_o-equi-lex &
+挤_v2 := v_np-vp_oequi_le &
   [ STEM < "挤" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ji3_v_rel",
     TRAITS native_token_list ].
 
-擦_v := v_trans-verb-lex &
+擦_v := v_np_le &
   [ STEM < "擦" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_ca1_v_rel" ],
     TRAITS native_token_list ].
 
-擦_v2 := np-ap-comp-ba-verb-lex &
+擦_v2 := v_bap-ap_le &
   [ STEM < "擦" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_ca1_v_rel" ],
     TRAITS native_token_list ].
 
-方法_n := count-noun-lex &
+方法_n := n_-_c_le &
   [ STEM < "方法" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fang1fa3_n_rel",
     TRAITS native_token_list ].
 
-显然_r := scop-adv-lex &
+显然_r := adv_-_scop_le &
   [ STEM < "显然" >,
     SYNSEM.LKEYS.KEYREL.PRED "_xian3ran2_a_rel",
     TRAITS native_token_list ].
 
-显然_j := pred-adj-lex &
+显然_j := a_-_pred_le &
   [ STEM < "显然" >,
     SYNSEM.LKEYS.KEYREL.PRED "_xian3ran2_a_rel",
     TRAITS native_token_list ].
 
-显然_j2 := s-comp-adj-lex &
-  [ STEM < "显然" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_xian3ran2_a_rel",
-    TRAITS native_token_list ].
+;; SSH/ZZF 2014-11-26
+;;显然_j2 := s-comp-adj-lex &
+;;  [ STEM < "显然" >,
+;;    SYNSEM.LKEYS.KEYREL.PRED "_xian3ran2_a_rel",
+;;    TRAITS native_token_list ].
 
-显得_v := v_intrans-verb-lex &
+显得_v := v_-_le &
   [ STEM < "显得" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_suan4_v_rel" ],
     TRAITS native_token_list ].
 
-明显_j := pred-adj-lex &
+明显_j := a_-_pred_le &
   [ STEM < "明显" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel",
     TRAITS native_token_list ].
 
-明显_j2 := s-comp-adj-lex &
-  [ STEM < "明显" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel",
-    TRAITS native_token_list ].
+;; SSH/ZZF 2014-11-26
+;;明显_j2 := s-comp-adj-lex &
+;;  [ STEM < "明显" >,
+;;    SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel",
+;;    TRAITS native_token_list ].
 
-星期二_n := time-noun-lex &
+星期二_n := n_-_tm_le &
   [ STEM < "星期二" >,
     SYNSEM.LKEYS.KEYREL.PRED "_xing1qi1er4_n_rel",
     TRAITS native_token_list ].
 
-早上_n := time-noun-lex &
+早上_n := n_-_tm_le &
   [ STEM < "早上" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zao3shang4_n_rel",
     TRAITS native_token_list ].
 
-时_n := time-noun-lex &
+时_n := n_-_tm_le &
   [ STEM < "时" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shi2_n_rel",
     TRAITS native_token_list ].
 
-时候_n := time-noun-lex &
+时候_n := n_-_tm_le &
   [ STEM < "时候" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shi2hou0_n_rel",
     TRAITS native_token_list ].
 
-有_v := v_exist-lex &
+有_v := v_np_you_le &
   [ STEM < "有" >,
     SYNSEM.LKEYS.KEYREL.PRED "_you3_v_rel",
     TRAITS native_token_list ].
 
-没_r := neg-adv-lex &
+没_r := adv_-_neg_le &
   [ STEM < "没" >,
     SYNSEM [ LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT imperfective ] >,
 	     LKEYS.KEYREL.PRED "_mei2_r_rel" ],
     TRAITS native_token_list ].
 
-没_polar_r := v-not-v-adv-lex &
+没_polar_r := adv_-_polar_le &
   [ STEM < "没" >,
     SYNSEM.LKEYS.KEYREL.PRED "_mei2_r_rel",
     TRAITS native_token_list ].
 
-要_v2 := v_trans-verb-lex &
+要_v2 := v_np_le &
   [ STEM < "要" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_yao4_v_rel" ],
     TRAITS native_token_list ].
 
-老_j := attr-adj-lex &
+老_j := a_-_att_le &
   [ STEM < "老" >,
     SYNSEM.LKEYS.KEYREL.PRED "_lao3_a_rel",
     TRAITS native_token_list ].
 
-让_v := v_o-equi-lex &
+让_v := v_np-vp_oequi_le &
   [ STEM < "让" >,
     SYNSEM.LKEYS.KEYREL.PRED "_rang4_v_rel",
     TRAITS native_token_list ].
 
-推荐_v1 := v_o-equi-lex &
+推荐_v1 := v_np-vp_oequi_le &
   [ STEM < "推荐" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ tui1jian4_v_rel",
     TRAITS native_token_list ].
 
-推荐_v2 := s-comp-verb-lex &
+推荐_v2 := v_s_le &
   [ STEM < "推荐" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_ tui1jian4_v_rel" ],
     TRAITS native_token_list ].
 
-请_v1 := v_o-equi-lex &
+请_v1 := v_np-vp_oequi_le &
   [ STEM < "请" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_ qing3_v_rel" ],
     TRAITS native_token_list ].
 
-请_v2 := s-comp-verb-lex &
+请_v2 := v_s_le &
   [ STEM < "请" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_ qing3_v_rel" ],
     TRAITS native_token_list ].
 
-试_v := v_intrans-verb-lex &
+试_v := v_-_le &
   [ STEM < "试" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_shi4_v_rel" ],
     TRAITS native_token_list ].
 
-话_n := noun-lex &
+话_n := n_-_le &
   [ STEM < "话" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hua4_n_rel",
     TRAITS native_token_list ].
 
-自己_n := noun-lex &
+自己_n := n_-_le &
   [ STEM < "自己" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zi4ji3_n_rel",
     TRAITS native_token_list ].
 
-自己_a := attr-adj-posthd-lex &
+自己_a := n_-_pr-refl_le &
   [ STEM < "自己" >,
     SYNSEM.LKEYS.KEYREL.PRED "_zi4ji3_n_rel",
     TRAITS native_token_list ].
 
-花_v := v_trans-verb-lex &
+花_v := v_np_le &
   [ STEM < "花" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_hua1_v_rel" ],
     TRAITS native_token_list ].
 
-花_v2 := v_a-equi-lex &
+花_v2 := v_np-vp_aequi_le &
   [ STEM < "花" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hua1_v_rel",
     TRAITS native_token_list ].
 
-花园_n := count-noun-lex &
+花园_n := n_-_c_le &
   [ STEM < "花园" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hua1yuan2_n_rel",
     TRAITS native_token_list ].
 
-山_n := count-noun-lex &
+山_n := n_-_c_le &
   [ STEM < "山" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shan1_n_rel",
     TRAITS native_token_list ].
 
-;会_v := v_trans-verb-lex &
+;会_v := v_np_le &
 ;  [ STEM < "会" >,
 ;    SYNSEM.LKEYS.KEYREL.PRED "_hui4_v_rel",
 ;    TRAITS native_token_list ].
 
-保证_v := v_trans-verb-lex &
+保证_v := v_np_le &
   [ STEM < "保证" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_bao3zheng4_v_rel" ],
     TRAITS native_token_list ].
 
-保证_v2 := pp-s-comp-verb-lex &
+保证_v2 := v_pp-s_le &
   [ STEM < "保证" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_bao3zheng4_v_rel" ],
     TRAITS native_token_list ].
 
 
-一_j := num-adj-lex &
+一_j := a_-_num_le &
   [ STEM < "一" >, 
     SYNSEM.LKEYS.KEYREL.CARG "1",
     TRAITS native_token_list ].
 
-两_j := num-adj-lex &
+两_j := a_-_num_le &
   [ STEM < "两" >, 
     SYNSEM.LKEYS.KEYREL.CARG "2",
     TRAITS native_token_list ].
 
-三_j := num-adj-lex &
+三_j := a_-_num_le &
   [ STEM < "三" >, 
     SYNSEM.LKEYS.KEYREL.CARG "3",
     TRAITS native_token_list ].
 
-四_j := num-adj-lex &
+四_j := a_-_num_le &
   [ STEM < "四" >, 
     SYNSEM.LKEYS.KEYREL.CARG "4",
     TRAITS native_token_list ].
 
-五_j := num-adj-lex &
+五_j := a_-_num_le &
   [ STEM < "五" >, 
     SYNSEM.LKEYS.KEYREL.CARG "5",
     TRAITS native_token_list ].
 
-六_j := num-adj-lex &
+六_j := a_-_num_le &
   [ STEM < "六" >, 
     SYNSEM.LKEYS.KEYREL.CARG "6",
     TRAITS native_token_list ].
 
-七_j := num-adj-lex &
+七_j := a_-_num_le &
   [ STEM < "七" >, 
     SYNSEM.LKEYS.KEYREL.CARG "7",
     TRAITS native_token_list ].
 
-八_j := num-adj-lex &
+八_j := a_-_num_le &
   [ STEM < "八" >, 
     SYNSEM.LKEYS.KEYREL.CARG "8",
     TRAITS native_token_list ].
  
-九_j := num-adj-lex &
+九_j := a_-_num_le &
   [ STEM < "九" >, 
     SYNSEM.LKEYS.KEYREL.CARG "9",
     TRAITS native_token_list ]. 
 
-十_j := num-adj-lex &
+十_j := a_-_num_le &
   [ STEM < "十" >, 
     SYNSEM.LKEYS.KEYREL.CARG "10",
     TRAITS native_token_list ].
 
-二十_j := num-adj-lex &
+二十_j := a_-_num_le &
   [ STEM < "二十" >,
     TRAITS native_token_list ].
 
-; 二十_j := num-adj-lex &
+; 二十_j := a_-_num_le &
 ;   [ STEM < "二十" >,
 ;     SYNSEM.LKEYS.KEYREL.PRED "_er4shi2_a_rel",
 ;    TRAITS native_token_list ].
 
-; 10_j := num-adj-lex &
+; 10_j := a_-_num_le &
 ;   [ STEM < "10" >,
 ;     SYNSEM.LKEYS.KEYREL.PRED "_10_a_rel",
 ;    TRAITS native_token_list ].
 
-; 76_j := num-adj-lex &
+; 76_j := a_-_num_le &
 ;   [ STEM <"76">,
 ;    TRAITS native_token_list ].
 
-; 220_j := num-adj-lex &
+; 220_j := a_-_num_le &
 ;   [ STEM < "220" >,
 ;     SYNSEM.LKEYS.KEYREL.PRED "_220_a_rel",
 ;    TRAITS native_token_list ].
 
-; 23_j := num-adj-lex &
+; 23_j := a_-_num_le &
 ;   [ STEM < "23" >,
 ;     SYNSEM.LKEYS.KEYREL.PRED "_23_a_rel",
 ;    TRAITS native_token_list ].
 
-; 3_j := num-adj-lex &
+; 3_j := a_-_num_le &
 ;   [ STEM < "3" >,
 ;     SYNSEM.LKEYS.KEYREL.PRED "_3_a_rel",
 ;    TRAITS native_token_list ].
 
 
-三号_n := time-noun-lex &
+三号_n := n_-_tm_le &
   [ STEM < "三号" >,
     SYNSEM.LKEYS.KEYREL.PRED "_san1hao4_n_rel",
     TRAITS native_token_list ].
 
-东西_n := noun-lex &
+东西_n := n_-_le &
   [ STEM < "东西" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dong1xi1_n_rel",
     TRAITS native_token_list ].
 
-事_n := noun-lex &
+事_n := n_-_le &
   [ STEM < "事" >,
     SYNSEM.LKEYS.KEYREL.PRED "_shi4_n_rel",
     TRAITS native_token_list ].
 
-是不是_r := tag-adv-lex &
+是不是_r := adv_-_tq_le &
   [ STEM <"是", "不", "是">,
     SYNSEM.LKEYS.KEYREL.PRED "_shi4+bu4+shi4_a_rel",
     TRAITS native_token_list ].

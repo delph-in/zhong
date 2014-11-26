@@ -75,7 +75,7 @@
 ; VV 	other verb 			走
 
 
-generic_name-lex := proper-noun-lex &
+generic_name-lex := proper-name-lex &
  [ SYNSEM.LKEYS.KEYREL.CARG #carg,
    STEM < "_generic_name_" >,
    TOKENS.+LIST generic_token_list &

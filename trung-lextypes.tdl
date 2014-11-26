@@ -62,7 +62,7 @@ bound-time-noun-lex := basic-time-noun-lex &
                     ARG0 #index ] !>,
               HCONS <! !> ] ] ].
 
-proper-noun-lex := basic-one-arg & basic-icons-lex-item &
+proper-name-lex := basic-one-arg & basic-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
 			   VAL [ COMPS < >,
 				 SUBJ < >,
@@ -85,7 +85,11 @@ proper-noun-lex := basic-one-arg & basic-icons-lex-item &
 ;; SSH 2014-09-11: Locative Proper Names (e.g. 北京).
 ;; 我 要 去 北京: I would like to go to Beijing.
 ;; *我 要 去 李四 / 我 要 去 李四 的 家
-loc-proper-noun-lex := proper-noun-lex.
+loc-name-lex := proper-name-lex.
+nonloc-name-lex := proper-name-lex.
+human-name-lex := nonloc-name-lex.
+sir-name-lex := human-name-lex.
+
 
 ;; SSH 2014-11-13: pronouns introduce a quant-relation. 
 basic-pronoun-lex :=  basic-one-arg & norm-hook-lex-item & 
