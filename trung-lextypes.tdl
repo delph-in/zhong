@@ -146,8 +146,8 @@ wh-pronoun := basic-pronoun-lex &
                          RELS <! relation,
 			       [ PRED "which_q_rel" ] !>,
                          ICONS <! semantic-focus & #icons &
-                                [ TARGET #index,
-				  CLAUSE #clause ] !> ],
+                                [ IARG1 #clause,
+                                  IARG2 #index ] !> ],
             NON-LOCAL.QUE 1-dlist ] ].
 
 
@@ -1312,7 +1312,7 @@ adv_prefix_form_lex := adv_affix_form_lex &
 ;; SSH 2014-09-04: A constant-lex-rule for non-aspecttual sentences
 ;; (e.g. 张三 叫). A sentence without any aspect markers should not be
 ;; paraphrased into sentences with such markers.
-aspect-lex-rule := const-cat-change-only-lex-rule & no-ccont-rule &
+aspect-lex-rule := const-cat-change-only-lex-rule & 
  [ SYNSEM.LOCAL.CAT [ MC luk,
 		      HEAD #head, 
 		      VAL #val, 
@@ -1323,7 +1323,8 @@ aspect-lex-rule := const-cat-change-only-lex-rule & no-ccont-rule &
 					      VAL #val, 
 					      MKG #mkg, 
 					      HC-LIGHT #light, 
-					      POSTHEAD #posthead ] ] ].
+					      POSTHEAD #posthead ] ],
+   C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 aspect-rule-dtr := word-or-lexrule & [ SYNSEM.LOCAL.CAT.MC na ].
 

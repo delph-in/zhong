@@ -442,7 +442,7 @@ head-filler-phrase := basic-head-filler-phrase & head-final &
 |#
 
 filler-head-phrase := basic-head-filler-phrase & head-final & 
-		      no-rels-hcons-rule & topic-comment &
+		      topic-comment &
   [ SYNSEM [ L-PERIPH +,
 	     LOCAL.CAT [ VAL #val,
 			 MC #mc ] ],
@@ -459,18 +459,19 @@ filler-head-phrase := basic-head-filler-phrase & head-final &
 				  CONT.HOOK.INDEX #index ],
 			  NON-LOCAL.QUE 0-dlist ],
     C-CONT [ HOOK #hook,
+	     RELS <! !>, HCONS <! !>, 
 	     ICONS <! topic &
-		    [ TARGET #index,
-		      CLAUSE #clause ] !> ] ].
+		    [ IARG1 #clause,
+                      IARG2 #index ] !> ] ].
 
 ;; SSH 2014-09-02: added [MODIFIED] for blocking overgeneration
 ;; SSH 2014-09-02: added [MC +] for blocking overgeneration
-extracted-comp-phrase := basic-extracted-comp-phrase & no-ccont-rule &
+extracted-comp-phrase := basic-extracted-comp-phrase & 
   [ SYNSEM.MODIFIED #modified,
     HEAD-DTR.SYNSEM [ MODIFIED #modified,
 		      LOCAL [ CAT [ MC +, HEAD verb ],
 			      CONT.HOOK #hook ] ],
-    C-CONT.HOOK #hook ].
+    C-CONT [ HOOK #hook, RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 ;; DPF 2011-06-03 - Given current analysis of relative clauses as containing
 ;; exactly one extracted element (which is thus relativized), we need subject
@@ -482,14 +483,14 @@ extracted-comp-phrase := basic-extracted-comp-phrase & no-ccont-rule &
 ;; up as a complement, the SPEC value is ignored higher up, since the verb
 ;; selecting the S/NP does not pass up that SPEC value, of course.
 ;;
-extracted-subj-phrase := basic-extracted-subj-phrase & no-ccont-rule &
+extracted-subj-phrase := basic-extracted-subj-phrase & 
   [ SYNSEM [ MODIFIED #modified,
 	     LOCAL.CAT [ MC -,
 			 VAL.SPEC < [] > ] ],
     HEAD-DTR.SYNSEM [ MODIFIED #modified,
 		      LOCAL [ CAT.VAL.SUBJ < [ LOCAL.CAT.NONSUBJ - ] >,
 			      CONT.HOOK #hook ] ],
-    C-CONT.HOOK #hook ].
+    C-CONT [ HOOK #hook, RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 coord-phrase :+ 
   [ SYNSEM.NON-LOCAL.SLASH 0-dlist,
@@ -526,7 +527,7 @@ clause := phrasal.
 basic-non-rel-clause := clause & head-compositional & 
   [ SYNSEM.NON-LOCAL.REL 0-dlist,
     HEAD-DTR.SYNSEM [ LOCAL.CONT.HOOK [ INDEX #index,
-                                        ICONS-KEY.CLAUSE #index,
+                                        ICONS-KEY.IARG1 #index,
                                         CLAUSE-KEY #index ],
                       NON-LOCAL.REL 0-dlist ],
     C-CONT [ RELS <! !>,
@@ -537,7 +538,7 @@ basic-non-rel-clause := clause & head-compositional &
 ;; since Mandarin has in-situ WH-phrases.
 ;;
 basic-head-subj-phrase := head-valence-phrase & binary-headed-phrase &
-                          head-compositional & no-ccont-rule &
+                          head-compositional & 
   [ SYNSEM phr-synsem & 
            [ LOCAL.CAT [ POSTHEAD +,
                          VAL [ SUBJ < >,
@@ -551,7 +552,8 @@ basic-head-subj-phrase := head-valence-phrase & binary-headed-phrase &
                              COMPS olist,
                              SPR olist ],
              NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
-                         REL 0-dlist ] ]].
+                         REL 0-dlist ] ],
+    C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 ;; Nouns which cannot take specifiers mark their SPR requirement
 ;; as OPT +.  Making the non-head daughter OPT - in this rule
@@ -570,7 +572,7 @@ basic-head-subj-phrase := head-valence-phrase & binary-headed-phrase &
 ;;We changed the head daughter's comps list to the empty list, rather than olist
 #|
 basic-head-spec-phrase := head-valence-phrase & phrasal &
-              binary-headed-phrase & no-ccont-rule &
+              binary-headed-phrase & 
   [ INFLECTED infl-satisfied,
     SYNSEM phr-synsem & [ LOCAL.CAT [ VAL [ SUBJ #subj,
                         COMPS #spcomps,
@@ -596,7 +598,7 @@ basic-head-spec-phrase := head-valence-phrase & phrasal &
                   COMPS #spcomps ],
             CONT.HOOK #hook ],
         MODIFIED #modif ],
-    C-CONT.HOOK #hook ].
+    C-CONT [ HOOK #hook,  RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 head-spec-phrase := basic-head-spec-phrase & head-final &
   [ NON-HEAD-DTR.SYNSEM [ LOCAL [ CAT [ VAL.SUBJ < >,
@@ -629,7 +631,7 @@ head-nom-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
 
 ;; SSH 2014-08-22 zhong specific basic-head-spec-phrase 
 basic-head-spec-phrase := head-valence-phrase & phrasal &
-                          binary-headed-phrase & no-ccont-rule &
+                          binary-headed-phrase & 
   [ STYLE robust,
     INFLECTED infl-satisfied,
     SYNSEM phr-synsem & [ LOCAL [ CAT [ VAL [ SUBJ #subj,
@@ -656,7 +658,8 @@ basic-head-spec-phrase := head-valence-phrase & phrasal &
 				      CONT.HOOK #hdhook ],
 			      MODIFIED #hmodif ] >,
 	       CONT.HOOK.CLAUSE-KEY #clause ],
-       MODIFIED #modif ] ].
+       MODIFIED #modif ],
+    C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 
 head-spec-phrase := basic-head-spec-phrase & head-final &
@@ -978,8 +981,8 @@ basic-head-opt-comp-phrase := head-valence-phrase & head-only &
                         MODIFIED #mod ] ],
     C-CONT [ RELS <! !>,
              HCONS <! !>,
-             ICONS <! #ikey & non-focus & [ TARGET #index,
-					    CLAUSE #ckey ] !> ] ].
+             ICONS <! #ikey & non-focus & [ IARG1 #ckey,
+                                            IARG2 #index ] !> ] ].
 
 
 comp-marker-phrase := basic-marker-comp-phrase & marker-final-phrase & head-initial &
