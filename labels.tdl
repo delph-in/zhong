@@ -203,25 +203,25 @@ le-pfv-label := label &
 	    [ STEM <"了">,
 	      SYNSEM [ LIGHT +,
 		       R-PERIPH na-or--,
-		       LOCAL [ CAT.HEAD adv,
+		       LOCAL [ CAT.HEAD marker,
 			       COORD-STRAT "" ] ],
-	      LABEL-NAME "AM" ].
+	      LABEL-NAME "AS" ].
 
 zhe-label := label & 
 	    [ STEM <"着">,
 	      SYNSEM [ LIGHT +,
 		       R-PERIPH na-or--,
-		       LOCAL [ CAT.HEAD adv,
+		       LOCAL [ CAT.HEAD marker,
 			       COORD-STRAT "" ] ],
-	      LABEL-NAME "AM" ].
+	      LABEL-NAME "AS" ].
 
 guo-label := label & 
 	    [ STEM <"过">,
 	      SYNSEM [ LIGHT +,
 		       R-PERIPH na-or--,
-		       LOCAL [ CAT.HEAD adv,
+		       LOCAL [ CAT.HEAD marker,
 			       COORD-STRAT "" ] ],
-	      LABEL-NAME "AM" ].
+	      LABEL-NAME "AS" ].
 
 ; SSH 2014-10-16: Sentence-final particles (了)
 le-crs-label := label &

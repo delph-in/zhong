@@ -55,17 +55,18 @@
 ;;; (some grammars with larger lexica organize them into multiple files).
 ;;;
 
+
+(read-tdl-lex-file-aux (list (lkb-pathname (parent-directory) "lexicon.tdl")))
 ;; SSH 2014-11-24: Generic Lexical Entries
-;;(read-tdl-lex-file-aux (list (lkb-pathname (parent-directory) "lexicon.tdl")))
-(if (and (boundp '*lexdb-params*) *lexdb-params*)
-    (progn
-      (load-lexdb-from-script)
-      (read-cached-sublex-if-available 
-       "gle" (lkb-pathname (parent-directory) "gle.tdl")))
-    (read-cached-lex-if-available 
-     (list
-      (lkb-pathname (parent-directory) "lexicon.tdl")
-      (lkb-pathname (parent-directory) "gle.tdl"))))
+; (if (and (boundp '*lexdb-params*) *lexdb-params*)
+;     (progn
+;       (load-lexdb-from-script)
+;       (read-cached-sublex-if-available 
+;        "gle" (lkb-pathname (parent-directory) "gle.tdl")))
+;     (read-cached-lex-if-available 
+;      (list
+;       (lkb-pathname (parent-directory) "lexicon.tdl")
+;       (lkb-pathname (parent-directory) "gle.tdl"))))
 
 
 ;;; For grammars with small lexicons, no need to use a cache file:

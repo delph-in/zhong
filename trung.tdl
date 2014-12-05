@@ -985,14 +985,33 @@ basic-head-opt-comp-phrase := head-valence-phrase & head-only &
                                             IARG2 #index ] !> ] ].
 
 
-comp-marker-phrase := basic-marker-comp-phrase & marker-final-phrase & head-initial &
+
+; 着了过 aspect markers & sentence final 了 & sentence final question particle 
+comp-marker-phrase := marker-final-phrase & head-initial & 
 		      head-valence-phrase & head-compositional &
-  [ SYNSEM [ L-PERIPH #lperiph,
-	     R-PERIPH #rperiph,
-	     PUNCTUATED #punctuated ],
-    MARKER-DTR.SYNSEM [ L-PERIPH #lperiph,
-			R-PERIPH #rperiph,
-			PUNCTUATED #punctuated ] ].
+  [ SYNSEM phr-synsem & [ L-PERIPH #lperiph,
+			  R-PERIPH #rperiph,
+			  PUNCTUATED #punctuated,
+			  LOCAL.CAT [ VAL [ SUBJ #subj,
+					    COMPS #comps,
+					    SPR #spr,
+					    SPEC #spec ],
+				      POSTHEAD #ph ] ],
+    HEAD-DTR.SYNSEM  #synsem & [ PUNCTUATED na-or--,
+				 LOCAL [ CAT [  VAL [ SUBJ #subj,
+						      COMPS #comps,
+						      SPR #spr,
+						      SPEC #spec ],
+						POSTHEAD #ph ] ] ],
+    NON-HEAD-DTR.SYNSEM [ L-PERIPH #lperiph,
+			  R-PERIPH #rperiph,
+			  PUNCTUATED #punctuated,
+			  LOCAL.CAT [ HEAD marker-or-punct,
+				      VAL.COMPS < #synsem > ] ],
+    C-CONT [ RELS <! !>,
+             HCONS <! !>,
+	     ICONS <! !> ] ].
+
 
 ;; DPF 2014-08-01 - Added unary and binary bridging rules to accommodate robust
 ;; full-forest treebanking.  The strategy is to pump each normal edge in the

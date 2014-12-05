@@ -23,7 +23,7 @@ noun-lex := basic-noun-lex & basic-one-arg & no-hcons-lex-item &
 
 count-noun-lex := noun-lex &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX [ SORT nontime-s,
-                   SPECI + ] ].
+				   SPECI + ] ].
 
 basic-mass-noun-lex := basic-one-arg & basic-icons-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SPECI - ].
@@ -681,21 +681,6 @@ deg-int-adv-vp-pre := int-adv-vp-pre &
                  SPR < > ],
            CONT.HOOK #hook ] ].
 
-;; SSH 2014-09-03: To block *[一直 了], I added [HEAD verb].
-int-adv-v-post := intersective-mod-lex & basic-icons-lex-item &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD adv & 
-				[ MOD < lex-synsem & 
-					[ LOCAL [ CAT [ POSTHEAD -,
-							HEAD +vp & [ AUX - ] ],
-						  CONT.HOOK #hook ] ] > ],
-			   VAL [ COMPS < >,
-				 SUBJ < >,
-				 SPEC < >,
-				 SPR < > ],
-			   POSTHEAD + ],
-		     CONT [ HOOK #hook, RELS <! !> ] ],
-	     NON-LOCAL.SLASH 0-dlist ] ].
-
 int-adv-v-pre :=  intersective-mod-lex & basic-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD adv & 
 				[ MOD < lex-synsem & 
@@ -708,18 +693,47 @@ int-adv-v-pre :=  intersective-mod-lex & basic-icons-lex-item &
 			    RELS <! !> ] ],
 	     NON-LOCAL.SLASH 0-dlist ] ].
 
-le-pfv-v-post := int-adv-v-post & 
- [ SYNSEM.LOCAL.CAT.HEAD [ MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] > ] ].
+;; SSH 2014-09-03: To block *[一直 了], I added [HEAD verb].
+;; SSH 2014-12-04: Now, 了/着/过 are markers, not adverbs, following
+;; Zhenzhen's argument.
+aspect-markers := raise-sem-lex-item & no-icons-lex-item &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD marker & [ MOD <> ],
+			   VAL [ COMPS < lex-synsem & 
+					 [ LOCAL [ CAT [ HEAD +vp & [ AUX - ] ] ] ] >,
+				 SUBJ < >,
+				 SPEC < >,
+				 SPR < > ],
+			   POSTHEAD + ] ],
+	     NON-LOCAL.SLASH 0-dlist ] ].
 
-adv-exp-v-post := int-adv-v-post & 
- [ SYNSEM.LOCAL.CAT.HEAD [ MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT experiential ] > ] ].
+; int-adv-v-post := intersective-mod-lex & basic-icons-lex-item &
+;   [ SYNSEM [ LOCAL [ CAT [ HEAD adv & 
+; 				[ MOD < lex-synsem & 
+; 					[ LOCAL [ CAT [ POSTHEAD -,
+; 							HEAD +vp & [ AUX - ] ],
+; 						  CONT.HOOK #hook ] ] > ],
+; 			   VAL [ COMPS < >,
+; 				 SUBJ < >,
+; 				 SPEC < >,
+; 				 SPR < > ],
+; 			   POSTHEAD + ],
+; 		     CONT [ HOOK #hook, RELS <! !> ] ],
+; 	     NON-LOCAL.SLASH 0-dlist ] ].
+
+
+pfv-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] > ] ].
+
+exp-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT experiential ] > ] ].
   
 ;; SSH 2014-09-02: removing irules.
-adv-dur-v-post := int-adv-v-post & 
- [ SYNSEM.LOCAL.CAT.HEAD [ MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
+dur-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
  
-adv-dur-v-pre := int-adv-v-pre & 
- [ SYNSEM.LOCAL.CAT.HEAD [ MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
+;; SSH 2014-12-04: We do not use this type any longer
+; adv-dur-v-pre := int-adv-v-pre & 
+;  [ SYNSEM.LOCAL.CAT.HEAD [ MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
 
 ;; SSH 2014-09-03: To block overgeretation (e.g., *以前 以前 张三 很 老),
 ;; I added [MODIFIED notmod].
@@ -1386,7 +1400,7 @@ vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule &
 
 ; comma := punct.
 
-punctuation := no-icons-lex-item & 
+punctuation := lex-item & 
   [ STYLE strict,
     SYNSEM [ L-PERIPH +,
 	     R-PERIPH +,
@@ -1394,12 +1408,12 @@ punctuation := no-icons-lex-item &
 	     LOCAL [ CAT [ HEAD punct,
 			   VAL [ SUBJ <>, SPR <>,
 				 COMPS < [ PUNCTUATED na-or--,
-					   LOCAL [ CAT [ MC +,					    
+					   LOCAL [ CAT [ MC +,			    
 							 HEAD +vjpc,
 							 VAL [ SUBJ <>, COMPS <> ] ],
 						   CONT.HOOK.INDEX.SF #sf ],
 					   NON-LOCAL.SLASH 0-dlist ] > ],
 			   POSTHEAD + ],
 		     CONT [ HOOK.INDEX.SF #sf,
-			    RELS <! !>, HCONS <! !> ] ] ] ].
+			    RELS <! !>, HCONS <! !>, ICONS <! !> ] ] ] ].
 
