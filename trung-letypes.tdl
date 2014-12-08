@@ -64,7 +64,8 @@ a_-_num_le := num-adj-lex.
 
 
 adv_-_deg-pre_le := deg-int-adv-vp-pre.
-adv_-_s-pre_le := int-adv-s-pre.
+adv_-_s-pre-no-rel_le := int-adv-s-pre-no-rel.
+adv_-_s-pre-rel_le := int-adv-s-pre-rel.
 adv_-_vp-pre_le := int-adv-vp-pre.
 adv_-_vp-pre-norel_le := int-adv-vp-pre-no-rel.
 adv_-_neg_le := neg-adv-lex.
@@ -129,16 +130,14 @@ p_-_v-pre_le := prep-vmod-pre-lex.
 p_loc_zai_le := basic-loc-lex.
 p_loc_post_le := basic-postp-lex. 
 
-
 x_-_qpart_le := qpart-lex-item.
+x_-_crs_le := crs-lex-item.
 
 x_-_poss-de_le := poss-det-lex.
 x_-_nom-de_le := nominalizer-lex.
 
-
 x_bei_le := v_bei_type_lex.
 x_ba_le := v_ba_type_lex.
-
 
 x_-_suf-adv_le := adv_suffix_form_lex.
 x_-_pre-adv_le := adv_prefix_form_lex.

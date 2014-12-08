@@ -444,9 +444,9 @@ Vetted: t
 Judgment: g           
 Phenom: modal
 
-狗 会 叫
-Gou3 hui4 jiao4        
-Dog will bark        
+狗 会 叫 了
+Gou3 hui4 jiao4 le        
+Dog will bark PFV   
 The dog could bark.           
            
 Id: 42           
@@ -455,10 +455,10 @@ Vetted: t
 Judgment: g           
 Phenom: modal
 
-狗 不 会 叫
-Gou3 bu4 hui4 jiao4       
-Dog not able bark       
-The dog couldn’t bark.           
+狗 不 会 叫 了
+Gou3 bu4 hui4 jiao4 le       
+Dog not able bark PFV      
+The dog couldn't bark.           
            
 Id: 43           
 Source: MRS           
@@ -667,7 +667,7 @@ Phenom: det
 张三 的 狗 叫
 Zhang1san1 de gou3 jiao4        
 Zhangsan GEN dog bark        
-Zhang’s dog barks.           
+Zhang's dog barks.           
            
 Id: 62           
 Source: MRS           
@@ -731,9 +731,9 @@ Judgment: g
 Phenom: pro-d
  
 张三 把 猫 挤 了 进去
-Zhang1san1 ba3 mao1 ji3 le jin4-qu4       
-Zhang1san1 BA cat squeeze PFV enter         
-Zhangsan squeezed the cat in.           
+Zhang1san1 ba3 mao1 ji3 le jin4-qu4
+Zhang1san1 BA cat squeeze PFV enter
+Zhangsan squeezed the cat in.         
            
 Id: 68           
 Source: MRS           
@@ -741,9 +741,9 @@ Vetted: t
 Judgment: g           
 Phenom: pro-d
 
-张三 把 猫 挤 进去
-Zhang1san1 ba3 mao1 ji3 jin4-qu4       
-Zhang1san1 BA cat squeeze enter        
+张三 把 猫 挤 了 进去
+Zhang1san1 ba3 mao1 ji3 le jin4-qu4       
+Zhang1san1 BA cat squeeze PFV enter        
 Zhangsan squeezed in the cat.           
            
 Id: 69           
@@ -963,7 +963,7 @@ Phenom: prep
 
 张三 从 10 点 叫 到 3 点
 Zhang1san1 cong2 10 dian3 jiao4 dao4 3 dian3    
-Zhangsan from 10 o’clock bark to 3 o’clock    
+Zhangsan from 10 o'clock bark to 3 o'clock    
 Zhangsan barked from 10 to 3.           
            
 Id: 89           
@@ -1161,8 +1161,8 @@ Phenom: tam
 
 别 叫 !
 Bie2 jiao4          
-Don’t bark          
-Don’t bark!           
+Don't bark          
+Don't bark!           
            
 Id: 107           
 Source: MRS           

@@ -1,0 +1,163 @@
+Language: Mandarin Chinese [Simplified]
+Language code: cmn
+Lines: orth translit gloss translat
+Author: Bo Chen, Joanna
+Date: 2014-12-05
+
+
+Id: 1
+Source: nil
+Vetted: t
+Judgment: g
+Phenom: subject control
+他们 尝试 过 吃 米饭 。
+Ta1men chang2shi4 guo chi1 mi3fan4 .
+3PL try ASP eat rice .
+They have tried to eat rice.
+
+
+Id: 2
+Source: nil
+Vetted: t
+Judgment: u
+Phenom: subject control, passive
+吃 米饭 已经 被 他们 尝试 过 了 。
+chi1 mi3fan4 yi3jing1 bei ta1men chang2shi4 guo le .
+eat rice already PASS 3PL try ASP PFV .
+To eat rice was tried by them.
+
+
+
+Id: 3
+Source: nil
+Vetted: t
+Judgment: g
+Phenom: object (argument 2) control
+张三 叫 李四 吃 米饭 。
+Zhang1san1 jiao4 li3si4 chi1 mi3fan4 .
+Zhangsan ask Lisi eat rice .
+Zhangsan asked Lisi to eat rice.
+
+
+
+
+
+Id: 4
+Source: a:5 modified
+Vetted: t
+Judgment: g
+Phenom: object (argument 2) control, passive
+李四 被 张三 叫 去 北京 。
+li3si4 bei4 Zhang1san1 jiao4 qu4 Bei3jing1 .
+lisi PASS Zhangsan ask go Beijing .
+Lisi was asked to go to Beijing by Zhangsan.
+
+
+
+Id: 5
+Source: nil
+Vetted: t
+Judgment: g
+Phenom: object (argument 1) control
+张三 答应 李四 去 北京 。
+Zhang1san1 da1ying4 li3si4 qu4 Bei3jing1 .
+Zhangsan promise Lisi go Beijing .
+Zhangsan promised Lisi to go to Beijing.
+
+
+
+Id: 6
+Source: a:6 modified
+Vetted: t
+Judgment: u
+Phenom: subject control
+张三 尝试 他 吃 米饭 。
+Zhang1san1 chang2shi4 ta1 chi1 mi3fan4 .
+Zhangsan try him eat rice .
+Zhangsan tried him to eat rice.
+
+
+Id: 7
+Source: a:6 modified
+Vetted: t
+Judgment: g
+Phenom: subject control
+张三 尝试 自己 吃 米饭 。
+Zhang1san1 chang2shi4 zi4ji3 chi1 mi3fan4 .
+Zhangsan try self eat rice .
+Zhangsan tried himself to eat rice.
+
+
+
+Id: 8
+Source: a:6 modified
+Vetted: t
+Judgment: u
+Phenom: subject control
+张三 尝试 他 自己 吃 米饭 。
+Zhang1san1 chang2shi4 ta1 zi4ji3 chi1 mi3fan4 .
+Zhangsan try himself eat rice .
+Zhangsan tried himself to eat rice.
+
+
+
+Id: 9
+Source: nil
+Vetted: t
+Judgment: g
+Phenom: subject raising
+看起来 张三 吃 了 米饭 。
+kan4qi3lai Zhang1san1 chi1 le mi3fan4 .
+look.like Zhangsan eat PFV rice .
+Zhangsan seemed to eat rice.
+
+
+
+Id: 10
+Source: nil
+Vetted: t
+Judgment: g
+Phenom: subject raising
+张三 看起来 吃 了 米饭 。
+Zhang1san1 kan4qi3lai chi1 le mi3fan4 .
+Zhangsan look.like  eat PFV rice .
+Zhangsan seemed to eat rice.
+
+
+
+Id: 11
+Source: nil
+Vetted: t
+Judgment: u
+Phenom: subject raising
+张三 吃 了 米饭 看起来 。
+Zhang1san1 chi1 le mi3fan4 kan4qi3lai.
+Zhangsan eat PFV rice look.like.
+Zhangsan seemed to eat rice.
+
+
+
+
+Id: 12
+Source: nil
+Vetted: t
+Judgment: g
+Phenom: object raising
+他 希望 他 的 狗 叫 。
+ta1 xi1wang4 ta1 de gou3 jiao4 .
+he want his DE dog bark .
+He wants his dog to bark. 
+
+
+
+Id: 13
+Source: nil
+Vetted: t
+Judgment: u
+Phenom: object raising, passive
+他 的 狗 被 他 希望 叫 。
+Ta1 de gou3 PASS ta1 xi1wang4 jiao4 .
+His DE dog PASS he want bark .
+(lit.) His dog was wanted by him to bark.
+
+

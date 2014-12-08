@@ -38,8 +38,8 @@
 38@MRS@@@1@tam@狗 以前 一直 叫@@@@1@4@The dog had been barking.@@
 39@MRS@@@1@tam@狗 要 叫 了@@@@1@4@The dog will bark.@@
 40@MRS@@@1@tam@狗 要 叫@@@@1@3@The dog is going to bark.@@
-41@MRS@@@1@infin@狗 会 叫@@@@1@3@The dog could bark.@@
-42@MRS@@@1@infin@狗 不 会 叫@@@@1@4@The dog couldn’t bark.@@
+41@MRS@@@1@infin@狗 会 叫 了@@@@1@4@The dog could bark.@@
+42@MRS@@@1@infin@狗 不 会 叫 了@@@@1@5@The dog couldn't bark.@@
 43@MRS@@@1@adj@老 狗 叫 了@@@@1@4@The old dog barked.@@
 44@MRS@@@1@adv@狗 轻轻 地 叫 了@@@@1@5@The dog barked softly.@@
 45@MRS@@@1@adv@狗 很 可能 叫 了@@@@1@5@The dog probably barked.@@
@@ -58,14 +58,14 @@
 58@MRS@@@1@q@狗 什么 时候 叫 的 ?@@@@1@6@When did the dog bark?@@
 59@MRS@@@1@det@其中 的 三 只 狗 叫@@@@1@6@Three of the dogs bark.@@
 60@MRS@@@1@numcl@三 只 叫@@@@1@3@Three bark.@@
-61@MRS@@@1@det@张三 的 狗 叫@@@@1@4@Zhang’s dog barks.@@
+61@MRS@@@1@det@张三 的 狗 叫@@@@1@4@Zhang's dog barks.@@
 62@MRS@@@1@det@张三 的 叫@@@@1@3@Zhang's barks.@@
 63@MRS@@@1@numcl@23 只 狗 叫@@@@1@4@Twenty three dogs bark.@@
 64@MRS@@@1@numcl@220 只 狗 叫@@@@1@4@Two hundred twenty dogs bark.@@
 65@MRS@@@1@pro-d@张三 坐 汽车 到 了@@@@1@5@Zhangsan arrived by car.@@
 66@MRS@@@1@adv@张三 不停 地 叫@@@@1@4@Zhangsan kept barking.@@
-67@MRS@@@1@pro-d@张三 把 猫 挤 进去@@@@1@5@Zhangsan squeezed the cat in.@@
-68@MRS@@@1@pro-d@张三 把 猫 挤 进去@@@@1@5@Zhangsan squeezed in the cat.@@
+67@MRS@@@1@pro-d@张三 把 猫 挤 了 进去@@@@1@6@Zhangsan squeezed the cat in.@@
+68@MRS@@@1@pro-d@张三 把 猫 挤 了 进去@@@@1@6@Zhangsan squeezed in the cat.@@
 69@MRS@@@1@det@张三 的 照片 到 了@@@@1@5@The picture of Zhangsan arrived.@@
 70@MRS@@@1@res@张三 把 桌子 擦 干净 了@@@@1@6@Zhangsan wiped the table clean.@@
 71@MRS@@@1@pro-d@张三 把 李四 放 在 了 花园 里@@@@1@8@Zhangsan put Lisi in the garden.@@
@@ -103,5 +103,5 @@
 103@MRS@@@1@tam,agency@号码 五 让 张三 困扰@@@@1@5@The number five bothers Zhangsan.@@
 104@MRS@@@1@tam@张三 可以@@@@1@2@Zhangsan could.@@
 105@MRS@@@1@tam@李四 试 过 了@@@@1@4@Lisi tried.@@
-106@MRS@@@1@tam@别 叫 !@@@@1@3@Don’t bark!@@
+106@MRS@@@1@tam@别 叫 !@@@@1@3@Don't bark!@@
 107@MRS@@@1@adv@狗 叫 着 到 了@@@@1@5@The dog arrived barking.@@

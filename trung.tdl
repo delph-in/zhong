@@ -36,7 +36,15 @@ basic-unary-phrase :+
     ARGS < [ STYLE #style ] > ].
 
 synsem :+ 
- [ PUNCTUATED luk ].
+ [ PUNCTUATED luk,
+   SPART spart ].
+
+spart := avm.
+not-crs := spart.
+not-ma := spart.
+crs := not-ma.
+ma := not-crs.
+not-crs-not-ma := not-crs & not-ma.
 
 
 ;; SSH 2014-10-24: for chart mapping
@@ -415,6 +423,9 @@ adj-head-int-mc := adj-head-int-phrase &
     HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns ].
 
+adj-head-scop-phrase :+ 
+  [ SYNSEM phr-synsem ].
+    
 
 alts :+ 
   [ LE-PFV bool ].
@@ -992,6 +1003,7 @@ comp-marker-phrase := marker-final-phrase & head-initial &
   [ SYNSEM phr-synsem & [ L-PERIPH #lperiph,
 			  R-PERIPH #rperiph,
 			  PUNCTUATED #punctuated,
+			  SPART #spart,
 			  LOCAL.CAT [ VAL [ SUBJ #subj,
 					    COMPS #comps,
 					    SPR #spr,
@@ -1006,6 +1018,7 @@ comp-marker-phrase := marker-final-phrase & head-initial &
     NON-HEAD-DTR.SYNSEM [ L-PERIPH #lperiph,
 			  R-PERIPH #rperiph,
 			  PUNCTUATED #punctuated,
+			  SPART #spart,
 			  LOCAL.CAT [ HEAD marker-or-punct,
 				      VAL.COMPS < #synsem > ] ],
     C-CONT [ RELS <! !>,

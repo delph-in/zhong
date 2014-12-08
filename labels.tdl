@@ -29,7 +29,7 @@ punct-label := label &
             [ SYNSEM.LOCAL [ CAT [ HEAD punct,
                                    VAL.SPR < > ],
                              COORD-STRAT "" ],
-              LABEL-NAME "." ].
+              LABEL-NAME "PU" ].
 
 np-label := label & 
             [ SYNSEM.LOCAL [ CAT [ HEAD noun,
@@ -228,9 +228,17 @@ le-crs-label := label &
 	     [ STEM <"了">,
 	       SYNSEM [ LIGHT +,
 			R-PERIPH +,
-			LOCAL [ CAT.HEAD adv,
+			LOCAL [ CAT.HEAD marker,
 				COORD-STRAT "" ] ],
-	       LABEL-NAME "SF" ].
+	       LABEL-NAME "SP" ].
+
+le-crs-label := label &
+	     [ STEM <"吗">,
+	       SYNSEM [ LIGHT +,
+			R-PERIPH +,
+			LOCAL [ CAT.HEAD marker,
+				COORD-STRAT "" ] ],
+	       LABEL-NAME "SP" ].
 
 adv-mid-label := label & 
 	   [ SYNSEM.LOCAL [ CAT.HEAD adv,
