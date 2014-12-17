@@ -204,7 +204,6 @@ basic-head-mod-phrase-simple :+
 head-adj-phrase :+ 
   [ HEAD-DTR.SYNSEM.MODIFIED notmod-or-rmod ].
 
-;; SSH 2014-09-04: blocking 张三 叫 了 。 了
 head-adj-int-phrase :+ 
   [ SYNSEM [ L-PERIPH #lperiph,
 	     R-PERIPH #rperiph ],
@@ -422,10 +421,6 @@ adj-head-int-mc := adj-head-int-phrase &
   [ SYNSEM.LOCAL.CAT.NONSUBJ #ns,
     HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns ].
-
-adj-head-scop-phrase :+ 
-  [ SYNSEM phr-synsem ].
-    
 
 alts :+ 
   [ LE-PFV bool ].

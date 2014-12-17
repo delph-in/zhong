@@ -253,10 +253,11 @@ partitive-lex := basic-one-arg & no-icons-lex-item &
 
 head :+ 
   [ AUX bool,
-    FORM form].
+    FORM form ].
 
-adj :+
-[PRD bool].
+;; SSH 2014-12-09 adj -> +vj
++vj :+
+  [ PRD bool ].
 
 verb-lex := lex-item &
   [ SYNSEM.LOCAL.CAT.HEAD verb ].
@@ -697,10 +698,10 @@ int-adv-v-pre :=  intersective-mod-lex & basic-icons-lex-item &
 
 ;; SSH 2014-09-03: To block overgeretation (e.g., *以前 以前 张三 很 老),
 ;; I added [MODIFIED notmod].
+;; SSH 2014-12-09: For 狗 以前 一直 叫, [MODIFIED notmod] is deleted.
 int-adv-s-pre := intersective-mod-lex & basic-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD adv &
-				[ MOD < [ MODIFIED notmod,
-					  LOCAL [ CAT [ HEAD +vjp,
+				[ MOD < [ LOCAL [ CAT [ HEAD +vjp,
 							POSTHEAD +,
 							VAL [ SPR olist,
 							      COMPS < > ] ],
@@ -903,10 +904,12 @@ poss-det-lex := basic-determiner-lex &
 ;; SSH 2014-09-03: To block *[一直 了], I added [HEAD verb].
 ;; SSH 2014-12-04: Now, 了/着/过 are markers, not adverbs, following
 ;; Zhenzhen's argument.
+;; SSH 2014-12-09: To prevent *[[都 叫] 了], [MODIFIED notmod] is added. 
 aspect-markers := raise-sem-lex-item & no-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD marker & [ MOD <> ],
 			   VAL [ COMPS < lex-synsem & 
-					 [ LOCAL [ CAT [ HEAD +vp & [ AUX - ] ] ] ] >,
+					 [ MODIFIED notmod,
+					   LOCAL [ CAT [ HEAD +vp & [ AUX - ] ] ] ] >,
 				 SUBJ < >,
 				 SPEC < >,
 				 SPR < > ],
@@ -1322,28 +1325,30 @@ never_unify_rel := predsort.
 ;;The below is for the suffix manner adverb forming de 
 
 
-
+;; SSH 2014-12-09: 张三 不停 地 叫
+;; [adj] is changed as [+vj] / [MC na-or--] is added. 
 adv_affix_form_lex := basic-int-adverb-lex &
-[SYNSEM.LOCAL.CAT[HEAD.MOD <[LOCAL.CAT [HEAD verb,
-                    VAL [ SUBJ <[]>,
-                          COMPS<>]]]>,
-          VAL [SUBJ <>]],
- ARG-ST <[LOCAL.CAT [HEAD adj &[PRD +],
-             VAL [SUBJ<[]>,
-              COMPS <>,
-              SPR <>]]]>].
+  [ SYNSEM.LOCAL.CAT[ HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
+					       VAL [ SUBJ < [] >,
+						     COMPS <> ] ] ] >,
+		      VAL [ SUBJ <> ] ],
+    ARG-ST < [ LOCAL.CAT [ HEAD +vj & [ PRD + ],
+			   MC na-or--,
+			   VAL [ SUBJ < [] >,
+				 COMPS <>,
+				 SPR <> ] ] ] > ].
 
 adv_suffix_form_lex := adv_affix_form_lex &
-[SYNSEM.LOCAL.CAT[POSTHEAD -,
-          VAL [ SPR <#spr>,
-            COMPS < >]],
- ARG-ST < #spr>].
+  [ SYNSEM.LOCAL.CAT [ POSTHEAD -,
+		       VAL [ SPR <#spr>,
+			     COMPS <> ] ],
+    ARG-ST < #spr > ].
 
 adv_prefix_form_lex := adv_affix_form_lex &
-[SYNSEM.LOCAL.CAT[POSTHEAD +,
-          VAL [ SPR <>,
-            COMPS <#comps >]],
- ARG-ST < #comps>].
+  [ SYNSEM.LOCAL.CAT [ POSTHEAD +,
+		       VAL [ SPR <>,
+			     COMPS < #comps > ] ],
+    ARG-ST < #comps > ].
 
 
 ;; SSH 2014-09-04: A constant-lex-rule for non-aspecttual sentences

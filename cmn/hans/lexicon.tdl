@@ -159,6 +159,11 @@ question-marker := punctuation &
 	    LKEYS [ ALTKEYREL.PRED "every_q_rel" ] ],
    TRAITS native_token_list ].
 
+有些_n := n_-_pr-q_le &
+ [ STEM < "有些" >,
+   SYNSEM [ LKEYS [ ALTKEYREL.PRED "some_q_rel" ] ],
+   TRAITS native_token_list ].
+
 狗_n := n_-_c_le &
   [ STEM < "狗" >,
     SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 只_x_rel,
@@ -364,6 +369,13 @@ question-marker := punctuation &
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_认为_v_rel" ],
     TRAITS native_token_list ].
+
+相信_v_1 := v_s_le &
+  [ STEM <"相信">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_相信_v_rel" ],
+    TRAITS native_token_list ].
+
 
 说_v := v_s_le &
   [ STEM < "说" >,
@@ -1248,7 +1260,12 @@ comma_c := conj_-_le &
 
 老_j := a_-_att_le &
   [ STEM < "老" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_老_a_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_老_a_1_rel",
+    TRAITS native_token_list ].
+
+过时_j_1 := a_-_att_le &
+  [ STEM < "过时" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_过时_a_1_rel",
     TRAITS native_token_list ].
 
 让_v := v_np-vp_oequi_le &
@@ -1391,7 +1408,29 @@ comma_c := conj_-_le &
 
 二十_j := a_-_num_le &
   [ STEM < "二十" >,
+    SYNSEM.LKEYS.KEYREL.CARG "20",
     TRAITS native_token_list ].
+
+3_j := a_-_num_le &
+  [ STEM < "3" >,
+    SYNSEM.LKEYS.KEYREL.CARG "3",
+    TRAITS native_token_list ].
+
+10_j := a_-_num_le &
+  [ STEM < "10" >,
+    SYNSEM.LKEYS.KEYREL.CARG "10",
+    TRAITS native_token_list ].
+
+23_j := a_-_num_le &
+  [ STEM < "23" >,
+    SYNSEM.LKEYS.KEYREL.CARG "23",
+    TRAITS native_token_list ].
+
+220_j := a_-_num_le &
+  [ STEM < "220" >,
+    SYNSEM.LKEYS.KEYREL.CARG "220",
+    TRAITS native_token_list ].
+
 
 ; 二十_j := a_-_num_le &
 ;   [ STEM < "二十" >,
@@ -1443,7 +1482,6 @@ comma_c := conj_-_le &
     SYNSEM.LKEYS.KEYREL.PRED "_是不是_a_rel",
     TRAITS native_token_list ].
 
-
 叫_v_2 := v_np-vp_oequi_le &
   [ STEM < "叫" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
@@ -1461,10 +1499,15 @@ comma_c := conj_-_le &
     SYNSEM.LKEYS.KEYREL.PRED "_看起来_a_1_rel",
     TRAITS native_token_list ].
 
-希望_v_1 := v_np-vp_oequi_le &
-  [ STEM < "希望" >,
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_希望_v_1_rel" ],
+;希望_v_1 := v_np-vp_oequi_le &
+;  [ STEM < "希望" >,
+;    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+;             LKEYS.KEYREL.PRED "_希望_v_1_rel" ],
+;    TRAITS native_token_list ].
+
+烟草园 := n_-_c_le &
+  [ STEM < "烟草园" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_烟草园_n_1_rel",
     TRAITS native_token_list ].
 
 

@@ -19,8 +19,8 @@
 19@MRS@@@1@pn@那 个 打开 了@@@@1@4@That opened.@@
 20@MRS@@@1@agr@猫 叫@@@@1@2@Cats bark.@@
 21@MRS@@@1@agr@烟草 到 了@@@@1@3@Tobacco arrived.@@
-22@MRS@@@1@pn@有 些 叫@@@@1@3@Some bark.@@
-23@MRS@@@1@pn@有 些 猫 叫@@@@1@4@Some of the cats bark.@@
+22@MRS@@@1@pn@有些 叫@@@@1@2@Some bark.@@
+23@MRS@@@1@pn@有些 猫 叫@@@@1@3@Some of the cats bark.@@
 24@MRS@@@1@pn@一 只 猫 也 没 叫@@@@1@6@No cat barked.@@
 25@MRS@@@1@q@狗 叫 了 吗 ？@@@@1@5@Did the dog bark?@@
 26@MRS@@@1@q@哪 一 只 狗 叫 了 ？@@@@1@7@Which dog barked?@@
@@ -70,7 +70,7 @@
 70@MRS@@@1@res@张三 把 桌子 擦 干净 了@@@@1@6@Zhangsan wiped the table clean.@@
 71@MRS@@@1@pro-d@张三 把 李四 放 在 了 花园 里@@@@1@8@Zhangsan put Lisi in the garden.@@
 72@MRS@@@1@tam@如果 张三 到 了 ， 狗 会 叫@@@@1@8@The dog will bark if Zhangsan arrives.@@
-73@MRS@@@1@crd@ 张三 和 李四 到 了@@@@1@6@Zhangsan and Lisi arrived.@@
+73@MRS@@@1@crd@张三 和 李四 到 了@@@@1@6@Zhangsan and Lisi arrived.@@
 74@MRS@@@1@crd@张三 李四 和 狗 到 了@@@@1@6@Zhangsan, Lisi and the dog arrived.@@
 75@MRS@@@1@crd@狗 到 了 而且 叫 了@@@@1@6@The dog arrived and barked.@@
 76@MRS@@@1@crd@狗 到 了 而且 张三 叫 了@@@@1@7@The dog arrived and Zhangsan barked.@@
@@ -92,7 +92,7 @@
 92@MRS@@@1@emb-d@李四 追赶 猫 打扰 了 张三@@@@1@6@Lisi's chasing of cats botherd Zhangsan.@@
 93@MRS@@@1@emb-d@张三 追赶 猫 打扰 了 李四@@@@1@6@It bothered Lisi that Zhangsan chased cats.@@
 94@MRS@@@1@adv@六月 三号 到 了@@@@1@4@June 3rd arrived.@@
-95@MRS@@@1@adv@张三 三点 二十分 到 了@@@@1@5@Zhangsan arrived at three twenty.@@
+95@MRS@@@1@adv@张三 三 点 二十 分 到 了@@@@1@7@Zhangsan arrived at three twenty.@@
 96@MRS@@@1@adv@张三 星期二 早上 到 了@@@@1@5@Zhangsan arrived on Tuesday morning.@@
 97@MRS@@@1@det@那些 猫 找到 了 一种 叫 的 方法@@@@1@8@The cats found a way to bark.@@
 98@MRS@@@1@adv@那 只 比较 快乐 的 狗 追赶 了 李四@@@@1@9@The happier dog chased Lisi.@@

@@ -76,7 +76,6 @@ question-marker_gr := arg0e_gtr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "以前_r1" ].
 
-
 一次_r1_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "一次_r1" ].
