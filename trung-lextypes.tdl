@@ -256,7 +256,8 @@ head :+
     FORM form ].
 
 ;; SSH 2014-12-09 adj -> +vj
-+vj :+
+;; SSH 2014-12-19 +vj -> +vjr
++vjr :+
   [ PRD bool ].
 
 verb-lex := lex-item &
@@ -290,20 +291,20 @@ intransitive-verb-lex := main-verb-lex & intransitive-lex-item & aspect-rule-dtr
 ;; MATRIX redefinition: allow sentential subjects.
 transitive-lex-item := basic-two-arg-no-hcons & basic-icons-lex-item &
    [ ARG-ST < [ LOCAL.CONT.HOOK.CLAUSE-KEY #clause ],
-          [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind2,
-                              CLAUSE-KEY #clause ] ] >,
+	      [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind2,
+				  CLAUSE-KEY #clause ] ] >,
      SYNSEM [ LKEYS.KEYREL.ARG2 #ind2,
-              LOCAL.CONT.HOOK.CLAUSE-KEY #clause ] ].
+	      LOCAL.CONT.HOOK.CLAUSE-KEY #clause ] ].
 
 transitive-verb-lex := main-verb-lex & transitive-lex-item & aspect-rule-dtr &
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp >,
-         LKEYS.KEYREL.ARG1 #index ],
+	     LKEYS.KEYREL.ARG1 #index ],
     ARG-ST < [ LOCAL [ CAT.HEAD noun,
-               CONT.HOOK.INDEX #index ] ],
-             #comp &
-             [ LOCAL.CAT [ VAL [ SPR < >,
-                                 COMPS < > ],
-                           HEAD noun ] ] > ].
+		       CONT.HOOK.INDEX #index ] ],
+	     #comp &
+	     [ LOCAL.CAT [ VAL [ SPR < >,
+				 COMPS < > ],
+			   HEAD noun ] ] > ].
 
 cp-subj-verb-lex := main-verb-lex & transitive-lex-item & aspect-rule-dtr &
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp >,
@@ -1326,22 +1327,24 @@ never_unify_rel := predsort.
 
 
 ;; SSH 2014-12-09: 张三 不停 地 叫
-;; [adj] is changed as [+vj] / [MC na-or--] is added. 
+;; [adj] is changed as [+vj] / [MC na-or--] is added.
+;; SSH 2014-12-19: 狗 [轻轻 地] 叫 了
+;; [SUBJ < [] > ] is deleted, and +vj is changed to +vjr.
 adv_affix_form_lex := basic-int-adverb-lex &
   [ SYNSEM.LOCAL.CAT[ HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
 					       VAL [ SUBJ < [] >,
 						     COMPS <> ] ] ] >,
 		      VAL [ SUBJ <> ] ],
-    ARG-ST < [ LOCAL.CAT [ HEAD +vj & [ PRD + ],
+    ARG-ST < [ LOCAL.CAT [ HEAD +vjr & [ PRD + ],
 			   MC na-or--,
-			   VAL [ SUBJ < [] >,
-				 COMPS <>,
+			   VAL [ COMPS <>,
 				 SPR <> ] ] ] > ].
 
 adv_suffix_form_lex := adv_affix_form_lex &
-  [ SYNSEM.LOCAL.CAT [ POSTHEAD -,
-		       VAL [ SPR <#spr>,
-			     COMPS <> ] ],
+  [ SYNSEM [ BOUND +,
+	     LOCAL.CAT [ POSTHEAD -,
+			 VAL [ SPR <#spr>,
+			       COMPS <> ] ] ],
     ARG-ST < #spr > ].
 
 adv_prefix_form_lex := adv_affix_form_lex &

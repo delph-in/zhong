@@ -35,9 +35,13 @@ basic-unary-phrase :+
   [ STYLE #style,
     ARGS < [ STYLE #style ] > ].
 
+
+;; SSH 2014-12-19: BOUND is introduced. Lexical items with [BOUND +]
+;; cannot be combined with the other of itself.
 synsem :+ 
  [ PUNCTUATED luk,
-   SPART spart ].
+   SPART spart,
+   BOUND luk ].
 
 spart := avm.
 not-crs := spart.
@@ -182,6 +186,8 @@ experiential := imperfective.
 ;; SSH 2014-09-04; blocking overgeneration
 non-aspect := imperfective.
 
+
+
 ;;; Phrasal types
 
 basic-head-comp-phrase :+ 
@@ -233,7 +239,8 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 				      COMPS < > ],
 				POSTHEAD + ],
     NON-HEAD-DTR.SYNSEM  [ R-PERIPH na-or--,
-			   LOCAL [ CAT [ NONSUBJ -,
+			   LOCAL [ CAT [ MC +,
+					 NONSUBJ -,
 					 VAL.SPR <> ],
 				   CONT.HOOK.INDEX.SORT nontime-s ],
 			   NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
@@ -417,10 +424,12 @@ adj-head-phrase :+
   [ SYNSEM.LOCAL.CAT.MC #mc,
     HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
 
+;; SSH 2014-12-19: BOUND for blocking [狗 轻轻 [地 [叫 了]].
 adj-head-int-mc := adj-head-int-phrase &
   [ SYNSEM.LOCAL.CAT.NONSUBJ #ns,
     HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns,
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns ].
+    NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
+			  LOCAL.CAT.NONSUBJ #ns ] ].
 
 alts :+ 
   [ LE-PFV bool ].
@@ -648,21 +657,21 @@ basic-head-spec-phrase := head-valence-phrase & phrasal &
 			  MODIFIED #modif ],
     HEAD-DTR [ INFLECTED infl-satisfied,
                SYNSEM [ R-PERIPH na-or--,
-						LOCAL [ CAT [ HEAD #head,
-                                      VAL [ SUBJ #subj,
-                                            COMPS <> & #comps,
-                                            SPR < #synsem & 
-                                                  canonical-synsem . #spr >,
-                                            SPEC #spec ],
+			LOCAL [ CAT [ HEAD #head,
+				      VAL [ SUBJ #subj,
+					    COMPS <> & #comps,
+					    SPR < #synsem & 
+						  canonical-synsem . #spr >,
+					    SPEC #spec ],
                                       POSTHEAD #ph ],
 				CONT.HOOK #hdhook & [ CLAUSE-KEY #clause ] ],
-                        MODIFIED #hmodif ] ],
+			MODIFIED #hmodif ] ],
     NON-HEAD-DTR.SYNSEM #synsem &
      [ R-PERIPH na-or--,
        LOCAL [ CAT.VAL.SPEC < [ LOCAL [ CAT [ HEAD #head,
-					    VAL.COMPS #comps ],
-				      CONT.HOOK #hdhook ],
-			      MODIFIED #hmodif ] >,
+					      VAL.COMPS #comps ],
+					CONT.HOOK #hdhook ],
+				MODIFIED #hmodif ] >,
 	       CONT.HOOK.CLAUSE-KEY #clause ],
        MODIFIED #modif ],
     C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
@@ -806,9 +815,13 @@ meas-np-phrase := head-final & head-valence-phrase & phrasal &
              ICONS <! !> ] ].
 
 
+;; SSH 2014-12-19: 追赶 张三 ！
+;; non-asepct & main clause
 imperative-phrase := imp-head-opt-subj-phrase &
   [ SYNSEM [ LOCAL.CAT.HEAD verb,
-         NON-LOCAL.SLASH 0-dlist ] ].
+	     NON-LOCAL.SLASH 0-dlist ],
+    HEAD-DTR.SYNSEM.LOCAL [ CAT.MC +,
+			    CONT.HOOK.INDEX.E.ASPECT non-aspect ] ].
 
 ;; DPF 27-jul-11 - Removed HEAD-DTR..MODIFIED notmod to allow "old dog who 
 ;; can bark" |一 只 会 叫 的 老 狗|
@@ -845,16 +858,17 @@ noun-noun-compound-phrase := head-final &
                               LARG #larg ] !>,
              ICONS <! !> ] ].
 
+;; SSH 2014-12-19: phr-synsem is added.
 nom-de-noun-compound-phrase := head-final &
   [ SYNSEM phr-synsem &
            [ LOCAL.CAT #cat,
              NON-LOCAL #nonloc ],
-    HEAD-DTR.SYNSEM [ LOCAL [ CAT #cat & 
-                                  [ HEAD noun,
-                                    VAL [ COMPS < > ] ],
-                              CONT.HOOK [ LTOP #ltop,
-                                          INDEX #hind ] ],
-                      NON-LOCAL #nonloc ],
+    HEAD-DTR.SYNSEM phr-synsem & [ LOCAL [ CAT #cat & 
+					       [ HEAD noun,
+						 VAL [ COMPS < > ] ],
+					   CONT.HOOK [ LTOP #ltop,
+						       INDEX #hind ] ],
+				   NON-LOCAL #nonloc ],
     NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun,
                                       VAL [ SPR < anti-synsem >,
                                             COMPS < > ],
@@ -991,6 +1005,10 @@ basic-head-opt-comp-phrase := head-valence-phrase & head-only &
                                             IARG2 #index ] !> ] ].
 
 
+; head-gerundive-phrase := head-only &
+;   [ SYNSEM canonical-synsem & 
+; 	   [ LOCAL.CAT.HEAD.MOD < [] > ],
+;     HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD verb ].
 
 ; 着了过 aspect markers & sentence final 了 & sentence final question particle 
 comp-marker-phrase := marker-final-phrase & head-initial & 
