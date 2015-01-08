@@ -20,6 +20,7 @@
 ;;;
 
 (
+((:path . "chart-mapping") (:content . "chart-mapping testing"))
 ((:path . "mrs") (:content . "The MRS testsuite"))
 ((:path . "le") (:content . "le testsuite"))
 )
