@@ -235,7 +235,7 @@ question-marker := punctuation &
 
 刘_n := n_-_s_pn_le &
   [ STEM < "刘" >,
-    SYNSEM.LKEYS.KEYREL.CARG "Liu2",
+    SYNSEM.LKEYS.KEYREL.CARG "刘",
     TRAITS native_token_list ].
 
 张三_n := n_-_h_pn_le &
@@ -271,6 +271,23 @@ question-marker := punctuation &
 
 ;;; Verbs
 
+骑_v_1 := v_-_le &
+  [ STEM < "骑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
+	     LKEYS.KEYREL.PRED "_骑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+骑_v_2 := v_np_le &
+  [ STEM < "骑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
+	     LKEYS.KEYREL.PRED "_骑_v_2_rel" ],
+    TRAITS native_token_list ].
+
+累_j := a_-_att_le &
+  [ STEM < "累" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_累_a_1_rel",
+    TRAITS native_token_list ].
+
 去_v_1 := v_-_le &
   [ STEM < "去" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
@@ -299,6 +316,12 @@ question-marker := punctuation &
   [ STEM <"爱">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_爱_v_rel" ],
+    TRAITS native_token_list ].
+
+打_v :=  v_np_le &
+  [ STEM <"打">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_打_v_rel" ],
     TRAITS native_token_list ].
 
 追赶_v := v_np_le &

@@ -8,3 +8,4 @@ vp-ellipsis-lex-rule := vp-aux-ellipsis-lex-rule.
 non-aspect-lex := aspect-lex-rule &
  [ SYNSEM.LOCAL [ CAT.MC +,
 		  CONT.HOOK.INDEX.E.ASPECT non-aspect ] ].
+

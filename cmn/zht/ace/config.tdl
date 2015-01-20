@@ -1,7 +1,7 @@
 ;;; -*- Mode: TDL; -*-
 ;;; files to load
 
-grammar-top               := "../hant-pet.tdl".
+grammar-top               := "../zht-pet.tdl".
 variable-property-mapping := "../semi.vpm".
 preprocessor              := "../repp/vanilla.rpp".
 ;generation-ignore-signs   := "generation.ignore".

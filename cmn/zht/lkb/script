@@ -45,7 +45,7 @@
 (lkb-pathname (parent-directory) "trung-lextypes.tdl")
 (lkb-pathname (parent-directory) "trung-letypes.tdl")
 (lkb-pathname (parent-directory) "zhong.tdl")
-(lkb-pathname (parent-directory) "hant.tdl")
+(lkb-pathname (parent-directory) "zht.tdl")
 (lkb-pathname (parent-directory) "mtr.tdl")
 ))
 

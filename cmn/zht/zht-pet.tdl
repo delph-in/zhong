@@ -3,47 +3,24 @@
 ;;; $Id: pet.tdl,v 1.2 2008-05-23 01:44:21 sfd Exp $
 ;;;
 
-;; SSH 2014-11-25
-;; lexical filtering: reduce the chart after lexical instantiation and the
-;; application of lexical rules, right before we turn loose syntactic rules.
-:begin :instance :status lexical-filtering-rule.
-:include "lfr".
-:end :instance.
-
+;;; created by Sanghoun Song (SSH, 2014-08-25)
 
 :begin :type.
+
+;;
+;; type hierarchy
+;;
+
 :include "head-types".
 :include "matrix".
 :include "trung".
 :include "trung-lextypes".
 :include "trung-letypes".
 :include "zhong".
-:include "hans".
+:include "zht".
 :include "mtr".
-:include "tmt".
+
 :end :type.
-
-:begin :instance :status token-mapping-rule.
-:include "../../tmr/prelude".
-:include "../../tmr/pos".
-:include "../../tmr/pos-ipa".
-:include "../../tmr/finis".
-:end :instance.
-
-;;
-;; grammar rules and lexical rules (instances of status rule)
-;;
-
-:begin :instance :status rule.
-:include "rules".
-:include "rules-robust".
-:end :instance.
-
-:begin :instance :status lex-rule.
-:include "lrules".
-:include "irules".
-:end :instance.
-
 
 ;;
 ;; lexicon entries (instances of status lex-entry or generic-lex-entry)
@@ -53,8 +30,17 @@
 :include "lexicon".
 :end :instance.
 
-:begin :instance :status generic-lex-entry.
-:include "gle".
+;;
+;; grammar rules and lexical rules (instances of status rule)
+;;
+
+:begin :instance :status rule.
+:include "rules".
+:end :instance.
+
+:begin :instance :status lex-rule.
+:include "lrules".
+:include "irules".
 :end :instance.
 
 ;;

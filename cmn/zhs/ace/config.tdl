@@ -1,11 +1,11 @@
 ;;; -*- Mode: TDL; -*-
 ;;; files to load
 
-grammar-top               := "../hans-pet-strict.tdl".
-generation-ignore-signs   := "../generation.ignore".
+grammar-top               := "../zhs-pet.tdl".
 parsing-roots             := root.
 
 :begin :config.
  :include "config.common".
 :end :config.
+
 

@@ -890,6 +890,35 @@ nom-de-noun-compound-phrase := head-final &
                               LARG #larg ] !>,
              ICONS <! !> ] ].
 
+;; SSH 2015-01-14: V-V compounds 
+verb-verb-compound-phrase := head-initial &
+  [ SYNSEM [ LOCAL.CAT #cat,
+             NON-LOCAL #nonloc ],
+    HEAD-DTR.SYNSEM lex-synsem &
+                [ LOCAL [ CAT #cat & 
+                              [ HEAD verb,
+				VAL.COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #xarg,
+				MC na-or-- ],
+			  CONT [ HOOK [ LTOP #ltop,
+					INDEX #hind ] ] ],
+                  NON-LOCAL #nonloc ],
+    NON-HEAD-DTR.SYNSEM [ LIGHT +,
+			  LOCAL [ CAT [ HEAD verb,
+					MC na-or-- ],
+				  CONT.HOOK [ LTOP #larg,
+					      XARG #xarg ] ] ],
+    C-CONT [ HOOK [ LTOP #ltop,
+		    INDEX #hind ],
+	     RELS <! arg12-relation &
+		   [ PRED "verb-verb-cpd-rel",
+		     LBL #ltop,
+		     ARG1 #hind,
+		     ARG2 #harg ] !>,
+             HCONS <! qeq & [ HARG #harg,
+			      LARG #larg ] !>,
+             ICONS <! !> ] ].
+
+
 ;; Make temporal NPs into adposition phrases
 np-adp-phrase := unary-phrase &
   [ SYNSEM.LOCAL.CAT [ HEAD adp & 

@@ -18,10 +18,11 @@
 :include "trung-lextypes".
 :include "trung-letypes".
 :include "zhong".
-:include "hans".
+:include "zhs".
 :include "mtr".
 :include "tmt".
 :end :type.
+
 
 :begin :instance :status token-mapping-rule.
 :include "../../tmr/prelude".
@@ -30,7 +31,6 @@
 :include "../../tmr/finis".
 :end :instance.
 
-
 ;;
 ;; grammar rules and lexical rules (instances of status rule)
 ;;
@@ -38,7 +38,6 @@
 :begin :instance :status rule.
 :include "rules".
 :end :instance.
-
 
 :begin :instance :status lex-rule.
 :include "lrules".
@@ -54,9 +53,11 @@
 :include "lexicon".
 :end :instance.
 
+
 :begin :instance :status generic-lex-entry.
 :include "gle".
 :end :instance.
+
 
 ;;
 ;; parse-tree labels (instances)
@@ -71,5 +72,5 @@
 ;;
 
 :begin :instance.
-:include "roots".
+:include "roots-strict".
 :end :instance.

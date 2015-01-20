@@ -129,6 +129,7 @@ imper := imperative-phrase & [ STYLE robust ].
 
 n-n-compound := noun-noun-compound-phrase.
 de-n-compound := nom-de-noun-compound-phrase.
+v-v-compound := verb-verb-compound-phrase.
 
 np-adp := np-adp-phrase.
 

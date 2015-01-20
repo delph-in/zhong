@@ -1,7 +1,7 @@
 ;;; -*- Mode: TDL; -*-
 ;;; files to load
 
-grammar-top               := "../hans-pet-robust.tdl".
+grammar-top               := "../zhs-pet-robust.tdl".
 
 ;;; SSH 2014-10-31: root-bridge should be used only for robust parsing.
 parsing-roots             := root root-bridge.
