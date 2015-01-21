@@ -283,7 +283,7 @@ question-marker := punctuation &
 	     LKEYS.KEYREL.PRED "_骑_v_2_rel" ],
     TRAITS native_token_list ].
 
-累_j := a_-_att_le &
+累_j := a_-_pred_le &
   [ STEM < "累" >,
     SYNSEM.LKEYS.KEYREL.PRED "_累_a_1_rel",
     TRAITS native_token_list ].

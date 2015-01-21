@@ -129,7 +129,24 @@ imper := imperative-phrase & [ STYLE robust ].
 
 n-n-compound := noun-noun-compound-phrase.
 de-n-compound := nom-de-noun-compound-phrase.
-v-v-compound := verb-verb-compound-phrase.
+
+v1-v1-compound := verb-verb-compound-phrase & 
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
+				    COMPS < > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
+					COMPS < > ] ].
+
+v12-v1-compound := verb-verb-compound-phrase & 
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
+				    COMPS < [] > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
+					COMPS < > ] ].
+
+v12-v2-compound := verb-verb-compound-phrase & 
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST #first,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
+					COMPS < > ] ].
+
 
 np-adp := np-adp-phrase.
 

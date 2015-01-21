@@ -896,26 +896,24 @@ verb-verb-compound-phrase := head-initial &
              NON-LOCAL #nonloc ],
     HEAD-DTR.SYNSEM lex-synsem &
                 [ LOCAL [ CAT #cat & 
-                              [ HEAD verb,
-				VAL.COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #xarg,
+                              [ HEAD verb,				
 				MC na-or-- ],
 			  CONT [ HOOK [ LTOP #ltop,
-					INDEX #hind ] ] ],
+					INDEX #arg1 ] ] ],
                   NON-LOCAL #nonloc ],
     NON-HEAD-DTR.SYNSEM [ LIGHT +,
-			  LOCAL [ CAT [ HEAD verb,
+			  LOCAL [ CAT [ HEAD +vj,
 					MC na-or-- ],
-				  CONT.HOOK [ LTOP #larg,
-					      XARG #xarg ] ] ],
+				  CONT.HOOK.INDEX #arg2 ] ],
     C-CONT [ HOOK [ LTOP #ltop,
-		    INDEX #hind ],
-	     RELS <! arg12-relation &
+		    INDEX #arg0 ],
+	     RELS <! arg12-relation & 
 		   [ PRED "verb-verb-cpd-rel",
 		     LBL #ltop,
-		     ARG1 #hind,
-		     ARG2 #harg ] !>,
-             HCONS <! qeq & [ HARG #harg,
-			      LARG #larg ] !>,
+		     ARG0 event & #arg0,
+		     ARG1 #arg1,
+		     ARG2 #arg2 ] !>,
+             HCONS <! !>,
              ICONS <! !> ] ].
 
 
