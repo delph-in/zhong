@@ -711,8 +711,11 @@ named_rel := norm_rel.
 ; SSH 2012-02-16 ICONS was originally designed in order to represent
 ; anaphoric items, such as reflecxives.  constraints on anaphora
 ; SSH 2013-02-13 revised
+; SSH 2015-01-26: Other elements can be constrained via ICONS. 
 
-icons := avm.
+icons := avm &
+  [ IARG1 individual,
+    IARG2 individual ].
 
 ; SSH 2014-11-26: Following the specification in the ERG,
 ; CLAUSE/TARGET is changed into IARG1/IARG2.  Since ICONS can be used
@@ -723,9 +726,7 @@ icons := avm.
 ;   [ CLAUSE individual,
 ;     TARGET individual ].
 
-info-str := icons &
-  [ IARG1 individual,
-    IARG2 individual ].
+info-str := icons.
 
 ; constraints on information structure
 non-topic := info-str. 

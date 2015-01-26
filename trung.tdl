@@ -61,6 +61,9 @@ orthog := cons &
   [ FROM string,
     TO string ].
 
+;; SSH 2015-01-26: compound lexical items
+cpd := icons. 
+
 
 card_rel := named_rel.
 
@@ -892,29 +895,37 @@ nom-de-noun-compound-phrase := head-final &
 
 ;; SSH 2015-01-14: V-V compounds 
 verb-verb-compound-phrase := head-initial &
-  [ SYNSEM [ LOCAL.CAT #cat,
-             NON-LOCAL #nonloc ],
+  [ SYNSEM [ LOCAL.CAT [ HEAD #head,
+			 VAL [ SPR #spr,
+			       SPEC #spec ],
+			 MC luk, 
+			 MKG #mkg,
+			 HC-LIGHT #hclight, 
+			 POSTHEAD #posthead,
+			 NONSUBJ #nonsubj ],
+	     NON-LOCAL #nonloc ],
     HEAD-DTR.SYNSEM lex-synsem &
-                [ LOCAL [ CAT #cat & 
-                              [ HEAD verb,				
-				MC na-or-- ],
+                [ LOCAL [ CAT [ HEAD #head & verb & [ AUX - ],				
+				VAL [ SPR #spr,
+				      SPEC #spec ],
+				MC na-or--,
+				MKG #mkg,
+				HC-LIGHT #hclight, 
+				POSTHEAD #posthead,
+				NONSUBJ #nonsubj ],
 			  CONT [ HOOK [ LTOP #ltop,
 					INDEX #arg1 ] ] ],
                   NON-LOCAL #nonloc ],
     NON-HEAD-DTR.SYNSEM [ LIGHT +,
-			  LOCAL [ CAT [ HEAD +vj,
+			  LOCAL [ CAT [ HEAD +vj & [ AUX - ],
 					MC na-or-- ],
 				  CONT.HOOK.INDEX #arg2 ] ],
     C-CONT [ HOOK [ LTOP #ltop,
-		    INDEX #arg0 ],
-	     RELS <! arg12-relation & 
-		   [ PRED "verb-verb-cpd-rel",
-		     LBL #ltop,
-		     ARG0 event & #arg0,
-		     ARG1 #arg1,
-		     ARG2 #arg2 ] !>,
+		    INDEX #arg1 ],
+	     RELS <! !>,
              HCONS <! !>,
-             ICONS <! !> ] ].
+             ICONS <! cpd & [ IARG1 #arg1, 
+			      IARG2 #arg2 ] !> ] ].
 
 
 ;; Make temporal NPs into adposition phrases

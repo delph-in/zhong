@@ -1,0 +1,13 @@
+1@nil@@@1@subjectcontrol@他们 尝试 过 吃 米饭 。@@@@1@6@3PL try ASP eat rice .They have tried to eat rice.@bo chen, joanna@2014-12-05
+2@nil@@@1@subjectcontrol,passive@吃 米饭 已经 被 他们 尝试 过 了 。@@@@0@9@eat rice already PASS 3PL try ASP PFV .To eat rice was tried by them.@bo chen, joanna@2014-12-05
+3@nil@@@1@object(argument2)control@张三 叫 李四 吃 米饭 。@@@@1@6@Zhangsan ask Lisi eat rice .Zhangsan asked Lisi to eat rice.@bo chen, joanna@2014-12-05
+4@a:5 modified@@@1@object(argument2)control,passive@李四 被 张三 叫 去 北京 。@@@@1@7@lisi PASS Zhangsan ask go Beijing .Lisi was asked to go to Beijing by Zhangsan.@bo chen, joanna@2014-12-05
+5@nil@@@1@object(argument1)control@张三 答应 李四 去 北京 。@@@@1@6@Zhangsan promise Lisi go Beijing .Zhangsan promised Lisi to go to Beijing.@bo chen, joanna@2014-12-05
+6@a:6 modified@@@1@subjectcontrol@张三 尝试 他 吃 米饭 。@@@@0@6@Zhangsan try him eat rice .Zhangsan tried him to eat rice.@bo chen, joanna@2014-12-05
+7@a:6 modified@@@1@subjectcontrol@张三 尝试 自己 吃 米饭 。@@@@1@6@Zhangsan try self eat rice .Zhangsan tried himself to eat rice.@bo chen, joanna@2014-12-05
+8@a:6 modified@@@1@subjectcontrol@张三 尝试 他 自己 吃 米饭 。@@@@0@7@Zhangsan try himself eat rice .Zhangsan tried himself to eat rice.@bo chen, joanna@2014-12-05
+9@nil@@@1@subjectraising@看起来 张三 吃 了 米饭 。@@@@1@6@look.like Zhangsan eat PFV rice .Zhangsan seemed to eat rice.@bo chen, joanna@2014-12-05
+10@nil@@@1@subjectraising@张三 看起来 吃 了 米饭 。@@@@1@6@Zhangsan look.like  eat PFV rice .Zhangsan seemed to eat rice.@bo chen, joanna@2014-12-05
+11@nil@@@1@subjectraising@张三 吃 了 米饭 看起来 。@@@@0@6@Zhangsan eat PFV rice look.like.Zhangsan seemed to eat rice.@bo chen, joanna@2014-12-05
+12@nil@@@1@objectraising@他 希望 他 的 狗 叫 。@@@@1@7@he want his DE dog bark .He wants his dog to bark.@bo chen, joanna@2014-12-05
+13@nil@@@1@objectraising,passive@他 的 狗 被 他 希望 叫 。@@@@0@8@His DE dog PASS he want bark .(lit.) His dog was wanted by him to bark.@bo chen, joanna@2014-12-05

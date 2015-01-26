@@ -4,193 +4,203 @@ Lines: orth translit gloss translat
 Author: Bo Chen
 Date: 2014-12-08
 
-Id: 1
+### Id:1
 Source: nil
 Vetted: t
 Judgment: g
-Phenom: quantifier
+Phenomena: quantifier
 张三 和 李四 都 叫 了 。
 Zhang1san1 he2 li3si4 dou1 jiao4 le
-Zhangsan and  lisi both scream
+Zhangsan and lisi both scream
 Both of Zhangsan and lisi screamed.
 
-Id: 2
+### Id:2
 Source: nil
 Vetted: t
 Judgment: u
-Phenom: quantifier
+Phenomena: quantifier
 都  张三 和 李四 叫 了 。
-dou1 Zhang1san1 he2 li3si4  jiao4 le
-both Zhangsan and  lisi scream
+dou1 Zhang1san1 he2 li3si4 jiao4 le
+both Zhangsan and  lisi scream 
+N/A
 
-Id: 3
+### Id:3
 Source: nil
 Vetted: t
 Judgment: g
-Phenom: quantifier
+Phenomena: quantifier
 大家 都 叫 了 。
 Da4jia1 dou1 jiao4 le
 Everyone all scream
 Everyone all screamed.
 
-Id: 4
+### Id:4
 Source: nil
 Vetted: t
 Judgment: u
-Phenom: quantifier
+Phenomena: quantifier
 大家 叫 了 都 。
-Da4jia1 jiao4 le dou1
+Da4jia1 jiao4 le dou1 .
+everyone scream PFV all .
 Everyone all scream
 
-Id: 5
+### Id:5
 Source: nil
 Vetted: t
 Judgment: g
-Phenom: quantifier
+Phenomena: quantifier
 张三 每 天 都 吃 米饭 。
 Zhang1san1 mei3tian1 dou1 chi1 mi3fan4
 Zhangsan everyday all eat rice
 Everyday Zhangsan eats rice.
 
-Id: 6
+### Id:6
 Source: nil
 Vetted: t
 Judgment: u
-Phenom: quantifier
+Phenomena: quantifier
 都 张三 每 天 吃 米饭  。
 dou1 Zhang1san1 mei3tian1 chi1 mi3fan4
 all Zhangsan everyday eat rice
+N/A
 
-Id: 7
+### Id:7
 Source: nil
 Vetted: t
 Judgment: g
-Phenom: quantifier
+Phenomena: quantifier
 我们 都 叫 了 。
 Wo3men dou1 jiao4 le
 We all scream
 We all screamed.
 
-Id: 8
+### Id:8
 Source: nil
 Vetted: t
 Judgment: u
-Phenom: quantifier
+Phenomena: quantifier
 都 我们 叫 了 。
 dou1 Wo3men jiao4 le
 all We scream
+N/A
 
-Id: 9
+### Id:9
 Source: nil
 Vetted: t
 Judgment: g
-Phenom: quantifier
+Phenomena: quantifier
 三 只 猫 都 很 老 。
 San1 zhi1 mao1 dou1 hen3 lao3
 Three quantifier cat all very old
 All of the three cats are very old.
 
-Id:10
+### Id:10
 Source: nil
 Vetted: t
 Judgment: u
-Phenom: quantifier
+Phenomena: quantifier
 三 只 猫 很 都 老 。
 San1 zhi1 mao1 hen3 dou1 lao3
 Three quantifier cat very all old
+N/A
 
-Id: 11
+### Id:11
 Source: nil
 Vetted: t
 Judgment: g
-Phenom: quantifier
+Phenomena: quantifier
 三 只 猫 我们 都 不 追赶 。
 San1 zhi1 mao1 wo3men dou1 bu4 zhui1gan3
 Three quantifier cat we all not chase
 All of the three cats, we won’t chase.
 
-Id: 12
+### Id:12
 Source: nil
 Vetted: t
 Judgment: u
-Phenom: quantifier
+Phenomena: quantifier
 三 只 猫 都 我们 不 追赶 。
 San1 zhi1 mao1 dou1 wo3men bu4 zhui1gan3
 Three quantifier cat all we not chase
+N/A
 
-Id: 13
+### Id:13
 Source: nil
 Vetted: t
 Judgment: g
-Phenom: quantifier
+Phenomena: quantifier
 我们 都 喜欢 烟草 。
 Wo3men dou1 xi3huan1 yan1cao3
 We all like cigarettes.
 We all like cigarettes.
 
-Id: 14
+### Id:14
 Source: nil
 Vetted: t
 Judgment: u
-Phenom: quantifier
+Phenomena: quantifier
 我们 喜欢 都 烟草 。
 Wo3men xi3huan1 dou1 yan1cao3
 We like all cigarettes.
+N/A
 
-Id: 15
+### Id:15
 Source: nil
 Vetted: t
 Judgment: g
-Phenom: quantifier
+Phenomena: quantifier
 一切 都 很 好 。
 Yi2qie4 dou1 hen3 hao3.
 Everything all very good
 All of Everything are very good.
 
-Id: 16
+### Id:16
 Source: nil
 Vetted: t
 Judgment: u
-Phenom: quantifier
+Phenomena: quantifier
 都 一切 很 好 。
 dou1 Yi2qie4 hen3 hao3.
 all Everything very good
+N/A
 
-Id: 17
+### Id:17
 Source: nil
 Vetted: t
 Judgment: g
-Phenom: quantifier
+Phenomena: quantifier
 每 一 只 猫 都 叫 了 。
 Mei3 yi4 zhi mao1 dou1 jiao4 le
 Every one quantifier cat all scream PFV
 Every cat screamed.
 
-Id: 18
+### Id:18
 Source: nil
 Vetted: t
 Judgment: u
-Phenom: quantifier
+Phenomena: quantifier
 每 一 只 都 猫 叫 了 。
 Mei3 yi4 zhi dou1 mao1 jiao4 le
 Every one quantifier all cat scream PFV
+N/A
 
-Id: 19
+### Id:19
 Source: nil
 Vetted: t
 Judgment: g
-Phenom: quantifier
+Phenomena: quantifier
 所有 的 狗 都 叫 了 。
 Suo3you3 de gou3 dou1 jiao4 le
 All de dog all scream PFV
 All dogs screamed.
 
-Id: 20
+### Id:20
 Source: nil
 Vetted: t
 Judgment: u
-Phenom: quantifier
+Phenomena: quantifier
 所有 的 都 狗 叫 了 。
 Suo3you3 de dou1 gou3 jiao4 le
 All de all dog scream PFV
+N/A
 

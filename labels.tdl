@@ -232,7 +232,7 @@ le-crs-label := label &
 				COORD-STRAT "" ] ],
 	       LABEL-NAME "SP" ].
 
-le-crs-label := label &
+qpart-label := label &
 	     [ STEM <"吗">,
 	       SYNSEM [ LIGHT +,
 			R-PERIPH +,

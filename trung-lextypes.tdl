@@ -979,13 +979,24 @@ crs-lex-item := spart-lex-item &
 
 ;; Type for negative adverbs.
 
+;; SSH 2015-01-26: Why is [ MC + ] needed?
+
 neg-adv-lex := basic-scopal-adverb-lex &
   [ SYNSEM.LOCAL.CAT [ VAL.COMPS < >,
                        POSTHEAD -,
-                       HEAD.MOD < [ LOCAL [ CAT [ MC +,
-						  HEAD verb,
-						  VAL [ SUBJ cons,
-							COMPS null ] ] ] ] > ] ].
+                       HEAD.MOD < [ LIGHT +,
+				    LOCAL [ CAT [ HEAD verb,
+						  VAL [ SUBJ cons ] ] ] ] > ] ].
+
+; neg-adv-lex := basic-scopal-adverb-lex &
+;   [ SYNSEM.LOCAL.CAT [ VAL.COMPS < >,
+;                        POSTHEAD -,
+;                        HEAD.MOD < [ LOCAL [ CAT [ MC +,
+; 						  HEAD verb,
+; 						  VAL [ SUBJ cons,
+; 							COMPS null ] ] ] ] > ] ].
+
+
 
 ; For polar questions
 v-not-v-adv-lex := basic-scopal-adverb-lex &

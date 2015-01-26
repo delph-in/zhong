@@ -1,0 +1,217 @@
+Language: Mandarin Chinese[Simplified]
+Language code: cmn
+Lines: orth translit gloss translat
+Author: Bo Chen
+Date: 2015-1-18
+
+### Id: 1 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 骑 累 了 
+Zhang1san1 qi lei le 
+Zhang1san1 ride tired asp 
+Zhang1san1 rode horse (and as a result Zhang1san1 got) tired
+
+### Id: 2 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 骑 了 
+Zhang1san1 qi le 
+Zhang1san1 ride asp 
+Zhang1san1 rode horse
+
+### Id: 3 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 骑 累 了 那 匹 马
+Zhang1san1 qi lei le na4 pi1 ma3 
+Zhang1san1 ride tired asp that horse
+Zhang1san1 rode that horse (and as a result it/Zhang1san1 got) tired
+
+### Id: 4  
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 跑 累 了
+Zhang1san1 pao3 lei4 le 
+Zhang1san1 run tired asp
+Zhang1san1 got tired because of running
+
+### Id: 5 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 下 输 了 棋
+Zhang1san1 xia4 shu1 le qi2 
+Zhang1san1 play lose asp chess
+Zhang1san1 played (chess and as a result he) lost it
+
+### Id: 6 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 打 赢 了 这 一 仗
+Zhang1san1 da3 ying2 le zhe4 yi2 zhang4 
+Zhang1san1 fight win asp this one battle
+Zhang1san1 fought (this battle and as a result he) won it
+
+### Id: 7 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 背 会 了 这 首 诗
+Zhang1san1 bei4 hui4 le zhe4 shou3 shi1 
+Zhang1san1 try to memorize know asp this poem
+Zhang1san1 tried to memorize (this poem and as a result she) learned it
+
+### Id: 8 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 气 哭 了 李四
+Zhang1san1 qi4 ku1 le Li3si4 
+Zhang1san1 annoy cry asp Li3si4
+Zhang1san1 made Li3si4 so angry (that Li3si4) cried
+
+### Id: 9 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 用 惯 了 毛笔
+Zhang1san1 yong4 guan4 le mao2bi3 
+Zhang1san1 use accustomed asp writing brush  
+Zhang1san1 used the writing brush (so often that he got) accustomed 
+
+### Id: 10 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 吃 腻 了 好 东西
+Zhang1san1 chi1 ni4 le hao3 dong1xi 
+Zhang1san1 eat bored asp good thing  
+Zhang1san1 eats good food so often/so much that he got bored 
+
+### Id: 11 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+他 玩 忘 了 自己 的 职责
+ta1 wan2 wang4 le zi4ji3 de zhi2ze2 
+he play forget asp own duty
+He played (in such an absorbed way that he) forgot his duty.
+
+### Id: 12 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+你 哭 不 懂 这 道 题
+ni3 ku1 bu4 dong3 zhe4 dao4 ti4
+you cry not understand this question
+That you cry won't make you understand this question
+
+### Id: 13 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 笑 疯 了
+Zhang1 san1 xiao4 feng1 le 
+Zhang1san1 laugh insane asp
+Zhang1san1 laughed to the extent of becoming mad
+
+### Id: 14 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 跳 烦 了
+Zhang1 san1 tiao4 fan2 le 
+Zhang1san1clown jump bored asp 
+Zhang1san1 jumped (so long that he got) bored
+
+### Id: 15  
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 哭 走 了 很 多 客人
+Zhang1san1 ku1 zou3 le hen3 duo1 ke4ren 
+Zhang1san1 cry leave Asp many guest
+Zhang1san1 cried (so much that) many guests left
+
+### Id: 16 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+他 笑 傻 了 我 了
+ta1 xiao4 sha3 le wo3 le 
+he laugh confused7 asmpeasp 
+That he laughed made me confused 
+
+### Id: 17 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+他 打 疼 了 我
+ta1 da3 teng2 le wo3 
+he beat have a pain asp me
+He beat me (and as result I) felt a pain
+
+### Id: 18 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 问 问题 问 懂 了
+zhang1 san1 wen4 wen ti2 wen4 dong3 le 
+Zhang1san1 ask question ask understand asp
+Zhang1san1 asked questions (about this poem and as a result he finally) understood it
+
+### Id: 19
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 下 棋 下 赢 了
+Zhang1 san1 xia4 qi2 xia4 ying2 le
+Zhang1 san1 play chess play win asp
+Zhang1san1 played chess (with Li3si4 and as a result he) beat him
+
+### Id: 20 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 打 李四 打 丢 了 一 只 鞋
+Zhang1san1 da3 Li3si4 da3 diu1 le y4i zhi1 xie2
+Zhang1san1 beat Li3si4 beat lose Asp one shoe
+Zhang1san1 beat Li3si4 (and as a result Zhang1san1) lost a shoe
+
+### Id: 21 
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 教 懂 了 李四 这 首 诗。
+Zhang1san1 jiao1 dong3 le Li3si4 zhe4 shou3 shi1
+Zhang1san1 teach understand asp Li3si4 this poem
+Zhang1san1 taught Li3si4 this poem (and as a result Li3si4) understood it
+
+

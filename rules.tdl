@@ -131,22 +131,39 @@ n-n-compound := noun-noun-compound-phrase.
 de-n-compound := nom-de-noun-compound-phrase.
 
 v1-v1-compound := verb-verb-compound-phrase & 
-  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-				    COMPS < > ],
+  [ SYNSEM.LOCAL.CAT.VAL #val,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
+					   COMPS < > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
 					COMPS < > ] ].
 
 v12-v1-compound := verb-verb-compound-phrase & 
-  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-				    COMPS < [] > ],
+  [ SYNSEM.LOCAL.CAT.VAL #val,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
+					   COMPS < [] > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
 					COMPS < > ] ].
 
 v12-v2-compound := verb-verb-compound-phrase & 
-  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST #first,
+  [ SYNSEM.LOCAL.CAT.VAL #val,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ COMPS.FIRST #first ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
 					COMPS < > ] ].
 
+v12-v12-compound := verb-verb-compound-phrase & 
+  [ SYNSEM.LOCAL.CAT.VAL #val,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
+					   COMPS.FIRST #comp ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+					COMPS.FIRST #comp ] ].
+
+v1-v12-compound := verb-verb-compound-phrase & 
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+			   COMPS #comps ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+				    COMPS < >],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+					COMPS #comps & < [] > ] ].
 
 np-adp := np-adp-phrase.
 
