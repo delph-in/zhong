@@ -1,0 +1,107 @@
+1@mrs@@@1@tam@落 雨 嚟@@@@1@3@fall rain SFP"It rained."@joanna sio ut seong@2015-01-24
+2@mrs@@@1@tam@張三 吠 嚟@@@@1@3@zoengsaam   bark SFP"Zoengsaam barked."@joanna sio ut seong@2015-01-24
+3@mrs@@@1@tam@個 窗 打 開 咗@@@@1@5@cl  Window hit  open ASP"The window opened."@joanna sio ut seong@2015-01-24
+4@mrs@@@1@tam@張三 追 李四 嚟@@@@1@4@zoengsaam   chase leisei   SFP"Zoengsaam chased Leisei."@joanna sio ut seong@2015-01-24
+5@mrs@@@1@comps/dat@張三 遞 李四 枝 煙@@@@0@5@zoengsaam   hand leisei   cl  cigaretteIntended reading: "Zoengsaam handed Leisei the cigarette."@joanna sio ut seong@2015-01-24
+6@mrs@@@1@comps/dat@張三 遞 咗 枝 煙 畀 李四@@@@1@7@zoengsaam   hand asp cl  cigarette	give leisei"Zeongsaam handed the cigarette to Leisei"@joanna sio ut seong@2015-01-24
+7@mrs@@@1@comps@張三 用 一 枝煙 同 李四 賭 落 雨 嚟@@@@1@10@zoengsaam use one cl cigarette with leisei bet fall rain SFP"Zoengsaam bet Leisei a cigarette that it rained."@joanna sio ut seong@2015-01-24
+8@mrs@@@1@emb-d@張三 知道 落 雨 嚟@@@@1@5@zoengsaaam  know    fall rain SFP"Zoengsaam knew that it rained."@joanna sio ut seong@2015-01-24
+9@mrs@@@1@emb-d@張三 打算  吠 嚟 嘅@@@@1@5@zoengsaam   intend     bark SFP  SFP"Zoengsaam intended to bark."@joanna sio ut seong@2015-01-24
+10@mrs@@@1@emb-d@張三 打算 叫 李四 吠 嚟 嘅@@@@1@7@zoengsaam   intend    call leisei   bark   SFP  SFP"Zhangsan intended Lisi to bark.@joanna sio ut seong@2015-01-24
+11@mrs@@@1@quant@每 隻 猫 都 吠 嚟@@@@1@6@every cl   cat   all  bark SFP"Every cat barked."@joanna sio ut seong@2015-01-24
+12@mrs@@@1@quant@每 隻 猫 都 追 一 隻 狗 嚟@@@@1@9@every cl   cat   all  chase one  cl   dog  SFP"Every cat chased some dog."@joanna sio ut seong@2015-01-24
+13@mrs@@@1@gen@我 隻 猫 吠 嚟@@@@1@5@1sg  cl   cat   bark SFP"My cat barked."@joanna sio ut seong@2015-01-24
+14@mrs@@@1@gender@佢 吠 嚟@@@@1@3@3sg  	bark	SFP"S/he/it barked."@joanna sio ut seong@2015-01-24
+15@mrs@@@1@gender@佢 追 佢 嚟@@@@1@4@3sg   chase 3sg    SFP"S/he/it chased her/him/it."@joanna sio ut seong@2015-01-24
+16@mrs@@@1@refl@隻 猫 追 自己 嚟@@@@1@5@cl   cat   chase self    SFP"The cat chased itself."@joanna sio ut seong@2015-01-24
+17@mrs@@@1@pn@隻 猫 追 咗 一 隻@@@@1@6@cl   cat   chase asp one  zek"The cat chased one."@joanna sio ut seong@2015-01-24
+18@mrs@@@1@gen@我 嘅 吠 咗 喇@@@@1@5@1sg  marker 	bark ASP SFP"Mine barked."@joanna sio ut seong@2015-01-24
+19@mrs@@@1@pn@嗰 個 打 開 咗 喇@@@@1@6@that cl hit  open ASP SFP"That opened."@joanna sio ut seong@2015-01-24
+20@mrs@@@1@agr@猫 吠 嘅@@@@1@3@cat   bark SFP"Cats bark."@joanna sio ut seong@2015-01-24
+21@mrs@@@1@agr@啲 烟草 到 咗 喇@@@@1@5@cl tobacco arrive ASP SFP"Tobacco arrived."@joanna sio ut seong@2015-01-24
+22@mrs@@@1@pn@有啲 吠@@@@1@2@have cl  bark"Some bark."@joanna sio ut seong@2015-01-24
+23@mrs@@@1@pn@有啲 猫 吠@@@@1@3@have cl  cat   bark"Some of the cats bark."@joanna sio ut seong@2015-01-24
+24@mrs@@@1@pn@一 隻 猫 都 冇 吠@@@@1@6@one  cl   cat   all  not.have bark"No cat barked."@joanna sio ut seong@2015-01-24
+25@mrs@@@1@q@隻 狗 有 冇 吠 呀 ？@@@@1@7@cl   dog  have not.have bark QP ?"Did the dog bark?"@joanna sio ut seong@2015-01-24
+26@mrs@@@1@q@邊 隻 狗 吠 嚟 呀 ？@@@@1@7@Which cl   dog  bark SFP  SFP ?"Which dog barked?"@joanna sio ut seong@2015-01-24
+27@mrs@@@1@q@邊個 隻 狗 吠 嚟 呀 ？@@@@1@7@who       cl   dog  bark SFP  SFP ?"Whose dog barked?"@joanna sio ut seong@2015-01-24
+28@mrs@@@1@imp@追 張三 ！@@@@1@3@chase Zoengsaam"Chase Zoengsaam!"@joanna sio ut seong@2015-01-24
+29@mrs@@@1@imp@張三 想 知道 邊 隻 狗 吠 嚟@@@@1@8@zoengsaam   want   know    which cl   dog  bark SFP"Zoengsaam wondered which dog barked."@joanna sio ut seong@2015-01-24
+30@mrs@@@1@emb-d@張三 想 知道 李四 有 冇 吠 嚟@@@@1@8@Zoengsaam   want   know    Leisei   have not.have 	bark SFP"Zoengsaam wondered whether Leisei barked."@joanna sio ut seong@2015-01-24
+31@mrs@@@1@nom@張三 追 嗰 隻 狗 吠 嚟@@@@1@7@Zoeng1saam1 chase that cl   dog  bark SFP"The dog that Zoengsaam chased barked."@joanna sio ut seong@2015-01-24
+32@mrs@@@1@nom@要 追 嗰 隻 狗 吠 緊 呀@@@@1@8@need    chase that cl   dog  bark ASP  SFP"The dog to chase is barking."@joanna sio ut seong@2015-01-24
+33@mrs@@@1@pass@隻 狗 俾 張三 追 嚟@@@@1@6@cl   dog  give Zoengsaam   chase SFP"The dog was chased by Zoengsaam."@joanna sio ut seong@2015-01-24
+34@mrs@@@1@pass@俾 張三 追 嗰 隻 狗 吠 嚟@@@@1@8@give Zoengsaam   chase that cl   dog  bark SFP"The dog chased by Zoengsaam barked."@joanna sio ut seong@2015-01-24
+35@mrs@@@1@tam@隻 狗 喺 度 吠 緊@@@@1@6@cl   dog  be   place  bark ASP"The dog is barking."@joanna sio ut seong@2015-01-24
+36@mrs@@@1@tam@隻 狗 吠 嚟@@@@1@4@cl   dog  bark SFP"The dog has barked."@joanna sio ut seong@2015-01-24
+37@mrs@@@1@tam@隻 狗 之前 吠 嚟@@@@1@5@cl   dog  before   bark SFP"The dog has been barking."@joanna sio ut seong@2015-01-24
+38@mrs@@@1@tam@隻 狗 之前 吠 過 嚟@@@@1@6@cl   dog  before    bark ASP  SFP"The dog had been barking."@joanna sio ut seong@2015-01-24
+39@mrs@@@1@tam@隻 狗 將會 吠@@@@1@4@cl   dog  will       bark"The dog will bark."@joanna sio ut seong@2015-01-24
+40@mrs@@@1@tam@隻 狗 要 吠 啦@@@@1@5@cl   dog  need bark SFP"The dog is going to bark."@joanna sio ut seong@2015-01-24
+41@mrs@@@1@infin@隻 狗 會 吠 嘅@@@@1@5@cl   dog  can 	bark SFP"The dog could bark."@joanna sio ut seong@2015-01-24
+42@mrs@@@1@infin@隻 狗 唔 會 吠 嘅@@@@1@6@cl   dog  not can  bark SFP"The dog couldn’t bark."@joanna sio ut seong@2015-01-24
+43@mrs@@@1@adj@隻 老 狗 吠 嚟@@@@1@5@cl   old  dog  bark SFP"The old dog barked."@joanna sio ut seong@2015-01-24
+44@mrs@@@1@adv@隻 老 狗 細細聲 噉 吠 嚟@@@@1@7@cl   old  dog  small.small.sound   	like.that	bark  SFP"The dog barked softly."@joanna sio ut seong@2015-01-24
+45@mrs@@@1@adv@隻 狗 好有 可能 吠 嚟@@@@1@6@cl   dog  good.have possibility  bark SFP"The dog probably barked."@joanna sio ut seong@2015-01-24
+46@mrs@@@1@loc@隻 狗 喺 花園 度 吠 嚟@@@@1@7@cl   dog  be   garden    place bark SFP"The dog barked in the garden."@joanna sio ut seong@2015-01-24
+47@mrs@@@1@tam@依家 隻 狗 吠 喇@@@@1@5@now     cl   dog  bark SFP"The dog barks now."@joanna sio ut seong@2015-01-24
+48@mrs@@@1@cpd@隻 花園 嘅 狗 吠 嚟@@@@1@6@cl      garden    marker  dog  bark SFP"The garden dog barked."@joanna sio ut seong@2015-01-24
+49@mrs@@@1@ppmod@烟草 花園 嗰 隻 狗 吠 嚟@@@@1@7@tobacco  garden    that cl   dog  bark SFP"The dog in the tobacco garden barked."@joanna sio ut seong@2015-01-24
+50@mrs@@@1@adj@隻 貓 係 老 嘅@@@@1@5@cl   cat   be   old  SFP"The cat is old."@joanna sio ut seong@2015-01-24
+51@mrs@@@1@prd@隻 貓 喺 花園 度@@@@1@5@cl   cat   be.at garden    place"The cat is in the garden."@joanna sio ut seong@2015-01-24
+52@mrs@@@1@det,adj@吠 緊 嗰 隻 狗 追 張三 嚟@@@@1@8@bark ASP  that cl   dog  chase Zeongsaam   SFP"The barking dog chased Zoengsaam."@joanna sio ut seong@2015-01-24
+53@mrs@@@1@det,pass@俾 人 追 嘅 狗 吠@@@@1@6@give people	chase marker 	dog  bark"Chased dogs bark."@joanna sio ut seong@2015-01-24
+54@mrs@@@1@adj@追 猫 呢 啲 嘢 好 過時 㗎 喇@@@@1@9@chase cat   this cl  thing 	very old-fashioned 	SFP  SFP"Chasing the cat is old."@joanna sio ut seong@2015-01-24
+55@mrs@@@1@emb-d@好 明顯 隻 貓 追 張三 啦@@@@1@7@very 	obvious   cl   cat   chase Zoengsaam   SFP"That the cat chases Zhangsan is obvious."@joanna sio ut seong@2015-01-24
+56@mrs@@@1@indef@係 吠 嘅 狗 都 追 㗎@@@@1@7@be   bark GE  dog  all  chase SFP"Dogs chase whatever barks."@joanna sio ut seong@2015-01-24
+57@mrs@@@1@quant@隻 狗 以前 日 日 吠 㗎@@@@1@7@cl      dog     before  day     day     bark    SFP"The dog barked every day."@joanna sio ut seong@2015-01-24
+58@mrs@@@1@q@隻 狗 幾時 吠 嚟 呀 ？@@@@1@7@cl   dog  when    bark SFP  SFP ?"When did the dog bark?"@joanna sio ut seong@2015-01-24
+59@mrs@@@1@det@其中 三 隻 狗 吠 嚟@@@@1@6@among           three   cl      dog     bark"Three of the dogs bark."@joanna sio ut seong@2015-01-24
+60@mrs@@@1@numcl@三 隻 吠@@@@1@3@three cl   bark"Three bark."@joanna sio ut seong@2015-01-24
+61@mrs@@@1@det@張三 隻 狗 吠@@@@1@4@Zoengsaam   cl   dog  bark"Zoengsaam's dog barks."@joanna sio ut seong@2015-01-24
+62@mrs@@@1@det@張三 隻 吠@@@@1@3@Zoengsaam   cl   bark"Zoengsaam's barks."@joanna sio ut seong@2015-01-24
+63@mrs@@@1@numcl@二十三 隻 狗 吠@@@@1@4@two.ten.three  cl      dog     bark"Twenty three dogs bark."@joanna sio ut seong@2015-01-24
+64@mrs@@@1@numcl@二百二十 隻 狗 吠@@@@1@4@two.hundren.two.ten	 cl   dog  bark"Two hundred twenty dogs bark."@joanna sio ut seong@2015-01-24
+65@mrs@@@1@pro-d@張三 搭 車 到 咗 喇@@@@1@6@Zoengsaam       take.tranportation	car     arrive  ASP      SFP"Zoengsaam arrived by car."@joanna sio ut seong@2015-01-24
+66@mrs@@@1@adv@張三 不斷 吠@@@@1@3@Zoengsaam       continuously    bark"Zoengsaam kept barking."@joanna sio ut seong@2015-01-24
+67@mrs@@@1@pro-d@張三 塞 咗 隻 貓 入 去@@@@1@7@Zoengsaam       push-in.forcefully      ASP     cl      cat     in      go"Zoengsaam squeezed the cat in."@joanna sio ut seong@2015-01-24
+68@mrs@@@1@pro-d@張三 塞 咗 隻 貓 入 去@@@@1@7@Zoengsaam       push-in.forcefully      ASP     cl      cat     in      go"Zoengsaam squeezed the cat in."@joanna sio ut seong@2015-01-24
+69@mrs@@@1@det@張三 幅 相 到 咗 喇@@@@1@6@Zoengsaam   cl   picture  arrive  ASP     SFP"The picture of Zoengsaam arrived."@joanna sio ut seong@2015-01-24
+70@mrs@@@1@res@張三 抹 乾淨 咗 張 枱@@@@1@6@Zoengsaam   wipe  clean         ASP     cl      table"Zoengsaam wiped the table clean."@joanna sio ut seong@2015-01-24
+71@mrs@@@1@pro-d@張三 擺 咗 李四 喺 花園 度@@@@1@7@Zoengsaam   put   ASP   Leisei   be.at  garden    place"Zoengsaam put Leisei in the garden."@joanna sio ut seong@2015-01-24
+72@mrs@@@1@tam@如果 張三 到 ， 隻 狗 就 會 吠@@@@1@9@if       Zoengsaam   arrive,   cl    dog  then will bark"The dog will bark if Zoengsaam arrives."@joanna sio ut seong@2015-01-24
+73@mrs@@@1@crd@張三 同 李四 到 咗 喇@@@@1@6@Zoengsaam   and   Leisei   arrive	ASP SFP"Zoengsaam and Leisei arrived."@joanna sio ut seong@2015-01-24
+74@mrs@@@1@crd@張三 ， 李四 同 隻 狗 到 咗 喇@@@@1@9@Zhangsan Lisi and dog arrive PFVZhangsan, Lisi and the dog arrived.@joanna sio ut seong@2015-01-24
+75@mrs@@@1@crd@隻 狗 到 咗 又 吠 咗 喇@@@@1@8@cl   dog  arrive	ASP also bark ASP SFP"The dog arrived and barked."@joanna sio ut seong@2015-01-24
+76@mrs@@@1@crd@隻 狗 到 咗 ， 張三 又 吠 咗@@@@1@9@cl   dog  arrive 	ASP, Zoengsaam   also bark ASP"The dog arrived and Zoengsaam barked."@joanna sio ut seong@2015-01-24
+77@mrs@@@1@q@隻 狗 吠 嚟 ， 係 咪 呀 ？@@@@1@9@cl   dog  bark SFP,  be   not.be 	SFP ?"The dog barked, didn't it?"@joanna sio ut seong@2015-01-24
+78@mrs@@@1@emb-d@好 明顯 隻 狗 吠 嚟 啦@@@@1@7@very obvious   cl   dog  bark SFP  SFP"It is obvious that the dog barked."@joanna sio ut seong@2015-01-24
+79@mrs@@@1@emb-d@張三 應承 咗 李四 佢 會 吠@@@@1@7@zoengsaam 	promist 	ASP 	Leisei		he    will bark"Zhangsan promised Lisi to bark."@joanna sio ut seong@2015-01-24
+80@mrs@@@1@emb-d@張三 好似 吠 喎@@@@1@4@Zoengsaam   seem.like   bark SFP"Zhangsan seems to bark."@joanna sio ut seong@2015-01-24
+81@mrs@@@1@emb-d@張三 相信 李四 喺 度 吠 緊@@@@1@7@Zoengsaam   believe     Leisei   be.at place bark ASP"Zoengsaam believes Leisei to be barking."@joanna sio ut seong@2015-01-24
+82@mrs@@@1@emb-d@李四 吠 打擾 到 張三@@@@1@5@Leisei   bark disturbed ASP  Zoengsaam"It disturbed Leisei that Zoengsaam barked."@joanna sio ut seong@2015-01-24
+83@mrs@@@1@emb-d@張三 用 咗 十 分 鐘 先至 到@@@@1@8@Zoengsaam   use   ASP ten  minute    then    arrive"It took Zoengsaam 10 minutes to arrive."@joanna sio ut seong@2015-01-24
+84@mrs@@@1@emb-d@張三 讓俾 李四 吠@@@@1@4@Zoengsaam   let        Leisei   bark"Zoengsaam left it to Leisei to bark."@joanna sio ut seong@2015-01-24
+85@mrs@@@1@emb-d@張三 覺得 李四 老@@@@1@4@Zoengsaam   feel     Leisei   old"Leisei strikes Zoengsaan as old."@joanna sio ut seong@2015-01-24
+86@mrs@@@1@emb-d@張三 覺得 李四 老@@@@1@4@Zoengsaam   feel     Leisei   old"Zoengsaam considers Lisi as old."@joanna sio ut seong@2015-01-24
+87@mrs@@@1@emb-d@張三 鍾意 李四 識 吠 呢 個 概念@@@@1@8@Zoengsaam   like     Leisei	know    bark this       CL      idea"Zoengsaam liked the idea that Leisei could bark."@joanna sio ut seong@2015-01-24
+88@mrs@@@1@prep@張三 由 三 點 吠 到 十 點@@@@1@8@Zoengsaam   from ten o'clock  bark till three  o'clock"Zoengsaam barked from 10 to 3."@joanna sio ut seong@2015-01-24
+89@mrs@@@1@adj@張三 好 老@@@@1@3@Zoengsaam   very old"Zhangsan was very old."@joanna sio ut seong@2015-01-24
+90@mrs@@@1@adv@差唔 多 每 隻 狗 都 吠 嚟@@@@1@8@almost    every CL      dog     all     bark SFP"Nearly every dog barked."@joanna sio ut seong@2015-01-24
+91@mrs@@@1@adv@張三 細細聲 噉 吠 嚟@@@@1@5@Zoengsaam   small.small.voice 	like.that	bark SFP"Zoengsaam barked very softly."@joanna sio ut seong@2015-01-24
+92@mrs@@@1@emb-d@李四 追 貓 煩 到 張三@@@@1@6@Leisei   chase cat   bother ASP  Zoengsaam"Leisei's chasing of cats bothered Zoengsaam."@joanna sio ut seong@2015-01-24
+93@mrs@@@1@emb-d@張三 追 貓 煩 到 李四@@@@1@6@Zoengsaam chase   cat   bother  ASP  Leisei"It bothered Lisi that Zhangsan chased cats."@joanna sio ut seong@2015-01-24
+94@mrs@@@1@adv@六 月 三 號 到 咗 喇@@@@1@7@six     month   three   number  arrive  ASP SFP"June 3rd arrived."@joanna sio ut seong@2015-01-24
+95@mrs@@@1@adv@張三 三 點 二十 分 到 咗 喇@@@@1@8@Zoengsaan   three point  two.ten     minute  arrive  ASP     SFP"Zoengsaan arrived at three twenty."@joanna sio ut seong@2015-01-24
+96@mrs@@@1@adv@張三 禮拜 二 朝頭早 到 咗 喇@@@@1@7@Zoengsaam       week            two     morning       arrive    ASP     SFP"Zoengsaam arrived on Tuesday morning."@joanna sio ut seong@2015-01-24
+97@mrs@@@1@det@啲 貓 諗 到 點樣 可以 吠 喇@@@@1@8@CL(plural)	cat     think   ASP     how             can    bark     SFP"The cats found a way to bark."@joanna sio ut seong@2015-01-24
+98@mrs@@@1@adv@開心 啲 嗰 隻 狗 追 張三 嚟@@@@1@8@happy           more    that    CL      dog     chase   Zoengsaam   SFP"The happier dog chased Zoengsaam."@joanna sio ut seong@2015-01-24
+99@mrs@@@1@tam@以前 花園 有 貓 㗎@@@@1@5@before  garden    have  cat     SFP"There were cats in the garden."@joanna sio ut seong@2015-01-24
+100@mrs@@@1@det@嗰 隻 狗 追 張三 嚟@@@@1@6@that    CL      dog     chase   Zoengsaam   SFP"That dog chased Zoengsaam."@joanna sio ut seong@2015-01-24
+101@mrs@@@1@det@有 人 追 張三 嚟@@@@1@5@have people     chase Zoengsaam   SFP"Somebody chased Zhangsan."@joanna sio ut seong@2015-01-24
+102@mrs@@@1@q@張三 有 幾 開心 呀 ？@@@@1@6@Zoengsaam   have how.much 	happy    SFP ?"How happy was Zoengsaam?"@joanna sio ut seong@2015-01-24
+103@mrs@@@1@tam,agency@五 呢 個 數字 好 困擾 張三@@@@1@7@five    this    CL      number  very    disturb   Zoengsaam"The number 5 bothers Zoengsaam"@joanna sio ut seong@2015-01-24
+104@mrs@@@1@tam@張三 得 嘅@@@@1@3@Zoengsaam   can  SFP"Zoengsaam could."@joanna sio ut seong@2015-01-24
+105@mrs@@@1@tam@張三 試 過 喇@@@@1@4@Zoengsaam   try ASP     SFP"Zoengsaam tried."@joanna sio ut seong@2015-01-24
+106@mrs@@@1@tam@唔好 吠 ！@@@@1@3@do.not bark !"Don’t bark!"@joanna sio ut seong@2015-01-24
+107@mrs@@@1@adv@隻 狗 吠 住 到@@@@1@5@CL   dog  bark  ASP     arrive"The dog arrived barking."@joanna sio ut seong@2015-01-24

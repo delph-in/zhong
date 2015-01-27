@@ -2,28 +2,271 @@
 
 ;;; created by Sanghoun Song (SSH, 2014-08-25)
 
+;;; Punctuations
+period-marker := punctuation &
+  [ STEM < "。" >,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
+    TRAITS native_token_list ].
+
+question-marker := punctuation &
+  [ STEM < "？" >,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
+    TRAITS native_token_list ].
+
+;comma-marker := punctuation &
+;  [ STEM < "，" >,
+;   TRAITS native_token_list ].
+
+
 ;;; Nouns
+
+張三_n := n_-_h_pn_le &
+  [ STEM < "張三" >,
+    SYNSEM.LKEYS.KEYREL.CARG "張三",
+    TRAITS native_token_list ].
+
+李四_n := n_-_h_pn_le &
+  [ STEM < "李四" >,
+    SYNSEM.LKEYS.KEYREL.CARG "李四",
+    TRAITS native_token_list ].
+
+雨_n := n_-_m_le &
+  [ STEM < "雨" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_雨_n_rel",
+    TRAITS native_token_list ].
+
+狗_n := n_-_c_le &
+  [ STEM < "狗" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_狗_n_rel",
+    TRAITS native_token_list ].
+
+猫_n := n_-_c_le &
+  [ STEM < "猫" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_猫_n_rel",
+    TRAITS native_token_list ].
+
+烟草_n := n_-_m_le &
+  [ STEM < "烟草" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_烟草_n_rel",
+    TRAITS native_token_list ].
+
+
+;;; pronouns
+我_n := n_-_pr-1sg_le &
+  [ STEM < "我" >,
+    TRAITS native_token_list ].
+
+你_n := n_-_pr-2sg_le &
+  [ STEM < "你" >,
+    TRAITS native_token_list ].
+
+佢_n := n_-_pr-3sg_le &
+  [ STEM < "他" >,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
+    TRAITS native_token_list ].
+
+我哋_n := n_-_pr-1pl-excl_le &
+  [ STEM < "我哋" >,
+    TRAITS native_token_list ].
+
+你哋_n := n_-_pr-2pl_le &
+  [ STEM < "你哋" >,
+    TRAITS native_token_list ].
+
+佢哋_n := n_-_pr-3pl_le &
+  [ STEM < "他们" >,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
+    TRAITS native_token_list ].
+
+其中_n := d_-_le &
+  [ STEM < "其中" >,
+    TRAITS native_token_list ].
+
+邊個_n := n_-_pr-wh_le &
+  [ STEM <"邊個">,
+    TRAITS native_token_list ].
+
+乜嘢_n := n_-_pr-wh_le &
+  [ STEM <"乜嘢">,
+    TRAITS native_token_list ].     
+
+大家_n := n_-_pr-q_le &
+ [ STEM < "大家" >,
+   SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
+	    LKEYS [ ALTKEYREL.PRED "every_q_rel" ] ],
+   TRAITS native_token_list ].
+
+有人_n := n_-_pr-q_le &
+ [ STEM < "有人" >,
+   SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
+	    LKEYS [ ALTKEYREL.PRED "some_q_rel" ] ],
+   TRAITS native_token_list ].
+
+一切_n := n_-_pr-q_le &
+ [ STEM < "一切" >,
+   SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate,
+	    LKEYS [ ALTKEYREL.PRED "every_q_rel" ] ],
+   TRAITS native_token_list ].
+
+有啲_n := n_-_pr-q_le &
+ [ STEM < "有啲" >,
+   SYNSEM [ LKEYS [ ALTKEYREL.PRED "some_q_rel" ] ],
+   TRAITS native_token_list ].
+
+自己_a := n_-_pr-refl_le &
+  [ STEM < "自己" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_自己_n_rel",
+    TRAITS native_token_list ].
+
 
 
 ;;; Verbs
 
+落_v := v_weather_le &
+  [ STEM <"落">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_落_v_1_rel"],
+    TRAITS native_token_list ].
+
+吠_v_1 := v_-_le &
+  [ STEM < "吠" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_吠_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+追_v := v_np_le &
+  [ STEM < "追" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_追_v_1_rel" ],
+    TRAITS native_token_list ].
+
+遞_v := v_np_le &
+  [ STEM < "遞" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_遞_v_1_rel" ],
+    TRAITS native_token_list ].
+
+知道_v := v_np_le &
+  [ STEM < "知道" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_知道_v_rel" ],
+    TRAITS native_token_list ].
+
+知道_v2 := v_s_le &
+  [ STEM < "知道" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_知道_v_rel" ],
+    TRAITS native_token_list ].
+
+打算_v2 := v_vp_sequi_le &
+  [ STEM < "打算" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_打算_v_rel" ],
+    TRAITS native_token_list ].
 
 
 ;;;Adjectives
 
 
 
+;;;Adverbs
+
+都_r := adv_-_scop-prehd_le &
+  [ STEM <"都">,
+    SYNSEM.LKEYS.KEYREL.PRED "_都_a_rel",
+    TRAITS native_token_list ].
+
+
 ;;Classifiers
 
 
+隻_cl := c_-_le &
+  [ STEM < "隻" >,
+    SYNSEM.LKEYS.KEYREL.PRED 只_x_rel,
+    TRAITS native_token_list ].
 
-;;; Auxiliaries
+
+;;;Numbers
+
+一_j := a_-_num_le &
+  [ STEM < "一" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "1",
+    TRAITS native_token_list ].
+
 
 
 
 ;;; Particles
 
-;;Conjunctions
+
+咗_pfv := pfv-marker &
+  [ STEM <"咗">,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le ] >,
+    TRAITS native_token_list ].
+
+嚟_crs := x_-_crs_le & 
+  [ STEM <"嚟">,
+    SYNSEM.LKEYS.KEYREL.PRED "_嚟_a_rel",
+    TRAITS native_token_list ].
+
+嘅_crs := x_-_crs_le & 
+  [ STEM <"嘅">,
+    SYNSEM.LKEYS.KEYREL.PRED "_嘅_a_rel",
+    TRAITS native_token_list ].
+
+呀_crs := x_-_crs_le & 
+  [ STEM <"呀">,
+    SYNSEM.LKEYS.KEYREL.PRED "_呀_a_rel",
+    TRAITS native_token_list ].
+
+嘅_ASSOC_d := x_-_poss-de_le &
+ [ STEM < "嘅" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_嘅_n_demons_rel",
+    TRAITS native_token_list ].
+
+嘅_nominalizer_n := x_-_nom-de_le &
+  [ STEM < "嘅" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_嘅_n_nom_rel",
+    TRAITS native_token_list ].
+
+呢_d := d_-_d-prox_le &
+  [ STEM < "呢" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
+	     LKEYS.KEYREL.PRED "_呢_n_demons_rel" ],
+    TRAITS native_token_list ].
+
+嗰_d := d_-_d-dist_le &
+  [ STEM < "嗰" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
+	     LKEYS.KEYREL.PRED "_嗰_n_demons_rel" ],
+    TRAITS native_token_list ].
+
+呢些_d := d_-_d-prox_le &
+  [ STEM < "呢些" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED "_呢些_n_demons_rel" ],
+    TRAITS native_token_list ].
+
+嗰啲_d := d_-_d-dist_le &
+  [ STEM < "嗰啲" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED "_嗰啲_n_demons_rel" ],
+    TRAITS native_token_list ].
+
+
+
+
+
+;;; Determiners
+
+每_d := d_-_le &
+  [ STEM < "每" >,
+	SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
+    TRAITS native_token_list ].
+
+
+;;; Conjunctions
 
 
 
@@ -31,7 +274,7 @@
 
 
 
-;;Interesting features here
+;;; Interesting features here
 
 
 

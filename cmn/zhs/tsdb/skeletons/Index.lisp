@@ -20,9 +20,13 @@
 ;;;
 
 (
-((:path . "chart-mapping") (:content . "chart-mapping testing"))
 ((:path . "mrs") (:content . "The MRS testsuite"))
+((:path . "chart-mapping") (:content . "chart-mapping testing"))
+((:path . "classifiers") (:content . "classifiers testsuite"))
 ((:path . "le") (:content . "le testsuite"))
+((:path . "quantifers") (:content . "quantifers testsuite"))
+((:path . "raising-control") (:content . "raising-control testsuite"))
+((:path . "vv-compounds") (:content . "vv-compounds testsuite"))
 )
 
  

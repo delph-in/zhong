@@ -207,6 +207,14 @@ le-pfv-label := label &
 			       COORD-STRAT "" ] ],
 	      LABEL-NAME "AS" ].
 
+咗-pfv-label := label & 
+	    [ STEM <"咗">,
+	      SYNSEM [ LIGHT +,
+		       R-PERIPH na-or--,
+		       LOCAL [ CAT.HEAD marker,
+			       COORD-STRAT "" ] ],
+	      LABEL-NAME "AS" ].
+
 zhe-label := label & 
 	    [ STEM <"着">,
 	      SYNSEM [ LIGHT +,
@@ -226,6 +234,30 @@ guo-label := label &
 ; SSH 2014-10-16: Sentence-final particles (了)
 le-crs-label := label &
 	     [ STEM <"了">,
+	       SYNSEM [ LIGHT +,
+			R-PERIPH +,
+			LOCAL [ CAT.HEAD marker,
+				COORD-STRAT "" ] ],
+	       LABEL-NAME "SP" ].
+
+嚟-crs-label := label &
+	     [ STEM <"嚟">,
+	       SYNSEM [ LIGHT +,
+			R-PERIPH +,
+			LOCAL [ CAT.HEAD marker,
+				COORD-STRAT "" ] ],
+	       LABEL-NAME "SP" ].
+
+嘅-crs-label := label &
+	     [ STEM <"嘅">,
+	       SYNSEM [ LIGHT +,
+			R-PERIPH +,
+			LOCAL [ CAT.HEAD marker,
+				COORD-STRAT "" ] ],
+	       LABEL-NAME "SP" ].
+
+呀-crs-label := label &
+	     [ STEM <"呀">,
 	       SYNSEM [ LIGHT +,
 			R-PERIPH +,
 			LOCAL [ CAT.HEAD marker,

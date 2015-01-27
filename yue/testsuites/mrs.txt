@@ -1,0 +1,1077 @@
+Language: Cantonese
+Language code: yue
+Lines: orth translit gloss translat
+Author: Joanna Sio Ut Seong
+Date: 2015-01-24
+
+### Id: 1           
+Source: MRS           
+Vetted: t           
+Judgment: g            
+Phenomena: tam  
+落 雨 嚟
+lok6 jyu5 lei4
+fall rain SFP
+"It rained."           
+           
+### Id: 2           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+張三 吠 嚟
+zoeng1saam1 fai6 lei4
+zoengsaam   bark SFP
+"Zoengsaam barked."
+          
+           
+### Id: 3           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+個 窗 打 開 咗
+go3 coeng1 daa2 hoi1 zo2
+cl  Window hit  open ASP          
+"The window opened."           
+           
+### Id: 4           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+張三 追 李四 嚟
+zoeng1saam1 zeoi1 lei5sei3 lei4
+zoengsaam   chase leisei   SFP 
+"Zoengsaam chased Leisei."       
+           
+### Id: 5           
+Source: MRS           
+Vetted: t           
+Judgment: u           
+Phenomena: comps / dat
+張三 遞 李四 枝 煙
+zoeng1saam1 dai6 lei5sei3 zi1 jin1
+zoengsaam   hand leisei   cl  cigarette
+Intended reading: "Zoengsaam handed Leisei the cigarette."
+           
+### Id: 6           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: comps / dat
+張三 遞 咗 枝 煙 畀 李四
+zoeng1saam1 dai6 zo2 zi1 jin1 		bei2 lei5sei3
+zoengsaam   hand asp cl  cigarette	give leisei
+"Zeongsaam handed the cigarette to Leisei"             
+           
+### Id: 7           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: comps
+張三 用 一 枝煙 同 李四 賭 落 雨 嚟
+zoeng1saam1 jung6 jat1 zi1 jin1 tung4 lei5sei3 dou2 lok6 jyu5 lei4 
+zoengsaam use one cl cigarette with leisei bet fall rain SFP
+"Zoengsaam bet Leisei a cigarette that it rained."           
+           
+### Id: 8           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+張三 知道 落 雨 嚟
+zoeng1saam1 zi1dou3 lok6 jyu5 lei4
+zoengsaaam  know    fall rain SFP      
+"Zoengsaam knew that it rained."           
+           
+### Id: 9 (the SFPs lei4 ge3 give the sentence a past reading)           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d 
+張三 打算  吠 嚟 嘅
+zoeng1saam1 daa2syun3  fai6 lei4 ge3         
+zoengsaam   intend     bark SFP  SFP  
+"Zoengsaam intended to bark."           
+           
+### Id: 10 (not exactly the same, as an extra verb giu3 is needed here)
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d   
+張三 打算 叫 李四 吠 嚟 嘅      
+zoeng1saam1 daa2syun3 giu3 lei5sei3 fai6   lei4 ge3 
+zoengsaam   intend    call leisei   bark   SFP  SFP
+"Zhangsan intended Lisi to bark.           
+           
+### Id: 11 (original sentence unacceptable)
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: Quant 
+每 隻 猫 都 吠 嚟
+mui5  zek3 maau1 dou1 fai6 lei4
+every cl   cat   all  bark SFP
+"Every cat barked."           
+           
+### Id: 12 (the cantonese is ambiguous (a specific dog or no specific dog))           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: Quant
+每 隻 猫 都 追 一 隻 狗 嚟
+mui5  zek3 maau1 dou1 zeoi1 jat1 zek3 gau2 lei4
+every cl   cat   all  chase one  cl   dog  SFP
+"Every cat chased some dog."         
+           
+### Id: 13           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: GEN
+我 隻 猫 吠 嚟
+ngo5 zek3 maau1 fai6 lei4
+1sg  cl   cat   bark SFP
+"My cat barked."           
+          
+### Id: 14 (3sg has only one form)           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: Gender
+佢 吠 嚟
+keoi5 	fai6 	lei4
+3sg  	bark	SFP
+"S/he/it barked."
+           
+### Id: 15           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: gender 
+佢 追 佢 嚟
+keoi5 zeoi1 keoi5 lei4
+3sg   chase 3sg    SFP   
+"S/he/it chased her/him/it."           
+           
+### Id: 16           
+Source: MRS           
+Vetted: t         
+Judgment: g        
+Phenomena: refl 
+隻 猫 追 自己 嚟       
+zek3 maau1 zeoi1 zi6gei2 lei4     
+cl   cat   chase self    SFP
+"The cat chased itself."
+           
+### Id: 17 (the sentence is slightly strange, probably because there is not end point of "chase" and it seems weird to use zo2 with it)           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: pn
+隻 猫 追 咗 一 隻
+zek3 maau1 zeoi1 zo2 jat1 zek3
+cl   cat   chase asp one  zek 
+"The cat chased one."
+           
+### Id: 18           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: gen
+我 嘅 吠 咗 喇
+ngo5 ge3 	fai6 zo2 laa3
+1sg  marker 	bark ASP SFP
+"Mine barked."
+           
+### Id: 19           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: pn
+嗰 個 打 開 咗 喇
+go2 go3 daa2 hoi1 zo2 laa3
+that cl hit  open ASP SFP
+"That opened."           
+           
+### Id: 20       
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: agr
+猫 吠 嘅 
+maau1 fai6 ge3
+cat   bark SFP
+"Cats bark."
+           
+### Id: 21           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: agr
+啲 烟草 到 咗 喇
+di1 jin1cou2 dou3 zo2 laa3        
+cl tobacco arrive ASP SFP         
+"Tobacco arrived."           
+           
+### Id: 22           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: pn
+有啲 吠
+jau5.di1 fai6
+have.cl  bark         
+"Some bark."
+           
+### Id: 23           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: pn
+有啲 猫 吠
+jau5.di1 maau1 fai6        
+have.cl  cat   bark      
+"Some of the cats bark."
+           
+### Id: 24 (dou1 has many different functions, unclear how it should be glossed)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: pn 
+一 隻 猫 都 冇 吠
+jat1 zek3 maau1 dou1 mou5 fai6 
+one  cl   cat   all  not.have bark 
+"No cat barked."           
+           
+### Id: 25           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: q
+隻 狗 有 冇 吠 呀 ？
+zek3 gau2 jau5 mou5 fai6 aa3 ?
+cl   dog  have not.have bark QP ?
+"Did the dog bark?"           
+           
+### Id: 26           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: q
+邊 隻 狗 吠 嚟 呀 ？
+bin1  zek3 gau2 fai6 lei4 aa3 ?    
+Which cl   dog  bark SFP  SFP ?    
+"Which dog barked?"         
+           
+### Id: 27           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: q
+邊個 隻 狗 吠 嚟 呀 ？
+bin1go3   zek3 gau2 fai6 lei4 aa3 ?    
+who       cl   dog  bark SFP  SFP ?
+"Whose dog barked?"           
+           
+### Id: 28           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: imp
+追 張三 ！
+zeoi1 zoeng1saam1 !         
+chase Zoengsaam         
+"Chase Zoengsaam!"           
+           
+### Id: 29           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: imp
+張三 想 知道 邊 隻 狗 吠 嚟
+zoeng1saam1 soeng2 zi1dou3 bin1  zek3 gau2 fai6 lei4
+zoengsaam   want   know    which cl   dog  bark SFP
+"Zoengsaam wondered which dog barked."
+           
+### Id: 30           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+張三 想 知道 李四 有 冇 吠 嚟  
+zoeng1saam1 soeng2 zi1dou3 lei5sei3 jau5 mou5  		fai6 lei4
+Zoengsaam   want   know    Leisei   have not.have 	bark SFP
+"Zoengsaam wondered whether Leisei barked."
+           
+### Id: 31           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: Nom
+張三 追 嗰 隻 狗 吠 嚟
+zoeng1saam1 zeoi1 go2  zek3 gau2 fai6 lei4  
+Zoeng1saam1 chase that cl   dog  bark SFP 
+"The dog that Zoengsaam chased barked."           
+           
+### Id: 32           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: Nom
+要 追 嗰 隻 狗 吠 緊 呀
+jiu3  	zeoi1 go2  zek3 gau2 fai6 gan2 aa3
+need    chase that cl   dog  bark ASP  SFP
+"The dog to chase is barking."           
+           
+### Id: 33           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: Pass
+隻 狗 俾 張三 追 嚟
+zek3 gau2 bei2 zoeng1saam1 zeoi1 lei4    
+cl   dog  give Zoengsaam   chase SFP
+"The dog was chased by Zoengsaam."           
+           
+### Id: 34 (it is possible to put lei4 after zeoi1 here, then maybe lei4 is not an SFP?)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: Pass
+俾 張三 追 嗰 隻 狗 吠 嚟
+bei2 zoeng1saam1 zeoi1 go2  zek3 gau2 fai6 lei4
+give Zoengsaam   chase that cl   dog  bark SFP
+"The dog chased by Zoengsaam barked."           
+           
+### Id: 35           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+隻 狗 喺 度 吠 緊
+zek3 gau2 hai2 dou6  fai6 gan2         
+cl   dog  be   place  bark ASP
+"The dog is barking."    
+           
+### Id: 36           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+隻 狗 吠 嚟
+zek3 gau2 fai6 lei4         
+cl   dog  bark SFP  
+"The dog has barked."           
+           
+### Id: 37           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+隻 狗 之前 吠 嚟
+zek3 gau2 zi1cin4  fai6 lei4    
+cl   dog  before   bark SFP
+"The dog has been barking."    
+           
+### Id: 38 (not sure if 38 is different from 37, past perfect is hard to translate, in both 37 and 38, the barking has stopped at speech time)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam     
+隻 狗 之前 吠 過 嚟
+zek3 gau2 zi1cin4   fai6 gwo3 lei4  
+cl   dog  before    bark ASP  SFP 
+"The dog had been barking."           
+           
+### Id: 39           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+隻 狗 將會 吠
+zek3 gau2 zoeng1wui5 fai6        
+cl   dog  will       bark      
+"The dog will bark."           
+           
+### Id: 40 (the translation for 40 is more urgent as if it is going to happen right now)           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+隻 狗 要 吠 啦
+zek3 gau2 jiu3 fai6 laa3       
+cl   dog  need bark SFP 
+"The dog is going to bark."           
+           
+### Id: 41 ("could" here is translated with a "capability" reading rather than a "possibility" reading)           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: infin
+隻 狗 會 吠 嘅
+zek3 gau2 wui5 	fai6 ge3       
+cl   dog  can 	bark SFP       
+"The dog could bark."           
+           
+### Id: 42 ("could" here is translated with a "capability" reading rather than a "possibility" reading)           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: infin
+隻 狗 唔 會 吠 嘅
+zek3 gau2 m4  wui5 fai6 ge3      
+cl   dog  not can  bark SFP     
+"The dog couldn’t bark."           
+           
+### Id: 43 (most adjectives cannot modify the noun directly, lou5 "old" is one of the few exceptions)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adj
+隻 老 狗 吠 嚟
+zek3 lou5 gau2 fai6 lei4  
+cl   old  dog  bark SFP
+"The old dog barked."           
+           
+### Id: 44           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adv
+隻 老 狗 細細聲 噉 吠 嚟  
+zek3 lou5 gau2 sai3sai3seng1 		gam2 		fai6 lei4      
+cl   old  dog  small.small.sound   	like.that	bark  SFP
+"The dog barked softly."           
+           
+### Id: 45 (ho2 jau2 ho2hang4 together mean "having a high chance to have happened" )           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adv
+隻 狗 好有 可能 吠 嚟 
+zek3 gau2 ho2jau2  ho2nang4 	 fai6 lei4
+cl   dog  good.have possibility  bark SFP    
+"The dog probably barked."           
+           
+### Id: 46           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: loc
+隻 狗 喺 花園 度 吠 嚟
+zek3 gau2 hai2 faa1jyun2 dou6  fai6 lei4
+cl   dog  be   garden    place bark SFP
+"The dog barked in the garden."            
+           
+### Id: 47           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+依家 隻 狗 吠 喇
+ji1gaa1 zek3 gau2 fai6 laa3
+now     cl   dog  bark SFP
+"The dog barks now." 
+           
+### Id: 48 (for compound)           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: cpd
+隻 花園 嘅 狗 吠 嚟    
+zek3    faa1jyun2 ge3     gau2 fai6 lei4 
+cl      garden    marker  dog  bark SFP
+"The garden dog barked."           
+           
+### Id: 49 (for prepositional modifier)           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: ppmod
+烟草 花園 嗰 隻 狗 吠 嚟 
+jin1cou2 faa1jyun2 go2  zek3 gau2 fai6 lei4
+tobacco  garden    that cl   dog  bark SFP
+"The dog in the tobacco garden barked."
+           
+### Id: 50 (it doesn't sound very natural, a more natural way to say it would be someting like "this cat is an old cat.")           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adj
+隻 貓 係 老 嘅
+zek3 maau1 hai6 lou5 ge3
+cl   cat   be   old  SFP
+"The cat is old."           
+           
+### Id: 51 (for predicative)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: prd
+隻 貓 喺 花園 度      
+zek3 maau1 hai2  faa1jyun2 dou6     
+cl   cat   be.at garden    place
+"The cat is in the garden."
+           
+### Id: 52           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: det, adj
+吠 緊 嗰 隻 狗 追 張三 嚟
+fai6 gan2 go2  zek3 gau2 zeoi1 zoeng1saam1 lei4 
+bark ASP  that cl   dog  chase Zeongsaam   SFP
+"The barking dog chased Zoengsaam."
+           
+### Id: 53 (the chaser has to be mentioned here, still the sentence is a little bit weird)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: det, pass 
+俾 人 追 嘅 狗 吠
+bei2 jan4 	zeoi1 ge3 	gau2 fai6     
+give people	chase marker 	dog  bark
+"Chased dogs bark."           
+           
+### Id: 54 (I need to make "chasing the cat" nominal, so I need to add the extra bit)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adj
+追 猫 呢 啲 嘢 好 過時 㗎 喇  
+ceoi1 maau1 lei1 di1 je5 	ho2  gwo3si4 		gaa3 laa3      
+chase cat   this cl  thing 	very old-fashioned 	SFP  SFP
+"Chasing the cat is old."           
+           
+### Id: 55           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+好 明顯 隻 貓 追 張三 啦 
+ho2 	ming4hin2 zek3 maau1 zeoi1 zoeng1saam1 laa1 
+very 	obvious   cl   cat   chase Zoengsaam   SFP
+"That the cat chases Zhangsan is obvious."           
+           
+### Id: 56           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: indef
+係 吠 嘅 狗 都 追 㗎  
+hai6 fai6 ge3 gau2 dou1 zeoi1 gaa3
+be   bark GE  dog  all  chase SFP
+"Dogs chase whatever barks."
+           
+### Id: 57 (in order to express past tense, the adverb "before" is added to the sentence, as a result, the meaning is not exactly the same as the English version)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: quant
+隻 狗 以前 日 日 吠 㗎      
+zek3	gau2	ji5cin4	jat6	jat6	fai6	gaa3
+cl      dog     before  day     day     bark    SFP   
+"The dog barked every day."           
+           
+### Id: 58           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: q
+隻 狗 幾時 吠 嚟 呀 ？
+zek3 gau2 gei2si4 fai6 lei4 aa3 ?    
+cl   dog  when    bark SFP  SFP ?
+"When did the dog bark?"           
+           
+### Id: 59           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: det
+其中 三 隻 狗 吠 嚟
+kei4zung1	saam1	zek3	gau2	fai6	   
+among           three   cl      dog     bark       
+"Three of the dogs bark."           
+           
+### Id: 60           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: numcl
+三 隻 吠
+saam1 zek3 fai6      
+three cl   bark      
+"Three bark."           
+           
+### Id: 61           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: det
+張三 隻 狗 吠
+zoeng1saam1 zek3 gau2 fai6   
+Zoengsaam   cl   dog  bark   
+"Zoengsaam's dog barks."           
+           
+### Id: 62           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: det
+張三 隻 吠
+zoeng1saam1 zek3 fai6      
+Zoengsaam   cl   bark         
+"Zoengsaam's barks."          
+           
+### Id: 63           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: numcl
+二十三 隻 狗 吠
+ji6sap6saam1	zek3	gau2	fai6       
+two.ten.three  cl      dog     bark       
+"Twenty three dogs bark."
+           
+### Id: 64           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: numcl
+二百二十 隻 狗 吠
+ji6baak3ji6sap6 zek3 gau2 fai6
+two.hundren.two.ten	 cl   dog  bark	
+"Two hundred twenty dogs bark."           
+           
+### Id: 65           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: pro-d
+張三 搭 車 到 咗 喇 
+zoeng1saam1	daap3			ce1	dou3	zo2	laa3
+Zoengsaam       take.tranportation	car     arrive  ASP      SFP
+"Zoengsaam arrived by car."
+           
+### Id: 66           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adv
+張三 不斷 吠
+zoeng1saam1	bat1dyun6	fai6       
+Zoengsaam       continuously    bark        
+"Zoengsaam kept barking."
+           
+### Id: 67 (No difference in Chinese between a noun before and after a particle)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: pro-d
+張三 塞 咗 隻 貓 入 去
+zoeng1saam1	sat1			zo2	zek3	maau1	jap6	heoi3     
+Zoengsaam       push-in.forcefully      ASP     cl      cat     in      go   
+"Zoengsaam squeezed the cat in."           
+           
+### Id: 68 (No difference in Chinese between a noun before and after a particle)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: pro-d
+張三 塞 咗 隻 貓 入 去
+zoeng1saam1	sat1			zo2	zek3	maau1	jap6	heoi3     
+Zoengsaam       push-in.forcefully      ASP     cl      cat     in      go   
+"Zoengsaam squeezed the cat in."          
+           
+### Id: 69           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: det
+張三 幅 相 到 咗 喇
+zoeng1saam1 fuk1 soeng2	dou3	zo2	laa3    
+Zoengsaam   cl   picture  arrive  ASP     SFP
+"The picture of Zoengsaam arrived."           
+           
+### Id: 70 (for resultative)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: res
+張三 抹 乾淨 咗 張 枱
+zoeng1saam1 maat3 gon1zeng6	zo2	zoeng1	toi2
+Zoengsaam   wipe  clean         ASP     cl      table
+"Zoengsaam wiped the table clean."           
+           
+### Id: 71           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: pro-d
+張三 擺 咗 李四 喺 花園 度
+zoeng1saam1 baai2 zo2	lei5sei3 hai2	faa1jyun2 dou6
+Zoengsaam   put   ASP   Leisei   be.at  garden    place
+"Zoengsaam put Leisei in the garden."
+           
+### Id: 72           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam 
+如果 張三 到 ， 隻 狗 就 會 吠
+jyu4gwo2 zoeng1saam1 dou3　, 	zek3 gau2 zau6 wui5 fai6
+if       Zoengsaam   arrive,   cl    dog  then will bark
+"The dog will bark if Zoengsaam arrives."           
+           
+### Id: 73           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: crd
+張三 同 李四 到 咗 喇
+zoeng1saam1 tung4 lei5sei3 dou3 	zo2 laa3    
+Zoengsaam   and   Leisei   arrive	ASP SFP
+"Zoengsaam and Leisei arrived."           
+           
+### Id: 74           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: crd
+張三 ， 李四 同 隻 狗 到 咗 喇
+zoeng1saam1, lei5sei3 tung4 zek3 gau2 dou3 zo2 laa3
+Zhangsan Lisi and dog arrive PFV
+Zhangsan, Lisi and the dog arrived.          
+           
+### Id: 75           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: crd
+隻 狗 到 咗 又 吠 咗 喇
+zek3 gau2 dou3 		zo2 jau6 fai6 zo2 laa3    
+cl   dog  arrive	ASP also bark ASP SFP
+"The dog arrived and barked."        
+           
+### Id: 76 (there are many ways of translating this sentence, for instance, it is also possible to translate "and" as encoding some kind of sequence, with the dog arriving first, then Zoengsaam barked, which is not done here.)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: crd
+隻 狗 到 咗 ， 張三 又 吠 咗
+zek3 gau2 dou3 		zo2, zoeng1saam1 jau6 fai6 zo2
+cl   dog  arrive 	ASP, Zoengsaam   also bark ASP
+"The dog arrived and Zoengsaam barked."           
+           
+### Id: 77 (mai6 is a contraction of m4 hai6)           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: q
+隻 狗 吠 嚟 ， 係 咪 呀 ？
+zek3 gau2 fai6 lei4, hai6 mai6 		aa3 ?  
+cl   dog  bark SFP,  be   not.be 	SFP ?
+"The dog barked, didn't it?"          
+           
+### Id: 78           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+好 明顯 隻 狗 吠 嚟 啦
+hou2 ming4hin2 zek3 gau2 fai6 lei4 laa1
+very obvious   cl   dog  bark SFP  SFP 
+"It is obvious that the dog barked."           
+           
+### Id: 79 (the sentence can be ambiguous in turns of who is doing the barking (though for this sentence, it is baised towards the higher subject doing the barking). Wui5 can also mean "able to".)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+張三 應承 咗 李四 佢 會 吠
+zoeng1saam1	jing1sing4	zo2	lei5sei3	keoi5 wui5 fai6
+zoengsaam 	promist 	ASP 	Leisei		he    will bark
+"Zhangsan promised Lisi to bark."           
+           
+### Id: 80           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+張三 好似 吠 喎
+zoeng1saam1 hou2ci5 	fai6 wo3   
+Zoengsaam   seem.like   bark SFP	     
+"Zhangsan seems to bark."           
+           
+### Id: 81           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+張三 相信 李四 喺 度 吠 緊
+zoeng1saam1 soeng1seon3 lei5sei3 hai2  dou6  fai6 gan2       
+Zoengsaam   believe     Leisei   be.at place bark ASP
+"Zoengsaam believes Leisei to be barking."           
+           
+### Id: 82 (There is no dummy/expletive "it" in Cantonese, so 82 is more like "That Zhangsan barked disturbed Lisi.")          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+李四 吠 打擾 到 張三
+lei5sei3 fai6 daa2jiu2  dou2 zoeng1saam1  
+Leisei   bark disturbed ASP  Zoengsaam
+"It disturbed Leisei that Zoengsaam barked."           
+           
+### Id: 83           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+張三 用 咗 十 分 鐘 先至 到
+zoeng1saam1 jung6 zo2 sap6 fan1zung1 sin1zi3 dou3       
+Zoengsaam   use   ASP ten  minute    then    arrive 
+"It took Zoengsaam 10 minutes to arrive."           
+           
+### Id: 84           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+張三 讓俾 李四 吠
+zoeng1saam1 joeng6bei2 lei5sei3 fai6 
+Zoengsaam   let        Leisei   bark  
+"Zoengsaam left it to Leisei to bark."     
+           
+### Id: 85 (the meaning is similar to the English sentence but the structure is not)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+張三 覺得 李四 老
+zoeng1saam1 gok3dak1 lei5sei3 lou5
+Zoengsaam   feel     Leisei   old
+"Leisei strikes Zoengsaan as old."
+           
+### Id: 86           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d 
+張三 覺得 李四 老
+zoeng1saam1 gok3dak1 lei5sei3 lou5
+Zoengsaam   feel     Leisei   old
+"Zoengsaam considers Lisi as old."
+           
+### Id: 87 (the Cantonese sentence does not reflect the tense)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+張三 鍾意 李四 識 吠 呢 個 概念
+zoeng1saam1 zung1ji3 lei5sei3	sik1	fai6 lei1	go3	koi3lim6 
+Zoengsaam   like     Leisei	know    bark this       CL      idea
+"Zoengsaam liked the idea that Leisei could bark."
+           
+### Id: 88           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: prep
+張三 由 三 點 吠 到 十 點
+zoeng1saam1 jau4 sap6 dim2    fai6 dou3 saam1  dim2
+Zoengsaam   from ten o'clock  bark till three  o'clock
+"Zoengsaam barked from 10 to 3."           
+           
+### Id: 89 (the Cantonese sentence does not reflect the tense, i could make it into past tense by adding "that time", but it would sound odd.)           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adj
+張三 好 老
+zoeng1saam1 ho2  lou5    
+Zoengsaam   very old
+"Zhangsan was very old."           
+           
+### Id: 90           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adv
+差唔 多 每 隻 狗 都 吠 嚟
+caa1m4do1 mui5	zek3	gau2	dou1	fai6 lei4
+almost    every CL      dog     all     bark SFP
+"Nearly every dog barked."          
+           
+### Id: 91           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adv
+張三 細細聲 噉 吠 嚟
+zoeng1saam1 sai3sai3seng1 	gam2 		fai6 lei4       
+Zoengsaam   small.small.voice 	like.that	bark SFP
+"Zoengsaam barked very softly."
+           
+### Id: 92 (tense information (past) is not expressed in the Cantonese sentence (though it is compatible with it))          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+李四 追 貓 煩 到 張三
+lei5sei3 zeoi1 maau1 faan4  dou2 zoeng1saam1
+Leisei   chase cat   bother ASP  Zoengsaam 
+"Leisei's chasing of cats bothered Zoengsaam."     
+           
+### Id: 93 (there is no dummy "it" in Cantonese, so 93 is just like 94, except the zoengsaam and Leisei have reversed roles; again, past tense is not encoded in the Cantonese sentence)          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: emb-d
+張三 追 貓 煩 到 李四 
+zoeng1saam1 zeoi1 maau1 faan4 	dou2 Lei5sei4
+Zoengsaam chase   cat   bother  ASP  Leisei
+"It bothered Lisi that Zhangsan chased cats."           
+           
+### Id: 94           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adv
+六 月 三 號 到 咗 喇
+luk6	jyut6	saam1	hou6	dou3	zo2 laa3        
+six     month   three   number  arrive  ASP SFP
+"June 3rd arrived."           
+           
+### Id: 95           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adv
+張三 三 點 二十 分 到 咗 喇
+zoeng1saam1 saam1 dim2   ji6.sap6	fan1	dou3	zo2	laa3
+Zoengsaan   three point  two.ten     minute  arrive  ASP     SFP
+"Zoengsaan arrived at three twenty."           
+           
+### Id: 96           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adv
+張三 禮拜 二 朝頭早 到 咗 喇
+zoeng1saam1	lai5baai3	ji6	ziu1tau4zou2  dou3	zo2	laa1
+Zoengsaam       week            two     morning       arrive    ASP     SFP
+"Zoengsaam arrived on Tuesday morning."           
+           
+### Id: 97           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: det
+啲 貓 諗 到 點樣 可以 吠 喇
+di1		maau1	lam2	dou2	dim2joeng2	ho2ji3 fai6	laa3
+CL(plural)	cat     think   ASP     how             can    bark     SFP
+"The cats found a way to bark."    
+           
+### Id: 98           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adv
+開心 啲 嗰 隻 狗 追 張三 嚟 
+hoi1sam1	di1	go2	zek3	gau2	zeoi1	zoeng1saam1 lei4
+happy           more    that    CL      dog     chase   Zoengsaam   SFP
+"The happier dog chased Zoengsaam."
+           
+### Id: 99 (the past tense, if it has to be indicated, has to come from a time adverbial, it might better be translated as "there used to be cats in the garden.")          
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+以前 花園 有 貓 㗎      
+ji5cin4	faa1jyun4 jau5	maau1	gaa2     
+before  garden    have  cat     SFP     
+"There were cats in the garden."
+           
+### Id: 100           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: det
+嗰 隻 狗 追 張三 嚟 
+go2	zek3	gau2	zeoi1	zoeng1saam1 lei4    
+that    CL      dog     chase   Zoengsaam   SFP    
+"That dog chased Zoengsaam."           
+           
+### Id: 101           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: det
+有 人 追 張三 嚟 
+jau5 jan4 	zeoi1 zoeng1saam1 lei4
+have people     chase Zoengsaam   SFP
+"Somebody chased Zhangsan."
+           
+### Id: 102           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: q
+張三 有 幾 開心 呀 ？
+zoeng1saam1 jau5 gei2 		hoi1sam1 aa3 ? 
+Zoengsaam   have how.much 	happy    SFP ?
+"How happy was Zoengsaam?"           
+           
+### Id: 103           
+Source: MRS           
+Vetted: t           
+Judgment: g
+Phenomena: tam, agency
+五 呢 個 數字 好 困擾 張三
+m5	lei1	go3	sou3zi6	hou2	kwan3jiu2 zoeng1saam1     
+five    this    CL      number  very    disturb   Zoengsaam
+"The number 5 bothers Zoengsaam"
+           
+### Id: 104           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+張三 得 嘅
+zoeng1saam1 dak1 ge3         
+Zoengsaam   can  SFP   
+"Zoengsaam could."
+           
+### Id: 105           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+張三 試 過 喇
+Zoeng1saam1 si3	gwo3	laa3       
+Zoengsaam   try ASP     SFP         
+"Zoengsaam tried."           
+           
+### Id: 106           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: tam
+唔好 吠 ！
+m4hou2 fai6 !         
+do.not bark !     
+"Don’t bark!"           
+           
+### Id: 107           
+Source: MRS           
+Vetted: t           
+Judgment: g           
+Phenomena: adv
+隻 狗 吠 住 到
+zek3 gau2 fai6	zyu6	dou3   
+CL   dog  bark  ASP     arrive      
+"The dog arrived barking."
+

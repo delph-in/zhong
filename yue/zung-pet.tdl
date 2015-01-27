@@ -5,12 +5,12 @@
 
 ;;; created by Sanghoun Song (SSH, 2014-08-25)
 
+:begin :instance :status lexical-filtering-rule.
+:include "lfr".
+:end :instance.
+
+
 :begin :type.
-
-;;
-;; type hierarchy
-;;
-
 :include "head-types".
 :include "matrix".
 :include "trung".
@@ -18,15 +18,14 @@
 :include "trung-letypes".
 :include "zung".
 :include "mtr".
-
+:include "tmt".
 :end :type.
 
-;;
-;; lexicon entries (instances of status lex-entry or generic-lex-entry)
-;;
-
-:begin :instance :status lex-entry.
-:include "lexicon".
+:begin :instance :status token-mapping-rule.
+:include "../../tmr/prelude".
+:include "../../tmr/pos".
+:include "../../tmr/pos-ipa".
+:include "../../tmr/finis".
 :end :instance.
 
 ;;
@@ -40,6 +39,18 @@
 :begin :instance :status lex-rule.
 :include "lrules".
 :include "irules".
+:end :instance.
+
+;;
+;; lexicon entries (instances of status lex-entry or generic-lex-entry)
+;;
+
+:begin :instance :status lex-entry.
+:include "lexicon".
+:end :instance.
+
+:begin :instance :status generic-lex-entry.
+:include "gle".
 :end :instance.
 
 ;;
