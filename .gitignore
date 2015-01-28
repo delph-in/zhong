@@ -11,6 +11,7 @@ tramp
 # Compile Grammar images
 *.dat
 *.grm
+*.pdf
 
 # Maybe add TSDB results?
 # /tsdb/current

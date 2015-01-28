@@ -49,9 +49,9 @@
 :include "lexicon".
 :end :instance.
 
-:begin :instance :status generic-lex-entry.
-:include "gle".
-:end :instance.
+;:begin :instance :status generic-lex-entry.
+;:include "gle".
+;:end :instance.
 
 ;;
 ;; parse-tree labels (instances)
