@@ -140,20 +140,20 @@ v1-v1-compound := verb-verb-compound-phrase &
 v12-v1-compound := verb-verb-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
-					   COMPS < [] > ],
+					   COMPS < [ OPT - ] > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
 					COMPS < > ] ].
 
 v12-v2-compound := verb-verb-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ COMPS.FIRST #first ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ COMPS < #first & [ OPT - ] > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
 					COMPS < > ] ].
 
 v12-v12-compound := verb-verb-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
-					   COMPS.FIRST #comp ],
+					   COMPS < #comp & [ OPT - ] > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
 					COMPS.FIRST #comp ] ].
 
@@ -163,7 +163,7 @@ v1-v12-compound := verb-verb-compound-phrase &
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
 				    COMPS < >],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-					COMPS #comps & < [] > ] ].
+					COMPS #comps & < [ OPT - ] > ] ].
 
 np-adp := np-adp-phrase.
 

@@ -905,7 +905,7 @@ verb-verb-compound-phrase := head-initial &
 			 NONSUBJ #nonsubj ],
 	     NON-LOCAL #nonloc ],
     HEAD-DTR.SYNSEM lex-synsem &
-                [ LOCAL [ CAT [ HEAD #head & verb & [ AUX - ],				
+                [ LOCAL [ CAT [ HEAD #head & +vj & [ AUX - ],				
 				VAL [ SPR #spr,
 				      SPEC #spec ],
 				MC na-or--,
