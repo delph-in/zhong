@@ -209,9 +209,108 @@ Source: nil
 Vetted: t
 Judgment: g
 Phenomena: vv-compounds
-张三 教 懂 了 李四 这 首 诗。
-Zhang1san1 jiao1 dong3 le Li3si4 zhe4 shou3 shi1
-Zhang1san1 teach understand asp Li3si4 this poem
+张三 教 懂 了 李四 这 首 诗 。
+Zhang1san1 jiao1 dong3 le Li3si4 zhe4 shou3 shi1 .
+Zhang1san1 teach understand asp Li3si4 this poem .
 Zhang1san1 taught Li3si4 this poem (and as a result Li3si4) understood it
 
+### Id: 22 
+Source: nil
+Vetted: t
+Judgment: u
+Phenomena: vv-compounds
+张三 敲打 累 了 门 。
+Zhang1san1 qiao1da3 lei le men2 .
+Zhang1san1 knock tired asp door .
+Zhang1san1 knocked the door (and as a result it/Zhang1san1 got) tired
+
+### Id: 23
+Source: nil
+Vetted: t
+Judgment: u
+Phenomena: vv-compounds
+他 游玩 忘 了 马 。
+ta1 you2wan2 wang4 le ma3 .
+he play forget asp horse .
+He played (in such an absorbed way that he) forgot his horse.
+
+### Id: 24
+Source: nil
+Vetted: t
+Judgment: u
+Phenomena: vv-compounds
+张三 笑 疯狂 了 。
+Zhang1san1 xiao4 feng1kaung2 le .
+Zhang1san1 laugh insane asp .
+Zhang1san1 laughed to the extent of becoming mad
+
+### Id: 25
+Source: nil
+Vetted: t
+Judgment: u
+Phenomena: vv-compounds
+他 笑 愚蠢 了 我 。
+ta1 xiao4 yu2chun3 le wo3 le . 
+he laugh fool asp I .
+That he laughed made me fool 
+
+### Id: 26
+Source: nil
+Vetted: t
+Judgment: u
+Phenomena: vv-compounds
+他 嘲笑 傻 了 我 。
+ta1 chao2xiao4 sha3 le wo3 .
+he laugh confused7 asp I .
+That he laughed made me confused 
+
+### Id: 27
+Source: nil
+Vetted: t
+Judgment: u
+Phenomena: vv-compounds
+他 打磨 光滑 了 桌面 。
+Ta1 da2mo2 guang1hua2 le zhuo1mian4 .
+He polish smooth asp desktop .
+He polished the desktop to be smooth.
+
+### Id: 28
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 洗 干净 了 衣服 。
+Zhang1 san1 xiao4 feng1kaung2 le .
+Zhang1san1 laugh insane asp .
+Zhang1san1 laughed to the extent of becoming mad
+
+### Id: 29
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 问 明白 了 这 道 题 。
+Zhang1san1 wen4 ming2bai2 le zhe4 dao4 ti4
+Zhang1san1 ask understand asp the question
+Zhang1san1 asked the question and understood.
+
+### Id: 30
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+张三 看 习惯 了 那 件 事 。
+Zhang1san1 kan4 xi2guan4 le na4 jian4 shi4 .
+Zhang1san1 look get used to asp than cl thing
+Zhang1san1 watched (many) that kind of things and got used to it.
+
+### Id: 31
+Source: nil
+Vetted: t
+Judgment: g
+Phenomena: vv-compounds
+他 把 桌面 打磨 光滑 了 。
+Ta1 ba3 zhuo1mian4 da2mo2 guang1hua2 le .
+He ba desktop polish  smooth asp .
+He polished the desktop to be smooth.
 

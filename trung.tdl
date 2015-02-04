@@ -105,7 +105,18 @@ zhe+guo := zhe & guo.
 le+zhe+guo := le & zhe & guo.
 
 +vjp :+
- [ LZG lzg ].
+ [ LZG lzg,
+   CHAR char ].
+
+char := avm & 
+  [ FCHAR string, 
+    WCHAR string, 
+    LENGTH length ].
+
+length := avm.
+one := length.
+more-than-one := length.
+
 
 marker-or-punct := head & 
   [ MOD <> ].
