@@ -280,9 +280,9 @@ Vetted: t
 Judgment: g
 Phenomena: vv-compounds
 张三 洗 干净 了 衣服 。
-Zhang1 san1 xiao4 feng1kaung2 le .
-Zhang1san1 laugh insane asp .
-Zhang1san1 laughed to the extent of becoming mad
+Zhang1san1 xi3 gan1jing4 le yi1fu .
+Zhang1san1 wash clean asp cloth.
+Zhangsan washed the cloth clean
 
 ### Id: 29
 Source: nil

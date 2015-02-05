@@ -41,10 +41,10 @@
 (list
 (lkb-pathname (parent-directory) "matrix.tdl")
 (lkb-pathname (parent-directory) "head-types.tdl")
-(lkb-pathname (parent-directory) "trung.tdl")
-(lkb-pathname (parent-directory) "trung-lextypes.tdl")
-(lkb-pathname (parent-directory) "trung-letypes.tdl")
 (lkb-pathname (parent-directory) "zhong.tdl")
+(lkb-pathname (parent-directory) "zhong-lextypes.tdl")
+(lkb-pathname (parent-directory) "zhong-letypes.tdl")
+(lkb-pathname (parent-directory) "cmn.tdl")
 (lkb-pathname (parent-directory) "zht.tdl")
 (lkb-pathname (parent-directory) "mtr.tdl")
 ))

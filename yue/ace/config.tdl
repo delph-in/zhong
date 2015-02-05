@@ -4,7 +4,7 @@
 
 ;;; files to load
 
-grammar-top               := "../zung-pet.tdl".
+grammar-top               := "../yue-pet.tdl".
 variable-property-mapping := "../semi.vpm".
 preprocessor              := "../repp/vanilla.rpp".
 ;generation-ignore-signs   := "generation.ignore".

@@ -62,7 +62,12 @@ orthog := cons &
     TO string ].
 
 ;; SSH 2015-01-26: compound lexical items
-cpd := icons. 
+cpd := icons.
+noun-noun := cpd.
+pred-pred := cpd. 
+resultative := pred-pred.
+causative := pred-pred.
+
 
 
 card_rel := named_rel.
@@ -104,9 +109,7 @@ le+guo := le & guo.
 zhe+guo := zhe & guo.
 le+zhe+guo := le & zhe & guo.
 
-+vjp :+
- [ LZG lzg,
-   CHAR char ].
++vjp :+ [ LZG lzg ].
 
 char := avm & 
   [ FCHAR string, 
@@ -116,6 +119,11 @@ char := avm &
 length := avm.
 one := length.
 more-than-one := length.
+
+head :+ [ CHAR char ].
+lex-item :+ 
+ [ STEM.FIRST #str,
+   SYNSEM.LOCAL.CAT.HEAD.CHAR.WCHAR #str ].
 
 
 marker-or-punct := head & 
@@ -859,18 +867,13 @@ noun-noun-compound-phrase := head-final &
                                             INDEX #nhind ] ],
     C-CONT [ HOOK [ LTOP #ltop,
             INDEX #hind ],
-             RELS <! arg12-relation &
-                   [ PRED "noun-noun-cpd-rel",
-                     LBL #ltop,
-                     ARG1 #hind,
-                     ARG2 #nhind ],
-                   quant-relation &
-                   [ PRED "exist_q_rel",
-                     ARG0 #nhind,
-                     RSTR #harg ] !>,
+	     RELS <! quant-relation & [ PRED "exist_q_rel",
+					ARG0 #nhind,
+					RSTR #harg ] !>,
              HCONS <! qeq & [ HARG #harg,
                               LARG #larg ] !>,
-             ICONS <! !> ] ].
+             ICONS <! noun-noun & [ IARG1 #hind, 
+				    IARG2 #nhind ] !> ] ].
 
 ;; SSH 2014-12-19: phr-synsem is added.
 nom-de-noun-compound-phrase := head-final &
@@ -891,21 +894,16 @@ nom-de-noun-compound-phrase := head-final &
                                             INDEX #nhind ] ],
     C-CONT [ HOOK [ LTOP #ltop,
             INDEX #hind ],
-             RELS <! arg12-relation &
-                   [ PRED "noun-noun-cpd-rel",
-                     LBL #ltop,
-                     ARG1 #hind,
-                     ARG2 #nhind ],
-                   quant-relation &
-                   [ PRED "exist_q_rel",
-                     ARG0 #nhind,
-                     RSTR #harg ] !>,
+	     RELS <! quant-relation & [ PRED "exist_q_rel",
+					ARG0 #nhind,
+					RSTR #harg ] !>,
              HCONS <! qeq & [ HARG #harg,
                               LARG #larg ] !>,
-             ICONS <! !> ] ].
+             ICONS <! noun-noun & [ IARG1 #hind, 
+				    IARG2 #nhind ] !> ] ].
 
 ;; SSH 2015-01-14: V-V compounds 
-verb-verb-compound-phrase := head-initial &
+pred-pred-compound-phrase := head-initial &
   [ SYNSEM [ LOCAL.CAT [ HEAD #head,
 			 VAL [ SPR #spr,
 			       SPEC #spec ],
@@ -916,7 +914,8 @@ verb-verb-compound-phrase := head-initial &
 			 NONSUBJ #nonsubj ],
 	     NON-LOCAL #nonloc ],
     HEAD-DTR.SYNSEM lex-synsem &
-                [ LOCAL [ CAT [ HEAD #head & +vj & [ AUX - ],				
+                [ LOCAL [ CAT [ HEAD #head & +vj & [ CHAR.LENGTH one,
+						     AUX - ],				
 				VAL [ SPR #spr,
 				      SPEC #spec ],
 				MC na-or--,
@@ -935,9 +934,13 @@ verb-verb-compound-phrase := head-initial &
 		    INDEX #arg1 ],
 	     RELS <! !>,
              HCONS <! !>,
-             ICONS <! cpd & [ IARG1 #arg1, 
-			      IARG2 #arg2 ] !> ] ].
+             ICONS <! pred-pred & [ IARG1 #arg1, 
+				    IARG2 #arg2 ] !> ] ].
 
+pred-verb-compound-phrase := pred-pred-compound-phrase & 
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD verb & [ CHAR.LENGTH one] ].
+pred-adj-compound-phrase := pred-pred-compound-phrase & 
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD adj ].
 
 ;; Make temporal NPs into adposition phrases
 np-adp-phrase := unary-phrase &

@@ -13,19 +13,19 @@
 :begin :type.
 :include "head-types".
 :include "matrix".
-:include "trung".
-:include "trung-lextypes".
-:include "trung-letypes".
-:include "zung".
+:include "zhong".
+:include "zhong-lextypes".
+:include "zhong-letypes".
+:include "yue".
 :include "mtr".
 :include "tmt".
 :end :type.
 
 :begin :instance :status token-mapping-rule.
-:include "../../tmr/prelude".
-:include "../../tmr/pos".
-:include "../../tmr/pos-ipa".
-:include "../../tmr/finis".
+:include "../tmr/prelude".
+:include "../tmr/pos".
+:include "../tmr/pos-ipa".
+:include "../tmr/finis".
 :end :instance.
 
 ;;

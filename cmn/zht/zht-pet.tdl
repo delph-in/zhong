@@ -14,10 +14,10 @@
 :begin :type.
 :include "head-types".
 :include "matrix".
-:include "trung".
-:include "trung-lextypes".
-:include "trung-letypes".
 :include "zhong".
+:include "zhong-lextypes".
+:include "zhong-letypes".
+:include "cmn".
 :include "zht".
 :include "mtr".
 :include "tmt".
