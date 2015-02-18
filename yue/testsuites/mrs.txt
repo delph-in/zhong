@@ -400,7 +400,7 @@ Source: MRS
 Vetted: t           
 Judgment: g           
 Phenomena: tam
-隻 狗 要 吠 啦
+隻 狗 要 吠 喇
 zek3 gau2 jiu3 fai6 laa3       
 cl   dog  need bark SFP 
 "The dog is going to bark."           
