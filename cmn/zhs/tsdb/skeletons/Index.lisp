@@ -27,6 +27,12 @@
 ((:path . "quantifers") (:content . "quantifers testsuite"))
 ((:path . "raising-control") (:content . "raising-control testsuite"))
 ((:path . "vv-compounds") (:content . "vv-compounds testsuite"))
+((:path . "fu-berlin") (:content . "Free University Berlin Testsuite"))
+((:path . "mcg") (:content . "MCG testsuites"))
+((:path . "ntumc") (:content . "NTU-MC Corpus"))
+((:path . "pctb") (:content . "Penn Chinese Treebank - LDC10T07"))
+((:path . "sinica") (:content . "Sinica treebank taken from NLTK"))
+((:path . "jec") (:content . "JEC Basic Sentence Data"))
 )
 
  
