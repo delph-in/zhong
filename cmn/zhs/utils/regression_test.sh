@@ -21,11 +21,11 @@ while [ $# -gt 0 -a "${1#-}" != "$1" ]; do
       shift 2;
     ;;
     --max-chart-megabytes)
-      timeout=${2};
+      max_chart=${2};
       shift 2;
     ;;
     --max-unpack-megabytes)
-      timeout=${2};
+      max_unpack=${2};
       shift 2;
     ;;
     *)
