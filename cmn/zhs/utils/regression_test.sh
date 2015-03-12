@@ -43,6 +43,8 @@ done
 ace -g ../ace/config.tdl -G ../zhs.dat
 ace -g ../ace/config-robust.tdl -G ../zhs-robust.dat
 
+mkdir -p ../tsdb/gtest/comparison
+
 while read LINE
 do           
 	#echo "Parsing: " $LINE
