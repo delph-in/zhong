@@ -1,0 +1,11 @@
+The testsuites included in this folder were provided by MCG (http://www.coli.uni-saarland.de/~yzhang/mcg.php).
+
+Main developers and contributors of MCG are:
+    Yi Zhang <yzhang AT coli.uni-sb.de>
+    Rui Wang <rwang AT coli.uni-sb.de>
+    Yu Chen <yuchen AT dfki.de>
+
+These testsuites are used as a held-out testsuite for tesing Zhong - cmn -zhs. 
+
+The license is Less­er Gen­er­al Pub­lic Li­cense For Lin­guis­tic Re­sources (see LICNESE). 
+
