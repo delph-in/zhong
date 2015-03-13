@@ -43,6 +43,7 @@ done
 ace -g ../ace/config.tdl -G ../zhs.dat
 ace -g ../ace/config-robust.tdl -G ../zhs-robust.dat
 
+rm -rf ../tsdb/gtest/*
 mkdir -p ../tsdb/gtest/comparison
 
 while read LINE

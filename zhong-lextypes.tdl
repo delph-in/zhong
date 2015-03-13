@@ -1089,6 +1089,69 @@ s-comp-adj-lex := basic-pred-adj-lex &
 		     CONT.HOOK.LTOP #ltop ],
 	     LKEYS.KEYREL.ARG1 #cltop ] ].
 
+
+;; ZZF/SSH 2015-03-10: testing reduplicated forms of adjectives
+adj-redup-lex := lex-item & 
+ [ SYNSEM [ LOCAL [ CAT [ HEAD adj,
+                           VAL [ SUBJ < [ LOCAL [ CAT [ HEAD +nv,
+							VAL.SPR < > ],
+						  CONT.HOOK.INDEX #arg1 &
+                                                   [ SF prop-or-ques ] ],
+					  NON-LOCAL.SLASH #slash ] >,
+				 COMPS <>,
+				 SPR <>,
+				 SPEC <> ] ],
+		    CONT [ HOOK [ LTOP #ltop,
+				  XARG #xarg,
+				  INDEX #index ],
+			   RELS <! #keyrel, #altkeyrel !>,
+			   HCONS <! !>, 
+			   ICONS <! !> ] ],
+	    NON-LOCAL.SLASH #slash,
+	    LKEYS [ KEYREL arg1-relation & event-relation & #keyrel &
+			   [ LBL #ltop,
+			     ARG0 #index,
+			     ARG1 #arg1 ],
+		    ALTKEYREL #altkeyrel & arg1-relation & event-relation &
+			   [ LBL #ltop,
+			     PRED redup_x_rel,
+			     ARG1 #index ] ] ] ].
+
+;SSH 2015-03-13: ICONS is left unconstrained until judged by an expert
+;in Chinese pragmatics.
+#|
+adj-redup-lex := lex-item & 
+ [ SYNSEM [ LOCAL [ CAT [ HEAD adj,
+                           VAL [ SUBJ < [ LOCAL [ CAT [ HEAD +nv,
+							VAL.SPR < > ],
+						  CONT.HOOK.INDEX #arg1 &
+                                                   [ SF prop-or-ques ] ],
+					  NON-LOCAL.SLASH #slash ] >,
+				 COMPS <>,
+				 SPR <>,
+				 SPEC <> ] ],
+		    CONT [ HOOK [ LTOP #ltop,
+				  XARG #xarg,
+				  INDEX #index,
+				  ICONS-KEY #icons,
+				  CLAUSE-KEY #clause ],
+			   RELS <! #keyrel, #altkeyrel !>,
+			   HCONS <! !>,
+			   ICONS <! semantic-focus & #icons &
+				  [ IARG1 #clause,
+				    IARG2 #index ] !> ] ],
+	    NON-LOCAL.SLASH #slash,
+	    LKEYS [ KEYREL arg1-relation & event-relation & #keyrel &
+			   [ LBL #ltop,
+			     ARG0 #index,
+			     ARG1 #arg1 ],
+		    ALTKEYREL #altkeyrel & arg1-relation & event-relation &
+			   [ LBL #ltop,
+			     PRED redup_x_rel,
+			     ARG1 #index ] ] ] ].
+|#
+
+
 ;; DPF 2011-06-03 - We might instead want to treat relative clauses as 
 ;; lacking a gap, with the burden of linking the modified noun's index instead
 ;; left to pragmatics.  Then we wouldn't need extraction for relative clauses,

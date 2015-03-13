@@ -87,6 +87,12 @@ classifier_x_rel := predsort.
 件_x_rel := 个_x_rel.
 些_x_rel := 个_x_rel.
 
+intensifier_x_rel := predsort.
+hen_x_rel := intensifier_x_rel.
+feichang_x_rel := intensifier_x_rel.
+redup_x_rel := intensifier_x_rel.
+
+
 #|
 lex-sense-default := lex-item &
  [ SYNSEM.LOCAL.CAT.HEAD.KEYS.KEY 个_x_rel ].

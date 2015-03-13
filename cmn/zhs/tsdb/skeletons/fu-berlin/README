@@ -3,6 +3,16 @@ This testsuite was created as a project of constructiong "An HPSG Frag­ment of 
 Au­thor: 
 	Ste­fan Müller (Freie Uni­ver­sität Berlin) 
 	with help by Jia Zhongheng = 贾中恒 (Tongji Uni­ver­si­ty, Shang­hai) and Janna Lipenko­va (Freie Uni­ver­sität Berlin) 
+Citation:
+
+	@incollection{ML2013a,
+	        Address = {Taipei, Taiwan},
+	        Author = {Stefan M{\"u}ller and Janna Lipenkova},
+        	Booktitle = {Proceedings of the 27th {Pacific Asia Conference on Language, Information, and Computation} ({PACLIC} 27)},
+	        Pages = {240--249},
+        	Publisher = {Department of English, National Chengchi University},
+	        Title = {ChinGram: {A} {TRALE} Implementation of an {HPSG} Fragment of {Mandarin Chinese}},
+	        Year = {2013}}
 
 This testsuite is used as a held-out testsuite for tesing Zhong - cmn -zhs. 
 
