@@ -143,3 +143,6 @@ x_ba_le := v_ba_type_lex.
 x_-_suf-adv_le := adv_suffix_form_lex.
 x_-_pre-adv_le := adv_prefix_form_lex.
 
+adv_-_ij_le := interjection-lex.
+
+

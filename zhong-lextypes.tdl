@@ -949,6 +949,7 @@ spart-lex-item := raise-sem-lex-item & basic-one-arg & no-icons-lex-item &
                              COMPS < #comp > ] ],
     ARG-ST < #comp &
              [ PUNCTUATED -,
+	       INTERJECTED na-or--,
 	       LOCAL.CAT [ MC +,
                            HEAD verb,
                            VAL [ SUBJ < >,
@@ -1501,6 +1502,21 @@ vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule &
                        ARG1 #xarg ] !> ] ].
 
 
+;; SSH 2015-03-13: Interjections (e.g. 哎. 哦, 嗯, 噢, 哎呀, 嘿)
+
+
+interjection-lex := basic-scopal-adverb-lex &
+  [ SYNSEM [ L-PERIPH +,
+	     R-PERIPH +,
+	     INTERJECTED +,
+	     LOCAL.CAT [ HEAD.MOD < [ L-PERIPH -,
+				      R-PERIPH +,
+				      PUNCTUATED na-or--,
+				      LOCAL.CAT [ HEAD +nvj,
+						  VAL [ SUBJ <>,
+							COMPS <> ] ] ] >,
+			 VAL.COMPS < >,
+			 POSTHEAD - ] ] ].
 
 
 ; comma := punct.
@@ -1514,7 +1530,7 @@ punctuation := lex-item &
 			   VAL [ SUBJ <>, SPR <>,
 				 COMPS < [ PUNCTUATED na-or--,
 					   LOCAL [ CAT [ MC +,			    
-							 HEAD +vjpc,
+							 HEAD +vjrpc,
 							 VAL [ SUBJ <>, COMPS <> ] ],
 						   CONT.HOOK.INDEX.SF #sf ],
 					   NON-LOCAL.SLASH 0-dlist ] > ],

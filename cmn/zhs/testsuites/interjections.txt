@@ -1,0 +1,76 @@
+Language: Mandarin Chinese[Simplified]
+Language code: cmn
+Lines: orth translit gloss translat
+Author: Sanghoun Song
+Date: 2015-03-13
+
+### Id:1
+Source: nil
+Vetted: f
+Judgment: g
+Phenomena: interjections
+哦 。
+o2 .
+Oh .
+Oh.
+
+### Id:2
+Source: nil
+Vetted: f
+Judgment: g
+Phenomena: interjections
+哦 ！
+o2 !
+Oh !
+Oh!
+
+### Id:3
+Source: nil
+Vetted: f
+Judgment: g
+Phenomena: interjections
+哦 张三 哭 了 。
+o2 Zhang1san1 ku1 le .
+Oh Zhangsan cry PFV .
+Oh, Zhangsan cried.
+
+### Id:4
+Source: nil
+Vetted: f
+Judgment: g
+Phenomena: interjections
+哦 张三 哭 了 ！
+o2 Zhang1san1 ku1 le !
+Oh Zhangsan cry PFV !
+Oh, Zhangsan cried!
+
+### Id:5 (interjections cannot appear in the middle of sentence).
+Source: nil
+Vetted: f
+Judgment: u
+Phenomena: interjections
+张三 哦 哭 了 。
+Zhang1san1 o2 ku1 le .
+Zhangsan Oh cry PFV .
+Oh, Zhangsan cried.
+
+### Id:6 (interjections cannot appear in the middle of sentence).
+Source: nil
+Vetted: f
+Judgment: u
+Phenomena: interjections
+张三 哭 了 哦 。
+Zhang1san1 ku1 le o2 .
+Zhangsan Oh cry PFV .
+Oh, Zhangsan cried.
+
+### Id:7 (interjections cannot be duplicated).
+Source: nil
+Vetted: f
+Judgment: u
+Phenomena: interjections
+哦 哦 张三 哭 了 。
+o2 o2 Zhang1san1 ku1 le .
+Oh Zhangsan cry PFV .
+Oh, Oh, Zhangsan cried.
+

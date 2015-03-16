@@ -45,32 +45,24 @@ ace -g ../ace/config-robust.tdl -G ../zhs-robust.dat
 
 rm -rf ../tsdb/gtest/*
 mkdir -p ../tsdb/gtest/comparison
+mkdir -p ../tsdb/gtest/log
+
+OPT="-n $best --timeout=$timeout --max-chart-megabytes=$max_chart --max-unpack-megabytes=$max_unpack"
 
 while read LINE
 do           
-	#echo "Parsing: " $LINE
+	echo "Comparing: " $LINE
 	python3 $GTESTPATH/gTest.py -G .. -C :zhs.dat -W ../tsdb/gtest/comparison R :$LINE
 
 done < COMPARISON
 
 while read LINE
 do           
-	#echo "Parsing: " $LINE
-	rm -rf ../tsdb/gtest/parse/$LINE
-	mkprof -s ../tsdb/skeletons/$LINE ../tsdb/gtest/parse/$LINE
-	art -a "ace -g ../zhs.dat -n $best --timeout $timeout --max-chart-megabytes=$max_chart --max-unpack-megabytes=$max_unpack" ../tsdb/gtest/parse/$LINE
-
-	rm -rf ../tsdb/gtest/unk/$LINE
-	mkprof -s ../tsdb/skeletons/$LINE ../tsdb/gtest/unk/$LINE
-	art -Ya "python cmn2yy.py | ace -g ../zhs.dat -y -n $best --timeout $timeout --max-chart-megabytes=$max_chart --max-unpack-megabytes=$max_unpack" ../tsdb/gtest/unk/$LINE
-
-	rm -rf ../tsdb/gtest/bridge/$LINE
-	mkprof -s ../tsdb/skeletons/$LINE ../tsdb/gtest/bridge/$LINE
-	art -a "ace -g ../zhs-robust.dat -n $best --timeout $timeout --max-chart-megabytes=$max_chart --max-unpack-megabytes=$max_unpack" ../tsdb/gtest/bridge/$LINE
-
-	rm -rf ../tsdb/gtest/unk+bridge/$LINE
-	mkprof -s ../tsdb/skeletons/$LINE ../tsdb/gtest/unk+bridge/$LINE
-	art -Ya "python cmn2yy.py | ace -g ../zhs-robust.dat -y -n $best --timeout $timeout --max-chart-megabytes=$max_chart --max-unpack-megabytes=$max_unpack" ../tsdb/gtest/unk+bridge/$LINE
+	echo "Parsing: " $LINE
+	python3 $GTESTPATH/gTest.py --ace-opts "\"$OPT\"" -G .. -C :zhs.dat -W ../tsdb/gtest/parse C :$LINE >> ../tsdb/gtest/log/$LINE.log
+	python3 $GTESTPATH/gTest.py --ace-opts "\"$OPT\"" -G .. -C :zhs.dat -YP "python cmn2yy.py" -W ../tsdb/gtest/unk C :$LINE >> ../tsdb/gtest/log/$LINE.log
+	python3 $GTESTPATH/gTest.py --ace-opts "\"$OPT\"" -G .. -C :zhs-robust.dat -W ../tsdb/gtest/br C :$LINE >> ../tsdb/gtest/log/$LINE.log
+	python3 $GTESTPATH/gTest.py --ace-opts "\"$OPT\"" -G .. -C :zhs-robust.dat -YP "python cmn2yy.py" -W ../tsdb/gtest/unk+br C :$LINE >> ../tsdb/gtest/log/$LINE.log
 
 done < COVERAGE
 

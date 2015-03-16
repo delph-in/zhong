@@ -1,5 +1,44 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
+;;; Interjections 
+哎_ij := adv_-_ij_le & 
+  [ STEM < "哎" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哎", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_哎_a_rel",
+    TRAITS native_token_list ].
+
+哦_ij := adv_-_ij_le & 
+  [ STEM < "哦" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哦", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_哦_a_rel",
+    TRAITS native_token_list ].
+
+嗯_ij := adv_-_ij_le & 
+  [ STEM < "嗯" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "嗯", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_嗯_a_rel",
+    TRAITS native_token_list ].
+
+噢_ij := adv_-_ij_le & 
+  [ STEM < "噢" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "噢", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_噢_a_rel",
+    TRAITS native_token_list ].
+
+嘿_ij := adv_-_ij_le & 
+  [ STEM < "嘿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "嘿", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_嘿_a_rel",
+    TRAITS native_token_list ].
+
+哎呀_ij := adv_-_ij_le & 
+  [ STEM < "哎呀" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哎呀", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_哎呀_a_rel",
+    TRAITS native_token_list ].
+
+
+
 ;;; Punctuations
 period-marker := punctuation &
   [ STEM < "。" >,

@@ -40,6 +40,7 @@ basic-unary-phrase :+
 ;; cannot be combined with the other of itself.
 synsem :+ 
  [ PUNCTUATED luk,
+   INTERJECTED luk,
    SPART spart,
    BOUND luk ].
 
@@ -458,6 +459,14 @@ adj-head-int-mc := adj-head-int-phrase &
     HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns,
     NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
 			  LOCAL.CAT.NONSUBJ #ns ] ].
+
+adj-head-scop-phrase :+ 
+  [ SYNSEM [ L-PERIPH #lperiph,
+	     R-PERIPH #rperiph,
+	     INTERJECTED #interjected ],
+    NON-HEAD-DTR.SYNSEM [ L-PERIPH #lperiph,
+			  R-PERIPH #rperiph,
+			  INTERJECTED #interjected ] ].
 
 alts :+ 
   [ LE-PFV bool ].
