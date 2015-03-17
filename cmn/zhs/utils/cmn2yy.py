@@ -39,11 +39,24 @@ while True:
 
 	output = ""
 	#print words.strip().split()
-	result = tagger.tag(sentence.split())
+	words = sentence.split()
+
+	#This is a tentative solution for handling too long sentences.
+	#FIX ME!
+	if len(words) > 200: 
+		print('(0, 0, 1, <0:18>, 1, "TOO-LONG-SENTENCE", 0, "null", "X" 1.0000)')
+		sys.stdout.flush()
+		continue
+
+	result = tagger.tag(words)
 	#print result
 	_num = _from = _from_c = 0
 	for w in result:
 		[orth, tag] = w[1].split('#')
+
+		#This is also a tentative solution. FIX ME!
+		if orth == '"': orth = '”'.decode('utf-8')
+
 		_num += 1
 		output += '('
 		output += str(_num)
