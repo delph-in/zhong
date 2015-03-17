@@ -1,5 +1,66 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
+
+;;; Punctuations
+period-marker := punctuation &
+  [ STEM < "。" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "。", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
+    TRAITS native_token_list ].
+
+period-marker-robust := punctuation &
+  [ STEM < "." >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ".", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
+    TRAITS native_token_list ].
+
+question-marker := punctuation &
+  [ STEM < "？" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "？", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
+    TRAITS native_token_list ].
+
+question-marker-robust := punctuation &
+  [ STEM < "?" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "?", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
+    TRAITS native_token_list ].
+
+bang-marker := punctuation &
+  [ STEM < "！" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "！", LENGTH one ],
+    TRAITS native_token_list ].
+
+reng-marker-robust := punctuation &
+  [ STEM < "!" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "!", LENGTH one ],
+    TRAITS native_token_list ].
+
+ellipsis-marker := punctuation &
+  [ STEM < "…" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "…", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
+    TRAITS native_token_list ].
+
+comma-marker := symbol &
+  [ STEM < "，" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
+    TRAITS native_token_list ].
+
+comma-marker-robust := symbol &
+  [ STEM < "," >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ",", LENGTH one ],
+    TRAITS native_token_list ].
+
+
 ;;; Interjections 
 哎_ij := adv_-_ij_le & 
   [ STEM < "哎" >,
@@ -37,28 +98,6 @@
     SYNSEM.LKEYS.KEYREL.PRED "_哎呀_a_rel",
     TRAITS native_token_list ].
 
-
-
-;;; Punctuations
-period-marker := punctuation &
-  [ STEM < "。" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "。", LENGTH one ],
-    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
-    TRAITS native_token_list ].
-
-question-marker := punctuation &
-  [ STEM < "？" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "？", LENGTH one ],
-    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
-    TRAITS native_token_list ].
-
-; comma-marker := punctuation &
-;   [ STEM < "、" >,
-;    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "、", LENGTH one ],
-;    TRAITS native_token_list ].
-
-
-
 ;;; markers
 
 吗_qp := x_-_qpart_le &
@@ -88,8 +127,8 @@ question-marker := punctuation &
 
 了_pfv_robust := pfv-marker &
   [ STEM <"了">,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
     STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG zhe+guo ] >,
     TRAITS native_token_list ].
 
@@ -103,8 +142,8 @@ question-marker := punctuation &
 
 着_dur_robust := dur-marker &
   [ STEM <"着">,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "着", LENGTH one ],
     STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "着", LENGTH one ],
     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le+guo ] >,
     TRAITS native_token_list ].
 
@@ -116,8 +155,8 @@ question-marker := punctuation &
 
 过_exp_robust := exp-marker &
   [ STEM <"过">,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "过", LENGTH one ],
     STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "过", LENGTH one ],
     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le+zhe ] >,
     TRAITS native_token_list ].
 

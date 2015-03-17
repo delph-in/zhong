@@ -11,6 +11,13 @@
 ;;;Blocking_Generation_(lexicons)
 ;;The_entry_name_should_be_listed_here.
 
+period-marker-robust
+question-marker-robust
+bang-marker-robust
+ellipsis-marker
+comma-marker
+comma-marker-robust
+
 其中_n
 了_pfv_robust 着_dur_robust 过_exp_robust
 xp-xp-bridge-c

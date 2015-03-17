@@ -1509,21 +1509,23 @@ interjection-lex := basic-scopal-adverb-lex &
   [ SYNSEM [ L-PERIPH +,
 	     R-PERIPH +,
 	     INTERJECTED +,
-	     LOCAL.CAT [ HEAD.MOD < [ L-PERIPH -,
+	     LOCAL.CAT [ POSTHEAD -,
+			 HEAD.MOD < [ L-PERIPH -,
 				      R-PERIPH +,
 				      PUNCTUATED na-or--,
 				      LOCAL.CAT [ HEAD +nvj,
 						  VAL [ SUBJ <>,
-							COMPS <> ] ] ] >,
-			 VAL.COMPS < >,
-			 POSTHEAD - ] ] ].
+							COMPS <> ] ],
+				      NON-LOCAL [ SLASH 0-dlist,
+						  REL 0-dlist,
+						  QUE 0-dlist ] ] >,
+			 VAL.COMPS < > ] ] ].
 
 
 ; comma := punct.
 
 punctuation := lex-item & 
-  [ STYLE strict,
-    SYNSEM [ L-PERIPH +,
+  [ SYNSEM [ L-PERIPH +,
 	     R-PERIPH +,
 	     PUNCTUATED +,
 	     LOCAL [ CAT [ HEAD punct,
@@ -1537,4 +1539,11 @@ punctuation := lex-item &
 			   POSTHEAD + ],
 		     CONT [ HOOK.INDEX.SF #sf,
 			    RELS <! !>, HCONS <! !>, ICONS <! !> ] ] ] ].
+
+symbol := lex-item & 
+  [ SYNSEM [ LOCAL [ CAT [ HEAD punct,
+			   VAL [ SUBJ <>, SPR <>,
+				 COMPS < [ PUNCTUATED na-or-- ] > ],
+			   POSTHEAD + ],
+		     CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ] ] ].
 

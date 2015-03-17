@@ -28,6 +28,7 @@
 :include "../../tmr/pos".
 :include "../../tmr/pos-ipa".
 :include "../../tmr/finis".
+:include "../../tmr/ne1".
 :end :instance.
 
 ;;

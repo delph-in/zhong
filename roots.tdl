@@ -8,13 +8,13 @@
 ; `*start-symbol' (see `lkb/user-fns.lsp').
 
 root := phrase &
-  [ SYNSEM[ LOCAL [ COORD -,
-		    CAT [ VAL [ SUBJ < >,
-				COMPS < > ],
-			  MC +,
-			  HEAD +vjrpc &
-			      [ FORM finite ] ] ],
-	    NON-LOCAL.SLASH 0-dlist ] ].
+  [ SYNSEM [ LOCAL [ COORD -,
+		     CAT [ VAL [ SUBJ < >,
+				 COMPS < > ],
+			   MC +,
+			   HEAD +vjrpc &
+			       [ FORM finite ] ] ],
+	     NON-LOCAL.SLASH 0-dlist ] ].
 
 
 ; SSH 2014-10-31 This root type should be used for only robust parsig. 

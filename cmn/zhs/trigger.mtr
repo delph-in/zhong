@@ -9,6 +9,10 @@ question-marker_gr := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG0.SF ques ] !>,
   FLAGS.TRIGGER "question-marker" ]. 
 
+bang-marker_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.SF comm ] !>,
+  FLAGS.TRIGGER "bang-marker" ]. 
+
 了_pfv_gr := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG0.E.ASPECT perfective ] !>,
   FLAGS.TRIGGER "了_pfv" ]. 
