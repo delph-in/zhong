@@ -38,7 +38,7 @@ n_-_pr-refl_le := attr-adj-posthd-lex.
 
 ;; SSH/ZZF 2014-11-26
 ;; Currently, general nouns such as dongxi (东西), shi (事).
-n_-_le := noun-lex.
+n_-_le := common-noun-lex.
 
 n_-_c_le := count-noun-lex.
 

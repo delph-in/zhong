@@ -21,17 +21,16 @@ noun-lex := basic-noun-lex & basic-one-arg & no-hcons-lex-item &
                          VAL.SPR < > ] ] > ],
          NON-LOCAL.SLASH 0-dlist ] ].
 
-count-noun-lex := noun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX [ SORT nontime-s,
-				   SPECI + ] ].
-
-basic-mass-noun-lex := basic-one-arg & basic-icons-lex-item &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SPECI - ].
-
-mass-noun-lex := basic-mass-noun-lex & noun-lex &
+common-noun-lex := noun-lex &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SORT nontime-s ].
 
-basic-time-noun-lex := basic-mass-noun-lex & 
+count-noun-lex := common-noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SPECI + ].
+
+mass-noun-lex := common-noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SPECI - ].
+
+basic-time-noun-lex :=  basic-one-arg & basic-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
                VAL.SUBJ < >,
                NONSUBJ + ],
