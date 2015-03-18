@@ -44,7 +44,6 @@ ace -g ../ace/config.tdl -G ../zhs.dat
 ace -g ../ace/config-robust.tdl -G ../zhs-robust.dat
 
 rm -rf ../tsdb/gtest/*
-mkdir -p ../tsdb/gtest/comparison
 mkdir -p ../tsdb/gtest/log
 
 OPT="-n $best --timeout=$timeout --max-chart-megabytes=$max_chart --max-unpack-megabytes=$max_unpack"
@@ -55,14 +54,19 @@ echo "REGRESSION TEST"
 echo "COVERAGE TEST"
 while read LINE
 do           
-	echo "\tParsing: " $LINE
+	echo "Parsing - " $LINE
+	echo "        : ordinary" 
 	python3 $GTESTPATH/gTest.py --ace-opts "\"$OPT\"" -G .. -C :zhs.dat -W ../tsdb/gtest/parse C :$LINE >> ../tsdb/gtest/log/$LINE.log
+	echo "        : unk" 
 	python3 $GTESTPATH/gTest.py --ace-opts "\"$OPT\"" -G .. -C :zhs.dat -YP "python cmn2yy.py" -W ../tsdb/gtest/unk C :$LINE >> ../tsdb/gtest/log/$LINE.log
+	echo "        : br" 
 	python3 $GTESTPATH/gTest.py --ace-opts "\"$OPT\"" -G .. -C :zhs-robust.dat -W ../tsdb/gtest/br C :$LINE >> ../tsdb/gtest/log/$LINE.log
+	echo "        : unk+br" 
 	python3 $GTESTPATH/gTest.py --ace-opts "\"$OPT\"" -G .. -C :zhs-robust.dat -YP "python cmn2yy.py" -W ../tsdb/gtest/unk+br C :$LINE >> ../tsdb/gtest/log/$LINE.log
 
 done < COVERAGE
 
+python formoin.py ../tsdb/gtest/log > ../tsdb/gtest/log/formoin.txt
 
 
 
