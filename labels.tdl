@@ -215,6 +215,15 @@ le-pfv-label := label &
 			       COORD-STRAT "" ] ],
 	      LABEL-NAME "AS" ].
 
+
+嚟-pfv-label := label & 
+	    [ STEM <"嚟">,
+	      SYNSEM [ LIGHT +,
+		       R-PERIPH na-or--,
+		       LOCAL [ CAT.HEAD marker,
+			       COORD-STRAT "" ] ],
+	      LABEL-NAME "AS" ].
+
 zhe-label := label & 
 	    [ STEM <"着">,
 	      SYNSEM [ LIGHT +,
