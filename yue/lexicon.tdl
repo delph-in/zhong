@@ -1,7 +1,5 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
-;;; created by Sanghoun Song (SSH, 2014-08-25)
-
 ;;; Punctuations
 period-marker := punctuation &
   [ STEM < "。" >,
@@ -13,43 +11,76 @@ question-marker := punctuation &
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
     TRAITS native_token_list ].
 
-;comma-marker := punctuation &
-;  [ STEM < "，" >,
-;   TRAITS native_token_list ].
+; comma-marker := punctuation &
+;   [ STEM < "、" >,
+;    TRAITS native_token_list ].
 
+
+
+;;; markers
+
+咩_qp := x_-_qpart_le &
+  [ STEM < "咩" >,
+    TRAITS native_token_list ].
+
+喇_crs := x_-_crs_le & 
+  [ STEM <"喇">,
+    SYNSEM.LKEYS.KEYREL.PRED "_喇_a_rel",
+    TRAITS native_token_list ].
+
+呀_crs := x_-_crs_le & 
+  [ STEM <"呀">,
+    SYNSEM.LKEYS.KEYREL.PRED "_呀_a_rel",
+    TRAITS native_token_list ].
+
+; 喇_crs := int-adv-s-post & 
+;   [ STEM <"喇">,
+;     SYNSEM [ LKEYS.KEYREL.PRED "_le_a_rel",
+; 	     LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT has-aspect ] > ],
+;    TRAITS native_token_list ].
+
+
+咗_pfv := pfv-marker &
+  [ STEM <"咗">,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le ] >,
+    TRAITS native_token_list ].
+
+咗_pfv_robust := pfv-marker &
+  [ STEM <"咗">,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG zhe+guo ] >,
+    TRAITS native_token_list ].
+
+嚟_pfv := pfv-marker &
+  [ STEM <"嚟">,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le ] >,
+    TRAITS native_token_list ].
+
+ 
+;; SSH 2014-09-02: irules.tdl is now an empty file
+住_dur := dur-marker &
+  [ STEM <"住">,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG zhe ] >,
+    TRAITS native_token_list ].
+
+住_dur_robust := dur-marker &
+  [ STEM <"住">,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le+guo ] >,
+    TRAITS native_token_list ].
+
+過_exp := exp-marker &
+  [ STEM <"過">,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG guo ] >,
+    TRAITS native_token_list ].
+
+過_exp_robust := exp-marker &
+  [ STEM <"過">,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le+zhe ] >,
+    TRAITS native_token_list ].
 
 ;;; Nouns
-
-張三_n := n_-_h_pn_le &
-  [ STEM < "張三" >,
-    SYNSEM.LKEYS.KEYREL.CARG "張三",
-    TRAITS native_token_list ].
-
-李四_n := n_-_h_pn_le &
-  [ STEM < "李四" >,
-    SYNSEM.LKEYS.KEYREL.CARG "李四",
-    TRAITS native_token_list ].
-
-雨_n := n_-_m_le &
-  [ STEM < "雨" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_雨_n_rel",
-    TRAITS native_token_list ].
-
-狗_n := n_-_c_le &
-  [ STEM < "狗" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_狗_n_rel",
-    TRAITS native_token_list ].
-
-猫_n := n_-_c_le &
-  [ STEM < "猫" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_猫_n_rel",
-    TRAITS native_token_list ].
-
-烟草_n := n_-_m_le &
-  [ STEM < "烟草" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_烟草_n_rel",
-    TRAITS native_token_list ].
-
 
 ;;; pronouns
 我_n := n_-_pr-1sg_le &
@@ -61,8 +92,20 @@ question-marker := punctuation &
     TRAITS native_token_list ].
 
 佢_n := n_-_pr-3sg_le &
-  [ STEM < "他" >,
-    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
+  [ STEM < "佢" >,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ GENDER masc,
+				       ANIMACY human ],
+    TRAITS native_token_list ].
+
+佢_n := n_-_pr-3sg_le &
+  [ STEM < "佢" >,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ GENDER fem,
+				       ANIMACY human ],
+    TRAITS native_token_list ].
+
+佢_n := n_-_pr-3sg_le &
+  [ STEM < "佢" >,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY non-human,
     TRAITS native_token_list ].
 
 我哋_n := n_-_pr-1pl-excl_le &
@@ -74,8 +117,15 @@ question-marker := punctuation &
     TRAITS native_token_list ].
 
 佢哋_n := n_-_pr-3pl_le &
-  [ STEM < "他们" >,
-    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
+  [ STEM < "佢哋" >,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ GENDER masc,
+				       ANIMACY human ],
+    TRAITS native_token_list ].
+
+佢哋_n := n_-_pr-3pl_le &
+  [ STEM < "佢哋" >,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ GENDER fem,
+				       ANIMACY human ],
     TRAITS native_token_list ].
 
 其中_n := d_-_le &
@@ -89,6 +139,10 @@ question-marker := punctuation &
 乜嘢_n := n_-_pr-wh_le &
   [ STEM <"乜嘢">,
     TRAITS native_token_list ].     
+
+邊_n := n_-_pr-wh_le &
+[ STEM <"邊">,
+    TRAITS native_token_list ].
 
 大家_n := n_-_pr-q_le &
  [ STEM < "大家" >,
@@ -113,20 +167,133 @@ question-marker := punctuation &
    SYNSEM [ LKEYS [ ALTKEYREL.PRED "some_q_rel" ] ],
    TRAITS native_token_list ].
 
-自己_a := n_-_pr-refl_le &
-  [ STEM < "自己" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_自己_n_rel",
+狗_n := n_-_c_le &
+  [ STEM < "狗" >,
+    SYNSEM [ LKEYS.KEYREL.PRED "_狗_n_rel" ],
+    TRAITS native_token_list ]. 
+
+馬_n := n_-_c_le &
+  [ STEM < "馬" >,
+    SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 匹_x_rel,
+	     LKEYS.KEYREL.PRED "_馬_n_rel" ],
+    TRAITS native_token_list ]. 
+
+電腦_n := n_-_c_le & 
+  [ STEM < "電腦" >,
+    SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 台_x_rel,
+	     LKEYS.KEYREL.PRED "_電腦_n_rel" ],
     TRAITS native_token_list ].
 
+棋_n := n_-_c_le & 
+  [ STEM < "棋" >,
+    SYNSEM [ LKEYS.KEYREL.PRED "_棋_n_rel" ],
+    TRAITS native_token_list ].
+
+五_n := n_-_c_le &
+  [ STEM < "五" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_五_a_rel",
+    TRAITS native_token_list ].
+
+貓_n := n_-_c_le &
+  [ STEM < "貓" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_貓_n_rel",
+    TRAITS native_token_list ].
+
+想法_n := n_-_c_le &
+  [ STEM < "想法" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_想法_n_rel",
+    TRAITS native_token_list ].
+
+飯_n := n_-_m_le &
+  [ STEM < "飯" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate,
+             LKEYS.KEYREL.PRED "_飯_n_rel" ],
+    TRAITS native_token_list ].
+
+米飯_n := n_-_m_le &
+  [ STEM < "米飯" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate,
+             LKEYS.KEYREL.PRED "_米飯_n_rel" ],
+    TRAITS native_token_list ].
+
+人_n := n_-_c_le &
+  [ STEM < "人" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_人_n_rel",
+    TRAITS native_token_list ].
+
+主席_n := n_-_c_le &
+  [ STEM < "主席" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_主席_n_rel",
+    TRAITS native_token_list ].
+
+家_n := n_-_c_le &
+  [ STEM < "家" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_家_n_rel",
+    TRAITS native_token_list ].
+
+常務_n := n_-_m_le &
+  [ STEM <"常務">,
+    SYNSEM.LKEYS.KEYREL.PRED "_常務_n_rel",
+    TRAITS native_token_list ].
+
+劉_n := n_-_s_pn_le &
+  [ STEM < "劉" >,
+    SYNSEM.LKEYS.KEYREL.CARG "劉",
+    TRAITS native_token_list ].
+
+張三_n := n_-_h_pn_le &
+  [ STEM < "張三" >,
+    SYNSEM.LKEYS.KEYREL.CARG "張三",
+    TRAITS native_token_list ].
+
+小明_n := n_-_h_pn_le &
+  [ STEM < "小明" >,
+    SYNSEM.LKEYS.KEYREL.CARG "小明",
+    TRAITS native_token_list ].
+
+老王_n := n_-_h_pn_le &
+  [ STEM < "老王" >,
+    SYNSEM.LKEYS.KEYREL.CARG "老王",
+    TRAITS native_token_list ].
+
+奧申委_n := n_-_pn_le &
+  [ STEM < "奧申委" >,
+    SYNSEM.LKEYS.KEYREL.CARG "奧申委",
+    TRAITS native_token_list ].
+
+李四_n := n_-_h_pn_le &
+  [ STEM < "李四" >,
+    SYNSEM.LKEYS.KEYREL.CARG "李四",
+    TRAITS native_token_list ].
+
+水_n := n_-_m_le &
+  [ STEM < "水" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_水_n_rel",
+    TRAITS native_token_list ].
+
+北京_n := n_-_l_pn_le &
+  [ STEM < "北京" >,
+    SYNSEM.LKEYS.KEYREL.CARG "北京",
+    TRAITS native_token_list ].
+
+上海_n := n_-_l_pn_le &
+  [ STEM < "上海" >,
+    SYNSEM.LKEYS.KEYREL.CARG "上海",
+    TRAITS native_token_list ].
+
+仗_n := n_-_c_le &
+  [ STEM < "仗" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_仗_n_rel",
+    TRAITS native_token_list ].
+
+毛筆_n := n_-_c_le &
+  [ STEM < "毛筆" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate,
+             LKEYS.KEYREL.PRED "_毛筆_n_rel" ],
+    TRAITS native_token_list ].
 
 
 ;;; Verbs
-
-落_v := v_weather_le &
-  [ STEM <"落">,
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_落_v_1_rel"],
-    TRAITS native_token_list ].
 
 吠_v_1 := v_-_le &
   [ STEM < "吠" >,
@@ -135,100 +302,480 @@ question-marker := punctuation &
     TRAITS native_token_list ].
 
 
+玩_v_1 := v_-_le &
+  [ STEM < "玩" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_玩_v_1_rel" ],
+    TRAITS native_token_list ].
+
+買_v_1 := v_np_le &
+  [ STEM < "買" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_買_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+唔記得_v_1 := v_np_le &
+  [ STEM < "唔記得" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_唔記得_v_1_rel" ],
+    TRAITS native_token_list ].
+
+騎_v_1 := v_-_le &
+  [ STEM < "騎" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_騎_v_1_rel" ],
+    TRAITS native_token_list ].
+
+騎_v_2 := v_np_le &
+  [ STEM < "騎" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_騎_v_2_rel" ],
+    TRAITS native_token_list ].
+
+攰_j := a_-_pred_le &
+  [ STEM < "攰" >,
+    SYNSEM [ LOCAL.CAT.VAL.SUBJ.FIRST [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY animate ],
+	     LKEYS.KEYREL.PRED "_攰_a_1_rel" ],
+    TRAITS native_token_list ].
+
+慣_j := a_-_pred_le &
+  [ STEM < "慣" >,
+    SYNSEM [ LOCAL.CAT.VAL.SUBJ.FIRST [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY animate ],
+	     LKEYS.KEYREL.PRED "_慣_a_1_rel" ],
+    TRAITS native_token_list ].
+
+顛_j := a_-_pred_le &
+  [ STEM < "顛" >,
+    SYNSEM [ LOCAL.CAT.VAL.SUBJ.FIRST [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY animate ],
+	     LKEYS.KEYREL.PRED "_顛_a_1_rel" ],
+    TRAITS native_token_list ].
+
+膩_j := a_-_pred_le &
+  [ STEM < "膩" >,
+    SYNSEM [ LOCAL.CAT.VAL.SUBJ.FIRST [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY animate ],
+	     LKEYS.KEYREL.PRED "_膩_a_1_rel" ],
+    TRAITS native_token_list ].
+
+下_v_2 := v_np_le &
+  [ STEM < "下" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_下_v_2_rel" ],
+    TRAITS native_token_list ].
+
+贏_v_1 := v_np_le &
+  [ STEM < "贏" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_贏_v_1_rel" ],
+    TRAITS native_token_list ].
+
+識_v_1 := v_np_le &
+  [ STEM < "識" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_識_v_1_rel" ],
+    TRAITS native_token_list ].
+
+輸_v_1 := v_np_le &
+  [ STEM < "輸" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_輸_v_1_rel" ],
+    TRAITS native_token_list ].
+
+嬲_v_1 := v_np_le &
+  [ STEM < "嬲" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_嬲_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+去_v_1 := v_-_le &
+  [ STEM < "去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
+	     LKEYS.KEYREL.PRED "_去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+去_v_2 := v_np_le &
+  [ STEM < "去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
+	     LKEYS.KEYREL.PRED "_去_v_2_rel" ],
+    TRAITS native_token_list ].
+
+食_v := v_np_le &
+  [ STEM < "食" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_食_v_1_rel" ],
+    TRAITS native_token_list ].
+
+賣_v :=  v_np_le &
+  [ STEM <"賣">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_賣_v_rel" ],
+    TRAITS native_token_list ].
+
+愛_v :=  v_np_le &
+  [ STEM <"愛">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_愛_v_rel" ],
+    TRAITS native_token_list ].
+
+打_v :=  v_np_le &
+  [ STEM <"打">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_打_v_rel" ],
+    TRAITS native_token_list ].
+
 追_v := v_np_le &
   [ STEM < "追" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_追_v_1_rel" ],
+	     LKEYS.KEYREL.PRED "_追_v_rel" ],
     TRAITS native_token_list ].
 
-遞_v := v_np_le &
-  [ STEM < "遞" >,
+鍾意_v := v_np_le &
+  [ STEM <"鍾意">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_遞_v_1_rel" ],
+	     LKEYS.KEYREL.PRED "_鍾意_v_rel" ],
+    ALTS.LE-PFV -,
     TRAITS native_token_list ].
 
-知道_v := v_np_le &
-  [ STEM < "知道" >,
+做_v := v_np_le &
+  [ STEM < "做" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_知道_v_rel" ],
+	     LKEYS.KEYREL.PRED "_做_v_rel" ],
     TRAITS native_token_list ].
 
-知道_v2 := v_s_le &
-  [ STEM < "知道" >,
+執行_v := v_np_le &
+  [ STEM <"執行">,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_知道_v_rel" ],
+	     LKEYS.KEYREL.PRED "_執行_v_rel" ],
     TRAITS native_token_list ].
 
-打算_v2 := v_vp_sequi_le &
-  [ STEM < "打算" >,
+爬_v_2 := v_np_le &
+  [ STEM < "爬" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_打算_v_rel" ],
+	     LKEYS.KEYREL.PRED "_爬_v_2_rel" ],
     TRAITS native_token_list ].
 
+組成_v := v_pp-pre_le &
+  [ STEM <"組成">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_組成_v_rel" ],
+    TRAITS native_token_list ].
+
+俾_v := x_bei_le &
+  [ STEM <"俾">,
+    TRAITS native_token_list ].
+
+張_v1 := x_ba_le &
+  [ STEM <"張">,
+    TRAITS native_token_list ].
+
+落_v_1 := v_weather_le &
+  [ STEM <"落">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_落_v_1_rel"],
+    TRAITS native_token_list ].
+
+覺得_v_1 := v_s_le &
+  [ STEM <"覺得">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_覺得_v_rel"],
+    TRAITS native_token_list ].
+
+覺得_v_2 := v_np-ap_le &
+  [ STEM <"覺得">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_覺得_v_rel" ],
+    TRAITS native_token_list ].
+
+認為_v := v_np_le &
+  [ STEM < "認為" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_認為_v_rel" ],
+    TRAITS native_token_list ].
+
+認為_v2 := v_s_le &
+  [ STEM <"認為">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_認為_v_rel" ],
+    TRAITS native_token_list ].
+
+相信_v_1 := v_s_le &
+  [ STEM <"相信">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_相信_v_rel" ],
+    TRAITS native_token_list ].
+
+
+話_v := v_s_le &
+  [ STEM < "話" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_話_v_rel" ],
+    TRAITS native_token_list ].
+
+放_v  := v_np-pp_le &
+  [ STEM < "放" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_放_v_rel" ],
+    TRAITS native_token_list ].
+
+入_v  := v_np-vp_aequi_le &
+  [ STEM < "入" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_入_v_rel" ],
+    TRAITS native_token_list ].
+
+打賭_v_1 := v_s_le &
+  [ STEM < "打賭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_打賭_v_1_rel" ],
+    TRAITS native_token_list ].
 
 ;;;Adjectives
 
+紅色_j := a_-_pred_le &
+  [ STEM <"紅色">,
+    SYNSEM.LKEYS.KEYREL.PRED "_紅色_a_rel",
+    TRAITS native_token_list ].
 
+無聊_j := a_-_pred_le &
+  [ STEM <"無聊">,
+    SYNSEM.LKEYS.KEYREL.PRED "_無聊_a_rel",
+    TRAITS native_token_list ].
 
-;;;Adverbs
+副_j := a_-_att_le &
+  [ STEM <"副">,
+    SYNSEM.LKEYS.KEYREL.PRED "_副_a_rel",
+    TRAITS native_token_list ].
+
+輕_j := a_-_att_le &
+  [ STEM <"輕">,
+    SYNSEM.LKEYS.KEYREL.PRED "_輕_a_rel",
+    TRAITS native_token_list ].
+
+耐_r1 := adv_-_vp-pre_le &
+  [ STEM <"耐">,
+	SYNSEM.LKEYS.KEYREL.PRED "_耐_a_rel",
+    TRAITS native_token_list ].
+	
+以前_r1 := adv_-_s-pre-no-rel_le &
+  [ STEM <"以前">,
+    TRAITS native_token_list ].
+
+輕輕_r := adv_-_vp-pre_le & 
+  [ STEM <"輕輕">,
+    SYNSEM.LKEYS.KEYREL.PRED "_輕輕_a_rel",
+    TRAITS native_token_list ].
+
+就_r := adv_-_vp-pre_le & 
+  [ STEM <"就">,
+	SYNSEM.LKEYS.KEYREL.PRED "_就_a_rel",
+    TRAITS native_token_list ].
+
+都_r := adv_-_vp-pre_le & 
+  [ STEM <"都">,
+    SYNSEM.LKEYS.KEYREL.PRED "_都_a_rel",
+    TRAITS native_token_list ].
+
+一直_r := adv_-_vp-pre_le & 
+  [ STEM <"一直">,
+    SYNSEM.LKEYS.KEYREL.PRED "_一直_a_rel",
+    TRAITS native_token_list ].
+
+反復_r := adv_-_vp-pre_le & 
+  [ STEM <"反復">,
+    SYNSEM.LKEYS.KEYREL.PRED "_反復_a_rel",
+    TRAITS native_token_list ].
+
+差唔多_r := adv_-_scop_le &
+  [ STEM <"差唔多">,
+    SYNSEM.LKEYS.KEYREL.PRED "_差唔多_a_rel",
+    TRAITS native_token_list ].
+
+好似_r := adv_-_vp-pre_le & 
+  [ STEM <"好似">,
+    SYNSEM.LKEYS.KEYREL.PRED "_好似_a_rel",
+    TRAITS native_token_list ].
+
+好似_r2 := adv_-_s-pre-no-rel_le & 
+  [ STEM <"好似">,
+    SYNSEM.LKEYS.KEYREL.PRED "_好似_a_rel",
+    TRAITS native_token_list ].
+
+一次_r1 := adv_-_s-pre-no-rel_le &
+  [ STEM <"一次">,
+    SYNSEM.LKEYS.KEYREL.PRED "_一次_a_rel",
+    TRAITS native_token_list ].
+
+喺_r := adv_-_vp-pre-norel_le & 
+  [ STEM <"喺">,
+    TRAITS native_token_list ].
+
+喺度_r := adv_-_vp-pre-norel_le & 
+  [ STEM <"喺度">,
+    TRAITS native_token_list ].
+
+今日_r := adv_-_scop_le &
+  [ STEM <"今日">,
+    SYNSEM.LKEYS.KEYREL.PRED "_今日_a_rel",
+    TRAITS native_token_list ].
+
+尋日_r := adv_-_scop_le &
+  [ STEM <"尋日">,
+    SYNSEM.LKEYS.KEYREL.PRED "_尋日_a_rel",
+    TRAITS native_token_list ].
+
+琴日_r := adv_-_scop_le &
+  [ STEM <"琴日">,
+    SYNSEM.LKEYS.KEYREL.PRED "_琴日_a_rel",
+    TRAITS native_token_list ].
+
+大概_r := adv_-_scop_le &
+  [ STEM <"大概">,
+    SYNSEM.LKEYS.KEYREL.PRED "_大概_a_rel",
+    TRAITS native_token_list ].
+	
+明顯_r := adv_-_scop_le &
+  [ STEM < "明顯" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_明顯_a_rel",
+    TRAITS native_token_list ].
 
 都_r := adv_-_scop-prehd_le &
   [ STEM <"都">,
     SYNSEM.LKEYS.KEYREL.PRED "_都_a_rel",
     TRAITS native_token_list ].
 
+依家_r := adv_-_scop_le &
+  [ STEM <"依家">,
+    SYNSEM.LKEYS.KEYREL.PRED "_依家_a_rel",
+    TRAITS native_token_list ].
+
+可能_r := adv_-_scop_le &
+  [ STEM <"可能">,
+    SYNSEM.LKEYS.KEYREL.PRED "_可能_a_rel",
+    TRAITS native_token_list ].
+
+到底_r := adv_-_scop_le &
+  [ STEM <"到底">,
+    SYNSEM.LKEYS.KEYREL.PRED "_到底_a_rel",
+    TRAITS native_token_list ].
+
+好_r := adv_-_deg-pre_le &
+  [ STEM < "好" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_好_a_rel",
+    TRAITS native_token_list ].
+
+最_r := adv_-_deg-pre_le &
+  [ STEM < "最" >,
+	SYNSEM.LKEYS.KEYREL.PRED "_最_a_rel",
+    TRAITS native_token_list ].
+	
+比較_r := adv_-_deg-pre_le &
+  [ STEM < "比較" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_比較_a_rel",
+    TRAITS native_token_list ].
+
+噉_r := x_-_suf-adv_le &
+[ STEM < "噉" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_噉_a_rel",
+    TRAITS native_token_list ].
+
+得_r := x_-_pre-adv_le &
+[ STEM < "得" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_得_a_rel",
+    TRAITS native_token_list ].
+
+
+
+
 
 ;;Classifiers
 
+個_cl := c_-_le &
+  [ STEM < "個" >,
+    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    TRAITS native_token_list ].
+
+枝_cl := c_-_le &
+  [ STEM < "枝" >,
+    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    TRAITS native_token_list ].
 
 隻_cl := c_-_le &
   [ STEM < "隻" >,
-    SYNSEM.LKEYS.KEYREL.PRED 只_x_rel,
+    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    TRAITS native_token_list ].
+
+匹_cl := c_-_le &
+  [ STEM < "匹" >,
+    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    TRAITS native_token_list ].
+
+件_cl := c_-_le &
+  [ STEM < "件" >,
+    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    TRAITS native_token_list ].
+
+條_cl := c_-_le &
+  [ stem <"條">,
+    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    TRAITS native_token_list ].
+
+台_cl := c_-_le & 
+  [ stem <"台">,
+    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    TRAITS native_token_list ].
+
+;; 啲:= classifier-quant-lex &
+;;  [ STEM < "啲" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED啲_x_rel,
+;;   TRAITS native_token_list ].
+
+
+;;; Auxiliaries
+
+會_v :=  v_vp_aux_le &
+  [ STEM < "會" >,
+	SYNSEM.LKEYS.KEYREL.PRED "會_v_aux_rel",
+    TRAITS native_token_list ].
+	
+要_v :=  v_vp_aux_le &
+  [ STEM < "要" >,
+	SYNSEM.LKEYS.KEYREL.PRED "要_v_aux_rel",
+    TRAITS native_token_list ].
+
+可以_v := v_vp_aux_le &
+  [ STEM < "可以" >,
+    SYNSEM.LKEYS.KEYREL.PRED "可以_v_aux_rel",
     TRAITS native_token_list ].
 
 
-;;;Numbers
-
-一_j := a_-_num_le &
-  [ STEM < "一" >, 
-    SYNSEM.LKEYS.KEYREL.CARG "1",
+已經_r := adv_-_vp-pre_le & 
+  [ STEM < "已經" >,
+    SYNSEM.LKEYS.KEYREL.PRED "已經_a_rel",
     TRAITS native_token_list ].
 
+唔好_v := adv_-_imp_le &
+[ STEM <"唔好">,
+  SYNSEM.LKEYS.KEYREL.PRED "neg_x_rel",
+    TRAITS native_token_list ].
 
+係_v := v_np_cop_le &
+  [ STEM < "係" >,
+    SYNSEM.LKEYS.KEYREL.PRED "係_v_cop_rel",
+    TRAITS native_token_list ].
+
+係_v2 := v_inv-shide_le &
+  [ STEM < "係" >,
+    SYNSEM.LKEYS.KEYREL.PRED "係_v_cop_rel",
+    TRAITS native_token_list ].
+
+係_v3 := v_shide_le &
+  [ STEM < "係" >,
+    SYNSEM.LKEYS.KEYREL.PRED "是_v_cop_rel",
+    TRAITS native_token_list ].
 
 
 ;;; Particles
-
-
-咗_pfv := pfv-marker &
-  [ STEM <"咗">,
-    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le ] >,
-    TRAITS native_token_list ].
-
-嚟_crs := x_-_crs_le & 
-  [ STEM <"嚟">,
-    SYNSEM.LKEYS.KEYREL.PRED "_嚟_a_rel",
-    TRAITS native_token_list ].
-
-嘅_crs := x_-_crs_le & 
-  [ STEM <"嘅">,
-    SYNSEM.LKEYS.KEYREL.PRED "_嘅_a_rel",
-    TRAITS native_token_list ].
-
-呀_crs := x_-_crs_le & 
-  [ STEM <"呀">,
-    SYNSEM.LKEYS.KEYREL.PRED "_呀_a_rel",
-    TRAITS native_token_list ].
-
-嘅_ASSOC_d := x_-_poss-de_le &
- [ STEM < "嘅" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_嘅_n_demons_rel",
-    TRAITS native_token_list ].
-
-嘅_nominalizer_n := x_-_nom-de_le &
-  [ STEM < "嘅" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_嘅_n_nom_rel",
-    TRAITS native_token_list ].
 
 呢_d := d_-_d-prox_le &
   [ STEM < "呢" >,
@@ -242,10 +789,10 @@ question-marker := punctuation &
 	     LKEYS.KEYREL.PRED "_嗰_n_demons_rel" ],
     TRAITS native_token_list ].
 
-呢些_d := d_-_d-prox_le &
-  [ STEM < "呢些" >,
+呢啲_d := d_-_d-prox_le &
+  [ STEM < "呢啲" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "_呢些_n_demons_rel" ],
+	     LKEYS.KEYREL.PRED "_呢啲_n_demons_rel" ],
     TRAITS native_token_list ].
 
 嗰啲_d := d_-_d-dist_le &
@@ -254,27 +801,4356 @@ question-marker := punctuation &
 	     LKEYS.KEYREL.PRED "_嗰啲_n_demons_rel" ],
     TRAITS native_token_list ].
 
-
-
-
-
-;;; Determiners
-
 每_d := d_-_le &
   [ STEM < "每" >,
 	SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
     TRAITS native_token_list ].
+	
+所有_d := d_-_le &
+  [ STEM < "所有" >,
+    SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
+    TRAITS native_token_list ].
+
+某_d := d_-_le &
+  [ STEM < "某" >,
+    SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
+    TRAITS native_token_list ].
+	
+啲_d := d_-_le &
+  [ STEM < "啲" >,
+    SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
+    TRAITS native_token_list ].
+
+一啲_d := d_-_le &
+  [ STEM < "一啲" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED "some_q_rel" ],
+    TRAITS native_token_list ].
+
+一種_d := d_-_le &
+  [ STEM < "一種" >,
+    SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
+    TRAITS native_token_list ].
+
+有啲_d := d_-_le &
+  [ STEM < "有啲" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED "some_q_rel" ],
+    TRAITS native_token_list ].
+
+邊_d := d_-_le &
+  [ STEM < "邊" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
+	     LKEYS.KEYREL.PRED "which_q_rel" ],
+    TRAITS native_token_list ].
+
+邊啲_d := d_-_le &
+  [ STEM < "邊啲" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED "which_q_rel" ],
+    TRAITS native_token_list ].
+
+乜嘢_d := d_-_le &
+  [ STEM < "乜嘢" >,
+    SYNSEM.LKEYS.KEYREL.PRED "which_q_rel",
+TRAITS native_token_list ].
+
+嘅_ASSOC_d := x_-_poss-de_le &
+ [ STEM < "嘅" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_嘅_n_demons_rel",
+    TRAITS native_token_list ].
+
+; 嘅_NOM_nj := nom-adj-lex &
+;  [ STEM < "v" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_de_a_rel",
+;    TRAITS native_token_list ].
+
+嘅_nominalizer_n := x_-_nom-de_le &
+  [ STEM < "嘅" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_嘅_n_nom_rel",
+    TRAITS native_token_list ].
+
+所有_partitive_d := d_-_prt_le &
+  [ STEM < "所有" >,
+    SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
+    TRAITS native_token_list ].
+
+;; SSH 2014-09-11: 不 cannot be co-occur with apsectual markers. (*我
+;; 不 去 過) 我 不 去 了 is possible, but 了 in this sentence is
+;; the sentence-final le.
+
+唔_r := adv_-_neg_le &
+  [ STEM < "唔" >,
+    SYNSEM [ LKEYS.KEYREL.PRED "_唔_r_rel",
+	     LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT non-aspect ] > ],
+    TRAITS native_token_list ].
+
+又_c := conj_-_le &
+  [ STEM < "又" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_又_coord_rel",
+    CFORM "2",
+    TRAITS native_token_list ].
+
+由_p := p_-_nomod_le &
+  [ STEM < "由" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_由_p_rel",
+    TRAITS native_token_list ].
+
+用_p := p_-_mod_le &
+  [ STEM < "用" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_用_p_rel",
+    TRAITS native_token_list ].
+
+;其中_p := p_-_nomod_le &
+;  [ STEM < "其中" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_qi2zhong1_p_rel",
+;    TRAITS native_token_list ].
+
+為_p := p_-_nomod_le &
+  [ STEM < "為" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_為_p_rel",
+    TRAITS native_token_list ].
+
+由_p  := p_-_v-pre_le &
+  [ STEM < "由" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_由_p_rel",
+    TRAITS native_token_list ].
+
+喺_loc := p_loc_zai_le & 
+  [ STEM < "喺" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le,
+			 LKEYS.KEYREL.PRED "_喺_p_rel" ],
+    TRAITS native_token_list ].
+
+到_loc := p_-_v_le &
+ [ STEM < "到" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_到_p_rel",
+    TRAITS native_token_list ].
+
+前_p := p_loc_post_le & 
+  [ STEM < "前" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_前_p_rel",
+    TRAITS native_token_list ].
+
+下_p  := p_loc_post_le & 
+  [ STEM < "下" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_下_p_rel",
+    TRAITS native_token_list ].
+
+;; SSH/ZZF 2014-11-26
+;;邊_lm := basic-loc-mark-lex & 
+邊_lm := p_loc_post_le &
+  [ STEM < "邊" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_邊_p_rel",
+    TRAITS native_token_list ].
 
 
-;;; Conjunctions
+;;Conjunctions
+
+comma_c := conj_-_le &
+  [ STEM < "、" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_、_coord_rel",
+    TRAITS native_token_list ].
+
+同_c := conj_-_le &
+  [ STEM < "同" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_同_coord_rel",
+    TRAITS native_token_list ].
+
+仲有_c := conj_-_le &
+  [ STEM < "仲有" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_仲有_coord_rel",
+    CFORM "1",
+    TRAITS native_token_list ].
+
+而且_c := conj_-_le &
+  [ STEM < "而且" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_而且_coord_rel",
+    CFORM "1",
+    TRAITS native_token_list ].
+
+但係_c := conj_-_le &
+  [ STEM < "但係" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_但係_coord_rel",
+    CFORM "1",
+    TRAITS native_token_list ].
+
+因為_sc := conj_-_sub_le &
+  [ STEM < "因為" >,
+     SYNSEM.LKEYS.KEYREL.PRED "_因為_coord_rel",
+    TRAITS native_token_list ].
+
+假如_sc := conj_-_sub_le &
+  [ STEM < "假如" >,
+     SYNSEM.LKEYS.KEYREL.PRED "_假如_coord_rel",
+    TRAITS native_token_list ].
+
+如果_sc := conj_-_sub_le &
+  [ STEM < "如果" >,
+     SYNSEM.LKEYS.KEYREL.PRED "_如果_coord_rel",
+    TRAITS native_token_list ].
+
+然後_sc := conj_-_sub_le &
+  [ STEM < "然後" >,
+     SYNSEM.LKEYS.KEYREL.PRED "_然後_coord_rel",
+    TRAITS native_token_list ].
 
 
 
 ;;; Additions
 
+對_p := p_-_nomod_le &
+  [ STEM < "對" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_對_p_rel",
+    TRAITS native_token_list ].
+
+俾_v_1 := v_np-np_le &
+  [ STEM < "俾" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_俾_v_1_rel" ],
+    TRAITS native_token_list ].
+
+俾_v_2 := v_np_light_le &
+  [ STEM < "俾" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_俾_v_2_rel" ],
+    TRAITS native_token_list ].
+
+點_n := n_-_tm-bound_le &
+  [ STEM < "點" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_點_n_rel",
+    TRAITS native_token_list ].
+
+分_n := n_-_tm-bound_le &
+  [ STEM < "分" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_分_n_rel",
+    TRAITS native_token_list ].
+
+煙草_n := n_-_m_le &
+  [ STEM < "煙草" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_煙草_n_rel",
+    TRAITS native_token_list ].
+
+相_n := n_-_c_le &
+  [ STEM < "相" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_相_n_rel",
+    TRAITS native_token_list ].
+
+; Should be a preposition (instrumental)
+用_v := v_np_le &
+  [ STEM < "用" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_用_v_rel" ],
+    TRAITS native_token_list ].
+
+;;Note, can also take an S complement
+
+知道_v := v_np_le &
+  [ STEM < "知道" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_知道_v_rel" ],
+    TRAITS native_token_list ].
+
+知道_v2 := v_s_le &
+  [ STEM < "知道" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_知道_v_rel" ],
+    TRAITS native_token_list ].
 
 
-;;; Interesting features here
+窗_n := n_-_c_le &
+  [ STEM < "窗" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_窗_n_rel",
+    TRAITS native_token_list ].
+
+天_n := n_-_tm_le &
+  [ STEM < "天" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_天_n_rel",
+    TRAITS native_token_list ].
 
 
+;;Interesting features here
+
+多_r :=  adv_-_deg-pre_le &
+  [ STEM < "多" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_多_n_rel",
+    TRAITS native_token_list ].
+
+張_n := n_-_s_pn_le &
+  [ STEM < "張" >,
+    SYNSEM.LKEYS.KEYREL.CARG "_zhang1_n_rel",
+    TRAITS native_token_list ].
+
+似_v := v_np_le &
+  [ STEM < "似" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_似_v_rel" ],
+    TRAITS native_token_list ].
+
+六月_n := n_-_tm_le &
+  [ STEM < "六月" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_六月_n_rel",
+    TRAITS native_token_list ].
+
+分鐘_n := n_-_tm-bound_le &
+  [ STEM < "分鐘" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_分鐘_n_rel",
+    TRAITS native_token_list ].
+
+到_v := v_np_le &
+  [ STEM < "到" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_到_v_rel" ],
+    TRAITS native_token_list ].
+
+號碼_n := n_-_c_le &
+  [ STEM < "號碼" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_號碼_n_rel",
+    TRAITS native_token_list ].
+
+向_p := p_-_nomod_le &
+  [ STEM < "向" >,
+	SYNSEM.LKEYS.KEYREL.PRED "_向_p_rel",
+    TRAITS native_token_list ].
+
+俾_p := p_-_nomod_le &
+  [ STEM < "俾" >,
+	SYNSEM.LKEYS.KEYREL.PRED "_俾_p_rel",
+    TRAITS native_token_list ].
+
+困擾_v := v_np_le &
+  [ STEM < "困擾" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_困擾_v_rel" ],
+    TRAITS native_token_list ].
+
+開心_j := a_-_pred_le &
+  [ STEM < "開心" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_開心_a_rel",
+    TRAITS native_token_list ].
+
+坐_v_2 := v_np_le &
+  [ STEM < "坐" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_坐_v_2_rel" ],
+    TRAITS native_token_list ].
+
+坐_v_3 := v_np-vp_aequi_le &
+  [ STEM < "坐" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_坐_v_3_rel",
+    TRAITS native_token_list ].
+
+乾淨_j := a_-_pred_le &
+  [ STEM < "乾淨" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_乾淨_a_rel",
+    TRAITS native_token_list ].
+
+好_j := a_-_pred_le &
+  [ STEM < "好" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_好_a_rel",
+    TRAITS native_token_list ].
+
+多_j := a_-_pred_le &
+  [ STEM < "多" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_多_a_rel",
+    TRAITS native_token_list ].
+
+高興_j := a_-_pred_le &
+  [ STEM < "高興" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_高興_a_rel",
+    TRAITS native_token_list ].
+
+高_j := a_-_att_le &
+  [ STEM < "高" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_高_a_rel",
+    TRAITS native_token_list ].
+
+煙_n := n_-_c_le &
+  [ STEM < "煙" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_煙_n_rel",
+    TRAITS native_token_list ].
+
+遞_v := v_np_le &
+  [ STEM < "遞" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_遞_v_rel" ],
+    TRAITS native_token_list ].
+
+遞_v2 := v_np-vp_light_le &
+  [ STEM < "遞" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_遞_v_rel",
+    TRAITS native_token_list ].
+
+陳_n := n_-_s_pn_le &
+  [ STEM < "陳" >,
+    SYNSEM.LKEYS.KEYREL.CARG "_chen2_n_rel",
+    TRAITS native_token_list ].
+
+雨_n := n_-_m_le &
+  [ STEM < "雨" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_雨_n_rel",
+    TRAITS native_token_list ].
+
+抬_n := n_-_c_le &
+  [ STEM < "抬" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_抬_n_rel",
+    TRAITS native_token_list ].
+
+車_n := n_-_c_le &
+  [ STEM < "車" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_車_n_rel",
+    TRAITS native_token_list ].
+
+想_v := v_np_le &
+  [ STEM < "想" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_想_v_rel" ],
+    TRAITS native_token_list ].
+
+想_v_v2 := v_vp_sequi_le &
+  [ STEM < "想" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_想_v_rel",
+    TRAITS native_token_list ].
+
+試_v_1 := v_vp_sequi_le &
+  [ STEM < "試" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_試_v_rel" ],
+    TRAITS native_token_list ].
+
+搵_v := v_np_le &
+  [ STEM < "搵" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_搵_v_rel" ],
+    TRAITS native_token_list ].
+
+打算_v := v_np_le &
+  [ STEM < "打算" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_打算_v_rel" ],
+    TRAITS native_token_list ].
+
+打算_v2 := v_vp_sequi_le &
+  [ STEM < "打算" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_打算_v_rel" ],
+    TRAITS native_token_list ].
+
+;打算_v3 := v_np-vp_oequi_le &
+;  [ STEM < "打算" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_da3suan0_v_rel",
+;    TRAITS native_token_list ].
+
+打開_v := v_np_le &
+  [ STEM < "打開" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_打開_v_rel" ],
+    TRAITS native_token_list ].
+
+打擾_v := v_np_le &
+  [ STEM < "打擾" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_打擾_v_rel" ],
+    TRAITS native_token_list ].
+
+打賭_v_2 := v_-_le &
+  [ STEM < "打賭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_打賭_v_2_rel" ],
+    TRAITS native_token_list ].
+
+打擾_v3 := v_np_cs_le &
+  [ STEM < "打擾" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_打擾_v_rel" ],
+    TRAITS native_token_list ].
+
+擠_v_1 := v_np_le &
+  [ STEM < "擠" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_擠_v_1_rel" ],
+    TRAITS native_token_list ].
+
+迫_v_2 := v_np-vp_oequi_le &
+  [ STEM < "迫" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_迫_v_2_rel" ],
+    TRAITS native_token_list ].
+
+擦_v := v_np_le &
+  [ STEM < "擦" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_擦_v_rel" ],
+    TRAITS native_token_list ].
+
+擦_v2 := v_bap-ap_le &
+  [ STEM < "擦" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_擦_v_rel" ],
+    TRAITS native_token_list ].
+
+方法_n := n_-_c_le &
+  [ STEM < "方法" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_方法_n_rel",
+    TRAITS native_token_list ].
+
+明顯_r := adv_-_scop_le &
+  [ STEM < "明顯" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_明顯_a_rel",
+    TRAITS native_token_list ].
+
+明顯_j := a_-_pred_le &
+  [ STEM < "明顯" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_明顯_a_rel",
+    TRAITS native_token_list ].
+
+;; SSH/ZZF 2014-11-26
+;; 明顯_j2 := s-comp-adj-lex &
+;;  [ STEM < "明顯" >,
+;;    SYNSEM.LKEYS.KEYREL.PRED "_xian3ran2_a_rel",
+;;    TRAITS native_token_list ].
+
+明顯_j := a_-_pred_le &
+  [ STEM < "明顯" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_明顯_a_rel",
+    TRAITS native_token_list ].
+
+;; SSH/ZZF 2014-11-26
+;;明顯_j2 := s-comp-adj-lex &
+;;  [ STEM < "明顯" >,
+;;    SYNSEM.LKEYS.KEYREL.PRED "_ming2xian3_a_rel",
+;;    TRAITS native_token_list ].
+
+星期二_n := n_-_tm_le &
+  [ STEM < "星期二" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_星期二_n_rel",
+    TRAITS native_token_list ].
+
+朝頭早_n := n_-_tm_le &
+  [ STEM < "朝頭早" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_朝頭早_n_rel",
+    TRAITS native_token_list ].
+
+時_n := n_-_tm_le &
+  [ STEM < "時" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_時_n_rel",
+    TRAITS native_token_list ].
+
+時候_n := n_-_tm_le &
+  [ STEM < "時候" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_時候_n_rel",
+    TRAITS native_token_list ].
+
+有_v := v_np_you_le &
+  [ STEM < "有" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_有_v_rel",
+    TRAITS native_token_list ].
+
+冇_r := adv_-_neg_le &
+  [ STEM < "冇" >,
+    SYNSEM [ LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT imperfective ] >,
+	     LKEYS.KEYREL.PRED "_冇_r_rel" ],
+    TRAITS native_token_list ].
+
+冇_polar_r := adv_-_polar_le &
+  [ STEM < "冇" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_冇_r_rel",
+    TRAITS native_token_list ].
+
+要_v2 := v_np_le &
+  [ STEM < "要" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_要_v_rel" ],
+    TRAITS native_token_list ].
+
+老_j := a_-_att_le &
+  [ STEM < "老" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_老_a_1_rel",
+    TRAITS native_token_list ].
+
+過時_j_1 := a_-_att_le &
+  [ STEM < "過時" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_過時_a_1_rel",
+    TRAITS native_token_list ].
+
+讓_v := v_np-vp_oequi_le &
+  [ STEM < "讓" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_讓_v_rel",
+    TRAITS native_token_list ].
+
+推薦_v1 := v_np-vp_oequi_le &
+  [ STEM < "推薦" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_推薦_v_rel",
+    TRAITS native_token_list ].
+
+推薦_v2 := v_s_le &
+  [ STEM < "推薦" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_推薦_v_rel" ],
+    TRAITS native_token_list ].
+
+請_v1 := v_np-vp_oequi_le &
+  [ STEM < "請" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_請_v_rel" ],
+    TRAITS native_token_list ].
+
+請_v2 := v_s_le &
+  [ STEM < "請" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_請_v_rel" ],
+    TRAITS native_token_list ].
+
+試_v_1 := v_-_le &
+  [ STEM < "試" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_試_v_1_rel" ],
+    TRAITS native_token_list ].
+
+話_n := n_-_le &
+  [ STEM < "話" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_話_n_rel",
+    TRAITS native_token_list ].
+
+自己_n := n_-_le &
+  [ STEM < "自己" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_自己_n_rel",
+    TRAITS native_token_list ].
+
+自己_a := n_-_pr-refl_le &
+  [ STEM < "自己" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_自己_n_rel",
+    TRAITS native_token_list ].
+
+花_v_1 := v_np_le &
+  [ STEM < "花" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_花_v_1_rel" ],
+    TRAITS native_token_list ].
+
+花_v_2 := v_np-vp_aequi_le &
+  [ STEM < "花" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_花_v_2_rel" ],
+    TRAITS native_token_list ].
+
+花園_n := n_-_c_le &
+  [ STEM < "花園" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_花園_n_rel",
+    TRAITS native_token_list ].
+
+山_n := n_-_c_le &
+  [ STEM < "山" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_山_n_rel",
+    TRAITS native_token_list ].
+
+;會_v := v_np_le &
+;  [ STEM < "會" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_hui4_v_rel",
+;    TRAITS native_token_list ].
+
+保証_v := v_np_le &
+  [ STEM < "保証" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_保証_v_rel" ],
+    TRAITS native_token_list ].
+
+保証_v2 := v_pp-s_le &
+  [ STEM < "保証" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_保証_v_rel" ],
+    TRAITS native_token_list ].
+
+
+一_j := a_-_num_le &
+  [ STEM < "一" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "1",
+    TRAITS native_token_list ].
+
+兩_j := a_-_num_le &
+  [ STEM < "兩" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "2",
+    TRAITS native_token_list ].
+
+三_j := a_-_num_le &
+  [ STEM < "三" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "3",
+    TRAITS native_token_list ].
+
+四_j := a_-_num_le &
+  [ STEM < "四" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "4",
+    TRAITS native_token_list ].
+
+五_j := a_-_num_le &
+  [ STEM < "五" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "5",
+    TRAITS native_token_list ].
+
+六_j := a_-_num_le &
+  [ STEM < "六" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "6",
+    TRAITS native_token_list ].
+
+七_j := a_-_num_le &
+  [ STEM < "七" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "7",
+    TRAITS native_token_list ].
+
+八_j := a_-_num_le &
+  [ STEM < "八" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "8",
+    TRAITS native_token_list ].
+ 
+九_j := a_-_num_le &
+  [ STEM < "九" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "9",
+    TRAITS native_token_list ]. 
+
+十_j := a_-_num_le &
+  [ STEM < "十" >, 
+    SYNSEM.LKEYS.KEYREL.CARG "10",
+    TRAITS native_token_list ].
+
+二十_j := a_-_num_le &
+  [ STEM < "二十" >,
+    SYNSEM.LKEYS.KEYREL.CARG "20",
+    TRAITS native_token_list ].
+
+3_j := a_-_num_le &
+  [ STEM < "3" >,
+    SYNSEM.LKEYS.KEYREL.CARG "3",
+    TRAITS native_token_list ].
+
+10_j := a_-_num_le &
+  [ STEM < "10" >,
+    SYNSEM.LKEYS.KEYREL.CARG "10",
+    TRAITS native_token_list ].
+
+23_j := a_-_num_le &
+  [ STEM < "23" >,
+    SYNSEM.LKEYS.KEYREL.CARG "23",
+    TRAITS native_token_list ].
+
+220_j := a_-_num_le &
+  [ STEM < "220" >,
+    SYNSEM.LKEYS.KEYREL.CARG "220",
+    TRAITS native_token_list ].
+
+
+; 二十_j := a_-_num_le &
+;   [ STEM < "二十" >,
+;     SYNSEM.LKEYS.KEYREL.PRED "_er4shi2_a_rel",
+;    TRAITS native_token_list ].
+
+; 10_j := a_-_num_le &
+;   [ STEM < "10" >,
+;     SYNSEM.LKEYS.KEYREL.PRED "_10_a_rel",
+;    TRAITS native_token_list ].
+
+; 76_j := a_-_num_le &
+;   [ STEM <"76">,
+;    TRAITS native_token_list ].
+
+; 220_j := a_-_num_le &
+;   [ STEM < "220" >,
+;     SYNSEM.LKEYS.KEYREL.PRED "_220_a_rel",
+;    TRAITS native_token_list ].
+
+; 23_j := a_-_num_le &
+;   [ STEM < "23" >,
+;     SYNSEM.LKEYS.KEYREL.PRED "_23_a_rel",
+;    TRAITS native_token_list ].
+
+; 3_j := a_-_num_le &
+;   [ STEM < "3" >,
+;     SYNSEM.LKEYS.KEYREL.PRED "_3_a_rel",
+;    TRAITS native_token_list ].
+
+
+三號_n := n_-_tm_le &
+  [ STEM < "三號" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_三號_n_rel",
+    TRAITS native_token_list ].
+
+嘢_n := n_-_le &
+  [ STEM < "嘢" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_嘢_n_rel",
+    TRAITS native_token_list ].
+
+事_n := n_-_le &
+  [ STEM < "事" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_事_n_rel",
+    TRAITS native_token_list ].
+
+係唔係_r := adv_-_tq_le &
+  [ STEM <"係", "唔", "係">,
+    SYNSEM.LKEYS.KEYREL.PRED "_係唔係_a_rel",
+    TRAITS native_token_list ].
+
+叫_v_2 := v_np-vp_oequi_le &
+  [ STEM < "叫" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_叫_v_2_rel" ],
+    TRAITS native_token_list ].
+
+答應_v_1 := v_np-vp_aequi_le &
+  [ STEM < "答應" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_答應_v_1_rel" ],
+    TRAITS native_token_list ].
+
+睇起嚟_r_1 := adv_-_s-pre-rel_le & 
+  [ STEM < "睇起嚟" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_睇起嚟_a_1_rel",
+    TRAITS native_token_list ].
+
+;希望_v_1 := v_np-vp_oequi_le &
+;  [ STEM < "希望" >,
+;    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+;             LKEYS.KEYREL.PRED "_希望_v_1_rel" ],
+;    TRAITS native_token_list ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; Lexical Items taken from SINICA
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; Intransitive Verbs
+
+一決勝負_v_1 := v_-_le &
+  [ STEM < "一決勝負" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_一決勝負_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上_v_1 := v_-_le &
+  [ STEM < "上" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+上升_v_1 := v_-_le &
+  [ STEM < "上升" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上升_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上去_v_1 := v_-_le &
+  [ STEM < "上去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上台_v_1 := v_-_le &
+  [ STEM < "上台" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上台_v_1_rel" ],
+TRAITS native_token_list ].
+
+番學_v_1 := v_-_le &
+  [ STEM < "番學" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_番學_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上山_v_1 := v_-_le &
+  [ STEM < "上山" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上山_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上岸_v_1 := v_-_le &
+  [ STEM < "上岸" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上岸_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上床_v_1 := v_-_le &
+  [ STEM < "上床" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上床_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上演_v_1 := v_-_le &
+  [ STEM < "上演" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上演_v_1_rel" ],
+    TRAITS native_token_list ].
+
+番工_v_1 := v_-_le &
+  [ STEM < "番工">,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_番工_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上網_v_1 := v_-_le &
+  [ STEM < "上網" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上網_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上堂_v_1 := v_-_le &
+  [ STEM < "上堂" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上堂_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上車_v_1 := v_-_le &
+  [ STEM < "上車" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上車_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上門_v_1 := v_-_le &
+  [ STEM < "上門" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上門_v_1_rel" ],
+    TRAITS native_token_list ].
+
+落單_v_1 := v_-_le &
+  [ STEM < "落單" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_落單_v_1_rel" ],
+    TRAITS native_token_list ].
+
+落去_v_1 := v_-_le &
+  [ STEM < "落去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_落去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+落台_v_1 := v_-_le &
+  [ STEM < "落台" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_落台_v_1_rel" ],
+    TRAITS native_token_list ].
+
+放學_v_1 := v_-_le &
+  [ STEM < "放學" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_放學_v_1_rel" ],
+    TRAITS native_token_list ].
+
+下定決心_v_1 := v_-_le &
+  [ STEM < "下定決心" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_下定決心_v_1_rel" ],
+    TRAITS native_token_list ].
+
+落山_v_1 := v_-_le &
+  [ STEM < "落山" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_落山_v_1_rel" ],
+    TRAITS native_token_list ].
+
+落手_v_1 := v_-_le &
+  [ STEM < "落手" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_落手_v_1_rel" ],
+    TRAITS native_token_list ].
+
+捉棋_v_1 := v_-_le &
+  [ STEM < "捉棋" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_捉棋_v_1_rel" ],
+    TRAITS native_token_list ].
+
+沉_v_1 := v_-_le &
+  [ STEM < "沉" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_沉_v_1_rel" ],
+    TRAITS native_token_list ].
+
+放工_v_1 := v_-_le &
+  [ STEM < "放工" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_放工_v_1_rel" ],
+    TRAITS native_token_list ].
+
+落田_v_1 := v_-_le &
+  [ STEM < "落田" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_落田_v_1_rel" ],
+    TRAITS native_token_list ].
+
+落筆_v_1 := v_-_le &
+  [ STEM < "落筆" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_落筆_v_1_rel" ],
+    TRAITS native_token_list ].
+
+落車_v_1 := v_-_le &
+  [ STEM < "落車" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_落車_v_1_rel" ],
+    TRAITS native_token_list ].
+
+落雨_v_1 := v_-_le &
+  [ STEM < "落雨" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_落雨_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+不足為外人道_v_1 := v_-_le &
+  [ STEM < "不足為外人道" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_不足為外人道_v_1_rel" ],
+    TRAITS native_token_list ].
+
+東奔西跑_v_1 := v_-_le &
+  [ STEM < "東奔西跑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_東奔西跑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+唞涼_v_1 := v_-_le &
+  [ STEM < "唞涼" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_唞涼_v_1_rel" ],
+    TRAITS native_token_list ].
+
+爭權奪利_v_1 := v_-_le &
+  [ STEM < "爭權奪利" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_爭權奪利_v_1_rel" ],
+    TRAITS native_token_list ].
+
+爭風呷醋_v_1 := v_-_le &
+  [ STEM < "爭風呷醋" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_爭風呷醋_v_1_rel" ],
+    TRAITS native_token_list ].
+
+互動_v_1 := v_-_le &
+  [ STEM < "互動" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_互動_v_1_rel" ],
+    TRAITS native_token_list ].
+
+互助_v_1 := v_-_le &
+  [ STEM < "互助" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_互助_v_1_rel" ],
+    TRAITS native_token_list ].
+
+交屋_v_1 := v_-_le &
+  [ STEM < "交屋" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_交屋_v_1_rel" ],
+    TRAITS native_token_list ].
+
+交往_v_1 := v_-_le &
+  [ STEM < "交往" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_交往_v_1_rel" ],
+    TRAITS native_token_list ].
+
+交手_v_1 := v_-_le &
+  [ STEM < "交手" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_交手_v_1_rel" ],
+    TRAITS native_token_list ].
+
+交易_v_1 := v_-_le &
+  [ STEM < "交易" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_交易_v_1_rel" ],
+    TRAITS native_token_list ].
+
+識朋友_v_1 := v_-_le &
+  [ STEM < "識朋友" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_識朋友_v_1_rel" ],
+    TRAITS native_token_list ].
+
+交談_v_1 := v_-_le &
+  [ STEM < "交談" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_交談_v_1_rel" ],
+    TRAITS native_token_list ].
+
+交配_v_1 := v_-_le &
+  [ STEM < "交配" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_交配_v_1_rel" ],
+    TRAITS native_token_list ].
+
+俾錢_v_1 := v_-_le &
+  [ STEM < "俾錢" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_俾錢_v_1_rel" ],
+    TRAITS native_token_list ].
+
+以德服人_v_1 := v_-_le &
+  [ STEM < "以德服人" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_以德服人_v_1_rel" ],
+    TRAITS native_token_list ].
+
+任教_v_1 := v_-_le &
+  [ STEM < "任教" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_任教_v_1_rel" ],
+    TRAITS native_token_list ].
+
+放假_v_1 := v_-_le &
+  [ STEM < "放假" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_放假_v_1_rel" ],
+    TRAITS native_token_list ].
+
+休息_v_1 := v_-_le &
+  [ STEM < "休息" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_休息_v_1_rel" ],
+    TRAITS native_token_list ].
+
+休閑_v_1 := v_-_le &
+  [ STEM < "休閑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_休閑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+會合_v_1 := v_-_le &
+  [ STEM < "會合" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_會合_v_1_rel" ],
+    TRAITS native_token_list ].
+
+會談_v_1 := v_-_le &
+  [ STEM < "會談" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_會談_v_1_rel" ],
+    TRAITS native_token_list ].
+
+見面_v_1 := v_-_le &
+  [ STEM < "見面" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_見面_v_1_rel" ],
+    TRAITS native_token_list ].
+
+伴奏_v_1 := v_-_le &
+  [ STEM < "伴奏" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_伴奏_v_1_rel" ],
+    TRAITS native_token_list ].
+
+伸手_v_1 := v_-_le &
+  [ STEM < "伸手" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_伸手_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+Dup低頭_v_1 := v_-_le &
+  [ STEM < "dup 低頭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_dup 低頭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+住宿_v_1 := v_-_le &
+  [ STEM < "住宿" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_住宿_v_1_rel" ],
+    TRAITS native_token_list ].
+
+住院_v_1 := v_-_le &
+  [ STEM < "住院" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_住院_v_1_rel" ],
+    TRAITS native_token_list ].
+
+作客_v_1 := v_-_le &
+  [ STEM < "作客" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_作客_v_1_rel" ],
+    TRAITS native_token_list ].
+
+作弊_v_1 := v_-_le &
+  [ STEM < "作弊" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_作弊_v_1_rel" ],
+    TRAITS native_token_list ].
+
+作戰_v_1 := v_-_le &
+  [ STEM < "作戰" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_作戰_v_1_rel" ],
+    TRAITS native_token_list ].
+
+做生意_v_1 := v_-_le &
+  [ STEM < "做生意" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_做生意_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+保釣_v_1 := v_-_le &
+  [ STEM < "保釣" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_保釣_v_1_rel" ],
+    TRAITS native_token_list ].
+
+保鮮_v_1 := v_-_le &
+  [ STEM < "保鮮" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_保鮮_v_1_rel" ],
+    TRAITS native_token_list ].
+
+修道_v_1 := v_-_le &
+  [ STEM < "修道" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_修道_v_1_rel" ],
+    TRAITS native_token_list ].
+
+仆倒_v_1 := v_-_le &
+  [ STEM < "仆倒" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_仆倒_v_1_rel" ],
+    TRAITS native_token_list ].
+
+開夜_v_1 := v_-_le &
+  [ STEM < "開夜" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_開夜_v_1_rel" ],
+    TRAITS native_token_list ].
+
+做人_v_1 := v_-_le &
+  [ STEM < "做人" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_做人_v_1_rel" ],
+    TRAITS native_token_list ].
+
+發夢_v_1 := v_-_le &
+  [ STEM < "發夢" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_發夢_v_1_rel" ],
+    TRAITS native_token_list ].
+
+做愛_v_1 := v_-_le &
+  [ STEM < "做愛" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_做愛_v_1_rel" ],
+    TRAITS native_token_list ].
+
+做生意_v_1 := v_-_le &
+  [ STEM < "做生意" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_做生意_v_1_rel" ],
+    TRAITS native_token_list ].
+
+停泊_v_1 := v_-_le &
+  [ STEM < "停泊" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_停泊_v_1_rel" ],
+    TRAITS native_token_list ].
+
+停滯不前_v_1 := v_-_le &
+  [ STEM < "停滯不前" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_停滯不前_v_1_rel" ],
+    TRAITS native_token_list ].
+
+留_v_1 := v_-_le &
+  [ STEM < "留" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_留_v_1_rel" ],
+    TRAITS native_token_list ].
+
+填命_v_1 := v_-_le &
+  [ STEM < "填命" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_填命_v_1_rel" ],
+    TRAITS native_token_list ].
+
+入伍_v_1 := v_-_le &
+  [ STEM < "入伍" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_入伍_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+入學_v_1 := v_-_le &
+  [ STEM < "入學" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_入學_v_1_rel" ],
+    TRAITS native_token_list ].
+
+入手_v_1 := v_-_le &
+  [ STEM < "入手" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_入手_v_1_rel" ],
+    TRAITS native_token_list ].
+
+沖涼_v_1 := v_-_le &
+  [ STEM < "沖涼" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_沖涼_v_1_rel" ],
+    TRAITS native_token_list ].
+
+入獄_v_1 := v_-_le &
+  [ STEM < "入獄" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_入獄_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+養生_v_1 := v_-_le &
+  [ STEM < "養生" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_養生_v_1_rel" ],
+    TRAITS native_token_list ].
+
+養病_v_1 := v_-_le &
+  [ STEM < "養病" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_養病_v_1_rel" ],
+    TRAITS native_token_list ].
+
+冒險_v_1 := v_-_le &
+  [ STEM < "冒險" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_冒險_v_1_rel" ],
+    TRAITS native_token_list ].
+
+寫信_v_1 := v_-_le &
+  [ STEM < "寫信" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_寫信_v_1_rel" ],
+    TRAITS native_token_list ].
+
+寫字_v_1 := v_-_le &
+  [ STEM < "寫字" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_寫字_v_1_rel" ],
+    TRAITS native_token_list ].
+
+衝關_v_1 := v_-_le &
+  [ STEM < "衝關" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_衝關_v_1_rel" ],
+    TRAITS native_token_list ].
+
+衝擊_v_1 := v_-_le &
+  [ STEM < "衝擊" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_衝擊_v_1_rel" ],
+    TRAITS native_token_list ].
+
+沖茶_v_1 := v_-_le &
+  [ STEM < "沖茶" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_沖茶_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+減免_v_1 := v_-_le &
+  [ STEM < "減免" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_減免_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出書_v_1 := v_-_le &
+  [ STEM < "出書" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出書_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出其不意_v_1 := v_-_le &
+  [ STEM < "出其不意" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出其不意_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出擊_v_1 := v_-_le &
+  [ STEM < "出擊" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出擊_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出去_v_1 := v_-_le &
+  [ STEM < "出去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出發_v_1 := v_-_le &
+  [ STEM < "出發" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出發_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出國_v_1 := v_-_le &
+  [ STEM < "出國" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出國_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出外_v_1 := v_-_le &
+  [ STEM < "出外" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出外_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出差_v_1 := v_-_le &
+  [ STEM < "出差" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出差_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出師_v_1 := v_-_le &
+  [ STEM < "出師" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出師_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出手_v_1 := v_-_le &
+  [ STEM < "出手" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出手_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出嚟_v_1 := v_-_le &
+  [ STEM < "出嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出海_v_1 := v_-_le &
+  [ STEM < "出海" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出海_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出世_v_1 := v_-_le &
+  [ STEM < "出世" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出世_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出籠_v_1 := v_-_le &
+  [ STEM < "出籠" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出籠_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出線_v_1 := v_-_le &
+  [ STEM < "出線" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出線_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出貨_v_1 := v_-_le &
+  [ STEM < "出貨" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出貨_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出賽_v_1 := v_-_le &
+  [ STEM < "出賽" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出賽_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出面_v_1 := v_-_le &
+  [ STEM < "出面" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出面_v_1_rel" ],
+    TRAITS native_token_list ].
+
+分家_v_1 := v_-_le &
+  [ STEM < "分家" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_分家_v_1_rel" ],
+    TRAITS native_token_list ].
+
+創業_v_1 := v_-_le &
+  [ STEM < "創業" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_創業_v_1_rel" ],
+    TRAITS native_token_list ].
+
+前進_v_1 := v_-_le &
+  [ STEM < "前進" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_前進_v_1_rel" ],
+    TRAITS native_token_list ].
+
+割愛_v_1 := v_-_le &
+  [ STEM < "割愛" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_割愛_v_1_rel" ],
+    TRAITS native_token_list ].
+
+做嘢_v_1 := v_-_le &
+  [ STEM < "做嘢" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_做嘢_v_1_rel" ],
+    TRAITS native_token_list ].
+
+動工_v_1 := v_-_le &
+  [ STEM < "動工" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_動工_v_1_rel" ],
+    TRAITS native_token_list ].
+
+郁_v_1 := v_-_le &
+  [ STEM < "郁" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_郁_v_1_rel" ],
+    TRAITS native_token_list ].
+
+動武_v_1 := v_-_le &
+  [ STEM < "動武" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_動武_v_1_rel" ],
+    TRAITS native_token_list ].
+
+勇往直前_v_1 := v_-_le &
+  [ STEM < "勇往直前" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_勇往直前_v_1_rel" ],
+    TRAITS native_token_list ].
+
+升_v_1 := v_-_le &
+  [ STEM < "升" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_升_v_1_rel" ],
+    TRAITS native_token_list ].
+
+升起_v_1 := v_-_le &
+  [ STEM < "升起" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_升起_v_1_rel" ],
+    TRAITS native_token_list ].
+
+升學_v_1 := v_-_le &
+  [ STEM < "升學" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_升學_v_1_rel" ],
+    TRAITS native_token_list ].
+
+半工半讀_v_1 := v_-_le &
+  [ STEM < "半工半讀" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_半工半讀_v_1_rel" ],
+    TRAITS native_token_list ].
+
+單打獨斗_v_1 := v_-_le &
+  [ STEM < "單打獨斗" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_單打獨斗_v_1_rel" ],
+    TRAITS native_token_list ].
+
+臥_v_1 := v_-_le &
+  [ STEM < "臥" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_臥_v_1_rel" ],
+    TRAITS native_token_list ].
+
+參賽_v_1 := v_-_le &
+  [ STEM < "參賽" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_參賽_v_1_rel" ],
+    TRAITS native_token_list ].
+
+反彈_v_1 := v_-_le &
+  [ STEM < "反彈" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_反彈_v_1_rel" ],
+    TRAITS native_token_list ].
+
+反轉_v_1 := v_-_le &
+  [ STEM < "反轉" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_反轉_v_1_rel" ],
+    TRAITS native_token_list ].
+
+發_v_1 := v_-_le &
+  [ STEM < "發" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_發_v_1_rel" ],
+    TRAITS native_token_list ].
+
+發威_v_1 := v_-_le &
+  [ STEM < "發威" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_發威_v_1_rel" ],
+    TRAITS native_token_list ].
+
+發憤_v_1 := v_-_le &
+  [ STEM < "發憤" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_發憤_v_1_rel" ],
+    TRAITS native_token_list ].
+
+打冷震_v_1 := v_-_le &
+  [ STEM < "打冷震" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打冷震_v_1_rel" ],
+    TRAITS native_token_list ].
+
+笑_v_1 := v_-_le &
+  [ STEM < "笑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_笑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+發脾氣_v_1 := v_-_le &
+  [ STEM < "發脾氣" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_發脾氣_v_1_rel" ],
+    TRAITS native_token_list ].
+
+發言_v_1 := v_-_le &
+  [ STEM < "發言" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_發言_v_1_rel" ],
+    TRAITS native_token_list ].
+
+發問_v_1 := v_-_le &
+  [ STEM < "發問" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_發問_v_1_rel" ],
+    TRAITS native_token_list ].
+
+發難_v_1 := v_-_le &
+  [ STEM < "發難" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_發難_v_1_rel" ],
+    TRAITS native_token_list ].
+
+叫_v_1 := v_-_le &
+  [ STEM < "叫" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_叫_v_1_rel" ],
+    TRAITS native_token_list ].
+
+叱吒_v_1 := v_-_le &
+  [ STEM < "叱吒" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_叱吒_v_1_rel" ],
+    TRAITS native_token_list ].
+
+食豆腐_v_1 := v_-_le &
+  [ STEM < "食豆腐" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_食豆腐_v_1_rel" ],
+    TRAITS native_token_list ].
+
+食飯_v_1 := v_-_le &
+  [ STEM < "食飯" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_食飯_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+吞雲吐霧_v_1 := v_-_le &
+  [ STEM < "吞雲吐霧" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_吞雲吐霧_v_1_rel" ],
+    TRAITS native_token_list ].
+
+吟詩_v_1 := v_-_le &
+  [ STEM < "吟詩" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_吟詩_v_1_rel" ],
+    TRAITS native_token_list ].
+
+吱吱喳喳_v_1 := v_-_le &
+  [ STEM < "吱吱喳喳" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_吱吱喳喳_v_1_rel" ],
+    TRAITS native_token_list ].
+
+鬧交_v_1 := v_-_le &
+  [ STEM < "鬧交" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_鬧交_v_1_rel" ],
+    TRAITS native_token_list ].
+
+嘈_v_1 := v_-_le &
+  [ STEM < "嘈" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_嘈_v_1_rel" ],
+    TRAITS native_token_list ].
+
+嗌_v_1 := v_-_le &
+  [ STEM < "嗌" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_嗌_v_1_rel" ],
+    TRAITS native_token_list ].
+
+呻吟_v_1 := v_-_le &
+  [ STEM < "呻吟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_呻吟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+和解_v_1 := v_-_le &
+  [ STEM < "和解" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_和解_v_1_rel" ],
+    TRAITS native_token_list ].
+
+和談_v_1 := v_-_le &
+  [ STEM < "和談" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_和談_v_1_rel" ],
+    TRAITS native_token_list ].
+
+喊_v_1 := v_-_le &
+  [ STEM < "喊" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_喊_v_1_rel" ],
+    TRAITS native_token_list ].
+
+哭天搶地_v_1 := v_-_le &
+  [ STEM < "哭天搶地" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_哭天搶地_v_1_rel" ],
+    TRAITS native_token_list ].
+
+唱歌_v_1 := v_-_le &
+  [ STEM < "唱歌" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_唱歌_v_1_rel" ],
+    TRAITS native_token_list ].
+
+善後_v_1 := v_-_le &
+  [ STEM < "善後" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_善後_v_1_rel" ],
+    TRAITS native_token_list ].
+
+咳_v_1 := v_-_le &
+  [ STEM < "咳" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_咳_v_1_rel" ],
+    TRAITS native_token_list ].
+
+喘氣_v_1 := v_-_le &
+  [ STEM < "喘氣" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_喘氣_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飲飲水_v_1 := v_-_le &
+  [ STEM < "飲飲水" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飲飲水_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飲水_v_1 := v_-_le &
+  [ STEM < "飲水" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飲水_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飲茶_v_1 := v_-_le &
+  [ STEM < "飲茶" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飲茶_v_1_rel" ],
+    TRAITS native_token_list ].
+
+番去_v_1 := v_-_le &
+  [ STEM < "番去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_回去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+回國_v_1 := v_-_le &
+  [ STEM < "回國" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_回國_v_1_rel" ],
+    TRAITS native_token_list ].
+
+回頭_v_1 := v_-_le &
+  [ STEM < "回頭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_回頭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+番屋企_v_1 := v_-_le &
+  [ STEM < "番屋企" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_番屋企_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+番嚟_v_1 := v_-_le &
+  [ STEM < "番嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_番嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+坐_v_1 := v_-_le &
+  [ STEM < "坐" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_坐_v_1_rel" ],
+    TRAITS native_token_list ].
+    
+坐好_v_1 := v_-_le &
+  [ STEM < "坐好" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_坐好_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搭車_v_1 := v_-_le &
+  [ STEM < "搭車" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搭車_v_1_rel" ],
+    TRAITS native_token_list ].
+
+埋伏_v_1 := v_-_le &
+  [ STEM < "埋伏" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_埋伏_v_1_rel" ],
+    TRAITS native_token_list ].
+
+復工_v_1 := v_-_le &
+  [ STEM < "復工" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_復工_v_1_rel" ],
+    TRAITS native_token_list ].
+
+出去_v_1 := v_-_le &
+  [ STEM < "出去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_出去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+大掃除_v_1 := v_-_le &
+  [ STEM < "大掃除" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_大掃除_v_1_rel" ],
+    TRAITS native_token_list ].
+
+大笑_v_1 := v_-_le &
+  [ STEM < "大笑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_大笑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+奔走_v_1 := v_-_le &
+  [ STEM < "奔走" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_奔走_v_1_rel" ],
+    TRAITS native_token_list ].
+
+奔馳_v_1 := v_-_le &
+  [ STEM < "奔馳" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_奔馳_v_1_rel" ],
+    TRAITS native_token_list ].
+
+妥協_v_1 := v_-_le &
+  [ STEM < "妥協" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_妥協_v_1_rel" ],
+    TRAITS native_token_list ].
+
+玩_v_1 := v_-_le &
+  [ STEM < "玩" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_玩_v_1_rel" ],
+    TRAITS native_token_list ].
+
+存在_v_1 := v_-_le &
+  [ STEM < "存在" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_存在_v_1_rel" ],
+    TRAITS native_token_list ].
+
+守備_v_1 := v_-_le &
+  [ STEM < "守備" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_守備_v_1_rel" ],
+    TRAITS native_token_list ].
+
+守法_v_1 := v_-_le &
+  [ STEM < "守法" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_守法_v_1_rel" ],
+    TRAITS native_token_list ].
+
+守貞_v_1 := v_-_le &
+  [ STEM < "守貞" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_守貞_v_1_rel" ],
+    TRAITS native_token_list ].
+
+害人_v_1 := v_-_le &
+  [ STEM < "害人" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_害人_v_1_rel" ],
+    TRAITS native_token_list ].
+
+害己_v_1 := v_-_le &
+  [ STEM < "害己" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_害己_v_1_rel" ],
+    TRAITS native_token_list ].
+
+寄生_v_1 := v_-_le &
+  [ STEM < "寄生" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_寄生_v_1_rel" ],
+TRAITS native_token_list ].
+
+對陣_v_1 := v_-_le &
+  [ STEM < "對陣" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_對陣_v_1_rel" ],
+    TRAITS native_token_list ].
+
+射箭_v_1 := v_-_le &
+  [ STEM < "射箭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_射箭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+做嘢_v_1 := v_-_le &
+  [ STEM < "做嘢" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_做嘢_v_1_rel" ],
+    TRAITS native_token_list ].
+
+盡忠報國_v_1 := v_-_le &
+  [ STEM < "盡忠報國" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_盡忠報國_v_1_rel" ],
+    TRAITS native_token_list ].
+
+盡責任_v_1 := v_-_le &
+  [ STEM < "盡責任" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_盡責任_v_1_rel" ],
+    TRAITS native_token_list ].
+
+住_v_1 := v_-_le &
+  [ STEM < "住" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_住_v_1_rel" ],
+    TRAITS native_token_list ].
+
+巡禮_v_1 := v_-_le &
+  [ STEM < "巡禮" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_巡禮_v_1_rel" ],
+    TRAITS native_token_list ].
+
+布局_v_1 := v_-_le &
+  [ STEM < "布局" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_布局_v_1_rel" ],
+TRAITS native_token_list ].
+
+帶頭_v_1 := v_-_le &
+  [ STEM < "帶頭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_帶頭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+挨_v_1 := v_-_le &
+  [ STEM < "挨" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_挨_v_1_rel" ],
+    TRAITS native_token_list ].
+
+應變_v_1 := v_-_le &
+  [ STEM < "應變" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_應變_v_1_rel" ],
+    TRAITS native_token_list ].
+
+度假_v_1 := v_-_le &
+  [ STEM < "度假" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_度假_v_1_rel" ],
+    TRAITS native_token_list ].
+
+開_v_1 := v_-_le &
+  [ STEM < "開" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_開_v_1_rel" ],
+    TRAITS native_token_list ].
+
+開口_v_1 := v_-_le &
+  [ STEM < "開口" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_開口_v_1_rel" ],
+    TRAITS native_token_list ].
+
+開將_v_1 := v_-_le &
+  [ STEM < "開將" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_開將_v_1_rel" ],
+    TRAITS native_token_list ].
+
+開槍_v_1 := v_-_le &
+  [ STEM < "開槍" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_開槍_v_1_rel" ],
+    TRAITS native_token_list ].
+
+開盤_v_1 := v_-_le &
+  [ STEM < "開盤" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_開盤_v_1_rel" ],
+    TRAITS native_token_list ].
+
+開車_v_1 := v_-_le &
+  [ STEM < "開車" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_開車_v_1_rel" ],
+    TRAITS native_token_list ].
+
+開門_v_1 := v_-_le &
+  [ STEM < "開門" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_開門_v_1_rel" ],
+    TRAITS native_token_list ].
+
+棄權_v_1 := v_-_le &
+  [ STEM < "棄權" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_棄權_v_1_rel" ],
+    TRAITS native_token_list ].
+
+彎彎腰_v_1 := v_-_le &
+  [ STEM < "彎彎腰" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_彎彎腰_v_1_rel" ],
+    TRAITS native_token_list ].
+
+彈琴_v_1 := v_-_le &
+  [ STEM < "彈琴" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_彈琴_v_1_rel" ],
+    TRAITS native_token_list ].
+
+番嚟_v_1 := v_-_le &
+  [ STEM < "番嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_番嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+當兵_v_1 := v_-_le &
+  [ STEM < "當兵" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_當兵_v_1_rel" ],
+    TRAITS native_token_list ].
+
+錄影_v_1 := v_-_le &
+  [ STEM < "錄影" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_錄影_v_1_rel" ],
+    TRAITS native_token_list ].
+
+來往_v_1 := v_-_le &
+  [ STEM < "來往" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_來往_v_1_rel" ],
+    TRAITS native_token_list ].
+
+待客_v_1 := v_-_le &
+  [ STEM < "待客" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_待客_v_1_rel" ],
+    TRAITS native_token_list ].
+
+徘徊_v_1 := v_-_le &
+  [ STEM < "徘徊" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_徘徊_v_1_rel" ],
+    TRAITS native_token_list ].
+
+循環_v_1 := v_-_le &
+  [ STEM < "循環" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_循環_v_1_rel" ],
+    TRAITS native_token_list ].
+
+微笑_v_1 := v_-_le &
+  [ STEM < "微笑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_微笑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+背書_v_1 := v_-_le &
+  [ STEM < "背書" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_背書_v_1_rel" ],
+    TRAITS native_token_list ].
+
+總質詢_v_1 := v_-_le &
+  [ STEM < "總質詢" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_總質詢_v_1_rel" ],
+    TRAITS native_token_list ].
+
+成交_v_1 := v_-_le &
+  [ STEM < "成交" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_成交_v_1_rel" ],
+    TRAITS native_token_list ].
+
+戒煙_v_1 := v_-_le &
+  [ STEM < "戒煙" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_戒煙_v_1_rel" ],
+    TRAITS native_token_list ]. 
+
+打起嚟_v_1 := v_-_le &
+  [ STEM < "打起嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打起嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+打仗_v_1 := v_-_le &
+  [ STEM < "打仗" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打仗_v_1_rel" ],
+    TRAITS native_token_list ].
+
+打喊路_v_1 := v_-_le &
+  [ STEM < "打喊路" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打喊路_v_1_rel" ],
+    TRAITS native_token_list ].
+
+打字_v_1 := v_-_le &
+  [ STEM < "打字" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打字_v_1_rel" ],
+    TRAITS native_token_list ].
+
+打工_v_1 := v_-_le &
+  [ STEM < "打工" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打工_v_1_rel" ],
+    TRAITS native_token_list ].
+
+打漁_v_1 := v_-_le &
+  [ STEM < "打漁" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打漁_v_1_rel" ],
+    TRAITS native_token_list ].
+
+打牌_v_1 := v_-_le &
+  [ STEM < "打牌" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打牌_v_1_rel" ],
+    TRAITS native_token_list ].
+
+打獵_v_1 := v_-_le &
+  [ STEM < "打獵" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打獵_v_1_rel" ],
+    TRAITS native_token_list ].
+
+打波_v_1 := v_-_le &
+  [ STEM < "打波" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打波_v_1_rel" ],
+    TRAITS native_token_list ].
+
+瞌眼瞓_v_1 := v_-_le &
+  [ STEM < "瞌眼瞓" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_瞌眼瞓_v_1_rel" ],
+    TRAITS native_token_list ].
+
+打交_v_1 := v_-_le &
+  [ STEM < "打交" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打交_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+打圈_v_1 := v_-_le &
+  [ STEM < "打圈" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打圈_v_1_rel" ],
+    TRAITS native_token_list ].
+
+捉魚_v_1 := v_-_le &
+  [ STEM < "捉魚" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_捉魚_v_1_rel" ],
+    TRAITS native_token_list ].
+
+執業_v_1 := v_-_le &
+  [ STEM < "執業" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_執業_v_1_rel" ],
+    TRAITS native_token_list ].
+
+掃地_v_1 := v_-_le &
+  [ STEM < "掃地" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_掃地_v_1_rel" ],
+    TRAITS native_token_list ].
+
+吐氣揚眉_v_1 := v_-_le &
+  [ STEM < "吐氣揚眉" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_吐氣揚眉_v_1_rel" ],
+    TRAITS native_token_list ].
+
+揚長而去_v_1 := v_-_le &
+  [ STEM < "揚長而去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_揚長而去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+扮鬼臉_v_1 := v_-_le &
+  [ STEM < "扮鬼臉" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_扮鬼臉_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搵嚟搵去_v_1 := v_-_le &
+  [ STEM < "搵嚟搵去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搵嚟搵去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+投影_v_1 := v_-_le &
+  [ STEM < "投影" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_投影_v_1_rel" ],
+    TRAITS native_token_list ].
+
+投票_v_1 := v_-_le &
+  [ STEM < "投票" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_投票_v_1_rel" ],
+    TRAITS native_token_list ].
+
+投降_v_1 := v_-_le &
+  [ STEM < "投降" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_投降_v_1_rel" ],
+    TRAITS native_token_list ].
+
+抗爭_v_1 := v_-_le &
+  [ STEM < "抗爭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_抗爭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+抗日_v_1 := v_-_le &
+  [ STEM < "抗日" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_抗日_v_1_rel" ],
+    TRAITS native_token_list ].
+
+抗衡_v_1 := v_-_le &
+  [ STEM < "抗衡" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_抗衡_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搶灘_v_1 := v_-_le &
+  [ STEM < "搶灘" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搶灘_v_1_rel" ],
+    TRAITS native_token_list ].
+
+報仇_v_1 := v_-_le &
+  [ STEM < "報仇" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_報仇_v_1_rel" ],
+    TRAITS native_token_list ].
+
+報信_v_1 := v_-_le &
+  [ STEM < "報信" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_報信_v_1_rel" ],
+    TRAITS native_token_list ].
+
+報名_v_1 := v_-_le &
+  [ STEM < "報名" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_報名_v_1_rel" ],
+    TRAITS native_token_list ].
+
+抬頭_v_1 := v_-_le &
+  [ STEM < "抬頭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_抬頭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+食煙_v_1 := v_-_le &
+  [ STEM < "食煙" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_食煙_v_1_rel" ],
+    TRAITS native_token_list ].
+
+拉客_v_1 := v_-_le &
+  [ STEM < "拉客" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_拉客_v_1_rel" ],
+    TRAITS native_token_list ].
+
+拉車_v_1 := v_-_le &
+  [ STEM < "拉車" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_拉車_v_1_rel" ],
+    TRAITS native_token_list ].
+
+拍手_v_1 := v_-_le &
+  [ STEM < "拍手" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_拍手_v_1_rel" ],
+    TRAITS native_token_list ].
+
+拍波_v_1 := v_-_le &
+  [ STEM < "拍波" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_拍波_v_1_rel" ],
+    TRAITS native_token_list ].
+
+拔草_v_1 := v_-_le &
+  [ STEM < "拔草" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_拔草_v_1_rel" ],
+    TRAITS native_token_list ].
+
+揮手_v_1 := v_-_le &
+  [ STEM < "揮手" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_揮手_v_1_rel" ],
+    TRAITS native_token_list ].
+
+拜佛_v_1 := v_-_le &
+  [ STEM < "拜佛" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_拜佛_v_1_rel" ],
+    TRAITS native_token_list ].
+
+挂勾_v_1 := v_-_le &
+  [ STEM < "挂勾" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_挂勾_v_1_rel" ],
+    TRAITS native_token_list ].
+
+挂牌_v_1 := v_-_le &
+  [ STEM < "挂牌" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_挂牌_v_1_rel" ],
+    TRAITS native_token_list ].
+
+指指點點_v_1 := v_-_le &
+  [ STEM < "指指點點" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_指指點點_v_1_rel" ],
+    TRAITS native_token_list ].
+
+挑嚟挑去_v_1 := v_-_le &
+  [ STEM < "挑嚟挑去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_挑嚟挑去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+挖空心思_v_1 := v_-_le &
+  [ STEM < "挖空心思" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_挖空心思_v_1_rel" ],
+    TRAITS native_token_list ].
+
+掙扎_v_1 := v_-_le &
+  [ STEM < "掙扎" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_掙扎_v_1_rel" ],
+    TRAITS native_token_list ].
+
+挨餓_v_1 := v_-_le &
+  [ STEM < "挨餓" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_挨餓_v_1_rel" ],
+    TRAITS native_token_list ].
+
+捉迷藏_v_1 := v_-_le &
+  [ STEM < "捉迷藏" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_捉迷藏_v_1_rel" ],
+    TRAITS native_token_list ].
+
+捉伊人_v_1 := v_-_le &
+  [ STEM < "捉伊人" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_捉伊人_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+撈魚_v_1 := v_-_le &
+  [ STEM < "撈魚" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_撈魚_v_1_rel" ],
+    TRAITS native_token_list ].
+
+排隊_v_1 := v_-_le &
+  [ STEM < "排隊" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_排隊_v_1_rel" ],
+    TRAITS native_token_list ].
+
+排難解困_v_1 := v_-_le &
+  [ STEM < "排難解困" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_排難解困_v_1_rel" ],
+    TRAITS native_token_list ].
+
+探親_v_1 := v_-_le &
+  [ STEM < "探親" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_探親_v_1_rel" ],
+    TRAITS native_token_list ].
+
+探病_v_1 := v_-_le &
+  [ STEM < "探病" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_探病_v_1_rel" ],
+    TRAITS native_token_list ].
+
+探險_v_1 := v_-_le &
+  [ STEM < "探險" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_探險_v_1_rel" ],
+    TRAITS native_token_list ].
+
+接機_v_1 := v_-_le &
+  [ STEM < "接機" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_接機_v_1_rel" ],
+    TRAITS native_token_list ].
+
+控球_v_1 := v_-_le &
+  [ STEM < "控球" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_控球_v_1_rel" ],
+    TRAITS native_token_list ].
+
+插秧_v_1 := v_-_le &
+  [ STEM < "插秧" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_插秧_v_1_rel" ],
+    TRAITS native_token_list ].
+
+握手_v_1 := v_-_le &
+  [ STEM < "握手" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_握手_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搏鬥_v_1 := v_-_le &
+  [ STEM < "搏鬥" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搏鬥_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搭飛機_v_1 := v_-_le &
+  [ STEM < "搭飛機" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搭飛機_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搭船_v_1 := v_-_le &
+  [ STEM < "搭船" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搭船_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搖_v_1 := v_-_le &
+  [ STEM < "搖" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搖_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搖頭_v_1 := v_-_le &
+  [ STEM < "搖頭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搖頭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搖擺不定_v_1 := v_-_le &
+  [ STEM < "搖擺不定" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搖擺不定_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搖搖頭_v_1 := v_-_le &
+  [ STEM < "搖搖頭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搖搖頭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搖曳_v_1 := v_-_le &
+  [ STEM < "搖曳" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搖曳_v_1_rel" ],
+    TRAITS native_token_list ].
+
+搖身一變_v_1 := v_-_le &
+  [ STEM < "搖身一變" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_搖身一變_v_1_rel" ],
+    TRAITS native_token_list ].
+
+撒嬌_v_1 := v_-_le &
+  [ STEM < "撒嬌" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_撒嬌_v_1_rel" ],
+    TRAITS native_token_list ].
+
+撒撒嬌_v_1 := v_-_le &
+  [ STEM < "撒撒嬌" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_撒撒嬌_v_1_rel" ],
+    TRAITS native_token_list ].
+
+撤軍_v_1 := v_-_le &
+  [ STEM < "撤軍" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_撤軍_v_1_rel" ],
+    TRAITS native_token_list ].
+
+撤退_v_1 := v_-_le &
+  [ STEM < "撤退" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_撤退_v_1_rel" ],
+    TRAITS native_token_list ].
+
+收縮_v_1 := v_-_le &
+  [ STEM < "收縮" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_收縮_v_1_rel" ],
+    TRAITS native_token_list ].
+
+改道_v_1 := v_-_le &
+  [ STEM < "改道" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_改道_v_1_rel" ],
+    TRAITS native_token_list ].
+
+救命_v_1 := v_-_le &
+  [ STEM < "救命" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_救命_v_1_rel" ],
+    TRAITS native_token_list ].
+
+救急_v_1 := v_-_le &
+  [ STEM < "救急" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_救急_v_1_rel" ],
+    TRAITS native_token_list ].
+
+教書_v_1 := v_-_le &
+  [ STEM < "教書" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_教書_v_1_rel" ],
+    TRAITS native_token_list ].
+
+教學_v_1 := v_-_le &
+  [ STEM < "教學" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_教學_v_1_rel" ],
+    TRAITS native_token_list ].
+
+散心_v_1 := v_-_le &
+  [ STEM < "散心" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_散心_v_1_rel" ],
+    TRAITS native_token_list ].
+
+散步_v_1 := v_-_le &
+  [ STEM < "散步" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_散步_v_1_rel" ],
+    TRAITS native_token_list ].
+
+敲門_v_1 := v_-_le &
+  [ STEM < "敲門" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_敲門_v_1_rel" ],
+    TRAITS native_token_list ].
+
+斤斤計較_v_1 := v_-_le &
+  [ STEM < "斤斤計較" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_斤斤計較_v_1_rel" ],
+    TRAITS native_token_list ].
+
+旅游_v_1 := v_-_le &
+  [ STEM < "旅游" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_旅游_v_1_rel" ],
+    TRAITS native_token_list ].
+
+旅行_v_1 := v_-_le &
+  [ STEM < "旅行" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_旅行_v_1_rel" ],
+    TRAITS native_token_list ].
+
+日出_v_1 := v_-_le &
+  [ STEM < "日出" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_日出_v_1_rel" ],
+    TRAITS native_token_list ].
+
+早睡早起_v_1 := v_-_le &
+  [ STEM < "早睡早起" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_早睡早起_v_1_rel" ],
+    TRAITS native_token_list ].
+
+有講有笑_v_1 := v_-_le &
+  [ STEM < "有講有笑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_有講有笑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+服刑_v_1 := v_-_le &
+  [ STEM < "服刑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_服刑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+嚟_v_1 := v_-_le &
+  [ STEM < "嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+嚟臨_v_1 := v_-_le &
+  [ STEM < "嚟臨" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_嚟臨_v_1_rel" ],
+    TRAITS native_token_list ].
+
+來往_v_1 := v_-_le &
+  [ STEM < "來往" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_來往_v_1_rel" ],
+    TRAITS native_token_list ].
+
+來來回回_v_1 := v_-_le &
+  [ STEM < "來來回回" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_來來回回_v_1_rel" ],
+    TRAITS native_token_list ].
+
+來來往往_v_1 := v_-_le &
+  [ STEM < "來來往往" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_來來往往_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+探訪_v_1 := v_-_le &
+  [ STEM < "探訪" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_探訪_v_1_rel" ],
+    TRAITS native_token_list ].
+
+查字典_v_1 := v_-_le &
+  [ STEM < "查字典" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_查字典_v_1_rel" ],
+    TRAITS native_token_list ].
+
+棲息_v_1 := v_-_le &
+  [ STEM < "棲息" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_棲息_v_1_rel" ],
+    TRAITS native_token_list ].
+
+橫_v_1 := v_-_le &
+  [ STEM < "橫" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_橫_v_1_rel" ],
+    TRAITS native_token_list ].
+
+橫行_v_1 := v_-_le &
+  [ STEM < "橫行" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_橫行_v_1_rel" ],
+    TRAITS native_token_list ].
+
+步行_v_1 := v_-_le &
+  [ STEM < "步行" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_步行_v_1_rel" ],
+    TRAITS native_token_list ].
+
+殉職_v_1 := v_-_le &
+  [ STEM < "殉職" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_殉職_v_1_rel" ],
+    TRAITS native_token_list ].
+
+殉身_v_1 := v_-_le &
+  [ STEM < "殉身" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_殉身_v_1_rel" ],
+    TRAITS native_token_list ].
+
+指手劃腳_v_1 := v_-_le &
+  [ STEM < "指手劃腳" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_指手劃腳_v_1_rel" ],
+    TRAITS native_token_list ].
+
+比賽_v_1 := v_-_le &
+  [ STEM < "比賽" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_比賽_v_1_rel" ],
+    TRAITS native_token_list ].
+
+求學_v_1 := v_-_le &
+  [ STEM < "求學" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_求學_v_1_rel" ],
+    TRAITS native_token_list ].
+
+求財_v_1 := v_-_le &
+  [ STEM < "求財" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_求財_v_1_rel" ],
+    TRAITS native_token_list ].
+
+求職_v_1 := v_-_le &
+  [ STEM < "求職" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_求職_v_1_rel" ],
+    TRAITS native_token_list ].
+
+浮沉_v_1 := v_-_le &
+  [ STEM < "浮沉" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_浮沉_v_1_rel" ],
+    TRAITS native_token_list ].
+
+沖涼_v_1 := v_-_le &
+  [ STEM < "沖涼" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_沖涼_v_1_rel" ],
+    TRAITS native_token_list ].
+
+泊船_v_1 := v_-_le &
+  [ STEM < "泊船" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_泊船_v_1_rel" ],
+    TRAITS native_token_list ].
+
+沖茶_v_1 := v_-_le &
+  [ STEM < "沖茶" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_沖茶_v_1_rel" ],
+    TRAITS native_token_list ].
+
+注冊_v_1 := v_-_le &
+  [ STEM < "注冊" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_注冊_v_1_rel" ],
+    TRAITS native_token_list ].
+
+潑水_v_1 := v_-_le &
+  [ STEM < "潑水" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_潑水_v_1_rel" ],
+    TRAITS native_token_list ].
+
+洗面_v_1 := v_-_le &
+  [ STEM < "洗面" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_洗面_v_1_rel" ],
+    TRAITS native_token_list ].
+
+洗衫_v_1 := v_-_le &
+  [ STEM < "洗衫" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_洗衫_v_1_rel" ],
+    TRAITS native_token_list ].
+
+活動_v_1 := v_-_le &
+  [ STEM < "活動" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_活動_v_1_rel" ],
+    TRAITS native_token_list ].
+
+流_v_1 := v_-_le &
+  [ STEM < "流" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_流_v_1_rel" ],
+    TRAITS native_token_list ].
+
+流動_v_1 := v_-_le &
+  [ STEM < "流動" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_流動_v_1_rel" ],
+    TRAITS native_token_list ].
+
+流汗_v_1 := v_-_le &
+  [ STEM < "流汗" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_流汗_v_1_rel" ],
+    TRAITS native_token_list ].
+
+喊_v_1 := v_-_le &
+  [ STEM < "喊" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_喊_v_1_rel" ],
+    TRAITS native_token_list ].
+
+走_v_1 := v_-_le &
+  [ STEM < "走" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_走_v_1_rel" ],
+    TRAITS native_token_list ].
+
+流浪_v_1 := v_-_le &
+  [ STEM < "流浪" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_流浪_v_1_rel" ],
+    TRAITS native_token_list ].
+
+流血_v_1 := v_-_le &
+  [ STEM < "流血" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_流血_v_1_rel" ],
+    TRAITS native_token_list ].
+
+流過去_v_1 := v_-_le &
+  [ STEM < "流過去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_流過去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+流過嚟_v_1 := v_-_le &
+  [ STEM < "流過嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_流過嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+流連_v_1 := v_-_le &
+  [ STEM < "流連" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_流連_v_1_rel" ],
+    TRAITS native_token_list ].
+
+淋水_v_1 := v_-_le &
+  [ STEM < "淋水" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_淋水_v_1_rel" ],
+    TRAITS native_token_list ].
+
+淋花_v_1 := v_-_le &
+  [ STEM < "淋花" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_淋花_v_1_rel" ],
+    TRAITS native_token_list ].
+
+浮上嚟_v_1 := v_-_le &
+  [ STEM < "浮上嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_浮上嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+浮潛_v_1 := v_-_le &
+  [ STEM < "浮潛" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_浮潛_v_1_rel" ],
+    TRAITS native_token_list ].
+
+消失_v_1 := v_-_le &
+  [ STEM < "消失" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_消失_v_1_rel" ],
+    TRAITS native_token_list ].
+
+消費_v_1 := v_-_le &
+  [ STEM < "消費" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_消費_v_1_rel" ],
+    TRAITS native_token_list ].
+
+深造_v_1 := v_-_le &
+  [ STEM < "深造" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_深造_v_1_rel" ],
+    TRAITS native_token_list ].
+
+滲透_v_1 := v_-_le &
+  [ STEM < "滲透" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_滲透_v_1_rel" ],
+    TRAITS native_token_list ].
+
+渡假_v_1 := v_-_le &
+  [ STEM < "渡假" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_渡假_v_1_rel" ],
+    TRAITS native_token_list ].
+
+游_v_1 := v_-_le &
+  [ STEM < "游" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_游_v_1_rel" ],
+    TRAITS native_token_list ].
+
+游戲_v_1 := v_-_le &
+  [ STEM < "游戲" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_游戲_v_1_rel" ],
+    TRAITS native_token_list ].
+
+游嚟游去_v_1 := v_-_le &
+  [ STEM < "游嚟游去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_游嚟游去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+游水_v_1 := v_-_le &
+  [ STEM < "游水" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_游水_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+游游水_v_1 := v_-_le &
+  [ STEM < "游游水" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_游游水_v_1_rel" ],
+    TRAITS native_token_list ].
+
+遊行_v_1 := v_-_le &
+  [ STEM < "遊行" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_游行_v_1_rel" ],
+    TRAITS native_token_list ].
+
+滯留_v_1 := v_-_le &
+  [ STEM < "滯留" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_滯留_v_1_rel" ],
+    TRAITS native_token_list ].
+
+漂_v_1 := v_-_le &
+  [ STEM < "漂" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_漂_v_1_rel" ],
+    TRAITS native_token_list ].
+
+漂到_v_1 := v_-_le &
+  [ STEM < "漂到" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_漂到_v_1_rel" ],
+    TRAITS native_token_list ].
+
+漂浮_v_1 := v_-_le &
+  [ STEM < "漂浮" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_漂浮_v_1_rel" ],
+    TRAITS native_token_list ].
+
+演習_v_1 := v_-_le &
+  [ STEM < "演習" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_演習_v_1_rel" ],
+    TRAITS native_token_list ].
+
+演講_v_1 := v_-_le &
+  [ STEM < "演講" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_演講_v_1_rel" ],
+    TRAITS native_token_list ].
+
+演說_v_1 := v_-_le &
+  [ STEM < "演說" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_演說_v_1_rel" ],
+    TRAITS native_token_list ].
+
+漫步_v_1 := v_-_le &
+  [ STEM < "漫步" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_漫步_v_1_rel" ],
+    TRAITS native_token_list ].
+
+潛逃_v_1 := v_-_le &
+  [ STEM < "潛逃" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_潛逃_v_1_rel" ],
+    TRAITS native_token_list ].
+
+激戰_v_1 := v_-_le &
+  [ STEM < "激戰" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_激戰_v_1_rel" ],
+    TRAITS native_token_list ].
+
+點頭_v_1 := v_-_le &
+  [ STEM < "點頭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_點頭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+點燈_v_1 := v_-_le &
+  [ STEM < "點燈" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_點燈_v_1_rel" ],
+    TRAITS native_token_list ].
+
+點點頭_v_1 := v_-_le &
+  [ STEM < "點點頭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_點點頭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+煮飯_v_1 := v_-_le &
+  [ STEM < "煮飯" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_煮飯_v_1_rel" ],
+    TRAITS native_token_list ].
+
+爬_v_1 := v_-_le &
+  [ STEM < "爬" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_爬_v_1_rel" ],
+    TRAITS native_token_list ].
+
+爬落嚟_v_1 := v_-_le &
+  [ STEM < "爬落嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_爬落嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+爬牆_v_1 := v_-_le &
+  [ STEM < "爬牆" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_爬牆_v_1_rel" ],
+    TRAITS native_token_list ].
+
+爬山_v_1 := v_-_le &
+  [ STEM < "爬山" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_爬山_v_1_rel" ],
+    TRAITS native_token_list ].
+
+爬起身_v_1 := v_-_le &
+  [ STEM < "爬起身" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_爬起身 _v_1_rel" ],
+    TRAITS native_token_list ].
+
+犯罪_v_1 := v_-_le &
+  [ STEM < "犯罪" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_犯罪_v_1_rel" ],
+    TRAITS native_token_list ].
+
+玩水_v_1 := v_-_le &
+  [ STEM < "玩水" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_玩水_v_1_rel" ],
+    TRAITS native_token_list ].
+
+玩_v_1 := v_-_le &
+  [ STEM < "玩" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_玩_v_1_rel" ],
+    TRAITS native_token_list ].
+
+理財_v_1 := v_-_le &
+  [ STEM < "理財" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_理財_v_1_rel" ],
+    TRAITS native_token_list ].
+
+瑟縮_v_1 := v_-_le &
+  [ STEM < "瑟縮" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_瑟縮_v_1_rel" ],
+    TRAITS native_token_list ].
+
+生活_v_1 := v_-_le &
+  [ STEM < "生活" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_生活_v_1_rel" ],
+    TRAITS native_token_list ].
+
+用藥_v_1 := v_-_le &
+  [ STEM < "用藥" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_用藥_v_1_rel" ],
+    TRAITS native_token_list ].
+
+用餐_v_1 := v_-_le &
+  [ STEM < "用餐" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_用餐_v_1_rel" ],
+    TRAITS native_token_list ].
+
+畫畫_v_1 := v_-_le &
+  [ STEM < "畫畫" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_畫畫_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+留學_v_1 := v_-_le &
+  [ STEM < "留學" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_留學_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+疑神疑鬼_v_1 := v_-_le &
+  [ STEM < "疑神疑鬼" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_疑神疑鬼_v_1_rel" ],
+    TRAITS native_token_list ].
+
+登場_v_1 := v_-_le &
+  [ STEM < "登場" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_登場_v_1_rel" ],
+    TRAITS native_token_list ].
+
+登基_v_1 := v_-_le &
+  [ STEM < "登基" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_登基_v_1_rel" ],
+    TRAITS native_token_list ].
+
+爬山_v_1 := v_-_le &
+  [ STEM < "爬山" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_爬山_v_1_rel" ],
+    TRAITS native_token_list ].
+
+登高_v_1 := v_-_le &
+  [ STEM < "登高" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_登高_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+眼都唔眨_v_1 := v_-_le &
+  [ STEM < "眼都唔眨" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_眼都唔眨_v_1_rel" ],
+    TRAITS native_token_list ].
+
+直銷_v_1 := v_-_le &
+  [ STEM < "直銷" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_直銷_v_1_rel" ],
+    TRAITS native_token_list ].
+
+相處_v_1 := v_-_le &
+  [ STEM < "相處" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_相處_v_1_rel" ],
+    TRAITS native_token_list ].
+
+相逢_v_1 := v_-_le &
+  [ STEM < "相逢" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_相逢_v_1_rel" ],
+    TRAITS native_token_list ].
+
+睇書_v_1 := v_-_le &
+  [ STEM < "睇書" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_睇書_v_1_rel" ],
+    TRAITS native_token_list ].
+
+睇熱鬧_v_1 := v_-_le &
+  [ STEM < "睇熱鬧" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_睇熱鬧_v_1_rel" ],
+    TRAITS native_token_list ].
+
+睇電影_v_1 := v_-_le &
+  [ STEM < "睇電影" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_睇電影_v_1_rel" ],
+    TRAITS native_token_list ].
+
+睇病_v_1 := v_-_le &
+  [ STEM < "睇病" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_睇病_v_1_rel" ],
+    TRAITS native_token_list ].
+
+睇門診_v_1 := v_-_le &
+  [ STEM < "睇門診" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_睇門診_v_1_rel" ],
+    TRAITS native_token_list ].
+
+瞓_v_1 := v_-_le &
+  [ STEM < "瞓" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_瞓_v_1_rel" ],
+    TRAITS native_token_list ].
+
+著陸_v_1 := v_-_le &
+  [ STEM < "著陸" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_著陸_v_1_rel" ],
+    TRAITS native_token_list ].
+
+瞓覺_v_1 := v_-_le &
+  [ STEM < "瞓覺" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_瞓覺_v_1_rel" ],
+    TRAITS native_token_list ].
+
+斬柴_v_1 := v_-_le &
+  [ STEM < "斬柴" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_斬柴_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+碰頭_v_1 := v_-_le &
+  [ STEM < "碰頭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_碰頭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+示威_v_1 := v_-_le &
+  [ STEM < "示威" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_示威_v_1_rel" ],
+    TRAITS native_token_list ].
+
+離鄉別井_v_1 := v_-_le &
+  [ STEM < "離鄉別井" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_離鄉別井_v_1_rel" ],
+    TRAITS native_token_list ].
+
+離任_v_1 := v_-_le &
+  [ STEM < "離任" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_離任_v_1_rel" ],
+    TRAITS native_token_list ].
+
+離境_v_1 := v_-_le &
+  [ STEM < "離境" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_離境_v_1_rel" ],
+    TRAITS native_token_list ].
+
+種樹_v_1 := v_-_le &
+  [ STEM < "種樹" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_種樹_v_1_rel" ],
+    TRAITS native_token_list ].
+
+耕田_v_1 := v_-_le &
+  [ STEM < "耕田" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_耕田_v_1_rel" ],
+    TRAITS native_token_list ].
+
+種菜_v_1 := v_-_le &
+  [ STEM < "種菜" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_種菜_v_1_rel" ],
+    TRAITS native_token_list ].
+
+穿梭_v_1 := v_-_le &
+  [ STEM < "穿梭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_穿梭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+企_v_1 := v_-_le &
+  [ STEM < "企" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_企_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+企出來_v_1 := v_-_le &
+  [ STEM < "企出來" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_企出來_v_1_rel" ],
+    TRAITS native_token_list ].
+
+站起身_v_1 := v_-_le &
+  [ STEM < "站起身" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_站起身_v_1_rel" ],
+    TRAITS native_token_list ].
+
+競爭_v_1 := v_-_le &
+  [ STEM < "競爭" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_競爭_v_1_rel" ],
+    TRAITS native_token_list ].
+
+競技_v_1 := v_-_le &
+  [ STEM < "競技" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_競技_v_1_rel" ],
+    TRAITS native_token_list ].
+
+笑_v_1 := v_-_le &
+  [ STEM < "笑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_笑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+笑呵呵_v_1 := v_-_le &
+  [ STEM < "笑呵呵" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_笑呵呵_v_1_rel" ],
+    TRAITS native_token_list ].
+
+簽名_v_1 := v_-_le &
+  [ STEM < "簽名" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_簽名_v_1_rel" ],
+    TRAITS native_token_list ].
+
+簽字_v_1 := v_-_le &
+  [ STEM < "簽字" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_簽字_v_1_rel" ],
+    TRAITS native_token_list ].
+
+簽約_v_1 := v_-_le &
+  [ STEM < "簽約" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_簽約_v_1_rel" ],
+    TRAITS native_token_list ].
+
+簽証_v_1 := v_-_le &
+  [ STEM < "簽証" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_簽証_v_1_rel" ],
+    TRAITS native_token_list ].
+
+約法三章_v_1 := v_-_le &
+  [ STEM < "約法三章" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_約法三章_v_1_rel" ],
+    TRAITS native_token_list ].
+
+練字_v_1 := v_-_le &
+  [ STEM < "練字" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_練字_v_1_rel" ],
+    TRAITS native_token_list ].
+
+組團_v_1 := v_-_le &
+  [ STEM < "組團" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_組團_v_1_rel" ],
+    TRAITS native_token_list ].
+
+織布_v_1 := v_-_le &
+  [ STEM < "織布" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_織布_v_1_rel" ],
+    TRAITS native_token_list ].
+
+結婚_v_1 := v_-_le &
+  [ STEM < "結婚" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_結婚_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+罷工_v_1 := v_-_le &
+  [ STEM < "罷工" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_罷工_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+打筋斗_v_1 := v_-_le &
+  [ STEM < "打筋斗" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_打筋斗_v_1_rel" ],
+    TRAITS native_token_list ].
+
+考古_v_1 := v_-_le &
+  [ STEM < "考古" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_考古_v_1_rel" ],
+    TRAITS native_token_list ].
+
+考試_v_1 := v_-_le &
+  [ STEM < "考試" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_考試_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+
+耕耘_v_1 := v_-_le &
+  [ STEM < "耕耘" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_耕耘_v_1_rel" ],
+    TRAITS native_token_list ].
+
+傾計_v_1 := v_-_le &
+  [ STEM < "傾計" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_傾計_v_1_rel" ],
+    TRAITS native_token_list ].
+
+聚集_v_1 := v_-_le &
+  [ STEM < "聚集" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_聚集_v_1_rel" ],
+    TRAITS native_token_list ].
+
+自律_v_1 := v_-_le &
+  [ STEM < "自律" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_自律_v_1_rel" ],
+    TRAITS native_token_list ].
+
+自慰_v_1 := v_-_le &
+  [ STEM < "自慰" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_自慰_v_1_rel" ],
+    TRAITS native_token_list ].
+
+自費_v_1 := v_-_le &
+  [ STEM < "自費" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_自費_v_1_rel" ],
+    TRAITS native_token_list ].
+
+致詞_v_1 := v_-_le &
+  [ STEM < "致詞" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_致詞_v_1_rel" ],
+    TRAITS native_token_list ].
+
+舞獅_v_1 := v_-_le &
+  [ STEM < "舞獅" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_舞獅_v_1_rel" ],
+    TRAITS native_token_list ].
+
+舞龍_v_1 := v_-_le &
+  [ STEM < "舞龍" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_舞龍_v_1_rel" ],
+    TRAITS native_token_list ].
+
+航海_v_1 := v_-_le &
+  [ STEM < "航海" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_航海_v_1_rel" ],
+    TRAITS native_token_list ].
+
+航行_v_1 := v_-_le &
+  [ STEM < "航行" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_航行_v_1_rel" ],
+    TRAITS native_token_list ].
+
+得益_v_1 := v_-_le &
+  [ STEM < "得益" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_得益_v_1_rel" ],
+    TRAITS native_token_list ].
+
+營業_v_1 := v_-_le &
+  [ STEM < "營業" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_營業_v_1_rel" ],
+    TRAITS native_token_list ].
+
+營利_v_1 := v_-_le &
+  [ STEM < "營利" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_營利_v_1_rel" ],
+    TRAITS native_token_list ].
+
+營運_v_1 := v_-_le &
+  [ STEM < "營運" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_營運_v_1_rel" ],
+    TRAITS native_token_list ].
+
+蒸發_v_1 := v_-_le &
+  [ STEM < "蒸發" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_蒸發_v_1_rel" ],
+    TRAITS native_token_list ].
+
+埋伏_v_1 := v_-_le &
+  [ STEM < "埋伏" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_埋伏_v_1_rel" ],
+    TRAITS native_token_list ].
+
+行_v_1 := v_-_le &
+  [ STEM < "行" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_行_v_1_rel" ],
+    TRAITS native_token_list ].
+
+行醫_v_1 := v_-_le &
+  [ STEM < "行醫" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_行醫_v_1_rel" ],
+    TRAITS native_token_list ].
+
+見義勇為_v_1 := v_-_le &
+  [ STEM < "見義勇為" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_見義勇為_v_1_rel" ],
+    TRAITS native_token_list ].
+
+見面_v_1 := v_-_le &
+  [ STEM < "見面" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_見面_v_1_rel" ],
+    TRAITS native_token_list ].
+
+觀光_v_1 := v_-_le &
+  [ STEM < "觀光" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_觀光_v_1_rel" ],
+    TRAITS native_token_list ].
+
+觀望_v_1 := v_-_le &
+  [ STEM < "觀望" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_觀望_v_1_rel" ],
+    TRAITS native_token_list ].
+
+覓食_v_1 := v_-_le &
+  [ STEM < "覓食" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_覓食_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+解約_v_1 := v_-_le &
+  [ STEM < "解約" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_解約_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+計數_v_1 := v_-_le &
+  [ STEM < "計數" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_計數_v_1_rel" ],
+    TRAITS native_token_list ].
+
+訂位_v_1 := v_-_le &
+  [ STEM < "訂位" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_訂位_v_1_rel" ],
+    TRAITS native_token_list ].
+
+認錯_v_1 := v_-_le &
+  [ STEM < "認錯" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_認錯_v_1_rel" ],
+    TRAITS native_token_list ].
+
+討價還價_v_1 := v_-_le &
+  [ STEM < "討價還價" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_討價還價_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+教書_v_1 := v_-_le &
+  [ STEM < "教書" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_教書_v_1_rel" ],
+    TRAITS native_token_list ].
+
+講嘢_v_1 := v_-_le &
+  [ STEM < "講嘢" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_講嘢_v_1_rel" ],
+    TRAITS native_token_list ].
+
+上堂_v_1 := v_-_le &
+  [ STEM < "上堂" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_上堂_v_1_rel" ],
+    TRAITS native_token_list ].
+
+設廠_v_1 := v_-_le &
+  [ STEM < "設廠" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_設廠_v_1_rel" ],
+    TRAITS native_token_list ].
+
+訴訟_v_1 := v_-_le &
+  [ STEM < "訴訟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_訴訟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+誕生_v_1 := v_-_le &
+  [ STEM < "誕生" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_誕生_v_1_rel" ],
+    TRAITS native_token_list ].
+
+呃人_v_1 := v_-_le &
+  [ STEM < "呃人" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_呃人_v_1_rel" ],
+    TRAITS native_token_list ].
+
+講嘢_v_1 := v_-_le &
+  [ STEM < "講嘢" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_講嘢_v_1_rel" ],
+    TRAITS native_token_list ].
+
+請願_v_1 := v_-_le &
+  [ STEM < "請願" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_請願_v_1_rel" ],
+    TRAITS native_token_list ].
+
+辭職_v_1 := v_-_le &
+  [ STEM < "辭職" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_辭職_v_1_rel" ],
+    TRAITS native_token_list ].
+
+讀書_v_1 := v_-_le &
+  [ STEM < "讀書" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_讀書_v_1_rel" ],
+    TRAITS native_token_list ].
+
+傾計_v_1 := v_-_le &
+  [ STEM < "傾計" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_傾計_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+
+賞月_v_1 := v_-_le &
+  [ STEM < "賞月" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_賞月_v_1_rel" ],
+    TRAITS native_token_list ].
+
+賺錢_v_1 := v_-_le &
+  [ STEM < "賺錢" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_賺錢_v_1_rel" ],
+    TRAITS native_token_list ].
+
+賽跑_v_1 := v_-_le &
+  [ STEM < "賽跑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_賽跑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+走_v_1 := v_-_le &
+  [ STEM < "走" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_走_v_1_rel" ],
+    TRAITS native_token_list ].
+
+走去_v_1 := v_-_le &
+  [ STEM < "走去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_走去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+走開_v_1 := v_-_le &
+  [ STEM < "走開" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_走開_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+行路_v_1 := v_-_le &
+  [ STEM < "行路" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_行路_v_1_rel" ],
+    TRAITS native_token_list ].
+
+行過嚟_v_1 := v_-_le &
+  [ STEM < "行過嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_行過嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+行過去_v_1 := v_-_le &
+  [ STEM < "行過去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_行過去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+走入嚟_v_1 := v_-_le &
+  [ STEM < "走入嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_走入嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+赴約_v_1 := v_-_le &
+  [ STEM < "赴約" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_赴約_v_1_rel" ],
+    TRAITS native_token_list ].
+
+趕嚟_v_1 := v_-_le &
+  [ STEM < "趕嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_趕嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+趕過嚟_v_1 := v_-_le &
+  [ STEM < "趕過嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_趕過嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+起伏_v_1 := v_-_le &
+  [ STEM < "起伏" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_起伏_v_1_rel" ],
+    TRAITS native_token_list ].
+
+起家_v_1 := v_-_le &
+  [ STEM < "起家" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_起家_v_1_rel" ],
+    TRAITS native_token_list ].
+
+起身_v_1 := v_-_le &
+  [ STEM < "起身" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_起身_v_1_rel" ],
+    TRAITS native_token_list ].
+
+起步_v_1 := v_-_le &
+  [ STEM < "起步" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_起步_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跳舞_v_1 := v_-_le &
+  [ STEM < "跳舞" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跳舞_v_1_rel" ],
+    TRAITS native_token_list ].
+
+起飛_v_1 := v_-_le &
+  [ STEM < "起飛" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_起飛_v_1_rel" ],
+    TRAITS native_token_list ].
+
+越級_v_1 := v_-_le &
+  [ STEM < "越級" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_越級_v_1_rel" ],
+    TRAITS native_token_list ].
+
+趴_v_1 := v_-_le &
+  [ STEM < "趴" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_趴_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跌_v_1 := v_-_le &
+  [ STEM < "跌" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跌_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跌倒_v_1 := v_-_le &
+  [ STEM < "跌倒" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跌倒_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跌落_v_1 := v_-_le &
+  [ STEM < "跌落" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跌落_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跑_v_1 := v_-_le &
+  [ STEM < "跑" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跑嚟_v_1 := v_-_le &
+  [ STEM < "跑嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跑嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跑嚟跑去_v_1 := v_-_le &
+  [ STEM < "跑嚟跑去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跑嚟跑去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跑步_v_1 := v_-_le &
+  [ STEM < "跑步" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跑步_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跑過去_v_1 := v_-_le &
+  [ STEM < "跑過去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跑過去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跑過嚟_v_1 := v_-_le &
+  [ STEM < "跑過嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跑過嚟 _v_1_rel" ],
+    TRAITS native_token_list ].
+
+跟進_v_1 := v_-_le &
+  [ STEM < "跟進" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跟進_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跪_v_1 := v_-_le &
+  [ STEM < "跪" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跪_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跪倒_v_1 := v_-_le &
+  [ STEM < "跪倒" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跪倒_v_1_rel" ],
+    TRAITS native_token_list ].
+
+拜_v_1 := v_-_le &
+  [ STEM < "拜" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_拜_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跳_v_1 := v_-_le &
+  [ STEM < "跳" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跳_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跳舞_v_1 := v_-_le &
+  [ STEM < "跳舞" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跳舞_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跳高_v_1 := v_-_le &
+  [ STEM < "跳高" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跳高_v_1_rel" ],
+    TRAITS native_token_list ].
+
+踢波_v_1 := v_-_le &
+  [ STEM < "踢波" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_踢波_v_1_rel" ],
+    TRAITS native_token_list ].
+
+跪_v_1 := v_-_le &
+  [ STEM < "跪" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_跪_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+攤_v_1 := v_-_le &
+  [ STEM < "攤" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_攤_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+轉_v_1 := v_-_le &
+  [ STEM < "轉" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_轉_v_1_rel" ],
+    TRAITS native_token_list ].
+
+轉行_v_1 := v_-_le &
+  [ STEM < "轉行" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_轉行_v_1_rel" ],
+    TRAITS native_token_list ].
+
+轉機_v_1 := v_-_le &
+  [ STEM < "轉機" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_轉機_v_1_rel" ],
+    TRAITS native_token_list ].
+
+轉嚟轉去_v_1 := v_-_le &
+  [ STEM < "轉嚟轉去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_轉嚟轉去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+轉身_v_1 := v_-_le &
+  [ STEM < "轉身" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_轉身_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+辭職_v_1 := v_-_le &
+  [ STEM < "辭職" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_辭職_v_1_rel" ],
+    TRAITS native_token_list ].
+
+過關_v_1 := v_-_le &
+  [ STEM < "過關" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_過關_v_1_rel" ],
+    TRAITS native_token_list ].
+
+過冬_v_1 := v_-_le &
+  [ STEM < "過冬" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_過冬_v_1_rel" ],
+    TRAITS native_token_list ].
+
+過去_v_1 := v_-_le &
+  [ STEM < "過去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_過去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+過夜_v_1 := v_-_le &
+  [ STEM < "過夜" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_過夜_v_1_rel" ],
+    TRAITS native_token_list ].
+
+過年_v_1 := v_-_le &
+  [ STEM < "過年" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_過年_v_1_rel" ],
+    TRAITS native_token_list ].
+
+過嚟_v_1 := v_-_le &
+  [ STEM < "過嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_過嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+過節_v_1 := v_-_le &
+  [ STEM < "過節" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_過節_v_1_rel" ],
+    TRAITS native_token_list ].
+
+過路_v_1 := v_-_le &
+  [ STEM < "過路" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_過路_v_1_rel" ],
+    TRAITS native_token_list ].
+
+運作_v_1 := v_-_le &
+  [ STEM < "運作" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_運作_v_1_rel" ],
+    TRAITS native_token_list ].
+
+運動_v_1 := v_-_le &
+  [ STEM < "運動" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_運動_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+運行_v_1 := v_-_le &
+  [ STEM < "運行" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_運行_v_1_rel" ],
+    TRAITS native_token_list ].
+
+返鄉下_v_1 := v_-_le &
+  [ STEM < "返鄉下" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_返鄉下_v_1_rel" ],
+    TRAITS native_token_list ].
+
+入去_v_1 := v_-_le &
+  [ STEM < "入去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_入去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+進場_v_1 := v_-_le &
+  [ STEM < "進場" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_進場_v_1_rel" ],
+    TRAITS native_token_list ].
+
+遠播_v_1 := v_-_le &
+  [ STEM < "遠播" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_遠播_v_1_rel" ],
+    TRAITS native_token_list ].
+
+違法_v_1 := v_-_le &
+  [ STEM < "違法" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_違法_v_1_rel" ],
+    TRAITS native_token_list ].
+
+違約_v_1 := v_-_le &
+  [ STEM < "違約" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_違約_v_1_rel" ],
+    TRAITS native_token_list ].
+
+犯規_v_1 := v_-_le &
+  [ STEM < "犯規" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_犯規_v_1_rel" ],
+    TRAITS native_token_list ].
+
+追上去_v_1 := v_-_le &
+  [ STEM < "追上去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_追上去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+退_v_1 := v_-_le &
+  [ STEM < "退" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_退_v_1_rel" ],
+    TRAITS native_token_list ].
+
+退場_v_1 := v_-_le &
+  [ STEM < "退場" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_退場_v_1_rel" ],
+    TRAITS native_token_list ].
+
+退票_v_1 := v_-_le &
+  [ STEM < "退票" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_退票_v_1_rel" ],
+    TRAITS native_token_list ].
+
+逃亡_v_1 := v_-_le &
+  [ STEM < "逃亡" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_逃亡_v_1_rel" ],
+    TRAITS native_token_list ].
+
+逃出去_v_1 := v_-_le &
+  [ STEM < "逃出去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_逃出去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+逃走_v_1 := v_-_le &
+  [ STEM < "逃走" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_逃走_v_1_rel" ],
+    TRAITS native_token_list ].
+
+逆轉_v_1 := v_-_le &
+  [ STEM < "逆轉" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_逆轉_v_1_rel" ],
+    TRAITS native_token_list ].
+
+通婚_v_1 := v_-_le &
+  [ STEM < "通婚" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_通婚_v_1_rel" ],
+    TRAITS native_token_list ].
+
+通融_v_1 := v_-_le &
+  [ STEM < "通融" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_通融_v_1_rel" ],
+    TRAITS native_token_list ].
+
+行街_v_1 := v_-_le &
+  [ STEM < "行街" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_行街_v_1_rel" ],
+    TRAITS native_token_list ].
+
+避孕_v_1 := v_-_le &
+  [ STEM < "避孕" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_避孕_v_1_rel" ],
+    TRAITS native_token_list ].
+
+郊游_v_1 := v_-_le &
+  [ STEM < "郊游" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_郊游_v_1_rel" ],
+    TRAITS native_token_list ].
+
+醒_v_1 := v_-_le &
+  [ STEM < "醒" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_醒_v_1_rel" ],
+    TRAITS native_token_list ].
+
+重現_v_1 := v_-_le &
+  [ STEM < "重現" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_重現_v_1_rel" ],
+    TRAITS native_token_list ].
+
+重蹈覆轍_v_1 := v_-_le &
+  [ STEM < "重蹈覆轍" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_重蹈覆轍_v_1_rel" ],
+    TRAITS native_token_list ].
+
+釣魚_v_1 := v_-_le &
+  [ STEM < "釣魚" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_釣魚_v_1_rel" ],
+    TRAITS native_token_list ].
+
+鋪路_v_1 := v_-_le &
+  [ STEM < "鋪路" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_鋪路_v_1_rel" ],
+    TRAITS native_token_list ].
+
+閃_v_1 := v_-_le &
+  [ STEM < "閃" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_閃_v_1_rel" ],
+    TRAITS native_token_list ].
+
+閉門_v_1 := v_-_le &
+  [ STEM < "閉門" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_閉門_v_1_rel" ],
+    TRAITS native_token_list ].
+
+闖紅燈_v_1 := v_-_le &
+  [ STEM < "闖紅燈" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_闖紅燈_v_1_rel" ],
+    TRAITS native_token_list ].
+
+降落_v_1 := v_-_le &
+  [ STEM < "降落" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_降落_v_1_rel" ],
+    TRAITS native_token_list ].
+除害_v_1 := v_-_le &
+  [ STEM < "除害" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_除害_v_1_rel" ],
+    TRAITS native_token_list ].
+
+除草_v_1 := v_-_le &
+  [ STEM < "除草" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_除草_v_1_rel" ],
+    TRAITS native_token_list ].
+
+陪葬_v_1 := v_-_le &
+  [ STEM < "陪葬" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_陪葬_v_1_rel" ],
+    TRAITS native_token_list ].
+
+隨行_v_1 := v_-_le &
+  [ STEM < "隨行" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_隨行_v_1_rel" ],
+    TRAITS native_token_list ].
+
+隱居_v_1 := v_-_le &
+  [ STEM < "隱居" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_隱居_v_1_rel" ],
+    TRAITS native_token_list ].
+
+集會_v_1 := v_-_le &
+  [ STEM < "集會" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_集會_v_1_rel" ],
+    TRAITS native_token_list ].
+
+集合_v_1 := v_-_le &
+  [ STEM < "集合" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_集合_v_1_rel" ],
+    TRAITS native_token_list ].
+
+集結_v_1 := v_-_le &
+  [ STEM < "集結" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_集結_v_1_rel" ],
+    TRAITS native_token_list ].
+
+震蕩_v_1 := v_-_le &
+  [ STEM < "震蕩" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_震蕩_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+露營_v_1 := v_-_le &
+  [ STEM < "露營" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_露營_v_1_rel" ],
+    TRAITS native_token_list ].
+
+露面_v_1 := v_-_le &
+  [ STEM < "露面" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_露面_v_1_rel" ],
+    TRAITS native_token_list ].
+
+靜坐_v_1 := v_-_le &
+  [ STEM < "靜坐" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_靜坐_v_1_rel" ],
+    TRAITS native_token_list ].
+
+革命_v_1 := v_-_le &
+  [ STEM < "革命" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_革命_v_1_rel" ],
+    TRAITS native_token_list ].
+
+領兵_v_1 := v_-_le &
+  [ STEM < "領兵" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_領兵_v_1_rel" ],
+    TRAITS native_token_list ].
+
+震_v_1 := v_-_le &
+  [ STEM < "震" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_震_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飄_v_1 := v_-_le &
+  [ STEM < "飄" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飄_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飄開_v_1 := v_-_le &
+  [ STEM < "飄開" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飄開_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飄流_v_1 := v_-_le &
+  [ STEM < "飄流" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飄流_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飄浮_v_1 := v_-_le &
+  [ STEM < "飄浮" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飄浮_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飛_v_1 := v_-_le &
+  [ STEM < "飛" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飛_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飛落嚟_v_1 := v_-_le &
+  [ STEM < "飛落嚟" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飛落嚟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飛嚟飛去_v_1 := v_-_le &
+  [ STEM < "飛嚟飛去" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飛嚟飛去_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飛翔_v_1 := v_-_le &
+  [ STEM < "飛翔" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飛翔_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+飛行_v_1 := v_-_le &
+  [ STEM < "飛行" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飛行_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飛起來_v_1 := v_-_le &
+  [ STEM < "飛起來" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飛起來_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飲茶_v_1 := v_-_le &
+  [ STEM < "飲茶" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飲茶_v_1_rel" ],
+    TRAITS native_token_list ].
+
+飲酒_v_1 := v_-_le &
+  [ STEM < "飲酒" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_飲酒_v_1_rel" ],
+    TRAITS native_token_list ].
+
+揸車_v_1 := v_-_le &
+  [ STEM < "揸車" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_揸車_v_1_rel" ],
+    TRAITS native_token_list ].
+
+騷動_v_1 := v_-_le &
+  [ STEM < "騷動" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_騷動_v_1_rel" ],
+    TRAITS native_token_list ].
+
+鼓掌_v_1 := v_-_le &
+  [ STEM < "鼓掌" >,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_鼓掌_v_1_rel" ],
+    TRAITS native_token_list ].
 
