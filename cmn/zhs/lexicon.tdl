@@ -759,17 +759,17 @@ comma-marker-robust := symbol &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "正", LENGTH more-than-one ],
     TRAITS native_token_list ].
 
-今天_r := adv_-_scop_le &
-  [ STEM <"今天">,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "今", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_今天_a_rel",
-    TRAITS native_token_list ].
+;;今天_r := adv_-_scop_le &
+;;  [ STEM <"今天">,
+;;    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "今", LENGTH more-than-one ],
+;;    SYNSEM.LKEYS.KEYREL.PRED "_今天_a_rel",
+;;    TRAITS native_token_list ].
 
-昨天_r := adv_-_scop_le &
-  [ STEM <"昨天">,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "昨", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_昨天_a_rel",
-    TRAITS native_token_list ].
+;;昨天_r := adv_-_scop_le &
+;;  [ STEM <"昨天">,
+;;    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "昨", LENGTH more-than-one ],
+;;    SYNSEM.LKEYS.KEYREL.PRED "_昨天_a_rel",
+;;    TRAITS native_token_list ].
 
 大概_r := adv_-_scop_le &
   [ STEM <"大概">,

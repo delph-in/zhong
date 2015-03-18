@@ -91,6 +91,7 @@ hen_x_rel := intensifier_x_rel.
 feichang_x_rel := intensifier_x_rel.
 redup_x_rel := intensifier_x_rel.
 
+temporal_x_rel := predsort.
 
 #|
 lex-sense-default := lex-item &
@@ -985,7 +986,7 @@ np-adp-phrase := unary-phrase &
             XARG #modind ],
          RELS <! arg12-ev-relation &
            [ LBL #ltop,
-             PRED "temp-mod-rel",
+             PRED temporal_x_rel,
              ARG0 #index,
              ARG1 #modind,
              ARG2 #nind ] !>,

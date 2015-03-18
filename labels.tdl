@@ -31,6 +31,12 @@ punct-label := label &
                              COORD-STRAT "" ],
               LABEL-NAME "PU" ].
 
+advp-label := label & 
+            [ SYNSEM.LOCAL [ CAT [ HEAD adp & [ MOD < [] >],
+                                   VAL.SPR < > ],
+                             COORD-STRAT "" ],
+              LABEL-NAME "ADVP" ].
+
 np-label := label & 
             [ SYNSEM.LOCAL [ CAT [ HEAD noun,
                                    VAL.SPR < > ],
