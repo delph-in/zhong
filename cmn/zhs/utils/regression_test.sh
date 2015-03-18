@@ -11,6 +11,8 @@
 #   export PYTHONPATH=~/tools/pydelphin:"$PYTHONPATH"
 #   export GTESTPATH=/home/sanghoun/tools/gtest
 
+mkdir -p ../tsdb/gtest/comparison
+
 while read LINE
 do         
 	python3 $GTESTPATH/gTest.py -G .. -C :zhs.dat -W ../tsdb/gtest/comparison R :$LINE
