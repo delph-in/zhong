@@ -11,10 +11,13 @@
 #   export PYTHONPATH=~/tools/pydelphin:"$PYTHONPATH"
 #   export GTESTPATH=/home/sanghoun/tools/gtest
 
+ace -g ../ace/config.tdl -G ../zhs.dat
 mkdir -p ../tsdb/gtest/comparison
 
 while read LINE
 do         
 	python3 $GTESTPATH/gTest.py -G .. -C :zhs.dat -W ../tsdb/gtest/comparison R :$LINE
 done < COMPARISON
+
+echo "REGRESSION TEST COMPLETED!"
 
