@@ -1,0 +1,260 @@
+;;; -*- Mode: tdl; Coding: utf-8; -*-
+
+;;;
+;;; Copyright (c) 2000 -- 2013 Dan Flickinger (danf@stanford.edu);
+;;; copyright (c) 2009 -- 2013 Stephan Oepen (oe@ifi.uio.no); (ERG)
+;;; Copyright (c) 2014 -- NTU Computational Linguistics Lab; (Zhong)
+;;;     modified by Sanghoun Song (sanghoun@ntu.edu.sg, 2014-11-24) 
+;;; see `LICENSE' for conditions.
+;;;
+
+;;;
+;;; generic lexical entries, i.e. entries that are not activated directly by
+;;; orthography.  all generic entries are distinguished from native lexical
+;;; entries by virtue of their [ ONSET unk_onset ].  generics are sub-divided
+;;; into two sub-classes, named (somewhat unfortunately) `unknown' generics 
+;;; and `generic' generics (that is `unk' and `gen', respectively).
+;;;
+;;; the former are designed for unknown words and activated on the basis of
+;;; PoS tags, the latter correspond to named entities that are recognized by
+;;; string-level properties during chart mapping (the equivalent of what in
+;;; the YY tradition used to be `ersatz' lexical entries).  see the comments
+;;; in `tmr.tdl' (token mapping) and `lfr.tdl' (lexical filtering) for further
+;;; background.
+;;;
+;;; _fix_me_
+;;; i believe nothing stands in our way of giving these entries a `meaningful'
+;;; orthography now, e.g. something like "_generic_trans_verb_bse_", or so, for
+;;; interactive testing (including the LKB).
+;;;
+;;; furthermore, i suspect we can now ditch the older `gle' entries, used for
+;;; generation only, and instead use some of the entries below (those with a
+;;; singleton RELS list, fully instantiated PRED, and underspecified CARG) in
+;;; *generic-lexical-entries*.                                 (22-jan-09; oe)
+;;;
+
+
+;;; SSH 2014-11-24: Generic Lexical Entries for Zhong
+;;; The tagset used in the Stanford POS tagger for Chinese is CTB. 
+;;; The guideline is written by Fei Xia and downloadable below.
+;;; http://www.cis.upenn.edu/~chinese/posguide.3rd.ch.pdf
+
+;;; There are 33 tags.
+; AD 	adverb				还
+; AS 	aspect maker			着
+; BA 	把 in ba-construction		把，将
+; CC 	coordinating conjunction	和
+; CD 	cardinal number			一百
+; CS 	subordinating conjunction	虽然
+; DEC 	的 in a relative-clause		的
+; DEG 	associative 			的的
+; DER 	得 in V-de const. and V-de-R	得
+; DEV 	地 before VP			地
+; DT 	determiner 			这
+; ETC 	for words 等，等等		等，等等
+; FW 	foreign words			ＩＳＯ
+; IJ 	interjection			啊
+; JJ 	other noun-modifier		男，共同
+; LB	被 in long bei-const		被，给
+; LC 	localizer 			里
+; M 	measure word			个
+; MSP 	other particle			所
+; NN 	common noun			书
+; NR 	proper noun			美国
+; NT 	temporal noun			今天
+; OD 	ordinal number			第一
+; ON 	onomatopoeia			哈哈，哗哗
+; P 	preposition excl. 		被and把从
+; PN 	pronoun 			他
+; PU 	punctuation			，、。
+; SB 	被 in short bei-const		被，给
+; SP 	sentence-final particle		吗
+; VA 	predicative adjective		红
+; VC 	是 				是
+; VE 	有 as the main verb		有
+; VV 	other verb 			走
+
+
+generic_name-lex := proper-name-lex &
+ [ SYNSEM.LKEYS.KEYREL.CARG #carg,
+   STEM < "_generic_name_" >,
+   TOKENS.+LIST generic_token_list &
+			    < [ +POS.+TAGS < "NR" >,
+				+CARG #carg ] > ].
+
+generic_card := num-adj-lex &
+ [ SYNSEM.LKEYS.KEYREL.CARG #carg,
+   STEM < "_generic_card_ne_" >,
+   TOKENS.+LIST generic_token_list &
+			    < [ +POS.+TAGS < "CD" >,
+				+CARG #carg ] > ].
+
+
+generic_nn := count-noun-lex & 
+ [ SYNSEM.LKEYS.KEYREL.PRED #pred,
+   STEM < "_generic_common_noun_" >,
+   TOKENS.+LIST generic_token_list &
+			    < [ +POS.+TAGS < "NN" >,
+			        +PRED #pred ] > ].
+
+generic_vv := main-verb-lex &
+ [ SYNSEM.LKEYS.KEYREL.PRED #pred,
+   STEM < "_generic_verb_" >,
+   TOKENS.+LIST generic_token_list & 
+			    < [ +POS.+TAGS < "VV" >,
+				+PRED #pred ] > ].
+
+generic_pu := symbol &
+ [ SYNSEM.LKEYS.KEYREL.CARG #carg,
+   STEM < "_generic_symbol_" >,
+   TOKENS.+LIST generic_token_list &
+			    < [ +POS.+TAGS < "PU" >,
+				+CARG #carg ] > ].
+
+; generic_trans_verb_bse := v_np*_bse-unk_le &
+;   [ ORTH < "_generic_vb_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "VB" ] > ].
+
+; generic_trans_verb_pres3sg := v_np*_pr-3s-unk_le &
+;   [ ORTH < "_generic_vbz_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "VBZ" ] > ].
+
+; generic_trans_verb_presn3sg := v_np*_pr-n3s-unk_le &
+;   [ ORTH < "_generic_vbp_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "VBP" ] > ].
+
+; generic_trans_verb_past := v_np*_pa-unk_le &
+;   [ ORTH < "_generic_vbd_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "VBD" ] > ].
+
+; generic_trans_verb_prp := v_np*_prp-unk_le &
+;   [ ORTH < "_generic_vbg_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "VBG" ] > ].
+
+; generic_trans_verb_psp := v_np*_psp-unk_le &
+;   [ ORTH < "_generic_vbn_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "VBN" ] > ].
+
+; generic_trans_verb_pas := v_-_pas-unk_le &
+;   [ ORTH < "_generic_vbn_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "VBN" ] > ].
+
+; generic_mass_noun := n_-_mc-unk_le &
+;   [ ORTH < "_generic_fw_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "FW" ] > ].
+
+; generic_mass_count_noun := n_-_mc-unk_le &
+;   [ ORTH < "_generic_nn_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "NN" ] > ].
+
+; generic_pl_noun := n_-_c-pl-unk_le &
+;   [ ORTH < "_generic_nns_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "NNS" ] > ].
+
+; genericname := n_-_pn-unk_le &
+;   [ ORTH < "_generic_nnp_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "NNP" ] > ].
+
+; genericname_pl := n_-_pn-pl-unk_le &
+;   [ ORTH < "_generic_nnps_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "NNPS" ] > ].
+
+; generic_adj := aj_-_i-unk_le &
+;   [ ORTH < "_generic_jj_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "JJ" ] > ].
+
+; generic_adj_compar := aj_-_i-cmp-unk_le &
+;   [ ORTH < "_generic_jjr_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "JJR" ] > ].
+
+; generic_adj_superl := aj_-_i-sup-unk_le &
+;   [ ORTH < "_generic_jjs_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "JJS" ] > ].
+
+; generic_number := aj_-_i-crd-unk_le &
+;   [ ORTH < "_generic_cd_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "CD" ] > ].
+
+; generic_adverb := av_-_i-unk_le &
+;   [ ORTH < "_generic_rb_" >,
+;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "RB" ] > ].
+
+; generic_uh_disc_adv := av_-_dc-like-unk_le &
+;  [ ORTH < "_generic_uh_" >,
+;    TOKENS.+LIST < [ +TNT.+TAGS.FIRST "UH" ] > ].
+
+; ;;;
+; ;;; and the second group of `generic' named entities, activated by their +CLASS
+; ;;; values, which get set in token mapping.  to avoid overlap with the unknown
+; ;;; lexical entries, the token mapping rules make sure to `empty out' the PoS
+; ;;; information whenever a named entity token is created.
+; ;;;
+
+; generic_proper_ne := n_-_pn-gen_le &
+;   [ ORTH < "_generic_proper_ne_" >,
+;     TOKENS.+LIST < [ +CLASS proper_ne ] > ].
+
+; generic_pl_noun_ne := n_-_c-pl-gen_le &
+;   [ ORTH < "_generic_plur_ne_" >,
+;     TOKENS.+LIST < [ +CLASS plur_ne ] > ].
+
+; generic_date_ne := n_-_day-crd-gen_le &
+;   [ ORTH < "_generic_date_ne_" >,
+;     TOKENS.+LIST < [ +CLASS date_ne ] > ].
+
+; generic_dom_card_ne := n_-_pn-dom-gen_le & 
+;   [ ORTH < "_generic_dom_card_ne_" >,
+;     TOKENS.+LIST < [ +CLASS dom_card_ne ] > ].
+
+; generic_dom_ord_ne := n_-_pn-dom-o-gen_le & 
+;   [ ORTH < "_generic_dom_ord_ne_" >,
+;     TOKENS.+LIST < [ +CLASS dom_ord_ne ] > ].
+
+; generic_dom_euro_ne := n_-_pn-dom-e-gen_le & 
+;   [ ORTH < "_generic_dom_euro_ne_" >,
+;     TOKENS.+LIST < [ +CLASS dom_card_ne ] > ].
+
+; generic_year_ne := n_-_pn-yoc-gen_le &
+;   [ ORTH < "_generic_year_ne_" >,
+;     TOKENS.+LIST < [ +CLASS year_ne ] > ].
+
+; generic_meas_np_ne := n_-_meas-gen_le &
+;   [ ORTH < "_generic_meas_np_ne_" >,
+;     TOKENS.+LIST < [ +CLASS meas_ne ] > ].
+
+; generic_meas_n_ne := n_-_meas-n-gen_le &
+;   [ ORTH < "_generic_meas_noun_ne_" >,
+;     TOKENS.+LIST < [ +CLASS meas_noun_ne ] > ].
+
+; generic_time_noun_ne := n_np_pn-hour-gen_le &
+;   [ ORTH < "_generic_time_ne_" >,
+;     TOKENS.+LIST < [ +CLASS time_ne ] > ].
+
+; generic_card_ne := aj_-_i-crd-gen_le &
+;   [ ORTH < "_generic_card_ne_" >,
+;     TOKENS.+LIST < [ +CLASS card_ne ] > ].
+
+; generic_card_np_ne := aj_np_i-crd-gen_le &
+;   [ ORTH < "_generic_card_ne_" >,
+;     TOKENS.+LIST < [ +CLASS card_ne ] > ].
+
+; generic_ord_ne := aj_-_i-ord-gen_le &
+;   [ ORTH < "_generic_ord_ne_" >,
+;     TOKENS.+LIST < [ +CLASS ord_ne ] > ].
+
+; generic_fract_ne := aj_-_i-frct-gen_le &
+;   [ ORTH < "_generic_fract_ne_" >,
+;     TOKENS.+LIST < [ +CLASS frct_ne ] > ].
+
+; generic_decimal_ne := aj_-_i-one-gen_le &
+;   [ ORTH < "_generic_decimal_ne_" >,
+;     TOKENS.+LIST < [ +CLASS decimal_ne ] > ].
+
+; gen_generic_noun := n_-_mc-ns-g_le &
+;  [ ORTH < "_gen_generic_noun_" >,
+;    TOKENS.+LIST < [ +CLASS no_class ] > ].
+
+; gen_generic_verb := v_np*_unk_le &
+;  [ ORTH < "_gen_generic_verb_" >,
+;    TOKENS.+LIST < [ +CLASS no_class ] > ].
+

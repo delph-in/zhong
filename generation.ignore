@@ -15,8 +15,19 @@ period-marker-robust
 question-marker-robust
 bang-marker-robust
 ellipsis-marker
-comma-marker
 comma-marker-robust
+colon-marker-robust
+semicolon-marker-robust
+lparen-marker-robust
+rparen-marker-robust
+lsangle-marker-robust
+rsangle-marker-robust
+lbracket-marker-robust
+rbracket-marker-robust
+lbrace-marker-robust
+rbrace-marker-robust
+
+〇_j 0_j 1_j 2_j 3_j 4_j 5_j 6_j 7_j 8_j 9_j 10_j 100_j 100_j 10000_j 23_j 220_j 
 
 其中_n
 

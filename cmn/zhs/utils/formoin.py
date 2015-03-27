@@ -3,6 +3,7 @@ import datetime
 
 today = datetime.date.today()
 log_files = glob.glob(sys.argv[1]+"/*.log")
+log_files.sort()
 for log_file in log_files:
 	f = open(log_file)
 	logs = f.read()
@@ -38,9 +39,12 @@ for log_file in log_files:
 		rg = rg[rg.find("(")+1:rg.find(")")]
 		ru = r[2].strip()
 		ru = ru[ru.find("(")+1:ru.find(")")]
+
+		if not rg[0].isdigit(): rg = "0.0"
+		if not ru[0].isdigit(): ru = "0.0"
 	
-		buf += str(round(float(pg) * 100, 2)) + " (" + rg + ")" 
-		if pu[0] != "-": buf += " / " + str(round(float(pu) * 100, 2)) + " (" + ru + ")" 
+		buf += str(round(float(pg) * 100, 2)) + " (" + str(round(float(rg), 2)) + ")" 
+		if pu[0] != "-": buf += " / " + str(round(float(pu) * 100, 2)) + " (" + str(round(float(ru), 2)) + ")" 
 
 		buf += " || "
 
@@ -51,7 +55,7 @@ for log_file in log_files:
 	[gen, total] = f.read().strip().split()
 	f.close()
 	if total == "0": 
-		buf += str(gs) + " 0.0 || 0.0 ||"
+		buf += " 0.0 || 0.0 ||"
 	else:	
 		gs = round(float(gen) / float(total) * 100, 2)
 		buf += str(gs) + " || "

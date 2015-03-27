@@ -33,7 +33,9 @@ lex-rule :+
 
 basic-unary-phrase :+ 
   [ STYLE #style,
-    ARGS < [ STYLE #style ] > ].
+    SYNSEM.PAREN #paren,
+    ARGS < [ STYLE #style,
+	     SYNSEM.PAREN #paren ] > ].
 
 
 ;; SSH 2014-12-19: BOUND is introduced. Lexical items with [BOUND +]
@@ -41,6 +43,7 @@ basic-unary-phrase :+
 synsem :+ 
  [ PUNCTUATED luk,
    INTERJECTED luk,
+   PAREN luk,
    SPART spart,
    BOUND luk ].
 
@@ -70,10 +73,13 @@ resultative := pred-pred.
 causative := pred-pred.
 
 card_rel := named_rel.
+symbol_rel := named_rel.
 
 card-relation := named-relation & arg1-relation &
   [ PRED card_rel ].
 
+symbol-relation := named-relation & arg1-relation &
+  [ PRED symbol_rel ].
 
 ; SSH 2014-10-20: type hiearchy for classifers
 classifier_x_rel := predsort.
@@ -87,8 +93,8 @@ classifier_x_rel := predsort.
 些_x_rel := 个_x_rel.
 
 intensifier_x_rel := predsort.
-hen_x_rel := intensifier_x_rel.
-feichang_x_rel := intensifier_x_rel.
+_hen_x_rel := intensifier_x_rel.
+_feichang_x_rel := intensifier_x_rel.
 redup_x_rel := intensifier_x_rel.
 
 temporal_x_rel := predsort.
@@ -133,9 +139,10 @@ lex-item :+
 
 
 marker-or-punct := head & 
-  [ MOD <> ].
+ [ MOD <> ].
 marker := marker-or-punct.
 punct := marker-or-punct.
+
 
 noun :+ 
  [ HON bool ].
@@ -220,9 +227,9 @@ non-aspect := imperfective.
 
 basic-head-comp-phrase :+ 
   [ SYNSEM.LOCAL.CAT [ MC #mc,
-               VAL.SPEC #spec ],
+		       VAL.SPEC #spec ],
     HEAD-DTR.SYNSEM.LOCAL.CAT [ MC #mc,
-                VAL.SPEC #spec ] ].
+				VAL.SPEC #spec ] ].
 
 basic-head-mod-phrase-simple :+ 
   [ SYNSEM.LOCAL [ CAT.MC #mc,
@@ -237,7 +244,9 @@ basic-head-mod-phrase-simple :+
 ; the previous version of matrix.tdl, but it was removed by Antske
 ; Fokkens and Joshua Crowgey (2012-26-09).
 head-adj-phrase :+ 
-  [ HEAD-DTR.SYNSEM.MODIFIED notmod-or-rmod ].
+  [ SYNSEM.INTERJECTED #interjected,
+    HEAD-DTR.SYNSEM [ INTERJECTED #interjected,
+		      MODIFIED notmod-or-rmod ] ].
 
 head-adj-int-phrase :+ 
   [ SYNSEM [ L-PERIPH #lperiph,
@@ -950,6 +959,7 @@ pred-pred-compound-phrase := head-initial &
 					INDEX #arg1 ] ] ],
                   NON-LOCAL #nonloc ],
     NON-HEAD-DTR.SYNSEM [ LIGHT +,
+			  BOUND na-or--,
 			  LOCAL [ CAT [ HEAD +vj & [ AUX - ],
 					MC na-or-- ],
 				  CONT.HOOK.INDEX #arg2 ] ],
@@ -1086,12 +1096,12 @@ basic-head-opt-comp-phrase := head-valence-phrase & head-only &
 ;     HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD verb ].
 
 ; 着了过 aspect markers & sentence final 了 & sentence final question particle 
-comp-marker-phrase := marker-final-phrase & head-initial & 
-		      head-valence-phrase & head-compositional &
+basic-comp-marker-phrase := head-valence-phrase & head-compositional &
   [ STYLE #style,
     SYNSEM phr-synsem & [ L-PERIPH #lperiph,
 			  R-PERIPH #rperiph,
 			  PUNCTUATED #punctuated,
+			  PAREN #paren,
 			  INTERJECTED #interjected,
 			  SPART #spart,
 			  LOCAL.CAT [ VAL [ SUBJ #subj,
@@ -1112,6 +1122,7 @@ comp-marker-phrase := marker-final-phrase & head-initial &
 		   SYNSEM [ L-PERIPH #lperiph,
 			    R-PERIPH #rperiph,
 			    PUNCTUATED #punctuated,
+			    PAREN #paren,
 			    SPART #spart,
 			    LOCAL.CAT [ HEAD marker-or-punct,
 					VAL.COMPS < #synsem > ] ] ],
@@ -1119,6 +1130,11 @@ comp-marker-phrase := marker-final-phrase & head-initial &
              HCONS <! !>,
 	     ICONS <! !> ] ].
 
+comp-marker-phrase := basic-comp-marker-phrase & marker-final-phrase & head-initial & 
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.POSTHEAD na-or-+ ].
+marker-comp-phrase := basic-comp-marker-phrase & marker-initial-phrase & head-final & 
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.POSTHEAD na-or-- ].
+ 
 
 ;; DPF 2014-08-01 - Added unary and binary bridging rules to accommodate robust
 ;; full-forest treebanking.  The strategy is to pump each normal edge in the

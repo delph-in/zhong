@@ -30,6 +30,7 @@
   ((:path . "raising-control") (:content . "raising-control testsuite"))
   ((:path . "vv-compounds") (:content . "vv-compounds testsuite"))
   ((:path . "interjections") (:content . "interjections testsuite"))
+  ((:path . "symbols") (:content . "special characters testsuite"))
   
   ((:path . "fu-berlin") (:content . "Free University Berlin Testsuite"))
 
