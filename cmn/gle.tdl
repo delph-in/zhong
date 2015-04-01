@@ -97,12 +97,24 @@ generic_nn := count-noun-lex &
 			    < [ +POS.+TAGS < "NN" >,
 			        +PRED #pred ] > ].
 
-generic_vv := main-verb-lex &
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SSH 2015-03-30: This causes a loopy error in the YY mode
+;;;; WARNING: grammar rule `head-opt-comp' is loopy
+;;;; WARNING: edge #2923 [head-opt-comp] == edge #2910 [head-opt-comp]
+;generic_vv := main-verb-lex &
+; [ SYNSEM.LKEYS.KEYREL.PRED #pred,
+;   STEM < "_generic_verb_" >,
+;   TOKENS.+LIST generic_token_list & 
+;			    < [ +POS.+TAGS < "VV" >,
+;				+PRED #pred ] > ].
+;; Temporally, it is assumed as a transitive verb
+generic_vv := v_trans-verb-lex &
  [ SYNSEM.LKEYS.KEYREL.PRED #pred,
    STEM < "_generic_verb_" >,
    TOKENS.+LIST generic_token_list & 
 			    < [ +POS.+TAGS < "VV" >,
 				+PRED #pred ] > ].
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 generic_pu := symbol &
  [ SYNSEM.LKEYS.KEYREL.CARG #carg,

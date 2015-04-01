@@ -69,8 +69,6 @@ orthog := cons &
 cpd := icons.
 noun-noun := cpd.
 pred-pred := cpd. 
-resultative := pred-pred.
-causative := pred-pred.
 
 card_rel := named_rel.
 symbol_rel := named_rel.

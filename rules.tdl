@@ -135,31 +135,28 @@ p1-v1-compound := pred-verb-compound-phrase &
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
 					   COMPS < > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ],
-    C-CONT.ICONS <! resultative !> ].
+					COMPS < > ] ].
+
 
 p12-v1-compound := pred-verb-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
 					   COMPS < [ OPT - ] > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ],
-    C-CONT.ICONS <! resultative !> ].
+					COMPS < > ] ].
 
 p12-v2-compound := pred-verb-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ COMPS < #first & [ OPT - ] > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ],
-    C-CONT.ICONS <! causative !> ].
+					COMPS < > ] ].
 
 p12-v12-compound := pred-verb-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
 					   COMPS < #comp & [ OPT - ] > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-					COMPS.FIRST #comp ],
-    C-CONT.ICONS <! resultative !> ].
+					COMPS.FIRST #comp ] ].
 
 p1-v12-compound := pred-verb-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
@@ -167,24 +164,21 @@ p1-v12-compound := pred-verb-compound-phrase &
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
 				    COMPS < >],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-					COMPS #comps & < [ OPT - ] > ],
-    C-CONT.ICONS <! resultative !> ].
+					COMPS #comps & < [ OPT - ] > ] ].
 
 p1-a1-compound := pred-adj-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
 					   COMPS < > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ],
-    C-CONT.ICONS <! resultative !> ].
+					COMPS < > ] ].
 
 p12-a1-compound := pred-adj-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
 					   COMPS < [ OPT - ] > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ],
-    C-CONT.ICONS <! resultative !> ].
+					COMPS < > ] ].
 
 np-adp := np-adp-phrase.
 
