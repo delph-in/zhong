@@ -141,6 +141,12 @@ marker-or-punct := head &
 marker := marker-or-punct.
 punct := marker-or-punct.
 
++np :+ [ PFORM pform ].
+pform := avm.
+gei-or-xiang := pform.
+gei := gei-or-xiang.
+xiang := gei-or-xiang.
+zai := pform.
 
 noun :+ 
  [ HON bool ].
@@ -261,10 +267,17 @@ head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
 			  INTERJECTED na-or-- ] ].
 
+head-2nd-comp-phrase := basic-head-2nd-comp-phrase & head-initial &
+  [ SYNSEM phr-synsem &
+       [ LOCAL.CAT.HEAD verb ],
+    NON-HEAD-DTR.SYNSEM [ LOCAL.CAT.HEAD adp,
+                          R-PERIPH na-or--,
+			  INTERJECTED na-or-- ] ]. 
+
 comp-head-final-phrase := basic-head-1st-comp-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.HEAD +nvjrpdmo,
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
-						  LOCAL.CAT.HEAD adp ] ].
+			  LOCAL.CAT.HEAD adp ] ].
 
 ;; For now, exclude time nouns as subjects
 ;; 
@@ -555,7 +568,8 @@ extracted-subj-phrase := basic-extracted-subj-phrase &
 	     LOCAL.CAT [ MC -,
 			 VAL.SPEC < [] > ] ],
     HEAD-DTR.SYNSEM [ MODIFIED #modified,
-		      LOCAL [ CAT.VAL.SUBJ < [ LOCAL.CAT.NONSUBJ - ] >,
+		      LOCAL [ CAT [ HEAD +vj,
+                                    VAL.SUBJ < [ LOCAL.CAT.NONSUBJ - ] > ],
 			      CONT.HOOK #hook ] ],
     C-CONT [ HOOK #hook, RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 

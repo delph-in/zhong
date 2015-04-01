@@ -187,3 +187,5 @@ np-adp := np-adp-phrase.
 comp-marker := comp-marker-phrase.
 marker-comp := marker-comp-phrase.
 
+;ZZF/SSH 2015-04-01 to handle variations of ditransitive verbs
+head-2nd-comp := head-2nd-comp-phrase.

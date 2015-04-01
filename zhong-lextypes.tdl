@@ -301,6 +301,22 @@ transitive-lex-item := basic-two-arg-no-hcons & basic-icons-lex-item &
      SYNSEM [ LKEYS.KEYREL.ARG2 #ind2,
 	      LOCAL.CONT.HOOK.CLAUSE-KEY #clause ] ].
 
+ditransitive-lex-item-2 := basic-three-arg & basic-icons-lex-item &
+   [ ARG-ST < [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind1,
+				  ICONS-KEY.IARG1 #clause ] ],
+	      [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind2,
+				  ICONS-KEY.IARG1 #clause ] ],
+	      [ LOCAL.CONT.HOOK [ INDEX event,
+                                  LTOP #ltop, 
+                                  XARG #ind2,
+				  ICONS-KEY.IARG1 #clause ] ] >,
+     SYNSEM [ LKEYS.KEYREL [ ARG1 #ind1,
+			     ARG2 #ind2,
+			     ARG3 #ind3 ],
+	      LOCAL.CONT [ HOOK.CLAUSE-KEY #clause,
+                           HCONS <! qeq & [ HARG #ind3, 
+                                            LARG #ltop ] !> ] ] ].
+
 transitive-verb-lex := main-verb-lex & transitive-lex-item & aspect-rule-dtr &
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp >,
 	     LKEYS.KEYREL.ARG1 #index ],
@@ -428,8 +444,8 @@ pp-s-comp-verb-lex := main-verb-lex & basic-three-arg-no-hcons & basic-icons-lex
              CONT.HOOK.LTOP #ltop],
            OPT -]> ].
 
-ditrans-verb-lex := ditransitive-lex-item & main-verb-lex & aspect-rule-dtr &
- [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comp1,#comp2>,
+super-ditrans-verb-lex := main-verb-lex & aspect-rule-dtr &
+ [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comp1, #comp2>,
    ARG-ST  < [ LOCAL.CAT.HEAD noun ],
              #comp1 &
              [ LOCAL.CAT [ VAL [ SPR < >,
@@ -438,9 +454,13 @@ ditrans-verb-lex := ditransitive-lex-item & main-verb-lex & aspect-rule-dtr &
                OPT -] ,
              #comp2 &
              [ LOCAL.CAT [ VAL [ SPR < >,
-                                 COMPS < > ],
-                           HEAD noun ],
+                                 COMPS < > ] ],
                OPT -] >].
+
+ditrans-verb-lex := ditransitive-lex-item & super-ditrans-verb-lex.
+
+ditrans-pp-verb-lex := ditransitive-lex-item-2 & super-ditrans-verb-lex &
+ [ ARG-ST  < [], [], [ LOCAL.CAT.HEAD adp & [ PFORM gei-or-xiang ] ] > ].
 
 trans-loc-verb-lex := basic-three-arg-no-hcons & main-verb-lex & basic-icons-lex-item & aspect-rule-dtr &
  [ SYNSEM[LOCAL.CAT.VAL.COMPS < #comp1,#comp2>,

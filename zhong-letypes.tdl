@@ -88,6 +88,7 @@ v_weather_le := v_weather_type_lex.
 v_-_le := v_intrans-verb-lex.
 v_np_le := v_trans-verb-lex.
 v_np-np_le := ditrans-verb-lex.
+v_pp-np_le := ditrans-pp-verb-lex.
 v_np-pp_le := trans-loc-verb-lex.
 
 v_s_le := s-comp-verb-lex.
