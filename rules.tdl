@@ -130,35 +130,24 @@ imper := imperative-phrase & [ STYLE robust ].
 n-n-compound := noun-noun-compound-phrase.
 de-n-compound := nom-de-noun-compound-phrase.
 
-p1-v1-compound := pred-verb-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
-					   COMPS < > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ] ].
-
-
-p12-v1-compound := pred-verb-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
-					   COMPS < [ OPT - ] > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ] ].
-
-p12-v2-compound := pred-verb-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ COMPS < #first & [ OPT - ] > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ] ].
-
-p12-v12-compound := pred-verb-compound-phrase & 
+;;张三 跑 累 了
+rslt-1_1-1 := rslt-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
-					   COMPS < #comp & [ OPT - ] > ],
+					   COMPS < > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-					COMPS.FIRST #comp ] ].
+					COMPS < > ] ].
 
-p1-v12-compound := pred-verb-compound-phrase & 
+;;张三 哭 红 了 双眼
+rslt-1_1-2 := rslt-compound-phrase & 
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
+			   COMPS < #comp & [ OPT - ] > ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
+				    COMPS < > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL  [ SUBJ < #comp >,
+					 COMPS < > ] ].
+;;张三 玩 忘 了 责任
+rslt-1_12 := rslt-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
 			   COMPS #comps ],
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
@@ -166,19 +155,70 @@ p1-v12-compound := pred-verb-compound-phrase &
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
 					COMPS #comps & < [ OPT - ] > ] ].
 
-p1-a1-compound := pred-adj-compound-phrase & 
+;;张三 追 累 了 李四 (Zhangsan chased Lisi to the extent of making Lisi tired.)
+rslt-12_1-1 := rslt-compound-phrase & 
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+			   COMPS < #comp > ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+				    COMPS < #comp >],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #comp,
+					COMPS < > ] ].
+
+;;张三 追 累 了 李四 (Zhangsan chased Lisi and Zhangsan got tired.)
+rslt-12_1-2 := rslt-compound-phrase & 
+  [ SYNSEM.LOCAL.CAT.VAL #val,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
+					   COMPS < [ OPT - ] > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+					COMPS < > ] ].
+
+;;这 种 药 吃 死 你
+rslt-12_1-3 := rslt-compound-phrase & 
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+			   COMPS < #comp > ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #comp,
+					   COMPS < #subj & [ OPT - ] > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #comp,
+					COMPS < > ] ].
+
+;;张三 下 赢 棋
+rslt-12_12 := rslt-compound-phrase & 
+  [ SYNSEM.LOCAL.CAT.VAL #val,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
+					   COMPS < #comp > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+					COMPS < #comp >  ] ].
+
+#|
+
+p12-v2-compound := rslt-compound-phrase & 
+  [ SYNSEM.LOCAL.CAT.VAL #val,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ COMPS < #first & [ OPT - ] > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
+					COMPS < > ] ].
+
+p12-v12-compound := rslt-compound-phrase & 
+  [ SYNSEM.LOCAL.CAT.VAL #val,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
+					   COMPS < #comp & [ OPT - ] > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+					COMPS.FIRST #comp ] ].
+
+
+p1-a1-compound := rslt-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
 					   COMPS < > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
 					COMPS < > ] ].
 
-p12-a1-compound := pred-adj-compound-phrase & 
+p12-a1-compound := rslt-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL #val,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
 					   COMPS < [ OPT - ] > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
 					COMPS < > ] ].
+|#
 
 np-adp := np-adp-phrase.
 

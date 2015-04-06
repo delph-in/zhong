@@ -69,6 +69,8 @@ orthog := cons &
 cpd := icons.
 noun-noun := cpd.
 pred-pred := cpd. 
+rslt := pred-pred.
+parallel := pred-pred.
 
 card_rel := named_rel.
 symbol_rel := named_rel.
@@ -947,7 +949,7 @@ nom-de-noun-compound-phrase := head-final &
 				    IARG2 #nhind ] !> ] ].
 
 ;; SSH 2015-01-14: V-V compounds 
-pred-pred-compound-phrase := head-initial &
+rslt-compound-phrase := head-initial &
   [ SYNSEM [ LOCAL.CAT [ HEAD #head,
 			 VAL [ SPR #spr,
 			       SPEC #spec ],
@@ -979,13 +981,13 @@ pred-pred-compound-phrase := head-initial &
 		    INDEX #arg1 ],
 	     RELS <! !>,
              HCONS <! !>,
-             ICONS <! pred-pred & [ IARG1 #arg1, 
-				    IARG2 #arg2 ] !> ] ].
+	     ICONS <! rslt & [ IARG1 #arg1, 
+			       IARG2 #arg2 ] !> ] ].
 
-pred-verb-compound-phrase := pred-pred-compound-phrase & 
-  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD verb & [ CHAR.LENGTH one] ].
-pred-adj-compound-phrase := pred-pred-compound-phrase & 
-  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD adj ].
+;pred-verb-compound-phrase := rslt-compound-phrase & 
+;  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD verb & [ CHAR.LENGTH one] ].
+;pred-adj-compound-phrase := rslt-compound-phrase & 
+;  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD adj ].
 
 ;; Make temporal NPs into adposition phrases
 np-adp-phrase := unary-phrase &
