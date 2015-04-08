@@ -11269,10 +11269,10 @@ comma_c := conj_-_le &
     SYNSEM.LKEYS.KEYREL.PRED "_信用_n_1_rel",
     TRAITS native_token_list ].
 
-信託_n_1 := n_-_le &
-  [ STEM < "信託" >,
+信托_n_1 := n_-_le &
+  [ STEM < "信托" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "信", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_信託_n_1_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_信托_n_1_rel",
     TRAITS native_token_list ].
 
 修_v_1 := v_np_le &
@@ -31785,22 +31785,16 @@ comma_c := conj_-_le &
     SYNSEM.LKEYS.KEYREL.PRED "_委曲_n_1_rel",
     TRAITS native_token_list ].
 
-委託_v_1 := v_np-vp_oequi_le &
-  [ STEM < "委託" >,
+委托_v_1 := v_np-vp_oequi_le &
+  [ STEM < "委托" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "委", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_委託_v_1_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_委托_v_1_rel",
     TRAITS native_token_list ].
 
-委託人_n_1 := n_-_le &
-  [ STEM < "委託人" >,
+委托人_n_1 := n_-_le &
+  [ STEM < "委托人" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "委", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_委託人_n_1_rel",
-    TRAITS native_token_list ].
-
-委託给_v_1 := v_np-np_le &
-  [ STEM < "委託给" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "委", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_委託给_v_1_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_委托人_n_1_rel",
     TRAITS native_token_list ].
 
 姚元潮_n_1 := n_-_pn_le &
@@ -48409,10 +48403,10 @@ comma_c := conj_-_le &
              LKEYS.KEYREL.PRED "_推行_v_1_rel" ],
     TRAITS native_token_list ].
 
-推託_v_1 := v_np_le &
-  [ STEM < "推託" >,
+推托_v_1 := v_np_le &
+  [ STEM < "推托" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "推", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_推託_v_1_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_推托_v_1_rel",
     TRAITS native_token_list ].
 
 推送_v_1 := v_np_le &
@@ -85327,16 +85321,16 @@ comma_c := conj_-_le &
     SYNSEM.LKEYS.KEYREL.PRED "_言谈_n_1_rel",
     TRAITS native_token_list ].
 
-託付式_j_1 := a_-_att_le &
-  [ STEM < "託付式" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "託", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_託付式_a_1_rel",
+托付式_j_1 := a_-_att_le &
+  [ STEM < "托付式" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "托", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_托付式_a_1_rel",
     TRAITS native_token_list ].
 
-託赠_v_1 := v_np-np_le &
-  [ STEM < "託赠" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "託", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_託赠_v_1_rel",
+托赠_v_1 := v_np-np_le &
+  [ STEM < "托赠" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "托", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_托赠_v_1_rel",
     TRAITS native_token_list ].
 
 詹勳华_n_1 := n_-_pn_le &
@@ -86949,10 +86943,10 @@ comma_c := conj_-_le &
              LKEYS.KEYREL.PRED "_请求_v_1_rel" ],
     TRAITS native_token_list ].
 
-请託_v_1 := v_np-vp_oequi_le &
-  [ STEM < "请託" >,
+请托_v_1 := v_np-vp_oequi_le &
+  [ STEM < "请托" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "请", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_请託_v_1_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_请托_v_1_rel",
     TRAITS native_token_list ].
 
 请辞_v_1 := v_-_le &
@@ -103595,4 +103589,327 @@ comma_c := conj_-_le &
                          VAL.COMPS < [], [ LOCAL.CAT.HEAD.PFORM gei ] > ],
              LKEYS.KEYREL.PRED "_质押_v_1_rel" ],
     TRAITS native_token_list ].
+
+赠予_v_1 := v_np-np_le &
+  [ STEM < "赠予" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "赠", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_赠予_v_1_rel" ],
+    TRAITS native_token_list ].
+
+供_v_2 := v_np-np_le &
+  [ STEM < "供" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "供", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_供_v_2_rel" ],
+    TRAITS native_token_list ].
+
+兜售_v_2 := v_np-np_le &
+  [ STEM < "兜售" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "兜", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_兜售_v_2_rel" ],
+    TRAITS native_token_list ].
+
+记_v_1 := v_np-np_le &
+  [ STEM < "记" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "记", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_记_v_1_rel" ],
+    TRAITS native_token_list ].
+
+骗_v_2 := v_np-np_le &
+  [ STEM < "骗" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "骗", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_骗_v_2_rel" ],
+    TRAITS native_token_list ].
+
+教_v_4 := v_np-np_le &
+  [ STEM < "教" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "教", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_教_v_4_rel" ],
+    TRAITS native_token_list ].
+
+卖给_v_1 := v_np-np_le &
+  [ STEM < "卖给" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "卖", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_卖给_v_1_rel" ],
+    TRAITS native_token_list ].
+
+提醒_v_2 := v_np-np_le &
+  [ STEM < "提醒" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "提", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_提醒_v_2_rel" ],
+    TRAITS native_token_list ].
+
+回答_v_2 := v_np-np_le &
+  [ STEM < "回答" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "回", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_回答_v_2_rel" ],
+    TRAITS native_token_list ].
+
+批给_v_1 := v_np-np_le &
+  [ STEM < "批给" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "批", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_批给_v_1_rel" ],
+    TRAITS native_token_list ].
+
+呈现_v_2 := v_np-np_le &
+  [ STEM < "呈现" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "呈", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_呈现_v_2_rel" ],
+    TRAITS native_token_list ].
+
+借给_v_1 := v_np-np_le &
+  [ STEM < "借给" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "借", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_借给_v_1_rel" ],
+    TRAITS native_token_list ].
+
+侵吞_v_1 := v_np-np_le &
+  [ STEM < "侵吞" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "侵", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_侵吞_v_1_rel" ],
+    TRAITS native_token_list ].
+
+汇报_v_1 := v_np-np_le &
+  [ STEM < "汇报" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "汇", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_汇报_v_1_rel" ],
+    TRAITS native_token_list ].
+
+称之为_v_1 := v_np-np_le &
+  [ STEM < "称之为" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "称", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_称之为_v_1_rel" ],
+    TRAITS native_token_list ].
+
+警告_v_1 := v_np-np_le &
+  [ STEM < "警告" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "警", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_警告_v_1_rel" ],
+    TRAITS native_token_list ].
+
+问起_v_1 := v_np-np_le &
+  [ STEM < "问起" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "问", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_问起_v_1_rel" ],
+    TRAITS native_token_list ].
+
+告诉_v_2 := v_np-np_le &
+  [ STEM < "告诉" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "告", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_告诉_v_2_rel" ],
+    TRAITS native_token_list ].
+
+告_v_1 := v_np-np_le &
+  [ STEM < "告" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "告", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_告_v_1_rel" ],
+    TRAITS native_token_list ].
+
+赐_v_1 := v_np-np_le &
+  [ STEM < "赐" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "赐", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_赐_v_1_rel" ],
+    TRAITS native_token_list ].
+
+挂在_v_1 := v_np-np_le &
+  [ STEM < "挂在" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "挂", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_挂在_v_1_rel" ],
+    TRAITS native_token_list ].
+
+判_v_1 := v_np-np_le &
+  [ STEM < "判" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "判", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_判_v_1_rel" ],
+    TRAITS native_token_list ].
+
+判处_v_2 := v_np-np_le &
+  [ STEM < "判处" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "判", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_判处_v_2_rel" ],
+    TRAITS native_token_list ].
+
+追究_v_1 := v_np-np_le &
+  [ STEM < "追究" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "追", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_追究_v_1_rel" ],
+    TRAITS native_token_list ].
+
+告知_v_2 := v_np-np_le &
+  [ STEM < "告知" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "告", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_告知_v_2_rel" ],
+    TRAITS native_token_list ].
+
+展示_v_2 := v_np-np_le &
+  [ STEM < "展示" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "展", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_展示_v_2_rel" ],
+    TRAITS native_token_list ].
+
+问到_v_2 := v_np-np_le &
+  [ STEM < "问到" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "问", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_问到_v_2_rel" ],
+    TRAITS native_token_list ].
+
+授予_v_1 := v_np-np_le &
+  [ STEM < "授予" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "授", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_授予_v_1_rel" ],
+    TRAITS native_token_list ].
+
+扇_v_1 := v_np-np_le &
+  [ STEM < "扇" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "扇", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_扇_v_1_rel" ],
+    TRAITS native_token_list ].
+
+叫_v_6 := v_np-np_le &
+  [ STEM < "叫" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "叫", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_叫_v_6_rel" ],
+    TRAITS native_token_list ].
+
+指控_v_1 := v_np-np_le &
+  [ STEM < "指控" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "指", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_指控_v_1_rel" ],
+    TRAITS native_token_list ].
+
+问_v_2 := v_np-np_le &
+  [ STEM < "问" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "问", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_问_v_2_rel" ],
+    TRAITS native_token_list ].
+
+送交_v_1 := v_np-np_le &
+  [ STEM < "送交" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "送", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_送交_v_1_rel" ],
+    TRAITS native_token_list ].
+
+颁给_v_1 := v_np-np_le &
+  [ STEM < "颁给" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "颁", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_颁给_v_1_rel" ],
+    TRAITS native_token_list ].
+
+派往_v_2 := v_np-np_le &
+  [ STEM < "派往" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "派", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_派往_v_2_rel" ],
+    TRAITS native_token_list ].
+
+授于_v_1 := v_np-np_le &
+  [ STEM < "授于" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "授", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_授于_v_1_rel" ],
+    TRAITS native_token_list ].
+
+结给_v_1 := v_np-np_le &
+  [ STEM < "结给" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "结", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_结给_v_1_rel" ],
+    TRAITS native_token_list ].
+
+欠_v_1 := v_np-np_le &
+  [ STEM < "欠" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "欠", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_欠_v_1_rel" ],
+    TRAITS native_token_list ].
+
+调拔_v_1 := v_np-np_le &
+  [ STEM < "调拔" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "调", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_调拔_v_1_rel" ],
+    TRAITS native_token_list ].
+
+捐给_v_1 := v_np-np_le &
+  [ STEM < "捐给" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "捐", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_捐给_v_1_rel" ],
+    TRAITS native_token_list ].
+
+交还_v_1 := v_np-np_le &
+  [ STEM < "交还" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "交", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_交还_v_1_rel" ],
+    TRAITS native_token_list ].
+
+祝_v_2 := v_np-np_le &
+  [ STEM < "祝" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "祝", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_祝_v_2_rel" ],
+    TRAITS native_token_list ].
+
+致_v_1 := v_np-np_le &
+  [ STEM < "致" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "致", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_致_v_1_rel" ],
+    TRAITS native_token_list ].
+
+帮_v_2 := v_np-np_le &
+  [ STEM < "帮" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "帮", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_帮_v_2_rel" ],
+    TRAITS native_token_list ].
+
+献给_v_1 := v_np-np_le &
+  [ STEM < "献给" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "献", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_献给_v_1_rel" ],
+    TRAITS native_token_list ].
+
+罚_v_1 := v_np-np_le &
+  [ STEM < "罚" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "罚", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_罚_v_1_rel" ],
+    TRAITS native_token_list ].
+
 
