@@ -114,6 +114,7 @@ s7-bottom-coord := s7-bottom-coord-rule.
 
 head-opt-comp := head-opt-comp-phrase & [ STYLE robust ].
 
+;; SSH/ZZF 2015-04-08: 张三 李四 追 了  (i.e. SOV) 
 comp-head-final := comp-head-final-phrase & [ STYLE robust ].
 
 filler-head := filler-head-phrase & [ STYLE robust ].
@@ -130,98 +131,48 @@ imper := imperative-phrase & [ STYLE robust ].
 n-n-compound := noun-noun-compound-phrase.
 de-n-compound := nom-de-noun-compound-phrase.
 
-;;张三 跑 累 了
-rslt-1_1-1 := rslt-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
-					   COMPS < > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-					COMPS < > ] ].
 
-;;张三 哭 红 了 双眼
-rslt-1_1-2 := rslt-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
-			   COMPS < #comp & [ OPT - ] > ],
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
-				    COMPS < > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL  [ SUBJ < #comp >,
-					 COMPS < > ] ].
-;;张三 玩 忘 了 责任
-rslt-1_12 := rslt-compound-phrase & 
+rslt-1_12 := rslt-1_12-phrase & 
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < [ OPT - ] > ].
+rslt-12_12 := rslt-12_12-phrase.
+
+rslt-1_1-sbj-s := rslt-1_1-sbj-share-phrase. 
+rslt-1_1-sbj-ns := rslt-1_1-sbj-nonshare-phrase & 
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < unexpressed & [ OPT + ] > ].
+rslt-1_1-obj := rslt-1_1-obj-phrase &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ OPT - ] > ].
+
+rslt-12_1-sbj := rslt-12_1-sbj-phrase.
+rslt-12_1-obj := rslt-12_1-obj-phrase. 
+rslt-12_1-inv := rslt-12_1-inv-phrase & 
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < [ OPT - ] > ].
+
+;; li:90 (p. 200)
+;;张三 带 给 李四 苹果
+rslt-12_123 := rslt-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-			   COMPS #comps ],
+			   COMPS < #comp1, #comp2 > ],
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-				    COMPS < >],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-					COMPS #comps & < [ OPT - ] > ] ].
-
-;;张三 追 累 了 李四 (Zhangsan chased Lisi to the extent of making Lisi tired.)
-rslt-12_1-1 := rslt-compound-phrase & 
+				    COMPS < #comp1 > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD.CHAR.WCHAR "给",
+				    VAL [ SUBJ.FIRST #subj,
+					  COMPS < #comp1, #comp2 >  ] ] ].
+;; li:90 (p. 200)
+;;张三 送 给 李四 苹果
+rslt-123_123 := rslt-compound-phrase & 
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-			   COMPS < #comp > ],
+			   COMPS < #comp1, #comp2 > ],
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-				    COMPS < #comp >],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #comp,
-					COMPS < > ] ].
+				    COMPS < #comp1, #comp2 > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD.CHAR.WCHAR "给",
+				    VAL [ SUBJ.FIRST #subj,
+					  COMPS < #comp1, #comp2 >  ] ] ].
 
-;;张三 追 累 了 李四 (Zhangsan chased Lisi and Zhangsan got tired.)
-rslt-12_1-2 := rslt-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
-					   COMPS < [ OPT - ] > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-					COMPS < > ] ].
-
-;;这 种 药 吃 死 你
-rslt-12_1-3 := rslt-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-			   COMPS < #comp > ],
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #comp,
-					   COMPS < #subj & [ OPT - ] > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #comp,
-					COMPS < > ] ].
-
-;;张三 下 赢 棋
-rslt-12_12 := rslt-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
-					   COMPS < #comp > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-					COMPS < #comp >  ] ].
-
-#|
-
-p12-v2-compound := rslt-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ COMPS < #first & [ OPT - ] > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ] ].
-
-p12-v12-compound := rslt-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #subj,
-					   COMPS < #comp & [ OPT - ] > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
-					COMPS.FIRST #comp ] ].
-
-
-p1-a1-compound := rslt-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
-					   COMPS < > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ] ].
-
-p12-a1-compound := rslt-compound-phrase & 
-  [ SYNSEM.LOCAL.CAT.VAL #val,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL #val & [ SUBJ.FIRST #first,
-					   COMPS < [ OPT - ] > ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #first,
-					COMPS < > ] ].
-|#
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Newly introduced phrase structure rules
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 np-adp := np-adp-phrase.
-
 ; head-grd := head-gerundive-phrase.
 
 comp-marker := comp-marker-phrase.
@@ -229,3 +180,6 @@ marker-comp := marker-comp-phrase.
 
 ;ZZF/SSH 2015-04-01 to handle variations of ditransitive verbs
 head-2nd-comp := head-2nd-comp-phrase.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+

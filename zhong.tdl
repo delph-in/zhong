@@ -44,6 +44,7 @@ synsem :+
  [ PUNCTUATED luk,
    INTERJECTED luk,
    PAREN luk,
+   ASPECTED luk,
    SPART spart,
    BOUND luk ].
 
@@ -52,6 +53,7 @@ not-crs := spart.
 not-ma := spart.
 crs := not-ma.
 ma := not-crs.
+no-spart := spart.
 not-crs-not-ma := not-crs & not-ma.
 
 
@@ -132,11 +134,15 @@ length := avm.
 one := length.
 more-than-one := length.
 
+
+;; WWJ 2015-04-07: EXISTV for 有; MODIFIABLE used 
+;; for A-elements in A-not-A structures
+head :+ [ EXISTV bool, MODIFIABLE bool ].
+
 head :+ [ CHAR char ].
 lex-item :+ 
  [ STEM.FIRST #str,
    SYNSEM.LOCAL.CAT.HEAD.CHAR.WCHAR #str ].
-
 
 marker-or-punct := head & 
  [ MOD <> ].
@@ -156,12 +162,8 @@ noun :+
 ;; SSH 2014-10-10 nominalizer 的 'de'
 nm := noun.
 
-hon-lex := lex-item &
-  [ SYNSEM.LOCAL.CAT.HEAD.HON + ]. 
-
 num :+ 
  [ CARDINAL bool ].
-
 
 ;; SSH 2014-09-02: Gender is necessary to distinguish he and she. 
 ;; 她 追赶 了 他: She chased him.
@@ -199,13 +201,13 @@ gender := *top*.
 masc := gender.
 fem := gender.
 
-;;; SSH 2014-09-02
+;;; SSH 2014-09-02; 2015-04-08 revised 
 ;;; Animacy
 animacy := *top*.
-human := animacy.
-non-human := animacy.
-animate := non-human.
-inanimate := non-human.
+animate := animacy.
+human := animate.
+non-human := animate.
+inanimate := animacy.
 
 ;;; Form
 
@@ -261,6 +263,13 @@ head-adj-int-phrase :+
     NON-HEAD-DTR.SYNSEM [ L-PERIPH #lperiph,
 			  R-PERIPH #rperiph ] ].
 
+;; WWJ (2015-03-28): NHD's SPART and Phrase's NHD are identi-fied... is this ok?
+head-adj-scop-phrase :+
+  [ SYNSEM.SPART #spart,
+    HEAD-DTR.SYNSEM.ASPECTED +-or--,
+    NON-HEAD-DTR.SYNSEM [ BOUND -, 
+                          SPART #spart ] ].
+
 ;; The head of head-comp-phrase can't be: ['comp']
 
 head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
@@ -269,6 +278,13 @@ head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
 			  INTERJECTED na-or-- ] ].
 
+;; WWJ (2015-03-28) - HEAD-DTR's spart value is passed up to this phrase
+head-comp-phrase :+
+  [ SYNSEM.SPART #spart,
+    HEAD-DTR.SYNSEM.SPART #spart,
+    NON-HEAD-DTR.SYNSEM.BOUND - ].
+
+
 head-2nd-comp-phrase := basic-head-2nd-comp-phrase & head-initial &
   [ SYNSEM phr-synsem &
        [ LOCAL.CAT.HEAD verb ],
@@ -276,7 +292,7 @@ head-2nd-comp-phrase := basic-head-2nd-comp-phrase & head-initial &
                           R-PERIPH na-or--,
 			  INTERJECTED na-or-- ] ]. 
 
-comp-head-final-phrase := basic-head-1st-comp-phrase & head-final &
+comp-head-final-phrase := basic-head-1st-comp-phrase & head-final & 
   [ SYNSEM.LOCAL.CAT.HEAD +nvjrpdmo,
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
 			  LOCAL.CAT.HEAD adp ] ].
@@ -286,10 +302,12 @@ comp-head-final-phrase := basic-head-1st-comp-phrase & head-final &
 ;; SSH 2014-09-26: Only phrases can be the subjects (phr-synsem)
 subj-head-phrase := decl-head-subj-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.MC #mc,
+    SYNSEM.SPART #spart,
     HEAD-DTR.SYNSEM.LOCAL.CAT [ MC #mc,
 				VAL [ SPR olist,
 				      COMPS < > ],
 				POSTHEAD + ],
+    HEAD-DTR.SYNSEM.SPART #spart,
     NON-HEAD-DTR.SYNSEM  [ R-PERIPH na-or--,
 			   INTERJECTED na-or--,
 			   LOCAL [ CAT [ MC +,
@@ -695,8 +713,9 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
 ;;; DPF 21-dec-09 - use head-compositional etc instead...
 
 head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
-  [ HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd,
-			    CONT.HOOK #hook ],
+  [ SYNSEM.LOCAL.CAT.HEAD.MODIFIABLE +,
+    HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd & [ MODIFIABLE + ],
+                            CONT.HOOK #hook ],
     C-CONT.HOOK #hook ].
 
 ; For nominalizer head `de', which must be [HEAD noun], but which is also the
@@ -948,7 +967,33 @@ nom-de-noun-compound-phrase := head-final &
              ICONS <! noun-noun & [ IARG1 #hind, 
 				    IARG2 #nhind ] !> ] ].
 
-;; SSH 2015-01-14: V-V compounds 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Resultative Compounds 
+;;; SSH 2015-04-06
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; @phdthesis{lee:13,
+;   title={Event Structure and Grammatical Patterns: Resultative Constructions},
+;   author={Lee, Leslie},
+;   year={2013},
+;   school={University of California, San Diego}
+; }
+;  Type 4, 6, 13 were not introduced in order to reduce overgeneration (they are rarely used).
+;  Type 8 can be handled as head-opt-comp-phrase. 
+;  Type 9 is redundant to others except for noun incorporation.
+;  Instead, I added two more types in which 给 is used as V2 from the following article.
+; @article{li:90,
+;   title={{On VV Compounds in Chinese}},
+;   author={Li, Yafei},
+;   journal={Natural Language \& Linguistic Theory},
+;   volume={8},
+;   number={2},
+;   pages={177--207},
+;   year={1990},
+;   publisher={Springer}
+; }
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 rslt-compound-phrase := head-initial &
   [ SYNSEM [ LOCAL.CAT [ HEAD #head,
 			 VAL [ SPR #spr,
@@ -960,7 +1005,8 @@ rslt-compound-phrase := head-initial &
 			 NONSUBJ #nonsubj ],
 	     NON-LOCAL #nonloc ],
     HEAD-DTR.SYNSEM lex-synsem &
-                [ LOCAL [ CAT [ HEAD #head & +vj & [ CHAR.LENGTH one,
+                [ BOUND na-or--,
+		  LOCAL [ CAT [ HEAD #head & +vj & [ CHAR.LENGTH one,
 						     AUX - ],				
 				VAL [ SPR #spr,
 				      SPEC #spec ],
@@ -984,10 +1030,88 @@ rslt-compound-phrase := head-initial &
 	     ICONS <! rslt & [ IARG1 #arg1, 
 			       IARG2 #arg2 ] !> ] ].
 
-;pred-verb-compound-phrase := rslt-compound-phrase & 
-;  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD verb & [ CHAR.LENGTH one] ].
-;pred-adj-compound-phrase := rslt-compound-phrase & 
-;  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD adj ].
+rslt-x_12-phrase := rslt-compound-phrase & 
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
+			   COMPS < #comp > ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj >,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
+					COMPS < #comp > ] ].
+
+rslt-1_1-phrase := rslt-compound-phrase & 
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < >,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+
+rslt-12_1-phrase := rslt-compound-phrase & 
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < [] >,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+
+subject-oriented-phrase := head-initial & 
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj >,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ].
+
+object-oriented-phrase := head-initial & 
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comp >,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #comp > ].
+
+inverse-oriented-phrase := head-initial & 
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
+			   COMPS < #comp > ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #comp >,
+				    COMPS < #subj > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #comp > ].
+
+;; Type 2 (lee:13)
+;;张三 玩 忘 了 责任
+rslt-1_12-phrase := rslt-x_12-phrase & subject-oriented-phrase &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+
+;; Type 1 (lee:13)
+;;张三 下 赢 棋
+rslt-12_12-phrase := rslt-x_12-phrase & subject-oriented-phrase &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #comps,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #comps ].
+
+;; Type 10 (lee:13)
+;;张三 跑 累 了
+rslt-1_1-sbj-share-phrase := rslt-1_1-phrase & subject-oriented-phrase &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj >,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ].
+
+;; Type 11 (lee:13)
+;; 双眼 哭 红 了 
+rslt-1_1-sbj-nonshare-phrase := rslt-1_1-phrase & subject-oriented-phrase &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < unexpressed & [ OPT + ] > ].
+
+;; Type 5 (lee:13)
+;;张三 哭 红 了 双眼
+rslt-1_1-obj-phrase := rslt-1_1-phrase & object-oriented-phrase &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj >,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ].
+
+;; Type 7 (lee:13)
+;;张三 追 累 了 李四 (Zhangsan chased Lisi and Zhangsan got tired.)
+rslt-12_1-sbj-phrase := rslt-12_1-phrase & subject-oriented-phrase &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comp >,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
+				    COMPS < #comp > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ]. 
+
+;; Type 3 (lee:13)
+;;张三 追 累 了 李四 (Zhangsan chased Lisi to the extent of making Lisi tired.)
+rslt-12_1-obj-phrase := rslt-12_1-phrase & object-oriented-phrase &
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
+			   COMPS < #comp > ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
+				    COMPS < #comp >] ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Type 12 (lee:13)
+;;这 种 药 吃 死 你
+rslt-12_1-inv-phrase := rslt-12_1-phrase & inverse-oriented-phrase.
+
 
 ;; Make temporal NPs into adposition phrases
 np-adp-phrase := unary-phrase &
@@ -1017,8 +1141,12 @@ np-adp-phrase := unary-phrase &
          HCONS <! !>,
          ICONS <! !> ] ].
 
+;; WWJ 2014-04-07: to block adj-not-adj prep-not-prep 
+;; SSH 2015-04-08: to block overgeneration, [ASPECTED +-or--] is added.
 head-opt-comp-phrase := basic-head-opt-comp-phrase &
-  [ SYNSEM phr-synsem ].
+  [ SYNSEM phr-synsem, 
+    HEAD-DTR.SYNSEM [ ASPECTED +-or--,
+		      LOCAL.CAT.HEAD verb ] ].
 
 ; for sentential subjects
 sent-subj-phrase := head-valence-phrase & head-only &

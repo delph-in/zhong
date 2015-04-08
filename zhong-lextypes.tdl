@@ -8,6 +8,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+hon-lex-item := lex-item &
+ [ SYNSEM.LOCAL.CAT.HEAD.HON + ]. 
+
+animate-lex-item := lex-item & 
+ [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY animate ]. 
+human-lex-item := lex-item & 
+ [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human ]. 
+non-human-lex-item := lex-item & 
+ [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY non-human ]. 
+inanimate-lex-item := lex-item & 
+ [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate ]. 
+
 ;;; Lexical types
 
 ;;; Nouns
@@ -89,7 +101,7 @@ proper-name-lex := basic-one-arg & basic-icons-lex-item &
 ;; *我 要 去 李四 / 我 要 去 李四 的 家
 loc-name-lex := proper-name-lex.
 nonloc-name-lex := proper-name-lex.
-human-name-lex := nonloc-name-lex.
+human-name-lex := nonloc-name-lex & human-lex-item. 
 sir-name-lex := human-name-lex.
 
 
@@ -115,32 +127,6 @@ basic-pronoun-lex := basic-one-arg & norm-hook-lex-item &
 personal-pronoun-lex := basic-pronoun-lex & basic-icons-lex-item &
   [ SYNSEM.LOCAL.CONT.RELS <! relation, 
 			    [ PRED "pronoun_q_rel" ] !> ].
-
-; 1sg-pronoun-noun-lex := pronoun-lex &
-;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1sg ].
-
-; 2sg-pronoun-noun-lex := pronoun-lex &
-;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2sg ].
-
-; 2sg-pronoun-noun-hon-lex := 2sg-pronoun-noun-lex & hon-lex.
-
-; 3sg-pronoun-noun-lex := pronoun-lex &
-;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3sg ].
-
-; 1pl-pronoun-incl-noun-lex := pronoun-lex &
-;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl & 1pl_incl ].
- 
-; 1pl-pronoun-excl-noun-lex := pronoun-lex &
-;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl & 1pl_excl ].
-
-; 2pl-pronoun-noun-lex := pronoun-lex &
-;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2pl ].
-
-; 3pl-pronoun-noun-lex := pronoun-lex &
-;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl ].
-
-; 3-pronoun-noun-lex := pronoun-lex &
-;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ].
 
 wh-pronoun := basic-pronoun-lex & 
   [SYNSEM [ LOCAL.CONT [ HOOK [ INDEX #index & [ PNG.PERNUM 3rd ],
@@ -266,6 +252,7 @@ head :+
 
 verb-lex := lex-item &
   [ SYNSEM [ PAREN -,
+	     ASPECTED na,
 	     LOCAL.CAT.HEAD verb ] ].
 
 main-verb-lex := verb-lex & basic-verb-lex &
@@ -462,6 +449,9 @@ ditrans-verb-lex := ditransitive-lex-item & super-ditrans-verb-lex.
 ditrans-pp-verb-lex := ditransitive-lex-item-2 & super-ditrans-verb-lex &
  [ ARG-ST  < [], [], [ LOCAL.CAT.HEAD adp & [ PFORM gei-or-xiang ] ] > ].
 
+ditrans-preverbal-pp-verb-lex := ditrans-pp-verb-lex & 
+ [ ARG-ST  < [], [], [ LOCAL.CAT [ HEAD [ PFORM xiang ] ] ] > ].
+
 trans-loc-verb-lex := basic-three-arg-no-hcons & main-verb-lex & basic-icons-lex-item & aspect-rule-dtr &
  [ SYNSEM[LOCAL.CAT.VAL.COMPS < #comp1,#comp2>,
           LKEYS.KEYREL [ARG1 #arg1, 
@@ -513,9 +503,14 @@ v_exist-lex := basic-two-arg & verb-lex & basic-verb-lex &
                    XARG #arg1 ] ] ] > ].
 |#
 
+;; WWJ 2015-02-08: Changed HEAD of #subj to be noun and postp (instead of just postp)
+;; to account for cases like 学校 有 狗 or 盒子 有 蛋糕, where the PP might be omitted
+;; EXISTV has been added as a property to block 不 有
+
 v_exist-lex := basic-three-arg & verb-lex & basic-verb-lex & basic-icons-lex-item &
  [ SYNSEM [ LOCAL [ CAT.VAL [ SUBJ < #subj >,
                               COMPS < #comp1, #comp2 > ],
+		    CAT.HEAD [ EXISTV + ],
                     CONT [ HOOK [ LTOP #lbl,
                                   INDEX #event ],
                            RELS <! #keyrel !>,
@@ -678,8 +673,10 @@ basic-scopal-adverb-lex :+
 
 ;;Non-moveable manner adverbs
 
+;; WWJ 2015-04-07: Added such that modified item has to be [ MODIFIABLE + ]
+
 int-adv-vp-pre := basic-int-adverb-lex &
-  [ SYNSEM [ LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
+  [ SYNSEM [ LOCAL.CAT [ HEAD.MOD < [ 	LOCAL.CAT [ HEAD verb & [ MODIFIABLE + ],
 						  VAL [ SUBJ < [] >,
 							COMPS < > ] ] ] >,
 			 VAL [ COMPS < >,
@@ -688,10 +685,11 @@ int-adv-vp-pre := basic-int-adverb-lex &
 
 ;; SSH 2014-09-02: To block generation (e.g., 狗 在 在 在 ... 叫), I
 ;; added [MODIFIED notmod].
+;; WWJ 2015-03-26: Added [ MODIFIABLE + ] so it won't modify A-NOT-A phrases
 int-adv-vp-pre-no-rel := intersective-mod-lex & basic-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD adv &
 				[ MOD < [ MODIFIED notmod,
-					  LOCAL [ CAT [ HEAD verb,
+					  LOCAL [ CAT [ HEAD verb & [ MODIFIABLE + ],
 							VAL [ SUBJ < [] >,
 							      COMPS < > ] ],
 						  CONT.HOOK #hook & 
@@ -947,21 +945,6 @@ aspect-markers := raise-sem-lex-item & no-icons-lex-item &
 			   POSTHEAD + ] ],
 	     NON-LOCAL.SLASH 0-dlist ] ].
 
-; int-adv-v-post := intersective-mod-lex & basic-icons-lex-item &
-;   [ SYNSEM [ LOCAL [ CAT [ HEAD adv & 
-; 				[ MOD < lex-synsem & 
-; 					[ LOCAL [ CAT [ POSTHEAD -,
-; 							HEAD +vp & [ AUX - ] ],
-; 						  CONT.HOOK #hook ] ] > ],
-; 			   VAL [ COMPS < >,
-; 				 SUBJ < >,
-; 				 SPEC < >,
-; 				 SPR < > ],
-; 			   POSTHEAD + ],
-; 		     CONT [ HOOK #hook, RELS <! !> ] ],
-; 	     NON-LOCAL.SLASH 0-dlist ] ].
-
-
 pfv-marker := aspect-markers & 
  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] > ] ].
 
@@ -995,6 +978,7 @@ qpart-lex-item := spart-lex-item &
 		     CONT.HOOK.INDEX.SF ques ] ] ].
 
 ;; SSH 2014-09-11: [SPEC <>] is added to block 了 不.
+;; WWJ 2015-03-17: Added LOCAL...SF prop to block use with A-not-A
 crs-lex-item := spart-lex-item &
   [ STYLE robust,
     SYNSEM [ R-PERIPH +,
@@ -1004,6 +988,7 @@ crs-lex-item := spart-lex-item &
 						     VAL [ SUBJ < >,
 							   COMPS < > ],
 						     MC #mc ],
+					 LOCAL.CONT.HOOK.INDEX.SF prop,
 					 NON-LOCAL.SLASH 0-dlist ] >,
 			       SPEC < >],
 			 MC #mc ] ] ].
@@ -1029,19 +1014,102 @@ neg-adv-lex := basic-scopal-adverb-lex &
 ; 							COMPS null ] ] ] ] > ] ].
 
 
+;#|******** A-NOT-A QUESTIONS ******** 
+;;  WWJ: A-not-A Interrogatives 
+;; 	Update (2015-02-14): Implemented AB-not-A(B)
+;;	Update (2015-02-13): Added general structure, and individual structures for BASIC and CONTRACTED forms
+;;|#
 
-; For polar questions
-v-not-v-adv-lex := basic-scopal-adverb-lex &
-  [ SYNSEM [ LOCAL [ CAT [ VAL.COMPS < lex-synsem &
-				       [ LOCAL.CAT.HEAD verb,
+;; ***** Basic + Contracted A-not-A
+
+a-not-a-adv-lex := basic-scopal-adverb-lex &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD [ MODIFIABLE -,
+				  MOD < lex-synsem &
+					[ ASPECTED -,
+					  LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE - ],
+						       VAL [ COMPS #comps,
+							     SUBJ #subj ] ],
+						 CONT.HOOK.INDEX #idx & [ E.ASPECT non-aspect ] ],
+					 LKEYS.KEYREL.PRED #pred ] > ],
+			   VAL.COMPS < lex-synsem &
+				       [ SPART no-spart,			
+					 ASPECTED -,		 
+					 LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE - ],
+						       VAL [ COMPS #comps,
+							     SUBJ #subj ] ],
+						 CONT.HOOK.INDEX #idx & [ E.ASPECT non-aspect ] ],
 					 NON-LOCAL.SLASH 0-dlist,
 					 LKEYS.KEYREL.PRED #pred ] >,
+			   POSTHEAD + ],
+		     CONT.HOOK.INDEX [ SF ques,
+				       E.ASPECT non-aspect ] ],
+	     NON-LOCAL.SLASH 0-dlist,
+	     SPART no-spart ] ].
+
+a-not-a-basic-adv-lex := a-not-a-adv-lex &
+  [ SYNSEM.LOCAL.CAT [ VAL.COMPS < [ LOCAL.CAT.HEAD.CHAR.WCHAR #str ] >,
+		       HEAD.MOD < [ LOCAL.CAT.HEAD.CHAR.WCHAR #str, 
+				    BOUND - ] > ] ].
+
+a-not-a-contracted-adv-lex := a-not-a-adv-lex &
+  [ SYNSEM.LOCAL.CAT [ VAL.COMPS < [ LOCAL.CAT.HEAD.CHAR [ FCHAR #fstr, 
+							   LENGTH more-than-one ] ] >,
+		       HEAD.MOD < [ LOCAL.CAT.HEAD.CHAR [ WCHAR #fstr,
+							  LENGTH one ] ] > ] ].
+
+;#|***** AB-NOT-A(B) ******
+; WJ (2015-02-14): This covers the AB-not-A(B) structure, where B is the object.
+; 		 Unlike the regular ADV 不, which is [ [不 [喜欢] ] 狗 ], 
+; 		 for AB-not-AB, the VPs are modified by 不 as a single unit: [ 不 [ [ 喜欢 ] 狗 ] ]
+
+; 		 张三 喜欢 狗 不 喜欢 狗
+; 		 张三 喜欢 狗 不 喜欢
+; 		*张三 喜   狗 不 喜欢
+; 		*张三 喜欢 狗 不 喜
+; 		*张三 喜欢 不 喜 狗
+
+; WJ (2015-02-15): Added phr-synsem
+; WJ (2015-02-20): Added CONT.HOOK.INDEX.SF ques to prevent IMPER
+; WJ (2015-03-04): Added SUBJ < [] > to HEAD.MOD to block [ [ 张三喜欢狗 ]-S [ 不 [喜欢 狗]-VP ]-ADV
+; WJ (2015-03-16): 1) Added HEAD.MODIFIABLE - to COMPS and MOD to block the A-elements from being modified 
+; 									(Eg: * 张三 很 喜欢 不 很 喜欢 狗)
+; 		 2) Added E.ASPECT non-aspect to COMPS and MOD to block ASP-了 from modifying elements
+;*********************** |#
+
+ab-not-ab-adv-lex := basic-scopal-adverb-lex &
+  [ SYNSEM [ LOCAL [ CAT [ VAL.COMPS < phr-synsem &
+				       [ LOCAL [ CAT [ HEAD verb & [ CHAR.WCHAR #wstr,
+								     MODIFIABLE - ] ], 
+						 CONT.HOOK.INDEX [ SF ques,
+								   E.ASPECT non-aspect ] ], 
+					 NON-LOCAL.SLASH 0-dlist ] >,
 			   POSTHEAD +,
-			   HEAD.MOD < lex-synsem &
-				      [ LOCAL.CAT.HEAD verb,
-					LKEYS.KEYREL.PRED #pred ] > ],
+			   HEAD [ MODIFIABLE -,
+				  MOD < phr-synsem &
+					[ LOCAL [ CAT [ HEAD verb & [ CHAR.WCHAR #wstr,
+								      MODIFIABLE - ],
+							VAL [ SUBJ < [ ] > ] ],
+						  CONT.HOOK.INDEX [ SF ques,
+								    E.ASPECT non-aspect ] ] ] > ] ],
 		     CONT.HOOK.INDEX.SF ques ],
 	     NON-LOCAL.SLASH 0-dlist ] ].
+
+
+;; WWJ (2015-02-08): These sub-variants are supplementary definitions for 不, which blocks 有 不 有
+;; I added the EXISTV feature for this; not sure if this is in line with standard practices...
+;; Update (2015-02-13) : Split into three, BASIC, CONTRACTED and AB-not-A(B), inheriting from the structures above
+
+a-not-a-bu-basic-adv-lex := a-not-a-basic-adv-lex &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ LOCAL.CAT.HEAD.EXISTV - ] > ] ] ] ]. 
+
+a-not-a-bu-contracted-adv-lex := a-not-a-contracted-adv-lex &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ LOCAL.CAT.HEAD.EXISTV - ] > ] ] ] ].
+
+ab-not-ab-bu-adv-lex := ab-not-ab-adv-lex &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ LOCAL.CAT.HEAD.EXISTV - ] > ] ] ] ].
+
+;;|# ******** END OF A-NOT-A QUESTIONS ******** #|
+
 
 ; This grammar includes head-modifier rules.  To keep
 ; out extraneous parses, constrain the value of MOD on
@@ -1286,7 +1354,7 @@ no-drop-verb-lex := no-subj-drop-verb-lex & no-obj-drop-verb-lex & basic-icons-l
 
 ; Prepositions
 
-adposition-lex := basic-adposition-lex &
+adposition-lex := basic-adposition-lex & no-hcons-lex-item &
   [ SYNSEM [ PAREN -,
 	     LOCAL.CONT [ HOOK [ LTOP #ltop,
 				 INDEX #index ],
@@ -1468,12 +1536,13 @@ adv_prefix_form_lex := adv_affix_form_lex &
 ;; (e.g. 张三 叫). A sentence without any aspect markers should not be
 ;; paraphrased into sentences with such markers.
 aspect-lex-rule := const-cat-change-only-lex-rule & 
- [ SYNSEM.LOCAL.CAT [ MC luk,
+ [ SYNSEM [ ASPECTED -,
+	    LOCAL.CAT [ MC luk,
 		      HEAD #head, 
 		      VAL #val, 
 		      MKG #mkg, 
 		      HC-LIGHT #light, 
-		      POSTHEAD #posthead ],
+		      POSTHEAD #posthead ] ],
    DTR aspect-rule-dtr & [ SYNSEM.LOCAL.CAT [ HEAD #head, 
 					      VAL #val, 
 					      MKG #mkg, 
@@ -1487,9 +1556,15 @@ aspect-rule-dtr := word-or-lexrule & [ SYNSEM.LOCAL.CAT.MC na ].
 
 ;; SSH 2014-08-22 - lexeme-to-lexeme-rule is not used in matrix.tdl
 ;; any longer. infl-lex-rule or constant-lex-rule now works for it.
+
+;; WWJ 2015-02-17 - Value of daughter's CHAR.length should be passed up
+;; This provide the constrain that prevents a-not-a-contracted-adv-lex from acting on it.
+
 attr-to-pred-adj-lex-rule := pred-adj-lex & constant-lex-rule &
-[ SYNSEM.LKEYS.KEYREL.PRED #pred,
-  DTR attr-adj-lex & [ SYNSEM.LKEYS.KEYREL.PRED #pred ] ].
+[ SYNSEM [ LKEYS.KEYREL.PRED #pred, 
+  		   LOCAL.CAT.HEAD.CHAR.LENGTH #charlength ],
+  DTR attr-adj-lex & [ SYNSEM [ LKEYS.KEYREL.PRED #pred, 
+                                LOCAL.CAT.HEAD.CHAR.LENGTH #charlength  ] ] ].
 
 ;; DPF 2011-06-03 - Adverb complement may need to be restricted to aspect
 ;; markers, but note that "cat old de very" is okay, and likewise for other
@@ -1499,9 +1574,13 @@ attr-to-pred-adj-lex-rule := pred-adj-lex & constant-lex-rule &
 ;; to produce a post-head adv.
 ;;
 
+;; WWJ 2015-02-17 - Value of daughter's CHAR.length should be passed up to the head of the phrase
+;; This provides the constrain that prevents a-not-a-contracted-adv-lex from acting on it.
+
 attr-to-pred-adj-aspect-lex-rule := basic-pred-adj-lex & constant-lex-rule &
 [ SYNSEM [ LKEYS.KEYREL.PRED #pred,
-	   LOCAL [ CAT [ HEAD.MOD < >,
+	   LOCAL [ CAT [ HEAD [ MOD < >,
+                            CHAR.LENGTH #charlength ],  
 			 VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
 					       CONT.HOOK #hook ] ] >,
 			       COMPS < [ LOCAL 
@@ -1512,7 +1591,8 @@ attr-to-pred-adj-aspect-lex-rule := basic-pred-adj-lex & constant-lex-rule &
 					 OPT - ] > ] ],
 		   CONT.HOOK #hook ] ],
   DTR attr-adj-lex &
-	 [ SYNSEM.LKEYS.KEYREL.PRED #pred ] ].
+	 [ SYNSEM [ LKEYS.KEYREL.PRED #pred,
+                LOCAL.CAT.HEAD.CHAR.LENGTH #charlength ] ] ].
 
 vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule & 
   [ SYNSEM [ LOCAL.CAT [ HEAD #head,

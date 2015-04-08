@@ -1,0 +1,1084 @@
+Language: Mandarin Chinese (simplified)
+Language code: cmn
+Lines: orth translit gloss translat
+Author: Wenjie Wang
+Date: 2014-12-17
+
+### simple A NOT-A (ADJ)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+她 高 不 高 ？
+ta1 gao1 bu4 gao1 ?
+she tall NOT tall
+Is she tall?
+
+### simple A NOT-A (ADJ)
+### First and second ADJ is not identical
+Source:  native speaker 
+Vetted: t 
+Judgment: u
+Phenomena: A NOT-A 
+她 高 不 矮 ？
+ta1 gao1 bu4 ai3 ?
+she tall NOT short
+(lit.) Is she tall?
+
+### simple A NOT-A (ADJ)(MW)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+她 健康 不 健康 ？
+ta1 jian4kang1 bu4 jian4kang1 ?
+she healthy NOT healthy
+Is she healthy?
+
+### simple A NOT-A (ADJ)(MW)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+她 聪明 不 健康 ？
+ta1 cong1ming2 bu4 jian4kang1 ?
+she clever NOT healthy
+(lit.) Is she clever?
+
+### simple A NOT-A (ADJ)(Redup)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+她 健 不 健康 ？
+ta1 jian4 bu4 jian4kang1 ?
+she healthy NOT healthy
+Is she healthy?
+
+### simple A NOT-A (ADJ)(Redup)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+她 康 不 健康 ？
+ta1 kang1 bu4 jian4kang1 ?
+she healthy NOT healthy
+Is she healthy?
+
+### simple A NOT-A (ADJ)(Redup)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+她 健康 不 健 ？
+ta1 kang1 bu4 jian4 ?
+she healthy NOT healthy
+Is she healthy?
+
+### simple A NOT-A (ADJ)(Redup)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+她 健康 不 康 ？
+ta1 kang1 bu4 kang1 ?
+she healthy NOT healthy
+Is she healthy?
+
+### simple A NOT-A (ADJ)(Redup)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+她 聪 不 健康 ？
+ta1 cong1 bu4 jian4kang1 ?
+she healthy NOT healthy
+Is she healthy?
+
+### simple A NOT-A (V)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+是 不 是
+shi4 bu4 shi4
+be NOT be (SHI not SHI)
+Is it?/Isn't it?
+
+### simple A NOT-A (V, 是)
+Source: Tseng (2009:110, Eg 3b)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+张三 是 不 是 喜欢 李四
+zhang1san1 shi4 bu4 shi4 xi3huan1 li3si4
+Zhangsan SHI NOT SHI like Lisi
+Is it the case that Zhangsan likes Lisi?
+
+### simple A NOT-A (V, 是没是)
+Source: Tseng (2009:110, Eg 3b, modified)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+张三 是 没 是 喜欢 李四
+zhang1san1 shi4 mei2 shi4 xi3huan1 li3si4
+Zhangsan SHI NOT SHI like Lisi
+Lit: Is it the case that Zhangsan likes Lisi?
+
+### simple A NOT-A (V, 是)
+Source: Tseng (2009:110, Eg 3b)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+张三 喜欢 李四, 是 不 是
+zhang1san1 xi3huan1 li3si4 shi4 bu4 shi4 
+Zhangsan like Lisi SHI NOT SHI
+It's the case that Lisi likes Zhangsan, isn't it?
+
+### simple A NOT-A (V)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 要 不 要
+ni3 yao4 bu4 yao4
+you want NOT want
+Do you want (it)?
+
+### simple A NOT-A (V)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+有 没 有
+you3 mei2 you3
+have/exist NOT have/exist
+Is there (something)?
+
+### simple A NOT-A (V)
+Source:  Huang (1991:322, Eg 66)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 有 没 有 来
+ni3 you3 mei2 you3 lai2
+you have NOT have come
+Did you come or not? (SgCMN, also: Are you coming or not?)
+
+### simple A NOT-A (V)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+有 不 有
+you3 bu4 you3
+have/exist NOT have/exist
+Lit: Is there (something)?
+
+### simple A NOT-A (V)
+Source:  Huang (1991:322, Eg 66)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 有 不 有 来
+ni3 you3 bu4 you3 lai2
+you have NOT have come
+Did you come or not? (SgCMN, also: Are you coming or not?)
+
+### simple A NOT-A (V)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜欢 不 喜欢
+ni3 xi3huan1 bu4 xi3huan4
+you like NOT like
+Do you like (it)?
+
+### simple A NOT-A (V)(Redup)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜 不 喜欢
+ni3 xi3huan1 bu4 xi3huan4
+you like NOT like
+Do you like (it)?
+
+### simple A NOT-A (V)(Comps)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜欢 不 喜欢 苹果
+ni3 xi3huan1 bu4 xi3huan4 ping2guo3
+you like NOT like apple
+Do you like apples?
+
+### simple A NOT-A (V)(Redup)(Comps)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜 不 喜欢 苹果
+ni3 xi3 bu4 xi3huan4 ping2guo3
+you like NOT like apple
+Do you like apples?
+
+### simple A NOT-A (V)(Redup)
+### With WH-interr in OBJECT position
+Source:  Huang (2012:1174, Eg 11b)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+他 喜 不 喜欢 什么
+ta1 xi3huan1 bu4 xi3huan4 shen3me4
+s/he like NOT like what
+Does s/he like or not like anything?
+
+### simple A NOT-A (V)(Redup)
+### With WH-interr in SUBJECT position
+Source:  Huang (2012:1174, Eg 11a)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+谁/什么 人 喜 不 喜欢 他
+shui2/shen3me4 ren2 xi3 bu4 xi3huan1 ta1
+who/what person like NOT like him/her
+Lit: Does anyone like or not like him/her?
+
+### simple A NOT-A (V)(Redup)
+### With WH-interr in SUBJECT position
+Source:  Huang (2012:1176, Eg 15b)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+谁/什么 人 喜 不 喜欢 他
+shui2/shen3me4 ren2 xi3 bu4 xi3huan1 ta1
+who/what person like NOT like him/her
+Lit: Does anyone like or not like him/her?
+
+### simple A NOT-A (V)(Redup)(Comps)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜 不 喜欢 吃 苹果
+ni3 xi3huan1 bu4 xi3huan4 chi1 ping2guo3
+you like NOT like eat apple
+Do you like to eat apples?
+
+### simple A NOT-A (V)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 讨 不 喜欢
+ni3 tao3 bu4 xi3huan4
+you hate NOT like
+Lit. Do you hate (it)?
+
+### simple A NOT-A (V)(Redup)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 讨厌 不 喜欢
+ni3 tao3yan4 bu4 xi3huan4
+you hate NOT like
+Lit. Do you hate (it)?
+
+### simple A NOT-A (VP not VP)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜欢 苹果 不 喜欢 苹果
+ni3 xi3huan1 ping2guo3 bu4 xi3huan4 ping2guo3
+you like apple NOT like apple
+Do you like apples?
+
+### simple A NOT-A (VP not V)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜欢 苹果 不 喜欢
+ni3 xi3huan1 ping2guo3 bu4 xi3huan4
+you like apple NOT like
+Do you like apples?
+
+### simple A NOT-A (VP not VP)
+### Maximal projection of A-not-A operator
+Source:  Huang (1991:318, eg 40)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜欢 这 本 书 不 喜欢 这 本 书
+ni3 xi3huan1 zhe4 ben3 shu1 bu4 xi3huan1 zhe4 ben3 shu1
+you like this CL book NOT like this CL book
+Do you like this book?
+
+### simple A NOT-A (VP not VP, w/ anaphoric ellipsis [AB-not-A])
+Source:  Huang (1991:318, eg 40)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜欢 这 本 书 不 喜欢
+ni3 xi3huan1 zhe4 ben3 shu1 bu4 xi3huan1
+you like this CL book NOT like
+Do you like this book?
+
+### simple A NOT-A (VP not VP, w/ anaphoric ellipsis [AB-not-A])
+Source:  Huang (1991:318, eg 40)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 喜欢 这 本 书 不 喜
+ni3 xi3huan1 zhe4 ben3 shu1 bu4 xi3
+you like this CL book NOT like
+Do you like this book?
+
+### simple A NOT-A (VP not VP)
+### Maximal projection of A-not-A operator
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜欢 吃 苹果 不 喜欢 吃 苹果
+ni3 xi3huan1 chi1 ping2guo3 bu4 xi3huan4 chi1 ping2guo3
+you like eat apple NOT like eat apple
+Do you like to eat apples?
+
+### simple A NOT-A (VP not VP)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 喜欢 吃 苹果 不 喜欢 苹果
+ni3 xi3huan1 chi1 ping2guo3 bu4 xi3huan4 ping2guo3
+you like eat apple NOT like apple
+Lit. Do you like to eat apples?
+
+### simple A NOT-A (VP not VP, w/ anaphoric ellipsis [AB-not-A])
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 喜欢 吃 苹果 不 喜欢
+ni3 xi3huan1 chi1 ping2guo3 bu4 xi3huan4
+you like eat apple NOT like
+Do you like to eat apples?
+
+### simple A NOT-A (VP not VP)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 喜欢 吃 梨子 不 喜欢 吃 苹果
+ni3 xi3huan1 chi1 li2zi5 bu4 xi3huan4 chi1 ping2guo3
+you like eat pear NOT like eat apple
+Lit. Do you like to eat pears?
+
+### simple A NOT-A (VP not VP)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 喜欢 梨子 不 喜欢 苹果
+ni3 xi3huan1 li2zi5 bu4 xi3huan4 ping2guo3
+you like pear NOT like apple
+Lit. Do you like pears?
+
+### simple A NOT-A (VP not VP)(contracted main verb)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 喜 苹果 不 喜欢 苹果
+ni3 xi3 ping2guo3 bu4 xi3huan4 ping2guo3
+you like apple NOT like apple
+Lit. Do you like apples?
+
+### simple A NOT-A (VP not VP)(contracted main verb)
+### With only contraction of verb and not whole constituent (ug)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 喜 吃 苹果 不 喜欢 吃 苹果
+ni3 xi3 chi1 ping2guo3 bu4 xi3huan4 chi1 ping2guo3
+you like eat apple NOT like eat apple
+Lit. Do you like to eat apples?
+
+### simple A NOT-A (VP not VP)(contracted main verb)
+### With only contraction of verb and not whole constituent (ug)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 喜 苹果 不 喜欢 吃 苹果
+ni3 xi3 ping2guo3 bu4 xi3huan4 chi1 ping2guo3
+you like apple NOT like eat apple
+Do you like apples?
+
+### simple A NOT-A (V not V)
+Source:  Tseng (2009:109, eg 2a)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+张三 吃 不 吃 汉堡
+zhang1san1 chi1 bu4 chi1 han4bao3
+Zhangsan eat NOT eat hamburger
+Does Zhangsan eat hamburger or not?
+
+### simple A NOT-A (P not P)
+Source:  Tseng (2009:109, eg 2a)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+张三 在 不 在 图书馆
+zhang1san1 zai4 bu4 zai4 tu2shu1guan3
+Zhangsan in NOT in library
+Is Zhangsan in the library or not?
+
+### simple A NOT-A (P not P)
+Source:  Tseng (2009:120, eg 13a)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+张三 相 不 相 李四 鞠躬
+zhang1san1 xiang4 bu4 xiang4 li3si4 ju1gong1
+Zhangsan toward NOT toward Lisi bow
+Does ZHangsan bow to Lisi or not?
+
+### simple A NOT-A (P not P)
+Source:  Tseng (2009:120, eg 13b)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+张三 相 李四 鞠 不 鞠躬
+zhang1san1 xiang4 bu4 xiang4 li3si4 ju1gong1
+Zhangsan toward NOT toward Lisi bow
+Does ZHangsan bow to Lisi or not?
+
+### simple A NOT-A (VP not VP, w/ anaphoric ellipsis)
+Source:  Huang (1991:320, eg 15)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 逼 他 买 书 不 逼 他 买
+ni3 bi1ta1 mai3 shu1 bu4 bi1 ta1 mai3
+you force him buy book NOT force him buy
+Will you force him to buy books or won't force him to buy (them)?
+
+### simple A NOT-A (VP not VP, w/ anaphoric ellipsis)
+Source:  Huang (1991:320, eg 15), modified
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 逼 他 买 书 不 逼 他
+ni3 bi1ta1 mai3 shu1 bu4 bi1 ta1
+you force him buy book NOT force him
+Will you force him to buy books or won't force him (to buy them)?
+
+### simple A NOT-A (VP not VP, w/ anaphoric ellipsis)
+Source:  Huang (1991:320, eg 15), modified
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 逼 他 买 书 不 逼
+ni3 bi1 ta1 mai3 shu1 bu4 bi1
+you force him buy book NOT force
+Will you force him to buy books or won't force (him to buy them)?
+
+### simple A NOT-A (VP not VP)
+Source:  Huang (1991:320, eg 15), modified
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 逼 他 买 书 不 逼 他 买 书
+ni3 bi1 ta1 mai3 shu1 bu4 bi1 ta1 mai3 shu1
+you force him buy book NOT force him buy book
+Will you force him to buy books or won't force him to buy them?
+
+### simple A NOT-A (N)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+狗 不 狗
+gou3 bu4 gou3
+dog NOT dog
+Lit. Is it a dog?
+
+### simple A NOT-A (N)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+张三 不 张三
+zhang1san1 bu4 zhang1san1
+Zhangsan NOT Zhangsan
+Lit. Is it Zhangsan?
+
+### simple A NOT-A (N)(embedded?)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+我 管 你 学生 不 学生，都 要 还 钱！
+wo3 guan3 ni3 xue2sheng1 bu4 xue2sheng1, dou1 yao4 huan2 qian2
+I care you student not student, DOU need return money
+I don't care if you are a student or not; even if you are, you still need to return the money
+
+### simple A NOT-A (N)
+Source:  Tseng (2009:109, eg 2d)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+绿 不 绿 卡 不 重要
+lv4 bu4 lv4 ka3 bu4 zhong4yao4
+green NOT green card not important
+It's not important whether you have the Permanent Resident Card of the U.S
+
+### simple A NOT-A (Modifier)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 很 高 不 很 高
+ta1 hen3 gao1 bu4 hen3 gao1
+he very tall NOT very tall
+Lit. Is he very tall?
+
+### simple A NOT-A (Modifer)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 高 不 很 高
+ta1 gao1 bu4 hen3 gao1
+he tall NOT very tall
+Lit. Is he tall?
+
+### simple A NOT-A (Modifier)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 很 高 不 高
+ta1 hen3 gao1 bu4 gao1
+he very tall NOT tall
+Lit. Is he very tall?
+
+### simple A NOT-A (Modifier)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 很 健康 不 很 健康
+ta1 hen3 jian4kang1 bu4 hen3 jian4kang1
+he tall NOT very tall
+Lit. Is he healthy?
+
+### simple A NOT-A (Modifier)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 健康 不 很 健康
+ta1 jian4kang1 bu4 hen3 jian4kang1
+he tall NOT very tall
+Lit. Is he healthy?
+
+### simple A NOT-A (Modifier)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 很 健康 不 健康
+ta1 hen3 jian4kang1 bu4 jian4kang1
+he very tall NOT tall
+Lit. Is he very healthy?
+
+### simple A NOT-A (Modifier, A-不-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 看 了 不 看 这 本 书
+ni3 kan4 le bu4 kan4 zhe4 ben3 shu1
+you see LE NOT see this CL book
+Lit: Have you finished/read this book?
+
+### simple A NOT-A (Modifier, A-不-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 看 不 看 了 这 本 书
+ni3 kan4 bu4 kan4 le zhe4 ben3 shu1
+you see NOT see LE this CL book
+Lit: Have you finished/read this book?
+
+### simple A NOT-A (Modifier, A-不-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 看 了 不 看 了 这 本 书
+ni3 kan4 le bu4 kan4 le zhe4 ben3 shu1
+you see LE NOT see LE this CL book
+Lit: Have you finished/read this book?
+
+### simple A NOT-A (Modifier, A-不-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 吃 了 不 吃 苹果
+ni3 chi1 le bu4 chi1 ping2guo3
+you eat LE NOT eat apple
+Lit: Have you eaten (the) apple?
+
+### simple A NOT-A (Modifier, A-不-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 吃 不 吃 了 苹果
+ni3 chi1 bu4 chi1 le ping2guo3
+you eat NOT eat LE apple
+Lit: Have you eaten (the) apple?
+
+### simple A NOT-A (Modifier, A-不-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 吃 了 不 吃 了 苹果
+ni3 chi1 le bu4 chi1 le ping2guo3
+you eat LE NOT eat LE apple
+Lit: Have you eaten (the) apple?
+
+### simple A NOT-A (Modifier, A-没-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 看 了 没 看 这 本 书
+ni3 kan4 le mei2 kan4 zhe4 ben3 shu1
+you see LE NOT see this CL book
+Lit: Have you finished/read this book?
+
+### simple A NOT-A (Modifier, A-没-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: ??
+Phenomena: A NOT-A
+你 看 没 看 了 这 本 书
+ni3 kan4 mei2 kan4 le zhe4 ben3 shu1
+you see NOT see LE this CL book
+Lit: Have you finished/read this book?
+
+### simple A NOT-A (Modifier, A-没-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: ?
+Phenomena: A NOT-A
+你 看 了 没 看 了 这 本 书
+ni3 kan4 le mei2 kan4 le zhe4 ben3 shu1
+you see LE NOT see LE this CL book
+Lit: Have you finished/read this book?
+
+### simple A NOT-A (Modifier, A-没-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 吃 了 没 吃 苹果
+ni3 chi1 le mei2 chi1 ping2guo3
+you eat LE NOT eat apple
+Lit: Have you eaten (the) apple?
+
+### simple A NOT-A (Modifier, A-没-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: ??
+Phenomena: A NOT-A
+你 吃 没 吃 了 苹果
+ni3 chi1 mei2 chi1 le ping2guo3
+you eat NOT eat LE apple
+Lit: Have you eaten (the) apple?
+
+### simple A NOT-A (Modifier, A-没-A with 了)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 吃 了 没 吃 了 苹果
+ni3 chi1 le mei2 chi1 le ping2guo3
+you eat LE NOT eat LE apple
+Lit: Have you eaten (the) apple?
+
+### simple A NOT-A (Modifier, A-not-A with SFP 了)
+Source:  native speaker
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+张三 喜欢 不 喜欢 狗 了
+zhang1san1 xi3huan1 bu4 xi3huan1 gou3 le
+Zhangsan like NOT like dog le
+Lit: Have you eaten (the) apple?
+
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:243, 9b)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 一定 去 不 去
+ta1 yi1ding4 qu4 bu4 qu4
+he definitely go NOT go
+Lit. Will he definitely go?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:247, 23)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 乱 放 不 放 东西
+ta1 luan4 fang4 bu4 fang4 dong1xi1
+he chaotically put NOT put things
+Lit. Does he put things down all over the place?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:247, 24)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 很 聪明 不 聪明
+ta1 hen3 cong1ming2 bu4 cong1ming2
+he very smart NOT smart
+Lit. Is he smart?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:247, 24), modified
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 很 聪 不 聪明
+ta1 hen3 cong1 bu4 cong1ming2
+he very smart NOT smart
+Lit. Is he smart?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:247, 25)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 显然 去 不 去
+ta1 xian3ran2 qu4 bu4 qu4
+he obviously go NOT go
+Lit. Is he obviously going?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:247, 26), modified
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+张三 先 走 不 走
+zhang1san1 xian1 zou3 bu4 zou3
+Zhangsan first leave NOT leave
+Lit. Is Zhangsan leaving first?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:248, 27)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+老板 严厉的 责 不 责备 他
+lao2ban3 yan2li4de4 ze2 bu4 ze2bei4 ta1
+boss sternly DE accuse NOT accuse him
+Lit. Does the boss sternly accuse him?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:248, 27), modified
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+老板 严厉的 责备 不 责备 他
+lao2ban3 yan2li4de4 ze2bei4 bu4 ze2bei4 ta1
+boss sternly DE accuse NOT accuse him
+Lit. Does the boss sternly accuse him?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:248, 28)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+他 突然 有 没 有 醒来
+ta1 tu1ran2 you3 mei2 you3 xing3lai2
+he suddenly have NOT have wake-up
+Lit. Did he wake up suddenly?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:248, 29)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 因为 你 的 朋友 的 要求 去 不 去
+ni3 yin1wei4 ni3 de4 peng2you3 de4 yao1qiu2 qu4 bu4 qu4
+you because your friend DE demand go NOT go
+Lit. Are you going because of your friend's demands?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:243, 8b)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+他 今天 去 不 去
+ta1 jin1tian1 qu4 bu4 qu4
+he today go NOT go
+Will he go today?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:243, 8b)
+Vetted: t
+Judgment: ??
+Phenomena: A NOT-A
+他 今天 去 不 今天 去
+ta1 jin1tian1 qu4 bu4 jin1tian1 qu4
+he today go NOT today go
+Lit. Will he go today?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:253, 44), modified
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+张三 到底 去 不 去
+zhang1san1 dao4di3 qu4 bu4 qu4
+Zhangsan after-all go NOT go
+Is Zhangsan going or not?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:253, 8b & 44), modified/combined
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+张三 今天 到底 去 不 去
+zhang1san1 jin1tian1 dao4di3 qu4 bu4 qu4
+Zhangsan today after-all go NOT go
+Is Zhangsan going today or not?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:253, 28 & 44), modified/combined
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+张三 显然 今天 去 不 去
+zhang1san1 xian3ran2 jin1tian1 qu4 bu4 qu4
+Zhangsan obviously today go NOT go
+Lit. Is Zhangsan obviously going today?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:248, 30)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 在 哪儿 吃 不 吃 肉
+ni3 zai4 na4r chi1 bu4 chi1 rou4
+you at there eat NOT eat meat
+Do you eat meat there?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:248, 31)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+这 件 事 从 政治 上 的 角度 行 不 行
+zhe4 jian4 shi4 cong2 zheng4zhi4 shang4 de4 jiao3du4 xing2 bu4 xing2
+this CL matter from politics PostP DE angle OK NOT OK
+From a political point of view, is this matter OK?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: McCawley (1994:187-188, 15a)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 只 不 只 喜欢 一 个 人
+ni3 zhi3bu4zhi3 xi3huan1 yi4 ge4 ren2
+You only NOT only like one GE person
+Lit: Do you only like one person?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: McCawley (1994:187-188, 15a')
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 只喜欢 一个人 不 只喜欢 一个人
+ni3 zhi3 xi3huan1 yi4 ge4 ren2 zhi3bu4 zhi3 xi3huan1 yi4 ge4 ren2
+You only like one person NOT only like one GE person
+Lit: Do you only like one person or not like one person?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: McCawley (1994:187-188, 15a'')
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 只 喜 不 喜欢 一个 人
+ni3 zhi3 xi3 bu4 xi3huan1 yi4 ge4 ren2
+You only like NOT only like one GE person
+Lit: Do you only like or not like one person?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: McCawley (1994:187-188, 15a''')
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 只 喜欢 一 个 人 不 喜欢
+ni3 zhi3 xi3huan1 yi4 ge4 ren2 bu4 xi3huan1
+You only like one CL person NOT like
+Lit: Do you only like one person or not like (one person)?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: McCawley (1994:187-188, 16a)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+张三 也 不 也 喜欢 开车？
+zhang1san1 ye3 bu4 ye3 xi3huan1 kai1che1
+Zhangsan also NOT also like drive
+Lit: Does Zhangsan also like or not also like to drive
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: McCawley (1994:187-188, 16a')
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+张三 也 喜 不 喜欢  开车
+zhang1san1 ye3 xi3 bu4 xi3huan1 kai1che1
+Zhangsan also like NOT like drive
+Lit: Does Zhangsan also like or not like to drive
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: McCawley (1994:187-188, 16a'')
+Vetted: t
+Judgment: ??
+Phenomena: A NOT-A
+张三 也 喜欢 开车 不 喜欢
+zhang1san1 ye2 xi3huan1 kai1che1 bu4 xi3huan1
+Zhangsan also like drive NOT like
+Lit: Does Zhangsan also like to drive or not like (to drive)?
+
+### simple A NOT-A (Island Effect)
+Source: Ernst (1994:243, 8b)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+我 去 不 去 美国 比较 好
+wo3 qu4 bu4 qu4 mei3guo2 bi3jiao4 hao3
+I go NOT go USA compare good
+Lit. Is it better or not that I go to the US?
+
+### simple A NOT-A (Island Effect)
+Source: native speaker
+Vetted: t
+Judgment: ??
+Phenomena: A NOT-A
+我 今天 去 不 去 美国 比较 好
+wo3 jin1tian1 qu4 bu4 qu4 mei3guo2 bi3jiao4 hao3
+I today go NOT go USA compare good
+Lit. Is it better or not that I go today to the US?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:261, Footnote 3(i))
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 现在 冷不冷
+ta1 xian4zai leng3 bu4 leng3
+you now cold NOT cold
+Are you cold now?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:261, Footnote 3(i))
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 还 冷不冷
+ta1 hai2 leng3 bu4 leng3
+you still cold NOT cold
+Are you cold still?
+
+### simple A NOT-A (Modifier; Adjunct)
+Source: Ernst (1994:261, Footnote 3(i), modified/combined)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 现在 还 冷不冷
+ta1 xian4zai4 hai2 leng3 bu4 leng3
+you now still cold NOT cold
+Are you cold still now?/Are you still cold now?
+
+### simple A NOT-A (Island Effect)
+Source: Ernst (1994:243, 8b)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 喜欢 认识 你 不 认识 你 的 人
+ni3 xi3huan1 ren4shi4 ni3 bu4 ren4shi4 ni3 de4 ren2
+You like know you NOT know you DE person
+Lit. Do you like someone who knows or knows not you?
+
+### simple A NOT-A (Island Effect)
+Source: Ernst (1994:243, 8b)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 喜欢 认识 不 认识 你 的 人
+ni3 xi3huan1 ren4shi4 bu4 ren4shi4 ni3 de4 ren2
+You like know NOT know you DE person
+Lit. Do you like someone who knows or knows not you?
+
+### simple A NOT-A (Island Effect)
+Source: Ernst (1994:243, 8b)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 喜欢 认 不 认识 你 的 人
+ni3 xi3huan1 ren4shi4 bu4 ren4shi4 ni3 de4 ren2
+You like know NOT know you DE person
+Lit. Do you like someone who knows or knows not you?
+
+### simple A NOT-A ("Long-distance movement")
+Source: Huang (1991:322, Eg 67)
+Vetted: t
+Judgment: g
+Phenomena: A NOT-A
+你 觉得 他 会 不 会 生气
+ni3 jue2de2 ta1 hui4 bu4 hui4 sheng1qi4
+you feel he will NOT will angry
+Do you think he will be angry or do you think he won't?
+
+### simple A NOT-A ("Long-distance movement")
+Source: Huang (1991:322, Eg 67), modified
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+你 觉 不 觉 得 他 会 不 会 生气
+ni3 jue2 bu4 jue2 de2 ta1 hui4 bu4 hui4 sheng1qi4
+you feel NOT feel he will NOT will angry
+Do you think or not that he will be angry or not?
+
+### simple A NOT-A ("Existential subject 有-NP"): Existential subject 有-NP cannot occur in A-not-A questions
+Source: Huang (2012:1174, eg 12b)
+Vetted: t
+Judgment: u
+Phenomena: A NOT-A
+有 一 个 人 喜 不 喜欢 李四
+you3 yi1 ge4 ren2 xi3 bu4 xi3huan1 li3si4
+have one CL person like NOT like Lisi
+Lit: Does a person like or not like Lisi?

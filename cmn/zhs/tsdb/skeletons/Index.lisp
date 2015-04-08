@@ -31,6 +31,7 @@
   ((:path . "vv-compounds") (:content . "vv-compounds testsuite"))
   ((:path . "interjections") (:content . "interjections testsuite"))
   ((:path . "symbols") (:content . "special characters testsuite"))
+  ((:path . "A-not-A") (:content . "A-not-A testsuite"))
   
   ((:path . "fu-berlin") (:content . "Free University Berlin Testsuite"))
 

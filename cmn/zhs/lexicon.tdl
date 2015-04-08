@@ -675,11 +675,33 @@ bullet-15 := bullet &
   SYNSEM.LKEYS.KEYREL.PRED "neg_x_rel",
   TRAITS native_token_list ].
 
+;; WWJ 2015-02-08: TEMPORARY. 不 cannot co-occur with 有; 
+;; To block that temporarily, the exist_v has been given a property EXISTV +
+
 不_r := adv_-_neg_le &
   [ STEM < "不" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
     SYNSEM [ LKEYS.KEYREL.PRED "_不_r_rel",
-	     LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT non-aspect ] > ],
+	     LOCAL.CAT.HEAD.MOD < [ LOCAL [ CONT.HOOK.INDEX.E.ASPECT non-aspect, 
+		                            CAT.HEAD.EXISTV - ] ] > ],
+    TRAITS native_token_list ].
+
+不_polar_basic_r := adv_-_polar2_basic_le &
+  [ STEM < "不" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_不_r_rel",
+    TRAITS native_token_list ].
+
+不_polar_contracted_r := adv_-_polar2_contracted_le &
+  [ STEM < "不" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_不_r_rel",
+    TRAITS native_token_list ].
+
+不_polar_ab-not-ab_r := adv_-_polar2_ab-not-ab_le &
+  [ STEM < "不" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_不_polar_ab-not-ab_r",
     TRAITS native_token_list ].
 
 没_r := adv_-_neg_le &
@@ -689,10 +711,35 @@ bullet-15 := bullet &
 	     LKEYS.KEYREL.PRED "_没_r_rel" ],
     TRAITS native_token_list ].
 
-没_polar_r := adv_-_polar_le &
+没_polar_basic_r := adv_-_polar_basic_le &
   [ STEM < "没" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_没_r_rel",
+    TRAITS native_token_list ].
+
+没_polar_contracted_r := adv_-_polar_contracted_le &
+  [ STEM < "没" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_没_r_rel",
+    TRAITS native_token_list ].
+
+没_polar_ab-not-ab_r := adv_-_polar_ab-not-ab_le &
+  [ STEM < "没" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_没_r_rel",
+    TRAITS native_token_list ].
+
+
+;;;;;;;;;;;;;;;;;;;
+;;; Bound Verbal Items
+;;;;;;;;;;;;;;;;;;;
+
+喜_v := v_np_le &
+  [ STEM <"喜">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH one ],
+    SYNSEM.BOUND +,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_喜欢_v_1_rel" ],
     TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;
@@ -17952,6 +17999,13 @@ comma_c := conj_-_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "勒", LENGTH more-than-one ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_勒索_v_1_rel" ],
+    TRAITS native_token_list ].
+
+勒索_v_2 := v_prevpp-np_le &
+  [ STEM < "勒索" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "勒", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_勒索_v_2_rel" ],
     TRAITS native_token_list ].
 
 勒芒_n_1 := n_-_l_pn_le &

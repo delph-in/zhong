@@ -22,7 +22,7 @@ n_-_pr-2sg_le := personal-pronoun-lex &
 n_-_pr-2pl_le := personal-pronoun-lex &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2pl ].
 
-n_-_pr-2sg-hon_le := personal-pronoun-lex & hon-lex &
+n_-_pr-2sg-hon_le := personal-pronoun-lex & hon-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2sg ].
 
 n_-_pr-3sg_le := personal-pronoun-lex &
@@ -78,9 +78,13 @@ adv_-_scop-prehd_le := scop-adv-prehd-lex.
 adv_-_imp_le := imperative-aux-lex. 
 
 
-;; SSH/ZZF: These two types should be redefined later.
-;; V NOT V
-adv_-_polar_le := v-not-v-adv-lex. 
+;; WWJ 2015-02-08: Now known as A NOT A
+adv_-_polar_basic_le := a-not-a-basic-adv-lex.
+adv_-_polar_contracted_le := a-not-a-contracted-adv-lex.
+adv_-_polar_ab-not-ab_le := ab-not-ab-adv-lex.
+adv_-_polar2_basic_le := a-not-a-bu-basic-adv-lex.
+adv_-_polar2_contracted_le := a-not-a-bu-contracted-adv-lex.
+adv_-_polar2_ab-not-ab_le := ab-not-ab-bu-adv-lex.
 adv_-_tq_le := tag-adv-lex.
 
 
@@ -89,6 +93,7 @@ v_-_le := v_intrans-verb-lex.
 v_np_le := v_trans-verb-lex.
 v_np-np_le := ditrans-verb-lex.
 v_pp-np_le := ditrans-pp-verb-lex.
+v_prevpp-np_le := ditrans-preverbal-pp-verb-lex.
 v_np-pp_le := trans-loc-verb-lex.
 
 v_s_le := s-comp-verb-lex.
