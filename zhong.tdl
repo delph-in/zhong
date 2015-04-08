@@ -155,6 +155,8 @@ gei-or-xiang := pform.
 gei := gei-or-xiang.
 xiang := gei-or-xiang.
 zai := pform.
+you := pform.
+dui := pform.
 
 noun :+ 
  [ HON bool ].

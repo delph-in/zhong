@@ -586,12 +586,19 @@ v_a-equi-lex := np-vp-comp-verb-anomeq-lex & ditrans-first-arg-control-lex-item.
 
 v_np-vp_light-lex := np-vp-comp-verb-light-lex.
 
-v_prep-lex-item := basic-two-arg-no-hcons & main-verb-lex & basic-icons-lex-item &
-   [ ARG-ST < [ LOCAL.CONT.HOOK.INDEX ref-ind & #ind1 ],
-	      [ LOCAL.CONT.HOOK.INDEX ref-ind & #ind2 ] >,
+v_prep-lex-item := basic-two-arg & main-verb-lex & basic-icons-lex-item &
+   [ ARG-ST < [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind1,
+                                  ICONS-KEY.IARG1 #clause ] ],
+	      [ LOCAL.CONT.HOOK [ INDEX event,
+                                  LTOP #ltop,
+                                  XARG #ind1,
+				  ICONS-KEY.IARG1 #clause ]  ] >,
      SYNSEM [ LKEYS.KEYREL [ ARG1 #ind1,
 			     ARG2 #ind2 ],
-	      LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD adp ] > ] ].
+	      LOCAL [ CAT.VAL.COMPS < [ LOCAL.CAT.HEAD adp ] >,
+                      CONT [ HOOK.CLAUSE-KEY #clause,
+                             HCONS <! qeq & [ HARG #ind2,
+                                              LARG #ltop ] !> ] ] ] ].
 
 ;; SSH 2014-09-02: To block overgeneration (e.g. *李四 被 了 张三 追赶),
 ;; I added [POSTHEAD +].

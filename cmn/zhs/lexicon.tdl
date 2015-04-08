@@ -23400,12 +23400,6 @@ comma_c := conj_-_le &
 			  PRED "_向_p_rel" ],
     TRAITS native_token_list ].
 
-向_r_1 := adv_-_vp-pre_le &
-  [ STEM < "向" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "向", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_向_a_1_rel",
-    TRAITS native_token_list ].
-
 向着_p := p_-_nomod_le &
   [ STEM < "向着" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "向", LENGTH more-than-one ],
@@ -68316,12 +68310,6 @@ comma_c := conj_-_le &
     SYNSEM.LKEYS.KEYREL.CARG "田野",
     TRAITS native_token_list ].
 
-由_c := conj_-_le &
-  [ STEM < "由" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "由", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_由_coord_rel",
-    TRAITS native_token_list ].
-
 由_n_1 := n_-_le &
   [ STEM < "由" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "由", LENGTH one ],
@@ -68331,7 +68319,10 @@ comma_c := conj_-_le &
 由_p := p_-_nomod_le &
   [ STEM < "由" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "由", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_由_p_rel",
+    SYNSEM.LOCAL [ CAT.HEAD.PFORM you,
+                   CONT.HOOK.XARG #xarg ],
+    SYNSEM.LKEYS.KEYREL [ ARG1 #xarg,
+			  PRED "_由_p_rel" ],
     TRAITS native_token_list ].
 
 由于_sc := conj_-_sub_le &
@@ -76277,8 +76268,9 @@ comma_c := conj_-_le &
 组成_v_1 := v_pp-pre_le &
   [ STEM <"组成">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "组", LENGTH more-than-one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_组成_v_1_rel" ],
+    SYNSEM [ LOCAL.CAT [ HEAD.LZG le+zhe+guo,
+                         VAL.COMPS < [ LOCAL.CAT.HEAD.PFORM you ] > ],
+	     		 LKEYS.KEYREL.PRED "_组成_v_1_rel" ],
     TRAITS native_token_list ].
 
 组成_v_2 := v_np_le &
