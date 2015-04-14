@@ -123,7 +123,12 @@ le+guo := le & guo.
 zhe+guo := zhe & guo.
 le+zhe+guo := le & zhe & guo.
 
-+vjp :+ [ LZG lzg ].
++vjp :+ 
+   [ LZG lzg ].
+
++vj :+ 
+   [ STATIVE luk,
+     PRED-KEY predsort ].
 
 char := avm & 
   [ FCHAR string, 
@@ -137,9 +142,11 @@ more-than-one := length.
 
 ;; WWJ 2015-04-07: EXISTV for 有; MODIFIABLE used 
 ;; for A-elements in A-not-A structures
-head :+ [ EXISTV bool, MODIFIABLE bool ].
+head :+
+ [ CHAR char,
+   EXISTV bool, 
+   MODIFIABLE bool ].
 
-head :+ [ CHAR char ].
 lex-item :+ 
  [ STEM.FIRST #str,
    SYNSEM.LOCAL.CAT.HEAD.CHAR.WCHAR #str ].
@@ -238,8 +245,9 @@ non-aspect := imperfective.
 basic-head-comp-phrase :+ 
   [ SYNSEM.LOCAL.CAT [ MC #mc,
 		       VAL.SPEC #spec ],
-    HEAD-DTR.SYNSEM.LOCAL.CAT [ MC #mc,
-				VAL.SPEC #spec ] ].
+    HEAD-DTR.SYNSEM [ BOUND na-or--,
+		      LOCAL.CAT [ MC #mc,
+				  VAL.SPEC #spec ] ] ].
 
 basic-head-mod-phrase-simple :+ 
   [ SYNSEM.LOCAL [ CAT.MC #mc,
@@ -514,6 +522,7 @@ adj-head-int-mc := adj-head-int-phrase &
 adj-head-scop-phrase :+ 
   [ SYNSEM [ L-PERIPH #lperiph,
 	     R-PERIPH #rperiph ],
+    HEAD-DTR.SYNSEM.BOUND na-or--,
     NON-HEAD-DTR.SYNSEM [ L-PERIPH #lperiph,
 			  R-PERIPH #rperiph ] ].
 
@@ -548,6 +557,7 @@ filler-head-phrase := basic-head-filler-phrase & head-final &
 	     LOCAL.CAT [ VAL #val,
 			 MC #mc ] ],
     HEAD-DTR.SYNSEM [ L-PERIPH -,
+		      BOUND na-or--,
 		      LOCAL [ CAT [ HEAD verb,
 				    VAL #val & [ SUBJ < >,
 						 COMPS < >,
@@ -571,6 +581,7 @@ filler-head-phrase := basic-head-filler-phrase & head-final &
 extracted-comp-phrase := basic-extracted-comp-phrase & 
   [ SYNSEM.MODIFIED #modified,
     HEAD-DTR.SYNSEM [ MODIFIED #modified,
+		      BOUND na-or--,
 		      LOCAL [ CAT [ MC +, HEAD verb ],
 			      CONT.HOOK #hook ] ],
     C-CONT [ HOOK #hook, RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
@@ -590,6 +601,7 @@ extracted-subj-phrase := basic-extracted-subj-phrase &
 	     LOCAL.CAT [ MC -,
 			 VAL.SPEC < [] > ] ],
     HEAD-DTR.SYNSEM [ MODIFIED #modified,
+		      BOUND na-or--,
 		      LOCAL [ CAT [ HEAD +vj,
                                     VAL.SUBJ < [ LOCAL.CAT.NONSUBJ - ] > ],
 			      CONT.HOOK #hook ] ],
@@ -647,9 +659,10 @@ basic-head-subj-phrase := head-valence-phrase & binary-headed-phrase &
                          VAL [ SUBJ < >,
                                COMPS #comps,
                                SPR #spr ] ] ],
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #synsem >,
-                                    COMPS #comps,    
-                                    SPR #spr ],
+    HEAD-DTR.SYNSEM [ BOUND na-or--,
+		      LOCAL.CAT.VAL [ SUBJ < #synsem >,
+				      COMPS #comps,    
+				      SPR #spr ] ],
     NON-HEAD-DTR.SYNSEM #synsem & canonical-synsem &
            [ LOCAL.CAT.VAL [ SUBJ olist,
                              COMPS olist,
@@ -1009,6 +1022,7 @@ rslt-compound-phrase := head-initial &
     HEAD-DTR.SYNSEM lex-synsem &
                 [ BOUND na-or--,
 		  LOCAL [ CAT [ HEAD #head & +vj & [ CHAR.LENGTH one,
+						     STATIVE na-or--,
 						     AUX - ],				
 				VAL [ SPR #spr,
 				      SPEC #spec ],
@@ -1052,12 +1066,12 @@ subject-oriented-phrase := head-initial &
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ].
 
 object-oriented-phrase := head-initial & 
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comp >,
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comp & [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY animate ] >,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #comp > ].
 
 inverse-oriented-phrase := head-initial & 
-  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
-			   COMPS < #comp > ],
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj & [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate ] >,
+			   COMPS < #comp & [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY animate ] > ],
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #comp >,
 				    COMPS < #subj > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #comp > ].
@@ -1075,22 +1089,23 @@ rslt-12_12-phrase := rslt-x_12-phrase & subject-oriented-phrase &
 
 ;; Type 10 (lee:13)
 ;;张三 跑 累 了
-rslt-1_1-sbj-share-phrase := rslt-1_1-phrase & subject-oriented-phrase &
+rslt-1_1-sbj-phrase := rslt-1_1-phrase & subject-oriented-phrase &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj >,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ].
-
-;; Type 11 (lee:13)
-;; 双眼 哭 红 了 
-rslt-1_1-sbj-nonshare-phrase := rslt-1_1-phrase & subject-oriented-phrase &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < unexpressed & [ OPT + ] > ].
 
 ;; Type 5 (lee:13)
 ;;张三 哭 红 了 双眼
 rslt-1_1-obj-phrase := rslt-1_1-phrase & object-oriented-phrase &
   [ SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj >,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ].
+
+;; Type 11 (lee:13)
+;; 双眼 哭 红 了 
+rslt-1_1-noshare-phrase := rslt-1_1-phrase & subject-oriented-phrase &
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate ] >,
+			   COMPS < > ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < unexpressed & [ OPT + ] > ].
 
 ;; Type 7 (lee:13)
 ;;张三 追 累 了 李四 (Zhangsan chased Lisi and Zhangsan got tired.)
@@ -1108,11 +1123,13 @@ rslt-12_1-obj-phrase := rslt-12_1-phrase & object-oriented-phrase &
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
 				    COMPS < #comp >] ].
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;; Type 12 (lee:13)
 ;;这 种 药 吃 死 你
 rslt-12_1-inv-phrase := rslt-12_1-phrase & inverse-oriented-phrase.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 
 
 ;; Make temporal NPs into adposition phrases
@@ -1145,10 +1162,11 @@ np-adp-phrase := unary-phrase &
 
 ;; WWJ 2014-04-07: to block adj-not-adj prep-not-prep 
 ;; SSH 2015-04-08: to block overgeneration, [ASPECTED +-or--] is added.
+;; SSH 2015-04-12: verb -> +vp
 head-opt-comp-phrase := basic-head-opt-comp-phrase &
   [ SYNSEM phr-synsem, 
     HEAD-DTR.SYNSEM [ ASPECTED +-or--,
-		      LOCAL.CAT.HEAD verb ] ].
+		      LOCAL.CAT.HEAD +vp ] ].
 
 ; for sentential subjects
 sent-subj-phrase := head-valence-phrase & head-only &
@@ -1201,6 +1219,9 @@ hook := avm &
     ICONS-KEY icons,
     CLAUSE-KEY event ].
 
+basic-head-opt-subj-phrase :+ 
+  [ HEAD-DTR.SYNSEM.BOUND na-or-- ].
+
 ;; MATRIX redefinition, to allow noun heads to discharge optional complements
 ;;
 basic-head-opt-comp-phrase := head-valence-phrase & head-only &
@@ -1215,7 +1236,8 @@ basic-head-opt-comp-phrase := head-valence-phrase & head-only &
                      POSTHEAD #ph ],
          MODIFIED #mod ],
     HEAD-DTR [ INFLECTED #infl & infl-satisfied,
-               SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ #subj,
+	       SYNSEM [ BOUND na-or--,
+			LOCAL [ CAT [ VAL [ SUBJ #subj,
                                             COMPS < unexpressed &
                                                     [ OPT +,
                                                       OPT-CS #def,
@@ -1240,7 +1262,7 @@ basic-head-opt-comp-phrase := head-valence-phrase & head-only &
 ;     HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD verb ].
 
 ; 着了过 aspect markers & sentence final 了 & sentence final question particle 
-basic-comp-marker-phrase := head-valence-phrase & head-compositional &
+basic-comp-marker-phrase := head-valence-phrase & head-compositional & basic-binary-headed-phrase &
   [ STYLE #style,
     SYNSEM phr-synsem & [ L-PERIPH #lperiph,
 			  R-PERIPH #rperiph,

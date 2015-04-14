@@ -1,100 +1,100 @@
 1@MRS@@@1@tam@下 了 雨@@@@1@3@It rained.@@
-2@MRS@@@1@tam@张三 叫 了@@@@1@3@Zhangsan barked.@@
+2@MRS@@@1@tam@张三 吠 了@@@@1@3@Zhangsan barked.@@
 3@MRS@@@1@tam@窗户 打开 了@@@@1@3@The window opened.@@
 4@MRS@@@1@tam@张三 追赶 了 李四@@@@1@4@Zhangsan chased Lisi.@@
 5@MRS@@@1@comps/dat@张三 给 了 李四 香烟@@@@1@5@Zhangsan handed Lisi the cigarette.@@
 6@MRS@@@1@comps/dat@张三 把 香烟 递 给 了 李四@@@@1@7@Zhangsan handed the cigarette to Lisi.@@
 7@MRS@@@1@comps@张三 用 一 根 香烟 跟 李四 打赌 下 过 雨@@@@1@11@Zhangsan bet Lisi a cigarette that it rained.@@
 8@MRS@@@1@emb-d@张三 知道 下 过 雨@@@@1@5@Zhangsan knew that it rained.@@
-9@MRS@@@1@emb-d@张三 打算 叫@@@@1@3@Zhangsan intended to bark.@@
-10@MRS@@@1@emb-d@张三 打算 让 李四 叫@@@@1@5@Zhangsan intended Lisi to bark.@@
-11@MRS@@@1@Quant@每 一 只 猫 都 叫 了@@@@1@7@Every cat barked.@@
+9@MRS@@@1@emb-d@张三 打算 吠@@@@1@3@Zhangsan intended to bark.@@
+10@MRS@@@1@emb-d@张三 打算 让 李四 吠@@@@1@5@Zhangsan intended Lisi to bark.@@
+11@MRS@@@1@Quant@每 一 只 猫 都 吠 了@@@@1@7@Every cat barked.@@
 12@MRS@@@1@Quant@每 一 只 猫 都 追赶 了 某 条 狗@@@@1@10@Every cat chased some dog.@@
-13@MRS@@@1@GEN@我 的 猫 叫 了@@@@1@5@My cat barked.@@
-14@MRS@@@1@Gender@它 叫 了@@@@1@3@It barked.@@
+13@MRS@@@1@GEN@我 的 猫 吠 了@@@@1@5@My cat barked.@@
+14@MRS@@@1@Gender@它 吠 了@@@@1@3@It barked.@@
 15@MRS@@@1@gender@猫 追赶 了 它@@@@1@4@She chased it.@@
 16@MRS@@@1@refl@猫 追赶 了 它 自己@@@@1@5@The cat chased itself.@@
 17@MRS@@@1@pn@猫 追赶 了 一 只@@@@1@5@The cat chased one.@@
-18@MRS@@@1@gen@我 的 叫 了@@@@1@4@Mine barked.@@
+18@MRS@@@1@gen@我 的 吠 了@@@@1@4@Mine barked.@@
 19@MRS@@@1@pn@那 个 打开 了@@@@1@4@That opened.@@
-20@MRS@@@1@agr@猫 叫@@@@1@2@Cats bark.@@
+20@MRS@@@1@agr@猫 吠@@@@1@2@Cats bark.@@
 21@MRS@@@1@agr@烟草 到 了@@@@1@3@Tobacco arrived.@@
-22@MRS@@@1@pn@有些 叫@@@@1@2@Some bark.@@
-23@MRS@@@1@pn@有些 猫 叫@@@@1@3@Some of the cats bark.@@
-24@MRS@@@1@pn@一 只 猫 也 没 叫@@@@1@6@No cat barked.@@
-25@MRS@@@1@q@狗 叫 了 吗 ？@@@@1@5@Did the dog bark?@@
-26@MRS@@@1@q@哪 一 只 狗 叫 了 ？@@@@1@7@Which dog barked?@@
-27@MRS@@@1@q@谁 的 狗 叫 了 ？@@@@1@6@Whose dog barked?@@
+22@MRS@@@1@pn@有些 吠@@@@1@2@Some bark.@@
+23@MRS@@@1@pn@有些 猫 吠@@@@1@3@Some of the cats bark.@@
+24@MRS@@@1@pn@一 只 猫 也 没 吠@@@@1@6@No cat barked.@@
+25@MRS@@@1@q@狗 吠 了 吗 ？@@@@1@5@Did the dog bark?@@
+26@MRS@@@1@q@哪 一 只 狗 吠 了 ？@@@@1@7@Which dog barked?@@
+27@MRS@@@1@q@谁 的 狗 吠 了 ？@@@@1@6@Whose dog barked?@@
 28@MRS@@@1@imp@追赶 张三 ！@@@@1@3@Chase Zhangsan!@@
-29@MRS@@@1@imp@张三 想 知道 是 哪 只 狗 叫 了@@@@1@9@Zhangsan wondered which dog barked.@@
-30@MRS@@@1@emb-d@张三 想 知道 李四 叫 没 叫@@@@1@7@Zhangsan wondered whether Lisi barked.@@
-31@MRS@@@1@Nom@那 只 张三 追赶 的 狗 叫 了@@@@1@8@The dog that Zhangsan chased barked.@@
-32@MRS@@@1@Nom@要 追赶 的 那 只 狗 在 叫@@@@1@8@The dog to chase is barking.@@
+29@MRS@@@1@imp@张三 想 知道 是 哪 只 狗 吠 了@@@@1@9@Zhangsan wondered which dog barked.@@
+30@MRS@@@1@emb-d@张三 想 知道 李四 吠 没 吠@@@@1@7@Zhangsan wondered whether Lisi barked.@@
+31@MRS@@@1@Nom@那 只 张三 追赶 的 狗 吠 了@@@@1@8@The dog that Zhangsan chased barked.@@
+32@MRS@@@1@Nom@要 追赶 的 那 只 狗 在 吠@@@@1@8@The dog to chase is barking.@@
 33@MRS@@@1@Pass@那 只 狗 被 张三 追赶@@@@1@6@The dog was chased by Zhangsan.@@
-34@MRS@@@1@Pass@那 只 被 张三 追赶 的 狗 叫 了@@@@1@9@The dog chased by Zhangsan barked.@@
-35@MRS@@@1@tam@狗 在 叫@@@@1@3@The dog is barking.@@
-36@MRS@@@1@tam@狗 叫 过@@@@1@3@The dog has barked.@@
-37@MRS@@@1@tam@狗 一直 在 叫@@@@1@4@The dog has been barking.@@
-38@MRS@@@1@tam@狗 以前 一直 叫@@@@1@4@The dog had been barking.@@
-39@MRS@@@1@tam@狗 要 叫 了@@@@1@4@The dog will bark.@@
-40@MRS@@@1@tam@狗 要 叫@@@@1@3@The dog is going to bark.@@
-41@MRS@@@1@infin@狗 会 叫 了@@@@1@4@The dog could bark.@@
-42@MRS@@@1@infin@狗 不 会 叫 了@@@@1@5@The dog couldn't bark.@@
-43@MRS@@@1@adj@老 狗 叫 了@@@@1@4@The old dog barked.@@
-44@MRS@@@1@adv@狗 轻轻 地 叫 了@@@@1@5@The dog barked softly.@@
-45@MRS@@@1@adv@狗 很 可能 叫 了@@@@1@5@The dog probably barked.@@
-46@MRS@@@1@loc@狗 在 花园 里 叫 了@@@@1@6@The dog barked in the garden.@@
-47@MRS@@@1@tam@现在 狗 叫 了@@@@1@4@The dog barks now.@@
-48@MRS@@@1@cpd@花园 的 狗 叫 了@@@@1@5@The garden dog barked.@@
-49@MRS@@@1@ppmod@烟草园 的 狗 叫 了@@@@1@5@The tobacco garden dog barked.@@
+34@MRS@@@1@Pass@那 只 被 张三 追赶 的 狗 吠 了@@@@1@9@The dog chased by Zhangsan barked.@@
+35@MRS@@@1@tam@狗 在 吠@@@@1@3@The dog is barking.@@
+36@MRS@@@1@tam@狗 吠 过@@@@1@3@The dog has barked.@@
+37@MRS@@@1@tam@狗 一直 在 吠@@@@1@4@The dog has been barking.@@
+38@MRS@@@1@tam@狗 以前 一直 吠@@@@1@4@The dog had been barking.@@
+39@MRS@@@1@tam@狗 要 吠 了@@@@1@4@The dog will bark.@@
+40@MRS@@@1@tam@狗 要 吠@@@@1@3@The dog is going to bark.@@
+41@MRS@@@1@infin@狗 会 吠 了@@@@1@4@The dog could bark.@@
+42@MRS@@@1@infin@狗 不 会 吠 了@@@@1@5@The dog couldn't bark.@@
+43@MRS@@@1@adj@老 狗 吠 了@@@@1@4@The old dog barked.@@
+44@MRS@@@1@adv@狗 轻轻 地 吠 了@@@@1@5@The dog barked softly.@@
+45@MRS@@@1@adv@狗 很 可能 吠 了@@@@1@5@The dog probably barked.@@
+46@MRS@@@1@loc@狗 在 花园 里 吠 了@@@@1@6@The dog barked in the garden.@@
+47@MRS@@@1@tam@现在 狗 吠 了@@@@1@4@The dog barks now.@@
+48@MRS@@@1@cpd@花园 的 狗 吠 了@@@@1@5@The garden dog barked.@@
+49@MRS@@@1@ppmod@烟草园 的 狗 吠 了@@@@1@5@The tobacco garden dog barked.@@
 50@MRS@@@1@adj@猫 很 老@@@@1@3@The cat is old.@@
 51@MRS@@@1@prd@猫 在 花园 里@@@@1@4@The cat is in the garden.@@
-52@MRS@@@1@det,adj@狗 叫 着 追赶 了 张三@@@@1@6@The barking dog chased Zhangsan.@@
-53@MRS@@@1@det,pass@被 追赶 的 狗 叫@@@@1@5@Chased dogs bark.@@
+52@MRS@@@1@det,adj@狗 吠 着 追赶 了 张三@@@@1@6@The barking dog chased Zhangsan.@@
+53@MRS@@@1@det,pass@被 追赶 的 狗 吠@@@@1@5@Chased dogs bark.@@
 54@MRS@@@1@adj@追赶 猫 很 过时@@@@1@4@Chasing the cat is old.@@
 55@MRS@@@1@emb-d@猫 追赶 张三 是 很 显然 的@@@@1@7@That the cat chases Zhangsan is obvious.@@
-56@MRS@@@1@indef@狗 追赶 所有 会 叫 的 东西@@@@1@7@Dogs chase whatever barks.@@
-57@MRS@@@1@quant@以前 狗 每 天 都 叫@@@@1@6@The dog barked every day.@@
-58@MRS@@@1@q@狗 什么 时候 叫 的 ?@@@@1@6@When did the dog bark?@@
-59@MRS@@@1@det@其中 的 三 只 狗 叫@@@@1@6@Three of the dogs bark.@@
-60@MRS@@@1@numcl@三 只 叫@@@@1@3@Three bark.@@
-61@MRS@@@1@det@张三 的 狗 叫@@@@1@4@Zhang's dog barks.@@
-62@MRS@@@1@det@张三 的 叫@@@@1@3@Zhang's barks.@@
-63@MRS@@@1@numcl@23 只 狗 叫@@@@1@4@Twenty three dogs bark.@@
-64@MRS@@@1@numcl@220 只 狗 叫@@@@1@4@Two hundred twenty dogs bark.@@
+56@MRS@@@1@indef@狗 追赶 所有 会 吠 的 东西@@@@1@7@Dogs chase whatever barks.@@
+57@MRS@@@1@quant@以前 狗 每 天 都 吠@@@@1@6@The dog barked every day.@@
+58@MRS@@@1@q@狗 什么 时候 吠 的 ?@@@@1@6@When did the dog bark?@@
+59@MRS@@@1@det@其中 的 三 只 狗 吠@@@@1@6@Three of the dogs bark.@@
+60@MRS@@@1@numcl@三 只 吠@@@@1@3@Three bark.@@
+61@MRS@@@1@det@张三 的 狗 吠@@@@1@4@Zhang's dog barks.@@
+62@MRS@@@1@det@张三 的 吠@@@@1@3@Zhang's barks.@@
+63@MRS@@@1@numcl@23 只 狗 吠@@@@1@4@Twenty three dogs bark.@@
+64@MRS@@@1@numcl@220 只 狗 吠@@@@1@4@Two hundred twenty dogs bark.@@
 65@MRS@@@1@pro-d@张三 坐 汽车 到 了@@@@1@5@Zhangsan arrived by car.@@
-66@MRS@@@1@adv@张三 不停 地 叫@@@@1@4@Zhangsan kept barking.@@
+66@MRS@@@1@adv@张三 不停 地 吠@@@@1@4@Zhangsan kept barking.@@
 67@MRS@@@1@pro-d@张三 把 猫 挤 了 进去@@@@1@6@Zhangsan squeezed the cat in.@@
 68@MRS@@@1@pro-d@张三 把 猫 挤 了 进去@@@@1@6@Zhangsan squeezed in the cat.@@
 69@MRS@@@1@det@张三 的 照片 到 了@@@@1@5@The picture of Zhangsan arrived.@@
 70@MRS@@@1@res@张三 把 桌子 擦 干净 了@@@@1@6@Zhangsan wiped the table clean.@@
 71@MRS@@@1@pro-d@张三 把 李四 放 在 了 花园 里@@@@1@8@Zhangsan put Lisi in the garden.@@
-72@MRS@@@1@tam@如果 张三 到 了 ， 狗 会 叫@@@@1@8@The dog will bark if Zhangsan arrives.@@
+72@MRS@@@1@tam@如果 张三 到 了 ， 狗 会 吠@@@@1@8@The dog will bark if Zhangsan arrives.@@
 73@MRS@@@1@crd@张三 和 李四 到 了@@@@1@6@Zhangsan and Lisi arrived.@@
 74@MRS@@@1@crd@张三 李四 和 狗 到 了@@@@1@6@Zhangsan, Lisi and the dog arrived.@@
-75@MRS@@@1@crd@狗 到 了 而且 叫 了@@@@1@6@The dog arrived and barked.@@
-76@MRS@@@1@crd@狗 到 了 而且 张三 叫 了@@@@1@7@The dog arrived and Zhangsan barked.@@
-77@MRS@@@1@q@狗 叫 了 , 是 不 是 ?@@@@1@8@The dog barked, didn't it?@@
-78@MRS@@@1@emb-d@很 明显 狗 叫 了@@@@1@5@It is obvious that the dog barked.@@
-79@MRS@@@1@emb-d@张三 向 李四 保证 他 会 叫@@@@1@7@Zhangsan promised Lisi to bark.@@
-80@MRS@@@1@emb-d@张三 好像 会 叫@@@@1@4@Zhangsan seems to bark.@@
-81@MRS@@@1@emb-d@张三 相信 李四 在 叫@@@@1@5@Zhangsan believes Lisi to be barking.@@
-82@MRS@@@1@emb-d@李四 叫 打扰 了 张三@@@@1@5@It bothered Zhangsan that Lisi barked.@@
+75@MRS@@@1@crd@狗 到 了 而且 吠 了@@@@1@6@The dog arrived and barked.@@
+76@MRS@@@1@crd@狗 到 了 而且 张三 吠 了@@@@1@7@The dog arrived and Zhangsan barked.@@
+77@MRS@@@1@q@狗 吠 了 , 是 不 是 ?@@@@1@8@The dog barked, didn't it?@@
+78@MRS@@@1@emb-d@很 明显 狗 吠 了@@@@1@5@It is obvious that the dog barked.@@
+79@MRS@@@1@emb-d@张三 向 李四 保证 他 会 吠@@@@1@7@Zhangsan promised Lisi to bark.@@
+80@MRS@@@1@emb-d@张三 好像 会 吠@@@@1@4@Zhangsan seems to bark.@@
+81@MRS@@@1@emb-d@张三 相信 李四 在 吠@@@@1@5@Zhangsan believes Lisi to be barking.@@
+82@MRS@@@1@emb-d@李四 吠 打扰 了 张三@@@@1@5@It bothered Zhangsan that Lisi barked.@@
 83@MRS@@@1@emb-d@张三 花 了 十 分钟 到@@@@1@6@It took Zhangsan 10 minutes to arrive.@@
-84@MRS@@@1@emb-d@张三 让 李四 叫@@@@1@4@Zhangsan left it to Lisi to bark.@@
+84@MRS@@@1@emb-d@张三 让 李四 吠@@@@1@4@Zhangsan left it to Lisi to bark.@@
 85@MRS@@@1@emb-d@张三 觉得 李四 老@@@@1@4@Lisi strikes Zhangsan as old.@@
 86@MRS@@@1@emb-d@张三 觉得 李四 老@@@@1@4@Zhangsan considers Lisi as old.@@
-87@MRS@@@1@emb-d@张三 喜欢 李四 会 叫 的 想法@@@@1@7@Zhangsan liked the idea that Lisi could bark.@@
-88@MRS@@@1@prep@张三 从 10 点 叫 到 3 点@@@@1@8@Zhangsan barked from 10 to 3.@@
+87@MRS@@@1@emb-d@张三 喜欢 李四 会 吠 的 想法@@@@1@7@Zhangsan liked the idea that Lisi could bark.@@
+88@MRS@@@1@prep@张三 从 10 点 吠 到 3 点@@@@1@8@Zhangsan barked from 10 to 3.@@
 89@MRS@@@1@adj@以前 张三 很 老@@@@1@4@Zhangsan was very old.@@
-90@MRS@@@1@adv@差不多 每 一 只 狗 都 叫 了@@@@1@8@Nearly every dog barked.@@
-91@MRS@@@1@adv@张三 很 轻 地 叫@@@@1@5@Zhangsan barked very softly.@@
+90@MRS@@@1@adv@差不多 每 一 只 狗 都 吠 了@@@@1@8@Nearly every dog barked.@@
+91@MRS@@@1@adv@张三 很 轻 地 吠@@@@1@5@Zhangsan barked very softly.@@
 92@MRS@@@1@emb-d@李四 追赶 猫 打扰 了 张三@@@@1@6@Lisi's chasing of cats botherd Zhangsan.@@
 93@MRS@@@1@emb-d@张三 追赶 猫 打扰 了 李四@@@@1@6@It bothered Lisi that Zhangsan chased cats.@@
 94@MRS@@@1@adv@六月 三号 到 了@@@@1@4@June 3rd arrived.@@
 95@MRS@@@1@adv@张三 三 点 二十 分 到 了@@@@1@7@Zhangsan arrived at three twenty.@@
 96@MRS@@@1@adv@张三 星期二 早上 到 了@@@@1@5@Zhangsan arrived on Tuesday morning.@@
-97@MRS@@@1@det@那些 猫 找到 了 一种 叫 的 方法@@@@1@8@The cats found a way to bark.@@
+97@MRS@@@1@det@那些 猫 找到 了 一种 吠 的 方法@@@@1@8@The cats found a way to bark.@@
 98@MRS@@@1@adv@那 只 比较 快乐 的 狗 追赶 了 李四@@@@1@9@The happier dog chased Lisi.@@
 99@MRS@@@1@tam@以前 花园 里 有 猫@@@@1@5@There were cats in the garden.@@
 100@MRS@@@1@det@那 只 狗 追赶 了 李四@@@@1@6@That dog chased Lisi.@@
@@ -103,5 +103,5 @@
 103@MRS@@@1@tam,agency@号码 五 让 张三 困扰@@@@1@5@The number five bothers Zhangsan.@@
 104@MRS@@@1@tam@张三 可以@@@@1@2@Zhangsan could.@@
 105@MRS@@@1@tam@李四 试 过 了@@@@1@4@Lisi tried.@@
-106@MRS@@@1@tam@别 叫 !@@@@1@3@Don't bark!@@
-107@MRS@@@1@adv@狗 叫 着 到 了@@@@1@5@The dog arrived barking.@@
+106@MRS@@@1@tam@别 吠 !@@@@1@3@Don't bark!@@
+107@MRS@@@1@adv@狗 吠 着 到 了@@@@1@5@The dog arrived barking.@@

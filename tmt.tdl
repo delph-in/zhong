@@ -139,6 +139,10 @@ time_ne := card_or_dom_ne & card_or_time_ne & meas_or_time_ne.
 meas_ne := meas_or_time_ne & card_or_meas_ne.
 meas_noun_ne := named_entity.
 
+;; SSH 2015-04-13 七月 七日
+month_ne := date_ne.
+day_ne := date_ne.
+
 ;;
 ;; the following are modeled after POSIX character classes; most have obvious 
 ;; correspondences in terms of (more elaborate) UniCode character properties.

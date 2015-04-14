@@ -30,6 +30,7 @@
 :include "../../tmr/pos-ipa".
 :include "../../tmr/finis".
 :include "../../tmr/ne1".
+:include "../../tmr/ne2".
 :end :instance.
 
 ;;
@@ -51,6 +52,11 @@
 ;;
 
 :begin :instance :status lex-entry.
+:include "lex-base".
+:include "lex-symbols".
+:include "lex-classifiers".
+:include "lex-numbers".
+:include "lex-bound".
 :include "lexicon".
 :end :instance.
 

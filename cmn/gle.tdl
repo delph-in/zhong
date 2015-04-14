@@ -75,11 +75,19 @@
 ; VV 	other verb 			走
 
 
-generic_name-lex := proper-name-lex &
+
+generic_name := proper-name-lex &
  [ SYNSEM.LKEYS.KEYREL.CARG #carg,
    STEM < "_generic_name_" >,
    TOKENS.+LIST generic_token_list &
 			    < [ +POS.+TAGS < "NR" >,
+				+CARG #carg ] > ].
+
+generic_foreign-word := proper-name-lex &
+ [ SYNSEM.LKEYS.KEYREL.CARG #carg,
+   STEM < "_generic_fw_" >,
+   TOKENS.+LIST generic_token_list &
+			    < [ +POS.+TAGS < "FW" >,
 				+CARG #carg ] > ].
 
 generic_card := num-adj-lex &
@@ -90,12 +98,26 @@ generic_card := num-adj-lex &
 				+CARG #carg ] > ].
 
 
-generic_nn := count-noun-lex & 
+generic_common-noun := count-noun-lex & 
  [ SYNSEM.LKEYS.KEYREL.PRED #pred,
-   STEM < "_generic_common_noun_" >,
+   STEM < "_generic_cn_" >,
    TOKENS.+LIST generic_token_list &
 			    < [ +POS.+TAGS < "NN" >,
 			        +PRED #pred ] > ].
+
+generic_temp-nouun := time-noun-lex & 
+ [ SYNSEM.LKEYS.KEYREL.PRED #pred,
+   STEM < "_generic_tn_" >,
+   TOKENS.+LIST generic_token_list &
+			    < [ +POS.+TAGS < "NT" >,
+			        +PRED #pred ] > ].
+
+generic_classifier := classifier-lex & 
+ [ SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+   STEM < "_generic_cl_" >,
+   TOKENS.+LIST generic_token_list &
+			    < [ +POS.+TAGS < "M" > ] > ].
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; SSH 2015-03-30: This causes a loopy error in the YY mode
@@ -110,18 +132,57 @@ generic_nn := count-noun-lex &
 ;; Temporally, it is assumed as a transitive verb
 generic_vv := v_trans-verb-lex &
  [ SYNSEM.LKEYS.KEYREL.PRED #pred,
-   STEM < "_generic_verb_" >,
+   STEM < "_generic_vv_" >,
    TOKENS.+LIST generic_token_list & 
 			    < [ +POS.+TAGS < "VV" >,
 				+PRED #pred ] > ].
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+generic_va := pred-adj-lex &
+ [ SYNSEM.LKEYS.KEYREL.PRED #pred,
+   STEM < "_generic_va_" >,
+   TOKENS.+LIST generic_token_list & 
+			    < [ +POS.+TAGS < "VA" >,
+				+PRED #pred ] > ].
+
+generic_jj := attr-adj-lex &
+ [ SYNSEM.LKEYS.KEYREL.PRED #pred,
+   STEM < "_generic_jj_" >,
+   TOKENS.+LIST generic_token_list & 
+			    < [ +POS.+TAGS < "JJ" >,
+				+PRED #pred ] > ].
+
+generic_ij := interjection-lex &
+ [ SYNSEM.LKEYS.KEYREL.PRED #pred,
+   STEM < "_generic_ij_" >,
+   TOKENS.+LIST generic_token_list & 
+			    < [ +POS.+TAGS < "VA" >,
+				+PRED #pred ] > ].
+
 generic_pu := symbol &
  [ SYNSEM.LKEYS.KEYREL.CARG #carg,
-   STEM < "_generic_symbol_" >,
+   STEM < "_generic_pu_" >,
    TOKENS.+LIST generic_token_list &
 			    < [ +POS.+TAGS < "PU" >,
 				+CARG #carg ] > ].
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+generic_num_ne := num-adj-lex & 
+  [ SYNSEM.LKEYS.KEYREL.CARG #carg,
+    STEM < "_generic_num_ne_" >,
+    TOKENS.+LIST generic_token_list & < [ +POS.+TAGS null,
+					  +CARG #carg,
+					  +CLASS card_ne ] > ]. 
+
+generic_year_ne := time-noun-lex & 
+  [ SYNSEM.LKEYS.KEYREL.CARG #carg,
+    STEM < "_generic_year_ne_" >,
+    TOKENS.+LIST generic_token_list & < [ +POS.+TAGS null,
+					  +CARG #carg,
+					  +CLASS year_ne ] > ]. 
 
 ; generic_trans_verb_bse := v_np*_bse-unk_le &
 ;   [ ORTH < "_generic_vb_" >,

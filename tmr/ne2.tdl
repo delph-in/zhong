@@ -60,6 +60,50 @@ card_ne_3_tmr := ne_tmt &
   +OUTPUT < [ +CLASS card_ne ] > ].
 
 ;;
+;; SSH 2015-04-10 Chinese Digit
+;;
+card_ne_4_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[１-９][０-９][，,]?[０-９][０-９][０-９]+$ ] >,
+  +OUTPUT < [ +CLASS card_ne ] > ].
+
+card_ne_5_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[１-９][，,][０-９][０-９][０-９]$ ] >,
+  +OUTPUT < [ +CLASS card_ne ] > ].
+
+card_ne_6_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[零〇０一壹二贰三叁四五六七八九十百千万亿兆][零〇０一壹二贰三叁四五六七八九十百千万亿兆，]+$ ] >,
+  +OUTPUT < [ +CLASS card_ne ] > ].
+
+card_ne_7_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[０-９]+[．\.][０-９]+$ ] >,
+  +OUTPUT < [ +CLASS card_ne ] > ].
+
+year_ne_1_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[１-９][０-９]+年$ ] >,
+  +OUTPUT < [ +CLASS year_ne ] > ].
+
+year_ne_2_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[一壹二贰三叁四五六七八九十百千][零〇０一壹二贰三叁四五六七八九十百千]+年$ ] >,
+  +OUTPUT < [ +CLASS year_ne ] > ].
+
+month_ne_1_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[１-９][０-９]+月$ ] >,
+  +OUTPUT < [ +CLASS month_ne ] > ].
+
+month_ne_2_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[一壹二贰三叁四五六七八九十][零〇０一壹二贰三叁四五六七八九十]+月$ ] >,
+  +OUTPUT < [ +CLASS month_ne ] > ].
+
+day_ne_1_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[１-９][０-９]+日$ ] >,
+  +OUTPUT < [ +CLASS day_ne ] > ].
+
+day_ne_2_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[一壹二贰三叁四五六七八九十百千][零〇０一壹二贰三叁四五六七八九十百千]+日$ ] >,
+  +OUTPUT < [ +CLASS day_ne ] > ].
+
+
+;;
 ;; ordinals, mostly parallel to the numerals
 ;;
 ord_or_dom_ne_tmr := ne_tmt &
@@ -80,11 +124,11 @@ decade_ne_3_tmr := ne_tmt &
 [ +INPUT < [ +FORM ^(?:1[0-9])?[0-9]0[sS]$ ] >,
   +OUTPUT < [ +CLASS plur_ne ] > ].
 
-decade_ne_4_tmr := two_one_tmt &
-[ +INPUT < [ +FORM ^((1[0-9])?[0-9]0)$, 
-             +TRAIT #trait, +CLASS non_ne,
-             +PRED #pred, +CARG #carg, +TNT.+MAIN #main ],
-           [ +FORM ^('[sS])$, +CLASS non_ne ] >,
-  +OUTPUT < [ +FORM "${I1:+FORM:1}${I2:+FORM:1}", 
-              +TRAIT #trait, +CLASS plur_ne,
-              +PRED #pred, +CARG #carg, +TNT null_tnt & [ +MAIN #main ] ] > ].
+; decade_ne_4_tmr := two_one_tmt &
+; [ +INPUT < [ +FORM ^((1[0-9])?[0-9]0)$, 
+;              +TRAIT #trait, +CLASS non_ne,
+;              +PRED #pred, +CARG #carg, +TNT.+MAIN #main ],
+;            [ +FORM ^('[sS])$, +CLASS non_ne ] >,
+;   +OUTPUT < [ +FORM "${I1:+FORM:1}${I2:+FORM:1}", 
+;               +TRAIT #trait, +CLASS plur_ne,
+;               +PRED #pred, +CARG #carg, +TNT null_tnt & [ +MAIN #main ] ] > ].

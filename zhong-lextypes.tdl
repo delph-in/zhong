@@ -253,7 +253,8 @@ head :+
 verb-lex := lex-item &
   [ SYNSEM [ PAREN -,
 	     ASPECTED na,
-	     LOCAL.CAT.HEAD verb ] ].
+	     LOCAL.CAT.HEAD verb & [ PRED-KEY #pred ],
+	     LKEYS.KEYREL.PRED #pred ] ].
 
 main-verb-lex := verb-lex & basic-verb-lex &
   [ SYNSEM.LOCAL [ CAT [ HEAD.AUX -,
@@ -953,14 +954,16 @@ aspect-markers := raise-sem-lex-item & no-icons-lex-item &
 	     NON-LOCAL.SLASH 0-dlist ] ].
 
 pfv-marker := aspect-markers & 
- [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] > ] ].
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
+				    LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] > ] ].
 
 exp-marker := aspect-markers & 
  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT experiential ] > ] ].
   
 ;; SSH 2014-09-02: removing irules.
 dur-marker := aspect-markers & 
- [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
+				    LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
  
 spart-lex-item := raise-sem-lex-item & basic-one-arg & no-icons-lex-item &
   [ SYNSEM [ PAREN -,
@@ -1033,7 +1036,8 @@ a-not-a-adv-lex := basic-scopal-adverb-lex &
   [ SYNSEM [ LOCAL [ CAT [ HEAD [ MODIFIABLE -,
 				  MOD < lex-synsem &
 					[ ASPECTED -,
-					  LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE - ],
+					  LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE -,
+								       PRED-KEY #key ],
 						       VAL [ COMPS #comps,
 							     SUBJ #subj ] ],
 						 CONT.HOOK.INDEX #idx & [ E.ASPECT non-aspect ] ],
@@ -1041,7 +1045,8 @@ a-not-a-adv-lex := basic-scopal-adverb-lex &
 			   VAL.COMPS < lex-synsem &
 				       [ SPART no-spart,			
 					 ASPECTED -,		 
-					 LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE - ],
+					 LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE -,
+								      PRED-KEY #key ],
 						       VAL [ COMPS #comps,
 							     SUBJ #subj ] ],
 						 CONT.HOOK.INDEX #idx & [ E.ASPECT non-aspect ] ],
@@ -1157,15 +1162,18 @@ attr-adj-posthd-lex := basic-attr-adj-lex &
 			     SUBJ < > ] ] ].
 
 basic-pred-adj-lex := basic-adjective-lex & 
-  [ SYNSEM [ LOCAL [ CAT.HEAD.LZG no-lzg,
+  [ SYNSEM [ LOCAL [ CAT.HEAD [ LZG no-lzg,
+				PRED-KEY #key ],
 		     CONT [ HOOK [ LTOP #lbl, 
 				   INDEX #arg0 ],
 			    RELS <! #rel !> ] ],
 	     LKEYS.KEYREL #rel & [ LBL #lbl,
+				   PRED #key,
 				   ARG0 #arg0 ] ] ].
 
 pred-adj-lex := basic-pred-adj-lex &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD <>,
+  [ SYNSEM [ LOCAL [ CAT [ HEAD [ MOD <>,
+				  STATIVE + ],
 			   VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
 						 CONT.HOOK.LTOP #lbl ],
 					 OPT - ] >,
@@ -1544,17 +1552,19 @@ adv_prefix_form_lex := adv_affix_form_lex &
 ;; paraphrased into sentences with such markers.
 aspect-lex-rule := const-cat-change-only-lex-rule & 
  [ SYNSEM [ ASPECTED -,
+	    BOUND #bound,
 	    LOCAL.CAT [ MC luk,
 		      HEAD #head, 
 		      VAL #val, 
 		      MKG #mkg, 
 		      HC-LIGHT #light, 
 		      POSTHEAD #posthead ] ],
-   DTR aspect-rule-dtr & [ SYNSEM.LOCAL.CAT [ HEAD #head, 
-					      VAL #val, 
-					      MKG #mkg, 
-					      HC-LIGHT #light, 
-					      POSTHEAD #posthead ] ],
+   DTR aspect-rule-dtr & [ SYNSEM [ BOUND #bound,
+				    LOCAL.CAT [ HEAD #head, 
+						VAL #val, 
+						MKG #mkg, 
+						HC-LIGHT #light, 
+						POSTHEAD #posthead ] ] ],
    C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 aspect-rule-dtr := word-or-lexrule & [ SYNSEM.LOCAL.CAT.MC na ].

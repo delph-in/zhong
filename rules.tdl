@@ -136,11 +136,11 @@ rslt-1_12 := rslt-1_12-phrase &
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < [ OPT - ] > ].
 rslt-12_12 := rslt-12_12-phrase.
 
-rslt-1_1-sbj-s := rslt-1_1-sbj-share-phrase. 
-rslt-1_1-sbj-ns := rslt-1_1-sbj-nonshare-phrase & 
-  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < unexpressed & [ OPT + ] > ].
+rslt-1_1-sbj := rslt-1_1-sbj-phrase. 
 rslt-1_1-obj := rslt-1_1-obj-phrase &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ OPT - ] > ].
+rslt-1_1-ns := rslt-1_1-noshare-phrase & 
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < unexpressed & [ OPT + ] > ].
 
 rslt-12_1-sbj := rslt-12_1-sbj-phrase.
 rslt-12_1-obj := rslt-12_1-obj-phrase. 

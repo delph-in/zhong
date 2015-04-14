@@ -1,0 +1,408 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+
+;;;;;;;;;;;;;;;;;;;
+;;; Punctuations
+;;;;;;;;;;;;;;;;;;;
+
+comma_c := conj_-_le &
+  [ STEM < "、" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "、", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_、_coord_rel",
+    TRAITS native_token_list ].
+
+period-marker := punctuation &
+  [ STEM < "。" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "。", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
+    TRAITS native_token_list ].
+
+period-marker-robust := punctuation &
+  [ STEM < "." >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ".", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
+    TRAITS native_token_list ].
+
+question-marker := punctuation &
+  [ STEM < "？" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "？", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
+    TRAITS native_token_list ].
+
+question-marker-robust := punctuation &
+  [ STEM < "?" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "?", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
+    TRAITS native_token_list ].
+
+bang-marker := punctuation &
+  [ STEM < "！" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "！", LENGTH one ],
+    TRAITS native_token_list ].
+
+reng-marker-robust := punctuation &
+  [ STEM < "!" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "!", LENGTH one ],
+    TRAITS native_token_list ].
+
+ellipsis-marker := punctuation &
+  [ STEM < "…" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "…", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
+    TRAITS native_token_list ].
+
+;;;;;;;;;;;;;;;;;;;
+;;; Symbols
+;;;;;;;;;;;;;;;;;;;
+
+comma-marker := comma-or-colon &
+  [ STEM < "，" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "，",
+    TRAITS native_token_list ].
+
+comma-marker-robust := comma-or-colon &
+  [ STEM < "," >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ",", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "，",
+    TRAITS native_token_list ].
+
+colon-marker := comma-or-colon &
+  [ STEM < "：" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "：", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "：",
+    TRAITS native_token_list ].
+
+colon-marker-robust := comma-or-colon &
+  [ STEM < ":" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ":", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "：",
+    TRAITS native_token_list ].
+
+semicolon-marker := comma-or-colon &
+  [ STEM < "；" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "；", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "；",
+    TRAITS native_token_list ].
+
+semicolon-marker-robust := comma-or-colon &
+  [ STEM < ";" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ";", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "；",
+    TRAITS native_token_list ].
+
+ldquot-marker := lparen &
+  [ STEM < "“" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "“", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "“",
+    TRAITS native_token_list ].
+
+rdquot-marker := rparen &
+  [ STEM < "”" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "”", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "”",
+    TRAITS native_token_list ].
+
+lsquot-marker := lparen &
+  [ STEM < "‘" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "‘", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "‘",
+    TRAITS native_token_list ].
+
+rsquot-marker := rparen &
+  [ STEM < "’" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "’", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "’",
+    TRAITS native_token_list ].
+
+lparen-marker := lparen &
+  [ STEM < "（" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "（", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "（",
+    TRAITS native_token_list ].
+
+lparen-marker-robust := lparen &
+  [ STEM < "(" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "(", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "（",
+    TRAITS native_token_list ].
+
+rparen-marker := rparen &
+  [ STEM < "）" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "）", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "）",
+    TRAITS native_token_list ].
+
+rparen-marker-robust := rparen &
+  [ STEM < ")" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ")", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "）",
+    TRAITS native_token_list ].
+
+ldcorner-marker := lparen &
+  [ STEM < "『" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "『", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "『",
+    TRAITS native_token_list ].
+
+rdcorner-marker := rparen &
+  [ STEM < "』" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "』", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "』",
+    TRAITS native_token_list ].
+
+lscorner-marker := lparen &
+  [ STEM < "「" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "「", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "「",
+    TRAITS native_token_list ].
+
+rscorner-marker := rparen &
+  [ STEM < "」" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "」", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "」",
+    TRAITS native_token_list ].
+
+ldangle-marker := lparen &
+  [ STEM < "《" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "《", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "《",
+    TRAITS native_token_list ].
+
+rdangle-marker := rparen &
+  [ STEM < "》" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "》", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "》",
+    TRAITS native_token_list ].
+
+lsangle-marker := lparen &
+  [ STEM < "＜" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "＜", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "＜",
+    TRAITS native_token_list ].
+
+lsangle-marker-robust := lparen &
+  [ STEM < "<" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "<", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "＜",
+    TRAITS native_token_list ].
+
+rsangle-marker := rparen &
+  [ STEM < "＞" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "＞", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "＞",
+    TRAITS native_token_list ].
+
+rsangle-marker-robust := rparen &
+  [ STEM < ">" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ">", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "＞",
+    TRAITS native_token_list ].
+
+lbbracket-marker := lparen &
+  [ STEM < "【" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "【", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "【",
+    TRAITS native_token_list ].
+
+rbbracket-marker := rparen &
+  [ STEM < "】" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "】", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "】",
+    TRAITS native_token_list ].
+
+lbracket-marker := lparen &
+  [ STEM < "〔" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "〔", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "〔",
+    TRAITS native_token_list ].
+
+lbracket-marker-robust := lparen &
+  [ STEM < "[" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "[", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "〔",
+    TRAITS native_token_list ].
+
+rbracket-marker := rparen &
+  [ STEM < "〕" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "〕", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "〕",
+    TRAITS native_token_list ].
+
+rbracket-marker-robust := rparen &
+  [ STEM < "]" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "]", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "〕",
+    TRAITS native_token_list ].
+
+lbrace-marker := lparen &
+  [ STEM < "｛" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "｛", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "｛",
+    TRAITS native_token_list ].
+
+lbrace-marker-robust := lparen &
+  [ STEM < "{" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "{", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "｛",
+    TRAITS native_token_list ].
+
+rbrace-marker := rparen &
+  [ STEM < "｝" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "｝", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "｝",
+    TRAITS native_token_list ].
+
+rbrace-marker-robust := rparen &
+  [ STEM < "}" >,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "}", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "｝",
+    TRAITS native_token_list ].
+
+bullet-1 := bullet &
+  [ STEM < "―" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "―", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "―",
+    TRAITS native_token_list ].
+
+bullet-2 := bullet &
+  [ STEM < "－" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "－", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "－",
+    TRAITS native_token_list ].
+
+bullet-3 := bullet &
+  [ STEM < "――" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "――", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "――",
+    TRAITS native_token_list ].
+
+bullet-4 := bullet &
+  [ STEM < "—" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "—", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "—",
+    TRAITS native_token_list ].
+
+bullet-5 := bullet &
+  [ STEM < "——" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "——", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "——",
+    TRAITS native_token_list ].
+
+bullet-6 := bullet &
+  [ STEM < "–" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "–", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "–",
+    TRAITS native_token_list ].
+
+bullet-7 := bullet &
+  [ STEM < "·" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "·", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "·",
+    TRAITS native_token_list ].
+
+bullet-8 := bullet &
+  [ STEM < "．" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "．", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "．",
+    TRAITS native_token_list ].
+
+bullet-9 := bullet &
+  [ STEM < "®" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "®", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "®",
+    TRAITS native_token_list ].
+
+bullet-10 := bullet &
+  [ STEM < "※" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "※", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "※",
+    TRAITS native_token_list ].
+
+bullet-11 := bullet &
+  [ STEM < "━" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "━", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "━",
+    TRAITS native_token_list ].
+
+bullet-12 := bullet &
+  [ STEM < "━━" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "━━", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "━━",
+    TRAITS native_token_list ].
+
+bullet-13 := bullet &
+  [ STEM < "■" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "■", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "■",
+    TRAITS native_token_list ].
+
+bullet-14 := bullet &
+  [ STEM < "□" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "□", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "□",
+    TRAITS native_token_list ].
+
+bullet-15 := bullet &
+  [ STEM < "●" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "●", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "●",
+    TRAITS native_token_list ].
+
+＊-marker := symbol &
+  [ STEM < "＊" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "＊", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "＊",
+    TRAITS native_token_list ].
+
+＋-marker := symbol &
+  [ STEM < "＋" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "＋", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "＋",
+    TRAITS native_token_list ].
+
+％-marker := symbol &
+  [ STEM < "％" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "％", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "％",
+    TRAITS native_token_list ].
+

@@ -1,0 +1,45 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+
+;;;;;;;;;;;;;;;;;;;
+;;; Classifiers
+;;;;;;;;;;;;;;;;;;;
+
+个_cl := c_-_le &
+  [ STEM < "个" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "个", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED 个_x_rel,
+    TRAITS native_token_list ].
+
+根_cl := c_-_le &
+  [ STEM < "根" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "根", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED 根_x_rel,
+    TRAITS native_token_list ].
+
+只_cl := c_-_le &
+  [ STEM < "只" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "只", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED 只_x_rel,
+    TRAITS native_token_list ].
+
+匹_cl := c_-_le &
+  [ STEM < "匹" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "匹", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED 匹_x_rel,
+    TRAITS native_token_list ].
+
+件_cl := c_-_le &
+  [ STEM < "件" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "件", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED 件_x_rel,
+    TRAITS native_token_list ].
+
+条_cl := c_-_le &
+  [ stem <"条">,
+    SYNSEM.LKEYS.KEYREL.PRED 条_x_rel,
+    TRAITS native_token_list ].
+
+台_cl := c_-_le &
+  [ stem <"台">,
+    SYNSEM.LKEYS.KEYREL.PRED 台_x_rel,
+    TRAITS native_token_list ].

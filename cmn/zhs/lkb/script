@@ -56,17 +56,23 @@
 ;;;
 
 
-(read-tdl-lex-file-aux (list (lkb-pathname (parent-directory) "lexicon.tdl")))
+;;(read-tdl-lex-file-aux (list (lkb-pathname (parent-directory) "lexicon.tdl")))
 ;; SSH 2014-11-24: Generic Lexical Entries
-; (if (and (boundp '*lexdb-params*) *lexdb-params*)
-;     (progn
-;       (load-lexdb-from-script)
-;       (read-cached-sublex-if-available 
-;        "gle" (lkb-pathname (parent-directory) "gle.tdl")))
-;     (read-cached-lex-if-available 
-;      (list
-;       (lkb-pathname (parent-directory) "lexicon.tdl")
-;       (lkb-pathname (parent-directory) "gle.tdl"))))
+;; SSH 2015-04-14: Lexical items are grouped into different files.
+(if (and (boundp '*lexdb-params*) *lexdb-params*)
+     (progn
+       (load-lexdb-from-script)
+       (read-cached-sublex-if-available 
+        "gle" (lkb-pathname (parent-directory) "gle.tdl")))
+     (read-cached-lex-if-available 
+      (list
+       (lkb-pathname (parent-directory) "lex-base.tdl")
+       (lkb-pathname (parent-directory) "lex-symbols.tdl")
+       (lkb-pathname (parent-directory) "lex-classifiers.tdl")
+       (lkb-pathname (parent-directory) "lex-numbers.tdl")
+       (lkb-pathname (parent-directory) "lex-bound.tdl")
+       (lkb-pathname (parent-directory) "lexicon.tdl")
+       (lkb-pathname (parent-directory) "gle.tdl"))))
 
 
 ;;; For grammars with small lexicons, no need to use a cache file:
