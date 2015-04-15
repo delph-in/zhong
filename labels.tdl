@@ -32,7 +32,7 @@ punct-label := label &
               LABEL-NAME "PU" ].
 
 advp-label := label & 
-            [ SYNSEM.LOCAL [ CAT [ HEAD adp & [ MOD < [] >],
+            [ SYNSEM.LOCAL [ CAT [ HEAD adv & [ MOD < [] >],
                                    VAL.SPR < > ],
                              COORD-STRAT "" ],
               LABEL-NAME "ADVP" ].
@@ -165,6 +165,17 @@ adj-label := label &
                            COORD-STRAT "" ],
 	     LABEL-NAME "ADJ" ].
 
+locp-label := label & 
+	    [ SYNSEM.LOCAL.CAT [ HEAD postp,
+				 VAL.COMPS < > ],
+	      LABEL-NAME "LOCP" ].
+
+pp-label := label & 
+	    [ SYNSEM.LOCAL.CAT [ HEAD adp,
+				 VAL [ SUBJ < [ ] >,
+                                       COMPS < > ] ],
+	      LABEL-NAME "PP" ].
+
 s-label := label &
            [ SYNSEM.LOCAL [ CAT [ HEAD +vjp,
 				  POSTHEAD +,
@@ -179,16 +190,15 @@ s-top-label := label &
 				      SUBJ < > ] ],
 	     LABEL-NAME "S-T"].
 
+loc-label := label & 
+	   [ SYNSEM.LOCAL.CAT [ HEAD postp,
+				VAL.COMPS < [ ], ... > ],
+	     LABEL-NAME "LOC" ].
+
 p-label := label & 
 	   [ SYNSEM.LOCAL.CAT [ HEAD adp,
 				VAL.COMPS < [ ], ... > ],
 	     LABEL-NAME "P" ].
-
-pp-label := label & 
-	    [ SYNSEM.LOCAL.CAT [ HEAD adp,
-				 VAL.COMPS < > ],
-	      LABEL-NAME "PP" ].
-
 
 c-label := label &
 	   [ SYNSEM.LOCAL.CAT [ HEAD comp,
@@ -345,9 +355,6 @@ classifier-label := label &
 					SUBJ < > ]],
 	       LABEL-NAME "CL" ].
 
-loc-mark-label := label &
-	    [ SYNSEM.LOCAL.CAT [ HEAD loc-mark],
-	     LABEL-NAME "LM" ].
 
 slash := meta &
   [ SYNSEM.NON-LOCAL.SLASH 1-dlist &

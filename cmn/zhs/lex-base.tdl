@@ -425,5 +425,47 @@
     SYNSEM.LKEYS.KEYREL.PRED _feichang_x_rel,
     TRAITS native_token_list ].
 
+;;;;;;;;;;;;;;;;;;;
+;;; KIV items
+;;;;;;;;;;;;;;;;;;;
+过_r_1 := adv_-_deg-pre_le &
+  [ STEM < "过" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "过", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_过_a_1_rel",
+    TRAITS native_token_list ].
 
+;过_v_1 := v_np_le &
+;  [ STEM < "过" >,
+;    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "过", LENGTH one ],
+;    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+;             LKEYS.KEYREL.PRED "_过_v_1_rel" ],
+;    TRAITS native_token_list ].
 
+在_loc := p_loc_zai_le &
+  [ STEM < "在" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ],
+    SYNSEM.LOCAL.CAT.HEAD.PFORM zai,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le,
+	     LKEYS.KEYREL.PRED "_在_p_rel" ],
+    TRAITS native_token_list ].
+
+在_r_1 := adv_-_vp-pre-norel_le &
+  [ STEM <"在">,
+    SYNSEM.LOCAL.CAT.HEAD [ CHAR [ FCHAR "在", LENGTH one ],
+                            MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT imperfective ] > ],
+    TRAITS native_token_list ].
+#|
+在_r_2 := adv_-_vp-pre_le &
+  [ STEM < "在" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_在_a_2_rel",
+    TRAITS native_token_list ].
+
+在_v_1 := v_np_le &
+  [ STEM < "在" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ], 
+    SYNSEM.LOCAL.CAT.HEAD.STATIVE +,
+    SYNSEM.LKEYS.KEYREL.PRED "_在_v_1_rel",
+    SYNSEM.LOCAL.CAT.HEAD.LZG le,
+    TRAITS native_token_list ].
+|#

@@ -1379,28 +1379,34 @@ adposition-lex := basic-adposition-lex & no-hcons-lex-item &
 
 prep-lex := adposition-lex & 
   [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
-               COMPS < #comps > ],
+                           COMPS < #comps > ],
     ARG-ST < [ LOCAL.CAT.HEAD noun ],
-         #comps &
-         [ LOCAL.CAT [ VAL [ SPR < >,
-                 COMPS < > ],
-                           HEAD noun ],
-           OPT - ] > ].
+             #comps &
+             [ LOCAL.CAT [ VAL [ SPR < >,
+                                 COMPS < > ] ],
+               OPT - ] > ].
 
 prep-no-mod-lex := prep-lex & 
   [ SYNSEM.LOCAL.CAT [ HEAD.MOD < >,
-               VAL.SUBJ < [ LOCAL [ CAT [ HEAD noun, 
-                          VAL.SPR < > ] ] ] > ] ].
+                       VAL [ SUBJ < [ LOCAL [ CAT [ HEAD noun, 
+                                                    VAL.SPR < > ] ] ] >,
+                             COMPS < [ LOCAL.CAT.HEAD noun ] > ] ] ].
 
 prep-mod-lex := prep-lex & 
   [ SYNSEM [ LOCAL [ CAT.HEAD.MOD < [ LOCAL intersective-mod &
-                        [ CAT [ HEAD verb,
-                            VAL [ COMPS < >,
-                              SUBJ < [] > ] ],
-                          CONT.HOOK [ LTOP #ltop,
-                              INDEX #ind ] ] ] >,
-             CONT.HOOK.LTOP #ltop ],
-         LKEYS.KEYREL.ARG1 #ind ] ].
+                                      [ CAT [ HEAD verb,
+                                              VAL.COMPS < > ],
+                                       CONT.HOOK [ LTOP #ltop,
+                                                   INDEX #ind ] ] ] >,
+                     CONT.HOOK.LTOP #ltop ],
+             LKEYS.KEYREL.ARG1 #ind ] ].
+
+prep-n-mod-lex := prep-mod-lex & 
+  [ SYNSEM.LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT.VAL.SUBJ < [] > ] >,
+                       VAL.COMPS < [ LOCAL.CAT.HEAD noun ] > ] ].
+
+prep-v-mod-lex := prep-mod-lex & 
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD verb ] > ].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -1420,24 +1426,26 @@ prep := adp &
           [ CAT [ VAL [ COMPS < >,
                 SUBJ < [] > ],
               HEAD verb ] ] ] > ].
+
 ;;Below is for locative marker zai4
 basic-loc-lex := adposition-lex &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD prep,
-               VAL [ SPR < >,
-                 COMPS < #comps >,
-                 SUBJ < #subj > ] ] ],
-         LKEYS.KEYREL [ARG1 #ind2]],
+  [ SYNSEM [ LOCAL [ CAT [ HEAD prep & [ MOD < [ LOCAL.CONT.HOOK.INDEX #arg1 ] > ],
+                           VAL [ SPR < >,
+                                 COMPS < #comps >,
+                                 SUBJ < #subj > ] ] ],
+             LKEYS.KEYREL [ ARG1 #arg1,
+                            ARG2 #ind2 ]],
     ARG-ST < #subj & [ LOCAL [ CAT [ HEAD noun,
-                     VAL.SPR < > ],
-                   CONT.HOOK.INDEX #ind ] ],
-         #comps & phr-synsem &
-            [ LOCAL [ CAT [ VAL [ SPR < >,
-                      COMPS < > ],
-                    HEAD postp ],
-                  CONT.HOOK [ XARG #ind,
-                      INDEX #ind2 ] ],
-              NON-LOCAL.SLASH <!!>,
-              OPT - ] > ].
+                                     VAL.SPR < > ],
+                               CONT.HOOK.INDEX #ind ] ],
+             #comps & phr-synsem &
+              [ LOCAL [ CAT [ VAL [ SPR < >,
+                                    COMPS < > ],
+                              HEAD postp ],
+                        CONT.HOOK [ XARG #ind,
+                                    INDEX #ind2 ] ],
+                NON-LOCAL.SLASH <! !>,
+                OPT - ] > ].
 
 prep-vmod-lex := adposition-lex &
   [ SYNSEM[LOCAL.CAT [ HEAD prep & [MOD <[LOCAL.CONT.HOOK.INDEX #ind] >],
@@ -1460,8 +1468,9 @@ prep-vmod-pre-lex := prep-vmod-lex &
   [ SYNSEM.LOCAL.CAT.POSTHEAD - ].
 
 
-;; The following type is for locative-markers such as bian4 and mian4
-
+;; The following type is for locative-markers such as bian4 and mian4 
+;;SSH & ZZF 2015-04-15 commented out loc-mark
+#|
 loc-mark := head.
 
 basic-loc-mark-lex := norm-sem-lex-item & basic-icons-lex-item &
@@ -1473,25 +1482,25 @@ basic-loc-mark-lex := norm-sem-lex-item & basic-icons-lex-item &
                VAL [ SPR < >,
                  SUBJ < >,
                  COMPS < > ] ] ].
+|#
 
 basic-postp-lex := adposition-lex & 
-  [ SYNSEM [ LOCAL[CAT [ HEAD postp,
-             POSTHEAD -,
-             VAL [ SPR < #spr >,
-                   COMPS < #comp >,
-                   SUBJ < > ] ],
-           CONT.HOOK.XARG #ind1],
-         LKEYS.KEYREL [ ARG1 #ind1,
-                ARG2 #ind2 ] ],
-    ARG-ST < #spr &
-         [LOCAL[CAT [ VAL [ SPR < >,
-                COMPS < >,
-                SUBJ < > ],
-              HEAD noun ],
-            CONT.HOOK.INDEX #ind2],
-          OPT - ],
-         #comp & 
-         [ LOCAL.CAT.HEAD loc-mark ] > ].
+  [ SYNSEM [ LOCAL [ CAT [ HEAD postp,
+                           POSTHEAD -,
+                           VAL [ SPR < #spr >,
+                                 COMPS < #comp >,
+                                 SUBJ < > ] ],
+                     CONT.HOOK.XARG #ind1],
+             LKEYS.KEYREL [ ARG1 #ind1,
+                            ARG2 #ind2 ] ],
+   ARG-ST < #spr &
+             [ LOCAL [ CAT [ VAL [ SPR < >,
+                                   COMPS < >,
+                                   SUBJ < > ],
+                             HEAD noun ],
+                      CONT.HOOK.INDEX #ind2 ],
+               OPT - ],
+           #comp > ].
 
         
 ;;; Lexical rule types for aspect

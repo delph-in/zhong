@@ -128,7 +128,8 @@ d_-_d-prox_le := prox_demons-determiner-lex.
 d_-_d-dist_le := dist_demons-determiner-lex.
 d_-_prt_le := partitive-lex.
 
-p_-_mod_le := prep-mod-lex.
+p_-_n-mod_le := prep-n-mod-lex.
+p_-_v-mod_le := prep-v-mod-lex.
 p_-_nomod_le := prep-no-mod-lex.
 
 p_-_v_le := prep-vmod-lex.

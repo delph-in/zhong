@@ -15,10 +15,10 @@ Vetted: t
 Judgment: g           
 Phenom: tam
 
-张三 叫 了
-Zhang1san1 jiao4 le         
-Zhangsan bark PFV         
-Zhangsan barked.           
+张三 哭 了
+Zhang1san1 ku1 le         
+Zhangsan cry PFV         
+Zhangsan cried.           
            
 Id: 3           
 Source: MRS           
@@ -92,10 +92,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d   
 
-张三 打算 叫
-Zhang1san1 da3-suan jiao4         
-Zhangsan plan bark         
-Zhangsan intended to bark.           
+张三 打算 哭
+Zhang1san1 da3-suan ku1         
+Zhangsan plan cry         
+Zhangsan intended to cry.           
            
 Id: 10           
 Source: MRS           
@@ -103,10 +103,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d   
 
-张三 打算 让 李四 叫        
-Zhang1san1 da3-suan Rang4 Li3si4 jiao4        
-Zhangsan plan let Lisi bark        
-Zhangsan intended Lisi to bark.           
+张三 打算 让 李四 哭        
+Zhang1san1 da3-suan Rang4 Li3si4 ku1        
+Zhangsan plan let Lisi cry        
+Zhangsan intended Lisi to cry.           
            
 Id: 11           
 Source: MRS           
@@ -114,10 +114,10 @@ Vetted: t
 Judgment: g           
 Phenom: Quant 
 
-每 一 只 猫 都 叫 了
-Mei3 yi1 zhi1 mao1 dou1 jiao4 le
-Every one CL cat all bark PFV
-Every cat barked.           
+每 一 只 猫 都 哭 了
+Mei3 yi1 zhi1 mao1 dou1 ku1 le
+Every one CL cat all cry PFV
+Every cat cried.           
            
 Id: 12           
 Source: MRS           
@@ -136,10 +136,10 @@ Vetted: t
 Judgment: g           
 Phenom: GEN
 
-我 的 猫 叫 了
-Wo3 de mao1 jiao4 le
-I GEN cat bark PFV
-My cat barked.           
+我 的 猫 哭 了
+Wo3 de mao1 ku1 le
+I GEN cat cry PFV
+My cat cried.           
            
 Id: 14           
 Source: MRS           
@@ -147,10 +147,10 @@ Vetted: t
 Judgment: g           
 Phenom: Gender
 
-它 叫 了
-Ta1 jiao4 le        
-it bark PFV      
-It barked.
+它 哭 了
+Ta1 ku1 le        
+it cry PFV      
+It cried.
            
 Id: 15           
 Source: MRS           
@@ -191,10 +191,10 @@ Vetted: t
 Judgment: g           
 Phenom: gen
 
-我 的 叫 了
-Wo3 de jiao4 le
-I GEN bark PFV
-Mine barked.
+我 的 哭 了
+Wo3 de ku1 le
+I GEN cry PFV
+Mine cried.
            
 Id: 19           
 Source: MRS           
@@ -213,10 +213,10 @@ Vetted: t
 Judgment: g           
 Phenom: agr
  
-猫 叫
-Mao1 jiao4          
-Cat bark          
-Cats bark.
+猫 哭
+Mao1 ku1          
+Cat cry          
+Cats cry.
            
 Id: 21           
 Source: MRS           
@@ -235,10 +235,10 @@ Vetted: t
 Judgment: g           
 Phenom: pn
 
-有 些 叫
-You3 xie1 jiao4
-Exist few bark         
-Some bark.
+有 些 哭
+You3 xie1 ku1
+Exist few cry         
+Some cry.
            
 Id: 23           
 Source: MRS           
@@ -246,10 +246,10 @@ Vetted: t
 Judgment: g           
 Phenom: pn
 
-有 些 猫 叫
-You3 xie1 mao1 jiao4        
-Exist some cat bark        
-Some of the cats bark.
+有 些 猫 哭
+You3 xie1 mao1 ku1        
+Exist some cat cry        
+Some of the cats cry.
            
 Id: 24           
 Source: MRS           
@@ -257,10 +257,10 @@ Vetted: t
 Judgment: g           
 Phenom: pn      
      
-一 只 猫 也 没 叫
-Yi1 zhi1 mao1 ye3 mei2 jiao4      
-One CL cat even not bark      
-No cat barked.           
+一 只 猫 也 没 哭
+Yi1 zhi1 mao1 ye3 mei2 ku1      
+One CL cat even not cry      
+No cat cried.           
            
 Id: 25           
 Source: MRS           
@@ -268,10 +268,10 @@ Vetted: t
 Judgment: g           
 Phenom: q
 
-狗 叫 了 吗 ？
-Gou3 jiao4 le ma ?        
-dog bark PFV Q ?        
-Did the dog bark?           
+狗 哭 了 吗 ？
+Gou3 ku1 le ma ?        
+dog cry PFV Q ?        
+Did the dog cry?           
            
 Id: 26           
 Source: MRS           
@@ -279,10 +279,10 @@ Vetted: t
 Judgment: g           
 Phenom: q
 
-哪 一 只 狗 叫 了 ？
-Na3 yi1 zhi1 gou3 jiao4 le ?      
-Which one CL dog bark PFV ?      
-Which dog barked?           
+哪 一 只 狗 哭 了 ？
+Na3 yi1 zhi1 gou3 ku1 le ?      
+Which one CL dog cry PFV ?      
+Which dog cried?           
            
 Id: 27           
 Source: MRS           
@@ -290,10 +290,10 @@ Vetted: t
 Judgment: g           
 Phenom: q
 
-谁 的 狗 叫 了 ？
-Shei2 de gou3 jiao4 le ?       
-Who GEN dog bark PFV ?       
-Whose dog barked?           
+谁 的 狗 哭 了 ？
+Shei2 de gou3 ku1 le ?       
+Who GEN dog cry PFV ?       
+Whose dog cried?           
            
 Id: 28           
 Source: MRS           
@@ -312,10 +312,10 @@ Vetted: t
 Judgment: g           
 Phenom: imp
 
-张三 想 知道 是 哪 只 狗 叫 了
-Zhang1san1 xiang3 zhi1-dao4 shi4 na3 yi1 zhi1 gou3 jiao4 le
-Zhangsan want know be which one CL dog bark PFV
-Zhangsan wondered which dog barked.
+张三 想 知道 是 哪 只 狗 哭 了
+Zhang1san1 xiang3 zhi1-dao4 shi4 na3 yi1 zhi1 gou3 ku1 le
+Zhangsan want know be which one CL dog cry PFV
+Zhangsan wondered which dog cried.
            
 Id: 30           
 Source: MRS           
@@ -323,10 +323,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d
 
-张三 想 知道 李四 叫 没 叫     
-Zhang1san1 xiang3 zhi1-dao4 Li3si4 jiao4 mei2 jiao4     
-Zhangsan want know Lisi bark not bark     
-Zhangsan wondered whether Lisi barked.
+张三 想 知道 李四 哭 没 哭     
+Zhang1san1 xiang3 zhi1-dao4 Li3si4 ku1 mei2 ku1     
+Zhangsan want know Lisi cry not cry     
+Zhangsan wondered whether Lisi cried.
            
 Id: 31           
 Source: MRS           
@@ -334,10 +334,10 @@ Vetted: t
 Judgment: g           
 Phenom: Nom
 
-那 只 张三 追赶 的 狗 叫 了
-Na4 zhi1 Zhang1san1 zhui1-gan3 de gou3 jiao4 le   
-That CL Zhangsan chase NOM dog bark PFV   
-The dog that Zhangsan chased barked.           
+那 只 张三 追赶 的 狗 哭 了
+Na4 zhi1 Zhang1san1 zhui1-gan3 de gou3 ku1 le   
+That CL Zhangsan chase NOM dog cry PFV   
+The dog that Zhangsan chased cried.           
            
 Id: 32           
 Source: MRS           
@@ -345,10 +345,10 @@ Vetted: t
 Judgment: g           
 Phenom: Nom
 
-要 追赶 的 那 只 狗 在 叫
-Yao4 zhui1-gan3 de na4 zhi1 gou3 zai4 jiao4  
-Want chase NOM that CL dog DUR bark
-The dog to chase is barking.           
+要 追赶 的 那 只 狗 在 哭
+Yao4 zhui1-gan3 de na4 zhi1 gou3 zai4 ku1  
+Want chase NOM that CL dog DUR cry
+The dog to chase is crying.           
            
 Id: 33           
 Source: MRS           
@@ -367,10 +367,10 @@ Vetted: t
 Judgment: g           
 Phenom: Pass
 
-那 只 被 张三 追赶 的 狗 叫 了
-Na4 zhi1 bei4 Zhang1san1 zhui1-gan3 de gou3 jiao4 le
-That CL BEI Zhangsan chase NOM dog bark PFV
-The dog chased by Zhangsan barked.           
+那 只 被 张三 追赶 的 狗 哭 了
+Na4 zhi1 bei4 Zhang1san1 zhui1-gan3 de gou3 ku1 le
+That CL BEI Zhangsan chase NOM dog cry PFV
+The dog chased by Zhangsan cried.           
            
 Id: 35           
 Source: MRS           
@@ -378,10 +378,10 @@ Vetted: t
 Judgment: g           
 Phenom: tam
 
-狗 在 叫
-Gou3 zai4 jiao4         
-Dog DUR bark         
-The dog is barking.     
+狗 在 哭
+Gou3 zai4 ku1         
+Dog DUR cry         
+The dog is crying.     
            
 Id: 36           
 Source: MRS           
@@ -389,10 +389,10 @@ Vetted: t
 Judgment: g           
 Phenom: tam
 
-狗 叫 过
-Gou3 jiao4 guo4         
-Dog bark EXP         
-The dog has barked.           
+狗 哭 过
+Gou3 ku1 guo4         
+Dog cry EXP         
+The dog has cried.           
            
 Id: 37           
 Source: MRS           
@@ -400,10 +400,10 @@ Vetted: t
 Judgment: g           
 Phenom: tam
 
-狗 一直 在 叫
-Gou3 yi1-zhi2 zai4 jiao4     
-Dog always DUR bark PFV much long CRS     
-The dog has been barking.    
+狗 一直 在 哭
+Gou3 yi1-zhi2 zai4 ku1     
+Dog always DUR cry PFV much long CRS     
+The dog has been crying.    
            
 Id: 38           
 Source: MRS           
@@ -411,10 +411,10 @@ Vetted: t
 Judgment: g           
 Phenom: tam     
      
-狗 以前 一直 叫
-Gou3 yi3qian2 yi1-zhi2 jiao4    
-Dog before always bark  
-The dog had been barking.           
+狗 以前 一直 哭
+Gou3 yi3qian2 yi1-zhi2 ku1    
+Dog before always cry  
+The dog had been crying.           
            
 Id: 39           
 Source: MRS           
@@ -422,10 +422,10 @@ Vetted: t
 Judgment: g           
 Phenom: tam
 
-狗 要 叫 了
-Gou3 yao4 jiao4 le    
-Dog will bark CRS       
-The dog will bark.           
+狗 要 哭 了
+Gou3 yao4 ku1 le    
+Dog will cry CRS       
+The dog will cry.           
            
 Id: 40           
 Source: MRS           
@@ -433,10 +433,10 @@ Vetted: t
 Judgment: g           
 Phenom: tam
 
-狗 要 叫
-Gou3 yao4 jiao4         
-Dog will bark         
-The dog is going to bark.           
+狗 要 哭
+Gou3 yao4 ku1         
+Dog will cry         
+The dog is going to cry.           
            
 Id: 41           
 Source: MRS           
@@ -444,10 +444,10 @@ Vetted: t
 Judgment: g           
 Phenom: modal
 
-狗 会 叫 了
-Gou3 hui4 jiao4 le        
-Dog will bark PFV   
-The dog could bark.           
+狗 会 哭 了
+Gou3 hui4 ku1 le        
+Dog will cry PFV   
+The dog could cry.           
            
 Id: 42           
 Source: MRS           
@@ -455,10 +455,10 @@ Vetted: t
 Judgment: g           
 Phenom: modal
 
-狗 不 会 叫 了
-Gou3 bu4 hui4 jiao4 le       
-Dog not able bark PFV      
-The dog couldn't bark.           
+狗 不 会 哭 了
+Gou3 bu4 hui4 ku1 le       
+Dog not able cry PFV      
+The dog couldn't cry.           
            
 Id: 43           
 Source: MRS           
@@ -466,10 +466,10 @@ Vetted: t
 Judgment: g           
 Phenom: adj
 
-老 狗 叫 了
-Lao3 gou3 jiao4 le       
-Old dog bark PFV        
-The old dog barked.           
+老 狗 哭 了
+Lao3 gou3 ku1 le       
+Old dog cry PFV        
+The old dog cried.           
            
 Id: 44           
 Source: MRS           
@@ -477,10 +477,10 @@ Vetted: t
 Judgment: g           
 Phenom: adv
 
-狗 轻轻 地 叫 了     
-Gou3 qing1-qing1 de jiao4 le      
-Dog soft ly bark PFV
-The dog barked softly.           
+狗 轻轻 地 哭 了     
+Gou3 qing1-qing1 de ku1 le      
+Dog soft ly cry PFV
+The dog cried softly.           
            
 Id: 45           
 Source: MRS           
@@ -488,10 +488,10 @@ Vetted: t
 Judgment: g           
 Phenom: adv
 
-狗 很 可能 叫 了
-Gou3 hen3 ke3-neng2 jiao4 le 
-Dog very perhaps bark PFV        
-The dog probably barked.           
+狗 很 可能 哭 了
+Gou3 hen3 ke3-neng2 ku1 le 
+Dog very perhaps cry PFV        
+The dog probably cried.           
            
 Id: 46           
 Source: MRS           
@@ -499,10 +499,10 @@ Vetted: t
 Judgment: g           
 Phenom: loc
 
-狗 在 花园 里 叫 了
-Gou3 zai4 hua1-yuan2 li3 jiao4 le
-Dog LOC garden in bark PFV
-The dog barked in the garden.            
+狗 在 花园 里 哭 了
+Gou3 zai4 hua1-yuan2 li3 ku1 le
+Dog LOC garden in cry PFV
+The dog cried in the garden.            
            
 Id: 47           
 Source: MRS           
@@ -510,10 +510,10 @@ Vetted: t
 Judgment: g           
 Phenom: tam
 
-现在 狗 叫 了
-Xian4-zai4 gou3 jiao4 le
-Now dog bark CRS
-The dog barks now.  
+现在 狗 哭 了
+Xian4-zai4 gou3 ku1 le
+Now dog cry CRS
+The dog crys now.  
            
 Id: 48           
 Source: MRS           
@@ -521,10 +521,10 @@ Vetted: t
 Judgment: g           
 Phenom: cpd
 
-花园 的 狗 叫 了     
-Hua1-yuan2 de gou3 jiao4  le     
-Garden ASSOC dog bark PFV      
-The garden dog barked.           
+花园 的 狗 哭 了     
+Hua1-yuan2 de gou3 ku1  le     
+Garden ASSOC dog cry PFV      
+The garden dog cried.           
            
 Id: 49           
 Source: MRS           
@@ -532,10 +532,10 @@ Vetted: t
 Judgment: g           
 Phenom: ppmod
 
-烟草园 的 狗 叫 了
-yan1-cao3-yuan2 de gou3 jiao4 le
-tobacco_garden ASSOC dog bark PFV
-The tobacco garden dog barked.
+烟草园 的 狗 哭 了
+yan1-cao3-yuan2 de gou3 ku1 le
+tobacco_garden ASSOC dog cry PFV
+The tobacco garden dog cried.
            
 Id: 50           
 Source: MRS           
@@ -565,10 +565,10 @@ Vetted: t
 Judgment: g           
 Phenom: prd
 
-狗 叫 着 追赶 了 张三
-Gou3 jiao4 zhe zhui1-gan3 le Zhang1san1
-dog bark DUR chase PFV Zhangsan
-The barking dog chased Zhangsan.
+狗 哭 着 追赶 了 张三
+Gou3 ku1 zhe zhui1-gan3 le Zhang1san1
+dog cry DUR chase PFV Zhangsan
+The crying dog chased Zhangsan.
            
 Id: 53           
 Source: MRS           
@@ -576,10 +576,10 @@ Vetted: t
 Judgment: g           
 Phenom: det, pass 
 
-被 追赶 的 狗 叫
-Bei4 zhui1-gan3 de gou3 jiao4       
-BEI chase NOM dog bark       
-Chased dogs bark.           
+被 追赶 的 狗 哭
+Bei4 zhui1-gan3 de gou3 ku1       
+BEI chase NOM dog cry       
+Chased dogs cry.           
            
 Id: 54           
 Source: MRS           
@@ -609,10 +609,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d
 
-狗 追赶 所有 会 叫 的 东西
-Gou3 zhui1-gan3 suo2-you3 hui4 jiao4 de dong1-xi   
-Dog chase all able bark NOM thing     
-Dogs chase whatever barks.
+狗 追赶 所有 会 哭 的 东西
+Gou3 zhui1-gan3 suo2-you3 hui4 ku1 de dong1-xi   
+Dog chase all able cry NOM thing     
+Dogs chase whatever crys.
            
 Id: 57           
 Source: MRS           
@@ -620,10 +620,10 @@ Vetted: t
 Judgment: g           
 Phenom: quant
 
-以前 狗 每 天 都 叫      
-Yi3qian2 gou3  mei3 tian1 dou1 jiao4      
-Before dog every day all bark      
-The dog barked every day.           
+以前 狗 每 天 都 哭      
+Yi3qian2 gou3  mei3 tian1 dou1 ku1      
+Before dog every day all cry      
+The dog cried every day.           
            
 Id: 58           
 Source: MRS           
@@ -631,10 +631,10 @@ Vetted: t
 Judgment: g           
 Phenom: quant
 
-狗 什么 时候 叫 的 ?
-gou3 shen2-me shi2-hou jiao4 de ?       
-dog what time bark NOM ?       
-When did the dog bark?           
+狗 什么 时候 哭 的 ?
+gou3 shen2-me shi2-hou ku1 de ?       
+dog what time cry NOM ?       
+When did the dog cry?           
            
 Id: 59           
 Source: MRS           
@@ -642,10 +642,10 @@ Vetted: t
 Judgment: g           
 Phenom: numcl
 
-其中 的 三 只 狗 叫
-qi2zhong1 de san1 zhi1 gou3 jiao4     
-among ASSOC three CL Dog able bark     
-Three of the dogs bark.           
+其中 的 三 只 狗 哭
+qi2zhong1 de san1 zhi1 gou3 ku1     
+among ASSOC three CL Dog able cry     
+Three of the dogs cry.           
            
 Id: 60           
 Source: MRS           
@@ -653,10 +653,10 @@ Vetted: t
 Judgment: g           
 Phenom: numcl
 
-三 只 叫
-San1 zhi1 jiao4        
-Three CL bark        
-Three bark.           
+三 只 哭
+San1 zhi1 ku1        
+Three CL cry        
+Three cry.           
            
 Id: 61           
 Source: MRS           
@@ -664,10 +664,10 @@ Vetted: t
 Judgment: g           
 Phenom: det
 
-张三 的 狗 叫
-Zhang1san1 de gou3 jiao4        
-Zhangsan GEN dog bark        
-Zhang's dog barks.           
+张三 的 狗 哭
+Zhang1san1 de gou3 ku1        
+Zhangsan GEN dog cry        
+Zhang's dog crys.           
            
 Id: 62           
 Source: MRS           
@@ -675,10 +675,10 @@ Vetted: t
 Judgment: g           
 Phenom: det
 
-张三 的 叫
-Zhang1san1 de jiao4         
-Zhangsan GEN bark         
-Zhang's barks.           
+张三 的 哭
+Zhang1san1 de ku1         
+Zhangsan GEN cry         
+Zhang's crys.           
            
 Id: 63           
 Source: MRS           
@@ -686,10 +686,10 @@ Vetted: t
 Judgment: g           
 Phenom: numcl
 
-23 只 狗 叫
-23 zhi1 gou3 jiao4        
-23 CL dog bark        
-Twenty three dogs bark.
+23 只 狗 哭
+23 zhi1 gou3 ku1        
+23 CL dog cry        
+Twenty three dogs cry.
            
 Id: 64           
 Source: MRS           
@@ -697,10 +697,10 @@ Vetted: t
 Judgment: g           
 Phenom: numcl
 
-220 只 狗 叫
-220 zhi1 gou3 jiao4       
-220 CL dog bark       
-Two hundred twenty dogs bark.           
+220 只 狗 哭
+220 zhi1 gou3 ku1       
+220 CL dog cry       
+Two hundred twenty dogs cry.           
            
 Id: 65           
 Source: MRS           
@@ -719,10 +719,10 @@ Vetted: t
 Judgment: g           
 Phenom: adv
 
-张三 不停 地 叫
-Zhang1san1 bu4ting2 de jiao4        
-Zhangsan repeatedly -ly bark        
-Zhangsan kept barking.
+张三 不停 地 哭
+Zhang1san1 bu4ting2 de ku1        
+Zhangsan repeatedly -ly cry        
+Zhangsan kept crying.
            
 Id: 67           
 Source: MRS           
@@ -785,10 +785,10 @@ Vetted: t
 Judgment: g           
 Phenom: tam 
 
-如果 张三 到 了 ， 狗 会 叫
-Ru2guo3 Zhang1san1 dao4 le pct gou3 hui4 jiao4   
-If Zhangsan arrive CRS pct dog will bark   
-The dog will bark if Zhangsan arrives.           
+如果 张三 到 了 ， 狗 会 哭
+Ru2guo3 Zhang1san1 dao4 le pct gou3 hui4 ku1   
+If Zhangsan arrive CRS pct dog will cry   
+The dog will cry if Zhangsan arrives.           
            
 Id: 73           
 Source: MRS           
@@ -818,10 +818,10 @@ Vetted: t
 Judgment: g           
 Phenom: crd
 
-狗 到 了 而且 叫 了
-Gou3 dao4 le er2-qie3 jiao4 le     
-Dog arrive PFV and bark PFV     
-The dog arrived and barked.        
+狗 到 了 而且 哭 了
+Gou3 dao4 le er2-qie3 ku1 le     
+Dog arrive PFV and cry PFV     
+The dog arrived and cried.        
            
 Id: 76           
 Source: MRS           
@@ -829,10 +829,10 @@ Vetted: t
 Judgment: g           
 Phenom: crd
 
-狗 到 了 而且 张三 叫 了
-Gou3 dao4 le er2-qie3 Zhang1san1 jiao4 le
-Dog arrive PFV and Zhangsan bark PFV    
-The dog arrived and Zhangsan barked.           
+狗 到 了 而且 张三 哭 了
+Gou3 dao4 le er2-qie3 Zhang1san1 ku1 le
+Dog arrive PFV and Zhangsan cry PFV    
+The dog arrived and Zhangsan cried.           
            
 Id: 77           
 Source: MRS           
@@ -840,10 +840,10 @@ Vetted: t
 Judgment: g           
 Phenom: q
 
-狗 叫 了 , 是 不 是 ? 
-Gou3 jiao4 le , shi4 bu4 shi4 ?    
-Dog bark PFV , be not be ?     
-The dog barked, didn't it?          
+狗 哭 了 , 是 不 是 ? 
+Gou3 ku1 le , shi4 bu4 shi4 ?    
+Dog cry PFV , be not be ?     
+The dog cried, didn't it?          
            
 Id: 78           
 Source: MRS           
@@ -851,10 +851,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d
 
-很 明显 狗 叫 了
-hen3 ming2-xian3 Gou3 jiao4 le       
-very obvious Dog bark PFV       
-It is obvious that the dog barked.           
+很 明显 狗 哭 了
+hen3 ming2-xian3 Gou3 ku1 le       
+very obvious Dog cry PFV       
+It is obvious that the dog cried.           
            
 Id: 79           
 Source: MRS           
@@ -862,10 +862,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d
 
-张三 向 李四 保证 他 会 叫
-Zhang1san1 xiang4 Li3si4 bao3-zheng4 ta1 hui4 jiao4     
-Zhangsan to Lisi promised he able bark     
-Zhangsan promised Lisi to bark.           
+张三 向 李四 保证 他 会 哭
+Zhang1san1 xiang4 Li3si4 bao3-zheng4 ta1 hui4 ku1     
+Zhangsan to Lisi promised he able cry     
+Zhangsan promised Lisi to cry.           
            
 Id: 80           
 Source: MRS           
@@ -873,10 +873,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d
 
-张三 好像 会 叫
-Zhang1san1 hao3xiang4 hui4 jiao4       
-Zhangsan seemingly able bark       
-Zhangsan seems to bark.           
+张三 好像 会 哭
+Zhang1san1 hao3xiang4 hui4 ku1       
+Zhangsan seemingly able cry       
+Zhangsan seems to cry.           
            
 Id: 81           
 Source: MRS           
@@ -884,10 +884,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d
 
-张三 相信 李四 在 叫
-Zhang1san1 xiang1xin4 Li3si4 zai4 jiao4       
-Zhangsan believe Lisi DUR bark       
-Zhangsan believes Lisi to be barking.           
+张三 相信 李四 在 哭
+Zhang1san1 xiang1xin4 Li3si4 zai4 ku1       
+Zhangsan believe Lisi DUR cry       
+Zhangsan believes Lisi to be crying.           
            
 Id: 82           
 Source: MRS           
@@ -895,10 +895,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d
 
-李四 叫 打扰 了 张三
-Li3si4 jiao4 da3-rao3 le Zhang1san1       
-Lisi bark bother PFV Zhangsan      
-It bothered Zhangsan that Lisi barked.           
+李四 哭 打扰 了 张三
+Li3si4 ku1 da3-rao3 le Zhang1san1       
+Lisi cry bother PFV Zhangsan      
+It bothered Zhangsan that Lisi cried.           
            
 Id: 83           
 Source: MRS           
@@ -917,10 +917,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d
 
-张三 让 李四 叫
-Zhang1san1 rang4 Li3si4 jiao4
-Zhangsan let Lisi bark.
-Zhangsan left it to Lisi to bark.     
+张三 让 李四 哭
+Zhang1san1 rang4 Li3si4 ku1
+Zhangsan let Lisi cry.
+Zhangsan left it to Lisi to cry.     
            
 Id: 85           
 Source: MRS           
@@ -950,10 +950,10 @@ Vetted: t
 Judgment: g           
 Phenom: emb-d
 
-张三 喜欢 李四 会 叫 的 想法
-Zhang1san1 xi3-huan1 Li3si4 hui4 jiao4 de xiang3-fa3    
-Zhangsan like Lisi able bark ASSOC idea     
-Zhangsan liked the idea that Lisi could bark.
+张三 喜欢 李四 会 哭 的 想法
+Zhang1san1 xi3-huan1 Li3si4 hui4 ku1 de xiang3-fa3    
+Zhangsan like Lisi able cry ASSOC idea     
+Zhangsan liked the idea that Lisi could cry.
            
 Id: 88           
 Source: MRS           
@@ -961,10 +961,10 @@ Vetted: t
 Judgment: g           
 Phenom: prep
 
-张三 从 10 点 叫 到 3 点
-Zhang1san1 cong2 10 dian3 jiao4 dao4 3 dian3    
-Zhangsan from 10 o'clock bark to 3 o'clock    
-Zhangsan barked from 10 to 3.           
+张三 从 10 点 哭 到 3 点
+Zhang1san1 cong2 10 dian3 ku1 dao4 3 dian3    
+Zhangsan from 10 o'clock cry to 3 o'clock    
+Zhangsan cried from 10 to 3.           
            
 Id: 89           
 Source: MRS           
@@ -983,10 +983,10 @@ Vetted: t
 Judgment: g           
 Phenom: adv
 
-差不多 每 一 只 狗 都 叫 了
-Cha4－bu-duo1 mei3 yi1 zhi1 gou3 dou1 jiao4 le
-Almost every one CL dog all bark PFV
-Nearly every dog barked.           
+差不多 每 一 只 狗 都 哭 了
+Cha4－bu-duo1 mei3 yi1 zhi1 gou3 dou1 ku1 le
+Almost every one CL dog all cry PFV
+Nearly every dog cried.           
            
 Id: 91           
 Source: MRS           
@@ -994,10 +994,10 @@ Vetted: t
 Judgment: g           
 Phenom: adv
 
-张三 很 轻 地 叫
-Zhang1san1 hen3 qing1 de jiao4        
-Zhangsan very soft ly bark        
-Zhangsan barked very softly.
+张三 很 轻 地 哭
+Zhang1san1 hen3 qing1 de ku1        
+Zhangsan very soft ly cry        
+Zhangsan cried very softly.
            
 Id: 92           
 Source: MRS           
@@ -1060,10 +1060,10 @@ Vetted: t
 Judgment: g           
 Phenom: det
 
-那些 猫 找到 了 一种 叫 的 方法
-Na4xie1 mao1 zhao3-dao4 le yi4zhong3 jiao4 de fang1-fa3     
-Those cat find PFV one bark NOM method     
-The cats found a way to bark.    
+那些 猫 找到 了 一种 哭 的 方法
+Na4xie1 mao1 zhao3-dao4 le yi4zhong3 ku1 de fang1-fa3     
+Those cat find PFV one cry NOM method     
+The cats found a way to cry.    
            
 Id: 98           
 Source: MRS           
@@ -1072,7 +1072,7 @@ Judgment: g
 Phenom: adv
 
 那 只 比较 快乐 的 狗 追赶 了 李四
-Na4 zhi1 bi3-jiao4 kuai4-le4 de gou3 zhui1-gan3 le Li3si4  
+Na4 zhi1 bi3-ku1 kuai4-le4 de gou3 zhui1-gan3 le Li3si4  
 that CL Comparative happy ASSOC dog chase PFV Lisi   
 The happier dog chased Lisi.
            
@@ -1159,10 +1159,10 @@ Vetted: t
 Judgment: g           
 Phenom: tam
 
-别 叫 !
-Bie2 jiao4          
-Don't bark          
-Don't bark!           
+别 哭 !
+Bie2 ku1          
+Don't cry          
+Don't cry!           
            
 Id: 107           
 Source: MRS           
@@ -1170,7 +1170,7 @@ Vetted: t
 Judgment: g           
 Phenom: adv
 
-狗 叫 着 到 了
-gou3 jiao4 zhe dao4 le       
-dog bark DUR arrive PFV      
-The dog arrived barking.
+狗 哭 着 到 了
+gou3 ku1 zhe dao4 le       
+dog cry DUR arrive PFV      
+The dog arrived crying.

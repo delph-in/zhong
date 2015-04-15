@@ -515,7 +515,8 @@ scopal-mod-phrase :+
 ;; SSH 2014-12-19: BOUND for blocking [狗 轻轻 [地 [叫 了]].
 adj-head-int-mc := adj-head-int-phrase &
   [ SYNSEM.LOCAL.CAT.NONSUBJ #ns,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns,
+    HEAD-DTR.SYNSEM [ LOCAL.CAT.NONSUBJ #ns,
+                      BOUND na-or-- ],
     NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
 			  LOCAL.CAT.NONSUBJ #ns ] ].
 
@@ -1299,7 +1300,8 @@ basic-comp-marker-phrase := head-valence-phrase & head-compositional & basic-bin
 comp-marker-phrase := basic-comp-marker-phrase & marker-final-phrase & head-initial & 
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.POSTHEAD na-or-+ ].
 marker-comp-phrase := basic-comp-marker-phrase & marker-initial-phrase & head-final & 
-  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.POSTHEAD na-or-- ].
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD punct,
+                                    POSTHEAD na-or-- ] ].	
  
 
 ;; DPF 2014-08-01 - Added unary and binary bridging rules to accommodate robust
