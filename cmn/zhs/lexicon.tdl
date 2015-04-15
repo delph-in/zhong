@@ -104860,3 +104860,347 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "Ｗｅｔｔｉｎ",
     TRAITS native_token_list ].
 
+不惜_v_2 := v_np_le &
+  [ STEM < "不惜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_不惜_v_2_rel" ],
+    TRAITS native_token_list ].
+
+为_p_2 := p_-_mod_le &
+  [ STEM < "为" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "为", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_为_p_2_rel",
+    TRAITS native_token_list ].
+
+为着_p_1 := p_-_mod_le &
+  [ STEM < "为着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "为", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_为着_p_rel",
+    TRAITS native_token_list ].
+
+之于_p_1 := p_-_mod_le &
+  [ STEM < "之于" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "之", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_之于_p_rel",
+    TRAITS native_token_list ].
+
+伙同_p_1 := p_-_mod_le &
+  [ STEM < "伙同" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "伙", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_伙同_p_rel",
+    TRAITS native_token_list ].
+
+会同_p_1 := p_-_mod_le &
+  [ STEM < "会同" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_会同_p_rel",
+    TRAITS native_token_list ].
+
+作为_p_1 := p_-_mod_le &
+  [ STEM < "作为" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "作", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_作为_p_rel",
+    TRAITS native_token_list ].
+
+依循_p_1 := p_-_mod_le &
+  [ STEM < "依循" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "依", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_依循_p_rel",
+    TRAITS native_token_list ].
+
+借_p_1 := p_-_mod_le &
+  [ STEM < "借" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "借", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_借_p_rel",
+    TRAITS native_token_list ].
+
+借由_p_1 := p_-_mod_le &
+  [ STEM < "借由" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "借", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_借由_p_rel",
+    TRAITS native_token_list ].
+
+借着_p_1 := p_-_mod_le &
+  [ STEM < "借着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "借", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_借着_p_rel",
+    TRAITS native_token_list ].
+
+做为_p_1 := p_-_mod_le &
+  [ STEM < "做为" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "做", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_做为_p_rel",
+    TRAITS native_token_list ].
+
+像是_p_1 := p_-_mod_le &
+  [ STEM < "像是" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "像", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_像是_p_rel",
+    TRAITS native_token_list ].
+
+先于_p_1 := p_-_mod_le &
+  [ STEM < "先于" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "先", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_先于_p_rel",
+    TRAITS native_token_list ].
+
+冒着_p_1 := p_-_mod_le &
+  [ STEM < "冒着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "冒", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_冒着_p_rel",
+    TRAITS native_token_list ].
+
+冲着_p_1 := p_-_mod_le &
+  [ STEM < "冲着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "冲", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_冲着_p_rel",
+    TRAITS native_token_list ].
+
+凭借_p_1 := p_-_mod_le &
+  [ STEM < "凭借" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "凭", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_凭借_p_rel",
+    TRAITS native_token_list ].
+
+出乎_p_1 := p_-_mod_le &
+  [ STEM < "出乎" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "出", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_出乎_p_rel",
+    TRAITS native_token_list ].
+
+出于_p_1 := p_-_mod_le &
+  [ STEM < "出于" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "出", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_出于_p_rel",
+    TRAITS native_token_list ].
+
+围着_p_1 := p_-_mod_le &
+  [ STEM < "围着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "围", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_围着_p_rel",
+    TRAITS native_token_list ].
+
+围绕_p_1 := p_-_mod_le &
+  [ STEM < "围绕" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "围", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_围绕_p_rel",
+    TRAITS native_token_list ].
+
+好象_p_1 := p_-_mod_le &
+  [ STEM < "好象" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "好", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_好象_p_rel",
+    TRAITS native_token_list ].
+
+对着_p_1 := p_-_mod_le &
+  [ STEM < "对着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "对", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_对着_p_rel",
+    TRAITS native_token_list ].
+
+寻着_p_1 := p_-_mod_le &
+  [ STEM < "寻着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "寻", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_寻着_p_rel",
+    TRAITS native_token_list ].
+
+居于_p_1 := p_-_mod_le &
+  [ STEM < "居于" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "居", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_居于_p_rel",
+    TRAITS native_token_list ].
+
+带着_p_1 := p_-_mod_le &
+  [ STEM < "带着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "带", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_带着_p_rel",
+    TRAITS native_token_list ].
+
+应_p_1 := p_-_mod_le &
+  [ STEM < "应" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "应", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_应_p_rel",
+    TRAITS native_token_list ].
+
+延着_p_1 := p_-_mod_le &
+  [ STEM < "延着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "延", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_延着_p_rel",
+    TRAITS native_token_list ].
+
+当着_p_1 := p_-_mod_le &
+  [ STEM < "当着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "当", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_当着_p_rel",
+    TRAITS native_token_list ].
+
+循着_p_1 := p_-_mod_le &
+  [ STEM < "循着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "循", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_循着_p_rel",
+    TRAITS native_token_list ].
+
+截止_p_1 := p_-_mod_le &
+  [ STEM < "截止" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "截", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_截止_p_rel",
+    TRAITS native_token_list ].
+
+截止到_p_1 := p_-_mod_le &
+  [ STEM < "截止到" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "截", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_截止到_p_rel",
+    TRAITS native_token_list ].
+
+打着_p_1 := p_-_mod_le &
+  [ STEM < "打着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "打", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_打着_p_rel",
+    TRAITS native_token_list ].
+
+按照_p_1 := p_-_mod_le &
+  [ STEM < "按照" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "按", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_按照_p_rel",
+    TRAITS native_token_list ].
+
+按着_p_1 := p_-_mod_le &
+  [ STEM < "按着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "按", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_按着_p_rel",
+    TRAITS native_token_list ].
+
+有关于_p_1 := p_-_mod_le &
+  [ STEM < "有关于" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_有关于_p_rel",
+    TRAITS native_token_list ].
+
+朝向_p_1 := p_-_mod_le &
+  [ STEM < "朝向" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "朝", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_朝向_p_rel",
+    TRAITS native_token_list ].
+
+本着_p_1 := p_-_mod_le &
+  [ STEM < "本着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "本", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_本着_p_rel",
+    TRAITS native_token_list ].
+
+正如_p_1 := p_-_mod_le &
+  [ STEM < "正如" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "正", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_正如_p_rel",
+    TRAITS native_token_list ].
+
+比如_p_1 := p_-_mod_le &
+  [ STEM < "比如" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "比", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_比如_p_rel",
+    TRAITS native_token_list ].
+
+牟_v_1 := v_np_le &
+  [ STEM < "牟" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "牟", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_牟_v_1_rel" ],
+    TRAITS native_token_list ].
+
+由于_p_1 := p_-_mod_le &
+  [ STEM < "由于" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "由", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_由于_p_rel",
+    TRAITS native_token_list ].
+
+相对于_p_1 := p_-_mod_le &
+  [ STEM < "相对于" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "相", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_相对于_p_rel",
+    TRAITS native_token_list ].
+
+象_p_1 := p_-_mod_le &
+  [ STEM < "象" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "象", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_象_p_rel",
+    TRAITS native_token_list ].
+
+象是_p_1 := p_-_mod_le &
+  [ STEM < "象是" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "象", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_象是_p_rel",
+    TRAITS native_token_list ].
+
+趁着_p_1 := p_-_mod_le &
+  [ STEM < "趁着" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "趁", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_趁着_p_rel",
+    TRAITS native_token_list ].
+
+跟在_p_1 := p_-_mod_le &
+  [ STEM < "跟在" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "跟", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_跟在_p_rel",
+    TRAITS native_token_list ].
+
+跟随_p_1 := p_-_mod_le &
+  [ STEM < "跟随" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "跟", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_跟随_p_rel",
+    TRAITS native_token_list ].
+
+身为_p_1 := p_-_mod_le &
+  [ STEM < "身为" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "身", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_身为_p_rel",
+    TRAITS native_token_list ].
+
+连同_p_1 := p_-_mod_le &
+  [ STEM < "连同" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "连", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_连同_p_rel",
+    TRAITS native_token_list ].
+
+通过_p_1 := p_-_mod_le &
+  [ STEM < "通过" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "通", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_通过_p_rel",
+    TRAITS native_token_list ].
+
+遵照_p_1 := p_-_mod_le &
+  [ STEM < "遵照" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "遵", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_遵照_p_rel",
+    TRAITS native_token_list ].
+
+鉴于_p_1 := p_-_mod_le &
+  [ STEM < "鉴于" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "鉴", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_鉴于_p_rel",
+    TRAITS native_token_list ].
+
+除非_p_1 := p_-_mod_le &
+  [ STEM < "除非" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "除", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_除非_p_rel",
+    TRAITS native_token_list ].
+
+陪_p_1 := p_-_mod_le &
+  [ STEM < "陪" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "陪", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_陪_p_rel",
+    TRAITS native_token_list ].
+
+面向_p_1 := p_-_mod_le &
+  [ STEM < "面向" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "面", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_面向_p_rel",
+    TRAITS native_token_list ].
+
+面对_p_1 := p_-_mod_le &
+  [ STEM < "面对" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "面", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_面对_p_rel",
+    TRAITS native_token_list ].
+
