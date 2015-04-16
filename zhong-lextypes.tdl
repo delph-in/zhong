@@ -1375,11 +1375,12 @@ adposition-lex := basic-adposition-lex & no-hcons-lex-item &
 				 INDEX #index ],
 			  RELS <! #rel !> ],
 	     LKEYS.KEYREL #rel & [ LBL #ltop,
-			       ARG0 #index ] ] ].
+			           ARG0 #index ] ] ].
 
 prep-lex := adposition-lex & 
-  [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
-                           COMPS < #comps > ],
+  [ SYNSEM.LOCAL.CAT [ HEAD prep,
+                       VAL [ SPR < >,
+                             COMPS < #comps > ] ],
     ARG-ST < [ LOCAL.CAT.HEAD noun ],
              #comps &
              [ LOCAL.CAT [ VAL [ SPR < >,
@@ -1387,10 +1388,12 @@ prep-lex := adposition-lex &
                OPT - ] > ].
 
 prep-no-mod-lex := prep-lex & 
-  [ SYNSEM.LOCAL.CAT [ HEAD.MOD < >,
-                       VAL [ SUBJ < [ LOCAL [ CAT [ HEAD noun, 
-                                                    VAL.SPR < > ] ] ] >,
-                             COMPS < [ LOCAL.CAT.HEAD noun ] > ] ] ].
+  [ SYNSEM [ LOCAL.CAT [ HEAD.MOD < >,
+             	         VAL [ SUBJ < [ LOCAL [ CAT [ HEAD noun, 
+                                                      VAL.SPR < > ],
+                                                CONT.HOOK.INDEX #arg1 ] ] >,
+                               COMPS < [ LOCAL.CAT.HEAD noun ] > ] ],
+             LKEYS.KEYREL.ARG1 #arg1 ] ].
 
 prep-mod-lex := prep-lex & 
   [ SYNSEM [ LOCAL [ CAT.HEAD.MOD < [ LOCAL intersective-mod &
@@ -1408,33 +1411,36 @@ prep-n-mod-lex := prep-mod-lex &
 prep-v-mod-lex := prep-mod-lex & 
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD verb ] > ].
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; MATRIX REDEFINITION - intersective adjectives must not have their index
-;; identified with that of the noun they modify
-;;basic-mod-adj-lex := basic-adjective-lex & raise-index-mod-lex-item.
-basic-mod-adj-lex := basic-adjective-lex & norm-ltop-lex-item.
-
-;; The following represent prepositions and post-positions, used in locative 
-;; phrases
-
-postp := adp &
-  [ MOD < > ].
-
-prep := adp &
-  [ MOD < [ LOCAL intersective-mod & 
-          [ CAT [ VAL [ COMPS < >,
-                SUBJ < [] > ],
-              HEAD verb ] ] ] > ].
 
 ;;Below is for locative marker zai4
+;; SSH 2015-04-16: Now it is regarded as a semantically empty
+;; item. (similarly to 'by' in English passives).
+
+basic-loc-lex := raise-sem-lex-item & no-icons-lex-item &
+  [ SYNSEM [ PAREN -,
+	     LOCAL [ CAT [ HEAD prep & [ MOD #mod ], 
+			   VAL.COMPS < phr-synsem & [ LOCAL [ CAT [ HEAD postp & [ MOD #mod ],
+								    VAL.COMPS <> ],
+							      CONT.HOOK [ LTOP #ltop,
+									  INDEX #ind,
+									  ICONS-KEY.IARG1 #clause ] ],
+						      NON-LOCAL.SLASH <! !> ] > ],
+		     CONT.HOOK [ LTOP #ltop,
+				 INDEX #ind,
+				 CLAUSE-KEY #clause ] ] ] ].
+
+#|
 basic-loc-lex := adposition-lex &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD prep & [ MOD < [ LOCAL.CONT.HOOK.INDEX #arg1 ] > ],
+  [ SYNSEM [ LOCAL [ CAT [ HEAD prep & [ MOD < [ LOCAL intersective-mod &
+                                                  [ CAT [ HEAD verb,
+                                                          VAL [ SUBJ < [] >,
+                                                                COMPS < > ] ],
+                                                    CONT.HOOK.INDEX #arg1 ] ] > ],
                            VAL [ SPR < >,
                                  COMPS < #comps >,
                                  SUBJ < #subj > ] ] ],
              LKEYS.KEYREL [ ARG1 #arg1,
-                            ARG2 #ind2 ]],
+                            ARG2 #ind2 ] ],
     ARG-ST < #subj & [ LOCAL [ CAT [ HEAD noun,
                                      VAL.SPR < > ],
                                CONT.HOOK.INDEX #ind ] ],
@@ -1446,6 +1452,7 @@ basic-loc-lex := adposition-lex &
                                     INDEX #ind2 ] ],
                 NON-LOCAL.SLASH <! !>,
                 OPT - ] > ].
+|#
 
 prep-vmod-lex := adposition-lex &
   [ SYNSEM[LOCAL.CAT [ HEAD prep & [MOD <[LOCAL.CONT.HOOK.INDEX #ind] >],
@@ -1482,7 +1489,6 @@ basic-loc-mark-lex := norm-sem-lex-item & basic-icons-lex-item &
                VAL [ SPR < >,
                  SUBJ < >,
                  COMPS < > ] ] ].
-|#
 
 basic-postp-lex := adposition-lex & 
   [ SYNSEM [ LOCAL [ CAT [ HEAD postp,
@@ -1501,6 +1507,33 @@ basic-postp-lex := adposition-lex &
                       CONT.HOOK.INDEX #ind2 ],
                OPT - ],
            #comp > ].
+|#
+
+;; SSH 2015-04-16: 里_p, etc.  
+basic-postp-lex := adposition-lex & 
+  [ SYNSEM [ POSTCOMP +,
+	     LOCAL [ CAT [ HEAD postp & 
+				[ MOD < [ LOCAL intersective-mod &
+						[ CAT [ HEAD verb,
+							VAL.COMPS < > ],
+						  CONT.HOOK [ LTOP #ltop,
+							      INDEX #ind1 ] ] ] > ],
+                           POSTHEAD -,
+                           VAL [ SPR < >,
+                                 COMPS < #comp >,
+                                 SUBJ < > ] ],
+                     CONT.HOOK [ LTOP #ltop ] ],
+             LKEYS.KEYREL [ ARG1 #ind1,
+                            ARG2 #ind2 ] ],
+   ARG-ST < [ ],
+	    #comp & 
+	    [ LOCAL [ CAT [ VAL [ SPR < >,
+				  COMPS < >,
+				  SUBJ < > ],
+			    HEAD noun ],
+		      CONT.HOOK.INDEX #ind2 ],
+	      OPT - ] > ].
+
 
         
 ;;; Lexical rule types for aspect
@@ -1577,6 +1610,15 @@ aspect-lex-rule := const-cat-change-only-lex-rule &
    C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 aspect-rule-dtr := word-or-lexrule & [ SYNSEM.LOCAL.CAT.MC na ].
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; MATRIX REDEFINITION - intersective adjectives must not have their index
+;; identified with that of the noun they modify
+;;basic-mod-adj-lex := basic-adjective-lex & raise-index-mod-lex-item.
+basic-mod-adj-lex := basic-adjective-lex & norm-ltop-lex-item.
 
 
 

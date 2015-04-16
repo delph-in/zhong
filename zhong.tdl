@@ -45,6 +45,7 @@ synsem :+
    INTERJECTED luk,
    PAREN luk,
    ASPECTED luk,
+   POSTCOMP luk,
    SPART spart,
    BOUND luk ].
 
@@ -174,6 +175,12 @@ nm := noun.
 num :+ 
  [ CARDINAL bool ].
 
+
+;; SSH 2015-04-16: The following are revised. 
+prep := adp.
+postp := adp.
+
+
 ;; SSH 2014-09-02: Gender is necessary to distinguish he and she. 
 ;; 她 追赶 了 他: She chased him.
 ;; In addition, Animacy is also neceesary to disinguish s(he) and it.
@@ -285,6 +292,7 @@ head-adj-scop-phrase :+
 head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
   [ SYNSEM phr-synsem &
        [ LOCAL.CAT.HEAD +nvjrpdmo ],
+    HEAD-DTR.SYNSEM.POSTCOMP na-or--,
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
 			  INTERJECTED na-or-- ] ].
 
@@ -295,17 +303,20 @@ head-comp-phrase :+
     NON-HEAD-DTR.SYNSEM.BOUND - ].
 
 
+;; SSH 2015-04-16: adp -> prep
 head-2nd-comp-phrase := basic-head-2nd-comp-phrase & head-initial &
   [ SYNSEM phr-synsem &
        [ LOCAL.CAT.HEAD verb ],
-    NON-HEAD-DTR.SYNSEM [ LOCAL.CAT.HEAD adp,
+    HEAD-DTR.SYNSEM.POSTCOMP na-or--,
+    NON-HEAD-DTR.SYNSEM [ LOCAL.CAT.HEAD prep,
                           R-PERIPH na-or--,
 			  INTERJECTED na-or-- ] ]. 
 
+;; SSH 2015-04-16: adp -> +np (ex. 我 [教室 里] 哭 了)
 comp-head-final-phrase := basic-head-1st-comp-phrase & head-final & 
   [ SYNSEM.LOCAL.CAT.HEAD +nvjrpdmo,
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
-			  LOCAL.CAT.HEAD adp ] ].
+			  LOCAL.CAT.HEAD +np ] ].
 
 ;; For now, exclude time nouns as subjects
 ;; 
@@ -1279,6 +1290,7 @@ basic-comp-marker-phrase := head-valence-phrase & head-compositional & basic-bin
     HEAD-DTR.SYNSEM #synsem & [ L-PERIPH #lperiph,
 				R-PERIPH #rperiph,
 				PUNCTUATED na-or--,
+				POSTCOMP na-or--,
 				INTERJECTED #interjected,
 				LOCAL [ CAT [ VAL [ SUBJ #subj,
 						    COMPS #comps,

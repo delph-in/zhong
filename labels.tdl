@@ -196,7 +196,7 @@ loc-label := label &
 	     LABEL-NAME "LOC" ].
 
 p-label := label & 
-	   [ SYNSEM.LOCAL.CAT [ HEAD adp,
+	   [ SYNSEM.LOCAL.CAT [ HEAD prep,
 				VAL.COMPS < [ ], ... > ],
 	     LABEL-NAME "P" ].
 

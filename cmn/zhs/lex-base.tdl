@@ -441,12 +441,44 @@
 ;             LKEYS.KEYREL.PRED "_过_v_1_rel" ],
 ;    TRAITS native_token_list ].
 
-在_loc := p_loc_zai_le &
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SSH 2015-04-16
+;; three types of 在
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; [1] predicative 在 (ex. 我 在 教室 。)
+;; This item should be used as the main predicate in a sentence.
+;;;;;;;;;;;;;;;;;;;;;;;;;; 
+在_p_1 := p_-_nomod_le &
   [ STEM < "在" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ],
     SYNSEM.LOCAL.CAT.HEAD.PFORM zai,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le,
 	     LKEYS.KEYREL.PRED "_在_p_rel" ],
+    TRAITS native_token_list ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; [2] ordinary preposition 在 (ex. 我 在 教室 哭 了 。)
+;; This item constitutes a PP and the PP modifies a VP or an S.
+;;;;;;;;;;;;;;;;;;;;;;;;;; 
+在_p_2 := p_-_n-mod_le &
+  [ STEM < "在" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ],
+    SYNSEM.LOCAL.CAT.HEAD.PFORM zai,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le,
+	     LKEYS.KEYREL.PRED "_在_p_rel" ],
+    TRAITS native_token_list ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; [3] locative 在 (ex. 我 在 教室 里 哭 了  。)
+;;   (i)This item should take a 里-PP as its complement (i.e. [PP 在 [LOCP 教室 里 ]]) and 
+;;   (ii) the lexical item itself is semantically empty (like 'by' in English passives).
+;;         cf. 我 教室 里 哭 了
+;;;;;;;;;;;;;;;;;;;;;;;;;; 
+在_loc := p_loc_zai_le &
+  [ STEM < "在" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ],
+    SYNSEM.LOCAL.CAT.HEAD.PFORM zai,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le ],
     TRAITS native_token_list ].
 
 在_r_1 := adv_-_vp-pre-norel_le &
