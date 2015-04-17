@@ -896,7 +896,7 @@ TRAITS native_token_list ].
     SYNSEM.LKEYS.KEYREL.PRED "_由_p_rel",
     TRAITS native_token_list ].
 
-用_p := p_-_mod_le &
+用_p := p_-_n-mod_le &
   [ STEM < "用" >,
     SYNSEM.LKEYS.KEYREL.PRED "_用_p_rel",
     TRAITS native_token_list ].
@@ -1343,6 +1343,7 @@ comma_c := conj_-_le &
 
 有_v := v_np_you_le &
   [ STEM < "有" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_有_v_rel",
     TRAITS native_token_list ].
 
@@ -1352,7 +1353,7 @@ comma_c := conj_-_le &
 	     LKEYS.KEYREL.PRED "_冇_r_rel" ],
     TRAITS native_token_list ].
 
-冇_polar_r := adv_-_polar_le &
+冇_polar_r := adv_-_polar_basic_le &
   [ STEM < "冇" >,
     SYNSEM.LKEYS.KEYREL.PRED "_冇_r_rel",
     TRAITS native_token_list ].
@@ -3611,6 +3612,7 @@ TRAITS native_token_list ].
 
 走_v_1 := v_-_le &
   [ STEM < "走" >,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.GENERIC -,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_走_v_1_rel" ],
     TRAITS native_token_list ].
@@ -4468,12 +4470,6 @@ TRAITS native_token_list ].
   [ STEM < "賽跑" >,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_賽跑_v_1_rel" ],
-    TRAITS native_token_list ].
-
-走_v_1 := v_-_le &
-  [ STEM < "走" >,
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_走_v_1_rel" ],
     TRAITS native_token_list ].
 
 走去_v_1 := v_-_le &

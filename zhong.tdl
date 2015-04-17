@@ -46,6 +46,7 @@ synsem :+
    PAREN luk,
    ASPECTED luk,
    POSTCOMP luk,
+   BARE luk,
    SPART spart,
    BOUND luk ].
 
@@ -167,7 +168,9 @@ you := pform.
 dui := pform.
 
 noun :+ 
- [ HON bool ].
+ [ HON luk,
+   GENERIC luk,
+   CLASSIFIED luk ].
 
 ;; SSH 2014-10-10 nominalizer 的 'de'
 nm := noun.
@@ -254,7 +257,8 @@ basic-head-comp-phrase :+
 		       VAL.SPEC #spec ],
     HEAD-DTR.SYNSEM [ BOUND na-or--,
 		      LOCAL.CAT [ MC #mc,
-				  VAL.SPEC #spec ] ] ].
+				  VAL.SPEC #spec ] ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.NONCOMP - ].
 
 basic-head-mod-phrase-simple :+ 
   [ SYNSEM.LOCAL [ CAT.MC #mc,
@@ -315,6 +319,7 @@ head-2nd-comp-phrase := basic-head-2nd-comp-phrase & head-initial &
 ;; SSH 2015-04-16: adp -> +np (ex. 我 [教室 里] 哭 了)
 comp-head-final-phrase := basic-head-1st-comp-phrase & head-final & 
   [ SYNSEM.LOCAL.CAT.HEAD +nvjrpdmo,
+    HEAD-DTR.SYNSEM.POSTCOMP +,
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
 			  LOCAL.CAT.HEAD +np ] ].
 
@@ -526,7 +531,8 @@ scopal-mod-phrase :+
 ;; SSH 2014-12-19: BOUND for blocking [狗 轻轻 [地 [叫 了]].
 adj-head-int-mc := adj-head-int-phrase &
   [ SYNSEM.LOCAL.CAT.NONSUBJ #ns,
-    HEAD-DTR.SYNSEM [ LOCAL.CAT.NONSUBJ #ns,
+    HEAD-DTR.SYNSEM [ SPART no-spart,
+		      LOCAL.CAT.NONSUBJ #ns,
                       BOUND na-or-- ],
     NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
 			  LOCAL.CAT.NONSUBJ #ns ] ].
@@ -803,11 +809,19 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
 ;; note, we deleted NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < > : this is already specified in the heads
 ;; 
 ;;; DPF 21-dec-09 - use head-compositional etc instead...
-
+;; SSH 2015-04-16 discourse stgatus (definitesness)
+; ---------------------------------------
+;           | cmn             | yue
+; ---------------------------------------
+; DEM-CL-N  | uniq-fam-active (definite)
+; NUME-CL-N | type-id (indefinite)
+; CL-N      | type-id         | active-or-less ((in)definite)
+; N         | active-or-less  | type-id 
+; ---------------------------------------
 head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
     HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd,
-			    CONT.HOOK #hook ],
+			    CONT.HOOK #hook & [ INDEX.COG-ST type-id ] ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
     C-CONT.HOOK #hook ].
 
@@ -855,10 +869,12 @@ basic-bare-np-phrase := head-only &
                     LTOP #ltop ] ] ].
 
 bare-np-phrase := basic-bare-np-phrase &
-  [ SYNSEM [ LOCAL.CAT [ HEAD noun,
+  [ SYNSEM [ BARE +,
+	     LOCAL.CAT [ HEAD noun & [ GENERIC - ],,
              NONSUBJ #ns ],
          NON-LOCAL.SLASH 0-dlist ],
-    HEAD-DTR.SYNSEM.LOCAL.CAT.NONSUBJ #ns,
+    HEAD-DTR.SYNSEM.LOCAL [ CAT.NONSUBJ #ns,
+			    CONT.HOOK.INDEX.COG-ST activ-or-less ],
     C-CONT.RELS <! [ PRED "exist_q_rel" ] !> ].
 
 ;; CL-phrase => nominal phrase
@@ -901,8 +917,19 @@ bare-nominal-det-phrase := basic_bare-nominal-phrase &
     C-CONT.HOOK [ LTOP #ltop,
           INDEX #index ] ].
 
+
+generic-np-phrase := basic-bare-np-phrase &
+  [ SYNSEM [ LOCAL.CAT [ HEAD noun & [ GENERIC + ],
+			 NONCOMP + ],
+	     NON-LOCAL.SLASH 0-dlist ],
+    HEAD-DTR.SYNSEM [ BARE -, 
+		      LOCAL [ CAT.HEAD.CLASSIFIED na-or--,
+			      CONT.HOOK.INDEX.COG-ST type-id ] ],
+    C-CONT.RELS <! [ PRED "generic_q_rel" ] !> ].
+
 ; Restrict head-dtr to non-empty SPR, to avoid spurious ambiguity.
 ;
+;; SSH 2014-04-16 added [CLASSIFIED na-or--]
 meas-np-phrase := head-final & head-valence-phrase & phrasal &
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >,
                            SPR < >,
@@ -911,9 +938,11 @@ meas-np-phrase := head-final & head-valence-phrase & phrasal &
                                       VAL.SPR < > ],
                                 CONT.HOOK [ LTOP #ltop,
                                             INDEX #nhind ] ],
-    HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
-                            CONT.HOOK [ LTOP #ltop,
-                                        INDEX #hind ] ],
+    HEAD-DTR.SYNSEM lex-synsem & [ BARE -,
+				   LOCAL [ CAT.HEAD noun & [ GENERIC na-or--,
+							     CLASSIFIED na-or-- ],
+					   CONT.HOOK [ LTOP #ltop,
+                                        INDEX #hind ] ] ],
     C-CONT [ HOOK.INDEX #hind,
              RELS <! [ LBL #ltop,
                        PRED "measure-rel",
@@ -940,12 +969,14 @@ imperative-phrase := imp-head-opt-subj-phrase &
 ;; DPF 27-jul-11 - Removed HEAD-DTR..MODIFIED notmod to allow "old dog who 
 ;; can bark" |一 只 会 叫 的 老 狗|
 ;;
+;; SSH 2014-04-16: added [CLASSIFIED na-or--] to prevent [一 只 猫]
+;; from being analyzed as a compound
 noun-noun-compound-phrase := head-final &
   [ SYNSEM [ LOCAL.CAT #cat,
              NON-LOCAL #nonloc ],
     HEAD-DTR.SYNSEM lex-synsem &
                 [ LOCAL [ CAT #cat & 
-                              [ HEAD noun,
+                              [ HEAD noun & [ CLASSIFIED na-or-- ],
                                 VAL [ SPR < synsem >,
                                       COMPS < > ] ],
                           CONT.HOOK [ LTOP #ltop,

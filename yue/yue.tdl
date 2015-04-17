@@ -6,3 +6,27 @@
 ;;; created by Sanghoun Song (SSH, 2014-08-25)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;classifier-lex :+  
+;  [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.COG-ST activ-or-less ] > ]. 
+
+head-spec-phrase :+ 
+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.CLASSIFIED na-or-+ ].
+
+bare-np-phrase :+ [ HEAD-DTR.SYNSEM.BARE na-or-+ ].
+
+count-noun-lex :+ no-classifier-rule-dtr.
+
+;; SSH 2015-04-16 [NONSUBJ +] or not?: how to constrain generic readings?
+no-classifier-lex-rule := const-add-only-lex-rule & 
+ [ SYNSEM.BARE +,
+   SYNSEM.LOCAL [ CAT [ NONSUBJ +,
+			HEAD [ GENERIC -,
+			       CLASSIFIED - ] ],
+		  CONT.HOOK.INDEX.COG-ST type-id ],
+   DTR no-classifier-rule-dtr,
+   C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
+
+no-classifier-rule-dtr := word-or-lexrule.
+
+generic-np-phrase :+ 
+ [ HEAD-DTR.SYNSEM lex-synsem ].

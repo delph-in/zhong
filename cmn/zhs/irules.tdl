@@ -1,5 +1,8 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
+no-spr-cl-lex := no-spr-classifier-lex-rule.
+
+
 ;;_perf_aspect-suffix :=
 ;;%suffix (* 了)
 ;;_perf_aspect-lex-rule.

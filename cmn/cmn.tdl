@@ -6,6 +6,21 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; SSH 2015-04-16: In Mandarin Chinese, classifiers must co-occur with
+;; numerals. (ex. *(一) 只 猫 走 了).
+classifier-lex :+ no-spr-classifier-rule-dtr & 
+  [ SYNSEM.LOCAL.CAT.VAL.SPR < [ OPT - ] > ].
 
+no-spr-classifier-lex-rule := const-val-change-only-lex-rule & 
+ [ SYNSEM.LOCAL.CAT [ NONSUBJ +,
+		      HEAD.MOD < [ LOCAL [ CAT.HEAD.GENERIC -,
+					   CONT.HOOK.INDEX.COG-ST type-id ] ] >,
+		      VAL [ SUBJ <>,
+			    COMPS <>,
+			    SPEC <>,
+			    SPR <> ] ],
+   DTR no-spr-classifier-rule-dtr,,
+   C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
+no-spr-classifier-rule-dtr := word-or-lexrule.
 

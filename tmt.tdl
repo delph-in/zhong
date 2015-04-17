@@ -143,6 +143,9 @@ meas_noun_ne := named_entity.
 month_ne := date_ne.
 day_ne := date_ne.
 
+;; SSH 2015-04-16 
+percent_ne := card_ne.
+
 ;;
 ;; the following are modeled after POSIX character classes; most have obvious 
 ;; correspondences in terms of (more elaborate) UniCode character properties.

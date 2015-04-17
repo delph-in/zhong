@@ -19,6 +19,8 @@ bare-nom-det := bare-nominal-det-phrase.
 
 meas-np := meas-np-phrase.
 
+generic-np := generic-np-phrase.
+
 ;; SSH 2014-09-04: STYLE 
 comp-head := comp-head-phrase &
   [ STYLE #style,

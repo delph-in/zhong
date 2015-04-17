@@ -78,6 +78,14 @@ card_ne_7_tmr := ne_tmt &
 [ +INPUT < [ +FORM ^[０-９]+[．\.][０-９]+$ ] >,
   +OUTPUT < [ +CLASS card_ne ] > ].
 
+percent_ne_1_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[０-９]+．[０-９]+％$ ] >,
+  +OUTPUT < [ +CLASS percent_ne ] > ].
+
+percent_ne_2_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^[0-9]+\.[0-9]+％$ ] >,
+  +OUTPUT < [ +CLASS percent_ne ] > ].
+
 year_ne_1_tmr := ne_tmt &
 [ +INPUT < [ +FORM ^[１-９][０-９]+年$ ] >,
   +OUTPUT < [ +CLASS year_ne ] > ].
