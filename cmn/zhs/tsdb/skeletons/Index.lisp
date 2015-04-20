@@ -33,6 +33,8 @@
   ((:path . "symbols") (:content . "special characters testsuite"))
   ((:path . "A-not-A") (:content . "A-not-A testsuite"))
   
+  ((:path . "rslt") (:content . "rslt testsuite"))
+
   ((:path . "fu-berlin") (:content . "Free University Berlin Testsuite"))
 
   ((:path . "mcg-smallest") (:content . "Mandarin Chinese Grammmar - smallest"))

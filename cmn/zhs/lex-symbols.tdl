@@ -44,7 +44,7 @@ bang-marker := punctuation &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "！", LENGTH one ],
     TRAITS native_token_list ].
 
-reng-marker-robust := punctuation &
+bang-marker-robust := punctuation &
   [ STEM < "!" >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "!", LENGTH one ],

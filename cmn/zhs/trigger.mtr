@@ -13,9 +13,29 @@ bang-marker_gr := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG0.SF comm ] !>,
   FLAGS.TRIGGER "bang-marker" ]. 
 
+period-marker-robust_gr := generator_rule &
+ [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+   FLAGS.TRIGGER "period-marker-robust" ].
+
+question-marker-robust_gr := generator_rule &
+ [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+   FLAGS.TRIGGER "question-marker-robust" ].
+
+bang-marker-robust_gr := generator_rule &
+ [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+   FLAGS.TRIGGER "bang-marker-robust" ].
+
+ellipsis-marker_gr := generator_rule &
+ [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+   FLAGS.TRIGGER "ellipsis-marker" ].
+
 在_loc_gr := generator_rule &
  [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
    FLAGS.TRIGGER "在_loc" ].
+
+了_crs_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.E.ASPECT imperfective ] !>,
+  FLAGS.TRIGGER "了_crs" ].
 
 了_pfv_gr := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG0.E.ASPECT perfective ] !>,
@@ -29,9 +49,25 @@ bang-marker_gr := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG0.E.ASPECT durative ] !>,
   FLAGS.TRIGGER "着_dur" ].
 
+了_pfv_robust_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "了_pfv_robust" ].
+
+着_dur_robust_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "着_dur_robust" ].
+
+过_exp_robust_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "过_exp_robust" ].
+
 吗_qp_gr := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG0.SF ques ] !>,
   FLAGS.TRIGGER "吗_qp" ]. 
+
+呢_qp_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ ARG0.SF ques ] !>,
+  FLAGS.TRIGGER "呢_qp" ]. 
 
 在_r_gr := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG0.E.ASPECT imperfective ] !>,
