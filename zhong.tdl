@@ -1599,12 +1599,13 @@ rslt-12_1-inv-phrase := rslt-12_1-phrase & inverse-oriented-phrase.
 
 
 ;; Make temporal NPs into adposition phrases
+;; SSH 2015-04-20: [ SUBJ < [] > ] on MOD is deleted:
+;; 明天 张三 打 跑 了 李四 
 np-adp-phrase := unary-phrase &
   [ SYNSEM.LOCAL.CAT [ HEAD adp & 
                 [ MOD < [ LOCAL intersective-mod &
                         [ CAT [ HEAD verb,
-                            VAL [ COMPS < >,
-                              SUBJ < [] > ] ],
+                            VAL [ COMPS < > ] ],
                           CONT.HOOK [ LTOP #ltop,
                               INDEX #modind ] ]]> ],
                VAL [ SPR < >,

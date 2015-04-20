@@ -4,6 +4,12 @@
 ;;; Default Numbers
 ;;;;;;;;;;;;;;;;;;;
 
+几_j := a_-_num_le &
+  [ STEM < "几" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "几", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "几",
+    TRAITS native_token_list ].
+
 零_j := a_-_num_le &
   [ STEM < "零" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "零", LENGTH one ],

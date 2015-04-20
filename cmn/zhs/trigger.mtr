@@ -49,17 +49,17 @@ ellipsis-marker_gr := generator_rule &
 [ CONTEXT.RELS <! [ ARG0.E.ASPECT durative ] !>,
   FLAGS.TRIGGER "着_dur" ].
 
-了_pfv_robust_gr := generator_rule &
-[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
-  FLAGS.TRIGGER "了_pfv_robust" ].
+了_pfv_robust_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "了_pfv_robust" ]. 
 
-着_dur_robust_gr := generator_rule &
-[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
-  FLAGS.TRIGGER "着_dur_robust" ].
+着_dur_robust_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "着_dur_robust" ]. 
 
-过_exp_robust_gr := generator_rule &
-[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
-  FLAGS.TRIGGER "过_exp_robust" ].
+过_exp_robust_gr := arg0e_gtr &
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "过_exp_robust" ]. 
 
 吗_qp_gr := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG0.SF ques ] !>,
@@ -176,14 +176,3 @@ ellipsis-marker_gr := generator_rule &
 	  TRIGGER "好像_r2" ] ].
 |#
 
-了_pfv_robust_gr := arg0e_gtr &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "了_pfv_robust" ]. 
-
-着_dur_robust_gr := arg0e_gtr &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "着_dur_robust" ]. 
-
-过_exp_robust_gr := arg0e_gtr &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "过_exp_robust" ]. 

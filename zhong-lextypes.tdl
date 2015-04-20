@@ -1184,8 +1184,7 @@ basic-pred-adj-lex := basic-adjective-lex &
 				   ARG0 #arg0 ] ] ].
 
 pred-adj-lex := basic-pred-adj-lex &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD [ MOD <>,
-				  STATIVE + ],
+  [ SYNSEM [ LOCAL [ CAT [ HEAD [ MOD <> ],
 			   VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
 						 CONT.HOOK.LTOP #lbl ],
 					 OPT - ] >,
@@ -1726,6 +1725,7 @@ interjection-lex := basic-scopal-adverb-lex &
 
 ; comma := punct.
 
+;; SSH 2015-04-20: [NON-LOCAL.SLASH 0-dlist] on COMPS is deleted for robust parsing. 
 punctuation := lex-item & 
   [ SYNSEM [ L-PERIPH +,
 	     R-PERIPH +,
@@ -1736,8 +1736,7 @@ punctuation := lex-item &
 					   LOCAL [ CAT [ MC +,			    
 							 HEAD +vjrpc,
 							 VAL [ SUBJ <>, COMPS <> ] ],
-						   CONT.HOOK.INDEX.SF #sf ],
-					   NON-LOCAL.SLASH 0-dlist ] > ],
+						   CONT.HOOK.INDEX.SF #sf ] ] > ],
 			   POSTHEAD + ],
 		     CONT [ HOOK.INDEX.SF #sf,
 			    RELS <! !>, HCONS <! !>, ICONS <! !> ] ] ] ].
