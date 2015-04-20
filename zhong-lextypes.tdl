@@ -735,7 +735,8 @@ int-adv-v-pre :=  intersective-mod-lex & basic-icons-lex-item &
 ;; I added [MODIFIED notmod].
 ;; SSH 2014-12-09: For 狗 以前 一直 叫, [MODIFIED notmod] is deleted.
 int-adv-s-pre := intersective-mod-lex & basic-icons-lex-item &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD adv &
+  [ SYNSEM [ L-PERIPH +,
+	     LOCAL [ CAT [ HEAD adv &
 				[ MOD < [ LOCAL [ CAT [ HEAD +vjp,
 							POSTHEAD +,
 							VAL [ SPR olist,

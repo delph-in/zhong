@@ -87,14 +87,155 @@ symbol-relation := named-relation & arg1-relation &
 
 ; SSH 2014-10-20: type hiearchy for classifers
 classifier_x_rel := predsort.
+丛_x_rel := classifier_x_rel.
+丝_x_rel := classifier_x_rel.
 个_x_rel := classifier_x_rel.
-只_x_rel := 个_x_rel.
-匹_x_rel := 只_x_rel.
-条_x_rel := 只_x_rel.
-台_x_rel := 个_x_rel. 
-根_x_rel := 个_x_rel.
-件_x_rel := 个_x_rel.
-些_x_rel := 个_x_rel.
+串_x_rel := classifier_x_rel.
+代_x_rel := classifier_x_rel.
+件_x_rel := classifier_x_rel.
+份_x_rel := classifier_x_rel.
+位_x_rel := classifier_x_rel.
+具_x_rel := classifier_x_rel.
+册_x_rel := classifier_x_rel.
+分_x_rel := classifier_x_rel.
+列_x_rel := classifier_x_rel.
+则_x_rel := classifier_x_rel.
+剂_x_rel := classifier_x_rel.
+副_x_rel := classifier_x_rel.
+匹_x_rel := classifier_x_rel.
+卷_x_rel := classifier_x_rel.
+双_x_rel := classifier_x_rel.
+发_x_rel := classifier_x_rel.
+叠_x_rel := classifier_x_rel.
+口_x_rel := classifier_x_rel.
+句_x_rel := classifier_x_rel.
+只_x_rel := classifier_x_rel.
+台_x_rel := classifier_x_rel.
+叶_x_rel := classifier_x_rel.
+号_x_rel := classifier_x_rel.
+名_x_rel := classifier_x_rel.
+员_x_rel := classifier_x_rel.
+味_x_rel := classifier_x_rel.
+回_x_rel := classifier_x_rel.
+团_x_rel := classifier_x_rel.
+圈_x_rel := classifier_x_rel.
+块_x_rel := classifier_x_rel.
+坨_x_rel := classifier_x_rel.
+堂_x_rel := classifier_x_rel.
+堆_x_rel := classifier_x_rel.
+堵_x_rel := classifier_x_rel.
+声_x_rel := classifier_x_rel.
+处_x_rel := classifier_x_rel.
+夥_x_rel := classifier_x_rel.
+头_x_rel := classifier_x_rel.
+套_x_rel := classifier_x_rel.
+宗_x_rel := classifier_x_rel.
+家_x_rel := classifier_x_rel.
+对_x_rel := classifier_x_rel.
+封_x_rel := classifier_x_rel.
+尊_x_rel := classifier_x_rel.
+尾_x_rel := classifier_x_rel.
+层_x_rel := classifier_x_rel.
+带_x_rel := classifier_x_rel.
+帧_x_rel := classifier_x_rel.
+席_x_rel := classifier_x_rel.
+帮_x_rel := classifier_x_rel.
+幅_x_rel := classifier_x_rel.
+幢_x_rel := classifier_x_rel.
+座_x_rel := classifier_x_rel.
+张_x_rel := classifier_x_rel.
+截_x_rel := classifier_x_rel.
+户_x_rel := classifier_x_rel.
+所_x_rel := classifier_x_rel.
+扇_x_rel := classifier_x_rel.
+扎_x_rel := classifier_x_rel.
+打_x_rel := classifier_x_rel.
+批_x_rel := classifier_x_rel.
+把_x_rel := classifier_x_rel.
+招_x_rel := classifier_x_rel.
+排_x_rel := classifier_x_rel.
+摊_x_rel := classifier_x_rel.
+撇_x_rel := classifier_x_rel.
+撮_x_rel := classifier_x_rel.
+支_x_rel := classifier_x_rel.
+方_x_rel := classifier_x_rel.
+曲_x_rel := classifier_x_rel.
+期_x_rel := classifier_x_rel.
+本_x_rel := classifier_x_rel.
+朵_x_rel := classifier_x_rel.
+杆_x_rel := classifier_x_rel.
+束_x_rel := classifier_x_rel.
+条_x_rel := classifier_x_rel.
+枚_x_rel := classifier_x_rel.
+枝_x_rel := classifier_x_rel.
+架_x_rel := classifier_x_rel.
+栋_x_rel := classifier_x_rel.
+栏_x_rel := classifier_x_rel.
+株_x_rel := classifier_x_rel.
+根_x_rel := classifier_x_rel.
+桌_x_rel := classifier_x_rel.
+档_x_rel := classifier_x_rel.
+棵_x_rel := classifier_x_rel.
+款_x_rel := classifier_x_rel.
+段_x_rel := classifier_x_rel.
+湾_x_rel := classifier_x_rel.
+滴_x_rel := classifier_x_rel.
+点_x_rel := classifier_x_rel.
+片_x_rel := classifier_x_rel.
+版_x_rel := classifier_x_rel.
+班_x_rel := classifier_x_rel.
+畦_x_rel := classifier_x_rel.
+盏_x_rel := classifier_x_rel.
+票_x_rel := classifier_x_rel.
+科_x_rel := classifier_x_rel.
+章_x_rel := classifier_x_rel.
+笔_x_rel := classifier_x_rel.
+管_x_rel := classifier_x_rel.
+篇_x_rel := classifier_x_rel.
+簇_x_rel := classifier_x_rel.
+粒_x_rel := classifier_x_rel.
+级_x_rel := classifier_x_rel.
+纸_x_rel := classifier_x_rel.
+线_x_rel := classifier_x_rel.
+组_x_rel := classifier_x_rel.
+绺_x_rel := classifier_x_rel.
+缕_x_rel := classifier_x_rel.
+群_x_rel := classifier_x_rel.
+联_x_rel := classifier_x_rel.
+股_x_rel := classifier_x_rel.
+艘_x_rel := classifier_x_rel.
+节_x_rel := classifier_x_rel.
+落_x_rel := classifier_x_rel.
+行_x_rel := classifier_x_rel.
+袭_x_rel := classifier_x_rel.
+记_x_rel := classifier_x_rel.
+课_x_rel := classifier_x_rel.
+起_x_rel := classifier_x_rel.
+路_x_rel := classifier_x_rel.
+身_x_rel := classifier_x_rel.
+轮_x_rel := classifier_x_rel.
+轴_x_rel := classifier_x_rel.
+辆_x_rel := classifier_x_rel.
+辑_x_rel := classifier_x_rel.
+进_x_rel := classifier_x_rel.
+道_x_rel := classifier_x_rel.
+部_x_rel := classifier_x_rel.
+重_x_rel := classifier_x_rel.
+针_x_rel := classifier_x_rel.
+锭_x_rel := classifier_x_rel.
+门_x_rel := classifier_x_rel.
+间_x_rel := classifier_x_rel.
+队_x_rel := classifier_x_rel.
+阶_x_rel := classifier_x_rel.
+集_x_rel := classifier_x_rel.
+面_x_rel := classifier_x_rel.
+页_x_rel := classifier_x_rel.
+顶_x_rel := classifier_x_rel.
+项_x_rel := classifier_x_rel.
+颗_x_rel := classifier_x_rel.
+题_x_rel := classifier_x_rel.
+首_x_rel := classifier_x_rel.
+
 
 intensifier_x_rel := predsort.
 _hen_x_rel := intensifier_x_rel.
@@ -821,7 +962,7 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
 head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
     HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd,
-			    CONT.HOOK #hook & [ INDEX.COG-ST type-id ] ],
+			    CONT.HOOK #hook ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
     C-CONT.HOOK #hook ].
 
@@ -1077,11 +1218,12 @@ rslt-compound-phrase := head-initial &
 			  CONT [ HOOK [ LTOP #ltop,
 					INDEX #arg1 ] ] ],
                   NON-LOCAL #nonloc ],
-    NON-HEAD-DTR.SYNSEM [ LIGHT +,
-			  BOUND na-or--,
-			  LOCAL [ CAT [ HEAD +vj & [ AUX - ],
-					MC na-or-- ],
-				  CONT.HOOK.INDEX #arg2 ] ],
+    NON-HEAD-DTR.SYNSEM lex-synsem &
+	        [ LIGHT +,
+		  BOUND na-or--,
+		  LOCAL [ CAT [ HEAD +vj & [ AUX - ],
+				MC na-or-- ],
+			  CONT.HOOK.INDEX #arg2 ] ],
     C-CONT [ HOOK [ LTOP #ltop,
 		    INDEX #arg1 ],
 	     RELS <! !>,

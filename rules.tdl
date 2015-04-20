@@ -8,7 +8,16 @@ subj-head := subj-head-phrase & [ STYLE robust ].
 
 head-spec := head-spec-phrase & [ STYLE robust ]. 
 
-head-spec-hs := head-spec-h-sem-phrase & [ STYLE robust ].
+;; SSH 2015-04-20: head-spec-hs is now divided into two rules.
+;; head-spec-deg: [[有 多] 高兴] ?
+head-spec-deg := head-spec-h-sem-phrase & 
+  [ STYLE robust,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jrp ].
+;; head-spec-cl: [[一 只] 猫]
+head-spec-cl := head-spec-h-sem-phrase &
+  [ STYLE robust,
+    HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jd,
+			    CONT.HOOK.INDEX.COG-ST type-id ] ].
 
 headn-spec-hs := head-nom-spec-h-sem-phrase & [ STYLE robust ].
 
