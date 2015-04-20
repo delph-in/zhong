@@ -119,6 +119,12 @@
     SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY non-human,
     TRAITS native_token_list ].
 
+之_n := n_-_pr-3sg_le &
+  [ STEM < "之" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "之", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY non-human,
+    TRAITS native_token_list ].
+
 我们_n := n_-_pr-1pl-excl_le &
   [ STEM < "我们" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "我", LENGTH more-than-one ],
