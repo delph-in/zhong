@@ -226,7 +226,6 @@
 
 有_v := v_np_you_le &
   [ STEM < "有" >,
-    SYNSEM.POSTCOMP -,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_有_v_rel",
     TRAITS native_token_list ].

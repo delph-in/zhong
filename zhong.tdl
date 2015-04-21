@@ -85,6 +85,7 @@ card-relation := named-relation & arg1-relation &
 symbol-relation := named-relation & arg1-relation &
   [ PRED symbol_rel ].
 
+
 ; SSH 2014-10-20: type hiearchy for classifers
 classifier_x_rel := predsort.
 下_x_rel := classifier_x_rel.
@@ -569,7 +570,8 @@ more-than-one := length.
 head :+
  [ CHAR char,
    EXISTV bool, 
-   MODIFIABLE bool ].
+   MODIFIABLE bool,
+   MEASURE luk ].
 
 lex-item :+ 
  [ STEM.FIRST #str,
@@ -589,7 +591,7 @@ zai := pform.
 you := pform.
 dui := pform.
 
-noun :+ 
++njd :+ 
  [ HON luk,
    GENERIC luk,
    CLASSIFIED luk ].
@@ -673,6 +675,12 @@ non-aspect := imperfective.
 
 
 ;;; Phrasal types
+
+head-only :+ 
+  [ SYNSEM.LOCAL.CAT [ NONSUBJ #ns,
+		       NONCOMP #nc ], 
+    HEAD-DTR.SYNSEM.LOCAL.CAT [ NONSUBJ #ns,
+				NONCOMP #nc ] ]. 
 
 basic-head-comp-phrase :+ 
   [ SYNSEM.LOCAL.CAT [ MC #mc,
@@ -771,7 +779,6 @@ comp-head-phrase := basic-head-1st-comp-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.HEAD comp,
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
 			  INTERJECTED na-or-- ] ].
-
 
 
 s-coord-phrase :+ 
@@ -952,12 +959,17 @@ scopal-mod-phrase :+
 
 ;; SSH 2014-12-19: BOUND for blocking [狗 轻轻 [地 [叫 了]].
 adj-head-int-mc := adj-head-int-phrase &
-  [ SYNSEM.LOCAL.CAT.NONSUBJ #ns,
+  [ SYNSEM.LOCAL.CAT [ NONSUBJ #ns,
+		       NONCOMP #nc ],
     HEAD-DTR.SYNSEM [ SPART no-spart,
-		      LOCAL.CAT.NONSUBJ #ns,
+		      LOCAL.CAT [ HEAD.MEASURE #meas,
+				  NONSUBJ #ns,
+				  NONCOMP #nc ],
                       BOUND na-or-- ],
     NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
-			  LOCAL.CAT.NONSUBJ #ns ] ].
+			  LOCAL.CAT [ HEAD.MEASURE #meas,
+				      NONSUBJ #ns,
+				      NONCOMP #nc ] ] ].
 
 adj-head-scop-phrase :+ 
   [ SYNSEM [ L-PERIPH #lperiph,
@@ -1057,14 +1069,14 @@ coord-phrase :+
 
 basic-determiner-lex := norm-hook-lex-item & basic-icons-lex-item & 
   [ SYNSEM [ LOCAL [ CAT [ HEAD det,
-               VAL.SPEC.FIRST.LOCAL.CONT.HOOK [ INDEX #ind,
-                                  LTOP #larg ] ],
-             CONT.HCONS <! qeq &
-                 [ HARG #harg,
-                   LARG #larg ] !> ],
-         LKEYS.KEYREL quant-relation &
-           [ ARG0 #ind,
-             RSTR #harg ] ] ].
+			   VAL.SPEC.FIRST.LOCAL.CONT.HOOK [ INDEX #ind,
+							    LTOP #larg ] ],
+		     CONT.HCONS <! qeq &
+				 [ HARG #harg,
+				   LARG #larg ] !> ],
+	     LKEYS.KEYREL quant-relation &
+		   [ ARG0 #ind,
+		     RSTR #harg ] ] ].
 
 ;; SSH 2014-08-26: MATRIX REDEFINITION
 infostr-marking-determiner-lex := basic-determiner-lex.
@@ -1241,7 +1253,8 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
 ; N         | active-or-less  | type-id 
 ; ---------------------------------------
 head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
+  [ SYNSEM.LOCAL.CAT [ HEAD.MEASURE -,
+		       VAL.COMPS #spcomps ],
     HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd,
 			    CONT.HOOK #hook ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
@@ -1299,8 +1312,9 @@ bare-np-phrase := basic-bare-np-phrase &
 			    CONT.HOOK.INDEX.COG-ST activ-or-less ],
     C-CONT.RELS <! [ PRED "exist_q_rel" ] !> ].
 
+
 ;; CL-phrase => nominal phrase
-basic_bare-nominal-phrase := unary-phrase &
+basic-bare-nominal-phrase := unary-phrase &
   [ SYNSEM.LOCAL [ CAT [ HEAD noun,
                          VAL [ SPR < [ LOCAL.CAT.HEAD det,
                                        OPT + ] >,
@@ -1324,59 +1338,63 @@ basic_bare-nominal-phrase := unary-phrase &
                   [ LTOP #ltop,
                     INDEX #index ] ] ].
 
-bare-nominal-classifier-phrase := basic_bare-nominal-phrase &
+bare-nominal-classifier-phrase := basic-bare-nominal-phrase &
   [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD +jd &
              [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
-                             INDEX #index ] ] > ] ] >,
+					 INDEX #index ] ] > ] ] >,
     C-CONT.HOOK [ LTOP #ltop,
-          INDEX #index ] ].
+		  INDEX #index ] ].
 
-bare-nominal-det-phrase := basic_bare-nominal-phrase &
+bare-nominal-det-phrase := basic-bare-nominal-phrase &
   [ ARGS < [ SYNSEM.LOCAL.CAT [ HEAD det,
                 VAL.SPEC < [ LOCAL.CONT.HOOK 
                            [ LTOP #ltop,
                              INDEX #index ] ] > ] ] >,
     C-CONT.HOOK [ LTOP #ltop,
-          INDEX #index ] ].
+		  INDEX #index ] ].
 
-
+;; SSH 2015-04-21: Generic NPs have an underspecified COG-ST value.
+;; [CONT.HOOK.INDEX.COG-ST type-id] is deleted.
 generic-np-phrase := basic-bare-np-phrase &
   [ SYNSEM [ LOCAL.CAT [ HEAD noun & [ GENERIC + ],
 			 NONCOMP + ],
 	     NON-LOCAL.SLASH 0-dlist ],
     HEAD-DTR.SYNSEM [ BARE -, 
-		      LOCAL [ CAT.HEAD.CLASSIFIED na-or--,
-			      CONT.HOOK.INDEX.COG-ST type-id ] ],
+		      LOCAL [ CAT.HEAD.CLASSIFIED na-or-- ] ],
     C-CONT.RELS <! [ PRED "generic_q_rel" ] !> ].
 
 ; Restrict head-dtr to non-empty SPR, to avoid spurious ambiguity.
 ;
 ;; SSH 2014-04-16 added [CLASSIFIED na-or--]
+;; SSH 2014-04-21 noun -> +njd, [NONCOMP +] added for blocking overgeneration.
 meas-np-phrase := head-final & head-valence-phrase & phrasal &
-  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >,
-                           SPR < >,
-                           COMPS < > ],
+  [ SYNSEM.LOCAL.CAT [ NONCOMP +,
+		       HEAD [ MEASURE + ],
+		       VAL [ SUBJ < >,
+			     SPR < >,
+			     COMPS < > ] ],
     NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD num,
                                       VAL.SPR < > ],
                                 CONT.HOOK [ LTOP #ltop,
                                             INDEX #nhind ] ],
     HEAD-DTR.SYNSEM lex-synsem & [ BARE -,
-				   LOCAL [ CAT.HEAD noun & [ GENERIC na-or--,
-							     CLASSIFIED na-or-- ],
+				   LOCAL [ CAT [ HEAD +njd & [ GENERIC na-or--,
+							       CLASSIFIED na-or-- ],
+						 VAL.SPR < [ ] > ],
 					   CONT.HOOK [ LTOP #ltop,
-                                        INDEX #hind ] ] ],
+						       INDEX #hind & [ COG-ST uniq+fam+act ] ] ] ],
     C-CONT [ HOOK.INDEX #hind,
              RELS <! [ LBL #ltop,
-                       PRED "measure-rel",
+                       PRED "measure_rel",
                        ARG1 #hind,
                        ARG2 #nhind ],
-                   quant-relation &
-                   [ PRED "exist_q_rel",
-                     ARG0 #hind,
-               RSTR #harg ] !>,
+		     quant-relation &
+		     [ PRED "exist_q_rel",
+		       ARG0 #hind,
+		       RSTR #harg ] !>,
              HCONS <! qeq & 
-                    [ HARG #harg,
-                      LARG #ltop ] !>,
+                      [ HARG #harg,
+			LARG #ltop ] !>,
              ICONS <! !> ] ].
 
 
@@ -1727,6 +1745,7 @@ basic-head-opt-comp-phrase := head-valence-phrase & head-only &
 ;   [ SYNSEM canonical-synsem & 
 ; 	   [ LOCAL.CAT.HEAD.MOD < [] > ],
 ;     HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD verb ].
+
 
 ; 着了过 aspect markers & sentence final 了 & sentence final question particle 
 basic-comp-marker-phrase := head-valence-phrase & head-compositional & basic-binary-headed-phrase &

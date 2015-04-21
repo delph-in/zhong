@@ -2,22 +2,41 @@
 
 head-comp := head-comp-phrase & [ STYLE robust ].
 
-subj-head := subj-head-phrase & [ STYLE robust ].
+;; SSH 2015-04-21: The subject cannot be indefinite. 
+;;subj-head := subj-head-phrase & [ STYLE robust ].
+
+;;nominal subjects
+subj-head-n := subj-head-phrase & 
+  [ STYLE robust,
+    NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
+				CONT.HOOK.INDEX.COG-ST uniq-or-more ] ].
+;;non-nominal subjects
+subj-head-nn := subj-head-phrase &
+  [ STYLE robust,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +vjp ].
 
 ;;subj-head-nd := subj-head-nondecl-phrase.
 
 head-spec := head-spec-phrase & [ STYLE robust ]. 
 
 ;; SSH 2015-04-20: head-spec-hs is now divided into two rules.
-;; head-spec-deg: [[有 多] 高兴] ?
-head-spec-deg := head-spec-h-sem-phrase & 
+;; head-spec-deg: [[有 多] 高兴] 
+head-spec-noncl := head-spec-h-sem-phrase & 
   [ STYLE robust,
     HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jrp ].
+
+;; head-spec-d: [[我 的] 猫]
+head-spec-d := head-spec-h-sem-phrase &
+  [ STYLE robust,
+    HEAD-DTR.SYNSEM [ LOCAL [ CAT.HEAD det,
+			      CONT.HOOK.INDEX.COG-ST uniq-or-more ] ] ].
+
 ;; head-spec-cl: [[一 只] 猫]
 head-spec-cl := head-spec-h-sem-phrase &
   [ STYLE robust,
-    HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jd,
-			    CONT.HOOK.INDEX.COG-ST type-id ] ].
+    HEAD-DTR.SYNSEM [ LOCAL [ CAT.HEAD classifier,
+			      CONT.HOOK.INDEX.COG-ST type-id ] ] ].
+
 
 headn-spec-hs := head-nom-spec-h-sem-phrase & [ STYLE robust ].
 

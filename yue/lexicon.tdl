@@ -3612,7 +3612,6 @@ TRAITS native_token_list ].
 
 走_v_1 := v_-_le &
   [ STEM < "走" >,
-    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.GENERIC -,
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_走_v_1_rel" ],
     TRAITS native_token_list ].

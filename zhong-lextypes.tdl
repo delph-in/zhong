@@ -510,7 +510,8 @@ v_exist-lex := basic-two-arg & verb-lex & basic-verb-lex &
 ;; EXISTV has been added as a property to block 不 有
 
 v_exist-lex := basic-three-arg & verb-lex & basic-verb-lex & basic-icons-lex-item &
- [ SYNSEM [ LOCAL [ CAT.VAL [ SUBJ < #subj >,
+ [ SYNSEM [ POSTCOMP -,
+	    LOCAL [ CAT.VAL [ SUBJ < #subj >,
                               COMPS < #comp1, #comp2 > ],
 		    CAT.HEAD [ EXISTV + ],
                     CONT [ HOOK [ LTOP #lbl,
@@ -895,8 +896,8 @@ no-obj-drop-verb-lex := lex-item.
 ;;; SPEC is non-empty, and already specified by basic-determiner-lex.
 
 
-;; SSH 2014-11-11: added [MODIFIED notmod] to block [每 [[一 只] 猫]].
-;; [[每 [一 只]] 猫] is correct.
+;; SSH 2015-04-21: Now [每 [[一 只] 猫]] is the correct form, and the relation 
+;; between [[一 只] 猫] is meas-np-phrase
 determiner-lex := basic-determiner-lex & basic-zero-arg &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT.VAL [ SPR < >,
@@ -905,8 +906,8 @@ determiner-lex := basic-determiner-lex & basic-zero-arg &
 							     LTOP #ltop ] ],
 					 OPT - ] >,
 			       SUBJ < >,
-			       SPEC < [ MODIFIED notmod,
-					LOCAL.CONT.HOOK.LTOP #ltop ] > ],
+			       SPEC < [ LOCAL [ CAT.HEAD.MEASURE na-or-+,
+						CONT.HOOK.LTOP #ltop ] ] > ],
 		     CONT [ HOOK.INDEX #index,
 			    RELS <! relation !> ] ],
 	     NON-LOCAL.SLASH 0-dlist ] ].
