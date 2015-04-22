@@ -207,7 +207,11 @@ np-adp := np-adp-phrase.
 ; head-grd := head-gerundive-phrase.
 
 comp-marker := comp-marker-phrase.
-marker-comp := marker-comp-phrase.
+marker-comp := marker-comp-phrase &
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD marker ] ].
+punct-comp := marker-comp-phrase &
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD punct ] ].
+
 
 ;ZZF/SSH 2015-04-01 to handle variations of ditransitive verbs
 head-2nd-comp := head-2nd-comp-phrase.

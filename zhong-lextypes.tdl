@@ -977,6 +977,19 @@ exp-marker := aspect-markers &
 dur-marker := aspect-markers & 
  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
 				    LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
+
+suo-marker := raise-sem-lex-item & no-icons-lex-item &
+  [ SYNSEM [ PAREN -,
+	     LOCAL [ CAT [ HEAD marker & [ MOD <> ],
+			   VAL [ COMPS < lex-synsem & 
+					 [ MODIFIED notmod, 
+                                           BOUND -,
+					   LOCAL [ CAT [ HEAD verb & [ AUX - ] ] ] ] >,
+				 SUBJ < >,
+				 SPEC < >,
+				 SPR < > ],
+			   POSTHEAD - ] ],
+	     NON-LOCAL.SLASH 0-dlist ] ].
  
 spart-lex-item := raise-sem-lex-item & basic-one-arg & no-icons-lex-item &
   [ SYNSEM [ PAREN -,

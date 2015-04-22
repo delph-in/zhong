@@ -1785,10 +1785,8 @@ basic-comp-marker-phrase := head-valence-phrase & head-compositional & basic-bin
 
 comp-marker-phrase := basic-comp-marker-phrase & marker-final-phrase & head-initial & 
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.POSTHEAD na-or-+ ].
-marker-comp-phrase := basic-comp-marker-phrase & marker-initial-phrase & head-final & 
-  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD punct,
-                                    POSTHEAD na-or-- ] ].	
- 
+marker-comp-phrase := basic-comp-marker-phrase & marker-initial-phrase & head-final &
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ POSTHEAD na-or-- ] ].
 
 ;; DPF 2014-08-01 - Added unary and binary bridging rules to accommodate robust
 ;; full-forest treebanking.  The strategy is to pump each normal edge in the
