@@ -35,6 +35,8 @@
   
   ((:path . "rslt") (:content . "rslt testsuite"))
 
+  ((:path . "spec01") (:content . "The Adventure of the Speckled Band - the first 100 sentences"))
+
   ((:path . "fu-berlin") (:content . "Free University Berlin Testsuite"))
 
   ((:path . "mcg-smallest") (:content . "Mandarin Chinese Grammmar - smallest"))

@@ -1385,7 +1385,7 @@ meas-np-phrase := head-final & head-valence-phrase & phrasal &
 						       INDEX #hind & [ COG-ST uniq+fam+act ] ] ] ],
     C-CONT [ HOOK.INDEX #hind,
              RELS <! [ LBL #ltop,
-                       PRED "measure_rel",
+                       PRED "measure_x_rel",
                        ARG1 #hind,
                        ARG2 #nhind ],
 		     quant-relation &

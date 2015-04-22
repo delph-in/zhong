@@ -23,7 +23,8 @@ head-spec := head-spec-phrase & [ STYLE robust ].
 ;; head-spec-deg: [[有 多] 高兴] 
 head-spec-noncl := head-spec-h-sem-phrase & 
   [ STYLE robust,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jrp ].
+    HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jrp,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jr ].
 
 ;; head-spec-d: [[我 的] 猫]
 head-spec-d := head-spec-h-sem-phrase &

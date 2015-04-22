@@ -1044,18 +1044,21 @@ neg-adv-lex := basic-scopal-adverb-lex &
 ;;|#
 
 ;; ***** Basic + Contracted A-not-A
-
-a-not-a-adv-lex := basic-scopal-adverb-lex &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD [ MODIFIABLE -,
-				  MOD < lex-synsem &
-					[ ASPECTED -,
-					  LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE -,
-								       PRED-KEY #key ],
-						       VAL [ COMPS #comps,
-							     SUBJ #subj ] ],
-						 CONT.HOOK.INDEX #idx & [ E.ASPECT non-aspect ] ],
-					 LKEYS.KEYREL.PRED #pred ] > ],
-			   VAL.COMPS < lex-synsem &
+;; SSH 2015-04-22: added ICONS, SUBJ <>
+a-not-a-adv-lex := raise-index-mod-lex-item & single-rel-lex-item & 
+		   scopal-mod-lex & one-icons-lex-item &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD adv & [ MODIFIABLE -,
+					MOD < lex-synsem &
+					      [ ASPECTED -,
+						LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE -,
+									     PRED-KEY #key ],
+							      VAL [ COMPS #comps,
+								    SUBJ #subj ] ],
+							CONT.HOOK [ ICONS-KEY #ikey,
+								    INDEX #idx & [ E.ASPECT non-aspect ] ] ],
+						LKEYS.KEYREL.PRED #pred ] > ],
+			   VAL [ SUBJ <>,
+				 COMPS < lex-synsem &
 				       [ SPART no-spart,			
 					 ASPECTED -,		 
 					 LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE -,
@@ -1064,11 +1067,13 @@ a-not-a-adv-lex := basic-scopal-adverb-lex &
 							     SUBJ #subj ] ],
 						 CONT.HOOK.INDEX #idx & [ E.ASPECT non-aspect ] ],
 					 NON-LOCAL.SLASH 0-dlist,
-					 LKEYS.KEYREL.PRED #pred ] >,
+					 LKEYS.KEYREL.PRED #pred ] > ],
 			   POSTHEAD + ],
-		     CONT.HOOK.INDEX [ SF ques,
-				       E.ASPECT non-aspect ] ],
+		     CONT [ HOOK.INDEX  [ SF ques,
+					  E.ASPECT non-aspect ],
+			    ICONS <! focus & #ikey & [ IARG2 #idx ] !> ] ],
 	     NON-LOCAL.SLASH 0-dlist,
+	     LKEYS.KEYREL event-relation, 
 	     SPART no-spart ] ].
 
 a-not-a-basic-adv-lex := a-not-a-adv-lex &
@@ -1101,23 +1106,31 @@ a-not-a-contracted-adv-lex := a-not-a-adv-lex &
 ; 		 2) Added E.ASPECT non-aspect to COMPS and MOD to block ASP-了 from modifying elements
 ;*********************** |#
 
-ab-not-ab-adv-lex := basic-scopal-adverb-lex &
-  [ SYNSEM [ LOCAL [ CAT [ VAL.COMPS < phr-synsem &
-				       [ LOCAL [ CAT [ HEAD verb & [ CHAR.WCHAR #wstr,
+;; SSH 2015-04-22: added [MC + ]
+ab-not-ab-adv-lex := raise-index-mod-lex-item & single-rel-lex-item & 
+		     scopal-mod-lex & one-icons-lex-item &
+  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ <>,
+				 COMPS < phr-synsem &
+				       [ LOCAL [ CAT [ MC +,
+						       HEAD verb & [ CHAR.WCHAR #wstr,
 								     MODIFIABLE - ] ], 
 						 CONT.HOOK.INDEX [ SF ques,
 								   E.ASPECT non-aspect ] ], 
-					 NON-LOCAL.SLASH 0-dlist ] >,
+					 NON-LOCAL.SLASH 0-dlist ] > ],
 			   POSTHEAD +,
-			   HEAD [ MODIFIABLE -,
-				  MOD < phr-synsem &
-					[ LOCAL [ CAT [ HEAD verb & [ CHAR.WCHAR #wstr,
-								      MODIFIABLE - ],
-							VAL [ SUBJ < [ ] > ] ],
-						  CONT.HOOK.INDEX [ SF ques,
-								    E.ASPECT non-aspect ] ] ] > ] ],
-		     CONT.HOOK.INDEX.SF ques ],
-	     NON-LOCAL.SLASH 0-dlist ] ].
+			   HEAD adv & [ MODIFIABLE -,
+					MOD < phr-synsem &
+					      [ LOCAL [ CAT [ MC +,
+							      HEAD verb & [ CHAR.WCHAR #wstr,
+									    MODIFIABLE - ],
+							      VAL [ SUBJ < [ ] > ] ],
+							CONT.HOOK [ ICONS-KEY #ikey,
+								    INDEX #idx & [ SF ques,
+										   E.ASPECT non-aspect ] ] ] ] > ] ],
+		     CONT [ HOOK.INDEX.SF ques,
+			    ICONS <! focus & #ikey & [ IARG2 #idx ] !> ] ],
+	     NON-LOCAL.SLASH 0-dlist,
+	     LKEYS.KEYREL event-relation ] ].
 
 
 ;; WWJ (2015-02-08): These sub-variants are supplementary definitions for 不, which blocks 有 不 有
