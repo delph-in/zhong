@@ -540,7 +540,7 @@
     SYNSEM.LKEYS.KEYREL.PRED "_之_n_nom_rel",
     TRAITS native_token_list ].
 
-所_marker_n := suo-marker &
+所_marker := suo-marker &
   [ STEM < "所" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "所", LENGTH one ],
     TRAITS native_token_list ].

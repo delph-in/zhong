@@ -4,7 +4,7 @@
 grammar-top               := "../zhs-pet-robust.tdl".
 
 ;;; SSH 2014-10-31: root-bridge should be used only for robust parsing.
-parsing-roots             := root root-bridge.
+parsing-roots             := root frag root-bridge.
 
 :begin :config.
  :include "config.common".

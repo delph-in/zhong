@@ -17,6 +17,16 @@ root := phrase &
 	     NON-LOCAL.SLASH 0-dlist ] ].
 
 
+;; SSH 2015-04-23: FIXME
+;; This is a tentative approach.
+frag := phrase &
+  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
+				 SPR < >,
+				 COMPS < > ],
+			   HEAD noun ] ],
+	     NON-LOCAL.SLASH 0-dlist ] ].
+
+
 ; SSH 2014-10-31 This root type should be used for only robust parsig. 
 ; This cannot be used for generation.
 root-bridge := phrase &

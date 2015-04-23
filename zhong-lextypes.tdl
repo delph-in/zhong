@@ -984,7 +984,9 @@ suo-marker := raise-sem-lex-item & no-icons-lex-item &
 			   VAL [ COMPS < lex-synsem & 
 					 [ MODIFIED notmod, 
                                            BOUND -,
-					   LOCAL [ CAT [ HEAD verb & [ AUX - ] ] ] ] >,
+					   LOCAL [ CAT [ MC +,
+							 HEAD verb & [ AUX - ],
+							 VAL.COMPS < [ OPT + ] > ] ] ] >,
 				 SUBJ < >,
 				 SPEC < >,
 				 SPR < > ],

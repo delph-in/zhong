@@ -580,6 +580,7 @@ lex-item :+
 marker-or-punct := head & 
  [ MOD <> ].
 marker := marker-or-punct.
+suo := marker.
 punct := marker-or-punct.
 
 +np :+ [ PFORM pform ].
@@ -1270,8 +1271,9 @@ head-nom-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
     HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
                 CONT.HOOK #hook ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD +vjp,
-                    VAL.COMPS #spcomps ],
+    NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
+			  LOCAL.CAT [ HEAD +vjp,
+				      VAL.COMPS #spcomps ] ],
     C-CONT.HOOK #hook ].
 
 ;; Bare NP phrase.  Consider modifying the PRED value of the quantifier 

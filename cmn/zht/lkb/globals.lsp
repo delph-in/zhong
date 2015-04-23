@@ -69,7 +69,7 @@
 (defparameter *mother-feature* NIL
   "The feature giving the mother in a grammar rule")
 
-(defparameter *start-symbol* '(root)
+(defparameter *start-symbol* '(root frag)
   "specifing valid parses")
 
 (defparameter *maximal-lex-rule-applications* 42

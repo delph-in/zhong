@@ -208,7 +208,9 @@ np-adp := np-adp-phrase.
 
 comp-marker := comp-marker-phrase.
 marker-comp := marker-comp-phrase &
-  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD marker ] ].
+  [ NON-HEAD-DTR.SYNSEM [ L-PERIPH na-or--,
+			  R-PERIPH na-or--,
+			  LOCAL.CAT [ HEAD marker ] ] ].
 punct-comp := marker-comp-phrase &
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD punct ] ].
 

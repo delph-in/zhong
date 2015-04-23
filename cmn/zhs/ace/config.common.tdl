@@ -18,7 +18,7 @@ lex-pred-path             := SYNSEM LKEYS KEYREL PRED.
 rule-rels-path            := C-CONT RELS.
 label-path                := LABEL-NAME.
 
-generation-roots          := root.
+generation-roots          := root frag.
 
 semarg-type               := semarg.
 handle-type               := h.
