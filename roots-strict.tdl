@@ -17,6 +17,15 @@ root := phrase &
 			       [ FORM finite ] ] ],
 	     NON-LOCAL.SLASH 0-dlist]].
 
+;; SSH 2015-04-23: FIXME
+;; This is a tentative approach.
+frag := phrase &
+  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
+				 SPR < >,
+				 COMPS < > ],
+			   HEAD noun ] ],
+	     NON-LOCAL.SLASH 0-dlist ] ].
+
 ; This start symbol allows you to parse single words as stand-alone
 ; utterances.  This can be useful for grammar debugging purposes.
 
