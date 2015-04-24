@@ -580,7 +580,6 @@ lex-item :+
 marker-or-punct := head & 
  [ MOD <> ].
 marker := marker-or-punct.
-suo := marker.
 punct := marker-or-punct.
 
 +np :+ [ PFORM pform ].

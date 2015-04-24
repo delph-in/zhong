@@ -13,8 +13,8 @@
 
 best=5
 timeout=5
-max_chart=256
-max_unpack=256
+max_chart=512
+max_unpack=512
 dataset=COVERAGE
 
 while [ $# -gt 0 -a "${1#-}" != "$LINE" ]; do
