@@ -1,0 +1,32 @@
+张三 干干净净 ；adj AABB as predicate
+＊张三 非常 干干净净 ;can't be modified by degree adverb
+张三 干干净净 的 ;can appear with DE, as predicate
+张三 喜欢 干干净净 的 衣服 ;as modifier of noun, must have DE
+张三 干干净净 地 走 ;as adjunct with DI
+张三 把 衣服 洗 得 干干净净 ;as buyu
+张三 把 衣服 洗 得 干干净净 的 ;as buyu with DE
+苹果 甜甜 的 ;adj AA as predicate, must have DE
+＊苹果 甜甜
+张三 喜欢 甜甜 的 苹果 ;adj AA as modifier, must have DE
+她 甜甜 地 笑 了
+天空 碧蓝碧蓝 ;adj ABAB as predicate
+苹果 甜津津
+
+我 试试 ; verb AA
+＊我 试试 过／了／着
+*我 已经 试试
+我 试一试 ;verb AyiA
+我 试了试 ;verb AleA
+我 试了一试 ;verb AleyiA
+我 试试看 ;verb AAkan
+我 去 洗洗澡 ;verb VVO for VO compound(liheci)
+＊我 正在 写写字
+;我 看着看着 睡着 了 ;;some consider it SVC
+我 考虑考虑 ;verb ABAB
+人们 说说笑笑 ;verb AABB
+人们 说说笑笑 地 走 着
+
+这些　苹果　个个　都　很　甜 ;reduplicated classifier
+个个　苹果　都　很　甜
+一个个　苹果　都　很　甜 ;numeral+reduplicated classifier
+*一公斤公斤　苹果　都　很　甜
