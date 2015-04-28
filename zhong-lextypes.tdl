@@ -1755,6 +1755,7 @@ interjection-lex := basic-scopal-adverb-lex &
 ; comma := punct.
 
 ;; SSH 2015-04-20: [NON-LOCAL.SLASH 0-dlist] on COMPS is deleted for robust parsing. 
+;; SSH 2015-04-27: +vjrpc => +nvjrpc (because of allowing frag + punctuation: e.g. 张三 。)
 punctuation := lex-item & 
   [ SYNSEM [ L-PERIPH +,
 	     R-PERIPH +,
@@ -1763,7 +1764,7 @@ punctuation := lex-item &
 			   VAL [ SUBJ <>, SPR <>,
 				 COMPS < [ PUNCTUATED na-or--,
 					   LOCAL [ CAT [ MC +,			    
-							 HEAD +vjrpc,
+							 HEAD +nvjrpc,
 							 VAL [ SUBJ <>, COMPS <> ] ],
 						   CONT.HOOK.INDEX.SF #sf ] ] > ],
 			   POSTHEAD + ],
