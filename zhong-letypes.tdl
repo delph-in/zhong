@@ -139,7 +139,9 @@ p_loc_zai_le := basic-loc-lex.
 p_loc_post_le := basic-postp-lex. 
 
 x_-_qpart_le := qpart-lex-item.
-x_-_crs_le := crs-lex-item.
+;; SSH 2015-04-28: This is Mandarin-specific.
+;; Dialect-specfic Items are constrained directly.
+;;x_-_crs_le := crs-lex-item.
 
 x_-_poss-de_le := poss-det-lex.
 x_-_nom-de_le := nominalizer-lex.

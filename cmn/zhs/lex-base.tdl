@@ -14,7 +14,7 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "呢", LENGTH one ],
     TRAITS native_token_list ].
 	
-了_crs := x_-_crs_le &
+了_crs := crs-lex-item & 
   [ STEM <"了">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
     TRAITS native_token_list ].

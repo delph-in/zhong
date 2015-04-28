@@ -537,20 +537,6 @@ lex-sense-machine := lex-sense-default &
  [ SYNSEM.LOCAL.CAT.HEAD.KEYS.KEY 台_x_rel ].
 |#
 
-
-lzg := avm. 
-le := lzg.
-zhe := lzg.
-guo := lzg.
-no-lzg := lzg.
-le+zhe := le & zhe.
-le+guo := le & guo.
-zhe+guo := zhe & guo.
-le+zhe+guo := le & zhe & guo.
-
-+vjp :+ 
-   [ LZG lzg ].
-
 +vj :+ 
    [ STATIVE luk,
      PRED-KEY predsort ].

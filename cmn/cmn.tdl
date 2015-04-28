@@ -6,6 +6,55 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+;; SSH 2015-04-28: LE-ZHE-GUO restriction 
+;; This is Mandarin-speicific
++vjp :+ [ LZG lzg ].
+lzg := avm. 
+le := lzg.
+zhe := lzg.
+guo := lzg.
+no-lzg := lzg.
+le+zhe := le & zhe.
+le+guo := le & guo.
+zhe+guo := zhe & guo.
+le+zhe+guo := le & zhe & guo.
+basic-pred-adj-lex :+ [ SYNSEM.LOCAL.CAT.HEAD.LZG no-lzg ]. 
+
+
+;; SSH 2015-04-28: verbal particles
+
+pfv-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
+				    LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] > ] ].
+
+exp-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT experiential ] > ] ].
+  
+;; SSH 2014-09-02: removing irules.
+dur-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
+				    LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
+
+
+;; SSH 2014-09-11: [SPEC <>] is added to block 了 不.
+;; WWJ 2015-03-17: Added LOCAL...SF prop to block use with A-not-A
+;; SSH 2015-04-28: sentence-final particles
+crs-lex-item := spart-lex-item &
+  [ STYLE robust,
+    SYNSEM [ R-PERIPH +,
+	     SPART crs,
+	     LOCAL.CAT [ VAL [ COMPS < [ SPART not-crs-not-ma,
+					 LOCAL.CAT [ HEAD +vj,
+						     VAL [ SUBJ < >,
+							   COMPS < > ],
+						     MC #mc ],
+					 LOCAL.CONT.HOOK.INDEX.SF prop,
+					 NON-LOCAL.SLASH 0-dlist ] >,
+			       SPEC < >],
+			 MC #mc ] ] ].
+
+
 ;; SSH 2015-04-16: In Mandarin Chinese, classifiers must co-occur with
 ;; numerals. (ex. *(一) 只 猫 走 了).
 classifier-lex :+ no-spr-classifier-rule-dtr & 

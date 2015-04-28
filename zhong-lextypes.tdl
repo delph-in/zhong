@@ -966,18 +966,6 @@ aspect-markers := raise-sem-lex-item & no-icons-lex-item &
 			   POSTHEAD + ] ],
 	     NON-LOCAL.SLASH 0-dlist ] ].
 
-pfv-marker := aspect-markers & 
- [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
-				    LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] > ] ].
-
-exp-marker := aspect-markers & 
- [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT experiential ] > ] ].
-  
-;; SSH 2014-09-02: removing irules.
-dur-marker := aspect-markers & 
- [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
-				    LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
-
 suo-marker := raise-sem-lex-item & no-icons-lex-item &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT [ HEAD marker & [ MOD <> ],
@@ -1008,28 +996,12 @@ spart-lex-item := raise-sem-lex-item & basic-one-arg & no-icons-lex-item &
                                  COMPS < > ] ] ] > ].
 
 ; Subtype for question particles. Constrains SF to ques.
-
 qpart-lex-item := spart-lex-item &
   [ STYLE robust,
     SYNSEM [ SPART ma,
 	     LOCAL [ CAT.VAL.COMPS < [ SPART not-ma ] >,
 		     CONT.HOOK.INDEX.SF ques ] ] ].
 
-;; SSH 2014-09-11: [SPEC <>] is added to block 了 不.
-;; WWJ 2015-03-17: Added LOCAL...SF prop to block use with A-not-A
-crs-lex-item := spart-lex-item &
-  [ STYLE robust,
-    SYNSEM [ R-PERIPH +,
-	     SPART crs,
-	     LOCAL.CAT [ VAL [ COMPS < [ SPART not-crs-not-ma,
-					 LOCAL.CAT [ HEAD +vj,
-						     VAL [ SUBJ < >,
-							   COMPS < > ],
-						     MC #mc ],
-					 LOCAL.CONT.HOOK.INDEX.SF prop,
-					 NON-LOCAL.SLASH 0-dlist ] >,
-			       SPEC < >],
-			 MC #mc ] ] ].
 
 
 ;; Type for negative adverbs.
@@ -1203,8 +1175,7 @@ attr-adj-posthd-lex := basic-attr-adj-lex &
 			     SUBJ < > ] ] ].
 
 basic-pred-adj-lex := basic-adjective-lex & 
-  [ SYNSEM [ LOCAL [ CAT.HEAD [ LZG no-lzg,
-				PRED-KEY #key ],
+  [ SYNSEM [ LOCAL [ CAT.HEAD [ PRED-KEY #key ],
 		     CONT [ HOOK [ LTOP #lbl, 
 				   INDEX #arg0 ],
 			    RELS <! #rel !> ] ],

@@ -6,6 +6,50 @@
 ;;; created by Sanghoun Song (SSH, 2014-08-25)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SSH 2015-04-28: FIXME
+;; The followings are Mandarin-speicific
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
++vjp :+ [ LZG lzg ].
+lzg := avm. 
+le := lzg.
+zhe := lzg.
+guo := lzg.
+no-lzg := lzg.
+le+zhe := le & zhe.
+le+guo := le & guo.
+zhe+guo := zhe & guo.
+le+zhe+guo := le & zhe & guo.
+basic-pred-adj-lex :+ [ SYNSEM.LOCAL.CAT.HEAD.LZG no-lzg ]. 
+
+pfv-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
+				    LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] > ] ].
+
+exp-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT experiential ] > ] ].
+  
+dur-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
+				    LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
+
+crs-lex-item := spart-lex-item &
+  [ STYLE robust,
+    SYNSEM [ R-PERIPH +,
+	     SPART crs,
+	     LOCAL.CAT [ VAL [ COMPS < [ SPART not-crs-not-ma,
+					 LOCAL.CAT [ HEAD +vj,
+						     VAL [ SUBJ < >,
+							   COMPS < > ],
+						     MC #mc ],
+					 LOCAL.CONT.HOOK.INDEX.SF prop,
+					 NON-LOCAL.SLASH 0-dlist ] >,
+			       SPEC < >],
+			 MC #mc ] ] ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 ;classifier-lex :+  
 ;  [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.COG-ST activ-or-less ] > ]. 
 

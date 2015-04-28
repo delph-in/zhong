@@ -23,12 +23,12 @@ question-marker := punctuation &
   [ STEM < "咩" >,
     TRAITS native_token_list ].
 
-喇_crs := x_-_crs_le & 
+喇_crs := crs-lex-item & 
   [ STEM <"喇">,
     SYNSEM.LKEYS.KEYREL.PRED "_喇_a_rel",
     TRAITS native_token_list ].
 
-呀_crs := x_-_crs_le & 
+呀_crs := crs-lex-item & 
   [ STEM <"呀">,
     SYNSEM.LKEYS.KEYREL.PRED "_呀_a_rel",
     TRAITS native_token_list ].
