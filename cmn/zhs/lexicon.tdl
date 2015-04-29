@@ -67260,6 +67260,12 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_烫杯_n_1_rel",
     TRAITS native_token_list ].
 
+热_j_1 := a_-_pred_le &
+  [ STEM < "热" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "热", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_热_a_1_rel",
+    TRAITS native_token_list ].
+
 热_v_1 := v_np_le &
   [ STEM < "热" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "热", LENGTH one ],

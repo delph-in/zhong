@@ -13,10 +13,30 @@
   [ STEM < "呢" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "呢", LENGTH one ],
     TRAITS native_token_list ].
+
+呢_crs := crs-lex-item & 
+  [ STEM <"呢">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "呢", LENGTH one ],
+    TRAITS native_token_list ].
 	
 了_crs := crs-lex-item & 
   [ STEM <"了">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
+    TRAITS native_token_list ].
+
+吧_crs := crs-lex-item & 
+  [ STEM <"吧">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吧", LENGTH one ],
+    TRAITS native_token_list ].
+
+啊_crs := crs-lex-item & 
+  [ STEM <"啊">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "啊", LENGTH one ],
+    TRAITS native_token_list ].
+
+啦_crs := crs-lex-item & 
+  [ STEM <"啦">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "啦", LENGTH one ],
     TRAITS native_token_list ].
 
 了_pfv := pfv-marker &
