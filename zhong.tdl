@@ -547,8 +547,12 @@ char := avm &
     LENGTH length ].
 
 length := avm.
-one := length.
+one-or-two := length.
 more-than-one := length.
+one := one-or-two.
+two := one-or-two & more-than-one.
+
+
 
 
 ;; WWJ 2015-04-07: EXISTV for 有; MODIFIABLE used 
@@ -647,10 +651,12 @@ finite := form.
 ;;; Aspect
 
 
+;; SSH/ZZF 2015-04-29: [tentative := aspect.] should be reviewed.
 ;has-aspect := aspect.
 perfective := aspect.
 durative := aspect.
 delimitative := aspect.
+tentative := aspect.
 ;; SSH 2014-09-19: The type hierarchy for aspect should be researched
 ;; more. We assume here that guo and no-marking imply *imperfective*.
 imperfective := aspect.

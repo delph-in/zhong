@@ -58,11 +58,11 @@ n_-_tm_le := time-noun-lex.
 
 c_-_le := classifier-lex.
 
+a_-_num_le := num-adj-lex.
 a_-_att_le := attr-adj-lex.
 a_-_pred_le := pred-adj-lex.
-a_-_redup_le := adj-redup-lex.
-a_-_num_le := num-adj-lex.
-
+a_-_aabb_le := adj-aabb-lex.
+a_-_abb_le := adj-abb-lex.
 
 adv_-_deg-pre_le := deg-int-adv-vp-pre.
 adv_-_s-pre-no-rel_le := int-adv-s-pre-no-rel.

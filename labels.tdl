@@ -161,7 +161,7 @@ s-bottom-label := label &
              LABEL-NAME "S-B"].
 
 adj-label := label & 
-	   [ SYNSEM.LOCAL[ CAT.HEAD adj & [ MOD < [] > ],
+	   [ SYNSEM.LOCAL[ CAT.HEAD adj, 
                            COORD-STRAT "" ],
 	     LABEL-NAME "ADJ" ].
 
@@ -345,7 +345,8 @@ adj-bottom-label := label &
 	     LABEL-NAME "ADJ-B" ].
 
 adj-top-label := label & 
-	   [ SYNSEM.LOCAL.CAT.HEAD adj,
+	   [ SYNSEM.LOCAL [ CAT.HEAD adj,
+                            COORD + ],
 	     LABEL-NAME "ADJ-T" ].
 
 conj-label := label & 

@@ -20,6 +20,23 @@ non-human-lex-item := lex-item &
 inanimate-lex-item := lex-item & 
  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate ]. 
 
+no-spr-no-spec-lex-item := lex-item & 
+ [ SYNSEM.LOCAL.CAT.VAL [ SPR <>, SPEC <> ] ].
+
+redup-lex-item := lex-item & 
+ [ SYNSEM [ LOCAL [ CONT [ HOOK [ LTOP #ltop,
+				  INDEX #index ],
+			   RELS <! #keyrel, #altkeyrel !>,
+			   HCONS <! !>, 
+			   ICONS <! !> ] ],
+	    LKEYS [ KEYREL arg1-relation & event-relation & #keyrel &
+			   [ LBL #ltop,
+			     ARG0 #index ],
+		    ALTKEYREL #altkeyrel & arg1-relation & event-relation &
+			   [ LBL #ltop,
+			     PRED redup_x_rel,
+			     ARG1 #index ] ] ] ].
+
 ;;; Lexical types
 
 ;;; Nouns
@@ -257,7 +274,7 @@ verb-lex := lex-item &
 	     LOCAL.CAT.HEAD verb & [ PRED-KEY #pred ],
 	     LKEYS.KEYREL.PRED #pred ] ].
 
-main-verb-lex := verb-lex & basic-verb-lex &
+main-verb-lex := verb-lex & basic-verb-lex & verb-redup-dtr &
   [ SYNSEM.LOCAL [ CAT [ HEAD.AUX -,
                          VAL [ SPR < >,
                                SUBJ < #subj > ] ],
@@ -266,6 +283,13 @@ main-verb-lex := verb-lex & basic-verb-lex &
                  [ LOCAL [ CAT.VAL [ SPR < >,
                                      COMPS < > ],
                            CONT.HOOK.INDEX #xarg ] ] ].
+
+;; SSH/ZZF 2015-04-29: for reduplicated verbs
+verb-redup-lex-rule := infl-add-only-no-ccont-lex-rule & 
+ [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT tentative, 
+   DTR verb-redup-dtr & [ SYNSEM.LOCAL.CAT.HEAD.CHAR.LENGTH one-or-two ] ].
+
+verb-redup-dtr := word-or-lexrule.
 
 aux-lex := verb-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.AUX + ].
@@ -1217,32 +1241,25 @@ s-comp-adj-lex := basic-pred-adj-lex &
 	     LKEYS.KEYREL.ARG1 #cltop ] ].
 
 
+
 ;; ZZF/SSH 2015-03-10: testing reduplicated forms of adjectives
-adj-redup-lex := lex-item & 
+adj-redup-lex := no-spr-no-spec-lex-item & 
  [ SYNSEM [ PAREN -,
-	    LOCAL [ CAT [ HEAD adj,
-                           VAL [ SUBJ < [ LOCAL [ CAT [ HEAD +nv,
-							VAL.SPR < > ],
+	    LOCAL [ CAT [ HEAD adj & [ MOD <> ],
+                          VAL [ SUBJ < [ LOCAL [ CAT [ HEAD +nv,
+			                               VAL.SPR < > ],
 						  CONT.HOOK.INDEX #arg1 &
                                                    [ SF prop-or-ques ] ],
 					  NON-LOCAL.SLASH #slash ] >,
-				 COMPS <>,
-				 SPR <>,
-				 SPEC <> ] ],
-		    CONT [ HOOK [ LTOP #ltop,
-				  INDEX #index ],
-			   RELS <! #keyrel, #altkeyrel !>,
-			   HCONS <! !>, 
-			   ICONS <! !> ] ],
+				 COMPS <> ] ] ],
 	    NON-LOCAL.SLASH #slash,
-	    LKEYS [ KEYREL arg1-relation & event-relation & #keyrel &
-			   [ LBL #ltop,
-			     ARG0 #index,
-			     ARG1 #arg1 ],
-		    ALTKEYREL #altkeyrel & arg1-relation & event-relation &
-			   [ LBL #ltop,
-			     PRED redup_x_rel,
-			     ARG1 #index ] ] ] ].
+	    LKEYS [ KEYREL arg1-relation & event-relation &
+			   [ ARG1 #arg1 ] ] ] ].
+
+
+adj-aabb-lex := adj-redup-lex & redup-lex-item.
+
+adj-abb-lex := adj-redup-lex & basic-pred-adj-lex.
 
 ;SSH 2015-03-13: ICONS is left unconstrained until judged by an expert
 ;in Chinese pragmatics.
