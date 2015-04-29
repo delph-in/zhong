@@ -2,11 +2,6 @@
 
 no-spr-cl-lex := no-spr-classifier-lex-rule.
 
-verb-redup-lex :=
-%suffix (* *)
-verb-redup-lex-rule.
-
-
 ;;_perf_aspect-suffix :=
 ;;%suffix (* 了)
 ;;_perf_aspect-lex-rule.

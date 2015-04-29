@@ -274,7 +274,7 @@ verb-lex := lex-item &
 	     LOCAL.CAT.HEAD verb & [ PRED-KEY #pred ],
 	     LKEYS.KEYREL.PRED #pred ] ].
 
-main-verb-lex := verb-lex & basic-verb-lex & verb-redup-dtr &
+main-verb-lex := verb-lex & basic-verb-lex &
   [ SYNSEM.LOCAL [ CAT [ HEAD.AUX -,
                          VAL [ SPR < >,
                                SUBJ < #subj > ] ],
@@ -283,13 +283,6 @@ main-verb-lex := verb-lex & basic-verb-lex & verb-redup-dtr &
                  [ LOCAL [ CAT.VAL [ SPR < >,
                                      COMPS < > ],
                            CONT.HOOK.INDEX #xarg ] ] ].
-
-;; SSH/ZZF 2015-04-29: for reduplicated verbs
-verb-redup-lex-rule := infl-add-only-no-ccont-lex-rule & 
- [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT tentative, 
-   DTR verb-redup-dtr & [ SYNSEM.LOCAL.CAT.HEAD.CHAR.LENGTH one-or-two ] ].
-
-verb-redup-dtr := word-or-lexrule.
 
 aux-lex := verb-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.AUX + ].
