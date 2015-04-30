@@ -10,6 +10,16 @@
 ;; SSH 2015-04-28: FIXME
 ;; The followings are Mandarin-speicific
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;; JUS/SSH 2015-04-30: Cantonese-specific aspect
+;; (http://en.wikipedia.org/wiki/Cantonese_grammar#Verbal_aspect)
+progressive := durative.
+continuous := durative.
+habitual := aspect. 
+
+
+;; JUS/SSH 2015-04-30: FIXME 
 +vjp :+ [ LZG lzg ].
 lzg := avm. 
 le := lzg.
@@ -20,6 +30,7 @@ le+zhe := le & zhe.
 le+guo := le & guo.
 zhe+guo := zhe & guo.
 le+zhe+guo := le & zhe & guo.
+
 basic-pred-adj-lex :+ [ SYNSEM.LOCAL.CAT.HEAD.LZG no-lzg ]. 
 
 pfv-marker := aspect-markers & 
@@ -32,6 +43,23 @@ exp-marker := aspect-markers &
 dur-marker := aspect-markers & 
  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
 				    LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
+
+prog-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
+				    LOCAL.CONT.HOOK.INDEX.E.ASPECT progressive ] > ] ].
+
+cont-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
+				    LOCAL.CONT.HOOK.INDEX.E.ASPECT continuous ] > ] ].
+
+delim-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
+				    LOCAL.CONT.HOOK.INDEX.E.ASPECT delimitative ] > ] ].
+
+habit-marker := aspect-markers & 
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
+				    LOCAL.CONT.HOOK.INDEX.E.ASPECT habitual ] > ] ].
+
 
 crs-lex-item := spart-lex-item &
   [ STYLE robust,

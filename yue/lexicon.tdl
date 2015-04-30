@@ -23,21 +23,137 @@ question-marker := punctuation &
   [ STEM < "咩" >,
     TRAITS native_token_list ].
 
+;;JUS 2015-04-30: Tone3
+嗎_qp := x_-_qpart_le &
+  [ STEM < "嗎" >,
+    TRAITS native_token_list ].
+
+嘛_qp := x_-_qpart_le &
+  [ STEM < "嘛" >,
+    TRAITS native_token_list ].
+
+
+
+
+;; JUS/SSH 2015-04-30: The following two things are for Tag Questions.
+;; FIXME
+吓_qp := x_-_qpart_le &
+  [ STEM < "吓" >,
+    TRAITS native_token_list ].
+
+呵_qp := x_-_qpart_le &
+  [ STEM < "呵" >,
+    TRAITS native_token_list ].
+
+;; JUS/SSH 2015-04-30: for Echo Questions
+;; FIXME
+;; This item has to be after questions
+話_qp := x_-_qpart_le &
+  [ STEM < "話" >,
+    TRAITS native_token_list ].
+
+嘛_crs := crs-lex-item & 
+  [ STEM <"嘛">,
+    SYNSEM.LKEYS.KEYREL.PRED "嘛_x_rel",
+    TRAITS native_token_list ].
+
 喇_crs := crs-lex-item & 
   [ STEM <"喇">,
-    SYNSEM.LKEYS.KEYREL.PRED "_喇_a_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "喇_x_rel",
     TRAITS native_token_list ].
 
 呀_crs := crs-lex-item & 
   [ STEM <"呀">,
-    SYNSEM.LKEYS.KEYREL.PRED "_呀_a_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "呀_x_rel",
     TRAITS native_token_list ].
 
-; 喇_crs := int-adv-s-post & 
-;   [ STEM <"喇">,
-;     SYNSEM [ LKEYS.KEYREL.PRED "_le_a_rel",
-; 	     LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT has-aspect ] > ],
-;    TRAITS native_token_list ].
+嘅_crs := crs-lex-item & 
+  [ STEM <"嘅">,
+    SYNSEM.LKEYS.KEYREL.PRED "嘅_x_rel",
+    TRAITS native_token_list ].
+
+㗎_crs := crs-lex-item & 
+  [ STEM <"㗎">,
+    SYNSEM.LKEYS.KEYREL.PRED "㗎_x_rel",
+    TRAITS native_token_list ].
+
+啦_crs := crs-lex-item & 
+  [ STEM <"啦">,
+    SYNSEM.LKEYS.KEYREL.PRED "啦_x_rel",
+    TRAITS native_token_list ].
+
+囉_crs := crs-lex-item & 
+  [ STEM <"囉">,
+    SYNSEM.LKEYS.KEYREL.PRED "囉_x_rel",
+    TRAITS native_token_list ].
+
+啫_crs := crs-lex-item & 
+  [ STEM <"啫">,
+    SYNSEM.LKEYS.KEYREL.PRED "啫_x_rel",
+    TRAITS native_token_list ].
+
+嚟_crs := crs-lex-item & 
+  [ STEM <"嚟">,
+    SYNSEM.LKEYS.KEYREL.PRED "嚟_x_rel",
+    TRAITS native_token_list ].
+
+噃_crs := crs-lex-item & 
+  [ STEM <"噃">,
+    SYNSEM.LKEYS.KEYREL.PRED "噃_x_rel",
+    TRAITS native_token_list ].
+
+嘞_crs := crs-lex-item & 
+  [ STEM <"嘞">,
+    SYNSEM.LKEYS.KEYREL.PRED "嘞_x_rel",
+    TRAITS native_token_list ].
+
+囉_crs := crs-lex-item & 
+  [ STEM <"囉">,
+    SYNSEM.LKEYS.KEYREL.PRED "囉_x_rel",
+    TRAITS native_token_list ].
+
+咯_crs := crs-lex-item & 
+  [ STEM <"咯">,
+    SYNSEM.LKEYS.KEYREL.PRED "咯_x_rel",
+    TRAITS native_token_list ].
+
+;; JUS 2015-04-30: Tone1
+吖_crs := crs-lex-item & 
+  [ STEM <"吖">,
+    SYNSEM.LKEYS.KEYREL.PRED "吖_x_rel",
+    TRAITS native_token_list ].
+
+吖嘛_crs := crs-lex-item & 
+  [ STEM <"吖嘛">,
+    SYNSEM.LKEYS.KEYREL.PRED "吖嘛_x_rel",
+    TRAITS native_token_list ].
+
+喎_crs := crs-lex-item & 
+  [ STEM <"喎">,
+    SYNSEM.LKEYS.KEYREL.PRED "喎_x_rel",
+    TRAITS native_token_list ].
+
+啩_crs := crs-lex-item & 
+  [ STEM <"啩">,
+    SYNSEM.LKEYS.KEYREL.PRED "啩_x_rel",
+    TRAITS native_token_list ].
+
+添_crs := crs-lex-item & 
+  [ STEM <"添">,
+    SYNSEM.LKEYS.KEYREL.PRED "添_x_rel",
+    TRAITS native_token_list ].
+
+唧_crs := crs-lex-item & 
+  [ STEM <"唧">,
+    SYNSEM.LKEYS.KEYREL.PRED "唧_x_rel",
+    TRAITS native_token_list ].
+
+嚟㗎_crs := crs-lex-item & 
+  [ STEM <"嚟㗎">,
+    SYNSEM.LKEYS.KEYREL.PRED "嚟㗎_x_rel",
+    TRAITS native_token_list ].
+
+
 
 
 咗_pfv := pfv-marker &
@@ -51,19 +167,29 @@ question-marker := punctuation &
     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG zhe+guo ] >,
     TRAITS native_token_list ].
 
-嚟_pfv := pfv-marker &
-  [ STEM <"嚟">,
-    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le ] >,
-    TRAITS native_token_list ].
+;;嚟_pfv := pfv-marker &
+;;  [ STEM <"嚟">,
+;;   SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le ] >,
+;;    TRAITS native_token_list ].
 
  
-;; SSH 2014-09-02: irules.tdl is now an empty file
-住_dur := dur-marker &
+緊_prog := prog-marker &
+  [ STEM <"緊">,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG zhe ] >,
+    TRAITS native_token_list ].
+
+緊_prog_robust := prog-marker &
+  [ STEM <"緊">,
+    STYLE robust,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le+guo ] >,
+    TRAITS native_token_list ].
+
+住_cont := cont-marker &
   [ STEM <"住">,
     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG zhe ] >,
     TRAITS native_token_list ].
 
-住_dur_robust := dur-marker &
+住_cont_robust := cont-marker &
   [ STEM <"住">,
     STYLE robust,
     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le+guo ] >,
@@ -78,6 +204,16 @@ question-marker := punctuation &
   [ STEM <"過">,
     STYLE robust,
     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le+zhe ] >,
+    TRAITS native_token_list ].
+
+吓_delim := delim-marker &
+  [ STEM <"吓">,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG guo ] >,
+    TRAITS native_token_list ].
+
+開_habit := habit-marker &
+  [ STEM <"開">,
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG guo ] >,
     TRAITS native_token_list ].
 
 ;;; Nouns

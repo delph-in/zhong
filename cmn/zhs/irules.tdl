@@ -1,6 +1,15 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
+
 no-spr-cl-lex := no-spr-classifier-lex-rule.
+
+;; SSH 2015-04-30: reduplication of verbs
+;; e.g. 张三 哭哭 / 张三 喜欢喜欢
+;; This lexical rule places [ASPECT tentative] to the verb itself. 
+tentantive-olr :=
+%suffix (X XX)
+tentantive-lex-rule.
+
 
 ;;_perf_aspect-suffix :=
 ;;%suffix (* 了)

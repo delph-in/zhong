@@ -274,7 +274,7 @@ verb-lex := lex-item &
 	     LOCAL.CAT.HEAD verb & [ PRED-KEY #pred ],
 	     LKEYS.KEYREL.PRED #pred ] ].
 
-main-verb-lex := verb-lex & basic-verb-lex &
+main-verb-lex := verb-lex & basic-verb-lex & tentantive-lex-dtr & 
   [ SYNSEM.LOCAL [ CAT [ HEAD.AUX -,
                          VAL [ SPR < >,
                                SUBJ < #subj > ] ],
@@ -1581,6 +1581,26 @@ dur_aspect-lex-rule := _v_aspect-lex-rule &
 
 exp_aspect-lex-rule := _v_aspect-lex-rule &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT experiential ].
+
+
+;; SSH 2015-04-30: reduplication of verbs
+tentantive-lex-rule := infl-cat-change-only-lex-rule & no-ccont-lex-rule & 
+ [ SYNSEM [ ASPECTED -,
+	    LOCAL [ CAT [ MC luk,
+			  HEAD #head, 
+			  VAL #val, 
+			  MKG #mkg, 
+			  HC-LIGHT #light, 
+			  POSTHEAD #posthead ],
+		    CONT.HOOK.INDEX.E.ASPECT tentative ] ],
+   DTR tentantive-lex-dtr & [ SYNSEM [ BOUND -,
+				       LOCAL.CAT [ HEAD #head & [ CHAR.LENGTH one-or-two ], 
+						   VAL #val, 
+						   MKG #mkg, 
+						   HC-LIGHT #light, 
+						   POSTHEAD #posthead ] ] ] ].
+
+tentantive-lex-dtr := word-or-lexrule. 
 
 ;;; Relation for trigger rules for semantically empty lexical entries
 

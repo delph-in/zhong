@@ -551,7 +551,7 @@ one-or-two := length.
 more-than-one := length.
 one := one-or-two.
 two := one-or-two & more-than-one.
-
+more-than-two := more-than-one.
 
 
 
