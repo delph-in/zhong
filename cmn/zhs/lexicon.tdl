@@ -106880,3 +106880,616 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "热", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_热乎乎_a_1_rel",
     TRAITS native_token_list ].
+
+蓝幽幽_j_1 := a_-_abb_le &
+  [ STEM < "蓝幽幽" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "蓝", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_蓝幽幽_a_1_rel",
+    TRAITS native_token_list ].
+
+蓝湛湛_j_1 := a_-_abb_le &
+  [ STEM < "蓝湛湛" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "蓝", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_蓝湛湛_a_1_rel",
+    TRAITS native_token_list ].
+
+白花花_j_1 := a_-_abb_le &
+  [ STEM < "白花花" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "白", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_白花花_a_1_rel",
+    TRAITS native_token_list ].
+
+黑黝黝_j_1 := a_-_abb_le &
+  [ STEM < "黑黝黝" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "黑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_黑黝黝_a_1_rel",
+    TRAITS native_token_list ].
+
+慢腾腾_j_1 := a_-_abb_le &
+  [ STEM < "慢腾腾" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "慢", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_慢腾腾_a_1_rel",
+    TRAITS native_token_list ].
+
+阴森森_j_1 := a_-_abb_le &
+  [ STEM < "阴森森" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "阴", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_阴森森_a_1_rel",
+    TRAITS native_token_list ].
+
+皱巴巴_j_1 := a_-_abb_le &
+  [ STEM < "皱巴巴" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "皱", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_皱巴巴_a_1_rel",
+    TRAITS native_token_list ].
+
+亮铮铮_j_1 := a_-_abb_le &
+  [ STEM < "亮铮铮" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "亮", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_亮铮铮_a_1_rel",
+    TRAITS native_token_list ].
+
+乱哄哄_j_1 := a_-_abb_le &
+  [ STEM < "乱哄哄" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乱", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_乱哄哄_a_1_rel",
+    TRAITS native_token_list ].
+
+黑漆漆_j_1 := a_-_abb_le &
+  [ STEM < "黑漆漆" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "黑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_黑漆漆_a_1_rel",
+    TRAITS native_token_list ].
+
+轻飘飘_j_1 := a_-_abb_le &
+  [ STEM < "轻飘飘" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "轻", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_轻飘飘_a_1_rel",
+    TRAITS native_token_list ].
+
+湿漉漉_j_1 := a_-_abb_le &
+  [ STEM < "湿漉漉" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "湿", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_湿漉漉_a_1_rel",
+    TRAITS native_token_list ].
+
+红彤彤_j_1 := a_-_abb_le &
+  [ STEM < "红彤彤" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "红", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_红彤彤_a_1_rel",
+    TRAITS native_token_list ].
+
+雾朦朦_j_1 := a_-_abb_le &
+  [ STEM < "雾朦朦" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "雾", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_雾朦朦_a_1_rel",
+    TRAITS native_token_list ].
+
+喜盈盈_j_1 := a_-_abb_le &
+  [ STEM < "喜盈盈" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_喜盈盈_a_1_rel",
+    TRAITS native_token_list ].
+
+黄灿灿_j_1 := a_-_abb_le &
+  [ STEM < "黄灿灿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "黄", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_黄灿灿_a_1_rel",
+    TRAITS native_token_list ].
+
+毛绒绒_j_1 := a_-_abb_le &
+  [ STEM < "毛绒绒" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "毛", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_毛绒绒_a_1_rel",
+    TRAITS native_token_list ].
+
+胖乎乎_j_1 := a_-_abb_le &
+  [ STEM < "胖乎乎" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "胖", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_胖乎乎_a_1_rel",
+    TRAITS native_token_list ].
+
+黄澄澄_j_1 := a_-_abb_le &
+  [ STEM < "黄澄澄" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "黄", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_黄澄澄_a_1_rel",
+    TRAITS native_token_list ].
+
+笑眯眯_j_1 := a_-_abb_le &
+  [ STEM < "笑眯眯" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "笑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_笑眯眯_a_1_rel",
+    TRAITS native_token_list ].
+
+金灿灿_j_1 := a_-_abb_le &
+  [ STEM < "金灿灿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "金", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_金灿灿_a_1_rel",
+    TRAITS native_token_list ].
+
+笑哈哈_j_1 := a_-_abb_le &
+  [ STEM < "笑哈哈" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "笑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_笑哈哈_a_1_rel",
+    TRAITS native_token_list ].
+
+红艳艳_j_1 := a_-_abb_le &
+  [ STEM < "红艳艳" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "红", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_红艳艳_a_1_rel",
+    TRAITS native_token_list ].
+
+黑乎乎_j_1 := a_-_abb_le &
+  [ STEM < "黑乎乎" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "黑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_黑乎乎_a_1_rel",
+    TRAITS native_token_list ].
+
+圆溜溜_j_1 := a_-_abb_le &
+  [ STEM < "圆溜溜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "圆", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_圆溜溜_a_1_rel",
+    TRAITS native_token_list ].
+
+黑洞洞_j_1 := a_-_abb_le &
+  [ STEM < "黑洞洞" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "黑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_黑洞洞_a_1_rel",
+    TRAITS native_token_list ].
+
+响当当_j_1 := a_-_abb_le &
+  [ STEM < "响当当" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "响", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_响当当_a_1_rel",
+    TRAITS native_token_list ].
+
+脏兮兮_j_1 := a_-_abb_le &
+  [ STEM < "脏兮兮" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "脏", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_脏兮兮_a_1_rel",
+    TRAITS native_token_list ].
+
+胖嘟嘟_j_1 := a_-_abb_le &
+  [ STEM < "胖嘟嘟" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "胖", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_胖嘟嘟_a_1_rel",
+    TRAITS native_token_list ].
+
+傻乎乎_j_1 := a_-_abb_le &
+  [ STEM < "傻乎乎" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "傻", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_傻乎乎_a_1_rel",
+    TRAITS native_token_list ].
+
+顶呱呱_j_1 := a_-_abb_le &
+  [ STEM < "顶呱呱" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "顶", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_顶呱呱_a_1_rel",
+    TRAITS native_token_list ].
+
+白皑皑_j_1 := a_-_abb_le &
+  [ STEM < "白皑皑" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "白", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_白皑皑_a_1_rel",
+    TRAITS native_token_list ].
+
+绿莹莹_j_1 := a_-_abb_le &
+  [ STEM < "绿莹莹" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "绿", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_绿莹莹_a_1_rel",
+    TRAITS native_token_list ].
+
+明晃晃_j_1 := a_-_abb_le &
+  [ STEM < "明晃晃" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "明", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_明晃晃_a_1_rel",
+    TRAITS native_token_list ].
+
+白蒙蒙_j_1 := a_-_abb_le &
+  [ STEM < "白蒙蒙" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "白", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_白蒙蒙_a_1_rel",
+    TRAITS native_token_list ].
+
+黑糊糊_j_1 := a_-_abb_le &
+  [ STEM < "黑糊糊" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "黑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_黑糊糊_a_1_rel",
+    TRAITS native_token_list ].
+
+毛茸茸_j_1 := a_-_abb_le &
+  [ STEM < "毛茸茸" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "毛", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_毛茸茸_a_1_rel",
+    TRAITS native_token_list ].
+
+乱蓬蓬_j_1 := a_-_abb_le &
+  [ STEM < "乱蓬蓬" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乱", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_乱蓬蓬_a_1_rel",
+    TRAITS native_token_list ].
+
+清凌凌_j_1 := a_-_abb_le &
+  [ STEM < "清凌凌" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "清", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_清凌凌_a_1_rel",
+    TRAITS native_token_list ].
+
+水凌凌_j_1 := a_-_abb_le &
+  [ STEM < "水凌凌" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "水", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_水凌凌_a_1_rel",
+    TRAITS native_token_list ].
+
+笑吟吟_j_1 := a_-_abb_le &
+  [ STEM < "笑吟吟" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "笑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_笑吟吟_a_1_rel",
+    TRAITS native_token_list ].
+
+空荡荡_j_1 := a_-_abb_le &
+  [ STEM < "空荡荡" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "空", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_空荡荡_a_1_rel",
+    TRAITS native_token_list ].
+
+野茫茫_j_1 := a_-_abb_le &
+  [ STEM < "野茫茫" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "野", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_野茫茫_a_1_rel",
+    TRAITS native_token_list ].
+
+乱腾腾_j_1 := a_-_abb_le &
+  [ STEM < "乱腾腾" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乱", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_乱腾腾_a_1_rel",
+    TRAITS native_token_list ].
+
+喜洋洋_j_1 := a_-_abb_le &
+  [ STEM < "喜洋洋" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_喜洋洋_a_1_rel",
+    TRAITS native_token_list ].
+
+乐呵呵_j_1 := a_-_abb_le &
+  [ STEM < "乐呵呵" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乐", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_乐呵呵_a_1_rel",
+    TRAITS native_token_list ].
+
+笑盈盈_j_1 := a_-_abb_le &
+  [ STEM < "笑盈盈" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "笑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_笑盈盈_a_1_rel",
+    TRAITS native_token_list ].
+
+水汪汪_j_1 := a_-_abb_le &
+  [ STEM < "水汪汪" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "水", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_水汪汪_a_1_rel",
+    TRAITS native_token_list ].
+
+水灵灵_j_1 := a_-_abb_le &
+  [ STEM < "水灵灵" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "水", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_水灵灵_a_1_rel",
+    TRAITS native_token_list ].
+
+滴溜溜_j_1 := a_-_abb_le &
+  [ STEM < "滴溜溜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "滴", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_滴溜溜_a_1_rel",
+    TRAITS native_token_list ].
+
+乌溜溜_j_1 := a_-_abb_le &
+  [ STEM < "乌溜溜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乌", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_乌溜溜_a_1_rel",
+    TRAITS native_token_list ].
+
+直勾勾_j_1 := a_-_abb_le &
+  [ STEM < "直勾勾" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "直", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_直勾勾_a_1_rel",
+    TRAITS native_token_list ].
+
+眼睁睁_j_1 := a_-_abb_le &
+  [ STEM < "眼睁睁" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "眼", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_眼睁睁_a_1_rel",
+    TRAITS native_token_list ].
+
+眼巴巴_j_1 := a_-_abb_le &
+  [ STEM < "眼巴巴" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "眼", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_眼巴巴_a_1_rel",
+    TRAITS native_token_list ].
+
+齐刷刷_j_1 := a_-_abb_le &
+  [ STEM < "齐刷刷" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "齐", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_齐刷刷_a_1_rel",
+    TRAITS native_token_list ].
+
+凉冰冰_j_1 := a_-_abb_le &
+  [ STEM < "凉冰冰" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "凉", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_凉冰冰_a_1_rel",
+    TRAITS native_token_list ].
+
+潮乎乎_j_1 := a_-_abb_le &
+  [ STEM < "潮乎乎" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "潮", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_潮乎乎_a_1_rel",
+    TRAITS native_token_list ].
+
+油渍渍_j_1 := a_-_abb_le &
+  [ STEM < "油渍渍" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "油", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_油渍渍_a_1_rel",
+    TRAITS native_token_list ].
+
+湿淋淋_j_1 := a_-_abb_le &
+  [ STEM < "湿淋淋" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "湿", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_湿淋淋_a_1_rel",
+    TRAITS native_token_list ].
+
+汗腻腻_j_1 := a_-_abb_le &
+  [ STEM < "汗腻腻" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "汗", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_汗腻腻_a_1_rel",
+    TRAITS native_token_list ].
+
+汗渍渍_j_1 := a_-_abb_le &
+  [ STEM < "汗渍渍" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "汗", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_汗渍渍_a_1_rel",
+    TRAITS native_token_list ].
+
+油亮亮_j_1 := a_-_abb_le &
+  [ STEM < "油亮亮" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "油", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_油亮亮_a_1_rel",
+    TRAITS native_token_list ].
+
+油腻腻_j_1 := a_-_abb_le &
+  [ STEM < "油腻腻" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "油", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_油腻腻_a_1_rel",
+    TRAITS native_token_list ].
+
+光亮亮_j_1 := a_-_abb_le &
+  [ STEM < "光亮亮" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "光", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_光亮亮_a_1_rel",
+    TRAITS native_token_list ].
+
+光闪闪_j_1 := a_-_abb_le &
+  [ STEM < "光闪闪" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "光", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_光闪闪_a_1_rel",
+    TRAITS native_token_list ].
+
+油乎乎_j_1 := a_-_abb_le &
+  [ STEM < "油乎乎" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "油", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_油乎乎_a_1_rel",
+    TRAITS native_token_list ].
+
+光溜溜_j_1 := a_-_abb_le &
+  [ STEM < "光溜溜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "光", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_光溜溜_a_1_rel",
+    TRAITS native_token_list ].
+
+黑油油_j_1 := a_-_abb_le &
+  [ STEM < "黑油油" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "黑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_黑油油_a_1_rel",
+    TRAITS native_token_list ].
+
+粘糊糊_j_1 := a_-_abb_le &
+  [ STEM < "粘糊糊" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "粘", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_粘糊糊_a_1_rel",
+    TRAITS native_token_list ].
+
+干巴巴_j_1 := a_-_abb_le &
+  [ STEM < "干巴巴" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "干", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_干巴巴_a_1_rel",
+    TRAITS native_token_list ].
+
+松塌塌_j_1 := a_-_abb_le &
+  [ STEM < "松塌塌" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "松", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_松塌塌_a_1_rel",
+    TRAITS native_token_list ].
+
+胖墩墩_j_1 := a_-_abb_le &
+  [ STEM < "胖墩墩" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "胖", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_胖墩墩_a_1_rel",
+    TRAITS native_token_list ].
+
+肉墩墩_j_1 := a_-_abb_le &
+  [ STEM < "肉墩墩" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "肉", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_肉墩墩_a_1_rel",
+    TRAITS native_token_list ].
+
+瘦巴巴_j_1 := a_-_abb_le &
+  [ STEM < "瘦巴巴" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "瘦", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_瘦巴巴_a_1_rel",
+    TRAITS native_token_list ].
+
+瘦嶙嶙_j_1 := a_-_abb_le &
+  [ STEM < "瘦嶙嶙" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "瘦", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_瘦嶙嶙_a_1_rel",
+    TRAITS native_token_list ].
+
+喜滋滋_j_1 := a_-_abb_le &
+  [ STEM < "喜滋滋" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_喜滋滋_a_1_rel",
+    TRAITS native_token_list ].
+
+喜冲冲_j_1 := a_-_abb_le &
+  [ STEM < "喜冲冲" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_喜冲冲_a_1_rel",
+    TRAITS native_token_list ].
+
+兴冲冲_j_1 := a_-_abb_le &
+  [ STEM < "兴冲冲" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "兴", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_兴冲冲_a_1_rel",
+    TRAITS native_token_list ].
+
+乐悠悠_j_1 := a_-_abb_le &
+  [ STEM < "乐悠悠" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乐", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_乐悠悠_a_1_rel",
+    TRAITS native_token_list ].
+
+乐陶陶_j_1 := a_-_abb_le &
+  [ STEM < "乐陶陶" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乐", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_乐陶陶_a_1_rel",
+    TRAITS native_token_list ].
+
+乐滋滋_j_1 := a_-_abb_le &
+  [ STEM < "乐滋滋" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乐", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_乐滋滋_a_1_rel",
+    TRAITS native_token_list ].
+
+青幽幽_j_1 := a_-_abb_le &
+  [ STEM < "青幽幽" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "青", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_青幽幽_a_1_rel",
+    TRAITS native_token_list ].
+
+软绵绵_j_1 := a_-_abb_le &
+  [ STEM < "软绵绵" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "软", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_软绵绵_a_1_rel",
+    TRAITS native_token_list ].
+
+绿森森_j_1 := a_-_abb_le &
+  [ STEM < "绿森森" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "绿", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_绿森森_a_1_rel",
+    TRAITS native_token_list ].
+
+直挺挺_j_1 := a_-_abb_le &
+  [ STEM < "直挺挺" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "直", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_直挺挺_a_1_rel",
+    TRAITS native_token_list ].
+
+白嫩嫩_j_1 := a_-_abb_le &
+  [ STEM < "白嫩嫩" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "白", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_白嫩嫩_a_1_rel",
+    TRAITS native_token_list ].
+
+白生生_j_1 := a_-_abb_le &
+  [ STEM < "白生生" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "白", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_白生生_a_1_rel",
+    TRAITS native_token_list ].
+
+红殷殷_j_1 := a_-_abb_le &
+  [ STEM < "红殷殷" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "红", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_红殷殷_a_1_rel",
+    TRAITS native_token_list ].
+
+甜丝丝_j_1 := a_-_abb_le &
+  [ STEM < "甜丝丝" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "甜", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_甜丝丝_a_1_rel",
+    TRAITS native_token_list ].
+
+绿茸茸_j_1 := a_-_abb_le &
+  [ STEM < "绿茸茸" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "绿", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_绿茸茸_a_1_rel",
+    TRAITS native_token_list ].
+
+绿茵茵_j_1 := a_-_abb_le &
+  [ STEM < "绿茵茵" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "绿", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_绿茵茵_a_1_rel",
+    TRAITS native_token_list ].
+
+甜津津_j_1 := a_-_abb_le &
+  [ STEM < "甜津津" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "甜", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_甜津津_a_1_rel",
+    TRAITS native_token_list ].
+
+油黄黄_j_1 := a_-_abb_le &
+  [ STEM < "油黄黄" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "油", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_油黄黄_a_1_rel",
+    TRAITS native_token_list ].
+
+黑亮亮_j_1 := a_-_abb_le &
+  [ STEM < "黑亮亮" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "黑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_黑亮亮_a_1_rel",
+    TRAITS native_token_list ].
+
+圆乎乎_j_1 := a_-_abb_le &
+  [ STEM < "圆乎乎" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "圆", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_圆乎乎_a_1_rel",
+    TRAITS native_token_list ].
+
+圆滚滚_j_1 := a_-_abb_le &
+  [ STEM < "圆滚滚" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "圆", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_圆滚滚_a_1_rel",
+    TRAITS native_token_list ].
+
+滑溜溜_j_1 := a_-_abb_le &
+  [ STEM < "滑溜溜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "滑", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_滑溜溜_a_1_rel",
+    TRAITS native_token_list ].
+
+蓬松松_j_1 := a_-_abb_le &
+  [ STEM < "蓬松松" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "蓬", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_蓬松松_a_1_rel",
+    TRAITS native_token_list ].
+
+红嫩嫩_j_1 := a_-_abb_le &
+  [ STEM < "红嫩嫩" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "红", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_红嫩嫩_a_1_rel",
+    TRAITS native_token_list ].
+
+红扑扑_j_1 := a_-_abb_le &
+  [ STEM < "红扑扑" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "红", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_红扑扑_a_1_rel",
+    TRAITS native_token_list ].
+
+冷冰冰_j_1 := a_-_abb_le &
+  [ STEM < "冷冰冰" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "冷", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_冷冰冰_a_1_rel",
+    TRAITS native_token_list ].
+
+苦巴巴_j_1 := a_-_abb_le &
+  [ STEM < "苦巴巴" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "苦", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_苦巴巴_a_1_rel",
+    TRAITS native_token_list ].
+
