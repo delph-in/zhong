@@ -40,6 +40,9 @@ n_-_pr-refl_le := attr-adj-posthd-lex.
 ;; Currently, general nouns such as dongxi (东西), shi (事).
 n_-_le := common-noun-lex.
 
+;;ZZF 2015-5-3 temporary for locational nouns (not proper nouns). To be fixed when have time
+n_-_loc_le := common-noun-lex.
+
 n_-_c_le := count-noun-lex.
 
 n_-_m_le := mass-noun-lex.

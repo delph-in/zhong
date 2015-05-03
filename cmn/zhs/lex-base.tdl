@@ -293,7 +293,13 @@
 
 其中_n := d_-_le &
   [ STEM < "其中" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "其", LENGTH more-than-one ],
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "其", LENGTH two ],
+    TRAITS native_token_list ].
+
+其它_d := d_-_le &
+  [ STEM < "其它" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "其", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "其它_q_rel",
     TRAITS native_token_list ].
 
 哪_d := d_-_le &
@@ -373,6 +379,19 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "那", LENGTH more-than-one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
 	     LKEYS.KEYREL.PRED "_那些_n_demons_rel" ],
+    TRAITS native_token_list ].
+
+;;temporary KIV
+各种_d := d_-_le &
+  [ STEM < "各种" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "各", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "各种_q_rel",
+    TRAITS native_token_list ].
+
+几_d := d_-_le &
+  [ STEM < "几" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "几", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "几_q_rel",
     TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;
