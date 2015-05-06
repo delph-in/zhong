@@ -113,7 +113,7 @@ generic_temp-nouun := time-noun-lex &
 			        +PRED #pred ] > ].
 
 generic_classifier := classifier-lex & 
- [ SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+ [ SYNSEM.LKEYS.KEYREL.PRED cl_x_rel,
    STEM < "_generic_cl_" >,
    TOKENS.+LIST generic_token_list &
 			    < [ +POS.+TAGS < "M" > ] > ].

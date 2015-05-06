@@ -68776,8 +68776,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
 狗_n_1 := n_-_c_le &
   [ STEM < "狗" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "狗", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 只_x_rel,
-	     LKEYS.KEYREL.PRED "_狗_n_1_rel" ],
+    SYNSEM.LKEYS.KEYREL.PRED "_狗_n_1_rel",
     TRAITS native_token_list ].
 
 狗叫声_n_1 := n_-_le &
@@ -70916,8 +70915,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
 电脑_n_1 := n_-_c_le &
   [ STEM < "电脑" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "电", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 台_x_rel,
-	     LKEYS.KEYREL.PRED "_电脑_n_1_rel" ],
+    SYNSEM.LKEYS.KEYREL.PRED "_电脑_n_1_rel",
     TRAITS native_token_list ].
 
 电脑展_n_1 := n_-_le &
@@ -104077,8 +104075,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
 马_n_1 := n_-_c_le &
   [ STEM < "马" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "马", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 匹_x_rel,
-	     LKEYS.KEYREL.PRED "_马_n_1_rel" ],
+    SYNSEM.LKEYS.KEYREL.PRED "_马_n_1_rel",
     TRAITS native_token_list ].
 
 马_n_2 := n_-_pn_le &
