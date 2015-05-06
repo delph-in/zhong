@@ -1,0 +1,15 @@
+;;; -*- Mode: TDL; -*-
+;;; files to load
+
+grammar-top               := "../zhs-pet-utterance.tdl".
+
+;;; SSH 2014-10-31: root-bridge should be used only for robust parsing.
+parsing-roots             := root frag.
+
+:begin :config.
+ :include "config.common".
+:end :config.
+
+ 	
+
+

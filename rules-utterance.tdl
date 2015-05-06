@@ -1,0 +1,10 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Uttrance Rule for Dialogue
+;;; such as Honorifications
+;;; created by Sanghoun Song (SSH, 2015-04-30) 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+utterance := utterance-phrase. 
+
+

@@ -1,0 +1,84 @@
+;;; -*- Mode: TDL; Package: DISCO -*-
+;;;
+;;; $Id: pet.tdl,v 1.2 2008-05-23 01:44:21 sfd Exp $
+;;;
+
+;; SSH 2014-11-25
+;; lexical filtering: reduce the chart after lexical instantiation and the
+;; application of lexical rules, right before we turn loose syntactic rules.
+:begin :instance :status lexical-filtering-rule.
+:include "lfr".
+:end :instance.
+
+
+:begin :type.
+:include "head-types".
+:include "matrix".
+:include "zhong".
+:include "zhong-lextypes".
+:include "zhong-letypes".
+:include "cmn".
+:include "zhs".
+:include "mtr".
+:include "tmt".
+:end :type.
+
+
+:begin :instance :status token-mapping-rule.
+:include "../../tmr/prelude".
+:include "../../tmr/pos".
+:include "../../tmr/pos-ipa".
+:include "../../tmr/finis".
+:include "../../tmr/ne1".
+:include "../../tmr/ne2".
+:end :instance.
+
+;;
+;; grammar rules and lexical rules (instances of status rule)
+;;
+
+:begin :instance :status rule.
+:include "rules".
+:include "rules-utterance".
+:end :instance.
+
+:begin :instance :status lex-rule.
+:include "lrules".
+:include "irules".
+:end :instance.
+
+
+;;
+;; lexicon entries (instances of status lex-entry or generic-lex-entry)
+;;
+
+:begin :instance :status lex-entry.
+:include "lex-base".
+:include "lex-symbols".
+:include "lex-classifiers".
+:include "lex-numbers".
+:include "lex-bound".
+:include "lexicon".
+:end :instance.
+
+
+:begin :instance :status generic-lex-entry.
+:include "gle".
+:end :instance.
+
+
+;;
+;; parse-tree labels (instances)
+;;
+
+:begin :instance.
+:include "labels".
+:end :instance.
+
+;;
+;; start symbols of the grammar (instances)
+;;
+
+:begin :instance.
+:include "roots-utterance".
+:end :instance.

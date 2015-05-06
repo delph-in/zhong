@@ -7,10 +7,6 @@
 ;;;            Zhenzhen Fan (ZZF)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-hon-lex-item := lex-item &
- [ SYNSEM.LOCAL.CAT.HEAD.HON + ]. 
-
 animate-lex-item := lex-item & 
  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY animate ]. 
 human-lex-item := lex-item & 
@@ -19,6 +15,24 @@ non-human-lex-item := lex-item &
  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY non-human ]. 
 inanimate-lex-item := lex-item & 
  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate ]. 
+
+
+speaker-lex-item := basic-icons-lex-item &
+  [ SYNSEM.LOCAL.CONT.HOOK [ INDEX #index,
+			     SPEAKER-KEY #index ] ].
+
+non-honorific-hearer-lex-item := basic-icons-lex-item & 
+  [ SYNSEM.LOCAL.CONT.HOOK [ INDEX #index,
+			     HEARER-KEY #index ] ].
+
+
+honorific-hearer-lex-item := one-icons-lex-item & 
+  [ SYNSEM.LOCAL.CONT [ HOOK [ INDEX #index,
+			       SPEAKER-KEY #skey,
+			       HEARER-KEY #index ],
+			ICONS <! higher & [ IARG1 #skey,
+					    IARG2 #index ] !> ] ].
+
 
 no-spr-no-spec-lex-item := lex-item & 
  [ SYNSEM.LOCAL.CAT.VAL [ SPR <>, SPEC <> ] ].
@@ -142,7 +156,7 @@ basic-pronoun-lex := basic-one-arg & norm-hook-lex-item &
 	     LKEYS.KEYREL noun-relation & #rel & [ PRED "pron_rel" ] ] ].
 
 
-personal-pronoun-lex := basic-pronoun-lex & basic-icons-lex-item &
+personal-pronoun-lex := basic-pronoun-lex &
   [ SYNSEM.LOCAL.CONT.RELS <! relation, 
 			    [ PRED "pronoun_q_rel" ] !> ].
 
@@ -1168,7 +1182,7 @@ ab-not-ab-bu-adv-lex := ab-not-ab-adv-lex &
 basic-adjective-lex :+ basic-icons-lex-item &
   [ SYNSEM.PAREN - ].
 
-basic-attr-adj-lex := basic-int-mod-adj-lex & 
+basic-attr-adj-lex := basic-int-mod-adj-lex & basic-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ LOCAL [ CAT.HEAD noun,
 						CONT.HOOK.INDEX #index ] ] > ],
 		     CONT [ HOOK.INDEX #arg0,

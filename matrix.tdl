@@ -2358,9 +2358,9 @@ no-rels-hcons-icons-lex-item := no-hcons-lex-item &
 ; SSH 2013-06-05 Now therer are two icons-lex-items (for embedded clauses).
 basic-icons-lex-item := lex-item & [ SYNSEM.LOCAL.CONT.ICONS <! !> ].
 
-one-icons-lex-item := lex-item & [ SYNSEM.LOCAL.CONT.ICONS <! info-str & [ ] !> ].
+one-icons-lex-item := lex-item & [ SYNSEM.LOCAL.CONT.ICONS <! [ ] !> ].
 
-two-icons-lex-item := lex-item & [ SYNSEM.LOCAL.CONT.ICONS <! info-str & [ ], info-str & [ ] !> ].
+two-icons-lex-item := lex-item & [ SYNSEM.LOCAL.CONT.ICONS <! [ ], [ ] !> ].
 
 
 ; ERB 2005-05-11 Normal lex items don't introduce messages. 

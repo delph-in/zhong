@@ -161,8 +161,9 @@ s-bottom-label := label &
              LABEL-NAME "S-B"].
 
 adj-label := label & 
-	   [ SYNSEM.LOCAL[ CAT.HEAD adj, 
-                           COORD-STRAT "" ],
+	   [ SYNSEM [ UTTERED na-or--,
+		      LOCAL[ CAT.HEAD adj, 
+			     COORD-STRAT "" ] ],
 	     LABEL-NAME "ADJ" ].
 
 locp-label := label & 
@@ -177,12 +178,22 @@ pp-label := label &
 	      LABEL-NAME "PP" ].
 
 s-label := label &
-           [ SYNSEM.LOCAL [ CAT [ HEAD +vjp,
-				  POSTHEAD +,
-                                  VAL [ COMPS < >,
-                                        SUBJ < > ] ],
-                            COORD-STRAT "" ],
+           [ SYNSEM [ UTTERED na-or--,
+		      LOCAL [ CAT [ HEAD +vjp,
+				    POSTHEAD +,
+				    VAL [ COMPS < >,
+					  SUBJ < > ] ],
+			      COORD-STRAT "" ] ],
              LABEL-NAME "S"].
+
+utt-label := label &
+           [ SYNSEM [ UTTERED +,
+		      LOCAL [ CAT [ HEAD +vjrpc,
+				    POSTHEAD +,
+				    VAL [ COMPS < >,
+					  SUBJ < > ] ] ],
+		      COORD-STRAT "" ], 
+             LABEL-NAME "UTT"].
 
 s-top-label := label &
 	   [ SYNSEM.LOCAL.CAT [ HEAD verb,

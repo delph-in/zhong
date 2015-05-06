@@ -48,6 +48,7 @@ synsem :+
    POSTCOMP luk,
    BARE luk,
    SPART spart,
+   UTTERED luk,
    BOUND luk ].
 
 spart := avm.
@@ -68,6 +69,7 @@ sign-min := avm &
 orthog := cons &
   [ FROM string,
     TO string ].
+
 
 ;; SSH 2015-01-26: compound lexical items
 cpd := icons.
@@ -665,6 +667,26 @@ experiential := imperfective.
 non-aspect := imperfective.
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SSH 2015-05-24
+;; CTXT (Honorification)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+dialogue := icons.
+addressor := dialogue.
+addressee := dialogue.
+rank := icons.
+higher-or-equal := rank.
+lower-or-equal := rank.
+higher := higher-or-equal.
+lower := lower-or-equal.
+equal :=  higher-or-equal & lower-or-equal.
+
+ctxt :+ [ C-INDICES c-indices ].
+
+c-indices := avm & 
+  [ SPEAKER ref-ind,
+    HEARER ref-ind ].
 
 ;;; Phrasal types
 
@@ -1689,13 +1711,17 @@ nontime-s := semsort.
 
 ;; MATRIX redefinition: Adopted GTOP of modern Matrix, but also relaxed
 ;; constraint on XARG to allow for sentential subjects (with handle as XARG).
+;; SSH 2015-04-30: SPEAKER-KEY and HEARER-KEY for honorification
 hook := avm &
   [ GTOP handle,
     LTOP handle,
     INDEX individual,
     XARG semarg,
     ICONS-KEY icons,
-    CLAUSE-KEY event ].
+    CLAUSE-KEY event,
+    SPEAKER-KEY ref-ind, 
+    HEARER-KEY ref-ind ].
+
 
 basic-head-opt-subj-phrase :+ 
   [ HEAD-DTR.SYNSEM.BOUND na-or-- ].
@@ -1780,6 +1806,75 @@ comp-marker-phrase := basic-comp-marker-phrase & marker-final-phrase & head-init
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.POSTHEAD na-or-+ ].
 marker-comp-phrase := basic-comp-marker-phrase & marker-initial-phrase & head-final &
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ POSTHEAD na-or-- ] ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SSH 2015-04-30 - utterance for dialogue constraints such as honorifications.
+utterance-phrase := head-valence-phrase & head-only &
+		    head-compositional &
+  [ SYNSEM [ UTTERED +,
+	     L-PERIPH +,
+	     R-PERIPH +,
+	     LOCAL local & [ CAT.VAL #val,
+			     CONT.HOOK [ SPEAKER-KEY #speaker,
+					 HEARER-KEY #hearer ],
+			     CTXT ctxt & [ C-INDICES [ SPEAKER #speaker,
+						       HEARER #hearer ] ] ] ],
+    HEAD-DTR phrase & [ SYNSEM [ UTTERED -,
+				 BOUND -,
+				 LOCAL [ COORD -,
+					 CAT [ VAL [ SUBJ < >,
+						     COMPS < > ],
+					       MC +,
+					       HEAD +vjrpc &
+						   [ FORM finite ],
+					       VAL #val ],
+					 CONT.HOOK [ INDEX #index,
+						     LTOP #larg ] ],
+				 NON-LOCAL.SLASH 0-dlist ] ],
+    C-CONT [ HOOK [ INDEX #index,
+                    LTOP #ltop ],
+	     RELS <! !>, 
+	     HCONS <! !>,
+	     ICONS <! addressor & [ IARG1 #index,
+				    IARG2 #speaker ], 
+		      addressee & [ IARG1 #index,
+				    IARG2 #hearer ] !> ] ].
+
+lex-item :+ [ SYNSEM.UTTERED na ].
+coord-phrase :+ 
+  [ SYNSEM.UTTERED -,
+    LCOORD-DTR.SYNSEM.UTTERED na-or--, 
+    RCOORD-DTR.SYNSEM.UTTERED na-or-- ].
+extracted-comp-phrase :+
+  [ SYNSEM.UTTERED -,
+    HEAD-DTR.SYNSEM.UTTERED na-or-- ].
+extracted-subj-phrase :+ 
+  [ SYNSEM.UTTERED -,
+    HEAD-DTR.SYNSEM.UTTERED na-or-- ].
+imperative-phrase :+ 
+  [ SYNSEM.UTTERED -,
+    HEAD-DTR.SYNSEM.UTTERED na-or-- ].
+head-opt-comp-phrase :+
+  [ SYNSEM.UTTERED -,
+    HEAD-DTR.SYNSEM.UTTERED na-or-- ].
+basic-binary-phrase :+ 
+  [ SYNSEM [ UTTERED -,
+	     LOCAL.CONT.HOOK [ SPEAKER-KEY #skey,
+			       HEARER-KEY #hkey ] ],
+    HEAD-DTR.SYNSEM [ UTTERED na-or--,
+		      LOCAL.CONT.HOOK [ SPEAKER-KEY #skey,
+					HEARER-KEY #hkey ] ],
+    NON-HEAD-DTR.SYNSEM [ UTTERED na-or--,
+		      LOCAL.CONT.HOOK [ SPEAKER-KEY #skey,
+					HEARER-KEY #hkey ] ] ].
+unary-phrase :+
+  [ SYNSEM.LOCAL.CONT.HOOK [ SPEAKER-KEY #skey,
+			     HEARER-KEY #hkey ],
+    ARGS < [ SYNSEM.LOCAL.CONT.HOOK [ SPEAKER-KEY #skey,
+				      HEARER-KEY #hkey ] ] > ]. 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ;; DPF 2014-08-01 - Added unary and binary bridging rules to accommodate robust
 ;; full-forest treebanking.  The strategy is to pump each normal edge in the

@@ -7,32 +7,33 @@
 ;;;            Zhenzhen Fan (ZZF)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-n_-_pr-1sg_le := personal-pronoun-lex &
+n_-_pr-1sg_le := personal-pronoun-lex & speaker-lex-item & 
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1sg ].
 
-n_-_pr-1pl-incl_le := personal-pronoun-lex &
+n_-_pr-1pl-incl_le := personal-pronoun-lex & basic-icons-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl_incl ].
 
-n_-_pr-1pl-excl_le :=  personal-pronoun-lex &
+n_-_pr-1pl-excl_le :=  personal-pronoun-lex & basic-icons-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl_excl ].
 
-n_-_pr-2sg_le := personal-pronoun-lex &
+n_-_pr-2sg_le := personal-pronoun-lex & non-honorific-hearer-lex-item & 
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2sg ].
 
-n_-_pr-2pl_le := personal-pronoun-lex &
+n_-_pr-2pl_le := personal-pronoun-lex & non-honorific-hearer-lex-item & 
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2pl ].
 
-n_-_pr-2sg-hon_le := personal-pronoun-lex & hon-lex-item &
+n_-_pr-2sg-hon_le := personal-pronoun-lex & honorific-hearer-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2sg ].
 
-n_-_pr-3sg_le := personal-pronoun-lex &
+n_-_pr-3sg_le := personal-pronoun-lex & basic-icons-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3sg ].
 
-n_-_pr-3pl_le := personal-pronoun-lex &
+n_-_pr-3pl_le := personal-pronoun-lex & basic-icons-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl ].
 
 n_-_pr-wh_le := wh-pronoun.
 n_-_pr-q_le := quant-pronoun-lex.
+
 n_-_pr-refl_le := attr-adj-posthd-lex.
 
 
