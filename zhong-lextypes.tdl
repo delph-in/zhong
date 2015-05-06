@@ -1041,7 +1041,6 @@ qpart-lex-item := spart-lex-item &
 
 neg-adv-lex := basic-scopal-adverb-lex &
   [ SYNSEM.LOCAL.CAT [ VAL.COMPS < >,
-                       POSTHEAD -,
                        HEAD.MOD < [ LIGHT +,
 				    LOCAL [ CAT [ HEAD verb,
 						  VAL [ SUBJ cons ] ] ] ] > ] ].
@@ -1214,7 +1213,7 @@ basic-pred-adj-lex := basic-adjective-lex &
 				   PRED #key,
 				   ARG0 #arg0 ] ] ].
 
-pred-adj-lex := basic-pred-adj-lex &
+pred-adj-lex := basic-pred-adj-lex & redup-lex-dtr &
   [ SYNSEM [ LOCAL [ CAT [ HEAD [ MOD <> ],
 			   VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
 						 CONT.HOOK.LTOP #lbl ],
@@ -1615,6 +1614,38 @@ tentative-lex-rule := infl-cat-change-only-lex-rule & no-ccont-lex-rule &
 						   POSTHEAD #posthead ] ] ] ].
 
 tentative-lex-dtr := word-or-lexrule. 
+
+redup-lex-rule :=  same-non-local-lex-rule &
+		   same-modified-lex-rule &
+		   same-light-lex-rule &
+		   same-ctxt-lex-rule &
+		   same-cont-lex-rule &
+		   same-agr-lex-rule & 
+                   infl-lex-rule & 
+ [ SYNSEM [ ASPECTED -,
+	    LOCAL [ CAT [ MC luk,
+			  HEAD #head, 
+			  VAL #val, 
+			  MKG #mkg, 
+			  HC-LIGHT #light, 
+			  POSTHEAD #posthead ],
+		    CONT.HOOK.INDEX.E.ASPECT non-aspect ] ],
+   DTR redup-lex-dtr & [ SYNSEM [ BOUND -,
+				  LOCAL [ CAT [ HEAD #head & [ CHAR.LENGTH one-or-two ], 
+					        VAL #val, 
+					        MKG #mkg, 
+				                HC-LIGHT #light, 
+					        POSTHEAD #posthead ],
+                                          CONT.HOOK [ LTOP #ltop,
+                                                      INDEX #index ] ] ] ],
+   C-CONT [ HCONS <! !>, 
+            ICONS <! !>,
+            RELS <! arg1-relation & event-relation & 
+			   [ LBL #ltop,
+			     PRED redup_x_rel,
+			     ARG1 #index ] !> ] ].
+
+redup-lex-dtr := word-or-lexrule. 
 
 ;;; Relation for trigger rules for semantically empty lexical entries
 

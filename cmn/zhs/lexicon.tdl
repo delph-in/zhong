@@ -26180,6 +26180,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
     TRAITS native_token_list ].
 
+回忆_v_2 := v_np_le &
+  [ STEM < "回忆" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "回", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_回忆_v_2_rel",
+    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
+    TRAITS native_token_list ].
+
 回想_v_1 := v_s_le &
   [ STEM < "回想" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "回", LENGTH two ],
@@ -107560,4 +107567,10 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "站", LENGTH two ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_站在_v_1_rel" ],
+    TRAITS native_token_list ].
+
+生存者_n_1 := n_-_le &
+  [ STEM < "生存者" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "生", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_生存者_n_1_rel",
     TRAITS native_token_list ].

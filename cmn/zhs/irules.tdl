@@ -10,6 +10,10 @@ tentative-olr :=
 %suffix (X XX)
 tentative-lex-rule.
 
+redup-olr :=
+%suffix (Y YY)
+redup-lex-rule.
+
 
 ;;_perf_aspect-suffix :=
 ;;%suffix (* 了)
