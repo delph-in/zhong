@@ -6,7 +6,6 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
 ;; SSH 2015-04-28: LE-ZHE-GUO restriction 
 ;; This is Mandarin-speicific
 +vjp :+ [ LZG lzg ].
@@ -72,4 +71,23 @@ no-spr-classifier-lex-rule := const-val-change-only-lex-rule &
    C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 no-spr-classifier-rule-dtr := word-or-lexrule.
+
+
+;; SSH 2015-05-07: Mandarin Specific Predsort.
+
+_de_demons_rel := demons_rel.
+_zhi_demons_rel := demons_rel.
+
+
+_de_nom_rel := nm_rel.
+_zhi_nom_rel := nm_rel.
+
+_bu_x_rel := neg_x_rel.
+_buqi_x_rel := neg_x_rel.
+_bu_polar_x_rel := neg_x_rel.
+_mei_x_rel := neg_x_rel.
+_mei_polar_x_rel := neg_x_rel.
+
+_hen_x_rel := intensifier_x_rel.
+_feichang_x_rel := intensifier_x_rel.
 

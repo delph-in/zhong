@@ -6,3 +6,13 @@
 ;;; created by Sanghoun Song (SSH, 2014-08-25)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+;; SSH 2015-05-07: classifiers in Traditional Mandarin Chinese
+_個_x_rel := cl_x_rel.
+_隻_x_rel := cl_x_rel.
+_根_x_rel := cl_x_rel.
+_匹_x_rel := cl_x_rel.
+_件_x_rel := cl_x_rel.
+_條_x_rel := cl_x_rel.
+_台_x_rel := cl_x_rel.
+

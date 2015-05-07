@@ -102,3 +102,23 @@ no-classifier-rule-dtr := word-or-lexrule.
 
 generic-np-phrase :+ 
  [ HEAD-DTR.SYNSEM lex-synsem ].
+
+
+
+;; SSH 2015-05-07: Cantonese-specific predsort.
+_唔_x_rel := neg_x_rel.
+_冇_x_rel := neg_x_rel.
+_冇_polar_x_rel := neg_x_rel.
+
+_嘅_demons_rel := demons_rel.
+_嘅_nom_rel := nm_rel.
+
+;; SSH 2015-05-07: Cantonese classifiers
+
+_個_x_rel := cl_x_rel.
+_枝_x_rel := cl_x_rel.
+_隻_x_rel := cl_x_rel.
+_匹_x_rel := cl_x_rel.
+_件_x_rel := cl_x_rel.
+_條_x_rel := cl_x_rel.
+_台_x_rel := cl_x_rel.

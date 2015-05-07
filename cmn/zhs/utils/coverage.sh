@@ -46,7 +46,7 @@ while [ $# -gt 0 -a "${1#-}" != "$LINE" ]; do
 done
 
 OPT="-n $best --timeout=$timeout --max-chart-megabytes=$max_chart --max-unpack-megabytes=$max_unpack"
-#"-n 5 --timeout=5 --max-chart-megabytes=256 --max-unpack-megabytes=256"
+#"-n 5 --timeout=5 --max-chart-megabytes=512 --max-unpack-megabytes=512"
 
 ace -g ../ace/config.tdl -G ../zhs.dat
 ace -g ../ace/config-robust.tdl -G ../zhs-robust.dat

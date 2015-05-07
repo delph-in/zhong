@@ -204,27 +204,27 @@
  [ STEM < "大家" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "大", LENGTH more-than-one ],
    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
-	    LKEYS [ ALTKEYREL.PRED "every_q_rel" ] ],
+	    LKEYS [ ALTKEYREL.PRED every_q_rel ] ],
    TRAITS native_token_list ].
 
 有人_n := n_-_pr-q_le &
  [ STEM < "有人" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH more-than-one ],
    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
-	    LKEYS [ ALTKEYREL.PRED "some_q_rel" ] ],
+	    LKEYS [ ALTKEYREL.PRED some_q_rel ] ],
    TRAITS native_token_list ].
 
 一切_n := n_-_pr-q_le &
  [ STEM < "一切" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH more-than-one ],
    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate,
-	    LKEYS [ ALTKEYREL.PRED "every_q_rel" ] ],
+	    LKEYS [ ALTKEYREL.PRED every_q_rel ] ],
    TRAITS native_token_list ].
 
 有些_n := n_-_pr-q_le &
  [ STEM < "有些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH more-than-one ],
-   SYNSEM [ LKEYS [ ALTKEYREL.PRED "some_q_rel" ] ],
+   SYNSEM [ LKEYS [ ALTKEYREL.PRED some_q_rel ] ],
    TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;
@@ -263,37 +263,37 @@
   [ STEM < "一些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH more-than-one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "some_q_rel" ],
+	     LKEYS.KEYREL.PRED some_q_rel ],
     TRAITS native_token_list ].
 
 一种_d := d_-_le &
   [ STEM < "一种" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED some_q_rel,
     TRAITS native_token_list ].
 
 个中_d := d_-_le &
   [ STEM < "个中" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "个", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_个中_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _个中_q_rel,
     TRAITS native_token_list ].
 
 些_d := d_-_le &
   [ STEM < "些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "些", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED some_q_rel,
     TRAITS native_token_list ].
 
 什么_d := d_-_le &
   [ STEM < "什么" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "which_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED which_q_rel,
     TRAITS native_token_list ].
 
 其_d := d_-_le &
   [ STEM < "其" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "其", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_其_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _其_q_rel,
     TRAITS native_token_list ].
 
 其中_n := d_-_le &
@@ -304,86 +304,86 @@
 其它_d := d_-_le &
   [ STEM < "其它" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "其", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "其它_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _其它_q_rel,
     TRAITS native_token_list ].
 
 哪_d := d_-_le &
   [ STEM < "哪" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
-	     LKEYS.KEYREL.PRED "which_q_rel" ],
+	     LKEYS.KEYREL.PRED which_q_rel ],
     TRAITS native_token_list ].
 
 哪些_d := d_-_le &
   [ STEM < "哪些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH more-than-one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "which_q_rel" ],
+	     LKEYS.KEYREL.PRED which_q_rel ],
     TRAITS native_token_list ].
 
 所有_d := d_-_le &
   [ STEM < "所有" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "所", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED every_q_rel,
     TRAITS native_token_list ].
 
 所有_partitive_d := d_-_prt_le &
   [ STEM < "所有" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "所", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED every_q_rel,
     TRAITS native_token_list ].
 
 有些_d := d_-_le &
   [ STEM < "有些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH more-than-one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "some_q_rel" ],
+	     LKEYS.KEYREL.PRED some_q_rel ],
     TRAITS native_token_list ].
 
 某_d := d_-_le &
   [ STEM < "某" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "某", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED some_q_rel,
     TRAITS native_token_list ].
 
 此_d := d_-_le &
   [ STEM < "此" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "此", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_此_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _此_q_rel,
     TRAITS native_token_list ].
 
 每_d := d_-_le &
   [ STEM < "每" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "每", LENGTH one ],
-	SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
+	SYNSEM.LKEYS.KEYREL.PRED every_q_rel,
     TRAITS native_token_list ].
 
 这_d := d_-_d-prox_le &
   [ STEM < "这" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "这", LENGTH one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
-	     LKEYS.KEYREL.PRED "_这_n_demons_rel" ],
+	     LKEYS.KEYREL.PRED prox_demons_rel ],
     TRAITS native_token_list ].
 
 这些_d := d_-_d-prox_le &
   [ STEM < "这些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "这", LENGTH more-than-one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "_这些_n_demons_rel" ],
+	     LKEYS.KEYREL.PRED prox_demons_rel ],
     TRAITS native_token_list ].
 
 那_d := d_-_d-dist_le &
   [ STEM < "那" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "那", LENGTH one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
-	     LKEYS.KEYREL.PRED "_那_n_demons_rel" ],
+	     LKEYS.KEYREL.PRED dist_demons_rel ],
     TRAITS native_token_list ].
 
 那些_d := d_-_d-dist_le &
   [ STEM < "那些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "那", LENGTH more-than-one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "_那些_n_demons_rel" ],
+	     LKEYS.KEYREL.PRED dist_demons_rel ],
     TRAITS native_token_list ].
 
 ;;temporary KIV
@@ -391,19 +391,19 @@
 各种_d := d_-_le &
   [ STEM < "各种" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "各", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "各种_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _各种_q_rel,
     TRAITS native_token_list ].
 
 一系列_d := d_-_le &
   [ STEM < "一系列" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "一系列_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _一系列_q_rel,
     TRAITS native_token_list ].
 
 半截_d := d_-_le &
   [ STEM < "半截" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "半", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED "半截_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _半截_q_rel,
     TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;
@@ -413,7 +413,7 @@
 别_v := adv_-_imp_le &
 [ STEM <"别">,
   SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "别", LENGTH one ],
-  SYNSEM.LKEYS.KEYREL.PRED "neg_x_rel",
+  SYNSEM.LKEYS.KEYREL.PRED neg_x_rel,
   TRAITS native_token_list ].
 
 ;; WWJ 2015-02-08: TEMPORARY. 不 cannot co-occur with 有; 
@@ -423,7 +423,7 @@
   [ STEM < "不" >,
     SYNSEM.LOCAL.CAT.POSTHEAD -,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
-    SYNSEM [ LKEYS.KEYREL.PRED "_不_r_rel",
+    SYNSEM [ LKEYS.KEYREL.PRED _bu_x_rel,
 	     LOCAL.CAT.HEAD.MOD < [ LOCAL [ CONT.HOOK.INDEX.E.ASPECT non-aspect, 
 		                            CAT.HEAD.EXISTV - ] ] > ],
     TRAITS native_token_list ].
@@ -432,7 +432,7 @@
   [ STEM < "不起" >,
     SYNSEM.LOCAL.CAT.POSTHEAD +,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
-    SYNSEM [ LKEYS.KEYREL.PRED "_不起_r_rel",
+    SYNSEM [ LKEYS.KEYREL.PRED _buqi_x_rel,
 	     LOCAL.CAT.HEAD.MOD < [ LOCAL [ CONT.HOOK.INDEX.E.ASPECT non-aspect, 
 		                            CAT.HEAD.EXISTV - ] ] > ],
     TRAITS native_token_list ].
@@ -440,19 +440,19 @@
 不_polar_basic_r := adv_-_polar2_basic_le &
   [ STEM < "不" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_不_r_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _bu_polar_x_rel,
     TRAITS native_token_list ].
 
 不_polar_contracted_r := adv_-_polar2_contracted_le &
   [ STEM < "不" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_不_r_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _bu_polar_x_rel,
     TRAITS native_token_list ].
 
 不_polar_ab-not-ab_r := adv_-_polar2_ab-not-ab_le &
   [ STEM < "不" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_不_polar_ab-not-ab_r",
+    SYNSEM.LKEYS.KEYREL.PRED _bu_polar_x_rel,
     TRAITS native_token_list ].
 
 没_r := adv_-_neg_le &
@@ -460,25 +460,25 @@
     SYNSEM.LOCAL.CAT.POSTHEAD -,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
     SYNSEM [ LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT imperfective ] >,
-	     LKEYS.KEYREL.PRED "_没_r_rel" ],
+	     LKEYS.KEYREL.PRED _mei_x_rel ],
     TRAITS native_token_list ].
 
 没_polar_basic_r := adv_-_polar_basic_le &
   [ STEM < "没" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_没_r_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _mei_polar_x_rel,
     TRAITS native_token_list ].
 
 没_polar_contracted_r := adv_-_polar_contracted_le &
   [ STEM < "没" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_没_r_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _mei_polar_x_rel,
     TRAITS native_token_list ].
 
 没_polar_ab-not-ab_r := adv_-_polar_ab-not-ab_le &
   [ STEM < "没" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_没_r_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _mei_polar_x_rel,
     TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;
@@ -565,25 +565,25 @@
 的_ASSOC_d := x_-_poss-de_le &
  [ STEM < "的" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_的_n_demons_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _de_demons_rel,
     TRAITS native_token_list ].
 
 的_nominalizer_n := x_-_nom-de_le &
   [ STEM < "的" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_的_n_nom_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _de_nom_rel,
     TRAITS native_token_list ].
 
 之_ASSOC_d := x_-_poss-de_le &
  [ STEM < "之" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "之", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_之_n_demons_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _zhi_demons_rel,
     TRAITS native_token_list ].
 
 之_nominalizer_n := x_-_nom-de_le &
   [ STEM < "之" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "之", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_之_n_nom_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _zhi_nom_rel,
     TRAITS native_token_list ].
 
 所_marker := suo-marker &

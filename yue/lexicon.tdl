@@ -283,24 +283,24 @@ question-marker := punctuation &
 大家_n := n_-_pr-q_le &
  [ STEM < "大家" >,
    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
-	    LKEYS [ ALTKEYREL.PRED "every_q_rel" ] ],
+	    LKEYS [ ALTKEYREL.PRED every_q_rel	 ] ],
    TRAITS native_token_list ].
 
 有人_n := n_-_pr-q_le &
  [ STEM < "有人" >,
    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY human,
-	    LKEYS [ ALTKEYREL.PRED "some_q_rel" ] ],
+	    LKEYS [ ALTKEYREL.PRED some_q_rel ] ],
    TRAITS native_token_list ].
 
 一切_n := n_-_pr-q_le &
  [ STEM < "一切" >,
    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate,
-	    LKEYS [ ALTKEYREL.PRED "every_q_rel" ] ],
+	    LKEYS [ ALTKEYREL.PRED every_q_rel ] ],
    TRAITS native_token_list ].
 
 有啲_n := n_-_pr-q_le &
  [ STEM < "有啲" >,
-   SYNSEM [ LKEYS [ ALTKEYREL.PRED "some_q_rel" ] ],
+   SYNSEM [ LKEYS [ ALTKEYREL.PRED some_q_rel ] ],
    TRAITS native_token_list ].
 
 狗_n := n_-_c_le &
@@ -310,14 +310,12 @@ question-marker := punctuation &
 
 馬_n := n_-_c_le &
   [ STEM < "馬" >,
-    SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 匹_x_rel,
-	     LKEYS.KEYREL.PRED "_馬_n_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_馬_n_rel" ],
     TRAITS native_token_list ]. 
 
 電腦_n := n_-_c_le & 
   [ STEM < "電腦" >,
-    SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY 台_x_rel,
-	     LKEYS.KEYREL.PRED "_電腦_n_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_電腦_n_rel" ],
     TRAITS native_token_list ].
 
 棋_n := n_-_c_le & 
@@ -828,37 +826,37 @@ question-marker := punctuation &
 
 個_cl := c_-_le &
   [ STEM < "個" >,
-    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    SYNSEM.LKEYS.KEYREL.PRED _個_x_rel,
     TRAITS native_token_list ].
 
 枝_cl := c_-_le &
   [ STEM < "枝" >,
-    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    SYNSEM.LKEYS.KEYREL.PRED _枝_x_rel,
     TRAITS native_token_list ].
 
 隻_cl := c_-_le &
   [ STEM < "隻" >,
-    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    SYNSEM.LKEYS.KEYREL.PRED _隻_x_rel,
     TRAITS native_token_list ].
 
 匹_cl := c_-_le &
   [ STEM < "匹" >,
-    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    SYNSEM.LKEYS.KEYREL.PRED _匹_x_rel,
     TRAITS native_token_list ].
 
 件_cl := c_-_le &
   [ STEM < "件" >,
-    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    SYNSEM.LKEYS.KEYREL.PRED _件_x_rel,
     TRAITS native_token_list ].
 
 條_cl := c_-_le &
   [ stem <"條">,
-    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    SYNSEM.LKEYS.KEYREL.PRED _條_x_rel,
     TRAITS native_token_list ].
 
 台_cl := c_-_le & 
   [ stem <"台">,
-    SYNSEM.LKEYS.KEYREL.PRED classifier_x_rel,
+    SYNSEM.LKEYS.KEYREL.PRED _台_x_rel,
     TRAITS native_token_list ].
 
 ;; 啲:= classifier-quant-lex &
@@ -892,7 +890,7 @@ question-marker := punctuation &
 
 唔好_v := adv_-_imp_le &
 [ STEM <"唔好">,
-  SYNSEM.LKEYS.KEYREL.PRED "neg_x_rel",
+  SYNSEM.LKEYS.KEYREL.PRED neg_x_rel,
     TRAITS native_token_list ].
 
 係_v := v_np_cop_le &
@@ -916,84 +914,84 @@ question-marker := punctuation &
 呢_d := d_-_d-prox_le &
   [ STEM < "呢" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
-	     LKEYS.KEYREL.PRED "_呢_n_demons_rel" ],
+	     LKEYS.KEYREL.PRED prox_demons_rel ],
     TRAITS native_token_list ].
 
 嗰_d := d_-_d-dist_le &
   [ STEM < "嗰" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
-	     LKEYS.KEYREL.PRED "_嗰_n_demons_rel" ],
+	     LKEYS.KEYREL.PRED dist_demons_rel ],
     TRAITS native_token_list ].
 
 呢啲_d := d_-_d-prox_le &
   [ STEM < "呢啲" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "_呢啲_n_demons_rel" ],
+	     LKEYS.KEYREL.PRED prox_demons_rel ],
     TRAITS native_token_list ].
 
 嗰啲_d := d_-_d-dist_le &
   [ STEM < "嗰啲" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "_嗰啲_n_demons_rel" ],
+	     LKEYS.KEYREL.PRED dist_demons_rel ],
     TRAITS native_token_list ].
 
 每_d := d_-_le &
   [ STEM < "每" >,
-	SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
+	SYNSEM.LKEYS.KEYREL.PRED every_q_rel,
     TRAITS native_token_list ].
 	
 所有_d := d_-_le &
   [ STEM < "所有" >,
-    SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED every_q_rel,
     TRAITS native_token_list ].
 
 某_d := d_-_le &
   [ STEM < "某" >,
-    SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED some_q_rel,
     TRAITS native_token_list ].
 	
 啲_d := d_-_le &
   [ STEM < "啲" >,
-    SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED some_q_rel,
     TRAITS native_token_list ].
 
 一啲_d := d_-_le &
   [ STEM < "一啲" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "some_q_rel" ],
+	     LKEYS.KEYREL.PRED some_q_rel ],
     TRAITS native_token_list ].
 
 一種_d := d_-_le &
   [ STEM < "一種" >,
-    SYNSEM.LKEYS.KEYREL.PRED "some_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED some_q_rel,
     TRAITS native_token_list ].
 
 有啲_d := d_-_le &
   [ STEM < "有啲" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "some_q_rel" ],
+	     LKEYS.KEYREL.PRED some_q_rel ],
     TRAITS native_token_list ].
 
 邊_d := d_-_le &
   [ STEM < "邊" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
-	     LKEYS.KEYREL.PRED "which_q_rel" ],
+	     LKEYS.KEYREL.PRED which_q_rel ],
     TRAITS native_token_list ].
 
 邊啲_d := d_-_le &
   [ STEM < "邊啲" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED "which_q_rel" ],
+	     LKEYS.KEYREL.PRED which_q_rel ],
     TRAITS native_token_list ].
 
 乜嘢_d := d_-_le &
   [ STEM < "乜嘢" >,
-    SYNSEM.LKEYS.KEYREL.PRED "which_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED which_q_rel,
 TRAITS native_token_list ].
 
 嘅_ASSOC_d := x_-_poss-de_le &
  [ STEM < "嘅" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_嘅_n_demons_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _嘅_demons_rel,
     TRAITS native_token_list ].
 
 ; 嘅_NOM_nj := nom-adj-lex &
@@ -1003,12 +1001,12 @@ TRAITS native_token_list ].
 
 嘅_nominalizer_n := x_-_nom-de_le &
   [ STEM < "嘅" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_嘅_n_nom_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _嘅_nom_rel,
     TRAITS native_token_list ].
 
 所有_partitive_d := d_-_prt_le &
   [ STEM < "所有" >,
-    SYNSEM.LKEYS.KEYREL.PRED "every_q_rel",
+    SYNSEM.LKEYS.KEYREL.PRED every_q_rel,
     TRAITS native_token_list ].
 
 ;; SSH 2014-09-11: 不 cannot be co-occur with apsectual markers. (*我
@@ -1017,7 +1015,7 @@ TRAITS native_token_list ].
 
 唔_r := adv_-_neg_le &
   [ STEM < "唔" >,
-    SYNSEM [ LKEYS.KEYREL.PRED "_唔_r_rel",
+    SYNSEM [ LKEYS.KEYREL.PRED _唔_x_rel,
 	     LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT non-aspect ] > ],
     TRAITS native_token_list ].
 
@@ -1486,12 +1484,12 @@ comma_c := conj_-_le &
 冇_r := adv_-_neg_le &
   [ STEM < "冇" >,
     SYNSEM [ LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT imperfective ] >,
-	     LKEYS.KEYREL.PRED "_冇_r_rel" ],
+	     LKEYS.KEYREL.PRED _冇_x_rel ],
     TRAITS native_token_list ].
 
 冇_polar_r := adv_-_polar_basic_le &
   [ STEM < "冇" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_冇_r_rel",
+    SYNSEM.LKEYS.KEYREL.PRED _冇_polar_x_rel,
     TRAITS native_token_list ].
 
 要_v2 := v_np_le &

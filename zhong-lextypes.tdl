@@ -118,7 +118,7 @@ proper-name-lex := basic-one-arg & basic-icons-lex-item &
 				  [ LBL #larg,
 				    ARG0 #index ],
 				  quant-relation &
-				  [ PRED "proper_q_rel",
+				  [ PRED proper_q_rel,
 				    ARG0 #index,
 				    RSTR #harg ] !>,
 			    HCONS <! qeq & 
@@ -158,14 +158,14 @@ basic-pronoun-lex := basic-one-arg & norm-hook-lex-item &
 
 personal-pronoun-lex := basic-pronoun-lex &
   [ SYNSEM.LOCAL.CONT.RELS <! relation, 
-			    [ PRED "pronoun_q_rel" ] !> ].
+			    [ PRED pronoun_q_rel ] !> ].
 
 wh-pronoun := basic-pronoun-lex & 
   [SYNSEM [ LOCAL.CONT [ HOOK [ INDEX #index & [ PNG.PERNUM 3rd ],
                                 ICONS-KEY #icons,
 				CLAUSE-KEY #clause ],
                          RELS <! relation,
-			       [ PRED "which_q_rel" ] !>,
+			       [ PRED which_q_rel ] !>,
                          ICONS <! semantic-focus & #icons &
                                 [ IARG1 #clause,
                                   IARG2 #index ] !> ],
