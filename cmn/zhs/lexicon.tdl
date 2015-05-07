@@ -81536,6 +81536,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_考虑_v_1_rel" ],
     TRAITS native_token_list ].
 
+考虑_v_2 := v_np_le &
+  [ STEM < "考虑" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "考", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_考虑_v_2_rel" ],
+    TRAITS native_token_list ].
+
 考虑到_v_1 := v_s_le &
   [ STEM < "考虑到" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "考", LENGTH more-than-two ],
@@ -107573,4 +107580,17 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "生存者" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "生", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_生存者_n_1_rel",
+    TRAITS native_token_list ].
+
+玩笑_n_1 := n_-_le &
+  [ STEM < "玩笑" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "玩", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_玩笑_n_1_rel",
+    TRAITS native_token_list ].
+
+开玩笑_v_1 := v_-_le &
+  [ STEM < "开玩笑" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "开", LENGTH more-than-two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG no-lzg,
+             LKEYS.KEYREL.PRED "_开玩笑_v_1_rel" ],
     TRAITS native_token_list ].

@@ -1600,7 +1600,7 @@ exp_aspect-lex-rule := _v_aspect-lex-rule &
 tentative-lex-rule := infl-cat-change-only-lex-rule & no-ccont-lex-rule & 
  [ SYNSEM [ ASPECTED -,
 	    LOCAL [ CAT [ MC luk,
-			  HEAD #head, 
+			  HEAD #head & [ LZG no-lzg ], 
 			  VAL #val, 
 			  MKG #mkg, 
 			  HC-LIGHT #light, 
