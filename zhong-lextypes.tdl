@@ -30,8 +30,8 @@ honorific-hearer-lex-item := one-icons-lex-item &
   [ SYNSEM.LOCAL.CONT [ HOOK [ INDEX #index,
 			       SPEAKER-KEY #skey,
 			       HEARER-KEY #index ],
-			ICONS <! higher & [ IARG1 #skey,
-					    IARG2 #index ] !> ] ].
+			ICONS <! higher & [ IARG1 #index,
+					    IARG2 #skey ] !> ] ].
 
 
 no-spr-no-spec-lex-item := lex-item & 
@@ -153,7 +153,7 @@ basic-pronoun-lex := basic-one-arg & norm-hook-lex-item &
 			    HCONS <! qeq & 
 				   [ HARG #harg, 
 				     LARG #larg ] !> ] ],
-	     LKEYS.KEYREL noun-relation & #rel & [ PRED "pron_rel" ] ] ].
+	     LKEYS.KEYREL noun-relation & #rel & [ PRED pron_rel ] ] ].
 
 
 personal-pronoun-lex := basic-pronoun-lex &
@@ -263,7 +263,7 @@ partitive-lex := basic-one-arg & no-icons-lex-item &
 				    RSTR #harg ],
 				  relation &
 				  [ LBL #larg,
-				    PRED "generic-nom-rel",
+				    PRED generic_nom_rel,
 				    ARG0 #index ] !>,
 			    HCONS <! qeq & 
 				   [ HARG #harg,
@@ -971,7 +971,7 @@ poss-det-lex := basic-determiner-lex &
                    SPEC < [ LOCAL.CONT.HOOK.INDEX #index2 ] > ],
              CONT [ HOOK.INDEX #index2,
                 RELS <! #rel, [LBL #lbl,
-                       PRED "poss_rel",
+                       PRED poss_rel,
                        ARG1 #index1,
                        ARG2 #index2 ] !> ] ],
          NON-LOCAL.SLASH 0-dlist,
@@ -1775,7 +1775,7 @@ vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule &
     C-CONT [ HOOK #hook,
              ICONS <! !>,
              RELS <! [ LBL #ltop,
-                       PRED "vp-ellipsis-rel",
+                       PRED vp_ellipsis_rel,
                        ARG1 #xarg ] !> ] ].
 
 

@@ -101,6 +101,10 @@ demons_rel := predsort.
 prox_demons_rel := demons_rel.
 dist_demons_rel := demons_rel.
 
+pron_rel := predsort.
+poss_rel := predsort.
+generic_nom_rel := predsort.
+vp_ellipsis_rel := predsort.
 
 cl_x_rel := predsort.
 
@@ -112,6 +116,7 @@ nm_rel := predsort.
 measure_x_rel := predsort.
 bridge_x_rel := predsort.
 temporal_x_rel := predsort.
+
 
 +vj :+ 
    [ STATIVE luk,
@@ -928,7 +933,7 @@ basic-bare-nominal-phrase := unary-phrase &
                                       COMPS < > ],
                                 NONSUBJ #ns ] ] >,
     C-CONT [ RELS <! noun-relation &
-                   [ PRED "generic_nom_rel",
+                   [ PRED generic_nom_rel,
                      LBL #ltop,
                      ARG0 #index ] !>,
              HCONS <! !>,
@@ -1419,10 +1424,10 @@ utterance-phrase := head-valence-phrase & head-only &
                     LTOP #ltop ],
 	     RELS <! !>, 
 	     HCONS <! !>,
-	     ICONS <! addressor & [ IARG1 #index,
-				    IARG2 #speaker ], 
-		      addressee & [ IARG1 #index,
-				    IARG2 #hearer ] !> ] ].
+	     ICONS <! addressor & [ IARG1 #speaker,
+				    IARG2 #index ], 
+		      addressee & [ IARG1 #hearer,
+				    IARG2 #index ] !> ] ].
 
 lex-item :+ [ SYNSEM.UTTERED na ].
 coord-phrase :+ 
