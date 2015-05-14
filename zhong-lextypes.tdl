@@ -1181,11 +1181,12 @@ ab-not-ab-bu-adv-lex := ab-not-ab-adv-lex &
 basic-adjective-lex :+ basic-icons-lex-item &
   [ SYNSEM.PAREN - ].
 
-basic-attr-adj-lex := basic-int-mod-adj-lex & basic-icons-lex-item &
+basic-attr-adj-lex := basic-int-mod-adj-lex & 
   [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ LOCAL [ CAT.HEAD noun,
 						CONT.HOOK.INDEX #index ] ] > ],
 		     CONT [ HOOK.INDEX #arg0,
-			    RELS <! #rel !> ] ], 
+			    RELS <! #rel !>,
+			    ICONS <! !> ] ], 
 	     LKEYS.KEYREL #rel & 
 		   [ ARG0 #arg0, 
 		     ARG1 #index ] ] ].
@@ -1597,7 +1598,7 @@ exp_aspect-lex-rule := _v_aspect-lex-rule &
 
 
 ;; SSH 2015-04-30: reduplication of verbs
-tentative-lex-rule := infl-cat-change-only-lex-rule & no-ccont-lex-rule & 
+tentative-lex-rule := infl-cat-change-only-lex-rule & 
  [ SYNSEM [ ASPECTED -,
 	    LOCAL [ CAT [ MC luk,
 			  HEAD #head & [ LZG no-lzg ], 

@@ -191,8 +191,8 @@ utt-label := label &
 		      LOCAL [ CAT [ HEAD +vjrpc,
 				    POSTHEAD +,
 				    VAL [ COMPS < >,
-					  SUBJ < > ] ] ],
-		      COORD-STRAT "" ], 
+					  SUBJ < > ] ],
+  		              COORD-STRAT "" ] ], 
              LABEL-NAME "UTT"].
 
 s-top-label := label &

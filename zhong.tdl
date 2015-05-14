@@ -1418,7 +1418,7 @@ utterance-phrase := head-valence-phrase & head-only &
 						   [ FORM finite ],
 					       VAL #val ],
 					 CONT.HOOK [ INDEX #index,
-						     LTOP #larg ] ],
+						     LTOP #ltop ] ],
 				 NON-LOCAL.SLASH 0-dlist ] ],
     C-CONT [ HOOK [ INDEX #index,
                     LTOP #ltop ],
@@ -1450,12 +1450,12 @@ basic-binary-phrase :+
   [ SYNSEM [ UTTERED -,
 	     LOCAL.CONT.HOOK [ SPEAKER-KEY #skey,
 			       HEARER-KEY #hkey ] ],
-    HEAD-DTR.SYNSEM [ UTTERED na-or--,
+    ARGS < [ SYNSEM [ UTTERED na-or--,
 		      LOCAL.CONT.HOOK [ SPEAKER-KEY #skey,
-					HEARER-KEY #hkey ] ],
-    NON-HEAD-DTR.SYNSEM [ UTTERED na-or--,
+					HEARER-KEY #hkey ] ] ],
+	   [ SYNSEM [ UTTERED na-or--,
 		      LOCAL.CONT.HOOK [ SPEAKER-KEY #skey,
-					HEARER-KEY #hkey ] ] ].
+					HEARER-KEY #hkey ] ] ] > ]. 
 unary-phrase :+
   [ SYNSEM.LOCAL.CONT.HOOK [ SPEAKER-KEY #skey,
 			     HEARER-KEY #hkey ],

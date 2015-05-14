@@ -2620,7 +2620,7 @@
 ;; non-canonical classifiers
 ;; These items can be parsed, but not be generated. 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+#|
 挂_cl := c_-_le &
   [ STEM < "挂" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "挂", LENGTH one ],
@@ -5892,3 +5892,4 @@
     TRAITS native_token_list ].
 
 
+|#

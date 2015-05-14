@@ -1707,10 +1707,6 @@ ellipsis-marker_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "院_cl" ].
 
-(口+迷)_cl_gr := generator_rule &
-[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
-  FLAGS.TRIGGER "(口+迷)_cl" ].
-
 弓_cl_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "弓_cl" ].
