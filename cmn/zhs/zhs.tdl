@@ -453,7 +453,36 @@ _弯_x_rel := cl_x_rel.
 _柄_x_rel := cl_x_rel.
 _茎_x_rel := cl_x_rel.
 _阕_x_rel := cl_x_rel.
-
+_捆_x_rel := cl_x_rel.
+_毫克_x_rel := cl_x_rel.
+_瓣_x_rel := cl_x_rel.
+_客_x_rel := cl_x_rel.
+_华氏度_x_rel := cl_x_rel.
+_盒_x_rel := cl_x_rel.
+_升_x_rel := cl_x_rel.
+_市尺_x_rel := cl_x_rel.
+_吨公里_x_rel := cl_x_rel.
+_纳米_x_rel := cl_x_rel.
+_欧姆_x_rel := cl_x_rel.
+_摩尔_x_rel := cl_x_rel.
+_牛顿_x_rel := cl_x_rel.
+_立方米秒_x_rel := cl_x_rel.
+_盅_x_rel := cl_x_rel.
+_电子伏_x_rel := cl_x_rel.
+_坛_x_rel := cl_x_rel.
+_坛_x_rel := cl_x_rel.
+_件次_x_rel := cl_x_rel.
+_忽米_x_rel := cl_x_rel.
+_卡路里_x_rel := cl_x_rel.
+_辆次_x_rel := cl_x_rel.
+_分贝_x_rel := cl_x_rel.
+_车次_x_rel := cl_x_rel.
+_盘_x_rel := cl_x_rel.
+_盘_x_rel := cl_x_rel.
+_大卡_x_rel := cl_x_rel.
+_秒立方米_x_rel := cl_x_rel.
+_英两_x_rel := cl_x_rel.
+_公寸_x_rel := cl_x_rel.
 
 
 #|

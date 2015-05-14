@@ -2614,11 +2614,194 @@
     SYNSEM.LKEYS.KEYREL.PRED _阕_x_rel,
     TRAITS native_token_list ].
 
+捆_cl := c_-_le &
+  [ STEM < "捆" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "捆", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED _捆_x_rel,
+    TRAITS native_token_list ].
+
+毫克_cl := c_-_le &
+  [ STEM < "毫克" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "毫", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _毫克_x_rel,
+    TRAITS native_token_list ].
+
+瓣_cl := c_-_le &
+  [ STEM < "瓣" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "瓣", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED _瓣_x_rel,
+    TRAITS native_token_list ].
+
+客_cl := c_-_le &
+  [ STEM < "客" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "客", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED _客_x_rel,
+    TRAITS native_token_list ].
+
+华氏度_cl := c_-_le &
+  [ STEM < "华氏度" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "华", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED _华氏度_x_rel,
+    TRAITS native_token_list ].
+
+盒儿_cl := c_-_le &
+  [ STEM < "盒儿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "盒", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _盒_x_rel,
+    TRAITS native_token_list ].
+
+升_cl := c_-_le &
+  [ STEM < "升" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED _升_x_rel,
+    TRAITS native_token_list ].
+
+市尺_cl := c_-_le &
+  [ STEM < "市尺" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "市", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _市尺_x_rel,
+    TRAITS native_token_list ].
+
+吨公里_cl := c_-_le &
+  [ STEM < "吨公里" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吨", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED _吨公里_x_rel,
+    TRAITS native_token_list ].
+
+纳米_cl := c_-_le &
+  [ STEM < "纳米" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "纳", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _纳米_x_rel,
+    TRAITS native_token_list ].
+
+欧姆_cl := c_-_le &
+  [ STEM < "欧姆" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "欧", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _欧姆_x_rel,
+    TRAITS native_token_list ].
+
+摩尔_cl := c_-_le &
+  [ STEM < "摩尔" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "摩", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _摩尔_x_rel,
+    TRAITS native_token_list ].
+
+牛顿_cl := c_-_le &
+  [ STEM < "牛顿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "牛", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _牛顿_x_rel,
+    TRAITS native_token_list ].
+
+立方米秒_cl := c_-_le &
+  [ STEM < "立方米秒" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "立", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED _立方米秒_x_rel,
+    TRAITS native_token_list ].
+
+盅_cl := c_-_le &
+  [ STEM < "盅" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "盅", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED _盅_x_rel,
+    TRAITS native_token_list ].
+
+电子伏_cl := c_-_le &
+  [ STEM < "电子伏" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "电", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED _电子伏_x_rel,
+    TRAITS native_token_list ].
+
+坛_cl := c_-_le &
+  [ STEM < "坛" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "坛", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED _坛_x_rel,
+    TRAITS native_token_list ].
+
+坛子_cl := c_-_le &
+  [ STEM < "坛子" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "坛", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _坛_x_rel,
+    TRAITS native_token_list ].
+
+件次_cl := c_-_le &
+  [ STEM < "件次" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "件", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _件次_x_rel,
+    TRAITS native_token_list ].
+
+忽米_cl := c_-_le &
+  [ STEM < "忽米" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "忽", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _忽米_x_rel,
+    TRAITS native_token_list ].
+
+卡路里_cl := c_-_le &
+  [ STEM < "卡路里" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "卡", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED _卡路里_x_rel,
+    TRAITS native_token_list ].
+
+辆次_cl := c_-_le &
+  [ STEM < "辆次" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "辆", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _辆次_x_rel,
+    TRAITS native_token_list ].
+
+分贝_cl := c_-_le &
+  [ STEM < "分贝" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "分", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _分贝_x_rel,
+    TRAITS native_token_list ].
+
+车次_cl := c_-_le &
+  [ STEM < "车次" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "车", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _车次_x_rel,
+    TRAITS native_token_list ].
+
+盘子_cl := c_-_le &
+  [ STEM < "盘子" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "盘", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _盘_x_rel,
+    TRAITS native_token_list ].
+
+盘儿_cl := c_-_le &
+  [ STEM < "盘儿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "盘", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _盘_x_rel,
+    TRAITS native_token_list ].
+
+大卡_cl := c_-_le &
+  [ STEM < "大卡" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "大", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _大卡_x_rel,
+    TRAITS native_token_list ].
+
+秒立方米_cl := c_-_le &
+  [ STEM < "秒立方米" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "秒", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED _秒立方米_x_rel,
+    TRAITS native_token_list ].
+
+英两_cl := c_-_le &
+  [ STEM < "英两" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "英", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _英两_x_rel,
+    TRAITS native_token_list ].
+
+公寸_cl := c_-_le &
+  [ STEM < "公寸" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "公", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _公寸_x_rel,
+    TRAITS native_token_list ].
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; LMC & SSH 2015-05-06
 ;; non-canonical classifiers
 ;; These items can be parsed, but not be generated. 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ZZF 2015-05-13 commented out these entries as they need to be reviewed.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #|
 挂_cl := c_-_le &
@@ -2849,12 +3032,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _书架子_x_rel,
     TRAITS native_token_list ].
 
-客_cl := c_-_le &
-  [ STEM < "客" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "客", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _客_x_rel,
-    TRAITS native_token_list ].
-
 棒子_cl := c_-_le &
   [ STEM < "棒子" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "棒子", LENGTH two ],
@@ -2913,18 +3090,6 @@
   [ STEM < "秆" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "秆", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _秆_x_rel,
-    TRAITS native_token_list ].
-
-华氏度_cl := c_-_le &
-  [ STEM < "华氏度" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "华氏度", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED _华氏度_x_rel,
-    TRAITS native_token_list ].
-
-盒儿_cl := c_-_le &
-  [ STEM < "盒儿" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "盒儿", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _盒儿_x_rel,
     TRAITS native_token_list ].
 
 捍_cl := c_-_le &
@@ -3131,18 +3296,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _荡_x_rel,
     TRAITS native_token_list ].
 
-盅_cl := c_-_le &
-  [ STEM < "盅" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "盅", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _盅_x_rel,
-    TRAITS native_token_list ].
-
-电子伏_cl := c_-_le &
-  [ STEM < "电子伏" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "电子伏", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED _电子伏_x_rel,
-    TRAITS native_token_list ].
-
 畈_cl := c_-_le &
   [ STEM < "畈" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "畈", LENGTH one ],
@@ -3203,12 +3356,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _棱_x_rel,
     TRAITS native_token_list ].
 
-亿_cl := c_-_le &
-  [ STEM < "亿" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "亿", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _亿_x_rel,
-    TRAITS native_token_list ].
-
 指_cl := c_-_le &
   [ STEM < "指" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "指", LENGTH one ],
@@ -3249,18 +3396,6 @@
   [ STEM < "庚" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "庚", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _庚_x_rel,
-    TRAITS native_token_list ].
-
-坛_cl := c_-_le &
-  [ STEM < "坛" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "坛", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _坛_x_rel,
-    TRAITS native_token_list ].
-
-坛子_cl := c_-_le &
-  [ STEM < "坛子" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "坛子", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _坛子_x_rel,
     TRAITS native_token_list ].
 
 春_cl := c_-_le &
@@ -3317,12 +3452,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _猴猴儿_x_rel,
     TRAITS native_token_list ].
 
-升_cl := c_-_le &
-  [ STEM < "升" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "升", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _升_x_rel,
-    TRAITS native_token_list ].
-
 囊_cl := c_-_le &
   [ STEM < "囊" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "囊", LENGTH one ],
@@ -3339,12 +3468,6 @@
   [ STEM < "返" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "返", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _返_x_rel,
-    TRAITS native_token_list ].
-
-大卡_cl := c_-_le &
-  [ STEM < "大卡" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "大卡", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _大卡_x_rel,
     TRAITS native_token_list ].
 
 骨搭_cl := c_-_le &
@@ -3375,12 +3498,6 @@
   [ STEM < "扛" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "扛", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _扛_x_rel,
-    TRAITS native_token_list ].
-
-卡路里_cl := c_-_le &
-  [ STEM < "卡路里" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "卡路里", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED _卡路里_x_rel,
     TRAITS native_token_list ].
 
 称_cl := c_-_le &
@@ -3443,12 +3560,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _钮_x_rel,
     TRAITS native_token_list ].
 
-秒立方米_cl := c_-_le &
-  [ STEM < "秒立方米" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "秒立方米", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED _秒立方米_x_rel,
-    TRAITS native_token_list ].
-
 掯子_cl := c_-_le &
   [ STEM < "掯子" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "掯子", LENGTH two ],
@@ -3459,12 +3570,6 @@
   [ STEM < "搤" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "搤", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _搤_x_rel,
-    TRAITS native_token_list ].
-
-辆次_cl := c_-_le &
-  [ STEM < "辆次" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "辆次", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _辆次_x_rel,
     TRAITS native_token_list ].
 
 水_cl := c_-_le &
@@ -3485,12 +3590,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _殴_x_rel,
     TRAITS native_token_list ].
 
-件次_cl := c_-_le &
-  [ STEM < "件次" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "件次", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _件次_x_rel,
-    TRAITS native_token_list ].
-
 担子_cl := c_-_le &
   [ STEM < "担子" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "担子", LENGTH two ],
@@ -3507,24 +3606,6 @@
   [ STEM < "旅" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "旅", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _旅_x_rel,
-    TRAITS native_token_list ].
-
-捆_cl := c_-_le &
-  [ STEM < "捆" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "捆", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _捆_x_rel,
-    TRAITS native_token_list ].
-
-毫克_cl := c_-_le &
-  [ STEM < "毫克" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "毫克", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _毫克_x_rel,
-    TRAITS native_token_list ].
-
-瓣_cl := c_-_le &
-  [ STEM < "瓣" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "瓣", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _瓣_x_rel,
     TRAITS native_token_list ].
 
 坎_cl := c_-_le &
@@ -3731,18 +3812,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _搿_x_rel,
     TRAITS native_token_list ].
 
-十_cl := c_-_le &
-  [ STEM < "十" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _十_x_rel,
-    TRAITS native_token_list ].
-
-忽米_cl := c_-_le &
-  [ STEM < "忽米" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "忽米", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _忽米_x_rel,
-    TRAITS native_token_list ].
-
 漠_cl := c_-_le &
   [ STEM < "漠" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "漠", LENGTH one ],
@@ -3885,18 +3954,6 @@
   [ STEM < "锤" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "锤", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _锤_x_rel,
-    TRAITS native_token_list ].
-
-盘子_cl := c_-_le &
-  [ STEM < "盘子" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "盘子", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _盘子_x_rel,
-    TRAITS native_token_list ].
-
-盘儿_cl := c_-_le &
-  [ STEM < "盘儿" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "盘儿", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _盘儿_x_rel,
     TRAITS native_token_list ].
 
 花_cl := c_-_le &
@@ -4043,12 +4100,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _絫_x_rel,
     TRAITS native_token_list ].
 
-百_cl := c_-_le &
-  [ STEM < "百" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "百", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _百_x_rel,
-    TRAITS native_token_list ].
-
 樁_cl := c_-_le &
   [ STEM < "樁" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "樁", LENGTH one ],
@@ -4083,18 +4134,6 @@
   [ STEM < "程子" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "程子", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED _程子_x_rel,
-    TRAITS native_token_list ].
-
-分贝_cl := c_-_le &
-  [ STEM < "分贝" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "分贝", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _分贝_x_rel,
-    TRAITS native_token_list ].
-
-车次_cl := c_-_le &
-  [ STEM < "车次" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "车次", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _车次_x_rel,
     TRAITS native_token_list ].
 
 鼓_cl := c_-_le &
@@ -4547,12 +4586,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _唡_x_rel,
     TRAITS native_token_list ].
 
-立方米秒_cl := c_-_le &
-  [ STEM < "立方米秒" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "立方米秒", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED _立方米秒_x_rel,
-    TRAITS native_token_list ].
-
 墨_cl := c_-_le &
   [ STEM < "墨" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "墨", LENGTH one ],
@@ -4799,12 +4832,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _墩_x_rel,
     TRAITS native_token_list ].
 
-牛顿_cl := c_-_le &
-  [ STEM < "牛顿" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "牛顿", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _牛顿_x_rel,
-    TRAITS native_token_list ].
-
 钱_cl := c_-_le &
   [ STEM < "钱" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "钱", LENGTH one ],
@@ -4827,12 +4854,6 @@
   [ STEM < "殿" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "殿", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _殿_x_rel,
-    TRAITS native_token_list ].
-
-过_cl := c_-_le &
-  [ STEM < "过" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "过", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _过_x_rel,
     TRAITS native_token_list ].
 
 豆_cl := c_-_le &
@@ -4907,12 +4928,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _弓_x_rel,
     TRAITS native_token_list ].
 
-欧姆_cl := c_-_le &
-  [ STEM < "欧姆" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "欧姆", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _欧姆_x_rel,
-    TRAITS native_token_list ].
-
 觳_cl := c_-_le &
   [ STEM < "觳" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "觳", LENGTH one ],
@@ -4935,12 +4950,6 @@
   [ STEM < "揪" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "揪", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _揪_x_rel,
-    TRAITS native_token_list ].
-
-不_cl := c_-_le &
-  [ STEM < "不" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _不_x_rel,
     TRAITS native_token_list ].
 
 课时_cl := c_-_le &
@@ -5085,12 +5094,6 @@
   [ STEM < "剪子" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "剪子", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED _剪子_x_rel,
-    TRAITS native_token_list ].
-
-摩尔_cl := c_-_le &
-  [ STEM < "摩尔" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "摩尔", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _摩尔_x_rel,
     TRAITS native_token_list ].
 
 关_cl := c_-_le &
@@ -5411,18 +5414,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _县_x_rel,
     TRAITS native_token_list ].
 
-英两_cl := c_-_le &
-  [ STEM < "英两" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "英两", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _英两_x_rel,
-    TRAITS native_token_list ].
-
-公寸_cl := c_-_le &
-  [ STEM < "公寸" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "公寸", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _公寸_x_rel,
-    TRAITS native_token_list ].
-
 厾_cl := c_-_le &
   [ STEM < "厾" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "厾", LENGTH one ],
@@ -5705,12 +5696,6 @@
     SYNSEM.LKEYS.KEYREL.PRED _轱辘儿_x_rel,
     TRAITS native_token_list ].
 
-纳米_cl := c_-_le &
-  [ STEM < "纳米" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "纳米", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _纳米_x_rel,
-    TRAITS native_token_list ].
-
 壥_cl := c_-_le &
   [ STEM < "壥" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "壥", LENGTH one ],
@@ -5831,28 +5816,10 @@
     SYNSEM.LKEYS.KEYREL.PRED _锥子_x_rel,
     TRAITS native_token_list ].
 
-吨公里_cl := c_-_le &
-  [ STEM < "吨公里" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吨公里", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED _吨公里_x_rel,
-    TRAITS native_token_list ].
-
 笢子_cl := c_-_le &
   [ STEM < "笢子" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "笢子", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED _笢子_x_rel,
-    TRAITS native_token_list ].
-
-市尺_cl := c_-_le &
-  [ STEM < "市尺" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "市尺", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED _市尺_x_rel,
-    TRAITS native_token_list ].
-
-千_cl := c_-_le &
-  [ STEM < "千" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "千", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _千_x_rel,
     TRAITS native_token_list ].
 
 曶_cl := c_-_le &
@@ -5890,6 +5857,5 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乡", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _乡_x_rel,
     TRAITS native_token_list ].
-
 
 |#
