@@ -857,8 +857,9 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
 head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
   [ SYNSEM.LOCAL.CAT [ HEAD.MEASURE -,
 		       VAL.COMPS #spcomps ],
-    HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd,
-			    CONT.HOOK #hook ],
+    HEAD-DTR.SYNSEM [ BOUND na-or--,
+                      LOCAL [ CAT.HEAD +jrpd,
+			      CONT.HOOK #hook ] ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
     C-CONT.HOOK #hook ].
 
