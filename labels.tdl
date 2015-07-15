@@ -177,6 +177,16 @@ pp-label := label &
                                        COMPS < > ] ],
 	      LABEL-NAME "PP" ].
 
+s-slash-np-label := label &
+           [ SYNSEM [ UTTERED na-or--,
+		      LOCAL [ CAT [ HEAD +vjp,
+				    POSTHEAD +,
+				    VAL [ COMPS < >,
+					  SUBJ < > ] ],
+			      COORD-STRAT "" ],
+		      NON-LOCAL.SLASH 1-dlist ],
+             LABEL-NAME "S/NP"].
+
 s-label := label &
            [ SYNSEM [ UTTERED na-or--,
 		      LOCAL [ CAT [ HEAD +vjp,

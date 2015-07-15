@@ -329,6 +329,8 @@ head-comp-phrase :+
     HEAD-DTR.SYNSEM.SPART #spart,
     NON-HEAD-DTR.SYNSEM.BOUND - ].
 
+;; SSH/ZZF 2015-07-15
+head-comp-phrase :+ [ SYNSEM.NON-LOCAL.SLASH 0-dlist ].
 
 ;; SSH 2015-04-16: adp -> prep
 head-2nd-comp-phrase := basic-head-2nd-comp-phrase & head-initial &
@@ -349,6 +351,8 @@ comp-head-final-phrase := basic-head-1st-comp-phrase & head-final &
 ;; For now, exclude time nouns as subjects
 ;; 
 ;; SSH 2014-09-26: Only phrases can be the subjects (phr-synsem)
+;; SSH 2015-07-13: non-rel subj-head and rel subj-head (nonmc)
+;;                 Added [NON-LOCAL.SLASH 0-dlist]
 subj-head-phrase := decl-head-subj-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.MC #mc,
     SYNSEM.SPART #spart,
@@ -356,7 +360,8 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 				VAL [ SPR olist,
 				      COMPS < > ],
 				POSTHEAD + ],
-    HEAD-DTR.SYNSEM.SPART #spart,
+    HEAD-DTR.SYNSEM [ SPART #spart,
+		      NON-LOCAL.SLASH 0-dlist ],
     NON-HEAD-DTR.SYNSEM  [ R-PERIPH na-or--,
 			   INTERJECTED na-or--,
 			   LOCAL [ CAT [ MC +,
@@ -366,12 +371,63 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 			   NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
 				       REL 0-dlist ] ] ].
 
+nmc-subj-head-phrase := basic-head-subj-phrase & head-final &
+  [ SYNSEM.LOCAL.CAT.MC -,
+    SYNSEM.SPART #spart,
+    HEAD-DTR.SYNSEM.LOCAL.CAT [ VAL [ SPR olist,
+				      COMPS < > ],
+				POSTHEAD + ],
+    HEAD-DTR.SYNSEM [ SPART #spart,
+		      NON-LOCAL.SLASH 1-dlist ],
+    NON-HEAD-DTR.SYNSEM  [ R-PERIPH na-or--,
+			   INTERJECTED na-or--,
+			   LOCAL [ CAT [ MC +,
+					 NONSUBJ -,
+					 HEAD.GENERIC na-or--,
+					 VAL.SPR <> ],
+				   CONT.HOOK.INDEX.SORT nontime-s ],
+			   NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
+				       REL 0-dlist ] ] ].
             
 ;; comp-head-phrase requires things that are [ HEAD comp ].
+;; SSH 2015-07-13: relative-clauses
 comp-head-phrase := basic-head-1st-comp-phrase & head-final &
-  [ SYNSEM.LOCAL.CAT.HEAD comp,
-    NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
-			  INTERJECTED na-or-- ] ].
+  [ SYNSEM [ LOCAL.CAT.HEAD comp,
+	     NON-LOCAL.SLASH #slash ],
+    NON-HEAD-DTR [ STYLE strict,
+		   SYNSEM [ R-PERIPH na-or--,
+			    INTERJECTED na-or--,
+			    BOUND na-or--,
+			    NON-LOCAL.SLASH #slash ] ] ].
+
+relative-clause := binary-phrase & phrasal & head-compositional & head-final &
+  [ SYNSEM [ LOCAL [ CAT [ VAL [ COMPS < >,
+                                 SPR < > ] ] ],
+			 NON-LOCAL.SLASH 0-dlist ],
+    NON-HEAD-DTR [ SYNSEM [ LOCAL [ CAT [ HEAD comp,
+					  VAL.COMPS olist ],
+				    CONT.HOOK.INDEX #clause ],
+			    NON-LOCAL [ SLASH 1-dlist &
+					      [ LIST [ FIRST #slash,
+						       REST < > & #last ],
+						LAST #last ],
+					QUE 0-dlist,
+					REL 0-dlist ] ] ], 
+    HEAD-DTR [ SYNSEM canonical-synsem &
+	       [ LOCAL #slash & local &
+			      [ CAT [ HEAD noun & [ GENERIC na-or-- ],
+				      VAL [ SUBJ olist,
+					    COMPS olist,
+					    SPR olist ] ],
+				CONT.HOOK #hook & [ INDEX #target ],
+				CTXT.ACTIVATED + ],
+			NON-LOCAL.SLASH 0-dlist ] ],
+    C-CONT [ HOOK #hook,
+	     RELS <! !>,
+	     HCONS <! !>,
+	     ICONS <! focus-or-topic & [ IARG1 #clause,
+                                         IARG2 #target ] !> ] ].
+
 
 ;; MATRIX REDEFINITION
 ;; SSH 2015-05-07: x_rel and q_rel are defined as types.
@@ -604,19 +660,19 @@ head-filler-phrase := basic-head-filler-phrase & head-final &
     C-CONs-coord-phraseT.HOOK #hook ].
 |#
 
+;; SSH 2015-07-13 : [MC +]
 filler-head-phrase := basic-head-filler-phrase & head-final & 
 		      topic-comment &
   [ SYNSEM [ L-PERIPH +,
 	     LOCAL.CAT [ VAL #val,
-			 MC #mc ] ],
+			 MC + ] ],
     HEAD-DTR.SYNSEM [ L-PERIPH -,
 		      BOUND na-or--,
 		      LOCAL [ CAT [ HEAD verb,
 				    VAL #val & [ SUBJ < >,
 						 COMPS < >,
 						 SPR < >,
-						 SPEC < > ],
-				    MC #mc ],
+						 SPEC < > ] ],
 			      CONT.HOOK #hook & [ INDEX #clause,
 						  CLAUSE-KEY #clause ] ] ],
     NON-HEAD-DTR.SYNSEM [ INTERJECTED na-or--,

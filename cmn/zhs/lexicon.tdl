@@ -45400,12 +45400,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "所",
     TRAITS native_token_list ].
 
-所_r_1 := adv_-_vp-pre_le &
-  [ STEM < "所" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "所", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_所_a_1_rel",
-    TRAITS native_token_list ].
-
 所以_sc := conj_-_sub_le &
   [ STEM < "所以" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "所", LENGTH two ],

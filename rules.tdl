@@ -1,6 +1,6 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
-head-comp := head-comp-phrase & [ STYLE robust ].
+head-comp := head-comp-phrase.
 
 ;; SSH 2015-04-21: The subject cannot be indefinite. 
 ;;subj-head := subj-head-phrase & [ STYLE robust ].
@@ -14,6 +14,9 @@ subj-head-n := subj-head-phrase &
 subj-head-nn := subj-head-phrase &
   [ STYLE robust,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +vjp ].
+
+;; subj-head-phrase for relative clauses
+nmc-subj-head := nmc-subj-head-phrase.
 
 ;;subj-head-nd := subj-head-nondecl-phrase.
 
@@ -55,6 +58,8 @@ comp-head := comp-head-phrase &
   [ STYLE #style,
     HEAD-DTR.STYLE #style ].
 
+rel-cl := relative-clause.
+	  
 ; Rule instances for head-modifier structures. Corresponding types
 ; are defined in matrix.tdl.  The matrix customization script did
 ; not need to add any further constraints, so no corresponding tyes
@@ -150,9 +155,9 @@ comp-head-final := comp-head-final-phrase & [ STYLE robust ].
 
 filler-head := filler-head-phrase & [ STYLE robust ].
 
-extracted-comp := extracted-comp-phrase & [ STYLE robust ].
+extracted-comp := extracted-comp-phrase.
 
-extracted-subj := extracted-subj-phrase & [ STYLE robust ].
+extracted-subj := extracted-subj-phrase.
 
 imper := imperative-phrase & [ STYLE robust ].
 

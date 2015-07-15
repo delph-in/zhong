@@ -2083,8 +2083,8 @@ basic-extracted-comp-phrase := basic-extracted-arg-phrase &
                              MC #mc ],
 		 NON-LOCAL.SLASH #slash ] ],
     C-CONT [ RELS <! !>,
-			 HCONS <! !>,
-			 ICONS <! !> ] ].
+	     HCONS <! !>,
+	     ICONS <! !> ] ].
 
 ; ERB 2004-08-26 Remove [MC -] on mother; probably specific
 ; to analysis of subject extraction for English.

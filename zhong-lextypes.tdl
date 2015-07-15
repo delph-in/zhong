@@ -1000,12 +1000,14 @@ aspect-markers := raise-sem-lex-item & no-icons-lex-item &
 suo-marker := raise-sem-lex-item & no-icons-lex-item &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT [ HEAD marker & [ MOD <> ],
-			   VAL [ COMPS < lex-synsem & 
+			   VAL [ COMPS < phr-synsem & 
 					 [ MODIFIED notmod, 
                                            BOUND -,
 					   LOCAL [ CAT [ MC +,
 							 HEAD verb & [ AUX - ],
-							 VAL.COMPS < [ OPT + ] > ] ] ] >,
+							 VAL [ SUBJ < [] >, 
+							       COMPS < > ] ] ],
+					   NON-LOCAL.SLASH 1-dlist ] >,
 				 SUBJ < >,
 				 SPEC < >,
 				 SPR < > ],
@@ -1778,6 +1780,19 @@ vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule &
              RELS <! [ LBL #ltop,
                        PRED vp_ellipsis_rel,
                        ARG1 #xarg ] !> ] ].
+
+
+;; SSH 2015-07-13: relative marker 的
+de-complementizer := raise-sem-lex-item & no-icons-lex-item &
+  [ SYNSEM [ PAREN -,
+	     LOCAL [ CAT [ HEAD comp & [ MOD <> ],
+			   VAL [ COMPS < [ LOCAL [ CAT [ HEAD +vj,
+							 MC +-or-- ] ],
+					   NON-LOCAL [ SLASH 1-dlist ] ] >,
+				 SUBJ < >,
+				 SPEC < >,
+				 SPR < > ] ] ],
+	     NON-LOCAL non-local ] ].
 
 
 ;; SSH 2015-03-13: Interjections (e.g. 哎. 哦, 嗯, 噢, 哎呀, 嘿)

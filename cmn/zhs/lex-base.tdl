@@ -568,10 +568,15 @@
     SYNSEM.LKEYS.KEYREL.PRED _de_demons_rel,
     TRAITS native_token_list ].
 
-的_nominalizer_n := x_-_nom-de_le &
+;的_nominalizer_n := x_-_nom-de_le &
+;  [ STEM < "的" >,
+;    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
+;    SYNSEM.LKEYS.KEYREL.PRED _de_nom_rel,
+;    TRAITS native_token_list ].
+
+的_complementizer := de-complementizer & 
   [ STEM < "的" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _de_nom_rel,
     TRAITS native_token_list ].
 
 之_ASSOC_d := x_-_poss-de_le &
