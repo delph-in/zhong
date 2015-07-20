@@ -33,20 +33,9 @@ ellipsis-marker_gr := generator_rule &
  [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
    FLAGS.TRIGGER "在_loc" ].
 
-所_marker_gr_1 := arg0e_gtr &
-[ CONTEXT.RELS <! [ ARG1 individual & #i ] !>,
-  FLAGS [ SUBSUME < #i >,
-	  TRIGGER "所_marker" ] ].
-
-所_marker_gr_2 := arg0e_gtr &
-[ CONTEXT.RELS <! [ ARG2 individual & #i ] !>,
-  FLAGS [ SUBSUME < #i >,
-	  TRIGGER "所_marker" ] ].
-
-所_marker_gr_3 := arg0e_gtr &
-[ CONTEXT.RELS <! [ ARG3 individual & #i ] !>,
-  FLAGS [ SUBSUME < #i >,
-	  TRIGGER "所_marker" ] ].
+所_marker_gr := generator_rule &
+ [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+   FLAGS.TRIGGER "所_marker" ].
 
 了_crs_gr := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG0.E.ASPECT imperfective ] !>,
