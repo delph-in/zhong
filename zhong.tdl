@@ -709,7 +709,7 @@ extracted-comp-phrase := basic-extracted-comp-phrase &
 extracted-subj-phrase := basic-extracted-subj-phrase & 
   [ SYNSEM [ MODIFIED #modified,
 	     LOCAL.CAT [ MC -,
-			 VAL.SPEC < [] > ] ],
+			 VAL.SPEC < [] > ] ], 
     HEAD-DTR.SYNSEM [ MODIFIED #modified,
 		      BOUND na-or--,
 		      LOCAL [ CAT [ HEAD +vj,

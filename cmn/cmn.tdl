@@ -25,7 +25,8 @@ basic-pred-adj-lex :+ [ SYNSEM.LOCAL.CAT.HEAD.LZG no-lzg ].
 
 pfv-marker := aspect-markers & 
  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
-				    LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] > ] ].
+				    LOCAL [CONT.HOOK.INDEX.E.ASPECT perfective,
+                                           CAT.HEAD +vj] ] > ] ].
 
 exp-marker := aspect-markers & 
  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT experiential ] > ] ].

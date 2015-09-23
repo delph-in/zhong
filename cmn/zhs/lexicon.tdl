@@ -81777,11 +81777,18 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_聆听_v_1_rel" ],
     TRAITS native_token_list ].
 
-聊_v_1 := v_s_le &
+聊_v_1 := v_-_le &
   [ STEM < "聊" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "聊", LENGTH one ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_聊_v_1_rel" ],
+    TRAITS native_token_list ].
+
+聊_v_2 := v_np_le &
+  [ STEM < "聊" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "聊", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_聊_v_2_rel" ],
     TRAITS native_token_list ].
 
 聊天_v_1 := v_-_le &
@@ -90536,11 +90543,18 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_调高_v_1_rel" ],
     TRAITS native_token_list ].
 
-谈_v_1 := v_s_le &
+谈_v_1 := v_-_le &
   [ STEM < "谈" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "谈", LENGTH one ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_谈_v_1_rel" ],
+    TRAITS native_token_list ].
+
+谈_v_2 := v_np_le &
+  [ STEM < "谈" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "谈", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_谈_v_2_rel" ],
     TRAITS native_token_list ].
 
 谈判_n_1 := n_-_le &

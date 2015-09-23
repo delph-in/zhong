@@ -5,7 +5,7 @@ head-comp := head-comp-phrase.
 ;; SSH 2015-04-21: The subject cannot be indefinite. 
 ;;subj-head := subj-head-phrase & [ STYLE robust ].
 
-;;nominal subjects
+;;nominal subjects ;;zz 2015-09-16 to take out 'STYLE robust,' because it's causing sentences with subject(pronoun) to be 'robust' ==> ask sanghoun
 subj-head-n := subj-head-phrase & 
   [ STYLE robust,
     NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,

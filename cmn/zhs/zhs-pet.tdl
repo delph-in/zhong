@@ -57,7 +57,7 @@
 :include "lex-symbols".
 :include "lex-classifiers".
 :include "lex-numbers".
-:include "lex-bound".
+;;:include "lex-bound".
 :include "lexicon".
 :end :instance.
 
