@@ -1783,11 +1783,13 @@ vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule &
 
 
 ;; SSH 2015-07-13: relative marker 的
+;; ZZF 2015-9-30: subj restriction of the v/adj to stop spurious parses
 de-complementizer := raise-sem-lex-item & no-icons-lex-item &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT [ HEAD comp & [ MOD <> ],
 			   VAL [ COMPS < [ LOCAL [ CAT [ HEAD +vj,
-							 MC +-or-- ] ],
+							 MC +-or--, 
+                                                         VAL [ SUBJ < > ] ] ],
 					   NON-LOCAL [ SLASH 1-dlist ] ] >,
 				 SUBJ < >,
 				 SPEC < >,
