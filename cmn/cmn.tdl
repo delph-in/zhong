@@ -78,7 +78,7 @@ no-spr-classifier-rule-dtr := word-or-lexrule.
 
 _de_demons_rel := demons_rel.
 _zhi_demons_rel := demons_rel.
-
+_de_p_poss_rel := related_p_rel.
 
 _de_nom_rel := nm_rel.
 _zhi_nom_rel := nm_rel.

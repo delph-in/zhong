@@ -494,7 +494,7 @@ _公寸_x_rel := cl_x_rel.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 _挂_x_rel := cl_x_rel.
 _合_x_rel := cl_x_rel.
-_钳子_x_rel := cl_x_rel.
+_钳子_x_rel := cl_x_rel.s
 _短吨_x_rel := cl_x_rel.
 _达因_x_rel := cl_x_rel.
 _料_x_rel := cl_x_rel.

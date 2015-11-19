@@ -263,7 +263,7 @@ partitive-lex := basic-one-arg & no-icons-lex-item &
 				    RSTR #harg ],
 				  relation &
 				  [ LBL #larg,
-				    PRED generic_nom_rel,
+				    PRED generic_n_rel,
 				    ARG0 #index ] !>,
 			    HCONS <! qeq & 
 				   [ HARG #harg,
@@ -971,7 +971,7 @@ poss-det-lex := basic-determiner-lex &
                    SPEC < [ LOCAL.CONT.HOOK.INDEX #index2 ] > ],
              CONT [ HOOK.INDEX #index2,
                 RELS <! #rel, [LBL #lbl,
-                       PRED poss_rel,
+                       PRED poss_p_rel,
                        ARG1 #index1,
                        ARG2 #index2 ] !> ] ],
          NON-LOCAL.SLASH 0-dlist,
@@ -1421,6 +1421,72 @@ adposition-lex := basic-adposition-lex & no-hcons-lex-item &
 	     LKEYS.KEYREL #rel & [ LBL #ltop,
 			           ARG0 #index ] ] ].
 
+de-super-lex := lex-item & 
+  [ SYNSEM [ POSTCOMP +,
+	     LOCAL.CAT [ HEAD prep &
+	                      [ MOD < [ BARE bool,
+                                        LOCAL intersective-mod &
+                                              [ CAT [ HEAD noun,
+                                                      VAL.COMPS < > ] ] ] > ],
+			    VAL [ SPR < >,
+                                  SPEC < >,
+			          COMPS < synsem > ] ] ] ].
+
+de-assoc-lex := de-super-lex & adposition-lex & 
+  [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ BARE -,
+                                        LOCAL.CONT.HOOK [ LTOP #ltop,
+                                                          INDEX #ind ] ] >,
+			   VAL.COMPS < #comps >,
+                           POSTHEAD - ],
+                      CONT.HOOK.LTOP #ltop ],
+             LKEYS.KEYREL.ARG1 #ind ],
+    ARG-ST <  #comps &
+               [ LOCAL [ CAT [ HEAD +nv,
+                               VAL [ SPR < >,
+                                     COMPS < > ] ],
+                         CONT.HOOK.INDEX.SF prop ],
+                 NON-LOCAL.SLASH 0-dlist,
+                 OPT - ]  > ].
+
+#|
+de-assoc-lex := de-assoc-lex & 
+  [ ARG-ST < synsem-min,
+             [ LOCAL.CAT.HEAD +nv ] >  ].
+
+de-assoc-v-lex := de-assoc-lex & 
+  [ ARG-ST < synsem-min,
+             [ LOCAL.CAT.HEAD verb ] >  ].
+|#
+;; SSH 2015-07-13: relative marker 的
+;; ZZF 2015-9-30: subj restriction of the v/adj to stop spurious parses
+de-comp-lex := de-super-lex & raise-sem-lex-item & no-icons-lex-item &
+  [ SYNSEM [ PAREN -,
+	     LOCAL [ CAT [ HEAD.MOD < [ LOCAL #slash ] >,
+			   VAL [ COMPS < [ LOCAL [ CAT [ HEAD +vj,
+							 MC +-or--, 
+                                                         VAL [ SUBJ < > ] ] ],
+					   NON-LOCAL.SLASH 1-dlist & <! #slash !> ] > ] ] ],
+	     NON-LOCAL non-local ] ].
+
+
+;;FB & ZZF 2015-10-28 nominalizing DE,
+;; creating empty noun (NONCOMP +), in lexicon 的_nominalizer_n gives "generic_n_rel".
+de-nominalizer-lex := no-icons-lex-item & norm-sem-lex-item &
+  [ SYNSEM [ PAREN -,
+	     LOCAL [ CAT [ HEAD noun & [MOD <> ],
+                           NONCOMP +,
+			   VAL [ COMPS < [ LOCAL [ CAT [ HEAD +vj,
+							 MC +-or--, 
+                                                         VAL [ SUBJ < > ] ] ],
+					   NON-LOCAL [ SLASH 1-dlist &
+                                                             <! [ CONT.HOOK.INDEX #ind ] !> ] ] >,
+				 SUBJ < >,
+				 SPEC < >,
+				 SPR < > ] ], 
+		     CONT.HOOK.INDEX #ind ],
+	     NON-LOCAL non-local ] ].
+
+
 prep-lex := adposition-lex & 
   [ SYNSEM [ POSTCOMP -,
 	     LOCAL.CAT [ HEAD prep,
@@ -1618,6 +1684,8 @@ tentative-lex-rule := infl-cat-change-only-lex-rule &
 
 tentative-lex-dtr := word-or-lexrule. 
 
+;;ZZF 2015-10-2 to stop combining with degree adverb not working; & [ MOD <> ] [ SPR < >, SPEC < > ], 
+
 redup-lex-rule :=  same-non-local-lex-rule &
 		   same-modified-lex-rule &
 		   same-light-lex-rule &
@@ -1781,20 +1849,6 @@ vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule &
                        PRED vp_ellipsis_rel,
                        ARG1 #xarg ] !> ] ].
 
-
-;; SSH 2015-07-13: relative marker 的
-;; ZZF 2015-9-30: subj restriction of the v/adj to stop spurious parses
-de-complementizer := raise-sem-lex-item & no-icons-lex-item &
-  [ SYNSEM [ PAREN -,
-	     LOCAL [ CAT [ HEAD comp & [ MOD <> ],
-			   VAL [ COMPS < [ LOCAL [ CAT [ HEAD +vj,
-							 MC +-or--, 
-                                                         VAL [ SUBJ < > ] ] ],
-					   NON-LOCAL [ SLASH 1-dlist ] ] >,
-				 SUBJ < >,
-				 SPEC < >,
-				 SPR < > ] ] ],
-	     NON-LOCAL non-local ] ].
 
 
 ;; SSH 2015-03-13: Interjections (e.g. 哎. 哦, 嗯, 噢, 哎呀, 嘿)

@@ -16,7 +16,7 @@ subj-head-nn := subj-head-phrase &
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +vjp ].
 
 ;; subj-head-phrase for relative clauses
-nmc-subj-head := nmc-subj-head-phrase.
+;nmc-subj-head := nmc-subj-head-phrase.
 
 ;;subj-head-nd := subj-head-nondecl-phrase.
 
@@ -24,8 +24,9 @@ head-spec := head-spec-phrase & [ STYLE robust ].
 
 ;; SSH 2015-04-20: head-spec-hs is now divided into two rules.
 ;; head-spec-deg: [[有 多] 高兴] 
+;; ZZF 2015-9-30: taking out "STYLE robust," to allow "很　甜"
 head-spec-noncl := head-spec-h-sem-phrase & 
-  [ STYLE robust,
+  [ 
     HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jrp,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jr ].
 
@@ -51,14 +52,15 @@ bare-nom-det := bare-nominal-det-phrase.
 
 meas-np := meas-np-phrase.
 
-generic-np := generic-np-phrase.
+;;FB & ZZF 4/11/2015 comment out this rule as there's bare-np rule to handle this
+;generic-np := generic-np-phrase.
 
 ;; SSH 2014-09-04: STYLE 
 comp-head := comp-head-phrase &
   [ STYLE #style,
     HEAD-DTR.STYLE #style ].
 
-rel-cl := relative-clause.
+;rel-cl := relative-clause.
 	  
 ; Rule instances for head-modifier structures. Corresponding types
 ; are defined in matrix.tdl.  The matrix customization script did
@@ -69,11 +71,16 @@ rel-cl := relative-clause.
 head-adj-int := head-adj-int-phrase &
   [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
 |#
-head-adj-int := head-adj-int-phrase & 
+
+
+;;FB & ZZF 4-11-2015change rule name from "head-adj-int" to "head-mod-int", from "adj-head-int" to "mod-head"
+head-mod-int := head-adj-int-phrase & 
   [ STYLE #style,
     NON-HEAD-DTR.STYLE #style ].
 
-adj-head-int := adj-head-int-mc & [ STYLE robust ].
+mod-head-int := adj-head-int-mc &   [ STYLE #style,
+    NON-HEAD-DTR.STYLE #style ].
+
 head-adj-scop := head-adj-scop-phrase & [ STYLE robust ].
 
 adj-head-scop := adj-head-scop-phrase & [ STYLE robust ].
@@ -165,7 +172,7 @@ imper := imperative-phrase & [ STYLE robust ].
 ;;sent-subj := sent-subj-phrase.
 
 n-n-compound := noun-noun-compound-phrase.
-de-n-compound := nom-de-noun-compound-phrase.
+;de-n-compound := nom-de-noun-compound-phrase.
 
 
 rslt-1_12 := rslt-1_12-phrase & 

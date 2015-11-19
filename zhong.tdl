@@ -73,7 +73,7 @@ orthog := cons &
 
 ;; SSH 2015-01-26: compound lexical items
 cpd := icons.
-noun-noun := cpd.
+;noun-noun := cpd.
 pred-pred := cpd. 
 rslt := pred-pred.
 parallel := pred-pred.
@@ -97,13 +97,16 @@ pronoun_q_rel := q_rel.
 which_q_rel := q_rel.
 generic_q_rel := q_rel.
 
+related_p_rel := predsort.
+compound_p_rel := related_p_rel.
+poss_p_rel := related_p_rel.
+
 demons_rel := predsort.
 prox_demons_rel := demons_rel.
 dist_demons_rel := demons_rel.
 
 pron_rel := predsort.
-poss_rel := predsort.
-generic_nom_rel := predsort.
+generic_n_rel := predsort.
 vp_ellipsis_rel := predsort.
 
 cl_x_rel := predsort.
@@ -280,8 +283,9 @@ basic-head-comp-phrase :+
 		       VAL.SPEC #spec ],
     HEAD-DTR.SYNSEM [ BOUND na-or--,
 		      LOCAL.CAT [ MC #mc,
-				  VAL.SPEC #spec ] ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.NONCOMP - ].
+				  VAL.SPEC #spec ] ]
+].
+   ; NON-HEAD-DTR.SYNSEM.LOCAL.CAT.NONCOMP - ].
 
 basic-head-mod-phrase-simple :+ 
   [ SYNSEM.LOCAL [ CAT.MC #mc,
@@ -330,7 +334,12 @@ head-comp-phrase :+
     NON-HEAD-DTR.SYNSEM.BOUND - ].
 
 ;; SSH/ZZF 2015-07-15
-head-comp-phrase :+ [ SYNSEM.NON-LOCAL.SLASH 0-dlist ].
+head-comp-phrase :+ [ SYNSEM.LOCAL.CAT.NONCOMP #nc,
+                      HEAD-DTR.SYNSEM.LOCAL.CAT.NONCOMP #nc,
+                      SYNSEM.NON-LOCAL.SLASH 0-dlist ].
+
+basic-head-comp-phrase :+ [ SYNSEM.LOCAL.CAT.NONCOMP #nc,
+                      HEAD-DTR.SYNSEM.LOCAL.CAT.NONCOMP #nc ].
 
 ;; SSH 2015-04-16: adp -> prep
 head-2nd-comp-phrase := basic-head-2nd-comp-phrase & head-initial &
@@ -343,10 +352,10 @@ head-2nd-comp-phrase := basic-head-2nd-comp-phrase & head-initial &
 
 ;; SSH 2015-04-16: adp -> +np (ex. 我 [教室 里] 哭 了)
 comp-head-final-phrase := basic-head-1st-comp-phrase & head-final & 
-  [ SYNSEM.LOCAL.CAT.HEAD +nvjrpdmo,
+  [ SYNSEM.LOCAL.CAT.HEAD +njrpdmo,
     HEAD-DTR.SYNSEM.POSTCOMP +,
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
-			  LOCAL.CAT.HEAD +np ] ].
+			  LOCAL.CAT.HEAD +nvjp ] ].
 
 ;; For now, exclude time nouns as subjects
 ;; 
@@ -361,7 +370,7 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 				      COMPS < > ],
 				POSTHEAD + ],
     HEAD-DTR.SYNSEM [ SPART #spart,
-		      NON-LOCAL.SLASH 0-dlist ],
+		      NON-LOCAL.SLASH 0-1-dlist ],
     NON-HEAD-DTR.SYNSEM  [ R-PERIPH na-or--,
 			   INTERJECTED na-or--,
 			   LOCAL [ CAT [ MC +,
@@ -370,7 +379,7 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 				   CONT.HOOK.INDEX.SORT nontime-s ],
 			   NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
 				       REL 0-dlist ] ] ].
-
+#|
 nmc-subj-head-phrase := basic-head-subj-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.MC -,
     SYNSEM.SPART #spart,
@@ -388,7 +397,7 @@ nmc-subj-head-phrase := basic-head-subj-phrase & head-final &
 				   CONT.HOOK.INDEX.SORT nontime-s ],
 			   NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
 				       REL 0-dlist ] ] ].
-            
+|#            
 ;; comp-head-phrase requires things that are [ HEAD comp ].
 ;; SSH 2015-07-13: relative-clauses
 comp-head-phrase := basic-head-1st-comp-phrase & head-final &
@@ -400,6 +409,7 @@ comp-head-phrase := basic-head-1st-comp-phrase & head-final &
 			    BOUND na-or--,
 			    NON-LOCAL.SLASH #slash ] ] ].
 
+#|
 relative-clause := binary-phrase & phrasal & head-compositional & head-final &
   [ SYNSEM [ LOCAL [ CAT [ VAL [ COMPS < >,
                                  SPR < > ] ] ],
@@ -427,7 +437,7 @@ relative-clause := binary-phrase & phrasal & head-compositional & head-final &
 	     HCONS <! !>,
 	     ICONS <! focus-or-topic & [ IARG1 #clause,
                                          IARG2 #target ] !> ] ].
-
+|#
 
 ;; MATRIX REDEFINITION
 ;; SSH 2015-05-07: x_rel and q_rel are defined as types.
@@ -602,11 +612,12 @@ s7-bottom-coord-rule := conj-first-bottom-coord-rule & s-bottom-coord-phrase &
 ;; Here is the lexical type for complementizers.
 
 adj-head-phrase :+ 
-  [ HEAD-DTR.SYNSEM.L-PERIPH na-or-- ].
-
-adj-head-phrase :+ 
-  [ SYNSEM.LOCAL.CAT.MC #mc,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
+  [ SYNSEM [ LOCAL.CAT.MC #mc,
+             BARE #bare],	
+    HEAD-DTR.SYNSEM [ L-PERIPH na-or--,
+                      LOCAL.CAT.MC #mc,
+                      BARE #bare ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [ BARE #bare ] > ].
 
 ;; SSH 2015-03-17: *张三 哦 哭 了 。
 scopal-mod-phrase :+
@@ -857,9 +868,10 @@ head-nom-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
 
 
 ;; SSH 2014-08-22 zhong specific basic-head-spec-phrase 
+;; ZZF 2015-9-30 taking out "STYLE robust," as this is preventing sentences from parsing
 basic-head-spec-phrase := head-valence-phrase & phrasal &
                           binary-headed-phrase & 
-  [ STYLE robust,
+  [ 
     INFLECTED infl-satisfied,
     SYNSEM phr-synsem & [ LOCAL [ CAT [ VAL [ SUBJ #subj,
 					      SPR #spr,
@@ -990,7 +1002,7 @@ basic-bare-nominal-phrase := unary-phrase &
                                       COMPS < > ],
                                 NONSUBJ #ns ] ] >,
     C-CONT [ RELS <! noun-relation &
-                   [ PRED generic_nom_rel,
+                   [ PRED generic_n_rel,
                      LBL #ltop,
                      ARG0 #index ] !>,
              HCONS <! !>,
@@ -1093,12 +1105,16 @@ noun-noun-compound-phrase := head-final &
             INDEX #hind ],
 	     RELS <! quant-relation & [ PRED exist_q_rel,
 					ARG0 #nhind,
-					RSTR #harg ] !>,
+					RSTR #harg ],
+                      arg12-ev-relation & [ LBL #ltop,
+                                            PRED compound_p_rel,
+                                            ARG1 #hind, 
+				            ARG2 #nhind ] !>,
              HCONS <! qeq & [ HARG #harg,
                               LARG #larg ] !>,
-             ICONS <! noun-noun & [ IARG1 #hind, 
-				    IARG2 #nhind ] !> ] ].
+             ICONS <! !> ] ].
 
+#|ZZF: comment out temporarily, not necessary
 ;; SSH 2014-12-19: phr-synsem is added.
 nom-de-noun-compound-phrase := head-final &
   [ SYNSEM phr-synsem &
@@ -1125,7 +1141,7 @@ nom-de-noun-compound-phrase := head-final &
                               LARG #larg ] !>,
              ICONS <! noun-noun & [ IARG1 #hind, 
 				    IARG2 #nhind ] !> ] ].
-
+|#
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Resultative Compounds 
@@ -1291,7 +1307,8 @@ np-adp-phrase := unary-phrase &
                  SUBJ < >,
                  COMPS < > ] ],
     ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD noun,
-                  VAL.SPR < > ],
+                                  NONCOMP -,
+                                  VAL.SPR < > ],
                 CONT.HOOK.INDEX #nind & [ SORT time-s,
                               SPECI - ] ] ] >,
     C-CONT [ HOOK [ LTOP #ltop,
