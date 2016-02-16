@@ -75,6 +75,7 @@ E.ASPECT : E.ASPECT
   delimitative <> delimitative
   durative <> durative
   non-aspect <> non-aspect
+  aspect >> non-aspect    
   * <> *
 
 ;E.MOOD : E.MOOD

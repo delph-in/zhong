@@ -284,9 +284,9 @@ head :+
 
 verb-lex := lex-item &
   [ SYNSEM [ PAREN -,
-	     ASPECTED na,
 	     LOCAL.CAT.HEAD verb & [ PRED-KEY #pred ],
 	     LKEYS.KEYREL.PRED #pred ] ].
+	     ;ASPECTED na,
 
 main-verb-lex := verb-lex & basic-verb-lex & tentative-lex-dtr & 
   [ SYNSEM.LOCAL [ CAT [ HEAD.AUX -,
@@ -343,7 +343,7 @@ transitive-verb-lex := main-verb-lex & transitive-lex-item & aspect-rule-dtr &
     ARG-ST < [ LOCAL [ CAT.HEAD noun,
 		       CONT.HOOK.INDEX #index ] ],
 	     #comp &
-	     [ LOCAL.CAT [ VAL [ SPR < >,
+	     [ LOCAL.CAT [ VAL [ SPR 0-1-list,
 				 COMPS < > ],
 			   HEAD noun ] ] > ].
 
@@ -464,6 +464,7 @@ pp-s-comp-verb-lex := main-verb-lex & basic-three-arg-no-hcons & basic-icons-lex
              CONT.HOOK.LTOP #ltop],
            OPT -]> ].
 
+;;2016-2-16 ZZF OPT + testing
 super-ditrans-verb-lex := main-verb-lex & aspect-rule-dtr &
  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comp1, #comp2>,
    ARG-ST  < [ LOCAL.CAT.HEAD noun ],
@@ -471,11 +472,11 @@ super-ditrans-verb-lex := main-verb-lex & aspect-rule-dtr &
              [ LOCAL.CAT [ VAL [ SPR < >,
                                  COMPS < > ],
                            HEAD noun ], 
-               OPT -] ,
+               OPT +] ,
              #comp2 &
              [ LOCAL.CAT [ VAL [ SPR < >,
                                  COMPS < > ] ],
-               OPT -] >].
+               OPT +] >].
 
 ditrans-verb-lex := ditransitive-lex-item & super-ditrans-verb-lex.
 
@@ -1430,7 +1431,7 @@ de-super-lex := lex-item &
                                                       VAL.COMPS < > ] ] ] > ],
 			    VAL [ SPR < >,
                                   SPEC < >,
-			          COMPS < synsem > ] ] ] ].
+			          COMPS < synsem  & [ LOCAL.CAT.MC + ] > ] ] ] ].
 
 de-assoc-lex := de-super-lex & adposition-lex & 
   [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < [ BARE -,
@@ -1448,29 +1449,20 @@ de-assoc-lex := de-super-lex & adposition-lex &
                  NON-LOCAL.SLASH 0-dlist,
                  OPT - ]  > ].
 
-#|
-de-assoc-lex := de-assoc-lex & 
-  [ ARG-ST < synsem-min,
-             [ LOCAL.CAT.HEAD +nv ] >  ].
 
-de-assoc-v-lex := de-assoc-lex & 
-  [ ARG-ST < synsem-min,
-             [ LOCAL.CAT.HEAD verb ] >  ].
-|#
 ;; SSH 2015-07-13: relative marker 的
 ;; ZZF 2015-9-30: subj restriction of the v/adj to stop spurious parses
 de-comp-lex := de-super-lex & raise-sem-lex-item & no-icons-lex-item &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT [ HEAD.MOD < [ LOCAL #slash ] >,
 			   VAL [ COMPS < [ LOCAL [ CAT [ HEAD +vj,
-							 MC +-or--, 
                                                          VAL [ SUBJ < > ] ] ],
 					   NON-LOCAL.SLASH 1-dlist & <! #slash !> ] > ] ] ],
 	     NON-LOCAL non-local ] ].
 
 
 ;;FB & ZZF 2015-10-28 nominalizing DE,
-;; creating empty noun (NONCOMP +), in lexicon 的_nominalizer_n gives "generic_n_rel".
+;; creating empty noun (NONCOMP +), in lexicon 的_nom_n gives "generic_n_rel".
 de-nominalizer-lex := no-icons-lex-item & norm-sem-lex-item &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT [ HEAD noun & [MOD <> ],
@@ -1774,8 +1766,9 @@ aspect-lex-rule := const-cat-change-only-lex-rule &
 						POSTHEAD #posthead ] ] ],
    C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
-aspect-rule-dtr := word-or-lexrule & [ SYNSEM.LOCAL.CAT.MC na ].
-
+;;15-2-2016 ZZF SSH FB stop using MC for controlling overgeneration, which will be done in SEM-I
+aspect-rule-dtr := word-or-lexrule.
+;;& [ SYNSEM.LOCAL.CAT.MC na ]
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,6 +1,8 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
-head-comp := head-comp-phrase.
+hdvj-comp := hdvj-comp-phrase.
+
+head-comp := hdnrpdmo-comp-phrase.
 
 ;; SSH 2015-04-21: The subject cannot be indefinite. 
 ;;subj-head := subj-head-phrase & [ STYLE robust ].
