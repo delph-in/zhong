@@ -4,6 +4,7 @@ pred-adj-lex-rule := attr-to-pred-adj-lex-rule.
 pred-adj-asp-lex-rule := attr-to-pred-adj-aspect-lex-rule.
 vp-ellipsis-lex-rule := vp-aux-ellipsis-lex-rule.
 
+;; 2016-2-15 ZZF FB SSH removed this rule [effect to be monitored]
 ;; SSH 2014-09-04
 #|
 non-aspect-lex := aspect-lex-rule &

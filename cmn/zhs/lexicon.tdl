@@ -7568,11 +7568,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_仍然_a_1_rel",
     TRAITS native_token_list ].
 
+#|
 从_c := conj_-_le &
   [ STEM < "从" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "从", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_从_coord_rel",
     TRAITS native_token_list ].
+|#
 
 从_p_1  := p_-_v-pre_le &
   [ STEM < "从" >,
@@ -95081,7 +95083,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_还要_a_1_rel",
     TRAITS native_token_list ].
 
-这_r_1 := adv_-_s-pre-rel_le &
+这_r_1 := adv_-_deg-pre_le &
   [ STEM < "这" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "这", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_这_a_1_rel",
@@ -106436,12 +106438,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "１９９２年" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "１", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_１９９２年_n_1_rel",
-    TRAITS native_token_list ].
-
-２_sc := conj_-_sub_le &
-  [ STEM < "２" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "２", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_２_coord_rel",
     TRAITS native_token_list ].
 
 ２０世纪_n_1 := n_-_tm_le &
