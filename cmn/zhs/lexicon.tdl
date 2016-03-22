@@ -22,6 +22,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "JlnＢｕｋｉｔＢｉｎｔａｎｇ",
     TRAITS native_token_list ].
 
+#|
 一_n_1 := n_-_tm_le &
   [ STEM < "一" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH one ],
@@ -33,6 +34,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH one ],
     SYNSEM.LKEYS.ALTKEYREL.PRED "_一_n_rel",
     TRAITS native_token_list ].
+|#
 
 一_r_1 := adv_-_vp-pre_le &
   [ STEM < "一" >,
@@ -3225,12 +3227,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "东西" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "东", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_东西_n_1_rel",
-    TRAITS native_token_list ].
-
-东西_p := p_loc_post_le &
-  [ STEM < "东西" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "东", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_东西_p_rel",
     TRAITS native_token_list ].
 
 东西区_n_1 := n_-_l_pn_le &
