@@ -6,13 +6,14 @@
 ; good starting point.  Note that it is legal to have multiple start
 ; symbols, but they all need to be listed as the value of
 ; `*start-symbol' (see `lkb/user-fns.lsp').
+;; ZZF FB 6-4-2016 taking out 'rp' so PP and ADVP won't be S
 
 root := phrase &
   [ SYNSEM [ LOCAL [ COORD -,
 		     CAT [ VAL [ SUBJ < >,
 				 COMPS < > ],
 			   MC +,
-			   HEAD +vjrpc &
+			   HEAD +vjc &
 			       [ FORM finite ] ] ],
 	     NON-LOCAL.SLASH 0-dlist ] ].
 

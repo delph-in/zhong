@@ -2202,6 +2202,17 @@ basic-head-mod-phrase-simple := head-mod-phrase & binary-headed-phrase &
 ;  [ HEAD-DTR.SYNSEM.LOCAL.CONT.HOOK.LTOP #htop,
 ;    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.LTOP #htop ] >].
 
+;;dont check in!! testing!!! ZZF FB 2016-2-24 removed LIGHT copying from head-dtr to mother
+adj-head-phrase := basic-head-mod-phrase-simple & head-final &
+  [ SYNSEM [ LOCAL.CAT.POSTHEAD #ph,
+	     MODIFIED lmod & [ PERIPH #periph ] ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.POSTHEAD #ph,
+    NON-HEAD-DTR.SYNSEM [ LOCAL.CAT [ VAL.COMPS < > ],
+			  NON-LOCAL [ SLASH 0-dlist,
+				      REL 0-dlist ],
+                          MODIFIED.PERIPH #periph ] ].
+
+#|
 adj-head-phrase := basic-head-mod-phrase-simple & head-final &
   [ SYNSEM [ LOCAL.CAT.POSTHEAD #ph,
 	     MODIFIED lmod & [ PERIPH #periph ],
@@ -2212,6 +2223,7 @@ adj-head-phrase := basic-head-mod-phrase-simple & head-final &
 			  NON-LOCAL [ SLASH 0-dlist,
 				      REL 0-dlist ],
                           MODIFIED.PERIPH #periph ] ].
+|#
 
 ;;; 2012-26-09 removed this constraint from head-adj-phrase
 ;;    HEAD-DTR.SYNSEM.MODIFIED notmod-or-rmod,

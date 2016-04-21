@@ -99,7 +99,7 @@ generic_q_rel := q_rel.
 
 related_p_rel := predsort.
 compound_p_rel := related_p_rel.
-poss_p_rel := related_p_rel.
+;poss_p_rel := related_p_rel.
 
 demons_rel := predsort.
 prox_demons_rel := demons_rel.
@@ -180,6 +180,11 @@ num :+
 ;; SSH 2015-04-16: The following are revised. 
 prep := adp.
 postp := adp.
+postp-assoc := postp.
+postp-assoc-n := postp-assoc & postp-nominalizable.
+postp-assoc-v := postp-assoc.
+postp-nominalizable := postp.
+postp-comp := postp-nominalizable.
 
 
 ;; SSH 2014-09-02: Gender is necessary to distinguish he and she. 
@@ -242,14 +247,13 @@ durative := aspect.
 delimitative := aspect.
 tentative := aspect.
 ;; SSH 2014-09-19: The type hierarchy for aspect should be researched
-;; more. We assume here that guo and no-marking imply *imperfective*.
-;; 2016-2-15 ZZF changing experiential from "imperfective" to "perfective" ::fix me
+;; more. We assume here that no-marking implies *imperfective*.
+;; 2016-2-15 ZZF changing experiential (guo) from "imperfective" to "perfective" ::fix me
 imperfective := aspect.
 perfective := perf-or-exp.
 experiential := perf-or-exp.
 ;; SSH 2014-09-04; blocking overgeneration
 non-aspect := imperfective.
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; SSH 2015-05-24
@@ -280,7 +284,7 @@ head-only :+
     HEAD-DTR.SYNSEM.LOCAL.CAT [ NONSUBJ #ns,
 				NONCOMP #nc ] ]. 
 
-;;2016-2-15 ZZF FB set SPR to < > to force COMP to have SPR first. TEST ME!!!
+
 basic-head-comp-phrase :+ 
   [ SYNSEM.LOCAL.CAT [ MC #mc,
 		       VAL.SPEC #spec ],
@@ -292,10 +296,13 @@ basic-head-comp-phrase :+
 basic-head-comp-phrase :+ [ SYNSEM.LOCAL.CAT.NONCOMP #nc,
                       HEAD-DTR.SYNSEM.LOCAL.CAT.NONCOMP #nc ].
 
+;;2016-2-19 ZZF FB SSH copy SPEC from HEAD-DTR to mother.
 basic-head-mod-phrase-simple :+ 
-  [ SYNSEM.LOCAL [ CAT.MC #mc,
+  [ SYNSEM.LOCAL [ CAT [ MC #mc,
+                         VAL.SPEC #spec ],
 		   CONT.HOOK.INDEX #ind ],
-    HEAD-DTR.SYNSEM.LOCAL.CONT.HOOK.INDEX #ind,
+    HEAD-DTR.SYNSEM.LOCAL [ CONT.HOOK.INDEX #ind,
+                            CAT.VAL.SPEC #spec ],
     NON-HEAD-DTR.SYNSEM [ PUNCTUATED na-or--,
 			  LOCAL.CAT.MC #mc ] ].
 
@@ -331,15 +338,15 @@ head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
     HEAD-DTR.SYNSEM.POSTCOMP na-or--,
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
 			  INTERJECTED na-or-- ] ].
+#|
+;;2016-2-15 ZZF FB separating head-comp for verbs and adjectives, comp node's SPR is "olist" means either unexpressed or saturated
+hdv-comp-phrase := head-comp-phrase &
+  [ SYNSEM.LOCAL.CAT.HEAD verb,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SPR olist ].
 
-;;2016-2-15 ZZF FB separating head-comp for verbs and adjectives
-hdvj-comp-phrase := head-comp-phrase &
-  [ SYNSEM.LOCAL.CAT.HEAD +vj,
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SPR < >  ].
-
-hdnrpdmo-comp-phrase := head-comp-phrase &
-  [ SYNSEM.LOCAL.CAT.HEAD +nrpdmo ].
-
+hdnonv-comp-phrase := head-comp-phrase &
+  [ SYNSEM.LOCAL.CAT.HEAD +njrpdmo ].
+|#
 ;; WWJ (2015-03-28) - HEAD-DTR's spart value is passed up to this phrase
 head-comp-phrase :+
   [ SYNSEM.SPART #spart,
@@ -373,11 +380,12 @@ comp-head-final-phrase := basic-head-1st-comp-phrase & head-final &
 ;; SSH 2014-09-26: Only phrases can be the subjects (phr-synsem)
 ;; SSH 2015-07-13: non-rel subj-head and rel subj-head (nonmc)
 ;;                 Added [NON-LOCAL.SLASH 0-dlist]
+;; ZZF FB 2016-2-24: changed subj's SPR to be olist
 subj-head-phrase := decl-head-subj-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.MC #mc,
     SYNSEM.SPART #spart,
     HEAD-DTR.SYNSEM [ LOCAL.CAT [ MC #mc,
-				  VAL [ SPR olist,
+				  VAL [ SPR < >,
 				      COMPS < > ],
 				  POSTHEAD + ],
                       SPART #spart,
@@ -386,7 +394,7 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 			   INTERJECTED na-or--,
 			   LOCAL [ CAT [ MC +,
 					 NONSUBJ -,
-					 VAL.SPR <> ],
+					 VAL.SPR olist ],
 				   CONT.HOOK.INDEX.SORT nontime-s ],
 			   NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
 				       REL 0-dlist ] ] ].
@@ -645,22 +653,27 @@ scopal-mod-phrase :+
     NON-HEAD-DTR.SYNSEM.INTERJECTED #interjected ].
 
 ;; SSH 2014-12-19: BOUND for blocking [狗 轻轻 [地 [叫 了]].
+;; ZZF 2016-2-22: "LIGHT -" to mother to stop rslt rules (which requires "LIGHT +"
 adj-head-int-mc := adj-head-int-phrase &
-  [ SYNSEM.LOCAL.CAT [ NONSUBJ #ns,
+  [ SYNSEM [ LOCAL.CAT [ NONSUBJ #ns,
 		       NONCOMP #nc ],
+             LIGHT - ],
     HEAD-DTR.SYNSEM [ SPART no-spart,
 		      LOCAL.CAT [ HEAD.MEASURE #meas,
 				  NONSUBJ #ns,
 				  NONCOMP #nc ],
-                      BOUND na-or-- ],
+                      BOUND na-or--,
+                      BARE - ],
     NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
 			  LOCAL.CAT [ HEAD.MEASURE #meas,
 				      NONSUBJ #ns,
 				      NONCOMP #nc ] ] ].
 
+;; 2016-2-21 ZZF: added phr-synsem to mother. 
+
 adj-head-scop-phrase :+ 
-  [ SYNSEM [ L-PERIPH #lperiph,
-	     R-PERIPH #rperiph ],
+  [ SYNSEM phr-synsem & [ L-PERIPH #lperiph,
+	                  R-PERIPH #rperiph ],
     HEAD-DTR.SYNSEM.BOUND na-or--,
     NON-HEAD-DTR.SYNSEM [ L-PERIPH #lperiph,
 			  R-PERIPH #rperiph ] ].
@@ -720,7 +733,8 @@ filler-head-phrase := basic-head-filler-phrase & head-final &
 ;; SSH 2014-09-02: added [MC +] for blocking overgeneration ;;zz: MC luk to allow extract from any v clause
 extracted-comp-phrase := basic-extracted-comp-phrase & 
   [ SYNSEM [ MODIFIED #modified,
-             LOCAL.CAT.MC + ],
+             LOCAL.CAT [ MC +,
+                         VAL.COMPS < > ]  ],
     HEAD-DTR.SYNSEM [ MODIFIED #modified,
 		      BOUND na-or--,
 		      LOCAL [ CAT.HEAD verb,
@@ -737,6 +751,8 @@ extracted-comp-phrase := basic-extracted-comp-phrase &
 ;; up as a complement, the SPEC value is ignored higher up, since the verb
 ;; selecting the S/NP does not pass up that SPEC value, of course.
 ;;
+
+;;ZZF FB LMC 2016-4-20 NON-LOCAL.SLASH 0-dlist to avoid applying this after extracted-comp-phrase, but this stops extracted-subj-phrase being applied. So taking out now. Need further discussion with Emily.
 extracted-subj-phrase := basic-extracted-subj-phrase & 
   [ SYNSEM [ MODIFIED #modified,
 	     LOCAL.CAT [ MC +,
@@ -1032,8 +1048,17 @@ basic-bare-nominal-phrase := unary-phrase &
                   [ LTOP #ltop,
                     INDEX #index ] ] ].
 
-bare-nominal-classifier-phrase := basic-bare-nominal-phrase &
-  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD +jd &
+;;ZZF FB 29-2-2016: added in "p" to head so this applies to de nominalization for nouns.
+#|
+bare-nominal-adj-phrase := basic-bare-nominal-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD adj &
+             [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
+					 INDEX #index ] ] > ] ] >,
+    C-CONT.HOOK [ LTOP #ltop,
+		  INDEX #index ] ].
+|#
+bare-nominal-postp-phrase := basic-bare-nominal-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD postp-nominalizable &
              [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
 					 INDEX #index ] ] > ] ] >,
     C-CONT.HOOK [ LTOP #ltop,
@@ -1094,11 +1119,16 @@ meas-np-phrase := head-final & head-valence-phrase & phrasal &
 
 ;; SSH 2014-12-19: 追赶 张三 ！
 ;; non-asepct & main clause
-imperative-phrase := imp-head-opt-subj-phrase &
+opt-subj-imperative-phrase := imp-head-opt-subj-phrase &
   [ SYNSEM [ LOCAL.CAT.HEAD verb,
 	     NON-LOCAL.SLASH 0-dlist ],
     HEAD-DTR.SYNSEM.LOCAL [ CAT.MC +,
 			    CONT.HOOK.INDEX.E.ASPECT non-aspect ] ].
+
+opt-subj-declarative-phrase := decl-head-opt-subj-phrase &
+  [ SYNSEM.LOCAL.CAT.HEAD +vj,
+    HEAD-DTR.SYNSEM.LOCAL [ CAT.MC +,
+			    CONT.HOOK.INDEX.E.ASPECT aspect ] ].
 
 ;; DPF 27-jul-11 - Removed HEAD-DTR..MODIFIED notmod to allow "old dog who 
 ;; can bark" |一 只 会 叫 的 老 狗|
@@ -1202,6 +1232,7 @@ rslt-compound-phrase := head-initial &
 	     NON-LOCAL #nonloc ],
     HEAD-DTR.SYNSEM lex-synsem &
                 [ BOUND na-or--,
+                  LIGHT +,
 		  LOCAL [ CAT [ HEAD #head & +vj & [ CHAR.LENGTH one,
 						     STATIVE na-or--,
 						     AUX - ],				
@@ -1535,7 +1566,7 @@ extracted-comp-phrase :+
 extracted-subj-phrase :+ 
   [ SYNSEM.UTTERED -,
     HEAD-DTR.SYNSEM.UTTERED na-or-- ].
-imperative-phrase :+ 
+opt-subj-imperative-phrase :+ 
   [ SYNSEM.UTTERED -,
     HEAD-DTR.SYNSEM.UTTERED na-or-- ].
 head-opt-comp-phrase :+

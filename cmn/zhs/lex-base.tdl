@@ -562,10 +562,16 @@
 ;;; DE 
 ;;;;;;;;;;;;;;;;;;;
 
-的_ASSOC := x_-_poss-de_le &
+的_assoc_n := x_-_assoc-de-n_le &
  [ STEM < "的" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _de_p_poss_rel,
+    SYNSEM.LKEYS.KEYREL.PRED _de_p_assoc_rel,
+    TRAITS native_token_list ].
+
+的_assoc_v := x_-_assoc-de-v_le &
+ [ STEM < "的" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED _de_p_assoc_rel,
     TRAITS native_token_list ].
 
 ;的_nominalizer_n := x_-_nom-de_le &
@@ -574,30 +580,34 @@
 ;    SYNSEM.LKEYS.KEYREL.PRED _de_nom_rel,
 ;    TRAITS native_token_list ].
 
+#|no longer needed, using de_comp -> 0-nom-p 
 的_nom_n := x_-_nom-de_le &
   [ STEM < "的" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED generic_n_rel,
     TRAITS native_token_list ].
+|#
 
 的_comp := x_-_rel-de_le & 
   [ STEM < "的" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
     TRAITS native_token_list ].
 
-之_ASSOC_d := x_-_poss-de_le &
+之_ASSOC_d := x_-_assoc-de-n_le &
  [ STEM < "之" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "之", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _zhi_demons_rel,
     TRAITS native_token_list ].
 
+#|need to change to pronoun
 之_nominalizer_n := x_-_nom-de_le &
   [ STEM < "之" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "之", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _zhi_nom_rel,
     TRAITS native_token_list ].
+|#
 
-所_marker := suo-marker &
+所_x := x_suo_le &
   [ STEM < "所" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "所", LENGTH one ],
     TRAITS native_token_list ].

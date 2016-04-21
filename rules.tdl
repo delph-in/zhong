@@ -1,8 +1,9 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;2016-2-15 ZZF FB separating head-comp for verbs and adjectives
+;hdv-comp := hdv-comp-phrase.
 
-hdvj-comp := hdvj-comp-phrase.
-
-head-comp := hdnrpdmo-comp-phrase.
+;head-comp := hdnonv-comp-phrase.
+head-comp := head-comp-phrase.
 
 ;; SSH 2015-04-21: The subject cannot be indefinite. 
 ;;subj-head := subj-head-phrase & [ STYLE robust ].
@@ -49,8 +50,10 @@ headn-spec-hs := head-nom-spec-h-sem-phrase & [ STYLE robust ].
 
 bare-np := bare-np-phrase.
 
-bare-nom-cl := bare-nominal-classifier-phrase.
-bare-nom-det := bare-nominal-det-phrase.
+;;assuming nominalization is done using adj+DE
+;;0-nom-j := bare-nominal-adj-phrase.
+0-nom-p := bare-nominal-postp-phrase.
+0-nom-d := bare-nominal-det-phrase.
 
 meas-np := meas-np-phrase.
 
@@ -157,7 +160,12 @@ s7-mid-coord := s7-mid-coord-rule.
 s7-bottom-coord := s7-bottom-coord-rule.
 |#
 
-head-opt-comp := head-opt-comp-phrase & [ STYLE robust ].
+opt-comp := head-opt-comp-phrase & [ STYLE robust ].
+
+;;ZZF/FB/LMC 2016-3-16 allow subj to be optional
+opt-subj-decl := opt-subj-declarative-phrase & [ STYLE robust ].
+
+opt-subj-imp := opt-subj-imperative-phrase & [ STYLE robust ].
 
 ;; SSH/ZZF 2015-04-08: 张三 李四 追 了  (i.e. SOV) 
 comp-head-final := comp-head-final-phrase & [ STYLE robust ].
@@ -168,7 +176,7 @@ extracted-comp := extracted-comp-phrase.
 
 extracted-subj := extracted-subj-phrase.
 
-imper := imperative-phrase & [ STYLE robust ].
+
 
 ;; Overenthusiastic
 ;;sent-subj := sent-subj-phrase.

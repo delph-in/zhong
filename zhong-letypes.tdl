@@ -147,13 +147,15 @@ x_-_qpart_le := qpart-lex-item.
 ;; Dialect-specfic Items are constrained directly.
 ;;x_-_crs_le := crs-lex-item.
 
-x_-_poss-de_le := de-assoc-lex.
+x_-_assoc-de-n_le := de-assoc-n-lex.
+x_-_assoc-de-v_le := de-assoc-v-lex.
 ;;poss-det-lex.
-x_-_nom-de_le := de-nominalizer-lex.
+;x_-_nom-de_le := de-nominalizer-lex.
 x_-_rel-de_le := de-comp-lex.
 
 x_bei_le := v_bei_type_lex.
 x_ba_le := v_ba_type_lex.
+x_suo_le := v_suo_lex.
 
 x_-_suf-adv_le := adv_suffix_form_lex.
 x_-_pre-adv_le := adv_prefix_form_lex.

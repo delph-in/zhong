@@ -160,36 +160,26 @@ s-bottom-label := label &
                             COORD + ],
              LABEL-NAME "S-B"].
 
-s-slash-np-label := label &
-           [ SYNSEM [ UTTERED na-or--,
-		      LOCAL [ CAT [ HEAD +vj,
-				    POSTHEAD +,
-				    VAL [ COMPS < >,
-					  SUBJ < > ] ],
-			      COORD-STRAT "" ],
-		      NON-LOCAL.SLASH 1-dlist ],
-             LABEL-NAME "S/NP"].
 
-adj-label := label & 
-	   [ SYNSEM [ UTTERED na-or--,
-		      LOCAL[ CAT.HEAD adj, 
-			     COORD-STRAT "" ] ],
-	     LABEL-NAME "ADJ" ].
+dep-assoc-label := label & 
+	    [ SYNSEM.LOCAL [ CAT [ HEAD postp-assoc,
+				 VAL.COMPS < > ] ],
+	      LABEL-NAME "deP" ].
+
+dep-comp-label := label & 
+	    [ SYNSEM.LOCAL [ CAT [ HEAD postp-comp,
+				 VAL.COMPS < > ] ],
+	      LABEL-NAME "deP/" ].
 
 locp-label := label & 
 	    [ SYNSEM.LOCAL.CAT [ HEAD postp,
 				 VAL.COMPS < > ],
 	      LABEL-NAME "LOCP" ].
 
-dep-label := label & 
-	    [ SYNSEM.LOCAL [ CAT [ HEAD adp,
-				 VAL.COMPS < > ] ,
-                             CONT.HOOK.INDEX.PRED _de_p_poss_rel ],
-	      LABEL-NAME "deP" ].
 
 pp-label := label & 
 	    [ SYNSEM.LOCAL.CAT [ HEAD adp,
-				 VAL [ SUBJ < [ ] >,
+				 VAL [ SUBJ 0-1-list,
                                        COMPS < > ] ],
 	      LABEL-NAME "PP" ].
 
@@ -201,8 +191,19 @@ s-label := label &
 				    POSTHEAD +,
 				    VAL [ COMPS < >,
 					  SUBJ < > ] ],
-			      COORD-STRAT "" ] ],
+			      COORD-STRAT "" ],
+                      NON-LOCAL.SLASH 0-dlist ],
              LABEL-NAME "S"].
+
+s-slash-np-label := label &
+           [ SYNSEM [ UTTERED na-or--,
+		      LOCAL [ CAT [ HEAD +vj,
+				    POSTHEAD +,
+				    VAL [ COMPS < >,
+					  SUBJ < > ] ],
+			      COORD-STRAT "" ],
+		      NON-LOCAL.SLASH 1-dlist ],
+             LABEL-NAME "S/NP"].
 
 utt-label := label &
            [ SYNSEM [ UTTERED +,
@@ -219,16 +220,22 @@ s-top-label := label &
 				      SUBJ < > ] ],
 	     LABEL-NAME "S-T"].
 
+adj-label := label & 
+	   [ SYNSEM [ UTTERED na-or--,
+		      LOCAL[ CAT.HEAD adj, 
+			     COORD-STRAT "" ] ],
+	     LABEL-NAME "ADJ" ].
+
+de-label := label & 
+	    [ STEM < "的" >,
+              SYNSEM.LOCAL [ CAT [ HEAD postp,
+				 VAL.COMPS < [ ], ... > ] ],
+	      LABEL-NAME "de" ].
+
 loc-label := label & 
 	   [ SYNSEM.LOCAL.CAT [ HEAD postp,
 				VAL.COMPS < [ ], ... > ],
 	     LABEL-NAME "LOC" ].
-
-de-label := label & 
-	    [ STEM < "的" >,
-              SYNSEM.LOCAL [ CAT [ HEAD adp,
-				 VAL.COMPS < [ ], ... > ] ],
-	      LABEL-NAME "de" ].
 
 p-label := label & 
 	   [ SYNSEM.LOCAL.CAT [ HEAD prep,
