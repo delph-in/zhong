@@ -51,7 +51,6 @@ n_-_m_le := mass-noun-lex.
 ;; proper names
 n_-_pn_le := proper-name-lex.
 n_-_l_pn_le := loc-name-lex.
-n_-_nl_pn_le := loc-name-lex.
 n_-_h_pn_le := human-name-lex.
 n_-_s_pn_le := sir-name-lex.
 

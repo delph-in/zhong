@@ -27336,12 +27336,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_地_n_1_rel",
     TRAITS native_token_list ].
 
-地_n_2 := n_-_l_pn_le &
-  [ STEM < "地" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "地", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.CARG "地",
-    TRAITS native_token_list ].
-
 地上_n_1 := n_-_l_pn_le &
   [ STEM < "地上" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "地", LENGTH two ],
@@ -90065,6 +90059,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "说", LENGTH one ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_说_v_1_rel" ],
+    TRAITS native_token_list ].
+
+说_v_2 := v_np_le &
+  [ STEM < "说" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "说", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_说_v_2_rel" ],
     TRAITS native_token_list ].
 
 说不出_v_1 := v_s_le &

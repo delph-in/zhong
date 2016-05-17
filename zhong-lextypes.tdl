@@ -643,7 +643,8 @@ v_prep-lex-item := basic-two-arg & main-verb-lex & basic-icons-lex-item &
 v_suo_lex := basic-one-arg-no-hcons & verb-lex & basic-icons-lex-item &
 [ SYNSEM [ LOCAL [ CONT [ HOOK #hook,
                           RELS <!!> ],
-                   CAT [ VAL [  SUBJ < [ LOCAL [ CAT [ HEAD noun,
+                   CAT [ MC +,
+                         VAL [  SUBJ < [ LOCAL [ CAT [ HEAD noun,
 						       VAL [ SPR <>, 
 							    COMPS <> ] ],
                                                  CONT.HOOK.INDEX #isubj ],
@@ -658,27 +659,6 @@ v_suo_lex := basic-one-arg-no-hcons & verb-lex & basic-icons-lex-item &
             NON-LOCAL.SLASH <! #slash !>
              ] ].
 
-#|
-v_suo_lex := basic-one-arg-no-hcons & verb-lex & basic-icons-lex-item &
-[ SYNSEM [ LOCAL [ CONT.HOOK #hook,
-                   CAT [ VAL [ COMPS < [ MODIFIED notmod,
-                                         BOUND -,
-                                         LOCAL [ CAT [ HEAD verb & [ AUX - ],
-						       VAL [ SUBJ < [ LOCAL.CONT.HOOK.INDEX #isubj ] >,
-							     COMPS < #slash & 
-                                                                    [ LOCAL.CAT [ HEAD noun,
-								            VAL [ SPR <>,
-								                  COMPS <>]], ] > ]],
-						CONT.HOOK #hook],
-					 OPT -,
-					 NON-LOCAL.SLASH <! #slash !>]>,
-                                SUBJ < [ LOCAL [ CAT [ HEAD noun,
-						       VAL [ SPR <>, 
-							    COMPS <> ] ],
-                                                 CONT.HOOK.INDEX #isubj ],
-					 OPT -] > ] ] ],
-            NON-LOCAL.SLASH <! #slash !> ] ].
-|#
 
 ;; SSH 2014-09-02: To block overgeneration (e.g. *李四 被 了 张三 追赶),
 ;; I added [POSTHEAD +].
