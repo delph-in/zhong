@@ -1130,12 +1130,63 @@ opt-subj-declarative-phrase := decl-head-opt-subj-phrase &
     HEAD-DTR.SYNSEM.LOCAL [ CAT.MC +,
 			    CONT.HOOK.INDEX.E.ASPECT aspect ] ].
 
+
+
+;; ZZF 2016-9-23: created separately for pronoun+noun.
+pronoun-noun-compound-phrase := head-final &
+"Forms a pronoun-noun compound phrase. The non-head-daughter can't be a proper noun or common noun. The head has to be a noun with noun-relation, thus excluding nominalized DE phrases.
+<ex>我 朋友 哭 了
+<nex>张三 朋友 哭 了
+<nex>苹果 朋友 哭 了
+<nex>他 解决 了 产品 的 质量 问题
+Strictly the head noun should refers to human only, which is to be treated later, 
+e.g. adding a HUMAN +/- feature for all nouns"
+  [ SYNSEM [ LOCAL.CAT #cat,
+             NON-LOCAL #nonloc ],
+    HEAD-DTR.SYNSEM lex-synsem &
+                [ LOCAL [ CAT #cat & 
+                              [ HEAD noun & [ CLASSIFIED na-or-- ],
+                                VAL [ SPR < synsem >,
+                                      COMPS < > ] ],
+                          CONT [ HOOK [ LTOP #ltop,
+                                        INDEX #hind ],
+                                 RELS.LIST.FIRST noun-relation ] ],
+                  NON-LOCAL #nonloc ],
+    NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun,
+                                      VAL [ SPR < >,
+                                            COMPS < > ],
+                                      POSTHEAD - ],
+                                CONT [ HOOK [ LTOP #larg,
+                                              INDEX #nhind ],
+                                       RELS.LIST.FIRST [ PRED pron_rel] ] ],
+    C-CONT [ HOOK [ LTOP #ltop,
+            INDEX #hind ],
+	     RELS <! quant-relation & [ PRED exist_q_rel,
+					ARG0 #nhind,
+					RSTR #harg ],
+                      arg12-ev-relation & [ LBL #ltop,
+                                            PRED compound_p_rel,
+                                            ARG1 #hind, 
+				            ARG2 #nhind ] !>,
+             HCONS <! qeq & [ HARG #harg,
+                              LARG #larg ] !>,
+             ICONS <! !> ] ].
+
+
 ;; DPF 27-jul-11 - Removed HEAD-DTR..MODIFIED notmod to allow "old dog who 
 ;; can bark" |一 只 会 叫 的 老 狗|
 ;;
 ;; SSH 2014-04-16: added [CLASSIFIED na-or--] to prevent [一 只 猫]
 ;; from being analyzed as a compound
 noun-noun-compound-phrase := head-final &
+"Forms a noun-noun compound phrase
+<ex>他 解决 了 质量 问题
+<ex>他 解决 了 产品 质量 问题
+<ex>他 解决 了 产品 的 质量 问题
+<nex>他 解决 了 张三 问题
+<nex>他 解决 了 我 问题
+For compounds with >2 nouns, we have bracketting ambiguity, e.g. [产品 [质量 问题]] or [[产品 质量] 问题]. 
+The rule allows both interpretations, leaving the ambiguity for statistical ranking model to determine later."
   [ SYNSEM [ LOCAL.CAT #cat,
              NON-LOCAL #nonloc ],
     HEAD-DTR.SYNSEM lex-synsem &

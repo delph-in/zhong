@@ -7,7 +7,13 @@
 ;;;            Zhenzhen Fan (ZZF)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
 n_-_pr-1sg_le := personal-pronoun-lex & speaker-lex-item & 
+"1st pronoun
+<ex>我 吃 苹果
+<nex>这 我 吃 苹果
+<ex>红 的 我 吃 苹果
+should be modifiable"
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1sg ].
 
 n_-_pr-1pl-incl_le := personal-pronoun-lex & basic-icons-lex-item &

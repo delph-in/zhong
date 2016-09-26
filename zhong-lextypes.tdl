@@ -136,7 +136,6 @@ nonloc-name-lex := proper-name-lex.
 human-name-lex := nonloc-name-lex & human-lex-item. 
 sir-name-lex := human-name-lex.
 
-
 ;; SSH 2014-11-13: pronouns introduce a quant-relation. 
 basic-pronoun-lex := basic-one-arg & norm-hook-lex-item & 
   [ SYNSEM [ PAREN -,
@@ -1256,7 +1255,7 @@ pred-adj-lex := basic-pred-adj-lex & redup-lex-dtr &
 				 SUBJ < [LOCAL [CAT [HEAD +nv, 
 						     VAL.SPR < > ],
 						CONT.HOOK.INDEX #index &
-						    [ SF prop-or-ques ] ],
+						    [ SF prop-or-ques ] ]
 					 ] >,
 				 COMPS < > ] ],
 		     CONT.HOOK.LTOP #lbl ],
@@ -1485,6 +1484,14 @@ de-assoc-lex := de-super-lex & adposition-lex &
                  OPT - ]  > ].
 
 de-assoc-n-lex := de-assoc-lex &
+"Associative DE combining two noun phrases.
+<ex>张三 的 朋友 哭 了
+<ex>我 的 朋友 哭 了
+<ex>他 知道 学校 的 地址
+<ex>他 解决 了 产品 的 质量 的 问题
+When a noun phrase has >1 DE phrase modifiers, we get bracketing ambiguity, 
+e.g. [产品 的 [质量 的 问题]] or [[产品 的 质量] 的 问题]. The entry allows
+both interpretations, leaving the ambiguity for statistical ranking model to determine later."
   [ SYNSEM.LOCAL.CAT.HEAD postp-assoc-n,
     ARG-ST < [ LOCAL.CAT.HEAD noun ] > ].
 

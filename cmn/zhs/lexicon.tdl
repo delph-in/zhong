@@ -33245,10 +33245,10 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "学术界",
     TRAITS native_token_list ].
 
-学校_n_1 := n_-_l_pn_le &
+学校_n_1 := n_-_le &
   [ STEM < "学校" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "学", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.CARG "学校",
+    SYNSEM.LKEYS.KEYREL.PRED "_学校_n_1_rel",
     TRAITS native_token_list ].
 
 学生_n_1 := n_-_le &
@@ -107600,4 +107600,10 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "开", LENGTH more-than-two ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG no-lzg,
              LKEYS.KEYREL.PRED "_开玩笑_v_1_rel" ],
+    TRAITS native_token_list ].
+
+质量_n_1 := n_-_le &
+  [ STEM < "质量" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "质", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_质量_n_1_rel",
     TRAITS native_token_list ].

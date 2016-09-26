@@ -222,9 +222,16 @@ s-top-label := label &
 
 adj-label := label & 
 	   [ SYNSEM [ UTTERED na-or--,
+                      LIGHT +,
 		      LOCAL[ CAT.HEAD adj, 
 			     COORD-STRAT "" ] ],
 	     LABEL-NAME "ADJ" ].
+
+ap-label := label & 
+	   [ SYNSEM [ UTTERED na-or--,
+		      LOCAL[ CAT.HEAD adj, 
+			     COORD-STRAT "" ] ],
+	     LABEL-NAME "AP" ].
 
 de-label := label & 
 	    [ STEM < "的" >,
