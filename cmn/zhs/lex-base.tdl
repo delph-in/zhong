@@ -394,16 +394,16 @@
     SYNSEM.LKEYS.KEYREL.PRED _各种_q_rel,
     TRAITS native_token_list ].
 
-一系列_d := d_-_le &
+一系列_n := n_-_pr-q_le &
   [ STEM < "一系列" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED _一系列_q_rel,
+    SYNSEM.LKEYS.ALTKEYREL.PRED "_一系列_n_rel",
     TRAITS native_token_list ].
 
-半截_d := d_-_le &
+半截_n := n_-_pr-q_le &
   [ STEM < "半截" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "半", LENGTH more-than-one ],
-    SYNSEM.LKEYS.KEYREL.PRED _半截_q_rel,
+    SYNSEM.LKEYS.ALTKEYREL.PRED "_半截_n_rel",
     TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;

@@ -97151,12 +97151,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.ALTKEYREL.PRED "_那么多_n_rel",
     TRAITS native_token_list ].
 
-那些_n_1 := n_-_pr-q_le &
-  [ STEM < "那些" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "那", LENGTH two ],
-    SYNSEM.LKEYS.ALTKEYREL.PRED "_那些_n_rel",
-    TRAITS native_token_list ].
-
 那儿_p := p_loc_post_le &
   [ STEM < "那儿" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "那", LENGTH two ],
