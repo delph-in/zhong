@@ -44,6 +44,11 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "而", LENGTH one ],
     TRAITS native_token_list ].
 
+的_crs := crs-lex-item & 
+  [ STEM <"的">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
+    TRAITS native_token_list ].
+
 了_pfv := pfv-marker &
   [ STEM <"了">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
@@ -573,20 +578,6 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _de_p_assoc_rel,
     TRAITS native_token_list ].
-
-;的_nominalizer_n := x_-_nom-de_le &
-;  [ STEM < "的" >,
-;    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
-;    SYNSEM.LKEYS.KEYREL.PRED _de_nom_rel,
-;    TRAITS native_token_list ].
-
-#|no longer needed, using de_comp -> 0-nom-p 
-的_nom_n := x_-_nom-de_le &
-  [ STEM < "的" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED generic_n_rel,
-    TRAITS native_token_list ].
-|#
 
 的_comp := x_-_rel-de_le & 
   [ STEM < "的" >,

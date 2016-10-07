@@ -124,7 +124,9 @@ proper-name-lex := basic-one-arg & basic-icons-lex-item &
 			    HCONS <! qeq & 
 				   [ HARG #harg,
 				     LARG #larg ] !> ] ],
-	     NON-LOCAL.SLASH 0-dlist,
+	     NON-LOCAL [ SLASH 0-dlist,
+                         REL 0-dlist,
+                         QUE 0-dlist ],
 	     LKEYS.KEYREL #keyrel & named-relation ] ].
 
 
@@ -152,6 +154,9 @@ basic-pronoun-lex := basic-one-arg & norm-hook-lex-item &
 			    HCONS <! qeq & 
 				   [ HARG #harg, 
 				     LARG #larg ] !> ] ],
+             NON-LOCAL [ SLASH 0-dlist,
+                         REL 0-dlist, 
+                         QUE 0-1-dlist ],
 	     LKEYS.KEYREL noun-relation & #rel & [ PRED pron_rel ] ] ].
 
 
@@ -274,6 +279,7 @@ partitive-lex := basic-one-arg & no-icons-lex-item &
 
 head :+ 
   [ AUX bool,
+    COP bool,
     FORM form ].
 
 ;; SSH 2014-12-09 adj -> +vj
@@ -582,8 +588,9 @@ v_exist-lex := basic-three-arg & verb-lex & basic-verb-lex & basic-icons-lex-ite
 
 
 cop-verb-cpcomp-lex := basic-one-arg & verb-lex & basic-verb-lex & basic-icons-lex-item &
-  [ SYNSEM [ LOCAL [ CAT.VAL [ SUBJ < >,
-                               COMPS #comps ],
+  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
+                                 COMPS #comps ],
+                           HEAD.COP + ],
                      CONT [ HOOK [ LTOP #lbl,
                                    INDEX #event ],
                             RELS <! #keyrel !>,
@@ -927,16 +934,21 @@ imperative-aux-lex := subj-raise-aux-with-pred &
     ARG-ST.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2nd ].
 
 cop-verb-lex :=  transitive-verb-lex &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ OPT - ] > ].
+"adding in COP feature to identify SHI in constraints of other rules, like can't be in VV(rslt) constructions.
+<ex>他 是 张三
+"
+  [ SYNSEM.LOCAL.CAT [ HEAD.COP +,
+                       VAL.COMPS < [ OPT - ] > ] ].
 
 cop-verb-cpsubj-lex :=  main-verb-lex & basic-two-arg-no-hcons &
                         basic-icons-lex-item & 
-   [ SYNSEM [ LOCAL.CAT.VAL [ SUBJ < [ LOCAL.CAT.HEAD +vjp ] >,
-                  COMPS < #comp & canonical-synsem &
-                      [ LOCAL.CAT [ VAL [ SPR < >,
-                              COMPS < > ],
-                            HEAD noun ],
-                    NON-LOCAL.SLASH 0-dlist ] > ],
+   [ SYNSEM [ LOCAL.CAT [ HEAD.COP +,
+                          VAL [ SUBJ < [ LOCAL.CAT.HEAD +vjp ] >,
+                                COMPS < #comp & canonical-synsem &
+                                        [ LOCAL.CAT [ VAL [ SPR < >,
+                                                            COMPS < > ],
+                                                      HEAD noun ],
+                                          NON-LOCAL.SLASH 0-dlist ] > ] ],
           LKEYS.KEYREL [ ARG1 #arg1,
                  ARG2 #ind2 ] ],
      ARG-ST < [ LOCAL.CONT.HOOK.LTOP #arg1 ],
@@ -1210,7 +1222,7 @@ ab-not-ab-bu-adv-lex := ab-not-ab-adv-lex &
 
 ;; Adjectives
 
-basic-adjective-lex :+ basic-icons-lex-item &
+basic-adjective-lex :+ basic-one-arg & basic-icons-lex-item &
   [ SYNSEM.PAREN - ].
 
 basic-attr-adj-lex := basic-int-mod-adj-lex & 
@@ -1452,6 +1464,8 @@ adposition-lex := basic-adposition-lex & no-hcons-lex-item &
 			           ARG0 #index ] ] ].
 
 de-super-lex := lex-item & 
+"DE takes a COMP and modifies a noun. Its position is after its COMP.
+"
   [ SYNSEM [ POSTCOMP +,
 	     LOCAL.CAT [ POSTHEAD -,
                          HEAD postp &
@@ -1496,6 +1510,9 @@ both interpretations, leaving the ambiguity for statistical ranking model to det
     ARG-ST < [ LOCAL.CAT.HEAD noun ] > ].
 
 de-assoc-v-lex := de-assoc-lex &
+"Associative DE with a clause, modifying a noun. The head noun is neither subject nor object of the verb in the clause.
+<ex>我 喜欢 他 写 书 的 地方
+"
   [ SYNSEM.LOCAL.CAT.HEAD postp-assoc-v,
     ARG-ST < [ LOCAL.CAT.HEAD verb ] > ].
 
@@ -1504,10 +1521,15 @@ de-assoc-v-lex := de-assoc-lex &
 ;; 2016-2-21 ZZF: DE does not take subj
 
 de-comp-lex := de-super-lex & raise-sem-lex-item & no-icons-lex-item &
+"The modified noun is the missing argument in the relative clause.
+<ex>我　喜欢　红　的 苹果
+<ex>我　喜欢　那　个　红　的 苹果
+<ex>我 喜欢 他 写 的 书
+"
   [ SYNSEM [ PAREN -,
              LOCAL [ CAT [ HEAD postp-comp &
                                 [  MOD < [ LOCAL.CONT.HOOK.INDEX #slash ] > ] ,
-                           VAL [ COMPS < [ LOCAL [ CAT [ HEAD +vj,
+                           VAL [ COMPS < [ LOCAL [ CAT [ HEAD +vj & [ COP - ],
                                                          VAL [ SUBJ < > ] ] ],
                                            NON-LOCAL.SLASH 1-dlist & <!
                                                [ CAT [ HEAD noun,
@@ -1517,16 +1539,6 @@ de-comp-lex := de-super-lex & raise-sem-lex-item & no-icons-lex-item &
                                  SUBJ < > ] ] ],
              NON-LOCAL non-local ] ].
 
-#|
-de-comp-lex := de-super-lex & raise-sem-lex-item & no-icons-lex-item &
-  [ SYNSEM [ PAREN -,
-	     LOCAL [ CAT [ HEAD.MOD < [ LOCAL #slash ] >,
-			   VAL [ COMPS < [ LOCAL [ CAT [ HEAD +vj,
-                                                         VAL [ SUBJ < > ] ] ],
-					   NON-LOCAL.SLASH 1-dlist & <! #slash !> ] >,
-                                 SUBJ < > ] ] ],
-	     NON-LOCAL non-local ] ].
-|#
 
 ;;FB & ZZF 2015-10-28 nominalizing DE,
 ;; creating empty noun (NONCOMP +), in lexicon 的_nom_n gives "generic_n_rel".

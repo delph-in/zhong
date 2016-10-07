@@ -57567,6 +57567,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_条纹羚_n_1_rel",
     TRAITS native_token_list ].
 
+;;姓, family name, though rare
 来_n_1 := n_-_pn_le &
   [ STEM < "来" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "来", LENGTH one ],

@@ -160,6 +160,11 @@ s-bottom-label := label &
                             COORD + ],
              LABEL-NAME "S-B"].
 
+pp-label-2 := label & 
+	    [ SYNSEM.LOCAL.CAT [ HEAD prep & [ EMPTY +] ,
+				 VAL [ SUBJ 0-1-list,
+                                       COMPS < > ] ],
+	      LABEL-NAME "PP" ].
 
 dep-assoc-label := label & 
 	    [ SYNSEM.LOCAL [ CAT [ HEAD postp-assoc,
@@ -192,7 +197,7 @@ s-label := label &
 				    VAL [ COMPS < >,
 					  SUBJ < > ] ],
 			      COORD-STRAT "" ],
-                      NON-LOCAL.SLASH 0-dlist ],
+                      NON-LOCAL.SLASH 0-dlist & [ LIST < > ] ],
              LABEL-NAME "S"].
 
 s-slash-np-label := label &

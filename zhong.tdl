@@ -118,8 +118,8 @@ neg_x_rel := predsort.
 nm_rel := predsort.
 measure_x_rel := predsort.
 bridge_x_rel := predsort.
-temporal_x_rel := predsort.
 
+time_p_rel := predsort.
 
 +vj :+ 
    [ STATIVE luk,
@@ -141,8 +141,10 @@ more-than-two := more-than-one.
 
 ;; WWJ 2015-04-07: EXISTV for 有; MODIFIABLE used 
 ;; for A-elements in A-not-A structures
+;; ZZF & FB 2016-10-3: EMPTY for phrases created by rule with an empty head
 head :+
- [ CHAR char,
+ [ EMPTY bool,
+   CHAR char,
    EXISTV bool, 
    MODIFIABLE bool,
    MEASURE luk ].
@@ -1014,18 +1016,26 @@ basic-bare-np-phrase := head-only &
                     LTOP #ltop ] ] ].
 
 bare-np-phrase := basic-bare-np-phrase &
+"to push a common noun without a determiner to be NP
+<ex>我 吃 苹果
+"
   [ SYNSEM [ BARE +,
+             LIGHT #light,
 	     LOCAL.CAT [ HEAD noun & [ GENERIC - ],
              NONSUBJ #ns ],
          NON-LOCAL.SLASH 0-dlist ],
-    HEAD-DTR.SYNSEM.LOCAL [ CAT.NONSUBJ #ns,
-			    CONT.HOOK.INDEX.COG-ST activ-or-less ],
+    HEAD-DTR.SYNSEM [ LIGHT #light,
+                      LOCAL [ CAT.NONSUBJ #ns,
+			    CONT.HOOK.INDEX.COG-ST activ-or-less ] ],
     C-CONT.RELS <! [ PRED exist_q_rel ] !> ].
 
 
 ;; CL-phrase => nominal phrase
 basic-bare-nominal-phrase := unary-phrase &
-  [ SYNSEM.LOCAL [ CAT [ HEAD noun,
+"[ EMPTY - ] on child node to prevent temporal phrases like 昨天 from being converted from ADP to NP again.
+And [ EMPTY + ] on parent node to signal this NP has no head noun.
+"
+  [ SYNSEM.LOCAL [ CAT [ HEAD noun & [ EMPTY +],
                          VAL [ SPR < [ LOCAL.CAT.HEAD det,
                                        OPT + ] >,
                                SUBJ < >,
@@ -1034,9 +1044,9 @@ basic-bare-nominal-phrase := unary-phrase &
                          NONSUBJ #ns ],
                    COORD -,
                    CONT.HOOK #hook & [ INDEX.SORT nontime-s ] ],
-    ARGS < [ SYNSEM.LOCAL.CAT [ VAL [ SUBJ < >,
-                                      SPR olist,
-                                      COMPS < > ],
+    ARGS < [ SYNSEM.LOCAL.CAT [ HEAD.EMPTY -,
+                                VAL [ SUBJ < >,
+                                      SPR olist ],
                                 NONSUBJ #ns ] ] >,
     C-CONT [ RELS <! noun-relation &
                    [ PRED generic_n_rel,
@@ -1048,27 +1058,33 @@ basic-bare-nominal-phrase := unary-phrase &
                   [ LTOP #ltop,
                     INDEX #index ] ] ].
 
-;;ZZF FB 29-2-2016: added in "p" to head so this applies to de nominalization for nouns.
-#|
-bare-nominal-adj-phrase := basic-bare-nominal-phrase &
-  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD adj &
-             [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
-					 INDEX #index ] ] > ] ] >,
-    C-CONT.HOOK [ LTOP #ltop,
-		  INDEX #index ] ].
-|#
 bare-nominal-postp-phrase := basic-bare-nominal-phrase &
-  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD postp-nominalizable &
-             [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
-					 INDEX #index ] ] > ] ] >,
+"pushing DE construction to be NP, including relativing DE and associative DE. DeP should have its COMP fulfilled, thus avoid nominalizing DE alone.
+<ex>我 喜欢 很 红 的
+<ex>我 喜欢 他 写 的
+<ex>我 喜欢 吃 的
+<ex>我 的 哭 了
+<ex>我　喜欢　那　本　红　的
+<ex>我　喜欢　的　是　那　本　红　的
+Ideally for ADJ/V + DE, only the slashed DeP should be pushed up to be NP. But adding in this constraint would prevent the rule
+from being applied for possessive NP+DE. To be fixed later."
+  [ ARGS < [ SYNSEM.LOCAL.CAT [ HEAD postp-nominalizable &
+                                     [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
+					                         INDEX #index ] ] > ],
+                                VAL.COMPS < > ] ] >,
     C-CONT.HOOK [ LTOP #ltop,
 		  INDEX #index ] ].
 
 bare-nominal-det-phrase := basic-bare-nominal-phrase &
+"pushing determiners or det+classifier to be NP
+<ex>我　喜欢　那　本
+<ex>那 是 张三
+<ex>我 喜欢 那些
+"
   [ ARGS < [ SYNSEM.LOCAL.CAT [ HEAD det,
-                VAL.SPEC < [ LOCAL.CONT.HOOK 
-                           [ LTOP #ltop,
-                             INDEX #index ] ] > ] ] >,
+                                VAL.SPEC < [ LOCAL.CONT.HOOK 
+                                             [ LTOP #ltop,
+                                               INDEX #index ] ] > ] ] >,
     C-CONT.HOOK [ LTOP #ltop,
 		  INDEX #index ] ].
 
@@ -1120,7 +1136,7 @@ meas-np-phrase := head-final & head-valence-phrase & phrasal &
 ;; SSH 2014-12-19: 追赶 张三 ！
 ;; non-asepct & main clause
 opt-subj-imperative-phrase := imp-head-opt-subj-phrase &
-  [ SYNSEM [ LOCAL.CAT.HEAD verb,
+  [ SYNSEM [ LOCAL.CAT.HEAD verb & [ COP - ],
 	     NON-LOCAL.SLASH 0-dlist ],
     HEAD-DTR.SYNSEM.LOCAL [ CAT.MC +,
 			    CONT.HOOK.INDEX.E.ASPECT non-aspect ] ].
@@ -1130,35 +1146,26 @@ opt-subj-declarative-phrase := decl-head-opt-subj-phrase &
     HEAD-DTR.SYNSEM.LOCAL [ CAT.MC +,
 			    CONT.HOOK.INDEX.E.ASPECT aspect ] ].
 
-
-
-;; ZZF 2016-9-23: created separately for pronoun+noun.
-pronoun-noun-compound-phrase := head-final &
-"Forms a pronoun-noun compound phrase. The non-head-daughter can't be a proper noun or common noun. The head has to be a noun with noun-relation, thus excluding nominalized DE phrases.
-<ex>我 朋友 哭 了
-<nex>张三 朋友 哭 了
-<nex>苹果 朋友 哭 了
-<nex>他 解决 了 产品 的 质量 问题
-Strictly the head noun should refers to human only, which is to be treated later, 
-e.g. adding a HUMAN +/- feature for all nouns"
+basic-n-n-compound-phrase := head-final &
+"[EMPTY -] to stop combining NPs with no head noun, like DeP.
+"
   [ SYNSEM [ LOCAL.CAT #cat,
              NON-LOCAL #nonloc ],
     HEAD-DTR.SYNSEM lex-synsem &
                 [ LOCAL [ CAT #cat & 
-                              [ HEAD noun & [ CLASSIFIED na-or-- ],
+                              [ HEAD noun & 
+                                     [ CLASSIFIED na-or--,
+                                       EMPTY - ],
                                 VAL [ SPR < synsem >,
                                       COMPS < > ] ],
-                          CONT [ HOOK [ LTOP #ltop,
-                                        INDEX #hind ],
-                                 RELS.LIST.FIRST noun-relation ] ],
+                          CONT.HOOK [ LTOP #ltop,
+                                      INDEX #hind ] ],
                   NON-LOCAL #nonloc ],
-    NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun,
-                                      VAL [ SPR < >,
-                                            COMPS < > ],
+    NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun & [ EMPTY - ],
+                                      VAL.COMPS < >,
                                       POSTHEAD - ],
-                                CONT [ HOOK [ LTOP #larg,
-                                              INDEX #nhind ],
-                                       RELS.LIST.FIRST [ PRED pron_rel] ] ],
+                                CONT.HOOK [ LTOP #larg,
+                                              INDEX #nhind ] ],
     C-CONT [ HOOK [ LTOP #ltop,
             INDEX #hind ],
 	     RELS <! quant-relation & [ PRED exist_q_rel,
@@ -1172,13 +1179,29 @@ e.g. adding a HUMAN +/- feature for all nouns"
                               LARG #larg ] !>,
              ICONS <! !> ] ].
 
+;; ZZF 2016-9-23: created separately for pronoun+noun.
+pronoun-noun-compound-phrase := basic-n-n-compound-phrase &
+"Forms a pronoun-noun compound phrase. The head has to be a noun with noun-relation, thus excluding nominalized DE phrases.The non-head-daughter can't be a proper noun or common noun, constrained using LIGHT and SPR. 
+<ex>我 朋友 哭 了
+<nex>张三 朋友 哭 了
+<nex>苹果 朋友 哭 了
+<nex>他 解决 了 产品 的 质量 问题
+Head noun can't be temporal noun, using nontime-s.
+Strictly the head noun should refers to human only, which is to be treated later, 
+e.g. adding a HUMAN +/- feature for all nouns"
+  [ HEAD-DTR.SYNSEM.LOCAL.CONT [ RELS.LIST.FIRST noun-relation,
+                                 HOOK.INDEX.SORT nontime-s],
+    NON-HEAD-DTR.SYNSEM [ LIGHT +,
+                          LOCAL [ CAT.VAL.SPR < >,                                       
+                                  CONT.RELS.LIST.FIRST [ PRED pron_rel] ] ] ].
+
 
 ;; DPF 27-jul-11 - Removed HEAD-DTR..MODIFIED notmod to allow "old dog who 
 ;; can bark" |一 只 会 叫 的 老 狗|
 ;;
 ;; SSH 2014-04-16: added [CLASSIFIED na-or--] to prevent [一 只 猫]
 ;; from being analyzed as a compound
-noun-noun-compound-phrase := head-final &
+noun-noun-compound-phrase := basic-n-n-compound-phrase &
 "Forms a noun-noun compound phrase
 <ex>他 解决 了 质量 问题
 <ex>他 解决 了 产品 质量 问题
@@ -1187,34 +1210,7 @@ noun-noun-compound-phrase := head-final &
 <nex>他 解决 了 我 问题
 For compounds with >2 nouns, we have bracketting ambiguity, e.g. [产品 [质量 问题]] or [[产品 质量] 问题]. 
 The rule allows both interpretations, leaving the ambiguity for statistical ranking model to determine later."
-  [ SYNSEM [ LOCAL.CAT #cat,
-             NON-LOCAL #nonloc ],
-    HEAD-DTR.SYNSEM lex-synsem &
-                [ LOCAL [ CAT #cat & 
-                              [ HEAD noun & [ CLASSIFIED na-or-- ],
-                                VAL [ SPR < synsem >,
-                                      COMPS < > ] ],
-                          CONT.HOOK [ LTOP #ltop,
-                                      INDEX #hind ] ],
-                  NON-LOCAL #nonloc ],
-    NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun,
-                                      VAL [ SPR < synsem >,
-                                            COMPS < > ],
-                                      POSTHEAD - ],
-                                CONT.HOOK [ LTOP #larg,
-                                            INDEX #nhind ] ],
-    C-CONT [ HOOK [ LTOP #ltop,
-            INDEX #hind ],
-	     RELS <! quant-relation & [ PRED exist_q_rel,
-					ARG0 #nhind,
-					RSTR #harg ],
-                      arg12-ev-relation & [ LBL #ltop,
-                                            PRED compound_p_rel,
-                                            ARG1 #hind, 
-				            ARG2 #nhind ] !>,
-             HCONS <! qeq & [ HARG #harg,
-                              LARG #larg ] !>,
-             ICONS <! !> ] ].
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SPR < synsem > ].
 
 #|ZZF: comment out temporarily, not necessary
 ;; SSH 2014-12-19: phr-synsem is added.
@@ -1286,6 +1282,7 @@ rslt-compound-phrase := head-initial &
                   LIGHT +,
 		  LOCAL [ CAT [ HEAD #head & +vj & [ CHAR.LENGTH one,
 						     STATIVE na-or--,
+                                                     COP -,
 						     AUX - ],				
 				VAL [ SPR #spr,
 				      SPEC #spec ],
@@ -1340,48 +1337,61 @@ inverse-oriented-phrase := head-initial &
 				    COMPS < #subj > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #comp > ].
 
-;; Type 2 (lee:13)
-;;张三 玩 忘 了 责任
+
 rslt-1_12-phrase := rslt-x_12-phrase & subject-oriented-phrase &
+"Type 2 (lee:13)
+<ex>张三 玩 忘 了 责任
+"
   [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
 
-;; Type 1 (lee:13)
-;;张三 下 赢 棋
 rslt-12_12-phrase := rslt-x_12-phrase & subject-oriented-phrase &
+"Type 1 (lee:13)
+<ex>张三 下 赢 棋
+"
   [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #comps,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #comps ].
 
-;; Type 10 (lee:13)
-;;张三 跑 累 了
+
 rslt-1_1-sbj-phrase := rslt-1_1-phrase & subject-oriented-phrase &
+"Type 10 (lee:13)
+<ex>张三 跑 累 了
+"
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj >,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ].
 
-;; Type 5 (lee:13)
-;;张三 哭 红 了 双眼
+
 rslt-1_1-obj-phrase := rslt-1_1-phrase & object-oriented-phrase &
+"Type 5 (lee:13)
+<ex>张三 哭 红 了 双眼
+"
   [ SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj >,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ].
 
-;; Type 11 (lee:13)
-;; 双眼 哭 红 了 
+
 rslt-1_1-noshare-phrase := rslt-1_1-phrase & subject-oriented-phrase &
+"Type 11 (lee:13)
+<ex>双眼 哭 红 了 
+"
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate ] >,
 			   COMPS < > ],
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < unexpressed & [ OPT + ] > ].
 
-;; Type 7 (lee:13)
-;;张三 追 累 了 李四 (Zhangsan chased Lisi and Zhangsan got tired.)
+
 rslt-12_1-sbj-phrase := rslt-12_1-phrase & subject-oriented-phrase &
+"Type 7 (lee:13) (Zhangsan chased Lisi and Zhangsan got tired.)
+<ex>张三 追 累 了 李四 
+"
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comp >,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
 				    COMPS < #comp > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ]. 
 
-;; Type 3 (lee:13)
-;;张三 追 累 了 李四 (Zhangsan chased Lisi to the extent of making Lisi tired.)
+
 rslt-12_1-obj-phrase := rslt-12_1-phrase & object-oriented-phrase &
+"Type 3 (lee:13) (Zhangsan chased Lisi to the extent of making Lisi tired.)
+<ex>张三 追 累 了 李四 
+"
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
 			   COMPS < #comp > ],
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST #subj,
@@ -1400,8 +1410,12 @@ rslt-12_1-inv-phrase := rslt-12_1-phrase & inverse-oriented-phrase.
 ;; SSH 2015-04-20: [ SUBJ < [] > ] on MOD is deleted:
 ;; 明天 张三 打 跑 了 李四 
 np-adp-phrase := unary-phrase &
-  [ SYNSEM.LOCAL.CAT [ HEAD adp & 
-                [ MOD < [ LOCAL intersective-mod &
+"push temporal noun to be prepositional phrase
+<ex>他 昨天 来 了
+"
+  [ SYNSEM.LOCAL.CAT [ HEAD prep & 
+                [ EMPTY +,
+                  MOD < [ LOCAL intersective-mod &
                         [ CAT [ HEAD verb,
                             VAL [ COMPS < > ] ],
                           CONT.HOOK [ LTOP #ltop,
@@ -1419,7 +1433,7 @@ np-adp-phrase := unary-phrase &
             XARG #modind ],
          RELS <! arg12-ev-relation &
            [ LBL #ltop,
-             PRED temporal_x_rel,
+             PRED time_p_rel,
              ARG0 #index,
              ARG1 #modind,
              ARG2 #nind ] !>,
