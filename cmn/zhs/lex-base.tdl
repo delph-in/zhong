@@ -251,8 +251,9 @@
 是_v_3 := v_shide_le &
   [ STEM < "是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "是_v_cop_rel",
+;    SYNSEM.LKEYS.KEYREL.PRED "是_v_cop_rel",
     TRAITS native_token_list ].
+
 
 有_v := v_np_you_le &
   [ STEM < "有" >,

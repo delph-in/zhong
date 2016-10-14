@@ -1142,9 +1142,14 @@ opt-subj-imperative-phrase := imp-head-opt-subj-phrase &
 			    CONT.HOOK.INDEX.E.ASPECT non-aspect ] ].
 
 opt-subj-declarative-phrase := decl-head-opt-subj-phrase &
-  [ SYNSEM.LOCAL.CAT.HEAD +vj,
-    HEAD-DTR.SYNSEM.LOCAL [ CAT.MC +,
-			    CONT.HOOK.INDEX.E.ASPECT aspect ] ].
+  [ SYNSEM [ LOCAL.CAT.HEAD +vj,
+             NON-LOCAL #non-local ],
+    HEAD-DTR [ SYNSEM [ LOCAL [ CAT.MC +,
+			        CONT.HOOK.INDEX.E.ASPECT aspect ],
+                        NON-LOCAL #non-local ],
+               ARG-ST.FIRST.NON-LOCAL [ SLASH 0-dlist,
+                                        QUE 0-dlist,
+                                        REL 0-dlist ] ] ].
 
 basic-n-n-compound-phrase := head-final &
 "[EMPTY -] to stop combining NPs with no head noun, like DeP.
@@ -1409,7 +1414,7 @@ rslt-12_1-inv-phrase := rslt-12_1-phrase & inverse-oriented-phrase.
 ;; Make temporal NPs into adposition phrases
 ;; SSH 2015-04-20: [ SUBJ < [] > ] on MOD is deleted:
 ;; 明天 张三 打 跑 了 李四 
-np-adp-phrase := unary-phrase &
+np-adp-phrase := unary-phrase & norm-zero-arg &
 "push temporal noun to be prepositional phrase
 <ex>他 昨天 来 了
 "

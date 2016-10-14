@@ -107,7 +107,7 @@ bound-time-noun-lex := basic-time-noun-lex &
                     ARG0 #index ] !>,
               HCONS <! !> ] ] ].
 
-proper-name-lex := basic-one-arg & basic-icons-lex-item &
+proper-name-lex := basic-one-arg & basic-icons-lex-item & norm-zero-arg &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT [ HEAD noun,
 			   VAL [ COMPS < >,
@@ -124,9 +124,6 @@ proper-name-lex := basic-one-arg & basic-icons-lex-item &
 			    HCONS <! qeq & 
 				   [ HARG #harg,
 				     LARG #larg ] !> ] ],
-	     NON-LOCAL [ SLASH 0-dlist,
-                         REL 0-dlist,
-                         QUE 0-dlist ],
 	     LKEYS.KEYREL #keyrel & named-relation ] ].
 
 
@@ -139,7 +136,9 @@ human-name-lex := nonloc-name-lex & human-lex-item.
 sir-name-lex := human-name-lex.
 
 ;; SSH 2014-11-13: pronouns introduce a quant-relation. 
-basic-pronoun-lex := basic-one-arg & norm-hook-lex-item & 
+basic-pronoun-lex := basic-one-arg & norm-hook-lex-item & zero-arg-nonslash & zero-arg-nonrel &
+"Pronouns don't have NON-LOCAL.SLASH and REL
+"
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT [ HEAD noun,
 			   VAL [ COMPS < >,
@@ -154,9 +153,6 @@ basic-pronoun-lex := basic-one-arg & norm-hook-lex-item &
 			    HCONS <! qeq & 
 				   [ HARG #harg, 
 				     LARG #larg ] !> ] ],
-             NON-LOCAL [ SLASH 0-dlist,
-                         REL 0-dlist, 
-                         QUE 0-1-dlist ],
 	     LKEYS.KEYREL noun-relation & #rel & [ PRED pron_rel ] ] ].
 
 
@@ -586,27 +582,6 @@ v_exist-lex := basic-three-arg & verb-lex & basic-verb-lex & basic-icons-lex-ite
                    CONT.HOOK [ LTOP #vltop,
                            XARG #arg1 ] ] ] > ].
 
-
-cop-verb-cpcomp-lex := basic-one-arg & verb-lex & basic-verb-lex & basic-icons-lex-item &
-  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
-                                 COMPS #comps ],
-                           HEAD.COP + ],
-                     CONT [ HOOK [ LTOP #lbl,
-                                   INDEX #event ],
-                            RELS <! #keyrel !>,
-                            HCONS <! qeq & [ HARG #arg1,
-                                             LARG #cltop ] !> ] ],
-             LKEYS.KEYREL #keyrel &
-                   [ LBL #lbl,
-                     ARG0 #event,
-                     ARG1 #arg1 ] ],
-    ARG-ST #comps &
-           < [ LOCAL [ CAT [ VAL [ SUBJ < >,
-                                   SPR < >,
-                                   COMPS < > ],
-                             HEAD verb ],
-                       CONT.HOOK.LTOP #cltop ] ] > ].
-
 v_light-verb-lexeme := main-verb-lex & basic-two-arg-no-hcons & basic-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT.VAL.COMPS < #comp >,
                      CONT.HOOK.XARG #arg1 ],
@@ -732,10 +707,25 @@ v_weather_type_lex := verb-lex & basic-icons-lex-item & aspect-rule-dtr &
 
 ;;;Adverbs
 
+;;redefining the types in matrix.tdl. Taken out raise-index-mod-lex-item from basic-adverb-lex and put it in basic-scopal-adverb-lex. 
+basic-adverb-lex :=  single-rel-lex-item & basic-icons-lex-item &
+  [ SYNSEM [ LOCAL.CAT.HEAD adv,
+	     LKEYS.KEYREL event-relation ]].
+
+;;its HOOK.INDEX is the same as that of the thing it modifies
+basic-scopal-adverb-lex := basic-adverb-lex & scopal-mod-lex & raise-index-mod-lex-item.
+
+;;add in norm-hook-lex-item, so that it's keyrel.arg0 is its hook.index
+basic-int-adverb-lex := basic-adverb-lex & intersective-mod-lex & norm-hook-lex-item.
+
 basic-int-adverb-lex :+
+"Its ARG1 refers to what it modifies, through XARG.
+"
   [ SYNSEM [ PAREN -,
-	     LOCAL.CAT.VAL [ SUBJ < > ],
-	     NON-LOCAL.SLASH 0-dlist ] ].
+	     LOCAL [ CAT.VAL [ SUBJ < > ], 
+                     CONT.HOOK.XARG #ind ],
+	     NON-LOCAL.SLASH 0-dlist,
+             LKEYS.KEYREL.ARG1 #ind ] ].
 
 basic-scopal-adverb-lex :+
   [ SYNSEM [ PAREN -,
@@ -953,6 +943,44 @@ cop-verb-cpsubj-lex :=  main-verb-lex & basic-two-arg-no-hcons &
                  ARG2 #ind2 ] ],
      ARG-ST < [ LOCAL.CONT.HOOK.LTOP #arg1 ],
           #comp & [ LOCAL.CONT.HOOK.INDEX ref-ind & #ind2 ] > ].
+
+cop-verb-cpcomp-lex := basic-one-arg & verb-lex & basic-verb-lex & basic-icons-lex-item &
+  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
+                                 COMPS #comps ],
+                           HEAD.COP + ],
+                     CONT [ HOOK [ LTOP #lbl,
+                                   INDEX #event ],
+                            RELS <! #keyrel !>,
+                            HCONS <! qeq & [ HARG #arg1,
+                                             LARG #cltop ] !> ] ],
+             LKEYS.KEYREL #keyrel &
+                   [ LBL #lbl,
+                     ARG0 #event,
+                     ARG1 #arg1 ] ],
+    ARG-ST #comps &
+           < [ LOCAL [ CAT [ VAL [ SUBJ < >,
+                                   SPR < >,
+                                   COMPS < > ],
+                             HEAD verb ],
+                       CONT.HOOK.LTOP #cltop ] ] > ].
+
+cop-shi-pp-de-lex := lex-item & basic-three-arg-no-hcons & one-icons-lex-item & no-rels-hcons-lex-item &
+"
+他 是 昨天 哭 的
+xarg is for the thing that pp is modifying. ARGS: list of children of rule, and ARG-ST: subj + comps
+dpind here is the same as index for VP in DeP.
+"
+ [ SYNSEM [ LOCAL [ CAT [ HEAD verb,
+                          VAL [ SUBJ < #subj & [ LOCAL.CAT.HEAD noun ] >,
+                                COMPS < [ LOCAL [ CAT.HEAD +rp,
+                                                  CONT.HOOK [ INDEX #ppind,
+                                                              XARG #dpind ] ],
+                                          OPT - ],
+                                        [ LOCAL [ CAT.HEAD postp-comp & [ MOD < #subj > ],
+                                                  CONT.HOOK.INDEX #dpind ],
+                                          OPT - ] > ] ],
+                    CONT [ ICONS <! focus & [ IARG1 #dpind,
+					      IARG2 #ppind ] !> ] ] ] ].
 
 subj-drop-verb-lex := lex-item.
 no-subj-drop-verb-lex := lex-item.
@@ -1520,7 +1548,7 @@ de-assoc-v-lex := de-assoc-lex &
 ;; ZZF 2015-9-30: subj restriction of the v/adj to stop spurious parses 
 ;; 2016-2-21 ZZF: DE does not take subj
 
-de-comp-lex := de-super-lex & raise-sem-lex-item & no-icons-lex-item &
+de-comp-lex := de-super-lex & raise-sem-lex-item & no-icons-lex-item & norm-zero-arg &
 "The modified noun is the missing argument in the relative clause.
 <ex>我　喜欢　红　的 苹果
 <ex>我　喜欢　那　个　红　的 苹果
@@ -1537,7 +1565,9 @@ de-comp-lex := de-super-lex & raise-sem-lex-item & no-icons-lex-item &
                                                  CONT.HOOK.INDEX #slash ]
                                                !> ] >,
                                  SUBJ < > ] ] ],
-             NON-LOCAL non-local ] ].
+              NON-LOCAL [ SLASH <! !>,
+                          REL <! !>,
+                          QUE <! !> ] ] ].
 
 
 ;;FB & ZZF 2015-10-28 nominalizing DE,

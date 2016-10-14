@@ -25595,10 +25595,16 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
 	     LKEYS.KEYREL.PRED "_喜欢_v_1_rel" ],
     TRAITS native_token_list ].
 
-喜欢_v_2 := v_s_le &
+喜欢_v_2 := v_vp_sequi_le &
   [ STEM < "喜欢" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_喜欢_v_2_rel",
+    TRAITS native_token_list ].
+
+喜欢_v_3 := v_s_le &
+  [ STEM < "喜欢" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_喜欢_v_3_rel",
     SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
     TRAITS native_token_list ].
 
