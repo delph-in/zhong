@@ -160,6 +160,7 @@ x_-_assoc-de-v_le := de-assoc-v-lex.
 ;;poss-det-lex.
 ;x_-_nom-de_le := de-nominalizer-lex.
 x_-_rel-de_le := de-comp-lex.
+x_-_altobj-de_le := de-4shi-lex.
 
 x_bei_le := v_bei_type_lex.
 x_ba_le := v_ba_type_lex.

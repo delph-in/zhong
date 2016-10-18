@@ -598,6 +598,11 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
     TRAITS native_token_list ].
 
+的_shide-altobj := x_-_altobj-de_le & 
+  [ STEM < "的" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
+    TRAITS native_token_list ].
+
 之_ASSOC_d := x_-_assoc-de-n_le &
  [ STEM < "之" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "之", LENGTH one ],

@@ -97070,11 +97070,18 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_邀宴_v_1_rel" ],
     TRAITS native_token_list ].
 
-邀请_v_1 := v_np_le &
+邀请_v_1 := v_np-vp_oequi_le &
   [ STEM < "邀请" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "邀", LENGTH two ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_邀请_v_1_rel" ],
+    TRAITS native_token_list ].
+
+邀请_v_2 := v_np_le &
+  [ STEM < "邀请" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "邀", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_邀请_v_2_rel" ],
     TRAITS native_token_list ].
 
 邀请函_n_1 := n_-_le &

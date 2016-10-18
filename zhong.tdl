@@ -40,12 +40,14 @@ basic-unary-phrase :+
 
 ;; SSH 2014-12-19: BOUND is introduced. Lexical items with [BOUND +]
 ;; cannot be combined with the other of itself.
+;; CH to indicate the position of COMPS, CH+ means COMP before HEAD, CH- means COMP after HEAD, allowing HEAD to have one COMP before and one COMP after
 synsem :+ 
  [ PUNCTUATED luk,
    INTERJECTED luk,
    PAREN luk,
    ASPECTED luk,
    POSTCOMP luk,
+   CH luk,
    BARE luk,
    SPART spart,
    UTTERED luk,
@@ -319,11 +321,14 @@ head-adj-phrase :+
 		      MODIFIED notmod-or-rmod ] ].
 
 head-adj-int-phrase :+ 
+"Using OPT on non-head-dtr to prevent a special DeP from being taken as a normal modifier.
+"
   [ SYNSEM [ L-PERIPH #lperiph,
 	     R-PERIPH #rperiph ],
     HEAD-DTR.SYNSEM.R-PERIPH na-or--,
     NON-HEAD-DTR.SYNSEM [ L-PERIPH #lperiph,
-			  R-PERIPH #rperiph ] ].
+			  R-PERIPH #rperiph,
+                          LOCAL.CAT.HEAD.MOD < [ OPT na-or-- ] > ] ].
 
 ;; WWJ (2015-03-28): NHD's SPART and Phrase's NHD are identi-fied... is this ok?
 head-adj-scop-phrase :+
@@ -339,7 +344,8 @@ head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
        [ LOCAL.CAT.HEAD +nvjrpdmo ],
     HEAD-DTR.SYNSEM.POSTCOMP na-or--,
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
-			  INTERJECTED na-or-- ] ].
+			  INTERJECTED na-or--,
+                          CH na-or-- ] ].
 #|
 ;;2016-2-15 ZZF FB separating head-comp for verbs and adjectives, comp node's SPR is "olist" means either unexpressed or saturated
 hdv-comp-phrase := head-comp-phrase &
@@ -372,9 +378,12 @@ head-2nd-comp-phrase := basic-head-2nd-comp-phrase & head-initial &
 
 ;; SSH 2015-04-16: adp -> +np (ex. 我 [教室 里] 哭 了)
 comp-head-final-phrase := basic-head-1st-comp-phrase & head-final & 
+"POSTCOMP + == I'm after my comps
+"
   [ SYNSEM.LOCAL.CAT.HEAD +njrpdmo,
     HEAD-DTR.SYNSEM.POSTCOMP +,
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
+                          CH na-or-+,
 			  LOCAL.CAT.HEAD +nvjp ] ].
 
 ;; For now, exclude time nouns as subjects

@@ -1004,12 +1004,36 @@ Now can't work with negation, as negation introduces another qeq into HCONS list
 shi-subj-dep-lex := shi-emph-lex & basic-two-arg-no-hcons &
 "
 <ex>是 他 完成 任务 的
+<ex>是 我 邀请 他 来 的
 "
  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >,
-                          COMPS < #comp1 & [ LOCAL [ CAT.HEAD noun,
-                                                     CONT.HOOK.INDEX #subj-ind ] ],
-                                  #comp2 & [ LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX #subj-ind ] > ] > ],
+                          COMPS < #comp1 & 
+                                  [ LOCAL [ CAT.HEAD noun,
+                                            CONT.HOOK.INDEX #subj-ind ] ],
+                                  #comp2 & 
+                                  [ LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX #subj-ind ] > ] > ],
    ARG-ST < #comp1, #comp2 > ].
+
+
+de-4shi-lex := lex-item & raise-sem-lex-item & no-icons-lex-item & norm-zero-arg &
+"Special DE used in ShiDe structure for alternative location of object of a transitive verb.
+Feature CH + means this COMP is before the head, CH - means it's after the head.
+<ex>他 是 昨天 完成 的 任务
+Currently using OPT+ to stop this DeP from being treated as an actual modifier for noun. In rule head-adj-int-phrase, constraint [ OPT na-or-- ] is used to exclude this DeP.
+"
+  [ SYNSEM.LOCAL.CAT [ HEAD postp-comp &
+	                    [ MOD < #subj & [ OPT + ] > ],
+		        VAL [ SPR < >,
+                              SPEC < >,
+                              SUBJ < >,
+			      COMPS < [ LOCAL [ CAT [ HEAD verb & [ COP - ],
+                                                      VAL [ SUBJ < #subj >,
+                                                            COMPS < #obj > ] ] ],
+                                        CH + ],
+                                      #obj & [ LOCAL.CAT.HEAD noun,
+                                               CH - ] > ] ] ].
+
+
 
 
 subj-drop-verb-lex := lex-item.
