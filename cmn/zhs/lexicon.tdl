@@ -8540,45 +8540,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_伙同_v_1_rel" ],
     TRAITS native_token_list ].
 
-会_n_1 := n_-_le &
-  [ STEM < "会" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_会_n_1_rel",
-    TRAITS native_token_list ].
-
-会_n_2 := n_-_l_pn_le &
-  [ STEM < "会" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.CARG "会",
-    TRAITS native_token_list ].
-
-会_v_aux :=  v_vp_aux_le &
-  [ STEM < "会" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH one ],
-	SYNSEM.LKEYS.KEYREL.PRED "_会_v_aux_rel",
-    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
-    TRAITS native_token_list ].
-
-会_v_2 := v_np_le &
-  [ STEM < "会" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_会_v_2_rel" ],
-    TRAITS native_token_list ].
-
-会_v_3 := v_vp_sequi_le &
-  [ STEM < "会" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_会_v_3_rel",
-    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
-    TRAITS native_token_list ].
-
-会不会_r_1 := adv_-_vp-pre_le &
-  [ STEM < "会不会" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_会不会_a_1_rel",
-    TRAITS native_token_list ].
-
 会务_n_1 := n_-_le &
   [ STEM < "会务" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH two ],

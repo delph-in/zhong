@@ -122,7 +122,9 @@ v_np_you_le := v_exist-lex.
 v_vp_aux_le := v_aux-aux-lex.
 
 v_np_cop_le := cop-verb-lex.
-v_shide_le := cop-shi-pp-de-lex.
+v_shide-adp_le := shi-mod-dep-lex.
+v_shide-aux_le := shi-aux-dep-lex.
+v_shide-sbj_le := shi-subj-dep-lex.
 ;v_shide_le := cop-verb-cpcomp-lex.
 v_inv-shide_le := cop-verb-cpsubj-lex.
 

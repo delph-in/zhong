@@ -248,12 +248,21 @@
     SYNSEM.LKEYS.KEYREL.PRED "是_v_cop_rel",
     TRAITS native_token_list ].
 
-是_v_3 := v_shide_le &
+shide_adp := v_shide-adp_le &
   [ STEM < "是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
 ;    SYNSEM.LKEYS.KEYREL.PRED "是_v_cop_rel",
     TRAITS native_token_list ].
 
+shide_aux := v_shide-aux_le &
+  [ STEM < "是" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
+    TRAITS native_token_list ].
+
+shide_sbj := v_shide-sbj_le &
+  [ STEM < "是" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
+    TRAITS native_token_list ].
 
 有_v := v_np_you_le &
   [ STEM < "有" >,
@@ -443,6 +452,8 @@
 		                            CAT.HEAD.EXISTV - ] ] > ],
     TRAITS native_token_list ].
 
+
+
 不_polar_basic_r := adv_-_polar2_basic_le &
   [ STEM < "不" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
@@ -469,6 +480,7 @@
 	     LKEYS.KEYREL.PRED _mei_x_rel ],
     TRAITS native_token_list ].
 
+
 没_polar_basic_r := adv_-_polar_basic_le &
   [ STEM < "没" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
@@ -486,6 +498,7 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _mei_polar_x_rel,
     TRAITS native_token_list ].
+
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Intensifiers
@@ -604,7 +617,6 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "所", LENGTH one ],
     TRAITS native_token_list ].
 
-
 ;;;;;;;;;;;;;;;;;;;
 ;;; Interjections
 ;;;;;;;;;;;;;;;;;;;
@@ -685,6 +697,49 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_是的_ij_rel",
     TRAITS native_token_list ].
+
+;;;;;;;;;;;;
+;;modal verbs and their ambiguous forms
+;;;;;;;;;;;;
+会_n_1 := n_-_le &
+  [ STEM < "会" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_会_n_1_rel",
+    TRAITS native_token_list ].
+
+会_n_2 := n_-_l_pn_le &
+  [ STEM < "会" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "会",
+    TRAITS native_token_list ].
+
+会_v_aux :=  v_vp_aux_le &
+  [ STEM < "会" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH one ],
+	SYNSEM.LKEYS.KEYREL.PRED "_会_v_aux_rel",
+    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
+    TRAITS native_token_list ].
+
+会_v_2 := v_np_le &
+  [ STEM < "会" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_会_v_2_rel" ],
+    TRAITS native_token_list ].
+
+会_v_3 := v_vp_sequi_le &
+  [ STEM < "会" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_会_v_3_rel",
+    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
+    TRAITS native_token_list ].
+
+会不会_r_1 := adv_-_vp-pre_le &
+  [ STEM < "会不会" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "会", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_会不会_a_1_rel",
+    TRAITS native_token_list ].
+
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; KIV items

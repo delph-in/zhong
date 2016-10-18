@@ -716,9 +716,7 @@ basic-adverb-lex :=  single-rel-lex-item & basic-icons-lex-item &
 basic-scopal-adverb-lex := basic-adverb-lex & scopal-mod-lex & raise-index-mod-lex-item.
 
 ;;add in norm-hook-lex-item, so that it's keyrel.arg0 is its hook.index
-basic-int-adverb-lex := basic-adverb-lex & intersective-mod-lex & norm-hook-lex-item.
-
-basic-int-adverb-lex :+
+basic-int-adverb-lex := basic-adverb-lex & intersective-mod-lex & norm-hook-lex-item &
 "Its ARG1 refers to what it modifies, through XARG.
 "
   [ SYNSEM [ PAREN -,
@@ -964,23 +962,55 @@ cop-verb-cpcomp-lex := basic-one-arg & verb-lex & basic-verb-lex & basic-icons-l
                              HEAD verb ],
                        CONT.HOOK.LTOP #cltop ] ] > ].
 
-cop-shi-pp-de-lex := lex-item & basic-three-arg-no-hcons & one-icons-lex-item & no-rels-hcons-lex-item &
+shi-emph-lex := lex-item & one-icons-lex-item & no-rels-hcons-lex-item &
+ [ SYNSEM.LOCAL [ CAT [ HEAD verb & [ COP + ], 
+                        VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX #empind,
+                                        OPT - ],
+                                      [ LOCAL [ CAT [ HEAD postp-comp & [ MOD < synsem > ],
+                                                      VAL.COMPS < > ],
+                                                CONT.HOOK.INDEX #clind ],
+                                        OPT - ] > ] ],
+                  CONT [ ICONS <! focus & [ IARG1 #clind,
+					    IARG2 #empind ] !> ] ] ].
+
+shi-other-dep-lex := shi-emph-lex & basic-three-arg-no-hcons &
+ [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj & [ LOCAL.CAT.HEAD noun ] >,
+                          COMPS < synsem,
+                                  [ LOCAL.CAT.HEAD.MOD < #subj > ] > ] ].
+
+             
+shi-mod-dep-lex := shi-other-dep-lex &
 "
-他 是 昨天 哭 的
-xarg is for the thing that pp is modifying. ARGS: list of children of rule, and ARG-ST: subj + comps
-dpind here is the same as index for VP in DeP.
+<ex>他 是 昨天 哭 的
+<ex>他 是 一定 会 哭 的
+xarg is for the thing that pp or advp is modifying. ARGS: list of children of rule, and ARG-ST: subj + comps
+clind here is the same as index for VP in DeP.
 "
- [ SYNSEM [ LOCAL [ CAT [ HEAD verb,
-                          VAL [ SUBJ < #subj & [ LOCAL.CAT.HEAD noun ] >,
-                                COMPS < [ LOCAL [ CAT.HEAD +rp,
-                                                  CONT.HOOK [ INDEX #ppind,
-                                                              XARG #dpind ] ],
-                                          OPT - ],
-                                        [ LOCAL [ CAT.HEAD postp-comp & [ MOD < #subj > ],
-                                                  CONT.HOOK.INDEX #dpind ],
-                                          OPT - ] > ] ],
-                    CONT [ ICONS <! focus & [ IARG1 #dpind,
-					      IARG2 #ppind ] !> ] ] ] ].
+ [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL [ CAT.HEAD +rp,
+                                          CONT.HOOK.XARG #clind ] ],
+                                [ LOCAL.CONT.HOOK.INDEX #clind ] > ].
+
+shi-aux-dep-lex := shi-other-dep-lex &
+"linking aux and verb up in qeq.
+<ex>他 是 会 哭 的
+<ex>他 是 不 会 哭 的
+Now can't work with negation, as negation introduces another qeq into HCONS list. Then we can't identify the right qeq to work on. Probably the last, but how? --ask Emily
+"
+ [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL [ CAT [ HEAD verb & [ AUX + ],
+                                                VAL.COMPS < synsem > ],
+                                          CONT.HCONS <! qeq & [ LARG #larg ] !>] ],
+                                [ LOCAL.CONT.HOOK.LTOP #larg ] > ].
+
+shi-subj-dep-lex := shi-emph-lex & basic-two-arg-no-hcons &
+"
+<ex>是 他 完成 任务 的
+"
+ [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >,
+                          COMPS < #comp1 & [ LOCAL [ CAT.HEAD noun,
+                                                     CONT.HOOK.INDEX #subj-ind ] ],
+                                  #comp2 & [ LOCAL.CAT.HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX #subj-ind ] > ] > ],
+   ARG-ST < #comp1, #comp2 > ].
+
 
 subj-drop-verb-lex := lex-item.
 no-subj-drop-verb-lex := lex-item.
@@ -1611,12 +1641,15 @@ prep-no-mod-lex := prep-lex &
              LKEYS.KEYREL.ARG1 #arg1 ] ].
 
 prep-mod-lex := prep-lex & 
+"linking ARG1 to XARG as well, which can be used in other places to refer to INDEX of what it modifies.
+"
   [ SYNSEM [ LOCAL [ CAT.HEAD.MOD < [ LOCAL intersective-mod &
                                       [ CAT [ HEAD verb,
                                               VAL.COMPS < > ],
                                        CONT.HOOK [ LTOP #ltop,
                                                    INDEX #ind ] ] ] >,
-                     CONT.HOOK.LTOP #ltop ],
+                     CONT.HOOK.LTOP #ltop,
+                     CONT.HOOK.XARG #ind ],
              LKEYS.KEYREL.ARG1 #ind ] ].
 
 prep-n-mod-lex := prep-mod-lex & 
