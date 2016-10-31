@@ -79667,13 +79667,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
 绝对_j_2 := a_-_pred_le &
   [ STEM < "绝对" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "绝", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_绝对_a_3_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_绝对_a_2_rel",
     TRAITS native_token_list ].
 
-绝对_r_1 := adv_-_vp-pre_le &
+绝对_r_1 := adv_-_scop-prehd_le &
   [ STEM < "绝对" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "绝", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_绝对_a_2_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_绝对_a_3_rel",
     TRAITS native_token_list ].
 
 绝路_n_1 := n_-_le &

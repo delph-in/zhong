@@ -285,14 +285,14 @@ head :+
 
 verb-lex := lex-item &
   [ SYNSEM [ PAREN -,
-	     LOCAL.CAT.HEAD verb & [ PRED-KEY #pred ],
+	     LOCAL.CAT [ HEAD verb & [ PRED-KEY #pred ],
+                         VAL.SPR < > ],
 	     LKEYS.KEYREL.PRED #pred ] ].
 	     ;ASPECTED na,
 
 main-verb-lex := verb-lex & basic-verb-lex & tentative-lex-dtr & 
   [ SYNSEM.LOCAL [ CAT [ HEAD.AUX -,
-                         VAL [ SPR < >,
-                               SUBJ < #subj > ] ],
+                         VAL.SUBJ < #subj > ],
                    CONT.HOOK.XARG #xarg ],
     ARG-ST.FIRST #subj &
                  [ LOCAL [ CAT.VAL [ SPR < >,
@@ -762,10 +762,18 @@ int-adv-vp-pre-no-rel := intersective-mod-lex & basic-icons-lex-item &
 		     CONT [ HOOK #hook, RELS <! !> ] ],
 	     NON-LOCAL.SLASH 0-dlist ] ].
 
+
+;;zzf 2016-10-24 why is adv's HOOK the same as the one it modifies? In ERG, ARG1 of adv points to INDEX of the modified
+deg-int-adv-vp-pre := int-adv-vp-pre &
+  [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < [ LOCAL.CONT.HOOK.INDEX #ind ] >,
+			     SPR < > ],
+		   CONT.RELS.LIST.FIRST.ARG1 #ind ] ].
+#|
 deg-int-adv-vp-pre := int-adv-vp-pre &
   [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < [ LOCAL.CONT.HOOK #hook ] >,
 			     SPR < > ],
 		   CONT.HOOK #hook ] ].
+|#
 
 int-adv-v-pre :=  intersective-mod-lex & basic-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD adv & 
@@ -926,7 +934,8 @@ cop-verb-lex :=  transitive-verb-lex &
 <ex>他 是 张三
 "
   [ SYNSEM.LOCAL.CAT [ HEAD.COP +,
-                       VAL.COMPS < [ OPT - ] > ] ].
+                       VAL [ SPR < >,
+                             COMPS < [ OPT - ] > ] ] ].
 
 cop-verb-cpsubj-lex :=  main-verb-lex & basic-two-arg-no-hcons &
                         basic-icons-lex-item & 
@@ -962,49 +971,82 @@ cop-verb-cpcomp-lex := basic-one-arg & verb-lex & basic-verb-lex & basic-icons-l
                              HEAD verb ],
                        CONT.HOOK.LTOP #cltop ] ] > ].
 
-shi-emph-lex := lex-item & one-icons-lex-item & no-rels-hcons-lex-item &
- [ SYNSEM.LOCAL [ CAT [ HEAD verb & [ COP + ], 
-                        VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX #empind,
-                                        OPT - ],
-                                      [ LOCAL [ CAT [ HEAD postp-comp & [ MOD < synsem > ],
-                                                      VAL.COMPS < > ],
-                                                CONT.HOOK.INDEX #clind ],
-                                        OPT - ] > ] ],
-                  CONT [ ICONS <! focus & [ IARG1 #clind,
-					    IARG2 #empind ] !> ] ] ].
+focus-icons-norm-lex-item := one-icons-lex-item &
+"adding in focus information into ICONS for SHIDE emphatic structures other than scoping modifiers.
+"
+ [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [ LOCAL.CONT.HOOK.INDEX #empind ],
+                                  [ LOCAL.CONT.HOOK.INDEX #clind ] > ,
+                  CONT.ICONS <! focus & [ IARG1 #clind,
+					  IARG2 #empind ] !> ] ].
+
+focus-icons-scop-lex-item := one-icons-lex-item &
+"adding in focus info for emphasizing scoping adverbs. The scopal adverb's INDEX is the same as its MOD's, which leads to ICONS having the same value for IARG1/2. Using LKEYS.KEYREL.ARG0 avoids this problem. It only works for word level as LKEYS is not visible at phrase level, therefore can't be used for BU+AUX.
+"
+ [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [ LKEYS.KEYREL.ARG0 #empind ],
+                                  [ LOCAL.CONT.HOOK.INDEX #clind ] > ,
+                  CONT.ICONS <! focus & [ IARG1 #clind,
+					  IARG2 #empind ] !> ] ].
+
+shi-emph-lex := lex-item & no-rels-hcons-lex-item &
+"The first item on COMPS is the emphasized constituent. 
+"
+ [ SYNSEM.LOCAL.CAT [ HEAD verb & [ COP + ], 
+                      VAL [ SPR < >,
+                            COMPS < [ OPT - ],
+                                    [ LOCAL.CAT [ HEAD postp-comp & [ MOD < synsem > ],
+                                                  VAL.COMPS < > ],
+                                      OPT - ] > ] ] ].
 
 shi-other-dep-lex := shi-emph-lex & basic-three-arg-no-hcons &
  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj & [ LOCAL.CAT.HEAD noun ] >,
                           COMPS < synsem,
                                   [ LOCAL.CAT.HEAD.MOD < #subj > ] > ] ].
-
              
-shi-mod-dep-lex := shi-other-dep-lex &
+shi-mod-dep-lex := shi-other-dep-lex & 
+"
+<ex>他 是 一定 会 哭 的
+INDEX and LTOP of the modified is the same as those of DeP, which are the same as those of the embedded VP in DeP.
+ARGS: list of children of rule. ARG-ST: subj + comps. XARG for the thing that pp or advp is modifying.
+"
+ [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD +rp & [ MOD < [ LOCAL.CONT.HOOK [ INDEX #clind,
+                                                                                     LTOP #ltop ] ] > ] ],
+                                [ LOCAL.CONT.HOOK [ INDEX #clind,
+                                                    LTOP #ltop ] ] > ].
+
+shi-mod-int-dep-lex := shi-mod-dep-lex & focus-icons-norm-lex-item &
 "
 <ex>他 是 昨天 哭 的
-<ex>他 是 一定 会 哭 的
-xarg is for the thing that pp or advp is modifying. ARGS: list of children of rule, and ARG-ST: subj + comps
-clind here is the same as index for VP in DeP.
 "
- [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL [ CAT.HEAD +rp,
-                                          CONT.HOOK.XARG #clind ] ],
-                                [ LOCAL.CONT.HOOK.INDEX #clind ] > ].
+ [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.MOD < [ LOCAL intersective-mod ] > ],
+                                synsem > ].
 
-shi-aux-dep-lex := shi-other-dep-lex &
-"linking aux and verb up in qeq.
+shi-mod-scop-dep-lex := shi-mod-dep-lex & focus-icons-scop-lex-item &
+"
+<ex>他 是 绝对 会 完成 任务 的
+<ex>他 是 绝对 哭 了 的
+<ex>他 是 绝对 不 会 完成 任务 的
+"
+ [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.MOD < [ LOCAL scopal-mod ] > ],
+                                synsem > ].
+
+shi-aux-dep-lex := shi-other-dep-lex & focus-icons-norm-lex-item &
+"linking aux and verb up. This leads to the correct qeq result.
 <ex>他 是 会 哭 的
 <ex>他 是 不 会 哭 的
-Now can't work with negation, as negation introduces another qeq into HCONS list. Then we can't identify the right qeq to work on. Probably the last, but how? --ask Emily
 "
- [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL [ CAT [ HEAD verb & [ AUX + ],
-                                                VAL.COMPS < synsem > ],
-                                          CONT.HCONS <! qeq & [ LARG #larg ] !>] ],
-                                [ LOCAL.CONT.HOOK.LTOP #larg ] > ].
+ [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT [ HEAD verb & [ AUX + ],
+                                              VAL.COMPS < [ LOCAL.CONT.HOOK [ INDEX #vind,
+                                                                              LTOP #ltop ] ] > ] ],
+                                [ LOCAL.CONT.HOOK [ INDEX #vind,
+                                                    LTOP #ltop ] ] > ].
 
-shi-subj-dep-lex := shi-emph-lex & basic-two-arg-no-hcons &
+
+
+shi-subj-dep-lex := shi-emph-lex & basic-two-arg-no-hcons & focus-icons-norm-lex-item &
 "
 <ex>是 他 完成 任务 的
 <ex>是 我 邀请 他 来 的
+How to indicate then there can be a slashed argument in DeP which is object?
 "
  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >,
                           COMPS < #comp1 & 
@@ -1029,9 +1071,11 @@ Currently using OPT+ to stop this DeP from being treated as an actual modifier f
 			      COMPS < [ LOCAL [ CAT [ HEAD verb & [ COP - ],
                                                       VAL [ SUBJ < #subj >,
                                                             COMPS < #obj > ] ] ],
-                                        CH + ],
+                                        CH +, 
+                                        OPT - ],
                                       #obj & [ LOCAL.CAT.HEAD noun,
-                                               CH - ] > ] ] ].
+                                               CH -,
+                                               OPT - ] > ] ] ].
 
 
 
@@ -1547,6 +1591,7 @@ adposition-lex := basic-adposition-lex & no-hcons-lex-item &
 
 de-super-lex := lex-item & 
 "DE takes a COMP and modifies a noun. Its position is after its COMP.
+POSTCOMP is a feature to be used on head to indicate the COMP's position is after the head.
 "
   [ SYNSEM [ POSTCOMP +,
 	     LOCAL.CAT [ POSTHEAD -,

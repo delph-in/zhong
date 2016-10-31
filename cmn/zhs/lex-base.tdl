@@ -251,7 +251,11 @@
 shide_adp := v_shide-adp_le &
   [ STEM < "是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
-;    SYNSEM.LKEYS.KEYREL.PRED "是_v_cop_rel",
+    TRAITS native_token_list ].
+
+shide_scop := v_shide-adv-scop_le &
+  [ STEM < "是" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
     TRAITS native_token_list ].
 
 shide_aux := v_shide-aux_le &
@@ -453,7 +457,7 @@ shide_sbj := v_shide-sbj_le &
     TRAITS native_token_list ].
 
 
-
+#|zz: temporarily comment out to make debugging easier
 不_polar_basic_r := adv_-_polar2_basic_le &
   [ STEM < "不" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
@@ -471,6 +475,7 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _bu_polar_x_rel,
     TRAITS native_token_list ].
+|#
 
 没_r := adv_-_neg_le &
   [ STEM < "没" >,
@@ -480,7 +485,7 @@ shide_sbj := v_shide-sbj_le &
 	     LKEYS.KEYREL.PRED _mei_x_rel ],
     TRAITS native_token_list ].
 
-
+#|zz: temporarily comment out to make debugging easier
 没_polar_basic_r := adv_-_polar_basic_le &
   [ STEM < "没" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
@@ -498,7 +503,7 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _mei_polar_x_rel,
     TRAITS native_token_list ].
-
+|#
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Intensifiers

@@ -106,6 +106,14 @@ v-bottom-label := label &
                             COORD + ],
              LABEL-NAME "V-B" ].
 
+;;for easier debugging purpose
+v-aux-label := label & 
+           [ SYNSEM [ LOCAL [ CAT [ HEAD verb & [ AUX +, ],
+                                    VAL.COMPS < [ ], ... > ],
+                              COORD-STRAT "" ],
+                      LIGHT + ],
+             LABEL-NAME "VAUX" ].
+
 v-label := label & 
            [ SYNSEM.LOCAL [ CAT [ HEAD verb,
                                   VAL.COMPS < [ ], ... > ],

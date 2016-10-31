@@ -1,8 +1,5 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
-;;2016-2-15 ZZF FB separating head-comp for verbs and adjectives
-;hdv-comp := hdv-comp-phrase.
 
-;head-comp := hdnonv-comp-phrase.
 head-comp := head-comp-phrase.
 
 ;; SSH 2015-04-21: The subject cannot be indefinite. 

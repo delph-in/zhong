@@ -40,7 +40,8 @@ basic-unary-phrase :+
 
 ;; SSH 2014-12-19: BOUND is introduced. Lexical items with [BOUND +]
 ;; cannot be combined with the other of itself.
-;; CH to indicate the position of COMPS, CH+ means COMP before HEAD, CH- means COMP after HEAD, allowing HEAD to have one COMP before and one COMP after
+;; POSTCOMP is a feature to be used on HEAD to indicate the COMP's position is after the head.
+;; CH is defined in the COMPS list to indicate the position of COMPS: CH+ == COMP before HEAD, CH- == COMP after HEAD, allowing HEAD to have one COMP before and one COMP after
 synsem :+ 
  [ PUNCTUATED luk,
    INTERJECTED luk,
@@ -291,14 +292,13 @@ head-only :+
 
 basic-head-comp-phrase :+ 
   [ SYNSEM.LOCAL.CAT [ MC #mc,
+                       NONCOMP #nc,
 		       VAL.SPEC #spec ],
     HEAD-DTR.SYNSEM [ BOUND na-or--,
 		      LOCAL.CAT [ MC #mc,
+                                  NONCOMP #nc,
 				  VAL.SPEC #spec ] ] ].
 
-
-basic-head-comp-phrase :+ [ SYNSEM.LOCAL.CAT.NONCOMP #nc,
-                      HEAD-DTR.SYNSEM.LOCAL.CAT.NONCOMP #nc ].
 
 ;;2016-2-19 ZZF FB SSH copy SPEC from HEAD-DTR to mother.
 basic-head-mod-phrase-simple :+ 
@@ -340,9 +340,9 @@ head-adj-scop-phrase :+
 ;; The head of head-comp-phrase can't be: ['comp']
 
 head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
-  [ SYNSEM phr-synsem &
-       [ LOCAL.CAT.HEAD +nvjrpdmo ],
-    HEAD-DTR.SYNSEM.POSTCOMP na-or--,
+  [ SYNSEM phr-synsem,
+    HEAD-DTR.SYNSEM [ LOCAL.CAT.HEAD +nvjrpdmo,
+                      POSTCOMP na-or-- ],
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
 			  INTERJECTED na-or--,
                           CH na-or-- ] ].
@@ -362,8 +362,9 @@ head-comp-phrase :+
     NON-HEAD-DTR.SYNSEM.BOUND - ].
 
 ;; SSH/ZZF 2015-07-15
-head-comp-phrase :+ [ SYNSEM.LOCAL.CAT.NONCOMP #nc,
-                      HEAD-DTR.SYNSEM.LOCAL.CAT.NONCOMP #nc ]. 
+head-comp-phrase :+ 
+  [ SYNSEM.LOCAL.CAT.NONCOMP #nc,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.NONCOMP #nc ]. 
 ;; to allow 0-1-dlist                      SYNSEM.NON-LOCAL.SLASH 0-dlist ].
 
 
@@ -1155,10 +1156,7 @@ opt-subj-declarative-phrase := decl-head-opt-subj-phrase &
              NON-LOCAL #non-local ],
     HEAD-DTR [ SYNSEM [ LOCAL [ CAT.MC +,
 			        CONT.HOOK.INDEX.E.ASPECT aspect ],
-                        NON-LOCAL #non-local ],
-               ARG-ST.FIRST.NON-LOCAL [ SLASH 0-dlist,
-                                        QUE 0-dlist,
-                                        REL 0-dlist ] ] ].
+                        NON-LOCAL #non-local ] ] ].
 
 basic-n-n-compound-phrase := head-final &
 "[EMPTY -] to stop combining NPs with no head noun, like DeP.
