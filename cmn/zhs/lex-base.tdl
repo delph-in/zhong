@@ -381,28 +381,28 @@ shide_sbj := v_shide-sbj_le &
   [ STEM < "这" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "这", LENGTH one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
-	     LKEYS.KEYREL.PRED prox_demons_rel ],
+	     LKEYS.KEYREL.PRED prox_dem_q_rel ],
     TRAITS native_token_list ].
 
 这些_d := d_-_d-prox_le &
   [ STEM < "这些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "这", LENGTH more-than-one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED prox_demons_rel ],
+	     LKEYS.KEYREL.PRED prox_dem_q_rel ],
     TRAITS native_token_list ].
 
 那_d := d_-_d-dist_le &
   [ STEM < "那" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "那", LENGTH one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
-	     LKEYS.KEYREL.PRED dist_demons_rel ],
+	     LKEYS.KEYREL.PRED dist_dem_q_rel ],
     TRAITS native_token_list ].
 
 那些_d := d_-_d-dist_le &
   [ STEM < "那些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "那", LENGTH more-than-one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED dist_demons_rel ],
+	     LKEYS.KEYREL.PRED dist_dem_q_rel ],
     TRAITS native_token_list ].
 
 ;;temporary KIV
@@ -611,7 +611,7 @@ shide_sbj := v_shide-sbj_le &
 之_ASSOC_d := x_-_assoc-de-n_le &
  [ STEM < "之" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "之", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED _zhi_demons_rel,
+    SYNSEM.LKEYS.KEYREL.PRED _zhi_dem_q_rel,
     TRAITS native_token_list ].
 
 #|need to change to pronoun

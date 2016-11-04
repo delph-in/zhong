@@ -104,9 +104,9 @@ related_p_rel := predsort.
 compound_p_rel := related_p_rel.
 ;poss_p_rel := related_p_rel.
 
-demons_rel := predsort.
-prox_demons_rel := demons_rel.
-dist_demons_rel := demons_rel.
+dem_rel := predsort.
+prox_dem_q_rel := dem_rel.
+dist_dem_q_rel := dem_rel.
 
 pron_rel := predsort.
 generic_n_rel := predsort.

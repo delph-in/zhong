@@ -1655,13 +1655,15 @@ de-comp-lex := de-super-lex & raise-sem-lex-item & no-icons-lex-item & norm-zero
 "
   [ SYNSEM [ PAREN -,
              LOCAL [ CAT [ HEAD postp-comp &
-                                [  MOD < [ LOCAL.CONT.HOOK.INDEX #slash ] > ] ,
+                                [  MOD < [ LOCAL.CONT.HOOK [ INDEX #slash,
+                                                             LTOP #ltop ] ] > ] ,
                            VAL [ COMPS < [ LOCAL [ CAT [ HEAD +vj & [ COP - ],
                                                          VAL [ SUBJ < > ] ] ],
                                            NON-LOCAL.SLASH 1-dlist & <!
                                                [ CAT [ HEAD noun,
                                                        VAL.SPR < > ],
-                                                 CONT.HOOK.INDEX #slash ]
+                                                 CONT.HOOK [ INDEX #slash,
+                                                             LTOP #ltop ] ]
                                                !> ] >,
                                  SUBJ < > ] ] ],
               NON-LOCAL [ SLASH <! !>,

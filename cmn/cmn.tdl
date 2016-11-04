@@ -76,8 +76,8 @@ no-spr-classifier-rule-dtr := word-or-lexrule.
 
 ;; SSH 2015-05-07: Mandarin Specific Predsort.
 
-_de_demons_rel := demons_rel.
-_zhi_demons_rel := demons_rel.
+_de_dem_q_rel := dem_rel.
+_zhi_dem_q_rel := dem_rel.
 _de_p_assoc_rel := related_p_rel.
 
 _de_nom_rel := nm_rel.

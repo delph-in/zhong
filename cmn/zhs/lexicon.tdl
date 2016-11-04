@@ -73762,12 +73762,14 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_眼镜_n_1_rel",
     TRAITS native_token_list ].
 
+#|debugging, put back after that
 着_v_1 := v_np_le &
   [ STEM < "着" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "着", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_着_v_1_rel",
     SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
     TRAITS native_token_list ].
+|#
 
 着书_v_1 := v_-_le &
   [ STEM < "着书" >,
@@ -107576,3 +107578,392 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "质", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_质量_n_1_rel",
     TRAITS native_token_list ].
+
+;;;;Proper names from MOE data
+
+John_n_1 := n_-_h_pn_le &
+  [ STEM < "John" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "J", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "John",
+    TRAITS native_token_list ].
+
+Mary_n_1 := n_-_h_pn_le &
+  [ STEM < "Mary" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "M", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "Mary",
+    TRAITS native_token_list ].
+
+丁力_n_1 := n_-_h_pn_le &
+  [ STEM < "丁力" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "丁", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "丁力",
+    TRAITS native_token_list ].
+
+丁力波_n_1 := n_-_h_pn_le &
+  [ STEM < "丁力波" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "丁", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "丁力波",
+    TRAITS native_token_list ].
+
+丁明_n_1 := n_-_h_pn_le &
+  [ STEM < "丁明" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "丁", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "丁明",
+    TRAITS native_token_list ].
+
+力波_n_1 := n_-_h_pn_le &
+  [ STEM < "力波" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "力", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "力波",
+    TRAITS native_token_list ].
+
+友朋_n_1 := n_-_h_pn_le &
+  [ STEM < "友朋" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "友", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "友朋",
+    TRAITS native_token_list ].
+
+吴小美_n_1 := n_-_h_pn_le &
+  [ STEM < "吴小美" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吴", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "吴小美",
+    TRAITS native_token_list ].
+
+子英_n_1 := n_-_h_pn_le &
+  [ STEM < "子英" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "子", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "子英",
+    TRAITS native_token_list ].
+
+学友_n_1 := n_-_h_pn_le &
+  [ STEM < "学友" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "学", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "学友",
+    TRAITS native_token_list ].
+
+宋华_n_1 := n_-_h_pn_le &
+  [ STEM < "宋华" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "宋", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "宋华",
+    TRAITS native_token_list ].
+
+小文_n_1 := n_-_h_pn_le &
+  [ STEM < "小文" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "小", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "小文",
+    TRAITS native_token_list ].
+
+小美_n_1 := n_-_h_pn_le &
+  [ STEM < "小美" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "小", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "小美",
+    TRAITS native_token_list ].
+
+小谢_n_1 := n_-_h_pn_le &
+  [ STEM < "小谢" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "小", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "小谢",
+    TRAITS native_token_list ].
+
+张贝贝_n_1 := n_-_h_pn_le &
+  [ STEM < "张贝贝" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "张", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "张贝贝",
+    TRAITS native_token_list ].
+
+杨欢常_n_1 := n_-_h_pn_le &
+  [ STEM < "杨欢常" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "杨", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "杨欢常",
+    TRAITS native_token_list ].
+
+林娜_n_1 := n_-_h_pn_le &
+  [ STEM < "林娜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "林", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "林娜",
+    TRAITS native_token_list ].
+
+欢欢_n_1 := n_-_h_pn_le &
+  [ STEM < "欢欢" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "欢", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "欢欢",
+    TRAITS native_token_list ].
+
+爱文_n_1 := n_-_h_pn_le &
+  [ STEM < "爱文" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "爱", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "爱文",
+    TRAITS native_token_list ].
+
+爱红_n_1 := n_-_h_pn_le &
+  [ STEM < "爱红" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "爱", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "爱红",
+    TRAITS native_token_list ].
+
+王小云_n_1 := n_-_h_pn_le &
+  [ STEM < "王小云" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "王", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "王小云",
+    TRAITS native_token_list ].
+
+美美_n_1 := n_-_h_pn_le &
+  [ STEM < "美美" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "美", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "美美",
+    TRAITS native_token_list ].
+
+美英_n_1 := n_-_h_pn_le &
+  [ STEM < "美英" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "美", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "美英",
+    TRAITS native_token_list ].
+
+贝贝_n_1 := n_-_h_pn_le &
+  [ STEM < "贝贝" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "贝", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "贝贝",
+    TRAITS native_token_list ].
+
+陆雨平_n_1 := n_-_h_pn_le &
+  [ STEM < "陆雨平" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "陆", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "陆雨平",
+    TRAITS native_token_list ].
+
+马大为_n_1 := n_-_h_pn_le &
+  [ STEM < "马大为" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "马", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "马大为",
+    TRAITS native_token_list ].
+
+;;;;Nouns from MOE data
+
+中文书_n_1 := n_-_le &
+  [ STEM < "中文书" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "中", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_中文书_n_1_rel",
+    TRAITS native_token_list ].
+
+光盘_n_1 := n_-_le &
+  [ STEM < "光盘" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "光", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_光盘_n_1_rel",
+    TRAITS native_token_list ].
+
+冰红茶_n_1 := n_-_le &
+  [ STEM < "冰红茶" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "冰", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_冰红茶_n_1_rel",
+    TRAITS native_token_list ].
+
+卡拉OK_n_1 := n_-_le &
+  [ STEM < "卡拉OK" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "卡", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_卡拉OK_n_1_rel",
+    TRAITS native_token_list ].
+
+厕所_n_1 := n_-_le &
+  [ STEM < "厕所" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "厕", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_厕所_n_1_rel",
+    TRAITS native_token_list ].
+
+可乐_n_1 := n_-_le &
+  [ STEM < "可乐" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "可", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_可乐_n_1_rel",
+    TRAITS native_token_list ].
+
+名片_n_1 := n_-_le &
+  [ STEM < "名片" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "名", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_名片_n_1_rel",
+    TRAITS native_token_list ].
+
+嗓子_n_1 := n_-_le &
+  [ STEM < "嗓子" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "嗓", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_嗓子_n_1_rel",
+    TRAITS native_token_list ].
+
+外国_n_1 := n_-_le &
+  [ STEM < "外国" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "外", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_外国_n_1_rel",
+    TRAITS native_token_list ].
+
+外语_n_1 := n_-_le &
+  [ STEM < "外语" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "外", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_外语_n_1_rel",
+    TRAITS native_token_list ].
+
+外语系_n_1 := n_-_le &
+  [ STEM < "外语系" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "外", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_外语系_n_1_rel",
+    TRAITS native_token_list ].
+
+女朋友_n_1 := n_-_le &
+  [ STEM < "女朋友" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "女", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_女朋友_n_1_rel",
+    TRAITS native_token_list ].
+
+奶茶_n_1 := n_-_le &
+  [ STEM < "奶茶" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "奶", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_奶茶_n_1_rel",
+    TRAITS native_token_list ].
+
+宠物_n_1 := n_-_le &
+  [ STEM < "宠物" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "宠", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_宠物_n_1_rel",
+    TRAITS native_token_list ].
+
+室友_n_1 := n_-_le &
+  [ STEM < "室友" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "室", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_室友_n_1_rel",
+    TRAITS native_token_list ].
+
+寿面_n_1 := n_-_le &
+  [ STEM < "寿面" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "寿", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_寿面_n_1_rel",
+    TRAITS native_token_list ].
+
+小狗_n_1 := n_-_le &
+  [ STEM < "小狗" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "小", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_小狗_n_1_rel",
+    TRAITS native_token_list ].
+
+岁数_n_1 := n_-_le &
+  [ STEM < "岁数" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "岁", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_岁数_n_1_rel",
+    TRAITS native_token_list ].
+
+手机_n_1 := n_-_le &
+  [ STEM < "手机" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "手", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_手机_n_1_rel",
+    TRAITS native_token_list ].
+
+排挡_n_1 := n_-_le &
+  [ STEM < "排挡" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "排", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_排挡_n_1_rel",
+    TRAITS native_token_list ].
+
+文书_n_1 := n_-_le &
+  [ STEM < "文书" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "文", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_文书_n_1_rel",
+    TRAITS native_token_list ].
+
+服饰店_n_1 := n_-_le &
+  [ STEM < "服饰店" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "服", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_服饰店_n_1_rel",
+    TRAITS native_token_list ].
+
+汉语_n_1 := n_-_le &
+  [ STEM < "汉语" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "汉", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_汉语_n_1_rel",
+    TRAITS native_token_list ].
+
+汉语系_n_1 := n_-_le &
+  [ STEM < "汉语系" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "汉", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_汉语系_n_1_rel",
+    TRAITS native_token_list ].
+
+炒饭_n_1 := n_-_le &
+  [ STEM < "炒饭" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "炒", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_炒饭_n_1_rel",
+    TRAITS native_token_list ].
+
+烤鸭_n_1 := n_-_le &
+  [ STEM < "烤鸭" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "烤", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_烤鸭_n_1_rel",
+    TRAITS native_token_list ].
+
+生词_n_1 := n_-_le &
+  [ STEM < "生词" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "生", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_生词_n_1_rel",
+    TRAITS native_token_list ].
+
+电影票_n_1 := n_-_le &
+  [ STEM < "电影票" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "电", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_电影票_n_1_rel",
+    TRAITS native_token_list ].
+
+男朋友_n_1 := n_-_le &
+  [ STEM < "男朋友" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "男", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_男朋友_n_1_rel",
+    TRAITS native_token_list ].
+
+舞会_n_1 := n_-_le &
+  [ STEM < "舞会" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "舞", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_舞会_n_1_rel",
+    TRAITS native_token_list ].
+
+菜单_n_1 := n_-_le &
+  [ STEM < "菜单" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "菜", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_菜单_n_1_rel",
+    TRAITS native_token_list ].
+
+葡萄酒_n_1 := n_-_le &
+  [ STEM < "葡萄酒" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "葡", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_葡萄酒_n_1_rel",
+    TRAITS native_token_list ].
+
+蛋糕_n_1 := n_-_le &
+  [ STEM < "蛋糕" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "蛋", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_蛋糕_n_1_rel",
+    TRAITS native_token_list ].
+
+衬衫_n_1 := n_-_le &
+  [ STEM < "衬衫" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "衬", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_衬衫_n_1_rel",
+    TRAITS native_token_list ].
+
+裙子_n_1 := n_-_le &
+  [ STEM < "裙子" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "裙", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_裙子_n_1_rel",
+    TRAITS native_token_list ].
+
+语法_n_1 := n_-_le &
+  [ STEM < "语法" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "语", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_语法_n_1_rel",
+    TRAITS native_token_list ].
+
+饭馆_n_1 := n_-_le &
+  [ STEM < "饭馆" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "饭", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_饭馆_n_1_rel",
+    TRAITS native_token_list ].
+
+饺子_n_1 := n_-_le &
+  [ STEM < "饺子" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "饺", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_饺子_n_1_rel",
+    TRAITS native_token_list ].
+
