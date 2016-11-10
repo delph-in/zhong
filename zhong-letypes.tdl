@@ -134,7 +134,8 @@ v_np-vp_light_le := v_np-vp_light-lex.
 
 
 conj_-_le := conj-lex.
-conj_-_sub_le := subord-conj-lex.
+conj_-_sub-pre_le := subord-conj-pre-lex.
+conj_-_sub-post_le := subord-conj-post-lex.
 
 d_-_le := determiner-lex.
 d_-_d-prox_le := prox_demons-determiner-lex.

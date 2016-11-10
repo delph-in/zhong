@@ -708,35 +708,36 @@ v_weather_type_lex := verb-lex & basic-icons-lex-item & aspect-rule-dtr &
 ;;;Adverbs
 
 ;;redefining the types in matrix.tdl. Taken out raise-index-mod-lex-item from basic-adverb-lex and put it in basic-scopal-adverb-lex. 
-basic-adverb-lex :=  single-rel-lex-item & basic-icons-lex-item &
+basic-adv-lex :=  single-rel-lex-item & basic-icons-lex-item &
   [ SYNSEM [ LOCAL.CAT.HEAD adv,
 	     LKEYS.KEYREL event-relation ]].
 
-;;its HOOK.INDEX is the same as that of the thing it modifies
-basic-scopal-adverb-lex := basic-adverb-lex & scopal-mod-lex & raise-index-mod-lex-item.
-
-;;add in norm-hook-lex-item, so that it's keyrel.arg0 is its hook.index
-basic-int-adverb-lex := basic-adverb-lex & intersective-mod-lex & norm-hook-lex-item &
-"Its ARG1 refers to what it modifies, through XARG.
-"
-  [ SYNSEM [ PAREN -,
-	     LOCAL [ CAT.VAL [ SUBJ < > ], 
-                     CONT.HOOK.XARG #ind ],
-	     NON-LOCAL.SLASH 0-dlist,
-             LKEYS.KEYREL.ARG1 #ind ] ].
-
-basic-scopal-adverb-lex :+
+;;zzf and fb 2016-11-7  
+;;raise-index-mod-lex-item its HOOK.INDEX is the same as that of the thing it modifies
+basic-scopal-adv-lex := basic-adv-lex & scopal-mod-lex & raise-index-mod-lex-item &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT.VAL [ SUBJ < >,
-			     SPR < [ LOCAL [ CAT.HEAD adv,
-					     CONT.HOOK #hook ] ] > ],
-		   CONT.HOOK #hook ] ] ].
+                               SPR < [ LOCAL.CAT.HEAD adv ] > ] ] ] ].
+
+;;			     SPR < [ LOCAL [ CAT.HEAD adv,
+;;					     CONT.HOOK #hook ] ] > ],
+;;		   CONT.HOOK #hook ] ] ].
+
+;;add in norm-hook-lex-item, so that it's keyrel.arg0 is its hook.index
+basic-int-adv-lex := basic-adv-lex & intersective-mod-lex & norm-hook-lex-item &
+"Its ARG1 refers to what it modifies, through XARG. CONT.HOOK.XARG #ind 
+"
+  [ SYNSEM [ PAREN -,
+	     LOCAL.CAT [ HEAD.MOD < [ LOCAL.CONT.HOOK.INDEX #ind ] >,
+                         VAL.SUBJ < > ], 
+	     NON-LOCAL.SLASH 0-dlist,
+             LKEYS.KEYREL.ARG1 #ind ] ].
 
 ;;Non-moveable manner adverbs
 
 ;; WWJ 2015-04-07: Added such that modified item has to be [ MODIFIABLE + ]
 
-int-adv-vp-pre := basic-int-adverb-lex &
+int-adv-vp-pre := basic-int-adv-lex &
   [ SYNSEM [ LOCAL.CAT [ HEAD.MOD < [ 	LOCAL.CAT [ HEAD verb & [ MODIFIABLE + ],
 						  VAL [ SUBJ < [] >,
 							COMPS < > ] ] ] >,
@@ -764,12 +765,23 @@ int-adv-vp-pre-no-rel := intersective-mod-lex & basic-icons-lex-item &
 
 
 ;;zzf 2016-10-24 why is adv's HOOK the same as the one it modifies? In ERG, ARG1 of adv points to INDEX of the modified
+
+deg-int-adv-vp-pre := basic-int-adv-lex &
+  [ SYNSEM.LOCAL [ CAT [ HEAD.MOD < #mod & 
+                                    [ LOCAL.CAT [ HEAD +vjr & [ MODIFIABLE + ],
+						  VAL [ SUBJ < [] >,
+					                COMPS < > ] ] ] >,
+                         VAL [ SPEC < #mod >,
+			       SPR < >,
+                               COMPS < > ],
+                         POSTHEAD - ] ] ].
+
+#|
 deg-int-adv-vp-pre := int-adv-vp-pre &
   [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < [ LOCAL.CONT.HOOK.INDEX #ind ] >,
 			     SPR < > ],
 		   CONT.RELS.LIST.FIRST.ARG1 #ind ] ].
-#|
-deg-int-adv-vp-pre := int-adv-vp-pre &
+
   [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < [ LOCAL.CONT.HOOK #hook ] >,
 			     SPR < > ],
 		   CONT.HOOK #hook ] ].
@@ -780,7 +792,6 @@ int-adv-v-pre :=  intersective-mod-lex & basic-icons-lex-item &
 				[ MOD < lex-synsem & 
 					[ LOCAL.CONT.HOOK #hook ] > ],
 			   VAL [ COMPS < >,
-				 SUBJ < >,
 				 SPR < >],
 			   POSTHEAD - ],
 		     CONT [ HOOK #hook,
@@ -820,7 +831,7 @@ int-adv-s-pre-rel := int-adv-s-pre &
 
 ;; Postverbal adverbs 
 
-int-adv-s-post := basic-int-adverb-lex &
+int-adv-s-post := basic-int-adv-lex &
   [ STYLE robust,
     SYNSEM [ R-PERIPH +,
 	     LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT [ HEAD +vj,
@@ -834,6 +845,27 @@ int-adv-s-post := basic-int-adverb-lex &
 			 POSTHEAD +,
 			 MC #mc ] ] ].
 
+;; Type for negative adverbs.
+
+;; SSH 2015-01-26: Why is [ MC + ] needed?
+;; ZZF 2016-11-4: negation adverb also modifies adj，and it's scopal modifier, not SPR (therefore SPEC < >). Only degree adverbs are specifiers.
+neg-adv-lex := basic-scopal-adv-lex &
+  [ SYNSEM.LOCAL.CAT [ VAL [ COMPS < >,
+                             SPEC < > ],
+                       HEAD.MOD < [ LIGHT +,
+				    LOCAL [ CAT [ HEAD +vj,
+						  VAL [ SUBJ cons ] ] ] ] > ] ].
+
+; neg-adv-lex := basic-scopal-adverb-lex &
+;   [ SYNSEM.LOCAL.CAT [ VAL.COMPS < >,
+;                        POSTHEAD -,
+;                        HEAD.MOD < [ LOCAL [ CAT [ MC +,
+; 						  HEAD verb,
+; 						  VAL [ SUBJ cons,
+; 							COMPS null ] ] ] ] > ] ].
+
+
+
 ;; Moveable scopal adverbs -- Edited 8-21-09 1:11PM
 ;; Note: perhaps temporal adverbs are int-adv-lex (S or VP)
 
@@ -846,7 +878,7 @@ scop-adv-lex  := basic-scopal-adverb-lex &
 ;; SSH 2014-11-10: 都 (dou) 
 ;; Added [SUBJ < [] >] for * 三 只 猫 都 我们 不 追赶 。
 ;; Added [COMPS < >] for blocking 我们 [[都 喜欢] 烟草] 。
-scop-adv-prehd-lex := basic-scopal-adverb-lex &
+scop-adv-prehd-lex := basic-scopal-adv-lex &
   [ SYNSEM [ LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT [ HEAD +vj,
 						  VAL [ SUBJ < [] >, 
 							COMPS < >,
@@ -872,7 +904,6 @@ tag-adv-lex := scop-adv-posthd-lex &
          NON-LOCAL.SLASH 0-dlist ] ].
 
 ;; Conjunctions
-;;ZZF 6-4-2016 adding in "POSTCOMP -", assuming (conj+comp_v) modifying v
 subord-conj-lex  := basic-subord-conjunction-lex & basic-icons-lex-item &
   [ ARG-ST < #comps >,
     SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
@@ -888,14 +919,17 @@ subord-conj-lex  := basic-subord-conjunction-lex & basic-icons-lex-item &
                                 [ MOD < [ LOCAL scopal-mod &
                                                 [ CAT [ HEAD verb,
                                                         VAL.COMPS < > ] ] ] > ] ],
-                     CONT.RELS <! #rel !> ],
-              POSTCOMP -,
+                     CONT.RELS <! #rel !> ],              
               LKEYS.KEYREL #rel ] ].
 
-;; subord-conj-vp-pre-lex := subord-conj-lex &
-;;   [ SYNSEM.LOCAL [CAT.HEAD.MOD < [LOCAL.CAT.VAL.SUBJ <[]>]>]].
+;;ZZF 6-4-2016 adding in "POSTCOMP -", assuming (conj+comp_v) modifying v
+subord-conj-pre-lex := subord-conj-lex &
+   [ SYNSEM.POSTCOMP - ].
 
-               
+;;for comp_v+conj
+subord-conj-post-lex := subord-conj-lex &
+   [ SYNSEM.POSTCOMP + ]. 
+              
 ;;; Auxiliaries
 
 subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item &
@@ -1192,7 +1226,7 @@ spart-lex-item := raise-sem-lex-item & basic-one-arg & no-icons-lex-item &
              [ PUNCTUATED -,
 	       INTERJECTED na-or--,
 	       LOCAL.CAT [ MC +,
-                           HEAD verb,
+                           HEAD +vj,
                            VAL [ SUBJ < >,
                                  COMPS < > ] ] ] > ].
 
@@ -1203,25 +1237,6 @@ qpart-lex-item := spart-lex-item &
 	     LOCAL [ CAT.VAL.COMPS < [ SPART not-ma ] >,
 		     CONT.HOOK.INDEX.SF ques ] ] ].
 
-
-
-;; Type for negative adverbs.
-
-;; SSH 2015-01-26: Why is [ MC + ] needed?
-
-neg-adv-lex := basic-scopal-adverb-lex &
-  [ SYNSEM.LOCAL.CAT [ VAL.COMPS < >,
-                       HEAD.MOD < [ LIGHT +,
-				    LOCAL [ CAT [ HEAD verb,
-						  VAL [ SUBJ cons ] ] ] ] > ] ].
-
-; neg-adv-lex := basic-scopal-adverb-lex &
-;   [ SYNSEM.LOCAL.CAT [ VAL.COMPS < >,
-;                        POSTHEAD -,
-;                        HEAD.MOD < [ LOCAL [ CAT [ MC +,
-; 						  HEAD verb,
-; 						  VAL [ SUBJ cons,
-; 							COMPS null ] ] ] ] > ] ].
 
 
 ;#|******** A-NOT-A QUESTIONS ******** 
@@ -1375,7 +1390,7 @@ attr-adj-posthd-lex := basic-attr-adj-lex &
 			     SPR < >,
 			     SUBJ < > ] ] ].
 
-basic-pred-adj-lex := basic-adjective-lex & 
+basic-pred-adj-lex := basic-adjective-lex & no-hcons-lex-item &
   [ SYNSEM [ LOCAL [ CAT.HEAD [ PRED-KEY #key ],
 		     CONT [ HOOK [ LTOP #lbl, 
 				   INDEX #arg0 ],
@@ -1387,7 +1402,8 @@ basic-pred-adj-lex := basic-adjective-lex &
 ;;ZZF FB LMC 2016-2-24 SPR OPT changed from - to bool to allow adj predicate without specifier (adv) 姑娘　漂亮 ; 2016-4-20 taking out linking of NON-LOCAL.SLASH with that of its SUBJ
 pred-adj-lex := basic-pred-adj-lex & redup-lex-dtr &
   [ SYNSEM [ LOCAL [ CAT [ HEAD [ MOD <> ],
-			   VAL [ SPR < [ LOCAL [ CAT.HEAD adv,
+			   VAL [ SPR < [ LOCAL [ CAT [ HEAD adv,
+                                                       VAL.SPEC < [ LOCAL.CAT.HEAD adj ] > ],
 						 CONT.HOOK.LTOP #lbl ],
 					 OPT bool ] >,
 				 SUBJ < [LOCAL [CAT [HEAD +nv, 
@@ -1406,7 +1422,8 @@ pred-adj-lex := basic-pred-adj-lex & redup-lex-dtr &
 s-comp-adj-lex := basic-pred-adj-lex &
   [ SYNSEM [ LOCAL [ CAT [ HEAD.MOD < >,
 			   VAL [ SUBJ < >,
-				 SPR < [ LOCAL [ CAT.HEAD adv,
+				 SPR < [ LOCAL [ CAT [ HEAD adv,
+                                                       VAL.SPEC < synsem > ],
 						 CONT.HOOK.LTOP #ltop ] ] >,
 				 COMPS < [ LOCAL [ CAT [ VAL [ SUBJ < >,
 							       SPR < >,
@@ -1592,6 +1609,7 @@ adposition-lex := basic-adposition-lex & no-hcons-lex-item &
 de-super-lex := lex-item & 
 "DE takes a COMP and modifies a noun. Its position is after its COMP.
 POSTCOMP is a feature to be used on head to indicate the COMP's position is after the head.
+POSTHEAD - means as a modifier, it always appear before the head noun.
 "
   [ SYNSEM [ POSTCOMP +,
 	     LOCAL.CAT [ POSTHEAD -,

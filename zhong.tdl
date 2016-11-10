@@ -346,15 +346,7 @@ head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
 			  INTERJECTED na-or--,
                           CH na-or-- ] ].
-#|
-;;2016-2-15 ZZF FB separating head-comp for verbs and adjectives, comp node's SPR is "olist" means either unexpressed or saturated
-hdv-comp-phrase := head-comp-phrase &
-  [ SYNSEM.LOCAL.CAT.HEAD verb,
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SPR olist ].
 
-hdnonv-comp-phrase := head-comp-phrase &
-  [ SYNSEM.LOCAL.CAT.HEAD +njrpdmo ].
-|#
 ;; WWJ (2015-03-28) - HEAD-DTR's spart value is passed up to this phrase
 head-comp-phrase :+
   [ SYNSEM.SPART #spart,
@@ -393,11 +385,12 @@ comp-head-final-phrase := basic-head-1st-comp-phrase & head-final &
 ;; SSH 2015-07-13: non-rel subj-head and rel subj-head (nonmc)
 ;;                 Added [NON-LOCAL.SLASH 0-dlist]
 ;; ZZF FB 2016-2-24: changed subj's SPR to be olist
+;; ZZF FB 2016-11-4: removed "SPR < >," from HEAD-DTR, to allow ADJ without degree adverbs, like "苹果 甜". The constraint might be too strict.
 subj-head-phrase := decl-head-subj-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.MC #mc,
     SYNSEM.SPART #spart,
     HEAD-DTR.SYNSEM [ LOCAL.CAT [ MC #mc,
-				  VAL [ SPR < >,
+				  VAL [ 
 				      COMPS < > ],
 				  POSTHEAD + ],
                       SPART #spart,
@@ -666,6 +659,7 @@ scopal-mod-phrase :+
 
 ;; SSH 2014-12-19: BOUND for blocking [狗 轻轻 [地 [叫 了]].
 ;; ZZF 2016-2-22: "LIGHT -" to mother to stop rslt rules (which requires "LIGHT +"
+;; 2016-11-7: "SPEC < >" to block degree specifier (adverb hen) being treated as modifier.
 adj-head-int-mc := adj-head-int-phrase &
   [ SYNSEM [ LOCAL.CAT [ NONSUBJ #ns,
 		       NONCOMP #nc ],
@@ -678,6 +672,7 @@ adj-head-int-mc := adj-head-int-phrase &
                       BARE - ],
     NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
 			  LOCAL.CAT [ HEAD.MEASURE #meas,
+                                      VAL.SPEC < >,
 				      NONSUBJ #ns,
 				      NONCOMP #nc ] ] ].
 
@@ -1032,12 +1027,13 @@ bare-np-phrase := basic-bare-np-phrase &
   [ SYNSEM [ BARE +,
              LIGHT #light,
 	     LOCAL.CAT [ HEAD noun & [ GENERIC - ],
-             NONSUBJ #ns ],
-         NON-LOCAL.SLASH 0-dlist ],
+                         NONSUBJ #ns ],
+             NON-LOCAL.SLASH 0-dlist ],
     HEAD-DTR.SYNSEM [ LIGHT #light,
                       LOCAL [ CAT.NONSUBJ #ns,
-			    CONT.HOOK.INDEX.COG-ST activ-or-less ] ],
-    C-CONT.RELS <! [ PRED exist_q_rel ] !> ].
+			      CONT.HOOK.INDEX.COG-ST activ-or-less ] ],
+    C-CONT [ RELS <! [ PRED exist_q_rel ] !>,
+             HCONS <! qeq !> ] ].
 
 
 ;; CL-phrase => nominal phrase
@@ -1175,20 +1171,9 @@ basic-n-n-compound-phrase := head-final &
                   NON-LOCAL #nonloc ],
     NON-HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun & [ EMPTY - ],
                                       VAL.COMPS < >,
-                                      POSTHEAD - ],
-                                CONT.HOOK [ LTOP #larg,
-                                              INDEX #nhind ] ],
+                                      POSTHEAD - ] ],
     C-CONT [ HOOK [ LTOP #ltop,
-            INDEX #hind ],
-	     RELS <! quant-relation & [ PRED exist_q_rel,
-					ARG0 #nhind,
-					RSTR #harg ],
-                      arg12-ev-relation & [ LBL #ltop,
-                                            PRED compound_p_rel,
-                                            ARG1 #hind, 
-				            ARG2 #nhind ] !>,
-             HCONS <! qeq & [ HARG #harg,
-                              LARG #larg ] !>,
+                    INDEX #hind ],
              ICONS <! !> ] ].
 
 ;; ZZF 2016-9-23: created separately for pronoun+noun.
@@ -1205,7 +1190,15 @@ e.g. adding a HUMAN +/- feature for all nouns"
                                  HOOK.INDEX.SORT nontime-s],
     NON-HEAD-DTR.SYNSEM [ LIGHT +,
                           LOCAL [ CAT.VAL.SPR < >,                                       
-                                  CONT.RELS.LIST.FIRST [ PRED pron_rel] ] ] ].
+                                  CONT [ HOOK.INDEX #nhind,
+                                         RELS.LIST.FIRST [ PRED pron_rel] ] ] ], 
+    C-CONT [ HOOK [ LTOP #ltop,
+                    INDEX #hind ],
+	     RELS <! arg12-ev-relation & [ LBL #ltop,
+                                           PRED _de_p_assoc_rel,
+                                           ARG1 #hind, 
+				           ARG2 #nhind ] !>,
+             HCONS <! !> ] ].
 
 
 ;; DPF 27-jul-11 - Removed HEAD-DTR..MODIFIED notmod to allow "old dog who 
@@ -1222,7 +1215,21 @@ noun-noun-compound-phrase := basic-n-n-compound-phrase &
 <nex>他 解决 了 我 问题
 For compounds with >2 nouns, we have bracketting ambiguity, e.g. [产品 [质量 问题]] or [[产品 质量] 问题]. 
 The rule allows both interpretations, leaving the ambiguity for statistical ranking model to determine later."
-  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SPR < synsem > ].
+  [ NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.VAL.SPR < synsem >,
+                                CONT.HOOK [ LTOP #larg,
+                                            INDEX #nhind ] ],
+    C-CONT [ HOOK [ LTOP #ltop,
+                    INDEX #hind ],
+             RELS <! quant-relation & [ PRED exist_q_rel,
+					ARG0 #nhind,
+					RSTR #harg ],
+                      arg12-ev-relation & [ LBL #ltop,
+                                            PRED compound_p_rel,
+                                            ARG1 #hind, 
+				            ARG2 #nhind ] !>,
+             HCONS <! qeq & [ HARG #harg,
+                              LARG #larg ] !> ] ].
+
 
 #|ZZF: comment out temporarily, not necessary
 ;; SSH 2014-12-19: phr-synsem is added.
@@ -1428,7 +1435,7 @@ np-adp-phrase := unary-phrase & norm-zero-arg &
   [ SYNSEM.LOCAL.CAT [ HEAD prep & 
                 [ EMPTY +,
                   MOD < [ LOCAL intersective-mod &
-                        [ CAT [ HEAD verb,
+                        [ CAT [ HEAD +vj,
                             VAL [ COMPS < > ] ],
                           CONT.HOOK [ LTOP #ltop,
                               INDEX #modind ] ]]> ],

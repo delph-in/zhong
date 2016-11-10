@@ -170,7 +170,7 @@ s-bottom-label := label &
 
 pp-label-2 := label & 
 	    [ SYNSEM.LOCAL.CAT [ HEAD prep & [ EMPTY +] ,
-				 VAL [ SUBJ 0-1-list,
+				 VAL [ SUBJ 1-list,
                                        COMPS < > ] ],
 	      LABEL-NAME "PP" ].
 
@@ -192,7 +192,7 @@ locp-label := label &
 
 pp-label := label & 
 	    [ SYNSEM.LOCAL.CAT [ HEAD adp,
-				 VAL [ SUBJ 0-1-list,
+				 VAL [ SUBJ 1-list,
                                        COMPS < > ] ],
 	      LABEL-NAME "PP" ].
 

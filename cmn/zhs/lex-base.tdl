@@ -197,12 +197,34 @@
 
 什么_n := n_-_pr-wh_le &
   [ STEM <"什么">,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH more-than-one ],
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH two ],
     TRAITS native_token_list ].
 
 哪_n := n_-_pr-wh_le &
 [ STEM <"哪">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH one ],
+    TRAITS native_token_list ].
+
+哪_p := p_loc_post_le &
+  [ STEM < "哪" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_哪_p_rel",
+    TRAITS native_token_list ].
+
+哪儿_n := n_-_pr-wh_le &
+  [ STEM <"哪儿">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
+    TRAITS native_token_list ].
+
+哪里_n := n_-_pr-wh_le &
+  [ STEM <"哪里">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
+    TRAITS native_token_list ].
+
+哪里_r_1 := adv_-_vp-pre_le &
+  [ STEM < "哪里" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_哪里_a_1_rel",
     TRAITS native_token_list ].
 
 大家_n := n_-_pr-q_le &
@@ -268,10 +290,17 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
     TRAITS native_token_list ].
 
-有_v := v_np_you_le &
+有_v_1 := v_np_you_le &
   [ STEM < "有" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_有_v_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_有_v_1_rel",
+    TRAITS native_token_list ].
+
+有_v_2 := v_np_le &
+  [ STEM < "有" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
+             LKEYS.KEYREL.PRED "_有_v_2_rel" ],
     TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;
@@ -305,7 +334,13 @@ shide_sbj := v_shide-sbj_le &
 
 什么_d := d_-_le &
   [ STEM < "什么" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH more-than-one ],
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED which_q_rel,
+    TRAITS native_token_list ].
+
+哪些_d := d_-_le &
+  [ STEM < "哪些" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED which_q_rel,
     TRAITS native_token_list ].
 
@@ -708,6 +743,30 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LKEYS.KEYREL.PRED "_是的_ij_rel",
     TRAITS native_token_list ].
 
+OK_ij := adv_-_ij_le & 
+  [ STEM < "OK" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "OK", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_OK_ij_rel",
+    TRAITS native_token_list ].
+
+你好_ij := adv_-_ij_le & 
+  [ STEM < "你好" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "你", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_你好_ij_rel",
+    TRAITS native_token_list ].
+
+您好_ij := adv_-_ij_le & 
+  [ STEM < "您好" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "您", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_您好_ij_rel",
+    TRAITS native_token_list ].
+
+对了_ij := adv_-_ij_le & 
+  [ STEM < "对了" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "对", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_对了_ij_rel",
+    TRAITS native_token_list ].
+
 ;;;;;;;;;;;;
 ;;modal verbs and their ambiguous forms
 ;;;;;;;;;;;;
@@ -750,6 +809,27 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LKEYS.KEYREL.PRED "_会不会_a_1_rel",
     TRAITS native_token_list ].
 
+;;;;;;;;;;;;;;;;;;;;;;;
+;;;; Conjunctions
+;;;;;;;;;;;;;;;;;;;;;;;
+
+不仅_sc := conj_-_sub-pre_le &
+  [ STEM < "不仅" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_不仅_coord_rel",
+    TRAITS native_token_list ].
+
+不但_sc := conj_-_sub-pre_le &
+  [ STEM < "不但" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_不但_coord_rel",
+    TRAITS native_token_list ].
+
+以后_sc := conj_-_sub-post_le &
+  [ STEM < "以后" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "以", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_以后_subord_rel",
+    TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; KIV items

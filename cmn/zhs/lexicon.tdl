@@ -42,7 +42,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_一_a_1_rel",
     TRAITS native_token_list ].
 
-一_sc := conj_-_sub_le &
+一_sc := conj_-_sub-pre_le &
   [ STEM < "一" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_一_coord_rel",
@@ -535,7 +535,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_一文不值_a_1_rel",
     TRAITS native_token_list ].
 
-一方面_sc := conj_-_sub_le &
+一方面_sc := conj_-_sub-pre_le &
   [ STEM < "一方面" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_一方面_coord_rel",
@@ -559,7 +559,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_一日_n_1_rel",
     TRAITS native_token_list ].
 
-一旦_sc := conj_-_sub_le &
+一旦_sc := conj_-_sub-pre_le &
   [ STEM < "一旦" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_一旦_coord_rel",
@@ -1059,7 +1059,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_七０年代_n_1_rel",
     TRAITS native_token_list ].
 
-万一_sc := conj_-_sub_le &
+万一_sc := conj_-_sub-pre_le &
   [ STEM < "万一" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "万", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_万一_coord_rel",
@@ -1143,7 +1143,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_丈夫_n_1_rel",
     TRAITS native_token_list ].
 
-三_sc := conj_-_sub_le &
+三_sc := conj_-_sub-pre_le &
   [ STEM < "三" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "三", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_三_coord_rel",
@@ -1965,10 +1965,11 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_下笔_v_1_rel" ],
     TRAITS native_token_list ].
 
-下课_j_1 := a_-_pred_le &
+下课_v_1 := v_-_le &
   [ STEM < "下课" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "下", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_下课_a_1_rel",
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le,
+             LKEYS.KEYREL.PRED "_下课_v_1_rel" ],
     TRAITS native_token_list ].
 
 下跌_j_1 := a_-_pred_le &
@@ -2029,12 +2030,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_不予_v_1_rel",
     TRAITS native_token_list ].
 
-不仅_sc := conj_-_sub_le &
-  [ STEM < "不仅" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_不仅_coord_rel",
-    TRAITS native_token_list ].
-
 不会_r_1 := adv_-_vp-pre_le &
   [ STEM < "不会" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
@@ -2045,12 +2040,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "不伦不类" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_不伦不类_a_1_rel",
-    TRAITS native_token_list ].
-
-不但_sc := conj_-_sub_le &
-  [ STEM < "不但" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_不但_coord_rel",
     TRAITS native_token_list ].
 
 不住_r_1 := adv_-_vp-pre_le &
@@ -2259,7 +2248,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_不好意思_a_1_rel",
     TRAITS native_token_list ].
 
-不如_sc := conj_-_sub_le &
+不如_sc := conj_-_sub-pre_le &
   [ STEM < "不如" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_不如_coord_rel",
@@ -2489,7 +2478,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_不是_a_1_rel",
     TRAITS native_token_list ].
 
-不是_sc := conj_-_sub_le &
+不是_sc := conj_-_sub-pre_le &
   [ STEM < "不是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_不是_coord_rel",
@@ -2573,7 +2562,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_不等_a_1_rel",
     TRAITS native_token_list ].
 
-不管_sc := conj_-_sub_le &
+不管_sc := conj_-_sub-pre_le &
   [ STEM < "不管" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_不管_coord_rel",
@@ -2633,7 +2622,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_不解_v_1_rel",
     TRAITS native_token_list ].
 
-不论_sc := conj_-_sub_le &
+不论_sc := conj_-_sub-pre_le &
   [ STEM < "不论" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_不论_coord_rel",
@@ -2676,7 +2665,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_不过_a_1_rel",
     TRAITS native_token_list ].
 
-不过_sc := conj_-_sub_le &
+不过_sc := conj_-_sub-pre_le &
   [ STEM < "不过" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_不过_coord_rel",
@@ -2970,7 +2959,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_且_a_1_rel",
     TRAITS native_token_list ].
 
-且_sc := conj_-_sub_le &
+且_sc := conj_-_sub-pre_le &
   [ STEM < "且" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "且", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_且_coord_rel",
@@ -4733,7 +4722,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_举_v_1_rel" ],
     TRAITS native_token_list ].
 
-举凡_sc := conj_-_sub_le &
+举凡_sc := conj_-_sub-pre_le &
   [ STEM < "举凡" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "举", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_举凡_coord_rel",
@@ -4779,7 +4768,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_乃_v_1_rel" ],
     TRAITS native_token_list ].
 
-乃至_sc := conj_-_sub_le &
+乃至_sc := conj_-_sub-pre_le &
   [ STEM < "乃至" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乃", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_乃至_coord_rel",
@@ -4923,7 +4912,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_之后_a_rel",
     TRAITS native_token_list ].
 
-之所以_sc := conj_-_sub_le &
+之所以_sc := conj_-_sub-pre_le &
   [ STEM < "之所以" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "之", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_之所以_coord_rel",
@@ -5867,7 +5856,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_二分法_n_1_rel",
     TRAITS native_token_list ].
 
-二则_sc := conj_-_sub_le &
+二则_sc := conj_-_sub-pre_le &
   [ STEM < "二则" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "二", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_二则_coord_rel",
@@ -5981,7 +5970,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_二月_n_1_rel",
     TRAITS native_token_list ].
 
-二来_sc := conj_-_sub_le &
+二来_sc := conj_-_sub-pre_le &
   [ STEM < "二来" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "二", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_二来_coord_rel",
@@ -6035,13 +6024,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "于春艳",
     TRAITS native_token_list ].
 
-于是_sc := conj_-_sub_le &
+于是_sc := conj_-_sub-pre_le &
   [ STEM < "于是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "于", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_于是_coord_rel",
     TRAITS native_token_list ].
 
-于是乎_sc := conj_-_sub_le &
+于是乎_sc := conj_-_sub-pre_le &
   [ STEM < "于是乎" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "于", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_于是乎_coord_rel",
@@ -6188,7 +6177,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_五_n_1_rel",
     TRAITS native_token_list ].
 
-五_sc := conj_-_sub_le &
+五_sc := conj_-_sub-pre_le &
   [ STEM < "五" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "五", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_五_coord_rel",
@@ -7674,7 +7663,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_从犯_n_1_rel",
     TRAITS native_token_list ].
 
-从而_sc := conj_-_sub_le &
+从而_sc := conj_-_sub-pre_le &
   [ STEM < "从而" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "从", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_从而_coord_rel",
@@ -7948,7 +7937,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_以_p_rel",
     TRAITS native_token_list ].
 
-以_sc := conj_-_sub_le &
+以_sc := conj_-_sub-pre_le &
   [ STEM < "以" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "以", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_以_coord_rel",
@@ -7973,13 +7962,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_以为_v_1_rel" ],
     TRAITS native_token_list ].
 
-以便_sc := conj_-_sub_le &
+以便_sc := conj_-_sub-pre_le &
   [ STEM < "以便" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "以", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_以便_coord_rel",
     TRAITS native_token_list ].
 
-以免_sc := conj_-_sub_le &
+以免_sc := conj_-_sub-pre_le &
   [ STEM < "以免" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "以", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_以免_coord_rel",
@@ -9156,7 +9145,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_似乎_a_1_rel",
     TRAITS native_token_list ].
 
-但_sc := conj_-_sub_le &
+但_sc := conj_-_sub-pre_le &
   [ STEM < "但" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "但", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_但_coord_rel",
@@ -9181,7 +9170,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     CFORM "1",
     TRAITS native_token_list ].
 
-但是_sc := conj_-_sub_le &
+但是_sc := conj_-_sub-pre_le &
   [ STEM < "但是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "但", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_但是_coord_rel",
@@ -9616,7 +9605,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_何以_a_1_rel",
     TRAITS native_token_list ].
 
-何况_sc := conj_-_sub_le &
+何况_sc := conj_-_sub-pre_le &
   [ STEM < "何况" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "何", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_何况_coord_rel",
@@ -11126,7 +11115,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_倖存_a_1_rel",
     TRAITS native_token_list ].
 
-倘若_sc := conj_-_sub_le &
+倘若_sc := conj_-_sub-pre_le &
   [ STEM < "倘若" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "倘", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_倘若_coord_rel",
@@ -11318,13 +11307,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_假传_v_1_rel" ],
     TRAITS native_token_list ].
 
-假使_sc := conj_-_sub_le &
+假使_sc := conj_-_sub-pre_le &
   [ STEM < "假使" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "假", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_假使_coord_rel",
     TRAITS native_token_list ].
 
-假如_sc := conj_-_sub_le &
+假如_sc := conj_-_sub-pre_le &
   [ STEM < "假如" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "假", LENGTH two ],
      SYNSEM.LKEYS.KEYREL.PRED "_假如_coord_rel",
@@ -12999,7 +12988,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_六_n_1_rel",
     TRAITS native_token_list ].
 
-六_sc := conj_-_sub_le &
+六_sc := conj_-_sub-pre_le &
   [ STEM < "六" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "六", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_六_coord_rel",
@@ -13529,7 +13518,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_其来有自_a_1_rel",
     TRAITS native_token_list ].
 
-其次_sc := conj_-_sub_le &
+其次_sc := conj_-_sub-pre_le &
   [ STEM < "其次" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "其", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_其次_coord_rel",
@@ -14580,7 +14569,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_决赛_n_1_rel",
     TRAITS native_token_list ].
 
-况且_sc := conj_-_sub_le &
+况且_sc := conj_-_sub-pre_le &
   [ STEM < "况且" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "况", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_况且_coord_rel",
@@ -14891,13 +14880,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "几度春风几度霜",
     TRAITS native_token_list ].
 
-凡_sc := conj_-_sub_le &
+凡_sc := conj_-_sub-pre_le &
   [ STEM < "凡" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "凡", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_凡_coord_rel",
     TRAITS native_token_list ].
 
-凡是_sc := conj_-_sub_le &
+凡是_sc := conj_-_sub-pre_le &
   [ STEM < "凡是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "凡", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_凡是_coord_rel",
@@ -16959,6 +16948,12 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_前锋_n_1_rel",
     TRAITS native_token_list ].
 
+前边_p := p_loc_post_le &
+  [ STEM < "前边" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "前", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_前边_p_rel",
+    TRAITS native_token_list ].
+
 前面_p := p_loc_post_le &
   [ STEM < "前面" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "前", LENGTH two ],
@@ -17429,7 +17424,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_加上_coord_rel",
     TRAITS native_token_list ].
 
-加上_sc := conj_-_sub_le &
+加上_sc := conj_-_sub-pre_le &
   [ STEM < "加上" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "加", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_加上_coord_rel",
@@ -18658,7 +18653,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_十八世纪_n_1_rel",
     TRAITS native_token_list ].
 
-十六_sc := conj_-_sub_le &
+十六_sc := conj_-_sub-pre_le &
   [ STEM < "十六" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_十六_coord_rel",
@@ -18688,7 +18683,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.ALTKEYREL.PRED "_十分之一_n_rel",
     TRAITS native_token_list ].
 
-十四_sc := conj_-_sub_le &
+十四_sc := conj_-_sub-pre_le &
   [ STEM < "十四" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_十四_coord_rel",
@@ -19882,7 +19877,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_即为_v_1_rel" ],
     TRAITS native_token_list ].
 
-即使_sc := conj_-_sub_le &
+即使_sc := conj_-_sub-pre_le &
   [ STEM < "即使" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "即", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_即使_coord_rel",
@@ -20710,7 +20705,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_反_v_1_rel" ],
     TRAITS native_token_list ].
 
-反倒_sc := conj_-_sub_le &
+反倒_sc := conj_-_sub-pre_le &
   [ STEM < "反倒" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "反", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_反倒_coord_rel",
@@ -20850,7 +20845,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_反省_v_1_rel" ], 
     TRAITS native_token_list ].
 
-反而_sc := conj_-_sub_le &
+反而_sc := conj_-_sub-pre_le &
   [ STEM < "反而" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "反", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_反而_coord_rel",
@@ -21850,7 +21845,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_另_a_1_rel",
     TRAITS native_token_list ].
 
-另_sc := conj_-_sub_le &
+另_sc := conj_-_sub-pre_le &
   [ STEM < "另" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "另", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_另_coord_rel",
@@ -21862,13 +21857,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_另外_a_1_rel",
     TRAITS native_token_list ].
 
-另外_sc := conj_-_sub_le &
+另外_sc := conj_-_sub-pre_le &
   [ STEM < "另外" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "另", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_另外_coord_rel",
     TRAITS native_token_list ].
 
-另方面_sc := conj_-_sub_le &
+另方面_sc := conj_-_sub-pre_le &
   [ STEM < "另方面" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "另", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_另方面_coord_rel",
@@ -21898,7 +21893,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_只是_a_1_rel",
     TRAITS native_token_list ].
 
-只是_sc := conj_-_sub_le &
+只是_sc := conj_-_sub-pre_le &
   [ STEM < "只是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "只", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_只是_coord_rel",
@@ -21910,7 +21905,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_只有_a_1_rel",
     TRAITS native_token_list ].
 
-只有_sc := conj_-_sub_le &
+只有_sc := conj_-_sub-pre_le &
   [ STEM < "只有" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "只", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_只有_coord_rel",
@@ -21922,7 +21917,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_只能_a_rel",
     TRAITS native_token_list ].
 
-只要_sc := conj_-_sub_le &
+只要_sc := conj_-_sub-pre_le &
   [ STEM < "只要" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "只", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_只要_coord_rel",
@@ -22108,7 +22103,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_可是_a_1_rel",
     TRAITS native_token_list ].
 
-可是_sc := conj_-_sub_le &
+可是_sc := conj_-_sub-pre_le &
   [ STEM < "可是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "可", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_可是_coord_rel",
@@ -23786,7 +23781,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_否决权_n_1_rel",
     TRAITS native_token_list ].
 
-否则_sc := conj_-_sub_le &
+否则_sc := conj_-_sub-pre_le &
   [ STEM < "否则" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "否", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_否则_coord_rel",
@@ -24968,36 +24963,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_哥盘_n_1_rel",
     TRAITS native_token_list ].
 
-哪_p := p_loc_post_le &
-  [ STEM < "哪" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_哪_p_rel",
-    TRAITS native_token_list ].
-
-哪些_n_1 := n_-_pr-q_le &
-  [ STEM < "哪些" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
-    SYNSEM.LKEYS.ALTKEYREL.PRED "_哪些_n_rel",
-    TRAITS native_token_list ].
-
-哪儿_p := p_loc_post_le &
-  [ STEM < "哪儿" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_哪儿_p_rel",
-    TRAITS native_token_list ].
-
-哪里_p := p_loc_post_le &
-  [ STEM < "哪里" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_哪里_p_rel",
-    TRAITS native_token_list ].
-
-哪里_r_1 := adv_-_vp-pre_le &
-  [ STEM < "哪里" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_哪里_a_1_rel",
-    TRAITS native_token_list ].
-
 哭_v_1 := v_-_le &
   [ STEM < "哭" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哭", LENGTH one ],
@@ -25904,7 +25869,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.ALTKEYREL.PRED "_四_n_rel",
     TRAITS native_token_list ].
 
-四_sc := conj_-_sub_le &
+四_sc := conj_-_sub-pre_le &
   [ STEM < "四" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "四", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_四_coord_rel",
@@ -26280,7 +26245,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_因_p_rel",
     TRAITS native_token_list ].
 
-因_sc := conj_-_sub_le &
+因_sc := conj_-_sub-pre_le &
   [ STEM < "因" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "因", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_因_coord_rel",
@@ -26292,7 +26257,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_因为_p_rel",
     TRAITS native_token_list ].
 
-因为_sc := conj_-_sub_le &
+因为_sc := conj_-_sub-pre_le &
   [ STEM < "因为" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "因", LENGTH two ],
      SYNSEM.LKEYS.KEYREL.PRED "_因为_coord_rel",
@@ -26310,7 +26275,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_因应_v_1_rel",
     TRAITS native_token_list ].
 
-因此_sc := conj_-_sub_le &
+因此_sc := conj_-_sub-pre_le &
   [ STEM < "因此" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "因", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_因此_coord_rel",
@@ -26328,7 +26293,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_因素_n_1_rel",
     TRAITS native_token_list ].
 
-因而_sc := conj_-_sub_le &
+因而_sc := conj_-_sub-pre_le &
   [ STEM < "因而" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "因", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_因而_coord_rel",
@@ -26502,7 +26467,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_固有_a_1_rel",
     TRAITS native_token_list ].
 
-固然_sc := conj_-_sub_le &
+固然_sc := conj_-_sub-pre_le &
   [ STEM < "固然" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "固", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_固然_coord_rel",
@@ -31745,7 +31710,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_奶油_n_1_rel",
     TRAITS native_token_list ].
 
-好_j_1 := a_-_att_le &
+好_j_1 := a_-_pred_le &
+  [ STEM < "好" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "好", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_好_a_1_rel",
+    TRAITS native_token_list ].
+
+好_j_2 := a_-_att_le &
   [ STEM < "好" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "好", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_好_a_1_rel",
@@ -31757,7 +31728,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_好_a_2_rel",
     TRAITS native_token_list ].
 
-好_sc := conj_-_sub_le &
+好_sc := conj_-_sub-pre_le &
   [ STEM < "好" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "好", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_好_coord_rel",
@@ -31988,7 +31959,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_如_p_rel",
     TRAITS native_token_list ].
 
-如_sc := conj_-_sub_le &
+如_sc := conj_-_sub-pre_le &
   [ STEM < "如" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "如", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_如_coord_rel",
@@ -32043,13 +32014,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_如愿_a_1_rel",
     TRAITS native_token_list ].
 
-如果_sc := conj_-_sub_le &
+如果_sc := conj_-_sub-pre_le &
   [ STEM < "如果" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "如", LENGTH two ],
      SYNSEM.LKEYS.KEYREL.PRED "_如果_coord_rel",
     TRAITS native_token_list ].
 
-如果说_sc := conj_-_sub_le &
+如果说_sc := conj_-_sub-pre_le &
   [ STEM < "如果说" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "如", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_如果说_coord_rel",
@@ -36156,7 +36127,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_就是_a_1_rel",
     TRAITS native_token_list ].
 
-就是_sc := conj_-_sub_le &
+就是_sc := conj_-_sub-pre_le &
   [ STEM < "就是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "就", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_就是_coord_rel",
@@ -36279,7 +36250,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_尽情_a_1_rel",
     TRAITS native_token_list ].
 
-尽管_sc := conj_-_sub_le &
+尽管_sc := conj_-_sub-pre_le &
   [ STEM < "尽管" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "尽", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_尽管_coord_rel",
@@ -38977,7 +38948,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_并_a_1_rel",
     TRAITS native_token_list ].
 
-并_sc := conj_-_sub_le &
+并_sc := conj_-_sub-pre_le &
   [ STEM < "并" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "并", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_并_coord_rel",
@@ -38989,7 +38960,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_并不是_a_1_rel",
     TRAITS native_token_list ].
 
-并且_sc := conj_-_sub_le &
+并且_sc := conj_-_sub-pre_le &
   [ STEM < "并且" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "并", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_并且_coord_rel",
@@ -45029,7 +45000,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_或是_coord_rel",
     TRAITS native_token_list ].
 
-或是_sc := conj_-_sub_le &
+或是_sc := conj_-_sub-pre_le &
   [ STEM < "或是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "或", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_或是_coord_rel",
@@ -45361,7 +45332,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     TRAITS native_token_list ].
 |#
 
-所以_sc := conj_-_sub_le &
+所以_sc := conj_-_sub-pre_le &
   [ STEM < "所以" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "所", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_所以_coord_rel",
@@ -51810,7 +51781,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_政要_n_1_rel",
     TRAITS native_token_list ].
 
-故_sc := conj_-_sub_le &
+故_sc := conj_-_sub-pre_le &
   [ STEM < "故" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "故", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_故_coord_rel",
@@ -53850,7 +53821,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "无花",
     TRAITS native_token_list ].
 
-无论_sc := conj_-_sub_le &
+无论_sc := conj_-_sub-pre_le &
   [ STEM < "无论" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "无", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_无论_coord_rel",
@@ -53904,7 +53875,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_既_coord_rel",
     TRAITS native_token_list ].
 
-既_sc := conj_-_sub_le &
+既_sc := conj_-_sub-pre_le &
   [ STEM < "既" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "既", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_既_coord_rel",
@@ -53922,7 +53893,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_既成_a_1_rel",
     TRAITS native_token_list ].
 
-既然_sc := conj_-_sub_le &
+既然_sc := conj_-_sub-pre_le &
   [ STEM < "既然" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "既", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_既然_coord_rel",
@@ -55003,7 +54974,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_是不是_a_1_rel",
     TRAITS native_token_list ].
 
-是以_sc := conj_-_sub_le &
+是以_sc := conj_-_sub-pre_le &
   [ STEM < "是以" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_是以_coord_rel",
@@ -55700,7 +55671,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_更为_a_1_rel",
     TRAITS native_token_list ].
 
-更何况_sc := conj_-_sub_le &
+更何况_sc := conj_-_sub-pre_le &
   [ STEM < "更何况" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "更", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_更何况_coord_rel",
@@ -60402,7 +60373,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_此后_a_1_rel",
     TRAITS native_token_list ].
 
-此外_sc := conj_-_sub_le &
+此外_sc := conj_-_sub-pre_le &
   [ STEM < "此外" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "此", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_此外_coord_rel",
@@ -67410,7 +67381,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_焦虑_a_1_rel",
     TRAITS native_token_list ].
 
-然_sc := conj_-_sub_le &
+然_sc := conj_-_sub-pre_le &
   [ STEM < "然" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "然", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_然_coord_rel",
@@ -67422,13 +67393,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_然后_a_1_rel",
     TRAITS native_token_list ].
 
-然后_sc := conj_-_sub_le &
+然后_sc := conj_-_sub-pre_le &
   [ STEM < "然后" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "然", LENGTH two ],
      SYNSEM.LKEYS.KEYREL.PRED "_然后_coord_rel",
     TRAITS native_token_list ].
 
-然而_sc := conj_-_sub_le &
+然而_sc := conj_-_sub-pre_le &
   [ STEM < "然而" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "然", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_然而_coord_rel",
@@ -70174,7 +70145,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_甚至_a_1_rel",
     TRAITS native_token_list ].
 
-甚至_sc := conj_-_sub_le &
+甚至_sc := conj_-_sub-pre_le &
   [ STEM < "甚至" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "甚", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_甚至_coord_rel",
@@ -70676,7 +70647,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_由于_p_rel",
     TRAITS native_token_list ].
 
-由于_sc := conj_-_sub_le &
+由于_sc := conj_-_sub-pre_le &
   [ STEM < "由于" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "由", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_由于_coord_rel",
@@ -72281,7 +72252,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_的确_a_1_rel",
     TRAITS native_token_list ].
 
-的话_sc := conj_-_sub_le &
+的话_sc := conj_-_sub-pre_le &
   [ STEM < "的话" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_的话_coord_rel",
@@ -77108,7 +77079,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_笨笨_a_1_rel",
     TRAITS native_token_list ].
 
-第一_sc := conj_-_sub_le &
+第一_sc := conj_-_sub-pre_le &
   [ STEM < "第一" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "第", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_第一_coord_rel",
@@ -77132,7 +77103,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_第九巡_n_1_rel",
     TRAITS native_token_list ].
 
-第二_sc := conj_-_sub_le &
+第二_sc := conj_-_sub-pre_le &
   [ STEM < "第二" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "第", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_第二_coord_rel",
@@ -78804,7 +78775,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_纳粹_n_1_rel",
     TRAITS native_token_list ].
 
-纵使_sc := conj_-_sub_le &
+纵使_sc := conj_-_sub-pre_le &
   [ STEM < "纵使" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "纵", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_纵使_coord_rel",
@@ -78822,7 +78793,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_纵容_v_1_rel",
     TRAITS native_token_list ].
 
-纵然_sc := conj_-_sub_le &
+纵然_sc := conj_-_sub-pre_le &
   [ STEM < "纵然" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "纵", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_纵然_coord_rel",
@@ -81555,7 +81526,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_而_coord_rel",
     TRAITS native_token_list ].
 
-而_sc := conj_-_sub_le &
+而_sc := conj_-_sub-pre_le &
   [ STEM < "而" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "而", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_而_coord_rel",
@@ -81568,13 +81539,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     CFORM "1",
     TRAITS native_token_list ].
 
-而且_sc := conj_-_sub_le &
+而且_sc := conj_-_sub-pre_le &
   [ STEM < "而且" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "而", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_而且_coord_rel",
     TRAITS native_token_list ].
 
-而是_sc := conj_-_sub_le &
+而是_sc := conj_-_sub-pre_le &
   [ STEM < "而是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "而", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_而是_coord_rel",
@@ -84428,7 +84399,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_苟延残喘_v_1_rel" ],
     TRAITS native_token_list ].
 
-若_sc := conj_-_sub_le &
+若_sc := conj_-_sub-pre_le &
   [ STEM < "若" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "若", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_若_coord_rel",
@@ -84440,7 +84411,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.ALTKEYREL.PRED "_若干_n_rel",
     TRAITS native_token_list ].
 
-若是_sc := conj_-_sub_le &
+若是_sc := conj_-_sub-pre_le &
   [ STEM < "若是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "若", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_若是_coord_rel",
@@ -84452,7 +84423,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_若琛杯_n_1_rel",
     TRAITS native_token_list ].
 
-若要_sc := conj_-_sub_le &
+若要_sc := conj_-_sub-pre_le &
   [ STEM < "若要" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "若", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_若要_coord_rel",
@@ -86159,7 +86130,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_藉_p_rel",
     TRAITS native_token_list ].
 
-藉以_sc := conj_-_sub_le &
+藉以_sc := conj_-_sub-pre_le &
   [ STEM < "藉以" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "藉", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_藉以_coord_rel",
@@ -86348,19 +86319,19 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_虹_n_1_rel",
     TRAITS native_token_list ].
 
-虽_sc := conj_-_sub_le &
+虽_sc := conj_-_sub-pre_le &
   [ STEM < "虽" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "虽", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_虽_coord_rel",
     TRAITS native_token_list ].
 
-虽然_sc := conj_-_sub_le &
+虽然_sc := conj_-_sub-pre_le &
   [ STEM < "虽然" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "虽", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_虽然_coord_rel",
     TRAITS native_token_list ].
 
-虽说_sc := conj_-_sub_le &
+虽说_sc := conj_-_sub-pre_le &
   [ STEM < "虽说" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "虽", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_虽说_coord_rel",
@@ -87774,7 +87745,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_要不得_a_1_rel",
     TRAITS native_token_list ].
 
-要不是_sc := conj_-_sub_le &
+要不是_sc := conj_-_sub-pre_le &
   [ STEM < "要不是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "要", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_要不是_coord_rel",
@@ -87798,7 +87769,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "要塞",
     TRAITS native_token_list ].
 
-要是_sc := conj_-_sub_le &
+要是_sc := conj_-_sub-pre_le &
   [ STEM < "要是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "要", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_要是_coord_rel",
@@ -93856,7 +93827,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_转经轮_n_1_rel",
     TRAITS native_token_list ].
 
-转而_sc := conj_-_sub_le &
+转而_sc := conj_-_sub-pre_le &
   [ STEM < "转而" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "转", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_转而_coord_rel",
@@ -95298,7 +95269,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_进港_v_1_rel" ],
     TRAITS native_token_list ].
 
-进而_sc := conj_-_sub_le &
+进而_sc := conj_-_sub-pre_le &
   [ STEM < "进而" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "进", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_进而_coord_rel",
@@ -95480,7 +95451,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_连_a_1_rel",
     TRAITS native_token_list ].
 
-连_sc := conj_-_sub_le &
+连_sc := conj_-_sub-pre_le &
   [ STEM < "连" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "连", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_连_coord_rel",
@@ -98494,7 +98465,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_鉴于_p_rel",
     TRAITS native_token_list ].
 
-鉴于_sc := conj_-_sub_le &
+鉴于_sc := conj_-_sub-pre_le &
   [ STEM < "鉴于" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "鉴", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_鉴于_coord_rel",
@@ -100888,7 +100859,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_除非_p_rel",
     TRAITS native_token_list ].
 
-除非_sc := conj_-_sub_le &
+除非_sc := conj_-_sub-pre_le &
   [ STEM < "除非" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "除", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_除非_coord_rel",
@@ -103871,7 +103842,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_首先_a_1_rel",
     TRAITS native_token_list ].
 
-首先_sc := conj_-_sub_le &
+首先_sc := conj_-_sub-pre_le &
   [ STEM < "首先" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "首", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_首先_coord_rel",
@@ -107719,6 +107690,12 @@ Mary_n_1 := n_-_h_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "美英",
     TRAITS native_token_list ].
 
+明明_n_1 := n_-_h_pn_le &
+  [ STEM < "明明" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "明", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "明明",
+    TRAITS native_token_list ].
+
 贝贝_n_1 := n_-_h_pn_le &
   [ STEM < "贝贝" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "贝", LENGTH two ],
@@ -107967,3 +107944,34 @@ Mary_n_1 := n_-_h_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_饺子_n_1_rel",
     TRAITS native_token_list ].
 
+法文_n_1 := n_-_le &
+  [ STEM < "法文" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "法", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_法文_n_1_rel",
+    TRAITS native_token_list ].
+
+圣诞_n_1 := n_-_tm_le &
+  [ STEM < "圣诞" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "圣", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_圣诞_n_1_rel",
+    TRAITS native_token_list ].
+
+再见_v_1 := v_-_le &
+  [ STEM < "再见" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "再", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le,
+             LKEYS.KEYREL.PRED "_再见_v_1_rel" ],
+    TRAITS native_token_list ].
+
+;;consider handling using affix. TODO.
+事儿_n_1 := n_-_le &
+  [ STEM < "事儿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "事", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_事_n_1_rel",
+    TRAITS native_token_list ].
+
+孙女儿_n_1 := n_-_le &
+  [ STEM < "孙女儿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "孙", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_孙女_n_1_rel",
+    TRAITS native_token_list ].
