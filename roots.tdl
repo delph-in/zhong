@@ -24,7 +24,7 @@ frag := phrase &
   [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
 				 SPR < >,
 				 COMPS < > ],
-			   HEAD noun ] ],
+			   HEAD +nr ] ],
 	     NON-LOCAL.SLASH 0-dlist ] ].
 
 

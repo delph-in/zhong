@@ -6,5 +6,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 utterance := utterance-phrase. 
-
+np-voc-adp := np-voc-adp-phrase.
 

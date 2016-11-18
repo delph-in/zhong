@@ -109,6 +109,13 @@ prox_dem_q_rel := dem_rel.
 dist_dem_q_rel := dem_rel.
 
 pron_rel := predsort.
+thing_n_rel := generic_n_rel.
+place_n_rel := generic_n_rel.
+person_n_rel := generic_n_rel.
+
+day_or_month_or_time_rel := predsort & named_rel.
+month_n_rel := day_or_month_or_time_rel.
+
 generic_n_rel := predsort.
 vp_ellipsis_rel := predsort.
 
@@ -122,7 +129,9 @@ nm_rel := predsort.
 measure_x_rel := predsort.
 bridge_x_rel := predsort.
 
+;;for nouns being used as PP modifying verbs
 time_p_rel := predsort.
+addressee_p_rel := predsort.
 
 +vj :+ 
    [ STATIVE luk,
@@ -301,14 +310,14 @@ basic-head-comp-phrase :+
 
 
 ;;2016-2-19 ZZF FB SSH copy SPEC from HEAD-DTR to mother.
+;;ZZF 20161114 removed "NON-HEAD-DTR.SYNSEM.PUNCTUATED na-or--", put it on head-adj-int-phrase and adj-head-int-mc-phrase. To allow scopal modifier to have comma.
 basic-head-mod-phrase-simple :+ 
   [ SYNSEM.LOCAL [ CAT [ MC #mc,
                          VAL.SPEC #spec ],
 		   CONT.HOOK.INDEX #ind ],
     HEAD-DTR.SYNSEM.LOCAL [ CONT.HOOK.INDEX #ind,
                             CAT.VAL.SPEC #spec ],
-    NON-HEAD-DTR.SYNSEM [ PUNCTUATED na-or--,
-			  LOCAL.CAT.MC #mc ] ].
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
 
 
 
@@ -328,6 +337,7 @@ head-adj-int-phrase :+
     HEAD-DTR.SYNSEM.R-PERIPH na-or--,
     NON-HEAD-DTR.SYNSEM [ L-PERIPH #lperiph,
 			  R-PERIPH #rperiph,
+                          PUNCTUATED na-or--,
                           LOCAL.CAT.HEAD.MOD < [ OPT na-or-- ] > ] ].
 
 ;; WWJ (2015-03-28): NHD's SPART and Phrase's NHD are identi-fied... is this ok?
@@ -342,6 +352,7 @@ head-adj-scop-phrase :+
 head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
   [ SYNSEM phr-synsem,
     HEAD-DTR.SYNSEM [ LOCAL.CAT.HEAD +nvjrpdmo,
+                      PUNCTUATED na-or--,
                       POSTCOMP na-or-- ],
     NON-HEAD-DTR.SYNSEM [ R-PERIPH na-or--,
 			  INTERJECTED na-or--,
@@ -387,7 +398,7 @@ comp-head-final-phrase := basic-head-1st-comp-phrase & head-final &
 ;; ZZF FB 2016-2-24: changed subj's SPR to be olist
 ;; ZZF FB 2016-11-4: removed "SPR < >," from HEAD-DTR, to allow ADJ without degree adverbs, like "苹果 甜". The constraint might be too strict.
 subj-head-phrase := decl-head-subj-phrase & head-final &
-  [ SYNSEM.LOCAL.CAT.MC #mc,
+  [ SYNSEM.LOCAL.CAT [ MC #mc ],
     SYNSEM.SPART #spart,
     HEAD-DTR.SYNSEM [ LOCAL.CAT [ MC #mc,
 				  VAL [ 
@@ -403,6 +414,7 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 				   CONT.HOOK.INDEX.SORT nontime-s ],
 			   NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
 				       REL 0-dlist ] ] ].
+
 #|
 nmc-subj-head-phrase := basic-head-subj-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.MC -,
@@ -671,6 +683,7 @@ adj-head-int-mc := adj-head-int-phrase &
                       BOUND na-or--,
                       BARE - ],
     NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
+                          PUNCTUATED na-or--,
 			  LOCAL.CAT [ HEAD.MEASURE #meas,
                                       VAL.SPEC < >,
 				      NONSUBJ #ns,
@@ -881,6 +894,7 @@ basic-head-spec-phrase := head-valence-phrase & phrasal &
         MODIFIED #modif ],
     C-CONT [ HOOK #hook,  RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
+
 head-spec-phrase := basic-head-spec-phrase & head-final &
   [ NON-HEAD-DTR.SYNSEM [ LOCAL [ CAT [ VAL.SUBJ < >,
                     HEAD det ],
@@ -944,7 +958,6 @@ basic-head-spec-phrase := head-valence-phrase & phrasal &
        MODIFIED #modif ],
     C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
-
 head-spec-phrase := basic-head-spec-phrase & head-final &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
     NON-HEAD-DTR.SYNSEM [ LOCAL [ CAT [ VAL.SUBJ < >,
@@ -958,6 +971,7 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
 ;; 
 ;;; DPF 21-dec-09 - use head-compositional etc instead...
 ;; SSH 2015-04-16 discourse stgatus (definitesness)
+;; ZZF 20161113 added v into HEAD of head-dtr, to allow degree specifiers for verb +vjrpd
 ; ---------------------------------------
 ;           | cmn             | yue
 ; ---------------------------------------
@@ -970,9 +984,10 @@ head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
   [ SYNSEM.LOCAL.CAT [ HEAD.MEASURE -,
 		       VAL.COMPS #spcomps ],
     HEAD-DTR.SYNSEM [ BOUND na-or--,
-                      LOCAL [ CAT.HEAD +jrpd,
+                      LOCAL [ CAT.HEAD +vjrpd,
 			      CONT.HOOK #hook ] ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
+    NON-HEAD-DTR.SYNSEM [ LOCAL.CAT.VAL.COMPS #spcomps,
+                          PUNCTUATED na-or-- ],
     C-CONT.HOOK #hook ].
 
 ; For nominalizer head `de', which must be [HEAD noun], but which is also the
@@ -1094,6 +1109,17 @@ bare-nominal-det-phrase := basic-bare-nominal-phrase &
     C-CONT.HOOK [ LTOP #ltop,
 		  INDEX #index ] ].
 
+bare-nominal-cls-phrase := basic-bare-nominal-phrase &
+"pushing num + classifier to be NP
+<ex>我　买　三　本
+"
+  [ ARGS < [ SYNSEM.LOCAL.CAT [ HEAD classifier &
+                                     [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
+					                         INDEX #index ] ] > ] ] ] >,
+    C-CONT.HOOK [ LTOP #ltop,
+		  INDEX #index ] ].
+
+
 ;; SSH 2015-04-21: Generic NPs have an underspecified COG-ST value.
 ;; [CONT.HOOK.INDEX.COG-ST type-id] is deleted.
 generic-np-phrase := basic-bare-np-phrase &
@@ -1108,6 +1134,7 @@ generic-np-phrase := basic-bare-np-phrase &
 ;
 ;; SSH 2014-04-16 added [CLASSIFIED na-or--]
 ;; SSH 2014-04-21 noun -> +njd, [NONCOMP +] added for blocking overgeneration.
+;; why +njd? This includes classifier, which should be handled using head-specifier rule
 meas-np-phrase := head-final & head-valence-phrase & phrasal &
   [ SYNSEM.LOCAL.CAT [ NONCOMP +,
 		       HEAD [ MEASURE + ],
@@ -1119,7 +1146,7 @@ meas-np-phrase := head-final & head-valence-phrase & phrasal &
                                 CONT.HOOK [ LTOP #ltop,
                                             INDEX #nhind ] ],
     HEAD-DTR.SYNSEM lex-synsem & [ BARE -,
-				   LOCAL [ CAT [ HEAD +njd & [ GENERIC na-or--,
+				   LOCAL [ CAT [ HEAD noun & [ GENERIC na-or--,
 							       CLASSIFIED na-or-- ],
 						 VAL.SPR < [ ] > ],
 					   CONT.HOOK [ LTOP #ltop,
@@ -1301,6 +1328,7 @@ rslt-compound-phrase := head-initial &
                   LIGHT +,
 		  LOCAL [ CAT [ HEAD #head & +vj & [ CHAR.LENGTH one,
 						     STATIVE na-or--,
+                                                     EXISTV na-or--,
                                                      COP -,
 						     AUX - ],				
 				VAL [ SPR #spr,
@@ -1429,35 +1457,42 @@ rslt-12_1-inv-phrase := rslt-12_1-phrase & inverse-oriented-phrase.
 ;; SSH 2015-04-20: [ SUBJ < [] > ] on MOD is deleted:
 ;; 明天 张三 打 跑 了 李四 
 np-adp-phrase := unary-phrase & norm-zero-arg &
-"push temporal noun to be prepositional phrase
+"push noun to be prepositional phrase
 <ex>他 昨天 来 了
 "
   [ SYNSEM.LOCAL.CAT [ HEAD prep & 
                 [ EMPTY +,
                   MOD < [ LOCAL intersective-mod &
                         [ CAT [ HEAD +vj,
-                            VAL [ COMPS < > ] ],
+                                VAL [ COMPS < > ] ],
                           CONT.HOOK [ LTOP #ltop,
-                              INDEX #modind ] ]]> ],
+                                      INDEX #modind ] ]]> ],
+               POSTHEAD -,
                VAL [ SPR < >,
-                 SUBJ < >,
-                 COMPS < > ] ],
+                     SUBJ < >,
+                     COMPS < > ] ],
     ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD noun,
                                   NONCOMP -,
                                   VAL.SPR < > ],
-                CONT.HOOK.INDEX #nind & [ SORT time-s,
-                              SPECI - ] ] ] >,
+                            CONT.HOOK.INDEX #nind ] ] >,
     C-CONT [ HOOK [ LTOP #ltop,
-            INDEX #index,
-            XARG #modind ],
+                    INDEX #index,
+                    XARG #modind ],
          RELS <! arg12-ev-relation &
            [ LBL #ltop,
-             PRED time_p_rel,
              ARG0 #index,
              ARG1 #modind,
              ARG2 #nind ] !>,
          HCONS <! !>,
          ICONS <! !> ] ].
+
+np-time-adp-phrase := np-adp-phrase &
+"push temporal noun to be prepositional phrase
+<ex>他 昨天 来 了
+"
+  [ ARGS < [ SYNSEM.LOCAL.CONT.HOOK.INDEX [ SORT time-s,
+                                                 SPECI - ] ] >,
+    C-CONT.RELS <! [ PRED time_p_rel ] !> ].
 
 ;; WWJ 2014-04-07: to block adj-not-adj prep-not-prep 
 ;; SSH 2015-04-08: to block overgeneration, [ASPECTED +-or--] is added.
@@ -1607,6 +1642,17 @@ marker-comp-phrase := basic-comp-marker-phrase & marker-initial-phrase & head-fi
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ POSTHEAD na-or-- ] ].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; Rules for utterances
+
+np-voc-adp-phrase := np-adp-phrase &
+"push vocative noun to be prepositional phrase representing discoursal addressee
+<ex>张三 ， 你 来 了
+"
+  [ ARGS < [ SYNSEM [ PUNCTUATED +,
+                      LOCAL.CONT [ HOOK.INDEX.PNG.ANIMACY human,
+                                   RELS.LIST.FIRST named-relation ] ] ] >,
+    C-CONT.RELS <! [ PRED addressee_p_rel ] !> ].
+
 ;; SSH 2015-04-30 - utterance for dialogue constraints such as honorifications.
 utterance-phrase := head-valence-phrase & head-only &
 		    head-compositional &

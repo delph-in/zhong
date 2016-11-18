@@ -1,0 +1,19 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Common mistakes of learners
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;using "和" to coordinate clauses
+;他 不 学 中文 ， 和 不 学 法文 。
+和_c_⚠ := conj_-_e_le &
+  [ STEM < "和" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "和", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_和_c_⚠_rel",
+    TRAITS native_token_list ].
+
+;using "也" at wrong positions
+;我 学 工程 ， 也 我 学 中文 。
+也_r_⚠ := adv_-_scop_le &
+  [ STEM < "也" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "也", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_也_a_⚠_rel",
+    TRAITS native_token_list ].

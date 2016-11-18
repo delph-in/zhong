@@ -95,11 +95,11 @@ year_ne_2_tmr := ne_tmt &
   +OUTPUT < [ +CLASS year_ne ] > ].
 
 month_ne_1_tmr := ne_tmt &
-[ +INPUT < [ +FORM ^[１-９][０-９]+月$ ] >,
+[ +INPUT < [ +FORM ^(１[０-２]|[１-９])月$ ] >,
   +OUTPUT < [ +CLASS month_ne ] > ].
 
 month_ne_2_tmr := ne_tmt &
-[ +INPUT < [ +FORM ^[一壹二贰三叁四五六七八九十][零〇０一壹二贰三叁四五六七八九十]+月$ ] >,
+[ +INPUT < [ +FORM ^(十[一壹二贰]|[一壹二贰三叁四五六七八九十])月$ ] >,
   +OUTPUT < [ +CLASS month_ne ] > ].
 
 day_ne_1_tmr := ne_tmt &

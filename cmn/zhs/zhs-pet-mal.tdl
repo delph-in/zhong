@@ -23,7 +23,6 @@
 :include "tmt".
 :end :type.
 
-
 :begin :instance :status token-mapping-rule.
 :include "../../tmr/prelude".
 :include "../../tmr/pos".
@@ -33,14 +32,15 @@
 :include "../../tmr/ne2".
 :end :instance.
 
+
 ;;
 ;; grammar rules and lexical rules (instances of status rule)
 ;;
 
 :begin :instance :status rule.
 :include "rules".
-:include "rules-utterance".
 :end :instance.
+
 
 :begin :instance :status lex-rule.
 :include "lrules".
@@ -57,15 +57,13 @@
 :include "lex-symbols".
 :include "lex-classifiers".
 :include "lex-numbers".
-;:include "lex-bound".
+:include "lex-mal".
 :include "lexicon".
 :end :instance.
-
 
 :begin :instance :status generic-lex-entry.
 :include "gle".
 :end :instance.
-
 
 ;;
 ;; parse-tree labels (instances)
@@ -80,5 +78,5 @@
 ;;
 
 :begin :instance.
-:include "roots-utterance".
+:include "roots".
 :end :instance.

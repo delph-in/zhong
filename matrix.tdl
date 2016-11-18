@@ -683,8 +683,8 @@ subord-or-coord-relation := relation &
   [ L-HNDL handle,
     R-HNDL handle ].
 
-coordination-relation := subord-or-coord-relation &
-  [ C-ARG coord-index,
+coordination-relation := subord-or-coord-relation & arg0-relation &
+  [ ARG0 coord-index,
     L-INDEX individual,
     R-INDEX individual ].
 
@@ -3189,7 +3189,7 @@ conj-lex := basic-conj-lex & single-rel-lex-item &
                                    INDEX #index ],
                             RELS.LIST.FIRST #keyrel ]],
              LKEYS.KEYREL #keyrel & coordination-relation & [ LBL #ltop,
-                                                              C-ARG #index ]]].
+                                                              ARG0 #index ]]].
 
 ; A nosem-conj-lex is a conjunction that contributes no relation.
 ; Used below in "omnisyndeton" coordination.
@@ -3218,7 +3218,7 @@ topormid-coord-phrase := coord-phrase &
   [ C-CONT.HOOK [ LTOP #lbl, INDEX #carg ],
     LCOORD-DTR.SYNSEM.LOCAL.CONT.HOOK.INDEX #lind,
     RCOORD-DTR.SYNSEM.LOCAL [ COORD-REL [ LBL #lbl,
-                                          C-ARG #carg,
+                                          ARG0 #carg,
                                           L-INDEX #lind,
                                           R-INDEX #rind ],
                               CONT.HOOK.INDEX #rind ]].
@@ -3408,7 +3408,7 @@ omni-coord-phrase := coord-phrase &
     LCOORD-DTR omni-left-coord-rule &
                [ SYNSEM.LOCAL [ COORD-STRAT #cstrat,
                                 COORD-REL [ LBL #lbl,
-                                            C-ARG #carg,
+                                            ARG0 #carg,
                                             L-INDEX #lind,
                                             R-INDEX #rind ],
                                 CONT.HOOK.INDEX #lind ]],
@@ -3467,7 +3467,7 @@ basic-np-mid-coord-rule := np-coord-phrase &
     C-CONT [ RELS <! [ ARG0 #carg, RSTR #lbl ], #crel !>,
 	     HCONS <! !> ],
     RCOORD-DTR.SYNSEM.LOCAL.COORD-REL [ LBL #lbl,
-                                        C-ARG #carg ]].
+                                        ARG0 #carg ]].
 
 np-bottom-coord-phrase := bottom-coord-phrase &
   [ SYNSEM.LOCAL.CAT [ HEAD noun,

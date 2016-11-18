@@ -184,6 +184,15 @@ generic_year_ne := time-noun-lex &
 					  +CARG #carg,
 					  +CLASS year_ne ] > ]. 
 
+generic_month_ne := time-noun-lex & 
+  [ SYNSEM.LKEYS.KEYREL [ PRED month_n_rel,
+                          CARG #carg ],
+    STEM < "_generic_month_ne_" >,
+    TOKENS.+LIST generic_token_list & < [ +POS.+TAGS null,
+					  +CARG #carg,
+					  +CLASS month_ne ] > ]. 
+
+
 ; generic_trans_verb_bse := v_np*_bse-unk_le &
 ;   [ ORTH < "_generic_vb_" >,
 ;     TOKENS.+LIST < [ +TNT.+TAGS.FIRST "VB" ] > ].

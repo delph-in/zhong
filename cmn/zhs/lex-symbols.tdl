@@ -4,11 +4,6 @@
 ;;; Punctuations
 ;;;;;;;;;;;;;;;;;;;
 
-comma_c := conj_-_le &
-  [ STEM < "、" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "、", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_、_coord_rel",
-    TRAITS native_token_list ].
 
 period-marker := punctuation &
   [ STEM < "。" >,

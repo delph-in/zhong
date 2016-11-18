@@ -4,11 +4,106 @@
 ;;; Main Lexical Items
 ;;;;;;;;;;;;;;;;;;;
 
+;;;;;;;;;;;;;;;;;;;;;;;
+;;;; time nouns
+;;;;;;;;;;;;;;;;;;;;;;;
+
 10月_n_1 := n_-_tm_le &
   [ STEM < "10月" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "1", LENGTH more-than-one ],
     SYNSEM.LKEYS.KEYREL.PRED "_10月_n_1_rel",
     TRAITS native_token_list ].
+
+一月_n_1 := n_-_tm_le &
+  [ STEM < "一月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_一月_n_1_rel",
+    TRAITS native_token_list ].
+
+二月_n_1 := n_-_tm_le &
+  [ STEM < "二月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "二", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_二月_n_1_rel",
+    TRAITS native_token_list ].
+
+三月_n_1 := n_-_tm_le &
+  [ STEM < "三月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "三", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_三月_n_1_rel",
+    TRAITS native_token_list ].
+
+四月_n_1 := n_-_tm_le &
+  [ STEM < "四月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "四", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_四月_n_1_rel",
+    TRAITS native_token_list ].
+
+五月_n_1 := n_-_tm_le &
+  [ STEM < "五月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "五", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_五月_n_1_rel",
+    TRAITS native_token_list ].
+
+六月_n_1 := n_-_tm_le &
+  [ STEM < "六月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "六", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_六月_n_1_rel",
+    TRAITS native_token_list ].
+
+七月_n_1 := n_-_tm_le &
+  [ STEM < "七月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "七", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_七月_n_1_rel",
+    TRAITS native_token_list ].
+
+八月_n_1 := n_-_tm_le &
+  [ STEM < "八月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "八", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_八月_n_1_rel",
+    TRAITS native_token_list ].
+
+九月_n_1 := n_-_tm_le &
+  [ STEM < "九月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "九", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_九月_n_1_rel",
+    TRAITS native_token_list ].
+
+九月份_n_1 := n_-_tm_le &
+  [ STEM < "九月份" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "九", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_九月份_n_1_rel",
+    TRAITS native_token_list ].
+
+十月_n_1 := n_-_tm_le &
+  [ STEM < "十月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_十月_n_1_rel",
+    TRAITS native_token_list ].
+
+十一月_n_1 := n_-_tm_le &
+  [ STEM < "十一月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_十一月_n_1_rel",
+    TRAITS native_token_list ].
+
+十二月_n_1 := n_-_tm_le &
+  [ STEM < "十二月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_十二月_n_1_rel",
+    TRAITS native_token_list ].
+
+十月份_n_1 := n_-_tm_le &
+  [ STEM < "十月份" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_十月份_n_1_rel",
+    TRAITS native_token_list ].
+
+七八月_n_1 := n_-_tm_le &
+  [ STEM < "七八月" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "七", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_七八月_n_1_rel",
+    TRAITS native_token_list ].
+
 
 5日_n_1 := n_-_tm_le &
   [ STEM < "5日" >,
@@ -583,12 +678,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_一时之选_n_1_rel",
     TRAITS native_token_list ].
 
-一月_n_1 := n_-_tm_le &
-  [ STEM < "一月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_一月_n_1_rel",
-    TRAITS native_token_list ].
-
 一望无垠_j_1 := a_-_pred_le &
   [ STEM < "一望无垠" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH more-than-two ],
@@ -951,11 +1040,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "七三七",
     TRAITS native_token_list ].
 
-七八月_n_1 := n_-_tm_le &
-  [ STEM < "七八月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "七", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_七八月_n_1_rel",
-    TRAITS native_token_list ].
 
 七六年_n_1 := n_-_tm_le &
   [ STEM < "七六年" >,
@@ -1027,12 +1111,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "七时" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "七", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_七时_n_1_rel",
-    TRAITS native_token_list ].
-
-七月_n_1 := n_-_tm_le &
-  [ STEM < "七月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "七", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_七月_n_1_rel",
     TRAITS native_token_list ].
 
 七点半_n_1 := n_-_tm_le &
@@ -1321,12 +1399,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "三时" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "三", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_三时_n_1_rel",
-    TRAITS native_token_list ].
-
-三月_n_1 := n_-_tm_le &
-  [ STEM < "三月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "三", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_三月_n_1_rel",
     TRAITS native_token_list ].
 
 三棒_n_1 := n_-_le &
@@ -4402,18 +4474,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_为了_p_rel",
     TRAITS native_token_list ].
 
-为什么_r_1 := adv_-_vp-pre_le &
-  [ STEM < "为什么" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "为", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_为什么_a_1_rel",
-    TRAITS native_token_list ].
-
-为何_r_1 := adv_-_vp-pre_le &
-  [ STEM < "为何" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "为", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_为何_a_1_rel",
-    TRAITS native_token_list ].
-
 为数_n_1 := n_-_le &
   [ STEM < "为数" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "为", LENGTH two ],
@@ -5217,18 +5277,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_九时_n_1_rel",
     TRAITS native_token_list ].
 
-九月_n_1 := n_-_tm_le &
-  [ STEM < "九月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "九", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_九月_n_1_rel",
-    TRAITS native_token_list ].
-
-九月份_n_1 := n_-_tm_le &
-  [ STEM < "九月份" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "九", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_九月份_n_1_rel",
-    TRAITS native_token_list ].
-
 九棒_n_1 := n_-_le &
   [ STEM < "九棒" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "九", LENGTH two ],
@@ -5264,12 +5312,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "乞", LENGTH two ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_乞求_v_1_rel" ], 
-    TRAITS native_token_list ].
-
-也_r_1 := adv_-_vp-pre_le &
-  [ STEM < "也" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "也", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_也_a_1_rel",
     TRAITS native_token_list ].
 
 也许_r_1 := adv_-_vp-pre_le &
@@ -5964,12 +6006,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_二时_n_1_rel",
     TRAITS native_token_list ].
 
-二月_n_1 := n_-_tm_le &
-  [ STEM < "二月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "二", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_二月_n_1_rel",
-    TRAITS native_token_list ].
-
 二来_sc := conj_-_sub-pre_le &
   [ STEM < "二来" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "二", LENGTH two ],
@@ -6235,12 +6271,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "五日" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "五", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_五日_n_1_rel",
-    TRAITS native_token_list ].
-
-五月_n_1 := n_-_tm_le &
-  [ STEM < "五月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "五", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_五月_n_1_rel",
     TRAITS native_token_list ].
 
 五月花号_n_1 := n_-_pn_le &
@@ -12656,12 +12686,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_八时_n_1_rel",
     TRAITS native_token_list ].
 
-八月_n_1 := n_-_tm_le &
-  [ STEM < "八月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "八", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_八月_n_1_rel",
-    TRAITS native_token_list ].
-
 八点_n_1 := n_-_tm_le &
   [ STEM < "八点" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "八", LENGTH two ],
@@ -13058,12 +13082,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "六时" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "六", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_六时_n_1_rel",
-    TRAITS native_token_list ].
-
-六月_n_1 := n_-_tm_le &
-  [ STEM < "六月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "六", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_六月_n_1_rel",
     TRAITS native_token_list ].
 
 六条通_n_1 := n_-_l_pn_le &
@@ -18551,12 +18569,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_十一日_n_1_rel",
     TRAITS native_token_list ].
 
-十一月_n_1 := n_-_tm_le &
-  [ STEM < "十一月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_十一月_n_1_rel",
-    TRAITS native_token_list ].
-
 十七世纪_n_1 := n_-_tm_le &
   [ STEM < "十七世纪" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH more-than-two ],
@@ -18609,12 +18621,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "十二时" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_十二时_n_1_rel",
-    TRAITS native_token_list ].
-
-十二月_n_1 := n_-_tm_le &
-  [ STEM < "十二月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_十二月_n_1_rel",
     TRAITS native_token_list ].
 
 十二经_n_1 := n_-_le &
@@ -18741,18 +18747,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "十时" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_十时_n_1_rel",
-    TRAITS native_token_list ].
-
-十月_n_1 := n_-_tm_le &
-  [ STEM < "十月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_十月_n_1_rel",
-    TRAITS native_token_list ].
-
-十月份_n_1 := n_-_tm_le &
-  [ STEM < "十月份" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_十月份_n_1_rel",
     TRAITS native_token_list ].
 
 十点_n_1 := n_-_tm_le &
@@ -24575,18 +24569,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_命运_n_1_rel",
     TRAITS native_token_list ].
 
-和_c := conj_-_le &
-  [ STEM < "和" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "和", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_和_coord_rel",
-    TRAITS native_token_list ].
-
-和_p := p_-_n-mod_le &
-  [ STEM < "和" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "和", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_和_p_rel",
-    TRAITS native_token_list ].
-
 和丰_n_1 := n_-_l_pn_le &
   [ STEM < "和丰" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "和", LENGTH two ],
@@ -25514,27 +25496,27 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_喜服_n_1_rel",
     TRAITS native_token_list ].
 
-喜欢_v_1 := v_np_le &
+喜欢_v_1 := v_np-spr_le &
   [ STEM < "喜欢" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_喜欢_v_1_rel" ],
     TRAITS native_token_list ].
 
-喜欢_v_2 := v_vp_sequi_le &
+喜欢_v_2 := v_vp_sequi-spr_le &
   [ STEM < "喜欢" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_喜欢_v_2_rel",
     TRAITS native_token_list ].
 
-喜欢_v_3 := v_s_le &
+喜欢_v_3 := v_s-spr_le &
   [ STEM < "喜欢" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_喜欢_v_3_rel",
     SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
     TRAITS native_token_list ].
 
-喜爱_v_1 := v_vp_sequi_le &
+喜爱_v_1 := v_vp_sequi-spr_le &
   [ STEM < "喜爱" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_喜爱_v_1_rel",
@@ -25939,12 +25921,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "四星级" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "四", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_四星级_n_1_rel",
-    TRAITS native_token_list ].
-
-四月_n_1 := n_-_tm_le &
-  [ STEM < "四月" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "四", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_四月_n_1_rel",
     TRAITS native_token_list ].
 
 四条稔_n_1 := n_-_pn_le &
@@ -31790,6 +31766,12 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_好吃_a_1_rel",
     TRAITS native_token_list ].
 
+好喝_j_1 := a_-_pred_le &
+  [ STEM < "好喝" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "好", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_好喝_a_1_rel",
+    TRAITS native_token_list ].
+
 好听_j_1 := a_-_pred_le &
   [ STEM < "好听" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "好", LENGTH two ],
@@ -33261,7 +33243,8 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_学问_n_1_rel",
     TRAITS native_token_list ].
 
-学院_n_1 := n_-_l_pn_le &
+;n_-_l_pn_le
+学院_n_1 := n_-_le &
   [ STEM < "学院" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "学", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.CARG "学院",
@@ -47359,7 +47342,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_抱持_v_1_rel",
     TRAITS native_token_list ].
 
-抱歉_v_1 := v_-_le &
+抱歉_v_1 := v_-_spr_le &
   [ STEM < "抱歉" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "抱", LENGTH two ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG no-lzg,
@@ -56206,12 +56189,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_有气无力_a_1_rel",
     TRAITS native_token_list ].
 
-有没有_r_1 := adv_-_vp-pre_le &
-  [ STEM < "有没有" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH more-than-two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_有没有_a_1_rel",
-    TRAITS native_token_list ].
-
 有点_r_1 := adv_-_deg-pre_le &
   [ STEM < "有点" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH two ],
@@ -62351,13 +62328,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_沟通_v_1_rel" ],
     TRAITS native_token_list ].
 
-没_v_1 := v_np_le &
-  [ STEM < "没" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_没_v_1_rel",
-    SYNSEM.LOCAL.CAT.HEAD.LZG le+guo,
-    TRAITS native_token_list ].
-
 没什么_v_1 := v_np_le &
   [ STEM < "没什么" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH more-than-two ],
@@ -66923,6 +66893,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.ALTKEYREL.PRED "_点_n_rel",
     TRAITS native_token_list ].
 
+点_v_1 := v_np_le &
+  [ STEM < "点" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "点", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_点_v_1_rel" ],
+    TRAITS native_token_list ].
+
 点出_v_1 := v_np_le &
   [ STEM < "点出" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "点", LENGTH two ],
@@ -67269,7 +67246,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_热闹_a_1_rel",
     TRAITS native_token_list ].
 
-热爱_v_1 := v_vp_sequi_le &
+热爱_v_1 := v_vp_sequi-spr_le &
   [ STEM < "热爱" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "热", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_热爱_v_1_rel",
@@ -67802,14 +67779,14 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "爱",
     TRAITS native_token_list ].
 
-爱_v_1 :=  v_np_le &
+爱_v_1 :=  v_np-spr_le &
   [ STEM < "爱" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "爱", LENGTH one ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
 	     LKEYS.KEYREL.PRED "_爱_v_1_rel" ],
     TRAITS native_token_list ].
 
-爱_v_2 := v_vp_sequi_le &
+爱_v_2 := v_vp_sequi-spr_le &
   [ STEM < "爱" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "爱", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_爱_v_2_rel",
@@ -71468,7 +71445,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
     TRAITS native_token_list ].
 
-疼爱_v_1 := v_np_le &
+疼爱_v_1 := v_np-spr_le &
   [ STEM < "疼爱" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "疼", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_疼爱_v_1_rel",
@@ -72246,7 +72223,8 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "百龄",
     TRAITS native_token_list ].
 
-的确_r_1 := adv_-_vp-pre_le &
+;adv_-_vp-pre_le
+的确_r_1 := adv_-_scop_le &
   [ STEM < "的确" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_的确_a_1_rel",
@@ -98621,7 +98599,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "钟杰",
     TRAITS native_token_list ].
 
-钟爱_v_1 := v_np_le &
+钟爱_v_1 := v_np-spr_le &
   [ STEM < "钟爱" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "钟", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_钟爱_v_1_rel",
@@ -107564,6 +107542,18 @@ Mary_n_1 := n_-_h_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "Mary",
     TRAITS native_token_list ].
 
+Lee_n_1 := n_-_h_pn_le &
+  [ STEM < "Lee" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "L", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "Lee",
+    TRAITS native_token_list ].
+
+Wood_n_1 := n_-_h_pn_le &
+  [ STEM < "Wood" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "W", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "Wood",
+    TRAITS native_token_list ].
+
 丁力_n_1 := n_-_h_pn_le &
   [ STEM < "丁力" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "丁", LENGTH two ],
@@ -107610,6 +107600,12 @@ Mary_n_1 := n_-_h_pn_le &
   [ STEM < "学友" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "学", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.CARG "学友",
+    TRAITS native_token_list ].
+
+方小文_n_1 := n_-_h_pn_le &
+  [ STEM < "方小文" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "方", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "方小文",
     TRAITS native_token_list ].
 
 宋华_n_1 := n_-_h_pn_le &
@@ -107702,6 +107698,24 @@ Mary_n_1 := n_-_h_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "贝贝",
     TRAITS native_token_list ].
 
+文英_n_1 := n_-_h_pn_le &
+  [ STEM < "文英" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "文", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "文英",
+    TRAITS native_token_list ].
+
+学文_n_1 := n_-_h_pn_le &
+  [ STEM < "学文" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "学", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "学文",
+    TRAITS native_token_list ].
+
+王红_n_1 := n_-_h_pn_le &
+  [ STEM < "王红" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "王", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "王红",
+    TRAITS native_token_list ].
+
 陆雨平_n_1 := n_-_h_pn_le &
   [ STEM < "陆雨平" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "陆", LENGTH more-than-two ],
@@ -107714,6 +107728,18 @@ Mary_n_1 := n_-_h_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "马大为",
     TRAITS native_token_list ].
 
+李文中_n_1 := n_-_h_pn_le &
+  [ STEM < "李文中" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "李", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "李文中",
+    TRAITS native_token_list ].
+
+梁祝_n_1 := n_-_pn_le &
+  [ STEM < "梁祝" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "梁祝", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "梁祝",
+    TRAITS native_token_list ].
+
 ;;;;Nouns from MOE data
 
 中文书_n_1 := n_-_le &
@@ -107721,6 +107747,31 @@ Mary_n_1 := n_-_h_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "中", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_中文书_n_1_rel",
     TRAITS native_token_list ].
+
+邮件_n_1 := n_-_le &
+  [ STEM < "邮件" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "邮", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_邮件_n_1_rel",
+    TRAITS native_token_list ].
+
+口语_n_1 := n_-_le &
+  [ STEM < "口语" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "口", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_口语_n_1_rel",
+    TRAITS native_token_list ].
+
+房租_n_1 := n_-_le &
+  [ STEM < "房租" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "房", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_房租_n_1_rel",
+    TRAITS native_token_list ].
+
+车号_n_1 := n_-_le &
+  [ STEM < "车号" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "车", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_车号_n_1_rel",
+    TRAITS native_token_list ].
+
 
 光盘_n_1 := n_-_le &
   [ STEM < "光盘" >,
@@ -107866,6 +107917,12 @@ Mary_n_1 := n_-_h_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_炒饭_n_1_rel",
     TRAITS native_token_list ].
 
+炒面_n_1 := n_-_le &
+  [ STEM < "炒面" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "炒", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_炒面_n_1_rel",
+    TRAITS native_token_list ].
+
 烤鸭_n_1 := n_-_le &
   [ STEM < "烤鸭" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "烤", LENGTH two ],
@@ -107944,6 +108001,12 @@ Mary_n_1 := n_-_h_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_饺子_n_1_rel",
     TRAITS native_token_list ].
 
+京剧_n_1 := n_-_le &
+  [ STEM < "京剧" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "京", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_京剧_n_1_rel",
+    TRAITS native_token_list ].
+
 法文_n_1 := n_-_le &
   [ STEM < "法文" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "法", LENGTH two ],
@@ -107959,8 +108022,112 @@ Mary_n_1 := n_-_h_pn_le &
 再见_v_1 := v_-_le &
   [ STEM < "再见" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "再", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
+             LKEYS.KEYREL.PRED "_再见_v_1_rel" ],
+    TRAITS native_token_list ].
+
+拜拜_v_1 := v_-_le &
+  [ STEM < "拜拜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "拜拜", LENGTH two ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le,
              LKEYS.KEYREL.PRED "_再见_v_1_rel" ],
+    TRAITS native_token_list ].
+
+挂号_v_1 := v_-_le &
+  [ STEM < "挂号" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "挂", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le,
+             LKEYS.KEYREL.PRED "_挂号_v_1_rel" ],
+    TRAITS native_token_list ].
+
+点菜_v_1 := v_-_le &
+  [ STEM < "点菜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "点", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_点菜_v_1_rel" ],
+    TRAITS native_token_list ].
+
+住校_v_1 := v_-_le &
+  [ STEM < "住校" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "住", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
+             LKEYS.KEYREL.PRED "_住校_v_1_rel" ],
+    TRAITS native_token_list ].
+
+发烧_v_1 := v_-_le &
+  [ STEM < "发烧" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "发", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_发烧_v_1_rel" ],
+    TRAITS native_token_list ].
+
+复习_v_1 := v_-_le &
+  [ STEM < "复习" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "复", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_复习_v_1_rel" ],
+    TRAITS native_token_list ].
+
+头疼_v_1 := v_-_le &
+  [ STEM < "头疼" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "头", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_头疼_v_1_rel" ],
+    TRAITS native_token_list ].
+
+回电_v_1 := v_-_le &
+  [ STEM < "回电" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "回", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
+             LKEYS.KEYREL.PRED "_回电_v_1_rel" ],
+    TRAITS native_token_list ].
+
+留言_v_1 := v_-_le &
+  [ STEM < "留言" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "留", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
+             LKEYS.KEYREL.PRED "_留言_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+没关系_v_1 := v_-_le &
+  [ STEM < "没关系" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH more-than-two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG no-lzg,
+             LKEYS.KEYREL.PRED "_没关系_v_1_rel" ],
+    TRAITS native_token_list ].
+
+不客气_v_1 := v_-_le &
+  [ STEM < "不客气" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH more-than-two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_不客气_v_1_rel" ],
+    TRAITS native_token_list ].
+
+贵姓_v_1 := v_-_le &
+  [ STEM < "贵姓" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "贵", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG no-lzg,
+             LKEYS.KEYREL.PRED "_贵姓_v_1_rel" ],
+    TRAITS native_token_list ].
+
+有空_v_1 := v_-_le &
+  [ STEM < "有空" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
+             LKEYS.KEYREL.PRED "_有空_v_1_rel" ],
+    TRAITS native_token_list ].
+
+好久_r_1 := adv_-_vp-pre_le &
+  [ STEM < "好久" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "好", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_好久_a_1_rel",
+    TRAITS native_token_list ].
+
+下次_r_1 := adv_-_vp-pre_le &
+  [ STEM < "下次" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "下", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_下次_a_1_rel",
     TRAITS native_token_list ].
 
 ;;consider handling using affix. TODO.

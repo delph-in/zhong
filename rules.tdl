@@ -26,9 +26,9 @@ head-spec := head-spec-phrase & [ STYLE robust ].
 ;; head-spec-deg: [[有 多] 高兴] 
 ;; ZZF 2015-9-30: taking out "STYLE robust," to allow "很　甜"
 head-spec-noncl := head-spec-h-sem-phrase & 
-  [ 
-    HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jrp,
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jr ].
+  [  NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jr ].
+;    HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jrp,
+    
 
 ;; head-spec-d: [[我 的] 猫]
 head-spec-d := head-spec-h-sem-phrase &
@@ -51,6 +51,7 @@ bare-np := bare-np-phrase.
 ;;0-nom-j := bare-nominal-adj-phrase.
 0-nom-p := bare-nominal-postp-phrase.
 0-nom-d := bare-nominal-det-phrase.
+0-nom-cls := bare-nominal-cls-phrase.
 
 meas-np := meas-np-phrase.
 
@@ -223,7 +224,7 @@ rslt-123_123 := rslt-compound-phrase &
 ;;; Newly introduced phrase structure rules
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-np-adp := np-adp-phrase.
+np-time-adp := np-time-adp-phrase.
 ; head-grd := head-gerundive-phrase.
 
 comp-marker := comp-marker-phrase.

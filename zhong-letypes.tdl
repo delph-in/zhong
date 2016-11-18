@@ -99,21 +99,26 @@ adv_-_tq_le := tag-adv-lex.
 
 v_weather_le := v_weather_type_lex.
 v_-_le := v_intrans-verb-lex.
+v_-_spr_le := v_intrans-verb-spr-lex.
 v_np_le := v_trans-verb-lex.
+v_np-spr_le := v_trans-verb-spr-lex.
 v_np-np_le := ditrans-verb-lex.
 v_pp-np_le := ditrans-pp-verb-lex.
 v_prevpp-np_le := ditrans-preverbal-pp-verb-lex.
 v_np-pp_le := trans-loc-verb-lex.
 
-v_s_le := s-comp-verb-lex.
+v_s_le := v_s-comp-lex.
+v_s-spr_le := v_s-comp-spr-lex.
 v_pp-s_le := pp-s-comp-verb-lex.
-v_pp-pre_le := v_prep-lex-item.
+v_pp-pre_le := v_pp-lex.
 
 v_np_cs_le := cp-subj-verb-lex.
 v_np-ap_le := np-ap-comp-verb-lex.
 v_bap-ap_le := np-ap-comp-ba-verb-lex.
-v_np-vp_oequi_le := v_o-equi-lex.
-v_vp_sequi_le := v_s-equi-lex.
+
+v_np-vp_oequi_le := v_np-vp_oequi-lex.
+v_vp_sequi_le := v_sequi-lex.
+v_vp_sequi-spr_le := v_sequi-spr-lex.
 ;; SSH/ZZF 2014-11-26: This type looks curious. 
 v_np-vp_aequi_le := v_a-equi-lex.
 
@@ -134,12 +139,19 @@ v_np-vp_light_le := v_np-vp_light-lex.
 
 
 conj_-_le := conj-lex.
+conj_-_e_le := conj-e-lex.
+conj_-_x_le := conj-x-lex.
 conj_-_sub-pre_le := subord-conj-pre-lex.
 conj_-_sub-post_le := subord-conj-post-lex.
 
-d_-_le := determiner-lex.
+d_-_le := determiner-cls-lex.
+d_-_nocls_le := determiner-nocls-lex.
+d_-_wh_le := wh-determiner-lex.
+d_-_wh-nocls_le := wh-determiner-nocls-lex.
 d_-_d-prox_le := prox_demons-determiner-lex.
 d_-_d-dist_le := dist_demons-determiner-lex.
+d_-_d-prox-nocls_le := prox_demons-det-nocls-lex.
+d_-_d-dist-nocls_le := dist_demons-det-nocls-lex.
 d_-_prt_le := partitive-lex.
 
 p_-_n-mod_le := prep-n-mod-lex.
@@ -173,4 +185,6 @@ x_-_pre-adv_le := adv_prefix_form_lex.
 
 adv_-_ij_le := interjection-lex.
 
+;;question words
+adv_-_scop_q_le := scop-adv-lex & question-item.
 

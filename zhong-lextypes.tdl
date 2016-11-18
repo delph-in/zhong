@@ -51,6 +51,12 @@ redup-lex-item := lex-item &
 			     PRED redup_x_rel,
 			     ARG1 #index ] ] ] ].
 
+;;ZZF 20161116, to indicate question words. QUE doesn't work yet, conflicting with basic-head-mod-phrase-simple (non-head QUE 0-dlisg) for scopal modifier.
+question-item := lex-item &
+ [ SYNSEM [ LOCAL.CONT.HOOK.INDEX.SF ques ]]. 
+;;            NON-LOCAL.QUE 1-dlist ] ].
+
+
 ;;; Lexical types
 
 ;;; Nouns
@@ -130,13 +136,16 @@ proper-name-lex := basic-one-arg & basic-icons-lex-item & norm-zero-arg &
 ;; SSH 2014-09-11: Locative Proper Names (e.g. 北京).
 ;; 我 要 去 北京: I would like to go to Beijing.
 ;; *我 要 去 李四 / 我 要 去 李四 的 家
-loc-name-lex := proper-name-lex.
+loc-name-lex := proper-name-lex & non-human-lex-item.
 nonloc-name-lex := proper-name-lex.
 human-name-lex := nonloc-name-lex & human-lex-item. 
 sir-name-lex := human-name-lex.
 
+
+
+
 ;; SSH 2014-11-13: pronouns introduce a quant-relation. 
-basic-pronoun-lex := basic-one-arg & norm-hook-lex-item & zero-arg-nonslash & zero-arg-nonrel &
+quant-nom-lex := norm-hook-lex-item & zero-arg-nonslash & zero-arg-nonrel &
 "Pronouns don't have NON-LOCAL.SLASH and REL
 "
   [ SYNSEM [ PAREN -,
@@ -147,29 +156,36 @@ basic-pronoun-lex := basic-one-arg & norm-hook-lex-item & zero-arg-nonslash & ze
 		     CONT [ HOOK.INDEX #index & [ SORT nontime-s ],
 			    RELS <! #rel &
 				  [ LBL #larg ],
-				  quant-relation & 
+				   #quant & 
 				  [ ARG0 #index,
 				    RSTR #harg ] !>,
 			    HCONS <! qeq & 
 				   [ HARG #harg, 
 				     LARG #larg ] !> ] ],
-	     LKEYS.KEYREL noun-relation & #rel & [ PRED pron_rel ] ] ].
+	     LKEYS.KEYREL noun-relation & #rel,
+	     LKEYS.ALTKEYREL quant-relation & #quant ] ]. 
 
 
-personal-pronoun-lex := basic-pronoun-lex &
-  [ SYNSEM.LOCAL.CONT.RELS <! relation, 
-			    [ PRED pronoun_q_rel ] !> ].
 
-wh-pronoun := basic-pronoun-lex & 
+;; SSH 2014-11-13: pronouns introduce a quant-relation. 
+basic-pronoun-lex := quant-nom-lex &
+"Pronouns don't have NON-LOCAL.SLASH and REL
+"
+  [ SYNSEM.LKEYS.KEYREL.PRED pron_rel ].
+
+
+personal-pronoun-lex := basic-pronoun-lex & zero-arg-nonque &
+  [ SYNSEM.LKEYS.ALTKEYREL.PRED pronoun_q_rel ].
+
+wh-pronoun := quant-nom-lex & 
   [SYNSEM [ LOCAL.CONT [ HOOK [ INDEX #index & [ PNG.PERNUM 3rd ],
                                 ICONS-KEY #icons,
 				CLAUSE-KEY #clause ],
-                         RELS <! relation,
-			       [ PRED which_q_rel ] !>,
                          ICONS <! semantic-focus & #icons &
                                 [ IARG1 #clause,
                                   IARG2 #index ] !> ],
-            NON-LOCAL.QUE 1-dlist ] ].
+            NON-LOCAL.QUE 1-dlist,
+            LKEYS.ALTKEYREL.PRED which_q_rel ] ].
 
 
 ;; SSH 2014-11-13: 大家 (everyone), etc.
@@ -283,10 +299,10 @@ head :+
 +vjr :+
   [ PRD bool ].
 
+;;ZZF 20161113 removed "VAL.SPR < >" to allow some verbs to take degree specifiers
 verb-lex := lex-item &
   [ SYNSEM [ PAREN -,
-	     LOCAL.CAT [ HEAD verb & [ PRED-KEY #pred ],
-                         VAL.SPR < > ],
+	     LOCAL.CAT.HEAD verb & [ PRED-KEY #pred ],
 	     LKEYS.KEYREL.PRED #pred ] ].
 	     ;ASPECTED na,
 
@@ -298,6 +314,15 @@ main-verb-lex := verb-lex & basic-verb-lex & tentative-lex-dtr &
                  [ LOCAL [ CAT.VAL [ SPR < >,
                                      COMPS < > ],
                            CONT.HOOK.INDEX #xarg ] ] ].
+
+;;ZZF 20161113 verbs that can take degree specifiers (mental activities and states) 
+verb-spr-item := lex-item & 
+  [ SYNSEM.LOCAL.CAT.VAL.SPR < [ LOCAL.CAT [ HEAD adv,
+                                             VAL.SPEC < [ LOCAL.CAT.HEAD verb ] > ] ] > ].
+
+;;ZZF 20161113 verbs that can't take degree specifiers (most of the verbs)
+verb-no-spr-item := lex-item & 
+  [ SYNSEM.LOCAL.CAT.VAL.SPR <  > ].
 
 aux-lex := verb-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.AUX + ].
@@ -348,7 +373,7 @@ transitive-verb-lex := main-verb-lex & transitive-lex-item & aspect-rule-dtr &
 				 COMPS < > ],
 			   HEAD noun ] ] > ].
 
-cp-subj-verb-lex := main-verb-lex & transitive-lex-item & aspect-rule-dtr &
+cp-subj-verb-lex := main-verb-lex & transitive-lex-item & aspect-rule-dtr & verb-no-spr-item &
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp >,
          LKEYS.KEYREL.ARG1 #ltop ],
     ARG-ST < [ LOCAL [ CAT [ HEAD +vjp,
@@ -379,6 +404,10 @@ s-comp-verb-lex := main-verb-lex  & basic-two-arg-no-hcons & basic-icons-lex-ite
 		       CONT.HOOK.LTOP #ltop],
 	       OPT -]> ].
 
+v_s-comp-lex := s-comp-verb-lex & verb-no-spr-item.
+
+v_s-comp-spr-lex := s-comp-verb-lex & verb-spr-item.
+
 ;vp-comp-verb-lex := main-verb-lex & basic-two-arg-no-hcons & basic-icons-lex-item & aspect-rule-dtr &
 
 
@@ -400,7 +429,7 @@ vp-comp-verb-seq-lex := vp-comp-verb-lex &
 		   CONT.HOOK.XARG #xarg ] ].
 
 ;np-xp-comp-verb-lex := main-verb-lex & basic-three-arg-no-hcons & basic-icons-lex-item &
-np-xp-comp-verb-lex := main-verb-lex & basic-three-arg & basic-icons-lex-item &
+np-xp-comp-verb-lex := main-verb-lex & basic-three-arg & basic-icons-lex-item & verb-no-spr-item &
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp1, #comp2 >,
 	     LKEYS.KEYREL [ARG1 #ind,
 			   ARG2 #ind2 ] ],
@@ -433,6 +462,7 @@ np-vp-comp-verb-oeq-lex := np-vp-comp-verb-lex &
 				 [ LOCAL [ CAT.MC na-or--,
 					   CONT.HOOK.XARG #xarg ] ] > ].
 
+
 ;; SSH 2014-12-08: na-or-- is added 
 ;; 张三 答应 李四 去 北京 。
 np-vp-comp-verb-anomeq-lex := np-vp-comp-verb-lex &
@@ -451,7 +481,7 @@ np-vp-comp-verb-light-lex := np-vp-comp-verb-lex & basic-three-arg-no-hcons &
 		   CONT.HOOK.INDEX #event & [ E.ASPECT #aspect ] ] ].
 
 
-pp-s-comp-verb-lex := main-verb-lex & basic-three-arg-no-hcons & basic-icons-lex-item & aspect-rule-dtr &
+pp-s-comp-verb-lex := main-verb-lex & basic-three-arg-no-hcons & basic-icons-lex-item & aspect-rule-dtr & verb-no-spr-item &
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp1, #comp2 >,
          LKEYS.KEYREL [ARG1 #ind,
                ARG2 #ind2,
@@ -470,7 +500,7 @@ pp-s-comp-verb-lex := main-verb-lex & basic-three-arg-no-hcons & basic-icons-lex
            OPT -]> ].
 
 ;;2016-2-16 ZZF OPT + to allow objects to be optional ::testing
-super-ditrans-verb-lex := main-verb-lex & aspect-rule-dtr &
+super-ditrans-verb-lex := main-verb-lex & aspect-rule-dtr & verb-no-spr-item &
  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comp1, #comp2>,
    ARG-ST  < [ LOCAL.CAT.HEAD noun ],
              #comp1 &
@@ -483,15 +513,15 @@ super-ditrans-verb-lex := main-verb-lex & aspect-rule-dtr &
                                  COMPS < > ] ],
                OPT +] >].
 
-ditrans-verb-lex := ditransitive-lex-item & super-ditrans-verb-lex.
+ditrans-verb-lex := ditransitive-lex-item & super-ditrans-verb-lex .
 
-ditrans-pp-verb-lex := ditransitive-lex-item-2 & super-ditrans-verb-lex &
+ditrans-pp-verb-lex := ditransitive-lex-item-2 & super-ditrans-verb-lex & 
  [ ARG-ST  < [], [], [ LOCAL.CAT.HEAD adp & [ PFORM gei-or-xiang ] ] > ].
 
 ditrans-preverbal-pp-verb-lex := ditrans-pp-verb-lex & 
  [ ARG-ST  < [], [], [ LOCAL.CAT [ HEAD [ PFORM xiang ] ] ] > ].
 
-trans-loc-verb-lex := basic-three-arg-no-hcons & main-verb-lex & basic-icons-lex-item & aspect-rule-dtr &
+trans-loc-verb-lex := basic-three-arg-no-hcons & main-verb-lex & basic-icons-lex-item & aspect-rule-dtr & verb-no-spr-item &
  [ SYNSEM[LOCAL.CAT.VAL.COMPS < #comp1,#comp2>,
           LKEYS.KEYREL [ARG1 #arg1, 
                         ARG2 #arg2,
@@ -511,9 +541,12 @@ trans-loc-verb-lex := basic-three-arg-no-hcons & main-verb-lex & basic-icons-lex
                      CONT.HOOK.INDEX #arg3],
                OPT -] >].
  
-v_intrans-verb-lex := intransitive-verb-lex.
+v_intrans-verb-lex := intransitive-verb-lex & verb-no-spr-item.
+v_intrans-verb-spr-lex := intransitive-verb-lex & verb-spr-item.
 
-v_trans-verb-lex := transitive-verb-lex.
+v_trans-verb-lex := transitive-verb-lex & verb-no-spr-item.
+
+v_trans-verb-spr-lex := transitive-verb-lex & verb-spr-item.
 
 #|
 v_exist-lex := basic-two-arg & verb-lex & basic-verb-lex &
@@ -546,7 +579,7 @@ v_exist-lex := basic-two-arg & verb-lex & basic-verb-lex &
 ;; to account for cases like 学校 有 狗 or 盒子 有 蛋糕, where the PP might be omitted
 ;; EXISTV has been added as a property to block 不 有
 
-v_exist-lex := basic-three-arg & verb-lex & basic-verb-lex & basic-icons-lex-item &
+v_exist-lex := basic-three-arg & verb-lex & basic-verb-lex & basic-icons-lex-item & verb-no-spr-item &
  [ SYNSEM [ POSTCOMP -,
 	    LOCAL [ CAT.VAL [ SUBJ < #subj >,
                               COMPS < #comp1, #comp2 > ],
@@ -582,7 +615,7 @@ v_exist-lex := basic-three-arg & verb-lex & basic-verb-lex & basic-icons-lex-ite
                    CONT.HOOK [ LTOP #vltop,
                            XARG #arg1 ] ] ] > ].
 
-v_light-verb-lexeme := main-verb-lex & basic-two-arg-no-hcons & basic-icons-lex-item &
+v_light-verb-lexeme := main-verb-lex & basic-two-arg-no-hcons & basic-icons-lex-item & verb-no-spr-item &
   [ SYNSEM [ LOCAL [ CAT.VAL.COMPS < #comp >,
                      CONT.HOOK.XARG #arg1 ],
              LKEYS.KEYREL [ ARG1 #arg1,
@@ -598,15 +631,17 @@ v_light-verb-lex := v_light-verb-lexeme &
   [ SYNSEM [ LOCAL.CAT.HEAD.KEYS.KEY #pred,
              LKEYS.KEYREL.PRED #pred ] ].
 
-v_s-equi-lex := vp-comp-verb-seq-lex & trans-first-arg-control-lex-item.
+v_sequi-lex := vp-comp-verb-seq-lex & trans-first-arg-control-lex-item & verb-no-spr-item.
+v_sequi-spr-lex := vp-comp-verb-seq-lex & trans-first-arg-control-lex-item & verb-spr-item.
 
-v_o-equi-lex := np-vp-comp-verb-oeq-lex & ditrans-second-arg-control-lex-item.
+v_np-vp_oequi-lex := np-vp-comp-verb-oeq-lex & ditrans-second-arg-control-lex-item.
+;v_np-vp_sequi-lex := np-vp-comp-verb-oeq-lex & ditrans-first-arg-control-lex-item.
 
 v_a-equi-lex := np-vp-comp-verb-anomeq-lex & ditrans-first-arg-control-lex-item.
 
 v_np-vp_light-lex := np-vp-comp-verb-light-lex.
 
-v_prep-lex-item := basic-two-arg & main-verb-lex & basic-icons-lex-item &
+v_pp-lex := basic-two-arg & main-verb-lex & basic-icons-lex-item & verb-no-spr-item &
    [ ARG-ST < [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind1,
                                   ICONS-KEY.IARG1 #clause ] ],
 	      #comp & [ LOCAL.CONT.HOOK [ INDEX event,
@@ -688,7 +723,7 @@ v_ba_type_lex := v_npvpslash_type_lex &
 			 SUBJ < [ LOCAL[ CONT.HOOK.INDEX #ind2 ] ] > ] ].
   
                 
-v_weather_type_lex := verb-lex & basic-icons-lex-item & aspect-rule-dtr & 
+v_weather_type_lex := verb-lex & basic-icons-lex-item & aspect-rule-dtr & verb-no-spr-item &
  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ <>,
 				SPR <>,
 				COMPS < [ LOCAL [ CAT [ HEAD noun,
@@ -717,7 +752,8 @@ basic-adv-lex :=  single-rel-lex-item & basic-icons-lex-item &
 basic-scopal-adv-lex := basic-adv-lex & scopal-mod-lex & raise-index-mod-lex-item &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT.VAL [ SUBJ < >,
-                               SPR < [ LOCAL.CAT.HEAD adv ] > ] ] ] ].
+                               SPR < [ LOCAL.CAT [ HEAD adv,
+                                                   VAL.SPEC < [ LOCAL.CAT.HEAD adv ] > ] ] > ] ] ] ].
 
 ;;			     SPR < [ LOCAL [ CAT.HEAD adv,
 ;;					     CONT.HOOK #hook ] ] > ],
@@ -869,20 +905,21 @@ neg-adv-lex := basic-scopal-adv-lex &
 ;; Moveable scopal adverbs -- Edited 8-21-09 1:11PM
 ;; Note: perhaps temporal adverbs are int-adv-lex (S or VP)
 
-scop-adv-lex  := basic-scopal-adverb-lex &
-  [ SYNSEM.LOCAL.CAT [ HEAD.MOD < [ LOCAL [ CAT [ HEAD verb,
-                          VAL.COMPS < > ] ] ] >,
+scop-adv-lex  := basic-scopal-adv-lex &
+  [ SYNSEM.LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
+                                                VAL.COMPS < > ] ] >,
                VAL.COMPS < >,
                POSTHEAD - ] ].
 
 ;; SSH 2014-11-10: 都 (dou) 
 ;; Added [SUBJ < [] >] for * 三 只 猫 都 我们 不 追赶 。
-;; Added [COMPS < >] for blocking 我们 [[都 喜欢] 烟草] 。
+;; Added [COMPS < >] for blocking 我们 [[都 喜欢] 烟草] 
+;; ZZF 20161115: removing SPR < >  as the head may not have degree specifier saturated.
 scop-adv-prehd-lex := basic-scopal-adv-lex &
   [ SYNSEM [ LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT [ HEAD +vj,
 						  VAL [ SUBJ < [] >, 
-							COMPS < >,
-							SPR < > ] ] ] >,
+							COMPS < >
+							] ] ] >,
 			 VAL [ COMPS < >,
 			       SPEC < > ],
 			 POSTHEAD - ],
@@ -904,6 +941,14 @@ tag-adv-lex := scop-adv-posthd-lex &
          NON-LOCAL.SLASH 0-dlist ] ].
 
 ;; Conjunctions
+conj-x-lex := conj-lex &
+  [ SYNSEM.LKEYS.KEYREL [ L-INDEX ref-ind,
+                          R-INDEX ref-ind ] ] . 
+
+conj-e-lex := conj-lex &
+  [ SYNSEM.LKEYS.KEYREL [ L-INDEX event,
+                          R-INDEX event ] ]. 
+
 subord-conj-lex  := basic-subord-conjunction-lex & basic-icons-lex-item &
   [ ARG-ST < #comps >,
     SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
@@ -932,7 +977,7 @@ subord-conj-post-lex := subord-conj-lex &
               
 ;;; Auxiliaries
 
-subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item &
+subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item & verb-no-spr-item &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT.VAL [ SUBJ < #subj >,
 			       COMPS < #comps >,
@@ -963,7 +1008,7 @@ imperative-aux-lex := subj-raise-aux-with-pred &
                    CONT.HOOK.INDEX.SF comm ],       
     ARG-ST.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2nd ].
 
-cop-verb-lex :=  transitive-verb-lex &
+cop-verb-lex :=  transitive-verb-lex & verb-no-spr-item &
 "adding in COP feature to identify SHI in constraints of other rules, like can't be in VV(rslt) constructions.
 <ex>他 是 张三
 "
@@ -972,7 +1017,7 @@ cop-verb-lex :=  transitive-verb-lex &
                              COMPS < [ OPT - ] > ] ] ].
 
 cop-verb-cpsubj-lex :=  main-verb-lex & basic-two-arg-no-hcons &
-                        basic-icons-lex-item & 
+                        basic-icons-lex-item & verb-no-spr-item &
    [ SYNSEM [ LOCAL.CAT [ HEAD.COP +,
                           VAL [ SUBJ < [ LOCAL.CAT.HEAD +vjp ] >,
                                 COMPS < #comp & canonical-synsem &
@@ -985,7 +1030,7 @@ cop-verb-cpsubj-lex :=  main-verb-lex & basic-two-arg-no-hcons &
      ARG-ST < [ LOCAL.CONT.HOOK.LTOP #arg1 ],
           #comp & [ LOCAL.CONT.HOOK.INDEX ref-ind & #ind2 ] > ].
 
-cop-verb-cpcomp-lex := basic-one-arg & verb-lex & basic-verb-lex & basic-icons-lex-item &
+cop-verb-cpcomp-lex := basic-one-arg & verb-lex & basic-verb-lex & basic-icons-lex-item & verb-no-spr-item &
   [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
                                  COMPS #comps ],
                            HEAD.COP + ],
@@ -1021,7 +1066,7 @@ focus-icons-scop-lex-item := one-icons-lex-item &
                   CONT.ICONS <! focus & [ IARG1 #clind,
 					  IARG2 #empind ] !> ] ].
 
-shi-emph-lex := lex-item & no-rels-hcons-lex-item &
+shi-emph-lex := lex-item & no-rels-hcons-lex-item & verb-no-spr-item &
 "The first item on COMPS is the emphasized constituent. 
 "
  [ SYNSEM.LOCAL.CAT [ HEAD verb & [ COP + ], 
@@ -1130,16 +1175,21 @@ no-obj-drop-verb-lex := lex-item.
 determiner-lex := basic-determiner-lex & basic-zero-arg &
   [ SYNSEM [ PAREN -,
 	     LOCAL [ CAT.VAL [ SPR < >,
-			       COMPS < [ LOCAL [ CAT.HEAD classifier,
-						 CONT.HOOK [ INDEX #index,
-							     LTOP #ltop ] ],
-					 OPT - ] >,
 			       SUBJ < >,
-			       SPEC < [ LOCAL [ CAT.HEAD.MEASURE na-or-+,
-						CONT.HOOK.LTOP #ltop ] ] > ],
-		     CONT [ HOOK.INDEX #index,
-			    RELS <! relation !> ] ],
+			       SPEC < [ LOCAL.CAT.HEAD.MEASURE na-or-+ ] > ],
+		     CONT.RELS <! relation !> ],
 	     NON-LOCAL.SLASH 0-dlist ] ].
+
+determiner-cls-lex := determiner-lex &
+  [ SYNSEM.LOCAL [ CAT.VAL [ COMPS < [ LOCAL [ CAT.HEAD classifier,
+					       CONT.HOOK [ INDEX #index,
+							   LTOP #ltop ] ],
+				       OPT - ] >,
+			     SPEC < [ LOCAL.CONT.HOOK.LTOP #ltop ] > ],
+		   CONT.HOOK.INDEX #index ] ].
+
+determiner-nocls-lex := determiner-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
 
 ;; SSH 2015-04-16 discourse status (definitesness)
 ; ---------------------------------------
@@ -1150,10 +1200,23 @@ determiner-lex := basic-determiner-lex & basic-zero-arg &
 ; CL-N      | type-id         | active-or-less ((in)definite)
 ; N         | active-or-less  | type-id 
 ; ---------------------------------------
-demons-determiner-lex := determiner-lex & 
+demons-determiner-lex := determiner-cls-lex & 
  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.COG-ST uniq+fam+act ].
 prox_demons-determiner-lex := demons-determiner-lex.
 dist_demons-determiner-lex := demons-determiner-lex.
+
+demons-det-nocls-lex := determiner-nocls-lex & 
+ [ SYNSEM.LOCAL.CONT.HOOK.INDEX.COG-ST uniq+fam+act ].
+prox_demons-det-nocls-lex := demons-det-nocls-lex.
+dist_demons-det-nocls-lex := demons-det-nocls-lex.
+
+wh-determiner-item := lex-item &
+ [ SYNSEM [ LKEYS.KEYREL.PRED which_q_rel,
+            NON-LOCAL.QUE 1-dlist ] ].
+
+wh-determiner-lex := determiner-cls-lex & wh-determiner-item.
+
+wh-determiner-nocls-lex := determiner-nocls-lex & wh-determiner-item.
 
 
 #|replaced by new DE lextypes
@@ -1193,7 +1256,9 @@ aspect-markers := raise-sem-lex-item & no-icons-lex-item &
 				 SPEC < >,
 				 SPR < > ],
 			   POSTHEAD + ] ],
-	     NON-LOCAL.SLASH 0-dlist ] ].
+	     NON-LOCAL [ SLASH 0-dlist & <! !>,
+                         REL 0-dlist & <! !>,
+                         QUE 0-dlist & <! !> ] ] ].
 
 #|ZZF FB 2016-03-23 commented out this definition as it can't stop *[他　所　写　书　的　书](1-dlist unifies with 0-1-dlist), and unable to indicate the slashed argument is the first COMP. 
 suo-marker := raise-sem-lex-item & no-icons-lex-item &
@@ -1226,7 +1291,7 @@ spart-lex-item := raise-sem-lex-item & basic-one-arg & no-icons-lex-item &
              [ PUNCTUATED -,
 	       INTERJECTED na-or--,
 	       LOCAL.CAT [ MC +,
-                           HEAD +vj,
+                           HEAD +vjp,
                            VAL [ SUBJ < >,
                                  COMPS < > ] ] ] > ].
 
@@ -1247,22 +1312,26 @@ qpart-lex-item := spart-lex-item &
 
 ;; ***** Basic + Contracted A-not-A
 ;; SSH 2015-04-22: added ICONS, SUBJ <>
+;; ZZF 20161116: added SPEC < > as they are not specifiers, SUBJ <[]> for verb.
 a-not-a-adv-lex := raise-index-mod-lex-item & single-rel-lex-item & 
 		   scopal-mod-lex & one-icons-lex-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD adv & [ MODIFIABLE -,
 					MOD < lex-synsem &
 					      [ ASPECTED -,
+                                                OPT -,
 						LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE -,
 									     PRED-KEY #key ],
 							      VAL [ COMPS #comps,
-								    SUBJ #subj ] ],
+								    SUBJ #subj & < [ ] > ] ],
 							CONT.HOOK [ ICONS-KEY #ikey,
 								    INDEX #idx & [ E.ASPECT non-aspect ] ] ],
 						LKEYS.KEYREL.PRED #pred ] > ],
-			   VAL [ SUBJ <>,
+			   VAL [ SUBJ < >,
+                                 SPEC < >,
 				 COMPS < lex-synsem &
 				       [ SPART no-spart,			
-					 ASPECTED -,		 
+					 ASPECTED -,
+                                         OPT -,		 
 					 LOCAL [ CAT [ HEAD +vjrp & [ MODIFIABLE -,
 								      PRED-KEY #key ],
 						       VAL [ COMPS #comps,
@@ -1278,10 +1347,14 @@ a-not-a-adv-lex := raise-index-mod-lex-item & single-rel-lex-item &
 	     LKEYS.KEYREL event-relation, 
 	     SPART no-spart ] ].
 
+;;ZZF 20161116 idendify HEAD to have stricter contraints, eg.g. the two Vs must be the same V.
 a-not-a-basic-adv-lex := a-not-a-adv-lex &
-  [ SYNSEM.LOCAL.CAT [ VAL.COMPS < [ LOCAL.CAT.HEAD.CHAR.WCHAR #str ] >,
-		       HEAD.MOD < [ LOCAL.CAT.HEAD.CHAR.WCHAR #str, 
+  [ SYNSEM.LOCAL.CAT [ VAL.COMPS < [ LOCAL.CAT.HEAD #head ] >,
+		       HEAD.MOD < [ LOCAL.CAT.HEAD #head, 
 				    BOUND - ] > ] ].
+;  [ SYNSEM.LOCAL.CAT [ VAL.COMPS < [ LOCAL.CAT.HEAD.CHAR.WCHAR #str ] >,
+;		       HEAD.MOD < [ LOCAL.CAT.HEAD.CHAR.WCHAR #str, 
+;				    BOUND - ] > ] ].
 
 a-not-a-contracted-adv-lex := a-not-a-adv-lex &
   [ SYNSEM.LOCAL.CAT [ VAL.COMPS < [ LOCAL.CAT.HEAD.CHAR [ FCHAR #fstr, 
@@ -1309,21 +1382,27 @@ a-not-a-contracted-adv-lex := a-not-a-adv-lex &
 ;*********************** |#
 
 ;; SSH 2015-04-22: added [MC + ]
+;; ZZF 20161116: added SPEC < > as they are not specifiers, SUBJ <[]> for verb.
 ab-not-ab-adv-lex := raise-index-mod-lex-item & single-rel-lex-item & 
 		     scopal-mod-lex & one-icons-lex-item &
-  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ <>,
+  [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
+                                 SPEC < >,
 				 COMPS < phr-synsem &
 				       [ LOCAL [ CAT [ MC +,
 						       HEAD verb & [ CHAR.WCHAR #wstr,
-								     MODIFIABLE - ] ], 
+								     MODIFIABLE - ],
+                                                       VAL.SUBJ < [ ] > ], 
 						 CONT.HOOK.INDEX [ SF ques,
 								   E.ASPECT non-aspect ] ], 
-					 NON-LOCAL.SLASH 0-dlist ] > ],
+					 NON-LOCAL.SLASH 0-dlist,
+                                         OPT - ] > ],
 			   POSTHEAD +,
 			   HEAD adv & [ MODIFIABLE -,
 					MOD < phr-synsem &
-					      [ LOCAL [ CAT [ MC +,
-							      HEAD verb & [ CHAR.WCHAR #wstr,
+					      [ OPT -,
+                                                LOCAL [ CAT [ MC +,
+							      HEAD verb & [ CHAR [ WCHAR #wstr,
+                                                                                   LENGTH more-than-one ],
 									    MODIFIABLE - ],
 							      VAL [ SUBJ < [ ] > ] ],
 							CONT.HOOK [ ICONS-KEY #ikey,
@@ -1743,6 +1822,7 @@ prep-mod-lex := prep-lex &
 
 prep-n-mod-lex := prep-mod-lex & 
   [ SYNSEM.LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT.VAL.SUBJ < [ LOCAL.CAT.HEAD noun ] > ] >,
+                       POSTHEAD -,
                        VAL [ COMPS < [ LOCAL.CAT.HEAD noun ] >,
                              SUBJ < > ] ] ].
 
@@ -2084,10 +2164,11 @@ vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule &
 
 
 interjection-lex := basic-scopal-adverb-lex &
+"Interjections in discourses may appear at the beginning or the end of a sentence.
+"
   [ SYNSEM [ L-PERIPH +,
 	     INTERJECTED +,
-	     LOCAL.CAT [ POSTHEAD -,
-			 HEAD.MOD < [ L-PERIPH -,
+	     LOCAL.CAT [ HEAD.MOD < [ L-PERIPH -,
 				      R-PERIPH +,
 				      PUNCTUATED na-or--,
 				      LOCAL.CAT [ HEAD +nvj,
@@ -2096,7 +2177,12 @@ interjection-lex := basic-scopal-adverb-lex &
 				      NON-LOCAL [ SLASH 0-dlist,
 						  REL 0-dlist,
 						  QUE 0-dlist ] ] >,
-			 VAL.COMPS < > ] ] ].
+			 VAL [ SPR < >,
+                               SUBJ < >,
+                               COMPS < > ] ] ] ].
+
+interjection-pre-lex := interjection-lex &
+  [ SYNSEM.LOCAL.CAT.POSTHEAD - ].
 
 
 ; comma := punct.
@@ -2129,6 +2215,7 @@ symbol := single-rel-lex-item & basic-icons-lex-item &
 			    RELS <! #rel !>,
 			    HCONS <! !> ] ],
 	     NON-LOCAL.SLASH 0-dlist,
+             PUNCTUATED +,
 	     LKEYS.KEYREL symbol-relation & #rel & [ LBL #lbl,
 						     ARG1 #index ] ] ].
 	     
