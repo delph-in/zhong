@@ -1,3 +1,4 @@
+;;; -*- comment-start: ";"; -*-
 ;;;
 ;;; Basic repp file, partially customized according
 ;;; to your choices file.
@@ -7,3 +8,28 @@
 !^(.+)$								 \1 
 !\t								 
 !  +								 
+
+
+
+;;;
+;;; A 不 A -> A不々 
+;;; 
+
+; 她 健 不 健康 
+; 她 健不健康 
+! (.) ?不 ?\1(.) 						 \1\2不々 
+
+; 她 健康 不 健康
+; 她 健康不健康
+; 她 高 不 高
+; 她 高不高
+! (\S{1,2}) ?不 ?\1 					 \1不々 
+
+
+;;;
+;;; A A -> A々
+;;; 
+
+; 她 高 高
+; 她 高高   *Not currently matched*
+! (\S+) \1 						 \1々 

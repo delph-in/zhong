@@ -5,11 +5,16 @@
 ;; e.g. 张三 哭哭 / 张三 喜欢喜欢
 ;; This lexical rule places [ASPECT tentative] to the verb itself. 
 tentative-olr :=
-%suffix (X XX)
+"<ex>张三 哭哭
+ <ex>张三 喜欢喜欢"
+%suffix (* 々)
 tentative-lex-rule.
 
 redup-olr :=
-%suffix (Y YY)
+"Rule for reduplicated adjectives:
+ <ex>她 高高
+ <ex>她 高 高"
+%suffix (* 々)
 redup-lex-rule.
 
 
