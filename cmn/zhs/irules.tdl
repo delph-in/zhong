@@ -4,16 +4,17 @@
 ;; SSH 2015-04-30: reduplication of verbs
 ;; e.g. 张三 哭哭 / 张三 喜欢喜欢
 ;; This lexical rule places [ASPECT tentative] to the verb itself. 
+; "<ex>张三 哭哭
+;  <ex>张三 喜欢喜欢"
 tentative-olr :=
-"<ex>张三 哭哭
- <ex>张三 喜欢喜欢"
 %suffix (* 々)
 tentative-lex-rule.
 
+; "Rule for reduplicated adjectives:
+;  <ex>她 高高
+;  <ex>她 高 高"
+
 redup-olr :=
-"Rule for reduplicated adjectives:
- <ex>她 高高
- <ex>她 高 高"
 %suffix (* 々)
 redup-lex-rule.
 
