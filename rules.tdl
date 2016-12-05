@@ -3,13 +3,16 @@
 head-comp := head-comp-phrase.
 
 ;; SSH 2015-04-21: The subject cannot be indefinite. 
-;;subj-head := subj-head-phrase & [ STYLE robust ].
+subj-head := subj-head-phrase & [ STYLE robust ].
 
+#| ZZF 20161128 removing differentiation between nominal and non-nominal subjects based on COG-ST. Analysis of definiteness of NP is to be refined with Sanghoun later.
 ;;nominal subjects ;;zz 2015-09-16 to take out 'STYLE robust,' because it's causing sentences with subject(pronoun) to be 'robust' ==> ask sanghoun
+;;CONT.HOOK.INDEX.COG-ST uniq-or-more
 subj-head-n := subj-head-phrase & 
   [ STYLE robust,
     NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
-				CONT.HOOK.INDEX.COG-ST uniq-or-more ] ].
+                                CONT.HOOK.INDEX.COG-ST uniq-or-more ] ].
+
 ;;non-nominal subjects
 subj-head-nn := subj-head-phrase &
   [ STYLE robust,
@@ -19,6 +22,7 @@ subj-head-nn := subj-head-phrase &
 ;nmc-subj-head := nmc-subj-head-phrase.
 
 ;;subj-head-nd := subj-head-nondecl-phrase.
+|#
 
 head-spec := head-spec-phrase & [ STYLE robust ]. 
 
@@ -37,10 +41,11 @@ head-spec-d := head-spec-h-sem-phrase &
 			      CONT.HOOK.INDEX.COG-ST uniq-or-more ] ] ].
 
 ;; head-spec-cl: [[一 只] 猫]
+;; ZZF 20161123 changed COG-ST "type-id" to "cog-st" (underspecified), to allow combining with determiners, which is "uniq+fam+act". Example: [[这 [两 只]] 猫]. To be refined with Sanghoun when reviewing definiteness.
 head-spec-cl := head-spec-h-sem-phrase &
   [ STYLE robust,
     HEAD-DTR.SYNSEM [ LOCAL [ CAT.HEAD classifier,
-			      CONT.HOOK.INDEX.COG-ST type-id ] ] ].
+			      CONT.HOOK.INDEX.COG-ST cog-st ] ] ].
 
 
 headn-spec-hs := head-nom-spec-h-sem-phrase & [ STYLE robust ].
@@ -181,6 +186,8 @@ extracted-subj := extracted-subj-phrase.
 
 n-n-compound := noun-noun-compound-phrase.
 prn-n-compound := pronoun-noun-compound-phrase.
+prp-n-compound := propernoun-noun-compound-phrase.
+n-prp-compound := noun-proper-compound-phrase.
 ;de-n-compound := nom-de-noun-compound-phrase.
 
 
@@ -238,6 +245,8 @@ punct-comp := marker-comp-phrase &
 
 ;ZZF/SSH 2015-04-01 to handle variations of ditransitive verbs
 head-2nd-comp := head-2nd-comp-phrase.
+
+q-phrase := question-phrase.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

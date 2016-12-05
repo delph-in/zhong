@@ -8,7 +8,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-n_-_pr-1sg_le := personal-pronoun-lex & speaker-lex-item & 
+n_-_pr-1sg_le := personal-pronoun-lex & speaker-lex-item &
 "1st pronoun
 <ex>我 吃 苹果
 <nex>这 我 吃 苹果
@@ -38,53 +38,55 @@ n_-_pr-3pl_le := personal-pronoun-lex & basic-icons-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl ].
 
 n_-_pr-wh_le := wh-pronoun.
-n_-_pr-q_le := quant-pronoun-lex.
+n_-_pr-q_le := quant-pronoun-lex & nonque-item.
 
-n_-_pr-refl_le := attr-adj-posthd-lex.
+n_-_pr-refl_le := attr-adj-posthd-lex & nonque-item.
 
 
 ;; SSH/ZZF 2014-11-26
 ;; Currently, general nouns such as dongxi (东西), shi (事).
-n_-_le := common-noun-lex.
+n_-_le := common-noun-lex & nonque-item.
 
 ;;ZZF 2015-5-3 temporary for locational nouns (not proper nouns). To be fixed when have time
-n_-_loc_le := common-noun-lex.
+n_-_loc_le := common-noun-lex & nonque-item.
 
-n_-_c_le := count-noun-lex.
+n_-_c_le := count-noun-lex & nonque-item.
 
-n_-_m_le := mass-noun-lex.
+n_-_m_le := mass-noun-lex & nonque-item.
 
 ;; proper names
-n_-_pn_le := proper-name-lex.
-n_-_l_pn_le := loc-name-lex.
-n_-_h_pn_le := human-name-lex.
-n_-_s_pn_le := sir-name-lex.
+n_-_pn_le := proper-name-lex & nonque-item.
+n_-_l_pn_le := loc-name-lex & nonque-item.
+n_-_l_pn-bound_le := loc-name-lex & bound-lex-item & nonque-item.
+n_-_h_pn_le := human-name-lex & nonque-item.
+n_-_s_pn_le := sir-name-lex & nonque-item.
 
-n_-_tm-bound_le := bound-time-noun-lex.
-n_-_tm_le := time-noun-lex.
+n_-_h_le := common-noun-lex & nonque-item & human-lex-item.
+n_-_tm-bound_le := bound-time-noun-lex & nonque-item.
+n_-_tm_le := time-noun-lex & nonque-item.
 
 
 
-c_-_le := classifier-lex.
+c_-_le := classifier-lex & nonque-item.
 
-a_-_num_le := num-adj-lex.
-a_-_att_le := attr-adj-lex.
-a_-_pred_le := pred-adj-lex.
-a_-_aabb_le := adj-aabb-lex.
-a_-_abb_le := adj-abb-lex.
+a_-_num_le := num-adj-lex & nonque-item.
+a_-_att_le := attr-adj-lex & nonque-item.
+a_-_pred_le := pred-adj-lex & nonque-item.
+a_-_aabb_le := adj-aabb-lex & nonque-item.
+a_-_abb_le := adj-abb-lex & nonque-item.
 
-adv_-_deg-pre_le := deg-int-adv-vp-pre.
-adv_-_s-pre-no-rel_le := int-adv-s-pre-no-rel.
-adv_-_s-pre-rel_le := int-adv-s-pre-rel.
-adv_-_vp-pre_le := int-adv-vp-pre.
-adv_-_vp-pre-norel_le := int-adv-vp-pre-no-rel.
-adv_-_neg_le := neg-adv-lex.
-adv_-_scop_le := scop-adv-lex.
-adv_-_scop-prehd_le := scop-adv-prehd-lex.
+adv_-_deg-pre_le := deg-int-adv-vp-pre & nonque-item.
+adv_-_s-pre-no-rel_le := int-adv-s-pre-no-rel & nonque-item.
+adv_-_s-pre-rel_le := int-adv-s-pre-rel & nonque-item.
+adv_-_vp-pre_le := int-adv-vp-pre & nonque-item.
+adv_-_vp-pre-norel_le := int-adv-vp-pre-no-rel & nonque-item.
+adv_-_neg_le := neg-adv-lex & nonque-item.
+adv_-_scop_le := scop-adv-lex & nonque-item.
+adv_-_scop-prehd_le := scop-adv-prehd-lex & nonque-item.
 
 
 ;; SSH/ZZF: This should be analyzed as an adverb.
-adv_-_imp_le := imperative-aux-lex. 
+adv_-_imp_le := imperative-aux-lex & nonque-item. 
 
 
 ;; WWJ 2015-02-08: Now known as A NOT A
@@ -97,74 +99,78 @@ adv_-_polar2_ab-not-ab_le := ab-not-ab-bu-adv-lex.
 adv_-_tq_le := tag-adv-lex.
 
 
-v_weather_le := v_weather_type_lex.
-v_-_le := v_intrans-verb-lex.
-v_-_spr_le := v_intrans-verb-spr-lex.
-v_np_le := v_trans-verb-lex.
-v_np-spr_le := v_trans-verb-spr-lex.
-v_np-np_le := ditrans-verb-lex.
-v_pp-np_le := ditrans-pp-verb-lex.
-v_prevpp-np_le := ditrans-preverbal-pp-verb-lex.
-v_np-pp_le := trans-loc-verb-lex.
+v_weather_le := v_weather_type_lex & nonque-item.
+v_-_le := v_intrans-verb-lex & nonque-item.
+v_-_spr_le := v_intrans-verb-spr-lex & nonque-item.
+v_np_le := v_trans-verb-lex & nonque-item.
+v_np-spr_le := v_trans-verb-spr-lex & nonque-item.
+v_np-np_le := ditrans-verb-lex & nonque-item.
+v_pp-np_le := ditrans-pp-verb-lex & nonque-item.
+v_prevpp-np_le := ditrans-preverbal-pp-verb-lex & nonque-item.
+v_np-pp_le := trans-loc-verb-lex & nonque-item.
 
-v_s_le := v_s-comp-lex.
-v_s-spr_le := v_s-comp-spr-lex.
-v_pp-s_le := pp-s-comp-verb-lex.
-v_pp-pre_le := v_pp-lex.
+v_s_le := v_s-comp-lex & nonque-item.
+v_s-spr_le := v_s-comp-spr-lex & nonque-item.
+v_pp-s_le := pp-s-comp-verb-lex & nonque-item.
+v_pp-pre_le := v_pp-lex & nonque-item.
 
-v_np_cs_le := cp-subj-verb-lex.
-v_np-ap_le := np-ap-comp-verb-lex.
-v_bap-ap_le := np-ap-comp-ba-verb-lex.
+v_np_cs_le := cp-subj-verb-lex & nonque-item.
+v_np-ap_le := np-ap-comp-verb-lex & nonque-item.
+v_bap-ap_le := np-ap-comp-ba-verb-lex & nonque-item.
 
-v_np-vp_oequi_le := v_np-vp_oequi-lex.
-v_vp_sequi_le := v_sequi-lex.
-v_vp_sequi-spr_le := v_sequi-spr-lex.
-;; SSH/ZZF 2014-11-26: This type looks curious. 
-v_np-vp_aequi_le := v_a-equi-lex.
+v_vp_sequi_le := v_sequi-lex & nonque-item.
+v_vp_sequi-spr_le := v_sequi-spr-lex & nonque-item.
 
-v_np_you_le := v_exist-lex.
+v_np-vp_oequi_le := v_np-vp_oequi-lex & nonque-item.
+v_np-vp_sequi_le := v_np-vp_sequi-lex & nonque-item.
+;; SSH/ZZF 2014-11-26: This type looks curious. change to sequi
+;v_np-vp_aequi_le := v_a-equi-lex & nonque-item.
 
-v_vp_aux_le := v_aux-aux-lex.
+v_np_you_le := v_exist-lex & nonque-item.
 
-v_np_cop_le := cop-verb-lex.
-v_shide-adp_le := shi-mod-int-dep-lex.
-v_shide-adv-scop_le := shi-mod-scop-dep-lex.
-v_shide-aux_le := shi-aux-dep-lex.
-v_shide-sbj_le := shi-subj-dep-lex.
+v_vp_aux_le := v_aux-aux-lex & nonque-item.
+
+v_np_cop_le := cop-verb-lex & nonque-item.
+v_shide-adp_le := shi-mod-int-dep-lex & nonque-item.
+v_shide-adv-scop_le := shi-mod-scop-dep-lex & nonque-item.
+v_shide-aux_le := shi-aux-dep-lex & nonque-item.
+v_shide-sbj_le := shi-subj-dep-lex & nonque-item.
 ;v_shide_le := cop-verb-cpcomp-lex.
-v_inv-shide_le := cop-verb-cpsubj-lex.
+v_inv-shide_le := cop-verb-cpsubj-lex & nonque-item.
 
-v_np_light_le := v_light-verb-lex.
-v_np-vp_light_le := v_np-vp_light-lex.
+v_np_light_le := v_light-verb-lex & nonque-item.
+v_np-vp_light_le := v_np-vp_light-lex & nonque-item.
 
 
-conj_-_le := conj-lex.
-conj_-_e_le := conj-e-lex.
-conj_-_x_le := conj-x-lex.
-conj_-_sub-pre_le := subord-conj-pre-lex.
-conj_-_sub-post_le := subord-conj-post-lex.
+conj_-_le := conj-lex & nonque-item.
+conj_-_e_le := conj-e-lex & nonque-item.
+conj_-_x_le := conj-x-lex & nonque-item.
+conj_-_sub-pre_le := subord-conj-pre-lex & nonque-item.
+conj_-_sub-post_le := subord-conj-post-lex & nonque-item.
 
-d_-_le := determiner-cls-lex.
-d_-_nocls_le := determiner-nocls-lex.
 d_-_wh_le := wh-determiner-lex.
 d_-_wh-nocls_le := wh-determiner-nocls-lex.
-d_-_d-prox_le := prox_demons-determiner-lex.
-d_-_d-dist_le := dist_demons-determiner-lex.
-d_-_d-prox-nocls_le := prox_demons-det-nocls-lex.
-d_-_d-dist-nocls_le := dist_demons-det-nocls-lex.
-d_-_prt_le := partitive-lex.
 
-p_-_n-mod_le := prep-n-mod-lex.
-p_-_v-mod_le := prep-v-mod-lex.
-p_-_nomod_le := prep-no-mod-lex.
+d_-_le := determiner-cls-lex & nonque-item.
+d_-_nocls_le := determiner-nocls-lex & nonque-item.
+d_-_d-prox_le := prox_demons-determiner-lex & nonque-item.
+d_-_d-dist_le := dist_demons-determiner-lex & nonque-item.
+d_-_d-prox-nocls_le := prox_demons-det-nocls-lex & nonque-item.
+d_-_d-dist-nocls_le := dist_demons-det-nocls-lex & nonque-item.
+d_-_prt_le := partitive-lex & nonque-item.
 
-p_-_v_le := prep-vmod-lex.
-p_-_v-pre_le := prep-vmod-pre-lex.
+;;pp modifies np
+p_-_n-mod_le := prep-n-mod-lex & nonque-item.
+;;pp modifies verb
+p_-_v-mod_le := prep-v-mod-lex & nonque-item.
+p_-_nomod_le := prep-no-mod-lex & nonque-item.
 
-p_loc_zai_le := basic-loc-lex.
-p_loc_post_le := basic-postp-lex. 
+p_-_v_le := prep-vmod-lex & nonque-item.
+p_-_v-pre_le := prep-vmod-pre-lex & nonque-item.
 
-x_-_qpart_le := qpart-lex-item.
+p_loc_zai_le := basic-loc-lex & nonque-item.
+p_loc_post_le := basic-postp-lex & nonque-item. 
+
 ;; SSH 2015-04-28: This is Mandarin-specific.
 ;; Dialect-specfic Items are constrained directly.
 ;;x_-_crs_le := crs-lex-item.
@@ -180,11 +186,15 @@ x_bei_le := v_bei_type_lex.
 x_ba_le := v_ba_type_lex.
 x_suo_le := v_suo_lex.
 
-x_-_suf-adv_le := adv_suffix_form_lex.
-x_-_pre-adv_le := adv_prefix_form_lex.
+x_-_suf-adv_le := adv_suffix_form_lex & nonque-item.
+x_-_pre-adv_le := adv_prefix_form_lex & nonque-item.
 
-adv_-_ij_le := interjection-lex.
+adv_-_ij_le := interjection-lex & nonque-item.
 
 ;;question words
+;qestion particle ma
+x_-_qpart_le := qpart-lex-item.
+x_-_fqpart_le := frag-qpart-lex-item.
+;
 adv_-_scop_q_le := scop-adv-lex & question-item.
 

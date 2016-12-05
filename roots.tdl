@@ -15,7 +15,8 @@ root := phrase &
 			   MC +,
 			   HEAD +vjpc &
 			       [ FORM finite ] ] ],
-	     NON-LOCAL.SLASH 0-dlist ] ].
+	     NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
+                         QUE 0-dlist & [ LIST < > ] ] ] ].
 
 
 ;; SSH 2015-04-23: FIXME

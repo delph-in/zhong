@@ -7,8 +7,8 @@
 ; symbols, but they all need to be listed as the value of
 ; `*start-symbol' (see `lkb/user-fns.lsp').
 
-root := utterance-phrase &
-  [ STYLE strict ].
+root := utterance-phrase.
+; &  [ STYLE strict ].
 
 ;; SSH 2015-04-23: FIXME
 ;; This is a tentative approach.

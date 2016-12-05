@@ -6,9 +6,8 @@
 ;; This lexical rule places [ASPECT tentative] to the verb itself. 
 ; "<ex>张三 哭哭
 ;  <ex>张三 喜欢喜欢"
-tentative-olr :=
-%suffix (* 々)
-tentative-lex-rule.
+
+
 
 ; "Rule for reduplicated adjectives:
 ;  <ex>她 高高
@@ -17,6 +16,19 @@ tentative-lex-rule.
 redup-olr :=
 %suffix (* 々)
 redup-lex-rule.
+
+tentative-x-olr :=
+%suffix (* 々看) (* 々) (* 一々) (* 一下)
+tentative-lex-rule.
+
+;This reduplication pattern indicates the action is over. Current grammar doesn't have TENSE information yet. KIV
+tentative-xl-x-olr :=
+%suffix (* 了一々)
+tentative-lex-rule.
+
+abua-olr :=
+%suffix (* 不々) (* 没々)
+anota-lex-rule.
 
 
 ;;_perf_aspect-suffix :=
@@ -34,13 +46,3 @@ redup-lex-rule.
 ; %suffix (* 过)
 ; exp_aspect-lex-rule.
 
-
-#|
-n1-bottom :=
-  %suffix (* 和)
-  n1-bottom-coord-rule.
-
-n4-bottom :=
-  %suffix (* 跟)
-  n4-bottom-coord-rule.
-|#

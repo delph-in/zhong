@@ -69,6 +69,7 @@ PNG.ANIMACY : PNG.ANIMACY
 	  
 E.ASPECT : E.ASPECT
 ;  has-aspect >> perfective
+  tentative <> tentative
   perfective <> perfective
   imperfective <> imperfective
   experiential <> experiential

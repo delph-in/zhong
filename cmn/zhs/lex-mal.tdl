@@ -17,3 +17,6 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "也", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_也_a_⚠_rel",
     TRAITS native_token_list ].
+
+;using "吗" in a sentence with question word
+;

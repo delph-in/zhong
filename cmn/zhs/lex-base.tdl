@@ -9,7 +9,7 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吗", LENGTH one ],
     TRAITS native_token_list ].
 
-呢_qp := x_-_qpart_le &
+呢_qp := x_-_fqpart_le &
   [ STEM < "呢" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "呢", LENGTH one ],
     TRAITS native_token_list ].
@@ -213,9 +213,15 @@
 
 有些_n := n_-_pr-q_le &
  [ STEM < "有些" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH more-than-one ],
+   SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH more-than-one ],
    SYNSEM [ LKEYS [ ALTKEYREL.PRED some_q_rel ] ],
    TRAITS native_token_list ].
+
+这儿_p := p_loc_post_le &
+  [ STEM < "这儿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "这", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_这儿_p_rel",
+    TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;;; Question Words
@@ -224,72 +230,89 @@
 ;;; 1、问事物、时间、处所和数量的主要有8个：谁、何、什么，哪儿、哪里，几时、几、多少
 ;;; 2、问方式、性状和原因的主要有8个：怎、怎么、怎的、怎样、怎么样、怎么着、如何、为什么
 
-什么_d := d_-_wh-nocls_le &
+什么_d_q := d_-_wh-nocls_le &
   [ STEM < "什么" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH two ],
     TRAITS native_token_list ].
 
-什么_n := n_-_pr-wh_le &
+什么_n_q := n_-_pr-wh_le &
   [ STEM <"什么">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED thing_n_rel,
     TRAITS native_token_list ].
 
-哪_d := d_-_wh_le &
+多少_d_q := d_-_wh_le &
+  [ STEM < "多少" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "多", LENGTH two ],
+    TRAITS native_token_list ].
+
+多少_n_q := n_-_pr-wh_le &
+  [ STEM <"多少">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "多", LENGTH two ],
+    TRAITS native_token_list ].
+
+多少_n_1 := n_-_pr-q_le &
+  [ STEM < "多少" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "多", LENGTH two ],
+    SYNSEM.LKEYS.ALTKEYREL.PRED "_多少_n_rel",
+    TRAITS native_token_list ].
+
+哪_d_q := d_-_wh_le &
   [ STEM < "哪" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
 	     LKEYS.KEYREL.PRED which_q_rel ],
     TRAITS native_token_list ].
 
-哪些_d := d_-_wh-nocls_le &
+哪些_d_q := d_-_wh-nocls_le &
   [ STEM < "哪些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
 	     LKEYS.KEYREL.PRED which_q_rel ],
     TRAITS native_token_list ].
 
-哪_n := n_-_pr-wh_le &
+哪_n_q := n_-_pr-wh_le &
 [ STEM <"哪">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH one ],
     TRAITS native_token_list ].
 
-哪儿_n := n_-_pr-wh_le &
+哪儿_n_q := n_-_pr-wh_le &
   [ STEM <"哪儿">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED place_n_rel,
     TRAITS native_token_list ].
 
-哪里_n := n_-_pr-wh_le &
+哪里_n_q := n_-_pr-wh_le &
   [ STEM <"哪里">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED place_n_rel,
     TRAITS native_token_list ].
 
-哪里_r_1 := adv_-_vp-pre_le &
+哪里_r_q := adv_-_vp-pre_le &
   [ STEM < "哪里" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_哪里_a_1_rel",
     TRAITS native_token_list ].
 
-谁_n := n_-_pr-wh_le &
+谁_n_q := n_-_pr-wh_le &
   [ STEM <"谁">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "谁", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED person_n_rel,
     TRAITS native_token_list ].
 
-有没有_r_1 := adv_-_scop_q_le &
+有没有_r_q := adv_-_scop_q_le &
   [ STEM < "有没有" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_有没有_a_1_rel",
     TRAITS native_token_list ].
 
-为什么_r_1 := adv_-_scop_q_le &
+为什么_r_q := adv_-_scop_q_le &
   [ STEM < "为什么" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "为", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_为什么_a_1_rel",
     TRAITS native_token_list ].
 
-为何_r_1 := adv_-_scop_q_le &
+为何_r_q := adv_-_scop_q_le &
   [ STEM < "为何" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "为", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_为何_a_1_rel",
@@ -441,6 +464,12 @@ shide_sbj := v_shide-sbj_le &
 	     LKEYS.KEYREL.PRED prox_dem_q_rel ],
     TRAITS native_token_list ].
 
+这些_n_1 := n_-_pr-q_le &
+  [ STEM < "这些" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "这", LENGTH two ],
+    SYNSEM.LKEYS.ALTKEYREL.PRED "_这些_n_rel",
+    TRAITS native_token_list ].
+
 那_d := d_-_d-dist_le &
   [ STEM < "那" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "那", LENGTH one ],
@@ -542,6 +571,14 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LOCAL.CAT.HEAD.LZG le+guo,
     TRAITS native_token_list ].
 
+没_v_1 := v_np_le &
+  [ STEM < "没" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_没有_v_2_rel",
+    SYNSEM.LOCAL.CAT.HEAD.LZG le+guo,
+    TRAITS native_token_list ].
+
+#|
 没_polar_basic_r := adv_-_polar_basic_le &
   [ STEM < "没" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
@@ -559,7 +596,7 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED _mei_polar_x_rel,
     TRAITS native_token_list ].
-
+|#
 ;;;;;;;;;;;;;;;;;;;
 ;;; Intensifiers
 ;;;;;;;;;;;;;;;;;;;
@@ -584,12 +621,14 @@ shide_sbj := v_shide-sbj_le &
 ;; This item should be used as the main predicate in a sentence.
 ;; ZZF 2016-11-10 try treating this as verb, as we can have 
 ;; 他 在 吗？ 他 在 不 在 ？ 他 在 不 在 家 ？
+;; borrowing 'BARE' feature from bare NP to stop it being consumed by rslt rules
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 在_v_1 := v_np_le &
   [ STEM < "在" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le,
+             BARE +,
              LKEYS.KEYREL.PRED "_在_v_rel" ],
     TRAITS native_token_list ]. 
 
@@ -628,10 +667,11 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM [ LOCAL.CAT.HEAD.LZG le ],
     TRAITS native_token_list ].
 
+;;adv indicating durative aspect
 在_r_1 := adv_-_vp-pre-norel_le &
   [ STEM <"在">,
     SYNSEM.LOCAL.CAT.HEAD [ CHAR [ FCHAR "在", LENGTH one ],
-                            MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT imperfective ] > ],
+                            MOD < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ],
     TRAITS native_token_list ].
 #|
 在_r_2 := adv_-_vp-pre_le &
@@ -867,6 +907,11 @@ OK_ij := adv_-_ij_le &
     SYNSEM.LKEYS.KEYREL.PRED "_不用谢_x_rel",
     TRAITS native_token_list ].
 
+请问_ij := adv_-_ij_le &
+  [ STEM < "请问" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "请", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_请问_x_rel",
+    TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;modal verbs and their ambiguous forms
@@ -921,15 +966,26 @@ OK_ij := adv_-_ij_le &
     SYNSEM.LKEYS.KEYREL.PRED "_和_coord_rel",
     TRAITS native_token_list ].
 
-;p_-_v-mod_le
-和_p := p_-_n-mod_le &
+和_p := p_-_v-mod_le &
   [ STEM < "和" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "和", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_和_p_rel",
     TRAITS native_token_list ].
 
-，_c := conj_-_e_le &
+，_c_1 := conj_-_e_le &
   [ STEM < "，" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_，_coord_rel",
+    TRAITS native_token_list ].
+
+，_c_2 := conj_-_x_le &
+  [ STEM < "，" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_，_coord_rel",
+    TRAITS native_token_list ].
+
+,_c := conj_-_e_le &
+  [ STEM < "," >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_，_coord_rel",
     TRAITS native_token_list ].

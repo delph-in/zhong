@@ -8,4 +8,5 @@ parsing-roots             := root frag.
  :include "config.common".
 :end :config.
 
+;spanning-only-rules := .
 
