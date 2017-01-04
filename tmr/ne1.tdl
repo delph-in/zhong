@@ -107,6 +107,24 @@ time_ne_3_tmr := ne_tmt &
   +OUTPUT  < [ +CLASS card_or_time_ne ] > ].
 
 
+;; ZZF 2016-12-05 time patterns for Chinese
+;; limitation: no space is allowed in the pattern (must be one token)
+time_ne_4_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^([零〇一二三四五六七八九十]|十[一二])点[一二三]刻$ ] >,
+  +OUTPUT  < [ +CLASS time_ne ] > ].
+
+time_ne_5_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^([零〇一二三四五六七八九十]|十[一二])点半$ ] >,
+  +OUTPUT  < [ +CLASS time_ne ] > ].
+
+time_ne_6_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^(十?[一二三四五六七八九]|二十[一二三]|[十零〇])点(([一二三四五]十|[零〇])?[一二三四五六七八九]|[一二三四五]十)分$ ] >,
+  +OUTPUT  < [ +CLASS time_ne ] > ].
+
+time_ne_7_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^([一两三四五六七八九十]|十[一二])点钟$ ] >,
+  +OUTPUT  < [ +CLASS time_ne ] > ].
+
 ;;;
 ;;; dates
 ;;;
@@ -317,4 +335,11 @@ hyphenated_identifier_ne_tmr := ne_tmt &
 ;;
 section_number_ne_tmr := ne_tmt &
 [ +INPUT < [ +FORM ^[0-9]+\.[0-9]+(\.[0-9]+)+$ ] >,
+  +OUTPUT < [ +CLASS proper_ne ] > ].
+
+;;
+;; phone numbers: （ 一四二 ） 二六八九三七五 
+;;
+phone_number_ne_tmr := ne_tmt &
+[ +INPUT < [ +FORM ^（[一壹二贰三叁四五六七八九零〇]+）[一壹二贰三叁四五六七八九零〇]+$ ] >,
   +OUTPUT < [ +CLASS proper_ne ] > ].

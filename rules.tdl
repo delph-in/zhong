@@ -50,6 +50,7 @@ head-spec-cl := head-spec-h-sem-phrase &
 
 headn-spec-hs := head-nom-spec-h-sem-phrase & [ STYLE robust ].
 
+bare-s := bare-s-phrase.
 bare-np := bare-np-phrase.
 
 ;;assuming nominalization is done using adj+DE
@@ -89,9 +90,9 @@ head-mod-int := head-adj-int-phrase &
 mod-head-int := adj-head-int-mc &   [ STYLE #style,
     NON-HEAD-DTR.STYLE #style ].
 
-head-adj-scop := head-adj-scop-phrase & [ STYLE robust ].
+head-mod-scop := head-adj-scop-phrase & [ STYLE robust ].
 
-adj-head-scop := adj-head-scop-phrase & [ STYLE robust ].
+mod-head-scop := adj-head-scop-phrase & [ STYLE robust ].
 
 n1-top-coord := n1-top-coord-rule & [ STYLE robust ].
 

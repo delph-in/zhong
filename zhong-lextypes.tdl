@@ -15,6 +15,10 @@ non-human-lex-item := lex-item &
  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY non-human ]. 
 inanimate-lex-item := lex-item & 
  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate ]. 
+loc-lex-item := lex-item & 
+ [ SYNSEM.LOCAL.CAT.HEAD.LOC + ]. 
+non-loc-lex-item := lex-item & 
+ [ SYNSEM.LOCAL.CAT.HEAD.LOC na-or-- ].
 
 
 speaker-lex-item := basic-icons-lex-item &
@@ -145,8 +149,8 @@ proper-name-lex := basic-one-arg & basic-icons-lex-item & norm-zero-arg &
 ;; SSH 2014-09-11: Locative Proper Names (e.g. 北京).
 ;; 我 要 去 北京: I would like to go to Beijing.
 ;; *我 要 去 李四 / 我 要 去 李四 的 家
-loc-name-lex := proper-name-lex & non-human-lex-item.
-nonloc-name-lex := proper-name-lex.
+loc-name-lex := proper-name-lex & loc-lex-item & non-human-lex-item.
+nonloc-name-lex := proper-name-lex & non-loc-lex-item.
 human-name-lex := nonloc-name-lex & human-lex-item. 
 sir-name-lex := human-name-lex.
 
@@ -184,7 +188,7 @@ basic-pronoun-lex := quant-nom-lex &
   [ SYNSEM.LKEYS.KEYREL.PRED pron_rel ].
 
 
-personal-pronoun-lex := basic-pronoun-lex & zero-arg-nonque &
+personal-pronoun-lex := basic-pronoun-lex & zero-arg-nonque & non-loc-lex-item &
   [ SYNSEM.LKEYS.ALTKEYREL.PRED pronoun_q_rel ].
 
 wh-pronoun := quant-nom-lex & 
@@ -197,6 +201,8 @@ wh-pronoun := quant-nom-lex &
             NON-LOCAL.QUE <! #index !>,
             LKEYS.ALTKEYREL.PRED which_q_rel ] ].
 
+loc-pronoun-lex := basic-pronoun-lex & zero-arg-nonque & loc-lex-item.
+;  [ SYNSEM.LKEYS.ALTKEYREL.PRED pronoun_q_rel ].
 
 ;; SSH 2014-11-13: 大家 (everyone), etc.
 quant-pronoun-lex := basic-pronoun-lex & 
@@ -905,12 +911,23 @@ int-adv-s-post := basic-int-adv-lex &
 
 ;; SSH 2015-01-26: Why is [ MC + ] needed?
 ;; ZZF 2016-11-4: negation adverb also modifies adj，and it's scopal modifier, not SPR (therefore SPEC < >). Only degree adverbs are specifiers.
+;; ZZF 2016-12-8: taking out "LIGHT +," from MOD, to allow "不 常 来", "不 太 喜欢"
 neg-adv-lex := basic-scopal-adv-lex &
   [ SYNSEM.LOCAL.CAT [ VAL [ COMPS < >,
                              SPEC < > ],
-                       HEAD.MOD < [ LIGHT +,
-				    LOCAL [ CAT [ HEAD +vj,
-						  VAL [ SUBJ cons ] ] ] ] > ] ].
+                       HEAD.MOD < [ 
+				    LOCAL.CAT [ HEAD +vj,
+                                                VAL.SUBJ cons ] ] > ] ].
+#|
+neg-adv-vj-lex := neg-adv-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT [ HEAD +vj,
+					      VAL.SUBJ cons ] ] > ].
+
+neg-adv-r-lex := neg-adv-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT [ HEAD adv,
+					      VAL.SUBJ < > ] ] > ].
+
+|#
 
 ; neg-adv-lex := basic-scopal-adverb-lex &
 ;   [ SYNSEM.LOCAL.CAT [ VAL.COMPS < >,
@@ -955,9 +972,9 @@ scop-adv-posthd-lex := basic-scopal-adverb-lex &
 
 tag-adv-lex := scop-adv-posthd-lex &
   [ SYNSEM [ LOCAL.CAT [ HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
-                          VAL.SUBJ < > ],
-                      NON-LOCAL.SLASH 0-dlist ] >,
-             VAL.SPR < unexpressed > ],
+                                                  VAL.SUBJ < > ],
+                                      NON-LOCAL.SLASH 0-dlist ] >,
+                         VAL.SPR < unexpressed > ],
          NON-LOCAL.SLASH 0-dlist ] ].
 
 ;; Conjunctions
@@ -995,7 +1012,7 @@ subord-conj-lex  := basic-subord-conjunction-lex & basic-icons-lex-item &
 subord-conj-pre-lex := subord-conj-lex &
    [ SYNSEM.POSTCOMP - ].
 
-;;for comp_v+conj
+;;for comp_v+conj, e.g. "... 以后"
 subord-conj-post-lex := subord-conj-lex &
    [ SYNSEM.POSTCOMP + ]. 
               
@@ -1877,7 +1894,8 @@ prep-n-mod-lex := prep-mod-lex &
                              SUBJ < > ] ] ].
 
 prep-v-mod-lex := prep-mod-lex & 
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD verb ] > ].
+  [ SYNSEM.LOCAL.CAT [ VAL.COMPS < [ LOCAL.CAT.HEAD verb ] >,
+                       POSTHEAD - ] ].
 
 
 ;;Below is for locative marker zai4
@@ -2323,8 +2341,9 @@ paren := symbol &
   [ SYNSEM.PAREN + ].	     
 lparen := paren &
   [ SYNSEM [ LOCAL [ CAT [ POSTHEAD - ] ] ] ].
+;;ZZF 2016-12-06 parenthesis strategy: always combine with rparen first
 rparen := paren &
-  [ SYNSEM [ LOCAL [ CAT [ VAL.COMPS < [ PAREN na-or-+ ] >,
+  [ SYNSEM [ LOCAL [ CAT [ VAL.COMPS < [ PAREN na-or-- ] >,
 			   POSTHEAD + ] ] ] ].
 bullet := symbol &
   [ SYNSEM [ L-PERIPH +,

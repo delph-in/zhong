@@ -41,7 +41,7 @@ dur-marker := aspect-markers &
 ;; WWJ 2015-03-17: Added LOCAL...SF prop to block use with A-not-A
 ;; ZZF 2016-12-2: removed LOCAL.CONT.HOOK.INDEX.SF prop, as they can go with questions as well
 ;; SSH 2015-04-28: sentence-final particles
-crs-lex-item := spart-lex-item &
+crs-lex-item := spart-lex-item & nonque-item &
   [ STYLE robust,
     SYNSEM [ R-PERIPH +,
 	     SPART crs,

@@ -42,13 +42,14 @@ n_-_pr-q_le := quant-pronoun-lex & nonque-item.
 
 n_-_pr-refl_le := attr-adj-posthd-lex & nonque-item.
 
+n_-_pr-loc_le := loc-pronoun-lex & nonque-item.
 
 ;; SSH/ZZF 2014-11-26
 ;; Currently, general nouns such as dongxi (东西), shi (事).
 n_-_le := common-noun-lex & nonque-item.
 
 ;;ZZF 2015-5-3 temporary for locational nouns (not proper nouns). To be fixed when have time
-n_-_loc_le := common-noun-lex & nonque-item.
+n_-_loc_le := common-noun-lex & loc-lex-item & nonque-item.
 
 n_-_c_le := count-noun-lex & nonque-item.
 
@@ -64,7 +65,6 @@ n_-_s_pn_le := sir-name-lex & nonque-item.
 n_-_h_le := common-noun-lex & nonque-item & human-lex-item.
 n_-_tm-bound_le := bound-time-noun-lex & nonque-item.
 n_-_tm_le := time-noun-lex & nonque-item.
-
 
 
 c_-_le := classifier-lex & nonque-item.
@@ -175,21 +175,22 @@ p_loc_post_le := basic-postp-lex & nonque-item.
 ;; Dialect-specfic Items are constrained directly.
 ;;x_-_crs_le := crs-lex-item.
 
-x_-_assoc-de-n_le := de-assoc-n-lex.
-x_-_assoc-de-v_le := de-assoc-v-lex.
-;;poss-det-lex.
-;x_-_nom-de_le := de-nominalizer-lex.
-x_-_rel-de_le := de-comp-lex.
-x_-_altobj-de_le := de-4shi-lex.
+x_-_assoc-de-n_le := de-assoc-n-lex & nonque-item.
+x_-_assoc-de-v_le := de-assoc-v-lex & nonque-item.
 
-x_bei_le := v_bei_type_lex.
-x_ba_le := v_ba_type_lex.
-x_suo_le := v_suo_lex.
+x_-_rel-de_le := de-comp-lex & nonque-item.
+x_-_altobj-de_le := de-4shi-lex & nonque-item.
+
+x_bei_le := v_bei_type_lex & nonque-item.
+x_ba_le := v_ba_type_lex & nonque-item.
+x_suo_le := v_suo_lex & nonque-item.
 
 x_-_suf-adv_le := adv_suffix_form_lex & nonque-item.
 x_-_pre-adv_le := adv_prefix_form_lex & nonque-item.
 
 adv_-_ij_le := interjection-lex & nonque-item.
+adv_-_ij-pre_le := interjection-pre-lex & nonque-item.
+
 
 ;;question words
 ;qestion particle ma
@@ -197,4 +198,7 @@ x_-_qpart_le := qpart-lex-item.
 x_-_fqpart_le := frag-qpart-lex-item.
 ;
 adv_-_scop_q_le := scop-adv-lex & question-item.
-
+adv_-_scop-post_q_le := scop-adv-posthd-lex & question-item.
+n_-_tm_q_le := time-noun-lex & question-item.
+a_-_pred_q_le := pred-adj-lex & question-item.
+adv_-_vp-pre_q_le := int-adv-vp-pre & question-item.
