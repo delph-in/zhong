@@ -117,9 +117,11 @@ generic_n_rel := general_n_rel.
 thing_n_rel := generic_n_rel.
 place_n_rel := generic_n_rel.
 person_n_rel := generic_n_rel.
-time_n_rel := generic_n_rel.
+time_n_rel := generic_n_rel & day_or_month_or_time_rel.
 day_or_month_or_time_rel := predsort & named_rel.
 month_n_rel := day_or_month_or_time_rel.
+day_n_rel := day_or_month_or_time_rel.
+date_n_rel := day_or_month_or_time_rel.
 
 ;;; used in fragments
 ;;;
@@ -190,6 +192,7 @@ head :+
    CHAR char,
    EXISTV bool, 
    MODIFIABLE bool,
+   LOC luk,
    MEASURE luk ].
 
 lex-item :+ 
@@ -656,14 +659,15 @@ n1-bottom-coord-rule := infl-bottom-coord-rule &
     DTR.SYNSEM.LOCAL.CAT.HEAD noun ].
 |#
 
-;;ZZF 2016-11-30 added "PUNCTUATED na-or--" to nonconj-dtr so that punctuations are attached later.
+;;ZZF 2016-11-30 added "PUNCTUATED na-or--" to nonconj-dtr so that punctuations are attached later; added SPR < > to nonconj-dtr to close it off and allow same VAL for the two coordinated elements.
 bottom-coord-rule := conj-first-bottom-coord-rule &
   [ SYNSEM [ LOCAL [ CAT [ HEAD #head,
                            MC - ],
                      COORD + ],
              NON-LOCAL #nonloc ],
     CONJ-DTR.SYNSEM.LOCAL.CAT.HEAD conj,
-    NONCONJ-DTR.SYNSEM [ LOCAL.CAT.HEAD #head,
+    NONCONJ-DTR.SYNSEM [ LOCAL.CAT [ HEAD #head,
+                                     VAL.SPR < > ],
                          NON-LOCAL #nonloc,
                          PUNCTUATED na-or-- ] ].
 
@@ -812,7 +816,6 @@ adj-head-phrase :+
 ;; SSH 2015-03-17: *张三 哦 哭 了 。
 scopal-mod-phrase :+
   [ SYNSEM.INTERJECTED #interjected,
-    HEAD-DTR.SYNSEM.PUNCTUATED na-or--,
     NON-HEAD-DTR.SYNSEM.INTERJECTED #interjected ].
 
 ;; SSH 2014-12-19: BOUND for blocking [狗 轻轻 [地 [叫 了]].
@@ -842,7 +845,8 @@ adj-head-scop-phrase :+
   [ SYNSEM phr-synsem & 
            [ L-PERIPH #lperiph,
 	     R-PERIPH #rperiph ],
-    HEAD-DTR.SYNSEM.BOUND na-or--,
+    HEAD-DTR.SYNSEM [ BOUND na-or--,
+                      PUNCTUATED na-or-- ],
     NON-HEAD-DTR.SYNSEM [ L-PERIPH #lperiph,
 			  R-PERIPH #rperiph ] ].
 
@@ -1196,6 +1200,25 @@ head-nom-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
 				      VAL.COMPS #spcomps ] ],
     C-CONT.HOOK #hook ].
 
+
+;; For clauses without SPR (degree specifiers)
+bare-s-phrase := head-only & 
+  [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
+                           SUBJ < >,
+                           COMPS < > ],
+    HEAD-DTR.SYNSEM [ PUNCTUATED na-or--,
+	              LOCAL [ CAT [ HEAD verb,
+                                    VAL [ SPR < [ ] >,
+                                          SUBJ < >,
+                                          COMPS < > ] ],
+                              CONT.HOOK [ INDEX #index,
+                                          LTOP #ltop ] ] ],
+    C-CONT [ RELS <! !>,
+             HCONS <! !>,
+             ICONS <! !>,
+             HOOK [ INDEX #index,
+                    LTOP #ltop ] ] ].
+
 ;; Bare NP phrase.  Consider modifying the PRED value of the quantifier 
 ;; relation introduced to match the semantic effect of bare NPs in your 
 ;; language.
@@ -1204,7 +1227,7 @@ head-nom-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
 ;; Note: we removed the SPEC <> constraint
 ;;; DPF - motivate? - shouldn't the head at least propagate SPEC to mother?
 
-basic-bare-np-phrase := head-only &
+basic-bare-np-phrase := head-only & 
   [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
                            SUBJ < >,
                            COMPS < > ],
@@ -1311,7 +1334,8 @@ bare-nominal-cls-phrase := basic-bare-nominal-phrase &
 "
   [ SYNSEM.LOCAL.CAT.VAL.SPR < [ LOCAL.CAT.HEAD det,
                                  OPT + ] >,
-    ARGS < [ SYNSEM.LOCAL.CAT [ HEAD classifier &
+    ARGS < [ SYNSEM.LOCAL [ COORD na-or--,
+                            CAT.HEAD classifier &
                                      [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
 					                         INDEX #index ] ] > ] ] ] >,
     C-CONT.HOOK [ LTOP #ltop,
@@ -1381,6 +1405,7 @@ opt-subj-declarative-phrase := decl-head-opt-subj-phrase &
 			        CONT.HOOK.INDEX.E.ASPECT aspect ],
                         NON-LOCAL #non-local ] ] ].
 
+;;ZZF 2016-12-8: removed CLASSIFIED na-or-- from head-dtr to allow compound to combine with classifiers later.
 basic-n-n-compound-phrase := head-final &
 "[EMPTY -] to stop combining NPs with no head noun, like DeP.
 "
@@ -1388,9 +1413,7 @@ basic-n-n-compound-phrase := head-final &
              NON-LOCAL #nonloc ],
     HEAD-DTR.SYNSEM lex-synsem &
                 [ LOCAL [ CAT #cat & 
-                              [ HEAD noun & 
-                                     [ CLASSIFIED na-or--,
-                                       EMPTY - ],
+                              [ HEAD noun & [ EMPTY - ],
                                 VAL.COMPS < > ],
                           CONT.HOOK [ LTOP #ltop,
                                       INDEX #hind ] ],
@@ -1430,7 +1453,7 @@ e.g. adding a HUMAN +/- feature for all nouns"
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CONT.RELS.LIST.FIRST [ PRED pron_rel ], 
     C-CONT.RELS <! [ PRED _de_p_assoc_rel ] !> ].
 
-;; for propernoun+noun
+;; for propernoun+noun, "中国 老师"
 propernoun-noun-compound-phrase := pronproper-noun-compound-phrase &
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CONT.RELS.LIST.FIRST [ PRED named_rel ], 
     C-CONT.RELS <! [ PRED compound_p_rel ] !> ].
@@ -1830,6 +1853,7 @@ basic-head-opt-comp-phrase := head-valence-phrase & head-only &
 ;     HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD verb ].
 
 
+;;ZZF 2016-12-06 Markers are defined to take COMPS, but the head is still the non-marker node, non-head is the marker
 ; 着了过 aspect markers & sentence final 了 & sentence final question particle 
 basic-comp-marker-phrase := head-valence-phrase & head-compositional & basic-binary-headed-phrase &
   [ STYLE #style,
@@ -1847,7 +1871,6 @@ basic-comp-marker-phrase := head-valence-phrase & head-compositional & basic-bin
 				      POSTHEAD #ph ] ],
     HEAD-DTR.SYNSEM #synsem & [ L-PERIPH #lperiph,
 				R-PERIPH #rperiph,
-				PUNCTUATED na-or--,
 				POSTCOMP na-or--,
 				INTERJECTED #interjected,
 				LOCAL [ CAT [ VAL [ SUBJ #subj,
@@ -1868,8 +1891,10 @@ basic-comp-marker-phrase := head-valence-phrase & head-compositional & basic-bin
              HCONS <! !>,
 	     ICONS <! !> ] ].
 
+;;ZZF 2016-12-06 parenthesis strategy: always combine with rparen first
 comp-marker-phrase := basic-comp-marker-phrase & marker-final-phrase & head-initial & 
-  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.POSTHEAD na-or-+ ].
+  [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.POSTHEAD na-or-+,
+    HEAD-DTR.SYNSEM.PUNCTUATED na-or-- ].
 marker-comp-phrase := basic-comp-marker-phrase & marker-initial-phrase & head-final &
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ POSTHEAD na-or-- ] ].
 

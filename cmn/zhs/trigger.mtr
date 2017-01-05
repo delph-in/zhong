@@ -100,11 +100,10 @@ ellipsis-marker_gr := generator_rule &
 ; [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
 ;   FLAGS.TRIGGER "被_v" ].
 
-
 把_v1_gr_1 := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG1 individual & #i ] !>,
   FLAGS [ SUBSUME < #i >,
-	  TRIGGER "把_v1" ] ].
+	  TRIGGER "把_v1" 的] ].
 
 把_v1_gr_2 := arg0e_gtr &
 [ CONTEXT.RELS <! [ ARG2 individual & #i ] !>,

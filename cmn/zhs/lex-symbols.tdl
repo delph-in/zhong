@@ -51,6 +51,14 @@ ellipsis-marker := punctuation &
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
     TRAITS native_token_list ].
 
+#| punctuations mark the end of a sentence
+comma-marker := punctuation &
+  [ STEM < "，" >,
+    STYLE strict,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
+    TRAITS native_token_list ].
+|#
+
 ;;;;;;;;;;;;;;;;;;;
 ;;; Symbols
 ;;;;;;;;;;;;;;;;;;;
