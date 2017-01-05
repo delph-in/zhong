@@ -41,7 +41,7 @@
 
 ; 她 高 高
 ; 她 高高   *Not currently matched* (many existing lexicon entries -n/v/a)
-! ([^. …]+) \1 						 \1々 
+; FCB ! ([^. …]+) \1 						 \1々 
 
 ;;;
 ;;; A 一 A -> A一々

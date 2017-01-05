@@ -1,0 +1,31 @@
+;;; -*- Mode: tdl; Coding: utf-8; -*-
+
+;;;
+;;; Copyright (c) 2012 Francis Bond (bond@ieee.org); 
+;;; see `LICENSE' for conditions.
+;;;
+
+;;; reduplication: 
+; 她 高 高 -> 她 高々
+; 她 高高   *Not currently matched* (many existing lexicon entries -n/v/a)
+; FCB ! ([^. …]+) \1 
+
+;;; FIXME not optional
+
+redup_sp := token_mapping_rule  &
+[ +CONTEXT < [ +FORM #form & ^(.+)$, +FROM #from  ],
+             [ +FORM #form, +TO #to ] >,
+  +OUTPUT  < [ +FORM "${C1:+FORM:1}々",
+	       +TRAIT native_trait,
+	       +CLASS redup_le,
+	       +FROM #from, +TO #to ] >,
+  +POSITION "C1<C2, O1@C1, O1@C2" ].
+
+redup := token_mapping_rule  &
+ [ +CONTEXT < [ +FORM  ^(.)\1$,
+	        +FROM #from, +TO #to ] >,
+   +OUTPUT  < [ +FORM "${C1:+FORM:1}々",
+                +TRAIT native_trait,
+                +CLASS redup_le,
+	        +FROM #from, +TO #to ] >,
+  +POSITION "O1@C1" ].

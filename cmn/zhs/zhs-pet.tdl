@@ -26,10 +26,15 @@
 :begin :instance :status token-mapping-rule.
 :include "../../tmr/prelude".
 :include "../../tmr/pos".
-:include "../../tmr/pos-ipa".
+;:include "../../tmr/pos-ipa".
+:include "../../tmr/redup".
 :include "../../tmr/finis".
 :include "../../tmr/ne1".
 :include "../../tmr/ne2".
+:end :instance.
+
+:begin :instance :status post-generation-mapping-rule.
+:include "../../tmr/post-generation".
 :end :instance.
 
 

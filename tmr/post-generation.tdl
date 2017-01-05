@@ -1,0 +1,18 @@
+;;; -*- Mode: tdl; Coding: utf-8; -*-
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; post generation fixup rules
+;;; experimental rule set by FCB (2017-01-04)
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; 她 高 高 -> 她 高々 -> 她 高高
+;;; 张三 老老
+
+redup_fr := chart_mapping_rule &
+ [ +CONTEXT < >,
+   +INPUT  < [ STEM  < ^(.+)々$ > ] >,
+   +OUTPUT < [ STEM < "${I1:STEM.FIRST:1}${I1:STEM.FIRST:1}" > ] >,
+   +POSITION "O1@I1" ].
