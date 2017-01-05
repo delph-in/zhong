@@ -2252,7 +2252,7 @@ vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule &
     C-CONT [ HOOK #hook,
              ICONS <! !>,
              RELS <! [ LBL #ltop,
-                       PRED vp_ellipsis_rel,
+                       PRED ellipsis_v_rel,
                        ARG1 #xarg ] !> ] ].
 
 

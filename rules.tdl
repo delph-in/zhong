@@ -249,4 +249,11 @@ head-2nd-comp := head-2nd-comp-phrase.
 q-phrase := question-phrase.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; Fragnments
+;;;
 
+
+frg-np := frag-np-rule.
+
+frag-vmod := frag-vmod-rule.

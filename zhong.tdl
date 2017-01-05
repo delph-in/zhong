@@ -121,8 +121,19 @@ time_n_rel := generic_n_rel.
 day_or_month_or_time_rel := predsort & named_rel.
 month_n_rel := day_or_month_or_time_rel.
 
+;;; used in fragments
+;;;
+;;; do we need subtypes for different numbers of arguments
+unknown_v_rel := predsort.
 
-vp_ellipsis_rel := predsort.
+; For fragments (DPF FCB 2005-08-22) expect to appear in the Matrix any moment now
+arg-ev-relation := event-relation &
+ [ ARG semarg ].
+unknown-v-relation := arg-ev-relation & 
+ [ PRED unknown_v_rel ].
+
+;;; used in elipsis  (same as fragment?)
+ellipsis_v_rel := predsort.
 
 cl_x_rel := predsort.
 
@@ -137,6 +148,21 @@ bridge_x_rel := predsort.
 ;;for nouns being used as PP modifying verbs
 time_p_rel := predsort.
 addressee_p_rel := predsort.
+
+fragment_head := head.
+
+;;; (DPF and FCB 2009-02) Allow saturated valences to include zero pronouns
+;;; maybe SPR is also olist?
+saturated := valence & 
+	     [SUBJ olist,
+	      COMPS olist,
+	      SPR null].
+super-saturated := saturated & 
+	     [SUBJ null,
+	      COMPS null,
+	      SPR null].
+
+
 
 +vj :+ 
    [ STATIVE luk,
@@ -2016,4 +2042,54 @@ bridge-unary-phrase := basic-unary-phrase &
 	     ICONS <! !> ],
     ARGS < [ SYNSEM.LOCAL [ CAT.HEAD head,
 			    CONT.HOOK #hook ] ] > ].
+;;;
+;;; Rules for fragments
+;;;
 
+;;; The super type creates a proposition with an non-specified relation
+;;; CHECKME: why should it be lexrule?  Isn't it just phrase?
+;;;
+super-frag-rule := phrase-or-lexrule  & c-cont-1 &
+  [ INFLECTED infl-satisfied,
+    SYNSEM [ LOCAL [ CAT [ HEAD fragment_head &
+				[ MOD < > ],
+                           VAL super-saturated ] ],
+	     NON-LOCAL [REL <! !>,
+			QUE <! !>,
+			SLASH  <! !>]],
+    C-CONT [ HOOK [ LTOP #lbl,
+		    INDEX #ind],
+	     RELS  <! relation &
+		    [ LBL #lbl,
+		      ARG0 #ind ] !>,
+	     HCONS <!  !> ], 
+    ARGS.FIRST [INFLECTED infl-satisfied,
+		SYNSEM [NON-LOCAL [REL <! !>,
+				   QUE <! !>,
+				   SLASH  <! !>]]]].
+
+;; The basic type creates a proposition with an unknown_v_rel and and an ARG 
+
+basic-frag-rule := super-frag-rule  &
+ [ C-CONT [ RELS  <! unknown-v-relation !>]].
+
+unary-frag-rule := basic-frag-rule & unary-phrase.
+
+frag-np-rule := unary-frag-rule &
+ [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD  noun & 
+				       [EMPTY -,
+					GENERIC -],
+				 VAL saturated],
+			   CONT.HOOK.INDEX #ind]] >,
+C-CONT.RELS.LIST.FIRST.ARG #ind ].
+
+frag-vmod-rule := unary-frag-rule &
+ "stand alone intersective adverb or pp"
+ [  ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD +rp &
+				       [MOD < synsem &
+					      [ LOCAL intersective-mod ] >],
+				  VAL saturated],
+			    CONT.HOOK [ LTOP #klbl,
+					INDEX #arg ] ] ] >,
+    C-CONT [ RELS.LIST.FIRST [ LBL #klbl,
+			       ARG0 #arg ]]].
