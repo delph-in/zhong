@@ -1080,7 +1080,7 @@ OK_ij := adv_-_ij_le &
     SYNSEM.LKEYS.KEYREL.PRED "_，_coord_rel",
     TRAITS native_token_list ].
 
-,_c := conj_-_e_le &
+comma_c := conj_-_e_le &
   [ STEM < "," >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_，_coord_rel",
@@ -1202,4 +1202,4 @@ OK_ij := adv_-_ij_le &
   [ STEM < "少于" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "少", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_少于_v_1_rel",
-    TRAITS native_token_list ].
+    TRAITS native_token_list ]./home/zhenzhen/zhong/cmn/zhs/lex-symbols.tdl
