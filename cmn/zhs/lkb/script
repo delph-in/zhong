@@ -88,7 +88,7 @@
 ;;; alternation of the surface string).
 ;;;
 (read-tdl-grammar-file-aux (lkb-pathname (parent-directory) "rules.tdl"))
-(read-tdl-lex-rule-file-aux (lkb-pathname (parent-directory) "lrules.tdl"))
+;(read-tdl-lex-rule-file-aux (lkb-pathname (parent-directory) "lrules.tdl"))
 (read-morph-file-aux (lkb-pathname (parent-directory) "irules.tdl"))
 
 
