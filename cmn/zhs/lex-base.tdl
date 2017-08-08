@@ -1202,4 +1202,4 @@ comma_c := conj_-_e_le &
   [ STEM < "少于" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "少", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_少于_v_1_rel",
-    TRAITS native_token_list ]./home/zhenzhen/zhong/cmn/zhs/lex-symbols.tdl
+    TRAITS native_token_list ].
