@@ -2078,7 +2078,7 @@ bridge-unary-phrase := basic-unary-phrase &
 ;;; The super type creates a proposition with an non-specified relation
 ;;; CHECKME: why should it be lexrule?  Isn't it just phrase?
 ;;;
-super-frag-rule := phrase-or-lexrule  & c-cont-1 &
+super-frag-rule := c-cont-1 &
   [ INFLECTED infl-satisfied,
     SYNSEM [ LOCAL [ CAT [ HEAD fragment_head &
 				[ MOD < > ],

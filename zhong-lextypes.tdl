@@ -1106,7 +1106,7 @@ focus-icons-scop-lex-item := one-icons-lex-item &
                          ICONS <! focus & [ IARG1 #clind,
 					  IARG2 #empind ] !> ] ] ].
 
-shi-emph-lex := lex-item & no-rels-hcons-lex-item & verb-no-spr-item &
+shi-emph-lex := no-rels-hcons-lex-item & verb-no-spr-item &
 "The first item on COMPS is the emphasized constituent. 
 "
  [ SYNSEM [ PUNCTUATED -,
@@ -1177,7 +1177,7 @@ How to indicate then there can be a slashed argument in DeP which is object?
    ARG-ST < #comp1, #comp2 > ].
 
 
-de-4shi-lex := lex-item & raise-sem-lex-item & no-icons-lex-item & norm-zero-arg &
+de-4shi-lex := raise-sem-lex-item & no-icons-lex-item & norm-zero-arg &
 "Special DE used in ShiDe structure for alternative location of object of a transitive verb.
 Feature CH + means this COMP is before the head, CH - means it's after the head.
 <ex>他 是 昨天 完成 的 任务
@@ -1747,7 +1747,7 @@ adposition-lex := basic-adposition-lex & no-hcons-lex-item &
 	     LKEYS.KEYREL #rel & [ LBL #ltop,
 			           ARG0 #index ] ] ].
 
-de-super-lex := lex-item & basic-one-arg &
+de-super-lex := basic-one-arg &
 "DE takes a COMP and modifies a noun. Its position is after its COMP.
 POSTCOMP is a feature to be used on head to indicate the COMP's position is after the head.
 POSTHEAD - means as a modifier, it always appear before the head noun.
@@ -2302,7 +2302,7 @@ interjection-pre-lex := interjection-lex &
 ;; SSH 2015-04-20: [NON-LOCAL.SLASH 0-dlist] on COMPS is deleted for robust parsing. 
 ;; SSH 2015-04-27: +vjrpc => +nvjrpc (because of allowing frag + punctuation: e.g. 张三 。)
 ;; punctuations don't have QUE. "?" will introduce ques directly, so question-phrase is not necessary
-punctuation := lex-item & nonque-item &
+punctuation := nonque-item &
   [ SYNSEM [ PUNCTUATED +,
 	     LOCAL [ CAT [ HEAD punct,
 			   VAL [ SUBJ <>, SPR <>,
