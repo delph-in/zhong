@@ -449,20 +449,20 @@ vp-comp-verb-seq-lex := vp-comp-verb-lex &
 
 np-xp-comp-verb-lex := main-verb-lex & basic-three-arg & basic-icons-lex-item & verb-no-spr-item &
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp1, #comp2 >,
-	     LKEYS.KEYREL [ARG1 #ind,
-			   ARG2 #ind2 ] ],
+	     LKEYS.KEYREL [ ARG1 #ind,
+			    ARG2 #ind2 ] ],
     ARG-ST < [ LOCAL [ CAT [ HEAD noun,
 			     VAL.SPR < > ],
 		       CONT.HOOK.INDEX #ind ] ],
 	     #comp1 &
-	     [ LOCAL[CAT [ HEAD noun,
-			   VAL.SPR < > ],
-		     CONT.HOOK.INDEX #ind2 ] ],
+	     [ LOCAL [ CAT [ HEAD noun,
+			    VAL.SPR < > ],
+		       CONT.HOOK.INDEX #ind2 ] ],
 	     #comp2 &
 	     [ LOCAL [ CAT [ VAL [ SUBJ < unexpressed >,
 				   COMPS < > ],
 			     HEAD +vj ] ],
-	       OPT -]> ].
+	       OPT - ]> ].
 
 np-vp-comp-verb-lex := np-xp-comp-verb-lex &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ OPT - ], [ LOCAL.CAT.HEAD verb ] > ].
@@ -489,6 +489,24 @@ np-vp-comp-verb-seq-lex := np-vp-comp-verb-lex &
 			   COMPS < [ ],
 				   [ LOCAL [ CAT.MC na-or--,
 					     CONT.HOOK.XARG #xarg ] ] > ] ].
+
+;; ZZF 2017-08-01 我 问 他 你 在 忙 吗 ？
+v_np-s_lex := main-verb-lex & basic-three-arg & basic-icons-lex-item & verb-no-spr-item &
+  [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp1, #comp2 >,
+	     LKEYS.KEYREL [ ARG1 #ind,
+			    ARG2 #ind2 ] ],
+    ARG-ST < [ LOCAL [ CAT [ HEAD noun,
+			     VAL.SPR < > ],
+		       CONT.HOOK.INDEX #ind ] ],
+	     #comp1 &
+	     [ LOCAL [ CAT [ HEAD noun,
+			    VAL.SPR < > ],
+		       CONT.HOOK.INDEX #ind2 ] ],
+	     #comp2 &
+	     [ LOCAL [ CAT [ VAL [ SUBJ < >,
+				   COMPS < > ],
+			     HEAD +vj ] ],
+	       OPT - ]> ].
 
 ;; SSH 2014-09-08: The following sentence should be analyzed as being
 ;; [ASPECT perfective].
@@ -773,13 +791,10 @@ basic-adv-lex :=  single-rel-lex-item & basic-icons-lex-item &
 ;;raise-index-mod-lex-item its HOOK.INDEX is the same as that of the thing it modifies
 basic-scopal-adv-lex := basic-adv-lex & scopal-mod-lex & raise-index-mod-lex-item &
   [ SYNSEM [ PAREN -,
-	     LOCAL [ CAT.VAL [ SUBJ < >,
-                               SPR < [ LOCAL.CAT [ HEAD adv,
-                                                   VAL.SPEC < [ LOCAL.CAT.HEAD adv ] > ] ] > ] ] ] ].
+	     LOCAL.CAT.VAL [ SUBJ < >,
+                             SPR < [ LOCAL.CAT [ HEAD adv,
+                                                 VAL.SPEC < [ LOCAL.CAT.HEAD adv ] > ] ] > ] ] ].
 
-;;			     SPR < [ LOCAL [ CAT.HEAD adv,
-;;					     CONT.HOOK #hook ] ] > ],
-;;		   CONT.HOOK #hook ] ] ].
 
 ;;add in norm-hook-lex-item, so that it's keyrel.arg0 is its hook.index
 basic-int-adv-lex := basic-adv-lex & intersective-mod-lex & norm-hook-lex-item &
@@ -918,24 +933,6 @@ neg-adv-lex := basic-scopal-adv-lex &
                        HEAD.MOD < [ 
 				    LOCAL.CAT [ HEAD +vj,
                                                 VAL.SUBJ cons ] ] > ] ].
-#|
-neg-adv-vj-lex := neg-adv-lex &
-  [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT [ HEAD +vj,
-					      VAL.SUBJ cons ] ] > ].
-
-neg-adv-r-lex := neg-adv-lex &
-  [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT [ HEAD adv,
-					      VAL.SUBJ < > ] ] > ].
-
-|#
-
-; neg-adv-lex := basic-scopal-adverb-lex &
-;   [ SYNSEM.LOCAL.CAT [ VAL.COMPS < >,
-;                        POSTHEAD -,
-;                        HEAD.MOD < [ LOCAL [ CAT [ MC +,
-; 						  HEAD verb,
-; 						  VAL [ SUBJ cons,
-; 							COMPS null ] ] ] ] > ] ].
 
 
 
@@ -2093,6 +2090,8 @@ tentative-lex-rule := add-only-no-rels-hcons-rule & no-ccont-lex-rule &
 						   HC-LIGHT #light, 
 						   POSTHEAD #posthead ] ] ] ].
 
+tent-perf-lex-rule := tentative-lex-rule &
+ [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT tent-and-perf ]. 
 
 tentative-lex-dtr := word-or-lexrule. 
 
@@ -2278,7 +2277,7 @@ vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule &
 ;; SSH 2015-03-13: Interjections (e.g. 哎. 哦, 嗯, 噢, 哎呀, 嘿)
 
 
-interjection-lex := basic-scopal-adverb-lex &
+interjection-lex := basic-scopal-adv-lex &
 "Interjections in discourses may appear at the beginning or the end of a sentence.
 "
   [ SYNSEM [ L-PERIPH +,
@@ -2292,8 +2291,7 @@ interjection-lex := basic-scopal-adverb-lex &
 				      NON-LOCAL [ SLASH 0-dlist,
 						  REL 0-dlist,
 						  QUE 0-dlist ] ] >,
-			 VAL [ SPR < >,
-                               SUBJ < >,
+			 VAL [ SUBJ < >,
                                COMPS < > ] ] ] ].
 
 interjection-pre-lex := interjection-lex &
@@ -2306,9 +2304,7 @@ interjection-pre-lex := interjection-lex &
 ;; SSH 2015-04-27: +vjrpc => +nvjrpc (because of allowing frag + punctuation: e.g. 张三 。)
 ;; punctuations don't have QUE. "?" will introduce ques directly, so question-phrase is not necessary
 punctuation := lex-item & nonque-item &
-  [ SYNSEM [ L-PERIPH +,
-	     R-PERIPH +,
-	     PUNCTUATED +,
+  [ SYNSEM [ PUNCTUATED +,
 	     LOCAL [ CAT [ HEAD punct,
 			   VAL [ SUBJ <>, SPR <>,
 				 COMPS < [ PUNCTUATED na-or--,
@@ -2319,6 +2315,10 @@ punctuation := lex-item & nonque-item &
 			   POSTHEAD + ],
 		     CONT [ HOOK.INDEX.SF #sf,
 			    RELS <! !>, HCONS <! !>, ICONS <! !> ] ] ] ].
+
+punctuation-end := punctuation &
+  [ SYNSEM [ L-PERIPH +,
+	     R-PERIPH + ] ].
 
 symbol := single-rel-lex-item & basic-icons-lex-item & nonque-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD punct,

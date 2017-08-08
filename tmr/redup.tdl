@@ -10,8 +10,6 @@
 ; 她 高高   *Not currently matched* (many existing lexicon entries -n/v/a)
 ; FCB ! ([^. …]+) \1 
 
-;;; FIXME not optional
-
 redup_sp := token_mapping_rule  &
 [ +CONTEXT < [ +FORM #form & ^(.+)$, +FROM #from  ],
              [ +FORM #form, +TO #to ] >,

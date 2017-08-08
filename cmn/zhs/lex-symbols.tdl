@@ -5,64 +5,69 @@
 ;;;;;;;;;;;;;;;;;;;
 
 
-period-marker := punctuation &
+period-marker := punctuation-end &
   [ STEM < "。" >,
     STYLE strict,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "。", LENGTH one ],
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
     TRAITS native_token_list ].
 
-period-marker-robust := punctuation &
+period-marker-robust := punctuation-end &
   [ STEM < "." >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ".", LENGTH one ],
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
     TRAITS native_token_list ].
 
-question-marker := punctuation &
+question-marker := punctuation-end &
   [ STEM < "？" >,
     STYLE strict,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "？", LENGTH one ],
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
     TRAITS native_token_list ].
 
-question-marker-robust := punctuation &
+question-marker-robust := punctuation-end &
   [ STEM < "?" >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "?", LENGTH one ],
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
     TRAITS native_token_list ].
 
-bang-marker := punctuation &
+bang-marker := punctuation-end &
   [ STEM < "！" >,
     STYLE strict,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "！", LENGTH one ],
     TRAITS native_token_list ].
 
-bang-marker-robust := punctuation &
+bang-marker-robust := punctuation-end &
   [ STEM < "!" >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "!", LENGTH one ],
     TRAITS native_token_list ].
 
-ellipsis-marker := punctuation &
+ellipsis-marker := punctuation-end &
+  [ STEM < "……" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "…", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
+    TRAITS native_token_list ].
+
+ellipsis-marker-alt := punctuation-end &
   [ STEM < "…" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "…", LENGTH one ],
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
     TRAITS native_token_list ].
 
-#| punctuations mark the end of a sentence
 comma-marker := punctuation &
   [ STEM < "，" >,
-    STYLE strict,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
     TRAITS native_token_list ].
-|#
+
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Symbols
 ;;;;;;;;;;;;;;;;;;;
 
+#|
 comma-marker := comma-or-colon &
   [ STEM < "，" >,
     STYLE strict,
@@ -76,6 +81,7 @@ comma-marker-robust := comma-or-colon &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ",", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.CARG "，",
     TRAITS native_token_list ].
+|#
 
 colon-marker := comma-or-colon &
   [ STEM < "：" >,

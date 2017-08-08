@@ -901,6 +901,12 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LKEYS.KEYREL.PRED "_好_x_rel",
     TRAITS native_token_list ].
 
+喂_ij := adv_-_ij_le & 
+  [ STEM < "喂" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喂", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_喂_x_rel",
+    TRAITS native_token_list ].
+
 OK_ij := adv_-_ij_le & 
   [ STEM < "OK" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "OK", LENGTH one ],

@@ -23,8 +23,8 @@ tentative-lex-rule.
 
 ;This reduplication pattern indicates the action is over. Current grammar doesn't have TENSE information yet. KIV
 tentative-xl-x-olr :=
-%suffix (* 了一々)
-tentative-lex-rule.
+%suffix (* 了一々) (* 了一下)
+tent-perf-lex-rule.
 
 abua-olr :=
 %suffix (* 不々) (* 没々)

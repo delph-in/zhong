@@ -126,6 +126,8 @@ v_np-vp_sequi_le := v_np-vp_sequi-lex & nonque-item.
 ;; SSH/ZZF 2014-11-26: This type looks curious. change to sequi
 ;v_np-vp_aequi_le := v_a-equi-lex & nonque-item.
 
+v_np-s_le := v_np-s_lex & nonque-item.
+
 v_np_you_le := v_exist-lex & nonque-item.
 
 v_vp_aux_le := v_aux-aux-lex & nonque-item.

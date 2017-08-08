@@ -196,7 +196,10 @@ pp-label := label &
                                        COMPS < > ] ],
 	      LABEL-NAME "PP" ].
 
-
+voc-label := label & 
+	    [ SYNSEM.LOCAL.CAT [ HEAD adp & [ PFORM voc ],
+				 VAL.COMPS < > ],
+	      LABEL-NAME "VOC" ].
 
 s-label := label &
            [ SYNSEM [ UTTERED na-or--,
@@ -226,6 +229,10 @@ utt-label := label &
 					  SUBJ < > ] ],
   		              COORD-STRAT "" ] ], 
              LABEL-NAME "UTT"].
+
+frag-label := label & 
+	    [ SYNSEM.LOCAL.CAT.HEAD fragment_head,
+	      LABEL-NAME "FRG" ].
 
 s-top-label := label &
 	   [ SYNSEM.LOCAL.CAT [ HEAD verb,

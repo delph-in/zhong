@@ -249,12 +249,17 @@ head-2nd-comp := head-2nd-comp-phrase.
 
 q-phrase := question-phrase.
 
+
+;;;;discoursal structures
+np-voc-adp := np-voc-adp-phrase.
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
-;;; Fragnments
+;;; Fragments
 ;;;
 
 
 frg-np := frag-np-rule.
 
-frag-vmod := frag-vmod-rule.
+frag-vmod-int := frag-vmod-int-rule.
+frag-vmod-scop := frag-vmod-scop-rule.

@@ -212,6 +212,7 @@ xiang := gei-or-xiang.
 zai := pform.
 you := pform.
 dui := pform.
+voc := pform.
 
 +njd :+ 
  [ HON luk,
@@ -302,6 +303,8 @@ perfective := perf-or-exp.
 experiential := perf-or-exp.
 ;; SSH 2014-09-04; blocking overgeneration
 non-aspect := imperfective.
+;; FZZ 2017-01-10 for "看 了 一下"
+tent-and-perf := tentative & perfective.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; SSH 2015-05-24
@@ -902,11 +905,11 @@ filler-head-phrase := basic-head-filler-phrase & head-final &
                       IARG2 #index ] !> ] ].
 
 ;; SSH 2014-09-02: added [MODIFIED] for blocking overgeneration
-;; SSH 2014-09-02: added [MC +] for blocking overgeneration ;;zz: MC luk to allow extract from any v clause
+;; SSH 2014-09-02: added [MC +] for blocking overgeneration 
+;; FZZ 2017-01-12: removed "VAL.COMPS < >" from mother to allow verbs taking >1 comps
 extracted-comp-phrase := basic-extracted-comp-phrase & 
   [ SYNSEM [ MODIFIED #modified,
-             LOCAL.CAT [ MC +,
-                         VAL.COMPS < > ]  ],
+             LOCAL.CAT.MC + ],
     HEAD-DTR.SYNSEM [ MODIFIED #modified,
 		      BOUND na-or--,
 		      LOCAL [ CAT.HEAD verb,
@@ -1207,7 +1210,7 @@ bare-s-phrase := head-only &
                            SUBJ < >,
                            COMPS < > ],
     HEAD-DTR.SYNSEM [ PUNCTUATED na-or--,
-	              LOCAL [ CAT [ HEAD verb,
+	              LOCAL [ CAT [ HEAD +vjr,
                                     VAL [ SPR < [ ] >,
                                           SUBJ < >,
                                           COMPS < > ] ],
@@ -1707,6 +1710,7 @@ rslt-12_1-inv-phrase := rslt-12_1-phrase & inverse-oriented-phrase.
 ;; Make temporal NPs into adposition phrases
 ;; SSH 2015-04-20: [ SUBJ < [] > ] on MOD is deleted:
 ;; 明天 张三 打 跑 了 李四 
+;; FZZ 2017-01-10: "NONCOMP -" removed from daughter node to allow "他 六 点 起床"
 np-adp-phrase := unary-phrase &
 "push noun to be prepositional phrase
 <ex>他 昨天 来 了
@@ -1725,7 +1729,6 @@ np-adp-phrase := unary-phrase &
              NON-LOCAL [ SLASH <! !>,
                          REL <! !> ] ],
     ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD noun,
-                                  NONCOMP -,
                                   VAL.SPR < > ],
                             CONT.HOOK.INDEX #nind ] ] >,
     C-CONT [ HOOK [ LTOP #ltop,
@@ -1947,7 +1950,8 @@ np-voc-adp-phrase := np-adp-phrase &
 <ex>张三 ， 你 来 了
 "
   [ SYNSEM [ L-PERIPH +,
-             R-PERIPH - ],
+             R-PERIPH -,
+             LOCAL.CAT.HEAD.PFORM voc ],
     ARGS < [ SYNSEM [ PUNCTUATED +,
                       LOCAL [ COORD -,
                               CONT.HOOK.INDEX.PNG.ANIMACY human ] ] ] >,
@@ -2083,38 +2087,51 @@ super-frag-rule := phrase-or-lexrule  & c-cont-1 &
 			QUE <! !>,
 			SLASH  <! !>]],
     C-CONT [ HOOK [ LTOP #lbl,
-		    INDEX #ind],
+		    INDEX #ind ],
 	     RELS  <! relation &
 		    [ LBL #lbl,
-		      ARG0 #ind ] !>,
-	     HCONS <!  !> ], 
-    ARGS.FIRST [INFLECTED infl-satisfied,
-		SYNSEM [NON-LOCAL [REL <! !>,
-				   QUE <! !>,
-				   SLASH  <! !>]]]].
+		      ARG0 #ind ] !> ], 
+    ARGS.FIRST [ INFLECTED infl-satisfied,
+		 SYNSEM [ NON-LOCAL [ REL <! !>,
+				      QUE <! !>,
+				      SLASH  <! !>]]]].
 
 ;; The basic type creates a proposition with an unknown_v_rel and and an ARG 
 
 basic-frag-rule := super-frag-rule  &
  [ C-CONT [ RELS  <! unknown-v-relation !>]].
 
-unary-frag-rule := basic-frag-rule & unary-phrase.
+;;FZZ 2017-1-11 to copy SF up
+unary-frag-rule := basic-frag-rule & unary-phrase &
+ [ ARGS < [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SF #sf ] >,
+   C-CONT.HOOK.INDEX.SF #sf ].
 
 frag-np-rule := unary-frag-rule &
  [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD  noun & 
-				       [EMPTY -,
-					GENERIC -],
-				 VAL saturated],
-			   CONT.HOOK.INDEX #ind]] >,
-C-CONT.RELS.LIST.FIRST.ARG #ind ].
+				       [ EMPTY -,
+					 GENERIC - ],
+				 VAL saturated ],
+			   CONT.HOOK.INDEX #ind ]] >,
+   C-CONT [ RELS.LIST.FIRST.ARG #ind,
+            HCONS <!  !> ] ].
 
+;; ZZF 2017-1-9, to allow scopal-mod as well.
 frag-vmod-rule := unary-frag-rule &
  "stand alone intersective adverb or pp"
- [  ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD +rp &
-				       [MOD < synsem &
-					      [ LOCAL intersective-mod ] >],
-				  VAL saturated],
+ [  ARGS < [ SYNSEM.LOCAL.CAT [ HEAD +rp &
+				     [ MOD < [ ] > ],
+				VAL saturated ] ] > ].
+
+frag-vmod-scop-rule := frag-vmod-rule &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL scopal-mod &
+                                                 [ CONT.HOOK.LTOP #larg ] ] > ] >,
+    C-CONT [ RELS.LIST.FIRST.LBL #larg,
+	     ICONS <! !> ] ].
+
+frag-vmod-int-rule := frag-vmod-rule &
+  [ ARGS < [ SYNSEM.LOCAL [ CAT.HEAD.MOD < [ LOCAL intersective-mod ] >,
 			    CONT.HOOK [ LTOP #klbl,
-					INDEX #arg ] ] ] >,
-    C-CONT [ RELS.LIST.FIRST [ LBL #klbl,
-			       ARG0 #arg ]]].
+					XARG #arg ] ] ] >,
+    SYNSEM.LOCAL.CONT.HOOK [ LTOP #klbl,
+		       INDEX #arg ],
+    C-CONT.HCONS <!  !> ].
