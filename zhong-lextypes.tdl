@@ -2124,8 +2124,7 @@ anota-lex-rule :=  same-modified-lex-rule &
 					        MKG #mkg, 
 				                HC-LIGHT #light, 
 					        POSTHEAD #posthead ],
-                                          CONT.HOOK [ LTOP #ltop,
-                                                      INDEX #index ] ],
+                                          CONT.HOOK.INDEX #index ],
                                   NON-LOCAL [ SLASH #slash,
                                               REL #rel ] ] ]
 ].
