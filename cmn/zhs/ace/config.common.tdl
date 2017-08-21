@@ -68,3 +68,6 @@ lattice-mapping-output-path := +OUTPUT.
 lattice-mapping-context-path := +CONTEXT.
 lattice-mapping-position-path := +POSITION.
 
+;; model
+maxent-model := ../zhong.mem.
+
