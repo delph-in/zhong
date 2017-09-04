@@ -531,10 +531,11 @@ basic-head-subj-phrase := head-valence-phrase & head-compositional &
 ;;                 Added [NON-LOCAL.SLASH 0-dlist]
 ;; ZZF FB 2016-2-24: changed subj's SPR to be olist
 ;; ZZF FB 2016-11-4: removed "SPR < >," from HEAD-DTR, to allow ADJ without degree adverbs, like "苹果 甜". The constraint might be too strict.
+;; contraint on HEAD to avoid taking fragments as subject
 subj-head-phrase := decl-head-subj-phrase & head-final &
   [ SYNSEM.LOCAL.CAT [ MC #mc ],
     SYNSEM.SPART #spart,
-    HEAD-DTR.SYNSEM [ LOCAL.CAT [ MC #mc,
+    HEAD-DTR.SYNSEM [ LOCAL.CAT [ MC #mc, 
 				  VAL [ 
 				      COMPS < > ],
 				  POSTHEAD + ],
@@ -543,6 +544,7 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
     NON-HEAD-DTR.SYNSEM  [ R-PERIPH na-or--,
 			   INTERJECTED na-or--,
 			   LOCAL [ CAT [ MC +,
+                                         HEAD +nvjp,
 					 NONSUBJ -,
 					 VAL.SPR olist ],
 				   CONT.HOOK.INDEX.SORT nontime-s ],
@@ -668,9 +670,11 @@ bottom-coord-rule := conj-first-bottom-coord-rule &
                            MC - ],
                      COORD + ],
              NON-LOCAL #nonloc ],
-    CONJ-DTR.SYNSEM.LOCAL.CAT.HEAD conj,
-    NONCONJ-DTR.SYNSEM [ LOCAL.CAT [ HEAD #head,
-                                     VAL.SPR < > ],
+    CONJ-DTR.SYNSEM [ LOCAL.CAT.HEAD conj,
+                      LKEYS.KEYREL.R-INDEX #ind ],
+    NONCONJ-DTR.SYNSEM [ LOCAL [ CAT [ HEAD +nvjrpcdm & #head ,
+                                       VAL.SPR < > ],
+                                 CONT.HOOK.INDEX #ind ],
                          NON-LOCAL #nonloc,
                          PUNCTUATED na-or-- ] ].
 
@@ -1137,6 +1141,7 @@ basic-head-spec-phrase := head-valence-phrase & phrasal &
 			  MODIFIED #modif ],
     HEAD-DTR [ INFLECTED infl-satisfied,
                SYNSEM [ R-PERIPH na-or--,
+                        L-PERIPH -,
 			LOCAL [ CAT [ HEAD #head,
 				      VAL [ SUBJ #subj,
 					    COMPS <> & #comps,
@@ -1205,14 +1210,13 @@ head-nom-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
 
 
 ;; For clauses without SPR (degree specifiers)
-bare-s-phrase := head-only & 
+;; HEAD's SUBJ should not be saturated, but this doesn't apply to adv
+basic-bare-spr-phrase := head-only & 
   [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
-                           SUBJ < >,
                            COMPS < > ],
     HEAD-DTR.SYNSEM [ PUNCTUATED na-or--,
 	              LOCAL [ CAT [ HEAD +vjr,
                                     VAL [ SPR < [ ] >,
-                                          SUBJ < >,
                                           COMPS < > ] ],
                               CONT.HOOK [ INDEX #index,
                                           LTOP #ltop ] ] ],
@@ -1221,6 +1225,14 @@ bare-s-phrase := head-only &
              ICONS <! !>,
              HOOK [ INDEX #index,
                     LTOP #ltop ] ] ].
+
+bare-s-phrase := basic-bare-spr-phrase &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD +vj,
+                                VAL.SUBJ < [ ] > ] ].
+
+bare-adv-phrase := basic-bare-spr-phrase &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT. HEAD adv ].
+
 
 ;; Bare NP phrase.  Consider modifying the PRED value of the quantifier 
 ;; relation introduced to match the semantic effect of bare NPs in your 
@@ -1400,11 +1412,12 @@ opt-subj-imperative-phrase := imp-head-opt-subj-phrase &
                                   HEAD.EXISTV - ],
 			    CONT.HOOK.INDEX.E.ASPECT non-aspect ] ].
 
+;; FZZ 2017-08-27: removing MC + from HEAD-DTR, as optional subj can happen in sub clause, e.g. "下午 下课 以后 ， 我 喜欢 去 打球 。"
 opt-subj-declarative-phrase := decl-head-opt-subj-phrase &
-  [ SYNSEM [ LOCAL.CAT.HEAD +vj,
+  [ SYNSEM [ LOCAL.CAT [ HEAD +vj,
+                         VAL.SPR <> ],
              NON-LOCAL #non-local ],
-    HEAD-DTR [ SYNSEM [ LOCAL [ CAT [ MC +,
-                                  HEAD.EXISTV - ],
+    HEAD-DTR [ SYNSEM [ LOCAL [ CAT.HEAD.EXISTV -,
 			        CONT.HOOK.INDEX.E.ASPECT aspect ],
                         NON-LOCAL #non-local ] ] ].
 
@@ -1652,13 +1665,14 @@ rslt-12_12-phrase := rslt-x_12-phrase & subject-oriented-phrase &
   [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #comps,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #comps ].
 
-
+;;it should not take degree specifier anymore.
 rslt-1_1-sbj-phrase := rslt-1_1-phrase & subject-oriented-phrase &
 "Type 10 (lee:13)
 <ex>张三 跑 累 了
 "
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj >,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #subj >,
+                                    SPR < > ],
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < #subj > ].
 
 
@@ -2103,7 +2117,8 @@ basic-frag-rule := super-frag-rule  &
 
 ;;FZZ 2017-1-11 to copy SF up
 unary-frag-rule := basic-frag-rule & unary-phrase &
- [ ARGS < [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SF #sf ] >,
+ [ ARGS < [ SYNSEM.LOCAL [ COORD -,
+                           CONT.HOOK.INDEX.SF #sf ] ] >,
    C-CONT.HOOK.INDEX.SF #sf ].
 
 frag-np-rule := unary-frag-rule &

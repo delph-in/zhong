@@ -24315,6 +24315,13 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_告诉_v_2_rel" ],
     TRAITS native_token_list ].
 
+告诉_v_3 := v_np-s_le &
+  [ STEM < "告诉" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "告", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_告诉_v_3_rel" ],
+    TRAITS native_token_list ].
+
 员外_n_1 := n_-_le &
   [ STEM < "员外" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "员", LENGTH two ],
@@ -44422,10 +44429,17 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_愿_v_1_rel",
     TRAITS native_token_list ].
 
-愿意_v_1 := v_s_le &
+愿意_v_1 := v_vp_aux_le &
   [ STEM < "愿意" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "愿", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_愿意_v_1_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_愿意_v_aux_rel",
+    SYNSEM.LOCAL.CAT.HEAD.LZG le,
+    TRAITS native_token_list ].
+
+愿意_v_2 := v_s_le &
+  [ STEM < "愿意" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "愿", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_愿意_v_2_rel",
     SYNSEM.LOCAL.CAT.HEAD.LZG le,
     TRAITS native_token_list ].
 
@@ -67302,7 +67316,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_然_coord_rel",
     TRAITS native_token_list ].
 
-然后_r_1 := adv_-_scop-prehd_le &
+然后_r_1 := adv_-_scop_le &
   [ STEM < "然后" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "然", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_然后_a_1_rel",
@@ -73364,7 +73378,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_真_a_2_rel",
     TRAITS native_token_list ].
 
-真_r_1 := adv_-_vp-pre_le &
+真_r_1 := adv_-_deg-pre_le &
   [ STEM < "真" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "真", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_真_a_1_rel",
@@ -77954,7 +77968,7 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
              LKEYS.KEYREL.PRED "_糟蹋掉_v_1_rel" ],
     TRAITS native_token_list ].
 
-系_n_1 := n_-_l_pn_le &
+系_n_1 := n_-_le &
   [ STEM < "系" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "系", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.CARG "系",
@@ -100250,6 +100264,12 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_陆_n_1_rel",
     TRAITS native_token_list ].
 
+陆_n_2 := n_-_s_pn_le &
+  [ STEM < "陆" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "陆", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "陆",
+    TRAITS native_token_list ].
+
 陆军_n_1 := n_-_le &
   [ STEM < "陆军" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "陆", LENGTH two ],
@@ -108062,6 +108082,19 @@ Wood_n_1 := n_-_h_pn_le &
   [ STEM < "手排" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "手", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_手排_a_1_rel",
+    TRAITS native_token_list ].
+
+;;for shapeworld experiment
+正方形_n_1 := n_-_le &
+  [ STEM < "正方形" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "正", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_正方形_n_1_rel",
+    TRAITS native_token_list ].
+
+长方形_n_1 := n_-_le &
+  [ STEM < "长方形" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "长", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_长方形_n_1_rel",
     TRAITS native_token_list ].
 
 ;;consider handling using affix. TODO.

@@ -789,11 +789,13 @@ basic-adv-lex :=  single-rel-lex-item & basic-icons-lex-item &
 
 ;;zzf and fb 2016-11-7  
 ;;raise-index-mod-lex-item its HOOK.INDEX is the same as that of the thing it modifies
+;;removing SPR as scopal adverbs don't seem to take degree specifiers.
 basic-scopal-adv-lex := basic-adv-lex & scopal-mod-lex & raise-index-mod-lex-item &
   [ SYNSEM [ PAREN -,
 	     LOCAL.CAT.VAL [ SUBJ < >,
-                             SPR < [ LOCAL.CAT [ HEAD adv,
-                                                 VAL.SPEC < [ LOCAL.CAT.HEAD adv ] > ] ] > ] ] ].
+                             SPR < > ] ] ].
+;;                             SPR < [ LOCAL.CAT [ HEAD adv,
+;;                                                 VAL.SPEC < [ LOCAL.CAT.HEAD adv ] > ] ] ;;> ] ] ].
 
 
 ;;add in norm-hook-lex-item, so that it's keyrel.arg0 is its hook.index
@@ -846,7 +848,7 @@ deg-int-adv-vp-pre := basic-int-adv-lex &
                                     [ LOCAL.CAT [ HEAD +vjr & [ MODIFIABLE + ],
 						  VAL [ SUBJ < [] >,
 					                COMPS < > ] ] ] >,
-                         VAL [ SPEC < #mod >,
+                         VAL [ SPEC < #mod & [ INTERJECTED - ] >,
 			       SPR < >,
                                COMPS < > ],
                          POSTHEAD - ] ] ].
@@ -1218,7 +1220,8 @@ determiner-lex := basic-determiner-lex & basic-zero-arg &
              PUNCTUATED -,
 	     LOCAL [ CAT.VAL [ SPR < >,
 			       SUBJ < >,
-			       SPEC < [ LOCAL.CAT.HEAD.MEASURE na-or-+ ] > ],
+			       SPEC < [ LOCAL.CAT.HEAD.MEASURE na-or-+,
+                                        INTERJECTED - ] > ],
 		     CONT.RELS <! relation !> ],
 	     NON-LOCAL.SLASH 0-dlist ] ].
 
@@ -1355,6 +1358,7 @@ qpart-lex-item := spart-lex-item & nonque-item &
     SYNSEM [ SPART ma,
              PUNCTUATED -,
 	     LOCAL [ CAT.VAL.COMPS < [ SPART not-ma,
+                                       LOCAL.CAT.VAL.SPR <>,
                                        NON-LOCAL.QUE 0-dlist ] >,
 		     CONT.HOOK.INDEX.SF ques ] ] ].
 
