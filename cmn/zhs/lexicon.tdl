@@ -137,12 +137,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_一_a_1_rel",
     TRAITS native_token_list ].
 
-一_sc := conj_-_sub-pre_le &
-  [ STEM < "一" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_一_coord_rel",
-    TRAITS native_token_list ].
-
 一一_r_1 := adv_-_vp-pre_le &
   [ STEM < "一一" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH two ],
@@ -1028,12 +1022,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.CARG "丁磊淼",
     TRAITS native_token_list ].
 
-七_n_1 := n_-_tm_le &
-  [ STEM < "七" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "七", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_七_n_1_rel",
-    TRAITS native_token_list ].
-
 七七七型_j_1 := a_-_att_le &
   [ STEM < "七七七型" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "七", LENGTH more-than-two ],
@@ -1045,7 +1033,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "七", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.CARG "七三七",
     TRAITS native_token_list ].
-
 
 七六年_n_1 := n_-_tm_le &
   [ STEM < "七六年" >,
@@ -1225,12 +1212,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "丈夫" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "丈", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_丈夫_n_1_rel",
-    TRAITS native_token_list ].
-
-三_sc := conj_-_sub-pre_le &
-  [ STEM < "三" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "三", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_三_coord_rel",
     TRAITS native_token_list ].
 
 三仙台_n_1 := n_-_l_pn_le &
@@ -6211,18 +6192,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "互", LENGTH two ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_互访_v_1_rel" ],
-    TRAITS native_token_list ].
-
-五_n_1 := n_-_c_le &
-  [ STEM < "五" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "五", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_五_n_1_rel",
-    TRAITS native_token_list ].
-
-五_sc := conj_-_sub-pre_le &
-  [ STEM < "五" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "五", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_五_coord_rel",
     TRAITS native_token_list ].
 
 五七_n_1 := n_-_pn_le &
@@ -12999,18 +12968,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_公鸡_n_1_rel",
     TRAITS native_token_list ].
 
-六_n_1 := n_-_tm_le &
-  [ STEM < "六" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "六", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_六_n_1_rel",
-    TRAITS native_token_list ].
-
-六_sc := conj_-_sub-pre_le &
-  [ STEM < "六" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "六", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_六_coord_rel",
-    TRAITS native_token_list ].
-
 六二四年_n_1 := n_-_tm_le &
   [ STEM < "六二四年" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "六", LENGTH more-than-two ],
@@ -18664,12 +18621,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_十八世纪_n_1_rel",
     TRAITS native_token_list ].
 
-十六_sc := conj_-_sub-pre_le &
-  [ STEM < "十六" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_十六_coord_rel",
-    TRAITS native_token_list ].
-
 十六日_n_1 := n_-_tm_le &
   [ STEM < "十六日" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH more-than-two ],
@@ -18692,12 +18643,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
   [ STEM < "十分之一" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH more-than-two ],
     SYNSEM.LKEYS.ALTKEYREL.PRED "_十分之一_n_rel",
-    TRAITS native_token_list ].
-
-十四_sc := conj_-_sub-pre_le &
-  [ STEM < "十四" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "十", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_十四_coord_rel",
     TRAITS native_token_list ].
 
 十四年_n_1 := n_-_tm_le &
@@ -25856,24 +25801,6 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "嚼", LENGTH one ],
     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
              LKEYS.KEYREL.PRED "_嚼_v_1_rel" ], 
-    TRAITS native_token_list ].
-
-四_n_1 := n_-_pr-q_le &
-  [ STEM < "四" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "四", LENGTH one ],
-    SYNSEM.LKEYS.ALTKEYREL.PRED "_四_n_rel",
-    TRAITS native_token_list ].
-
-四_sc := conj_-_sub-pre_le &
-  [ STEM < "四" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "四", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_四_coord_rel",
-    TRAITS native_token_list ].
-
-四一_n_1 := n_-_tm_le &
-  [ STEM < "四一" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "四", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.PRED "_四一_n_1_rel",
     TRAITS native_token_list ].
 
 四全_n_1 := n_-_pn_le &
@@ -103455,10 +103382,10 @@ JlnＢｕｋｉｔＢｉｎｔａｎｇ_n_1 := n_-_pn_le &
     SYNSEM.LKEYS.KEYREL.PRED "_餐会_n_1_rel",
     TRAITS native_token_list ].
 
-餐厅_n_1 := n_-_l_pn_le &
+餐厅_n_1 := n_-_le &
   [ STEM < "餐厅" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "餐", LENGTH two ],
-    SYNSEM.LKEYS.KEYREL.CARG "餐厅",
+    SYNSEM.LKEYS.KEYREL.PRED "_餐厅_n_1_rel",
     TRAITS native_token_list ].
 
 餐桌_n_1 := n_-_le &

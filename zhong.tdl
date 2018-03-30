@@ -670,6 +670,17 @@ bottom-coord-rule := conj-first-bottom-coord-rule &
                            MC - ],
                      COORD + ],
              NON-LOCAL #nonloc ],
+    CONJ-DTR.SYNSEM.LOCAL.CAT.HEAD conj,
+    NONCONJ-DTR.SYNSEM [ LOCAL.CAT [ HEAD +nvjrpcdm & #head ,
+                                     VAL.SPR < > ],
+                         NON-LOCAL #nonloc,
+                         PUNCTUATED na-or-- ] ].
+#|
+bottom-coord-rule := conj-first-bottom-coord-rule &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD #head,
+                           MC - ],
+                     COORD + ],
+             NON-LOCAL #nonloc ],
     CONJ-DTR.SYNSEM [ LOCAL.CAT.HEAD conj,
                       LKEYS.KEYREL.R-INDEX #ind ],
     NONCONJ-DTR.SYNSEM [ LOCAL [ CAT [ HEAD +nvjrpcdm & #head ,
@@ -677,8 +688,7 @@ bottom-coord-rule := conj-first-bottom-coord-rule &
                                  CONT.HOOK.INDEX #ind ],
                          NON-LOCAL #nonloc,
                          PUNCTUATED na-or-- ] ].
-
-
+|#
 ;;; Coordination Strategy 2
 
 vp1-top-coord-rule := basic-vp-top-coord-rule & apoly-top-coord-rule &

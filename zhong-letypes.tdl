@@ -148,6 +148,7 @@ conj_-_le := conj-lex & nonque-item.
 conj_-_e_le := conj-e-lex & nonque-item.
 conj_-_x_le := conj-x-lex & nonque-item.
 conj_-_sub-pre_le := subord-conj-pre-lex & nonque-item.
+conj_-_sub-prepreh_le := subord-conj-pre-preh-lex & nonque-item.
 conj_-_sub-post_le := subord-conj-post-lex & nonque-item.
 
 d_-_wh_le := wh-determiner-lex.

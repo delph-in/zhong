@@ -1011,6 +1011,9 @@ subord-conj-lex  := basic-subord-conjunction-lex & basic-icons-lex-item &
 subord-conj-pre-lex := subord-conj-lex &
    [ SYNSEM.POSTCOMP - ].
 
+subord-conj-pre-preh-lex := subord-conj-pre-lex &
+   [ SYNSEM.LOCAL.CAT.POSTHEAD - ].
+
 ;;for comp_v+conj, e.g. "... 以后"
 subord-conj-post-lex := subord-conj-lex &
    [ SYNSEM.POSTCOMP + ]. 
