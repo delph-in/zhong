@@ -110,3 +110,41 @@
        (let ((fs-type (type-of-fs fs)))
          (eql fs-type '-))))
 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; This is a fix for reading comments strings in instances (e.g. lexical items)  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(in-package :lkb)
+#+:lkb-fos
+(defun read-tdl-lex-avm-def (istream name)
+  ;; analogous to read-tdl-avm-def for type definitions
+  (clrhash *tdl-coreference-table*)
+  (clrhash *tdl-default-coreference-table*)
+  (let ((comment nil) (constraint nil) (def-alist nil))
+    (multiple-value-bind (top-conj c)
+                         (read-tdl-top-conjunction istream name)
+      (setq comment c)
+      (dolist (unif top-conj)
+        (cond ((unification-p unif) (push unif constraint))
+              ((consp unif)
+                (let ((entry (assoc (car unif) def-alist)))
+                  (if entry
+                      (push (cadr unif) (cdr entry))
+                      (push unif def-alist))))
+              (t (error "Inconsistency in read-tdl-lex-avm-def:
+unexpected unif in ~A"
+                        name))))
+      (dolist (coref
+                (make-tdl-coreference-conditions istream
+*tdl-coreference-table* nil))
+        (push coref constraint))
+      (dolist (coref
+                (make-tdl-coreference-conditions istream
+*tdl-default-coreference-table* t))
+        (let ((entry (assoc (car coref) def-alist)))
+          (if entry
+              (push (cadr coref) (cdr entry))
+              (push coref def-alist)))))
+      (values constraint def-alist comment)))

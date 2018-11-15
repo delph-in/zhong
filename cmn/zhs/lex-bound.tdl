@@ -24214,7 +24214,7 @@
              LKEYS.KEYREL.PRED "_筑路_v_1_rel" ],
     TRAITS native_token_list ].
 
-答应_v_1-bound := v_np-vp_aequi_le &
+答应_v_1-bound := v_np-vp_sequi_le &
   [ STEM < "答" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "答", LENGTH one ],
     SYNSEM.BOUND +,

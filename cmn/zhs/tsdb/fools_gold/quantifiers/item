@@ -1,0 +1,20 @@
+1@nil@@@1@quantifier@张三 和 李四 都 叫 了 。@@@@1@7@Zhangsan and lisi both screamBoth of Zhangsan and lisi screamed.@bo chen@2014-12-08
+2@nil@@@1@quantifier@都  张三 和 李四 叫 了 。@@@@0@7@both Zhangsan and  lisi screamN/A@bo chen@2014-12-08
+3@nil@@@1@quantifier@大家 都 叫 了 。@@@@1@5@Everyone all screamEveryone all screamed.@bo chen@2014-12-08
+4@nil@@@1@quantifier@大家 叫 了 都 。@@@@0@5@everyone scream PFV all .Everyone all scream@bo chen@2014-12-08
+5@nil@@@1@quantifier@张三 每 天 都 吃 米饭 。@@@@1@7@Zhangsan everyday all eat riceEveryday Zhangsan eats rice.@bo chen@2014-12-08
+6@nil@@@1@quantifier@都 张三 每 天 吃 米饭  。@@@@0@7@all Zhangsan everyday eat riceN/A@bo chen@2014-12-08
+7@nil@@@1@quantifier@我们 都 叫 了 。@@@@1@5@We all screamWe all screamed.@bo chen@2014-12-08
+8@nil@@@1@quantifier@都 我们 叫 了 。@@@@0@5@all We screamN/A@bo chen@2014-12-08
+9@nil@@@1@quantifier@三 只 猫 都 很 老 。@@@@1@7@Three quantifier cat all very oldAll of the three cats are very old.@bo chen@2014-12-08
+10@nil@@@1@quantifier@三 只 猫 很 都 老 。@@@@0@7@Three quantifier cat very all oldN/A@bo chen@2014-12-08
+11@nil@@@1@quantifier@三 只 猫 我们 都 不 追赶 。@@@@1@8@Three quantifier cat we all not chaseAll of the three cats, we won’t chase.@bo chen@2014-12-08
+12@nil@@@1@quantifier@三 只 猫 都 我们 不 追赶 。@@@@0@8@Three quantifier cat all we not chaseN/A@bo chen@2014-12-08
+13@nil@@@1@quantifier@我们 都 喜欢 烟草 。@@@@1@5@We all like cigarettes.We all like cigarettes.@bo chen@2014-12-08
+14@nil@@@1@quantifier@我们 喜欢 都 烟草 。@@@@0@5@We like all cigarettes.N/A@bo chen@2014-12-08
+15@nil@@@1@quantifier@一切 都 很 好 。@@@@1@5@Everything all very goodAll of Everything are very good.@bo chen@2014-12-08
+16@nil@@@1@quantifier@都 一切 很 好 。@@@@0@5@all Everything very goodN/A@bo chen@2014-12-08
+17@nil@@@1@quantifier@每 一 只 猫 都 叫 了 。@@@@1@8@Every one quantifier cat all scream PFVEvery cat screamed.@bo chen@2014-12-08
+18@nil@@@1@quantifier@每 一 只 都 猫 叫 了 。@@@@0@8@Every one quantifier all cat scream PFVN/A@bo chen@2014-12-08
+19@nil@@@1@quantifier@所有 的 狗 都 叫 了 。@@@@1@7@All de dog all scream PFVAll dogs screamed.@bo chen@2014-12-08
+20@nil@@@1@quantifier@所有 的 都 狗 叫 了 。@@@@0@7@All de all dog scream PFVN/A@bo chen@2014-12-08

@@ -29,13 +29,19 @@ head-spec := head-spec-phrase & [ STYLE robust ].
 ;; SSH 2015-04-20: head-spec-hs is now divided into two rules.
 ;; head-spec-deg: [[有 多] 高兴] 
 ;; ZZF 2015-9-30: taking out "STYLE robust," to allow "很　甜"
-head-spec-noncl := head-spec-h-sem-phrase & 
+head-spec-noncl := head-spec-h-sem-phrase &
+"""
+head specifier rule used for adjectives and adverbs.
+"""
   [  NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jr ].
 ;    HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jrp,
     
 
 ;; head-spec-d: [[我 的] 猫]
 head-spec-d := head-spec-h-sem-phrase &
+"""
+head specifier rule used for determiners.
+"""
   [ STYLE robust,
     HEAD-DTR.SYNSEM [ LOCAL [ CAT.HEAD det,
 			      CONT.HOOK.INDEX.COG-ST uniq-or-more ] ] ].
@@ -184,7 +190,7 @@ extracted-subj := extracted-subj-phrase.
 
 
 ;; Overenthusiastic
-;;sent-subj := sent-subj-phrase.
+;; sent-subj := sent-subj-phrase.
 
 n-n-compound := noun-noun-compound-phrase.
 prn-n-compound := pronoun-noun-compound-phrase.

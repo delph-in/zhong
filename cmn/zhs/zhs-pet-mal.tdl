@@ -23,6 +23,11 @@
 :include "tmt".
 :end :type.
 
+;; ABOVE WE WOULD INCLUDE probably mal-rule and mal-lextypes 
+
+
+
+
 :begin :instance :status token-mapping-rule.
 :include "../../tmr/prelude".
 :include "../../tmr/pos".
@@ -60,6 +65,10 @@
 :include "lex-mal".
 :include "lexicon".
 :end :instance.
+
+;;  THE MAL LEXICON    include "lex-mal".
+
+
 
 :begin :instance :status generic-lex-entry.
 :include "gle".

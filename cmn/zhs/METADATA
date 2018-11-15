@@ -24,8 +24,8 @@
 
 ## Grammar maintainers and contributors
 
-MAINTAINER="FanZhenZhen"
-CONTRIBUTORS="FrancisBond MichaelGoodman SanghounSong JustinChunleiYang DanFlickinger NatHillard LuisMorgadoCosta HuiZhenWang"
+MAINTAINER="FanZhenZhen and Luis Morgado da Costa"
+CONTRIBUTORS="FrancisBond MichaelGoodman SanghounSong JustinChunleiYang DanFlickinger NatHillard HuiZhenWang"
 CONTACT_EMAIL="bond@ieee.org"
 
 ## Grammar name and web presence
@@ -34,7 +34,7 @@ CONTACT_EMAIL="bond@ieee.org"
 GRAMMAR_NAME=""
 SHORT_GRAMMAR_NAME=""
 WEBSITE="https://github.com/delph-in/zhong"
-DEMO_WEBSITE=""
+DEMO_WEBSITE="http://delph-in.github.io/delphin-viz/demo/"
 DOCUMENTATION_URL="http://wiki.delph-in.net/moin/zhong/"
 ISSUE_TRACKER="https://github.com/delph-in/zhong/issues"
 LICENSE="MIT"
@@ -83,7 +83,7 @@ ASSOCIATED_RESOURCES=""
 ## Uncomment one:
 #GRAMMAR_TYPE="Resource grammar"
 #GRAMMAR_TYPE="Treebank trained grammar"
-GRAMMAR_TYPE="Medium-sized lingiustic grammar"
+GRAMMAR_TYPE="Medium-sized linguistic grammar"
 #GRAMMAR_TYPE="Experimental grammar"
 
 

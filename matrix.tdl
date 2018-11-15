@@ -2027,19 +2027,22 @@ marker-final-phrase := basic-binary-marker-phrase &
 
 
 
-; ERB 2004-12-14 Type for optional specifier (determiner) phrases.
-; Build NPs out of N's.  The specification [OPT +] on the head
-; daughter's SPR value is meant to allow this rule to apply to
-; some nouns and not others.  Nouns which require an overt specifier
-; should lexically say [ OPT - ].  Nouns which optionally occur
-; with a specifier can leave the OPT value of that argument unmarked.
-; Nouns which only appear without a specifier need a SPR value which
-; is incompatible with any of the available overt determiners.  This
-; could conceivably be regulated on the basis of semantics.
-
 ; SSH 2012-03-03 ICONS
 ; SSH 2013-02-19 deleting ICONS ?
 basic-bare-np-phrase := head-only &
+"""
+ERB 2004-12-14 Type for optional specifier (determiner) phrases.
+Build NPs out of N's.  The specification [OPT +] on the head
+daughter's SPR value is meant to allow this rule to apply to
+some nouns and not others.  Nouns which require an overt specifier
+should lexically say [ OPT - ].  Nouns which optionally occur
+with a specifier can leave the OPT value of that argument unmarked.
+Nouns which only appear without a specifier need a SPR value which
+is incompatible with any of the available overt determiners.  This
+could conceivably be regulated on the basis of semantics.
+<ex>Dogs bark.
+<nex> The dogs bark.
+"""
   [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
 			   SUBJ < >,
 			   COMPS < >,
@@ -3170,9 +3173,9 @@ basic-subord-conjunction-lex := basic-one-arg &
 ; null-coord-rel: used when a conjunction contributes *no* relation.
 
 implicit-coord-rel := coordination-relation &
-  [ PRED 'implicit_coord_rel ].
+  [ PRED "implicit_coord_rel" ].
 null-coord-rel := coordination-relation &
-  [ PRED 'null_coord_rel ].
+  [ PRED "null_coord_rel" ].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Conjunction parts of speech

@@ -13,6 +13,9 @@
 ;using "也" at wrong positions
 ;我 学 工程 ， 也 我 学 中文 。
 也_r_⚠ := adv_-_scop_le &
+"""
+A mal-lexical entry for 也, that allows it to be placed before the suject (i.e. as sentencial adverb)
+"""
   [ STEM < "也" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "也", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_也_a_⚠_rel",
