@@ -622,7 +622,7 @@ np-coord-phrase :+
 [ SYNSEM.LOCAL.CONT.HOOk.INDEX.SORT #sort,
   LCOORD-DTR.SYNSEM.LOCAL.CONT.HOOk.INDEX.SORT #sort ].
 
-basic-np-top-coord-rule := np-coord-phrase &
+basic-np-top-coord-rule := np-coord-phrase & c-cont-1 &
   [ SYNSEM.LOCAL.CAT.VAL.SPR < >,
     C-CONT [ HOOK [ LTOP #ltop,
                     INDEX #ind ],
@@ -1274,8 +1274,9 @@ basic-bare-np-phrase := head-only &
              HOOK [ INDEX #index,
                     LTOP #ltop ] ] ].
 
-bare-np-phrase := basic-bare-np-phrase &
+bare-np-phrase := basic-bare-np-phrase & c-cont-1 &
 """to push a common noun without a determiner to be NP
+We added c-cont-1 to propagate cfrom and cto to the to the mrs. we use c-cont-1 because we only introduce one predicate in the mrs (hence 1). 
 <ex>我 吃 苹果
 """
   [ SYNSEM [ BARE +,
@@ -1462,7 +1463,7 @@ pronproper-noun-compound-phrase := basic-n-n-compound-phrase &
              HCONS <! !> ] ].
 
 ;; ZZF 2016-9-23: for pronoun+noun.
-pronoun-noun-compound-phrase := pronproper-noun-compound-phrase &
+pronoun-noun-compound-phrase := pronproper-noun-compound-phrase & c-cont-1 &
 """Forms a pronoun-noun compound phrase. The head has to be a noun with noun-relation, thus excluding nominalized DE phrases.The non-head-daughter can't be a proper noun or common noun, constrained using LIGHT and SPR. Using general_rel to include personal pronouns and wh-pronouns.
 <ex>我 朋友 哭 了
 <nex>张三 朋友 哭 了
@@ -1475,7 +1476,7 @@ e.g. adding a HUMAN +/- feature for all nouns"""
     C-CONT.RELS <! [ PRED _de_p_assoc_rel ] !> ].
 
 ;; for propernoun+noun, "中国 老师"
-propernoun-noun-compound-phrase := pronproper-noun-compound-phrase &
+propernoun-noun-compound-phrase := pronproper-noun-compound-phrase & c-cont-1 &
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CONT.RELS.LIST.FIRST [ PRED named_rel ], 
     C-CONT.RELS <! [ PRED compound_p_rel ] !> ].
 

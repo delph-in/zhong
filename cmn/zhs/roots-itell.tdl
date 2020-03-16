@@ -1,0 +1,56 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+
+;===============================================================================
+; LMC (2020.03.16)
+; This file defines the root conditions used in iTELL; These roots are,
+; in principle, stricter than Zhong's default roots. This file needs to
+; be loaded in the grammar config, and then each root type needs to be
+; listed in ACE's config.
+;===============================================================================
+
+root_strict_adj := phrase &
+"""
+This root is enforing that ADJ-predicates MUST have empty SPR;
+As they always come with the option of 1 (and only 1), this will block both 
+multiple degree specifiers and sentences with bare adj-predicates;
+<ex>她 很 漂亮 。
+<nex>她 漂亮 。
+"""
+  [ SYNSEM [ LOCAL [ COORD -,
+		     CAT [ VAL [ SUBJ < >,
+				 COMPS < >,
+				 SPR < >],
+			   MC +,
+			   HEAD adj &
+			       [ FORM finite ] ] ],
+	     NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
+                         QUE 0-dlist & [ LIST < > ] ] ] ].
+
+
+root_strict_vpc := phrase &
+"""
+This root is similar root_strict_adj, but allows verbs, conjunctions and 
+prepositions to head a sentence. Contrary to root_strict_adj, it does not 
+enforce SYNSEM.LOCAL.CAT.VAL.SPR to be empty;
+"""
+  [ SYNSEM [ LOCAL [ COORD -,
+		     CAT [ VAL [ SUBJ < >,
+				 COMPS < > ],
+			   MC +,
+			   HEAD +vpc &
+			       [ FORM finite ] ] ],
+	     NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
+                         QUE 0-dlist & [ LIST < > ] ] ] ].
+
+
+
+frag := phrase  &
+"""
+This root allows fragments; these should also be considered ungrammatical;
+"""
+   [ SYNSEM [ LOCAL [ CAT [ HEAD fragment_head,
+			    VAL [ SUBJ < >,
+				  SPR < >,
+				  COMPS < > ] ] ],
+	      NON-LOCAL.SLASH 0-dlist ] ].
+

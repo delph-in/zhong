@@ -125,25 +125,36 @@ bound-time-noun-lex := basic-time-noun-lex &
                     ARG0 #index ] !>,
               HCONS <! !> ] ] ].
 
-proper-name-lex := basic-one-arg & basic-icons-lex-item & norm-zero-arg &
-  [ SYNSEM [ PAREN -,
-             PUNCTUATED -,
-	     LOCAL [ CAT [ HEAD noun,
-			   VAL [ COMPS < >,
-				 SUBJ < >,
-				 SPR < > ] ],
-		     CONT [ HOOK.INDEX #index & [ SORT nontime-s ],
-			    RELS <! relation & #keyrel & 
-				  [ LBL #larg,
-				    ARG0 #index ],
-				  quant-relation &
-				  [ PRED proper_q_rel,
-				    ARG0 #index,
-				    RSTR #harg ] !>,
-			    HCONS <! qeq & 
-				   [ HARG #harg,
-				     LARG #larg ] !> ] ],
-	     LKEYS.KEYREL #keyrel & named-relation ] ].
+; proper-name-lex := basic-one-arg & basic-icons-lex-item	 & norm-zero-arg &
+; """
+; This introduces 2 relations to CONT; so we needed to link the altkeyrel explicitly.
+
+; """
+; [ SYNSEM [ PAREN -,
+;              PUNCTUATED -,
+; 	     LOCAL [ CAT [ HEAD noun,
+; 			   VAL [ COMPS < >,
+; 				 SUBJ < >,
+; 				 SPR < > ] ],
+; 		     CONT [ HOOK.INDEX #index & [ SORT nontime-s ],
+; 			    RELS <!  #keyrel & 
+; 				  [ LBL #larg,
+; 				    ARG0 #index ],
+; 				     #altkeyrel &
+; 				  [ ARG0 #index,
+; 				    RSTR #harg ] !>,
+; 			    HCONS <! qeq & 
+; 				   [ HARG #harg,
+; 				     LARG #larg ] !> ] ],
+; 	     LKEYS.KEYREL named-relation & #keyrel,
+;              LKEYS.ALTKEYREL quant-relation & #altkeyrel &
+; 	     [PRED proper_q_rel] ] ] ].
+
+
+proper-name-lex := quant-nom-lex &
+  [ SYNSEM.LKEYS.KEYREL.PRED named_rel ,
+    SYNSEM.LKEYS.ALTKEYREL.PRED proper_q_rel ].
+
 
 
 ;; SSH 2014-09-11: Locative Proper Names (e.g. 北京).
@@ -189,7 +200,7 @@ basic-pronoun-lex := quant-nom-lex &
 
 
 personal-pronoun-lex := basic-pronoun-lex & zero-arg-nonque & non-loc-lex-item &
-  [ SYNSEM.LKEYS.ALTKEYREL.PRED pronoun_q_rel ].
+[ SYNSEM.LKEYS.ALTKEYREL.PRED pronoun_q_rel ].
 
 wh-pronoun := quant-nom-lex & 
   [SYNSEM [ LOCAL.CONT [ HOOK [ INDEX #index & [ PNG.PERNUM 3rd ],

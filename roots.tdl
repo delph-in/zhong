@@ -18,6 +18,38 @@ root := phrase &
 	     NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
                          QUE 0-dlist & [ LIST < > ] ] ] ].
 
+root_strict_adj := phrase &
+"""
+This  root is enforing that ADJ-predicates MUST have empty SPR. 
+As they always come with the option of 1 (and only 1), this will block multiple degree specifiers and 
+sentences with bare adj-predicates. 
+"""
+  [ SYNSEM [ LOCAL [ COORD -,
+		     CAT [ VAL [ SUBJ < >,
+				 COMPS < >,
+				 SPR < >],
+			   MC +,
+			   HEAD adj &
+			       [ FORM finite ] ] ],
+	     NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
+                         QUE 0-dlist & [ LIST < > ] ] ] ].
+
+
+root_strict_vpc := phrase &
+"""
+This root is similar root_strict_adj, but allows verbs, conjunctions and prepositions to head a sentence.
+Contrary to root_strict_adj, it does not enforce SYNSEM.LOCAL.CAT.VAL.SPR to be empty.
+"""
+  [ SYNSEM [ LOCAL [ COORD -,
+		     CAT [ VAL [ SUBJ < >,
+				 COMPS < > ],
+			   MC +,
+			   HEAD +vpc &
+			       [ FORM finite ] ] ],
+	     NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
+                         QUE 0-dlist & [ LIST < > ] ] ] ].
+
+
 
 ;;; type for fragments
 frag := phrase  &

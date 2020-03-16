@@ -15,12 +15,17 @@ relation :+
     CTO *top*  ].
 
 ;word :+  
-lex-item :+  
+lex-item :+
+"""
+This links the CFROM and CTO to the position in the orthography.
+"""
 [ TRAITS #traits,
   STEM [ FROM #from,
 	 TO #to ],
   SYNSEM.LKEYS.KEYREL [ CFROM #from, 
 		        CTO #to	],
+  SYNSEM.LKEYS.ALTKEYREL [ CFROM #from, 
+		           CTO #to	],
   TOKENS tokens &
 	 [ +LIST #traits &
 		 [ FIRST.+FROM #from ], 

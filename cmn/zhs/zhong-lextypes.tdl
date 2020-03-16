@@ -125,25 +125,16 @@ bound-time-noun-lex := basic-time-noun-lex &
                     ARG0 #index ] !>,
               HCONS <! !> ] ] ].
 
-proper-name-lex := basic-one-arg & basic-icons-lex-item & norm-zero-arg &
-  [ SYNSEM [ PAREN -,
-             PUNCTUATED -,
-	     LOCAL [ CAT [ HEAD noun,
-			   VAL [ COMPS < >,
-				 SUBJ < >,
-				 SPR < > ] ],
-		     CONT [ HOOK.INDEX #index & [ SORT nontime-s ],
-			    RELS <! relation & #keyrel & 
-				  [ LBL #larg,
-				    ARG0 #index ],
-				  quant-relation &
-				  [ PRED proper_q_rel,
-				    ARG0 #index,
-				    RSTR #harg ] !>,
-			    HCONS <! qeq & 
-				   [ HARG #harg,
-				     LARG #larg ] !> ] ],
-	     LKEYS.KEYREL #keyrel & named-relation ] ].
+
+
+proper-name-lex := quant-nom-lex & zero-arg-nonque &
+"""
+This type introduces named_rel and proper_q_rel in named entities.
+<ex> 张三 哭 了
+"""
+  [ SYNSEM.LKEYS.KEYREL named-relation,
+    SYNSEM.LKEYS.ALTKEYREL.PRED proper_q_rel ].
+
 
 
 ;; SSH 2014-09-11: Locative Proper Names (e.g. 北京).
@@ -295,7 +286,7 @@ partitive-lex := basic-one-arg & no-icons-lex-item &
 			    RELS <! quant-relation & #keyrel &
 				  [ ARG0 #index,
 				    RSTR #harg ],
-				  relation &
+				  #altkeyrel & relation &
 				  [ LBL #larg,
 				    PRED generic_n_rel,
 				    ARG0 #index ] !>,
@@ -303,7 +294,8 @@ partitive-lex := basic-one-arg & no-icons-lex-item &
 				   [ HARG #harg,
 				     LARG #larg ] !> ] ],
 	     NON-LOCAL.SLASH 0-dlist,
-	     LKEYS.KEYREL #keyrel ] ].
+	     LKEYS.KEYREL #keyrel,
+	     LKEYS.ALTKEYREL #altkeyrel] ].
 
 ;;; Verbs
 
@@ -930,11 +922,19 @@ int-adv-s-post := basic-int-adv-lex &
 ;; ZZF 2016-11-4: negation adverb also modifies adj，and it's scopal modifier, not SPR (therefore SPEC < >). Only degree adverbs are specifiers.
 ;; ZZF 2016-12-8: taking out "LIGHT +," from MOD, to allow "不 常 来", "不 太 喜欢"
 neg-adv-lex := basic-scopal-adv-lex &
+"""
+FIXME, This doesn't seem to be completely right. -- 他 不 很 高  might also not be possible.
+The SPR was set to  <[ ]> (a list of length one) to make 不 select the adjective before the degree specifier. This current implementation also assumes that negation inside the degree specification is permissible. e.g. 他 很 不 高 (which might be weird) and 他 很 不 好吃 (which should be fine).
+<nex>他 不 很 高 。
+<ex>他 不 高 。
+<ex>他 很 不 高 。
+<ex>他 很 不 好吃 。
+"""
   [ SYNSEM.LOCAL.CAT [ VAL [ COMPS < >,
                              SPEC < > ],
-                       HEAD.MOD < [ 
-				    LOCAL.CAT [ HEAD +vj,
-                                                VAL.SUBJ cons ] ] > ] ].
+                       HEAD.MOD < [ LOCAL.CAT [ HEAD +vj,
+                                                VAL [SUBJ cons,
+						SPR <[ ]> ] ] ] > ] ].
 
 
 
@@ -2057,18 +2057,27 @@ redup-lex-rule :=  same-non-local-lex-rule &
 		   same-ctxt-lex-rule &
 		   same-cont-lex-rule &
 		   same-agr-lex-rule & 
-                   infl-lex-rule & 
+                   infl-lex-rule &
+"""
+LMC contrained the valency that is passed up, making SPR < > empty list. this will block things like TA-HEN-GAOGAO. Also requiring that thigns that can be reduplicated must be things that wanted a SPR in the first place.
+"""
  [ SYNSEM [ ASPECTED -,
 	    LOCAL [ CAT [ MC luk,
 			  HEAD #head, 
-			  VAL #val, 
+			  VAL [ SUBJ #subj,
+			        COMPS #comps,
+				SPR < >,
+				SPEC #spec], 
 			  MKG #mkg, 
 			  HC-LIGHT #light, 
 			  POSTHEAD #posthead ],
 		    CONT.HOOK.INDEX.E.ASPECT non-aspect ] ],
    DTR redup-lex-dtr & [ SYNSEM [ BOUND -,
 				  LOCAL [ CAT [ HEAD #head & [ CHAR.LENGTH one-or-two ], 
-					        VAL #val, 
+					        VAL [ SUBJ #subj,
+						      COMPS #comps,
+						      SPR < [ ] >,
+						      SPEC #spec] , 
 					        MKG #mkg, 
 				                HC-LIGHT #light, 
 					        POSTHEAD #posthead ],
@@ -2259,7 +2268,7 @@ attr-to-pred-adj-aspect-lex-rule := basic-pred-adj-lex & constant-lex-rule &
 	 [ SYNSEM [ LKEYS.KEYREL.PRED #pred,
                 LOCAL.CAT.HEAD.CHAR.LENGTH #charlength ] ] ].
 
-vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule & 
+vp-aux-ellipsis-lex-rule := aux-lex & constant-lex-rule & c-cont-1 &  
   [ SYNSEM [ LOCAL.CAT [ HEAD #head,
              VAL [ SUBJ #subj & < [ NON-LOCAL.SLASH #slash ] >,
                    SPR #spr,
