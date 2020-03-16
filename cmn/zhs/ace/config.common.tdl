@@ -2,7 +2,7 @@
 ;;; files to load
 
 variable-property-mapping := "../semi.vpm".
-preprocessor              := "../repp/vanilla.rpp".
+;;;preprocessor              := "../repp/vanilla.rpp".
 generation-trigger-rules  := "../trigger.mtr".
 version                   := "../Version.lsp".
 parse-node-labels         := "../labels.tdl".

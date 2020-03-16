@@ -56,10 +56,14 @@ head-spec-cl := head-spec-h-sem-phrase &
 
 headn-spec-hs := head-nom-spec-h-sem-phrase & [ STYLE robust ].
 
-bare-s := bare-s-phrase.
+
+; LMC&FCB trying to solve some ambiguity
+; bare-s := bare-s-phrase.
 bare-adv := bare-adv-phrase.
 bare-np := bare-np-phrase.
 
+
+ 
 ;;assuming nominalization is done using adj+DE
 ;;0-nom-j := bare-nominal-adj-phrase.
 0-nom-p := bare-nominal-postp-phrase.

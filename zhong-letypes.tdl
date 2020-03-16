@@ -8,6 +8,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+; this is the level immediately above lexicon (to allow  
+;  a clean lexicon file, without features) The lexicon
+; file should not carry more than the minimal info i.e. STEM
+; 
+; 
+
 n_-_pr-1sg_le := personal-pronoun-lex & speaker-lex-item &
 """1st person pronoun
 <ex>我 吃 苹果
