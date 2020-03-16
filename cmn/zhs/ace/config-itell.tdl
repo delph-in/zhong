@@ -1,0 +1,11 @@
+;;; -*- Mode: TDL; -*-
+
+grammar-top               := "../zhs-gram-itell.tdl".
+parsing-roots             := root_strict_adj root_strict_vpc.
+preprocessor              := "../repp/vanilla.rpp".
+
+:begin :config.
+ :include "config.common".
+:end :config.
+
+
