@@ -1,7 +1,7 @@
 ;;; -*- Mode: TDL; -*-
 ;;; files to load
 
-grammar-top               := "../zhs-pet-mal.tdl".
+grammar-top               := "../zhs-gram-mal.tdl".
 parsing-roots             := root.
 
 :begin :config.

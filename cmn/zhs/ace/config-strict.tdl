@@ -1,7 +1,7 @@
 ;;; -*- Mode: TDL; -*-
 ;;; files to load
 
-grammar-top               := "../zhs-pet-strict.tdl".
+grammar-top               := "../zhs-gram-strict.tdl".
 generation-ignore-signs   := "../generation.ignore".
 parsing-roots             := root.
 preprocessor              := "../repp/vanilla.rpp".

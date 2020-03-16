@@ -45,7 +45,7 @@
  (lkb-pathname (parent-directory) "zhong-lextypes.tdl")
  (lkb-pathname (parent-directory) "zhong-letypes.tdl")
  (lkb-pathname (parent-directory) "cmn.tdl")
- (lkb-pathname (parent-directory) "zhs.tdl")
+ (lkb-pathname (parent-directory) "zhong-zhs.tdl")
  (lkb-pathname (parent-directory) "mtr.tdl")
  (lkb-pathname (parent-directory) "tmt.tdl") 
 ))

@@ -1,7 +1,7 @@
 ;;; -*- Mode: TDL; -*-
 ;;; files to load
 
-grammar-top               := "../zhs-pet-mal-1c.tdl".
+grammar-top               := "../zhs-gram-mal-1c.tdl".
 parsing-roots             := root.
 preprocessor              := "../repp/1c.rpp".
 

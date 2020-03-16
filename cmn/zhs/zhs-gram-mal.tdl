@@ -3,9 +3,24 @@
 ;;; $Id: pet.tdl,v 1.2 2008-05-23 01:44:21 sfd Exp $
 ;;;
 
+
+;============================================================================
+; LMC 2020-02-13
+; This config file is to enable the educational machenery in ZHONG.
+; It DOES NOT contain any character-based or pinyin based lexicon files.
+;
+; There are currently 3 extra files to achieve this:
+; mal-lex.tdl
+; mal-rules.tdl
+; mal-zhong.tdl    (includes both rules and lexical types) 
+;
+;============================================================================
+
+
 ;; SSH 2014-11-25
 ;; lexical filtering: reduce the chart after lexical instantiation and the
 ;; application of lexical rules, right before we turn loose syntactic rules.
+
 :begin :instance :status lexical-filtering-rule.
 :include "lfr".
 :end :instance.
@@ -18,23 +33,23 @@
 :include "zhong-lextypes".
 :include "zhong-letypes".
 :include "cmn".
-:include "zhs".
+:include "zhong-zhs".
 :include "mtr".
 :include "tmt".
+:include "mal-zhong".
 :end :type.
+
+
+
+
 
 :begin :instance :status token-mapping-rule.
 :include "../../tmr/prelude".
 :include "../../tmr/pos".
-;:include "../../tmr/pos-ipa".
-:include "../../tmr/redup".
+:include "../../tmr/pos-ipa".
 :include "../../tmr/finis".
 :include "../../tmr/ne1".
 :include "../../tmr/ne2".
-:end :instance.
-
-:begin :instance :status post-generation-mapping-rule.
-:include "../../tmr/post-generation".
 :end :instance.
 
 
@@ -44,6 +59,7 @@
 
 :begin :instance :status rule.
 :include "rules".
+:include "mal-rules".
 :end :instance.
 
 
@@ -62,9 +78,10 @@
 :include "lex-symbols".
 :include "lex-classifiers".
 :include "lex-numbers".
-;;:include "lex-bound".
 :include "lexicon".
+:include "mal-lex".
 :end :instance.
+
 
 :begin :instance :status generic-lex-entry.
 :include "gle".

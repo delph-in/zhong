@@ -3,15 +3,6 @@
 ;;; $Id: pet.tdl,v 1.2 2008-05-23 01:44:21 sfd Exp $
 ;;;
 
-;============================================================================
-; LMC 2020-02-13
-; This config file is to enable 1-characted parsing with zhong.
-; It DOES NOT contain any mal-rule machinery enabled.
-; It DOES NOT contain pinyin based lexicon files.
-; Only lexicon entries are expected to change in this file.
-;============================================================================
-
-
 ;; SSH 2014-11-25
 ;; lexical filtering: reduce the chart after lexical instantiation and the
 ;; application of lexical rules, right before we turn loose syntactic rules.
@@ -27,7 +18,7 @@
 :include "zhong-lextypes".
 :include "zhong-letypes".
 :include "cmn".
-:include "zhs".
+:include "zhong-zhs".
 :include "mtr".
 :include "tmt".
 :end :type.
@@ -36,12 +27,16 @@
 :begin :instance :status token-mapping-rule.
 :include "../../tmr/prelude".
 :include "../../tmr/pos".
-:include "../../tmr/pos-ipa".
+;:include "../../tmr/pos-ipa".
+:include "../../tmr/redup".
 :include "../../tmr/finis".
 :include "../../tmr/ne1".
 :include "../../tmr/ne2".
 :end :instance.
 
+:begin :instance :status post-generation-mapping-rule.
+:include "../../tmr/post-generation".
+:end :instance.
 
 ;;
 ;; grammar rules and lexical rules (instances of status rule)
@@ -49,8 +44,8 @@
 
 :begin :instance :status rule.
 :include "rules".
+:include "rules-utterance".
 :end :instance.
-
 
 :begin :instance :status lex-rule.
 :include "lrules".
@@ -63,19 +58,19 @@
 ;;
 
 :begin :instance :status lex-entry.
-:include "1c/lex-base-split".
-:include "1c/lex-symbols".
-:include "1c/lex-classifiers-split".
-:include "1c/lex-numbers-split".
-:include "1c/lexicon-split".
+:include "lex-base".
+:include "lex-symbols".
+:include "lex-classifiers".
+:include "lex-numbers".
+;:include "lex-bound".
+:include "lexicon".
 :end :instance.
-
-
 
 
 :begin :instance :status generic-lex-entry.
 :include "gle".
 :end :instance.
+
 
 ;;
 ;; parse-tree labels (instances)
@@ -90,5 +85,5 @@
 ;;
 
 :begin :instance.
-:include "roots".
+:include "roots-utterance".
 :end :instance.
