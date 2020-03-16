@@ -88,3 +88,11 @@
 ;;to catch phone number pattern, not working
 ;;（ 一四二 ） 二六八九三七五 
 ! （ ([一壹二贰三叁四五六七八九零〇]+) ） ([一壹二贰三叁四五六七八九零〇]+) 		 （\1）\2 
+
+
+
+
+;;; Penn Treebank Segmentation Fixes
+! (那|这|一)个							\1 个
+! (我|你)的							\1 的
+

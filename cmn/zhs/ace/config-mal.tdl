@@ -2,7 +2,7 @@
 ;;; files to load
 
 grammar-top               := "../zhs-pet-mal.tdl".
-parsing-roots             := root frag.
+parsing-roots             := root.
 
 :begin :config.
  :include "config.common".

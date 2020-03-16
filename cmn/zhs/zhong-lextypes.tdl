@@ -1062,7 +1062,7 @@ cop-verb-lex :=  transitive-verb-lex & verb-no-spr-item &
 cop-verb-cpsubj-lex :=  main-verb-lex & basic-two-arg-no-hcons &
                         basic-icons-lex-item & verb-no-spr-item &
    [ SYNSEM [ LOCAL.CAT [ HEAD.COP +,
-                          VAL [ SUBJ < [ LOCAL.CAT.HEAD +vjp ] >,
+                          VAL [ SUBJ < [ LOCAL.CAT.HEAD +vjp & [EMPTY -] ] >,
                                 COMPS < #comp & canonical-synsem &
                                         [ LOCAL.CAT [ VAL [ SPR < >,
                                                             COMPS < > ],
@@ -1364,8 +1364,20 @@ qpart-lex-item := spart-lex-item & nonque-item &
     SYNSEM [ SPART ma,
              PUNCTUATED -,
 	     LOCAL [ CAT.VAL.COMPS < [ SPART not-ma,
-                                       LOCAL.CAT.VAL.SPR <>,
+                                       LOCAL.CAT.VAL.SPR olist,
                                        NON-LOCAL.QUE 0-dlist ] >,
+		     CONT.HOOK.INDEX.SF ques ] ] ].
+
+qpart-mal-lex-item := spart-lex-item & nonque-item &
+"""
+This is a copy of qpart-lex-item (sentence final particle), that changed NON-LOCAL.QUE to 1-dlist (instead of 0-dlist). This change is requirering that exacly 1 question word be included in the sentence before this particle can attach. This will enable the use of mal-吗-le even after the sentence is already a question.
+"""
+  [ STYLE robust,
+    SYNSEM [ SPART ma,
+             PUNCTUATED -,
+	     LOCAL [ CAT.VAL.COMPS < [ SPART not-ma,
+                                       LOCAL.CAT.VAL.SPR <>,
+                                       NON-LOCAL.QUE 1-dlist ] >, 
 		     CONT.HOOK.INDEX.SF ques ] ] ].
 
 
@@ -2303,18 +2315,18 @@ interjection-lex := basic-scopal-adv-lex &
 	     LOCAL.CAT [ HEAD.MOD < [ L-PERIPH -,
 				      R-PERIPH +,
 				      PUNCTUATED na-or--,
-				      LOCAL.CAT [ HEAD +nvj,
+				      LOCAL.CAT [ HEAD +vj,
 						  VAL [ SUBJ <>,
 							COMPS <> ] ],
 				      NON-LOCAL [ SLASH 0-dlist,
 						  REL 0-dlist,
 						  QUE 0-dlist ] ] >,
 			 VAL [ SUBJ < >,
-                               COMPS < > ] ] ] ].
+                               COMPS < >,
+			       SPEC < > ] ] ] ].
 
 interjection-pre-lex := interjection-lex &
   [ SYNSEM.LOCAL.CAT.POSTHEAD - ].
-
 
 ; comma := punct.
 
@@ -2324,7 +2336,8 @@ interjection-pre-lex := interjection-lex &
 punctuation := nonque-item &
   [ SYNSEM [ PUNCTUATED +,
 	     LOCAL [ CAT [ HEAD punct,
-			   VAL [ SUBJ <>, SPR <>,
+			   VAL [ SUBJ <>,
+				 SPR <>,
 				 COMPS < [ PUNCTUATED na-or--,
 					   LOCAL [ CAT [ MC +,			    
 							 HEAD +nvjrpc,

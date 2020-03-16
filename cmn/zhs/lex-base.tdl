@@ -14,37 +14,37 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "呢", LENGTH one ],
     TRAITS native_token_list ].
 
-呢_crs := crs-lex-item & 
+呢_crs := crs_le & 
   [ STEM <"呢">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "呢", LENGTH one ],
     TRAITS native_token_list ].
 	
-了_crs := crs-lex-item & 
+了_crs := crs_le & 
   [ STEM <"了">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
     TRAITS native_token_list ].
 
-吧_crs := crs-lex-item & 
+吧_crs := crs_le & 
   [ STEM <"吧">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吧", LENGTH one ],
     TRAITS native_token_list ].
 
-啊_crs := crs-lex-item & 
+啊_crs := crs_le & 
   [ STEM <"啊">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "啊", LENGTH one ],
     TRAITS native_token_list ].
 
-啦_crs := crs-lex-item & 
+啦_crs := crs_le & 
   [ STEM <"啦">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "啦", LENGTH one ],
     TRAITS native_token_list ].
 
-而已_crs := crs-lex-item & 
+而已_crs := crs_le & 
   [ STEM <"而已">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "而", LENGTH one ],
     TRAITS native_token_list ].
 
-的_crs := crs-lex-item & 
+的_crs := crs_le & 
   [ STEM <"的">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
     TRAITS native_token_list ].
@@ -169,6 +169,12 @@
   [ STEM < "你们" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "你", LENGTH more-than-one ],
     TRAITS native_token_list ].
+
+你们_n_split := n_-_pr-2pl_le &
+  [ STEM < "你", "们" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "你", LENGTH more-than-one ],
+    TRAITS native_token_list ].
+
 
 他们_n := n_-_pr-3pl_le &
   [ STEM < "他们" >,

@@ -3,7 +3,8 @@
 
 grammar-top               := "../zhs-pet-strict.tdl".
 generation-ignore-signs   := "../generation.ignore".
-parsing-roots             := root frag.
+parsing-roots             := root.
+preprocessor              := "../repp/vanilla.rpp".
 
 :begin :config.
  :include "config.common".

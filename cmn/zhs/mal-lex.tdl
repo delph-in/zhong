@@ -1,0 +1,53 @@
+;============================================================================
+; LMC 2020-02-13
+;
+; instantiation of mal-lexical types
+;
+;
+;
+;
+;
+;============================================================================
+
+
+和_⚠_c := conj_-_e_le &
+"""
+using "和" to coordinate clauses.
+<nex>他 不 学 中文 ， 和 不 学 法文 。
+<nex>他 学 中文 ， 和 学 法文 。
+"""
+  [ STEM < "和" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "和", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_和_c_⚠_rel",
+    TRAITS native_token_list ].
+
+
+也_⚠_r := adv_-_scop_le &
+"""
+A mal-lexical entry for 也, that allows it to be placed before the suject (i.e. as sentencial adverb)
+<nex> 我 学 工程 ， 也 我 学 中文 。
+"""
+  [ STEM < "也" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "也", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_也_a_⚠_rel",
+    TRAITS native_token_list ].
+
+;using "吗" in a sentence with question word
+;
+
+
+吗_⚠_qp := x_-_qpart_⚠_le &
+"""
+This mal 吗 is attaching to sentences that are already a question.
+<> 他 不 学 中文
+"""
+  [ STEM < "吗" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吗", LENGTH one ],
+    TRAITS native_token_list ].
+
+
+
+是_⚠_cop := v_adj_cop_⚠_le &
+  [ STEM < "是" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
+    TRAITS native_token_list ].

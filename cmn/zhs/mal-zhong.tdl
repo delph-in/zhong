@@ -1,0 +1,122 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+
+;============================================================================
+; LMC 2020-02-13
+;
+;
+; this is the types (both rules and lexical) for the educational zhong.
+;
+; it has the types that will be instantiated by mal-lex and mal-rules.
+; if it gets bigger in the future, we might want to split it into 
+; mal-lextype and mal-ruletypes
+;
+;============================================================================
+
+
+;;; Zhong [|] Grammar
+;;;
+;;; created at:
+;;;     April 24 2019
+;;;
+;;; Authors: LMC FCB
+;;;
+
+
+
+;;;
+;;; LEXTYPES
+;;;
+x_-_qpart_⚠_le := qpart-mal-lex-item.
+
+
+;;;main-verb-lex &
+raising_adj_cop :=  no-rels-hcons-lex-item & basic-two-arg-no-hcons & basic-icons-lex-item
+		   & aspect-rule-dtr & verb-no-spr-item & nonque-item & 
+[ SYNSEM [ LOCAL [ CAT [HEAD verb & [COP +,
+				     EMPTY -,
+				     AUX -],
+			VAL [ SUBJ < #subj >,
+			      COMPS < #comp >] ],
+		   CONT.HOOK.CLAUSE-KEY #clause ],
+	   NON-LOCAL.SLASH 0-dlist,
+	   LKEYS.KEYREL [ ARG1 #ltop,
+			  ARG2 #ind2 ] ],
+  ARG-ST < [ LOCAL [ CAT [ HEAD noun,
+			   VAL [ SUBJ < >,
+				 COMPS < > ] ],
+		     CONT.HOOK [LTOP #ltop,
+				CLAUSE-KEY #clause] ] ],
+	   #comp &
+	   [ LOCAL [ CAT [ VAL [ SUBJ < #subj >,
+				 SPR olist,
+				 COMPS < > ],
+			   HEAD adj ],
+		     CONT.HOOK [ INDEX #ind2,
+				 CLAUSE-KEY #clause ] ] ] > ].
+
+v_adj_cop_⚠_le := raising_adj_cop
+"""
+FIXME: This should be moved to mal-lextypes.tdl
+This is used for adjectival sentences to allow a copula.
+<mex>我 是 漂亮 。
+<nex>我 是 学生 。
+
+"""
+.
+
+
+;;;
+;;; RULES
+;;;
+
+mal-bare-vp-phrase := unary-phrase &
+"""
+To pump NPs to VPs.
+And [ EMPTY + ] on parent node to signal this VP is not a headed phrase (i.e. there no verb). This might be useful, for example to prevent verb-derivational rules from applied to this case (where there is no vebr). e.g. reduplication of verb, V-Not-V.
+
+olist=optional or filled
+"""
+[ SYNSEM [ LOCAL [ CAT [ HEAD verb & [ EMPTY +,
+				       COP +],
+			 VAL [ SUBJ < [LOCAL [ CAT [ HEAD noun,
+						   VAL [ SUBJ < >,
+							 SPR < >,
+							 COMPS < > ] ],
+					       CONT.HOOK.INDEX #arg1 ] ] >,
+			       COMPS < > ],
+			 POSTHEAD +,
+			 NONSUBJ #ns ],
+		   COORD -,
+		   CONT.HOOK #hook ],
+	   NON-LOCAL #nonlocal ],
+  ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [EMPTY -],
+				  VAL [ SUBJ < >,
+					SPR < >,
+					COMPS < > ],
+				  NONSUBJ #ns ],
+			    CONT.HOOK.INDEX #arg2 ],
+		    NON-LOCAL #nonlocal ] ] >,
+  C-CONT [ RELS <! arg12-ev-relation &
+		 [ PRED "是_v_cop_rel",
+		   LBL #ltop,
+		   ARG0 #index,
+		   ARG1 #arg1,
+		   ARG2 #arg2 ] !>,
+	   HCONS <! !>,
+	   ICONS <! !>,
+	   HOOK #hook &
+		[ LTOP #ltop,
+		  INDEX #index ] ] ].
+
+
+
+
+pred-adj-lex :+
+"""
+this is the lexical type for predicative adjectives, and we are constraining it to require only noun subjects. This might be enough for LVL1, must check.
+"""
+	       [SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD noun].
+
+
+
+

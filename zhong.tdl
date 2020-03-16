@@ -128,6 +128,7 @@ date_n_rel := day_or_month_or_time_rel.
 ;;; do we need subtypes for different numbers of arguments
 unknown_v_rel := predsort.
 
+
 ; For fragments (DPF FCB 2005-08-22) expect to appear in the Matrix any moment now
 arg-ev-relation := event-relation &
  [ ARG semarg ].
@@ -1237,6 +1238,9 @@ basic-bare-spr-phrase := head-only &
                     LTOP #ltop ] ] ].
 
 bare-s-phrase := basic-bare-spr-phrase &
+"""
+FIXME, it was not clear what this was being used for. It was disabled because it was generating a lot of ambiguity.  
+"""
   [ HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD +vj,
                                 VAL.SUBJ < [ ] > ] ].
 
@@ -1252,10 +1256,14 @@ bare-adv-phrase := basic-bare-spr-phrase &
 ;; Note: we removed the SPEC <> constraint
 ;;; DPF - motivate? - shouldn't the head at least propagate SPEC to mother?
 
-basic-bare-np-phrase := head-only & 
-  [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
+basic-bare-np-phrase := head-only &
+"""
+FIXME LMC&FCB tried to made MC - to stop punctuation-end to join; but it is somehow breaking adjectives to pick up normal nouns... 
+"""
+  [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
                            SUBJ < >,
                            COMPS < > ],
+		       MC bool],
     HEAD-DTR.SYNSEM [ PUNCTUATED na-or--,
 	              LOCAL [ CAT.VAL [ SPR < [ LOCAL.CAT.HEAD det,
                                                 OPT + ] >,
@@ -1321,6 +1329,17 @@ And [ EMPTY + ] on parent node to signal this NP has no head noun.
                   [ LTOP #ltop,
                     INDEX #index ] ] ].
 
+
+
+
+
+
+
+
+
+
+
+
 bare-nominal-postp-phrase := basic-bare-nominal-phrase &
 """pushing DE construction to be NP, including relativing DE and associative DE. DeP should have its COMP fulfilled, thus avoid nominalizing DE alone.
 <ex>我 喜欢 很 红 的
@@ -1341,6 +1360,10 @@ from being applied for possessive NP+DE. To be fixed later."""
 		  INDEX #index ] ].
 
 bare-nominal-det-phrase := basic-bare-nominal-phrase &
+"""
+This rule is looking for a determiner that is still looking for a SPEC (something to specify over)
+and will produce a nominal-phrase (from the inherited type) that is fully specified (i.e. an NP).
+"""
   [ SYNSEM.LOCAL.CAT.VAL.SPR < >,
     ARGS < [ SYNSEM.LOCAL.CAT [ HEAD det,
                                 VAL.SPEC < [ LOCAL.CONT.HOOK 
@@ -1421,7 +1444,7 @@ opt-subj-imperative-phrase := imp-head-opt-subj-phrase &
 ;; FZZ 2017-08-27: removing MC + from HEAD-DTR, as optional subj can happen in sub clause, e.g. "下午 下课 以后 ， 我 喜欢 去 打球 。"
 opt-subj-declarative-phrase := decl-head-opt-subj-phrase &
   [ SYNSEM [ LOCAL.CAT [ HEAD +vj,
-                         VAL.SPR <> ],
+                         VAL.SPR olist ],
              NON-LOCAL #non-local ],
     HEAD-DTR [ SYNSEM [ LOCAL [ CAT.HEAD.EXISTV -,
 			        CONT.HOOK.INDEX.E.ASPECT aspect ],
@@ -1602,7 +1625,8 @@ rslt-compound-phrase := head-initial &
 						     STATIVE na-or--,
                                                      EXISTV na-or--,
                                                      COP -,
-						     AUX - ],				
+						     AUX -,
+						     EMPTY -],				
 				VAL [ SPR #spr,
 				      SPEC #spec ],
 				MC na-or--,
@@ -1617,7 +1641,8 @@ rslt-compound-phrase := head-initial &
 	        [ LIGHT +,
 		  BOUND na-or--,
                   ASPECTED na-or--,
-		  LOCAL [ CAT [ HEAD +vj & [ AUX - ],
+		  LOCAL [ CAT [ HEAD +vj & [ AUX -,
+					     EMPTY -],
 				MC na-or-- ],
 			  CONT.HOOK.INDEX #arg2 ] ],
     C-CONT [ HOOK [ LTOP #ltop,
@@ -1926,6 +1951,7 @@ marker-comp-phrase := basic-comp-marker-phrase & marker-initial-phrase & head-fi
 
 ;SPART ma to stop MA being combined with questions
 ;using QUE 1-dlist now since 1-plus-list doesn't give consistent results yet.
+
 question-phrase := unary-phrase-super & headed-phrase &
 """
 <nex>他 买  苹果

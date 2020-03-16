@@ -1,0 +1,10 @@
+################################################################################
+# LMC 2020.03.15
+################################################################################
+# This folder contains versions of the lexicon that have been split by character
+# and transformed into pinyin. This should ultimately enable ZHONG to parse  
+# sentences without the use of a tokenizer, or using pinyin instead of chinese 
+# characters.
+# 
+# These files are automatically produced by a script found inside utils/ 
+################################################################################

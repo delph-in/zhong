@@ -32,6 +32,7 @@
   ((:path . "interjections") (:content . "interjections testsuite"))
   ((:path . "symbols") (:content . "special characters testsuite"))
   ((:path . "A-not-A") (:content . "A-not-A testsuite"))
+  ((:path . "malzhong") (:content . "A suite for testing mal-rules"))
   
   ((:path . "rslt") (:content . "rslt testsuite"))
 
