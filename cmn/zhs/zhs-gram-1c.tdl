@@ -68,6 +68,7 @@
 :include "1c/lex-classifiers-split".
 :include "1c/lex-numbers-split".
 :include "1c/lexicon-split".
+:include "1c/lexicon-core-split".
 :end :instance.
 
 

@@ -62,8 +62,8 @@
 :include "lex-symbols".
 :include "lex-classifiers".
 :include "lex-numbers".
-;;:include "lex-bound".
 :include "lexicon".
+:include "lexicon-core".
 :end :instance.
 
 :begin :instance :status generic-lex-entry.

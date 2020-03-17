@@ -5,6 +5,15 @@
 ;;;     Sanghoun Song (2014-08-22)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;============================================================================
+; LMC 2020-02-13
+; These are types whose names are in Simplified Mandrin (hence zhs).
+; We could, in principle, have a supertype of these Zhong and further specify
+; them in zhs and zht -- but that's not the case yet.
+;============================================================================
+
+
+
 
 ;; SSH 2015-05-07: quantifiers in Simplified Mandarin Chinese
 _个中_q_rel := q_rel.

@@ -74,6 +74,8 @@
 :include "1c/lex-numbers-pinyin".
 :include "1c/lexicon-split".
 :include "1c/lexicon-pinyin".
+:include "1c/lexicon-core-split".
+:include "1c/lexicon-core-pinyin".
 :end :instance.
 
 

@@ -1,0 +1,11 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+
+;============================================================================
+; LMC 2020-03-17
+; This lexicon file contains only lexical instances that have been
+; hand-checked and are carefully selected to control ambiguity. 
+;
+; At some point we should have another hand-checked lexicon file
+; with instances that generate ambiguity separated from lexicon.tdl which
+; includes a lot of automatically infered lexicon.
+;============================================================================

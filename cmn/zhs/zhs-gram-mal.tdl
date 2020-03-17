@@ -79,6 +79,7 @@
 :include "lex-classifiers".
 :include "lex-numbers".
 :include "lexicon".
+:include "lexicon-core".
 :include "mal-lex".
 :end :instance.
 
