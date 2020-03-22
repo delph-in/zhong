@@ -79,5 +79,5 @@
 ;;
 
 :begin :instance.
-:include "roots-strict".
+:include "roots".
 :end :instance.

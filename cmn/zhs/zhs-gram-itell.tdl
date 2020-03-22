@@ -9,13 +9,12 @@
 ; It DOES NOT contain any character-based or pinyin based lexicon files.
 ;
 ; There are currently 3 extra files to achieve this:
-; mal-lex.tdl
-; mal-rules.tdl
-; mal-zhong.tdl    (includes both rules and lexical types) 
+; 'mal-lex.tdl'
+; 'mal-rules.tdl'
+; 'mal-zhong.tdl'    (includes both rules and lexical types) 
 ;
 ;
-; This config file is also loading a stricter set of roots:
-; roots-itell.tdl
+; This config file is also loading a stricter set of roots from 'roots.tdl'
 ;
 ;============================================================================
 
@@ -76,6 +75,15 @@
 ;; lexicon entries (instances of status lex-entry or generic-lex-entry)
 ;;
 
+
+;============================================================================
+; LMC 2020.03.17: The goal for this config file would be to load only
+; lexicon files that have been hand-checked (e.g. lexicon-core)
+; As such, we are not reading lexicon.tdl, but we doing so for the other
+; specific lexicon type.
+; If needed, mal-lex.tdl should make types in lexbase.tdl and other lexicon
+; files non-unifiable (similar to what the ERG does).
+;============================================================================
 :begin :instance :status lex-entry.
 :include "lex-base".
 :include "lex-symbols".
@@ -104,5 +112,5 @@
 ;;
 
 :begin :instance.
-:include "roots-itell".
+:include "roots".
 :end :instance.

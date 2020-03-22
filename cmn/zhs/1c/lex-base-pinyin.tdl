@@ -595,7 +595,7 @@
     TRAITS native_token_list ].
 
 多少_d_q_py := d_-_wh_le &
-  [ STEM < "duo1", "shao5" >,
+  [ STEM < "duo1", "shao3" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "多",
                                  LENGTH two ],
     TRAITS native_token_list ].
@@ -607,7 +607,7 @@
     TRAITS native_token_list ].
 
 多少_n_q_py := n_-_pr-wh_le &
-  [ STEM < "duo1", "shao5" >,
+  [ STEM < "duo1", "shao3" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "多",
                                  LENGTH two ],
     TRAITS native_token_list ].
@@ -619,7 +619,7 @@
     TRAITS native_token_list ].
 
 多少_n_1_py := n_-_pr-q_le &
-  [ STEM < "duo1", "shao5" >,
+  [ STEM < "duo1", "shao3" >,
     SYNSEM [ LOCAL.CAT.HEAD.CHAR [ FCHAR "多",
                                    LENGTH two ],
              LKEYS.ALTKEYREL.PRED "_多少_n_rel" ],

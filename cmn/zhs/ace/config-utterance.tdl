@@ -4,7 +4,7 @@
 grammar-top               := "../zhs-gram-utterance.tdl".
 
 ;;; SSH 2014-10-31: root-bridge should be used only for robust parsing.
-parsing-roots             := root frag.
+parsing-roots             := root-utterance frag.
 preprocessor              := "../repp/vanilla.rpp".
 
 :begin :config.

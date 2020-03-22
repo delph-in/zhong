@@ -1,8 +1,10 @@
-和_⚠_c_py := conj_-_e_le &
+mal_clause_和_c_py := conj_-_e_le &
   """
-  using "和" to coordinate clauses.
-  <nex>他 不 学 中文 ， 和 不 学 法文 。
-  <nex>他 学 中文 ， 和 学 法文 。
+  using 和 to coordinate clauses.
+  FIXME: this should probably be introducing the relation 也
+  FIXME: This is not working the the example below because of the comma. I'm not sure we .
+  <mex>他 不 学 中文 ， 和 不 学 法文 。
+  <mex>他 学 中文 ， 和 学 法文 。
   """
   [ STEM < "he2" >,
     SYNSEM [ LOCAL.CAT.HEAD.CHAR [ FCHAR "和",
@@ -10,11 +12,13 @@
              LKEYS.KEYREL.PRED "_和_c_⚠_rel" ],
     TRAITS native_token_list ].
 
-和_⚠_c_py2 := conj_-_e_le &
+mal_clause_和_c_py2 := conj_-_e_le &
   """
-  using "和" to coordinate clauses.
-  <nex>他 不 学 中文 ， 和 不 学 法文 。
-  <nex>他 学 中文 ， 和 学 法文 。
+  using 和 to coordinate clauses.
+  FIXME: this should probably be introducing the relation 也
+  FIXME: This is not working the the example below because of the comma. I'm not sure we .
+  <mex>他 不 学 中文 ， 和 不 学 法文 。
+  <mex>他 学 中文 ， 和 学 法文 。
   """
   [ STEM < "he" >,
     SYNSEM [ LOCAL.CAT.HEAD.CHAR [ FCHAR "和",
@@ -22,10 +26,13 @@
              LKEYS.KEYREL.PRED "_和_c_⚠_rel" ],
     TRAITS native_token_list ].
 
-也_⚠_r_py := adv_-_scop_le &
+mal_scopal_也_r_py := adv_-_scop_le &
   """
   A mal-lexical entry for 也, that allows it to be placed before the suject (i.e. as sentencial adverb)
-  <nex> 我 学 工程 ， 也 我 学 中文 。
+  FIXME: DMRS cannot be created
+  FIXME: it competes with 也_r_1 in the correct position; it would be best to restrict it further;
+  FIXME: this should probably be introducing the relation 也
+  <mex> 我 学 工程 ， 也 我 学 中文 。
   """
   [ STEM < "ye3" >,
     SYNSEM [ LOCAL.CAT.HEAD.CHAR [ FCHAR "也",
@@ -33,10 +40,13 @@
              LKEYS.KEYREL.PRED "_也_a_⚠_rel" ],
     TRAITS native_token_list ].
 
-也_⚠_r_py2 := adv_-_scop_le &
+mal_scopal_也_r_py2 := adv_-_scop_le &
   """
   A mal-lexical entry for 也, that allows it to be placed before the suject (i.e. as sentencial adverb)
-  <nex> 我 学 工程 ， 也 我 学 中文 。
+  FIXME: DMRS cannot be created
+  FIXME: it competes with 也_r_1 in the correct position; it would be best to restrict it further;
+  FIXME: this should probably be introducing the relation 也
+  <mex> 我 学 工程 ， 也 我 学 中文 。
   """
   [ STEM < "ye" >,
     SYNSEM [ LOCAL.CAT.HEAD.CHAR [ FCHAR "也",
@@ -44,33 +54,43 @@
              LKEYS.KEYREL.PRED "_也_a_⚠_rel" ],
     TRAITS native_token_list ].
 
-吗_⚠_qp_py := x_-_qpart_⚠_le &
+mal_extra_吗_qp_py := mal_x_-_qpart_le &
   """
   This mal 吗 is attaching to sentences that are already a question.
-  <> 他 不 学 中文
+  <mex>  你 学习 什么 吗 ？
   """
   [ STEM < "ma3" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吗",
                                  LENGTH one ],
     TRAITS native_token_list ].
 
-吗_⚠_qp_py2 := x_-_qpart_⚠_le &
+mal_extra_吗_qp_py2 := mal_x_-_qpart_le &
   """
   This mal 吗 is attaching to sentences that are already a question.
-  <> 他 不 学 中文
+  <mex>  你 学习 什么 吗 ？
   """
   [ STEM < "ma" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吗",
                                  LENGTH one ],
     TRAITS native_token_list ].
 
-是_⚠_cop_py := v_adj_cop_⚠_le &
+mal_apred_是_cop_py := mal_v_adj_cop_le &
+  """
+  This 是 is a special copula that predicates over adjectival phrases. This is generally considered incorrect, unless as part of a focus 是---的 construction, or in a contrastive situation;
+  <mex>他 是 漂亮 。
+  <mex>蛋糕 是 好吃 。
+  """
   [ STEM < "shi4" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是",
                                  LENGTH one ],
     TRAITS native_token_list ].
 
-是_⚠_cop_py2 := v_adj_cop_⚠_le &
+mal_apred_是_cop_py2 := mal_v_adj_cop_le &
+  """
+  This 是 is a special copula that predicates over adjectival phrases. This is generally considered incorrect, unless as part of a focus 是---的 construction, or in a contrastive situation;
+  <mex>他 是 漂亮 。
+  <mex>蛋糕 是 好吃 。
+  """
   [ STEM < "shi" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是",
                                  LENGTH one ],

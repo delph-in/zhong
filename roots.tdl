@@ -1,14 +1,35 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
+
+;===============================================================================
+; LMC (2020.03.16)
+; This file defines the root conditions used in ZHONG;
+; These include: roots strict for education; roots strict for generation; normal
+;                root conditions for Mandarin; etc.
+;
+; This file needs to be loaded in the grammar config, and then each root type
+; needs to be listed in ACE's config. Because of this, there shouldn't exist
+; multiple root.tdl files.
+;===============================================================================
+
+;===============================================================================
 ; A sample start symbol: Accept fully-saturated verbal
 ; projections only; if a grammar makes use of the head-subject and
 ; head-complement types as provided by the Matrix, this should be a
 ; good starting point.  Note that it is legal to have multiple start
 ; symbols, but they all need to be listed as the value of
 ; `*start-symbol' (see `lkb/user-fns.lsp').
-;; ZZF FB 6-4-2016 taking out 'rp' so PP and ADVP won't be S
+;===============================================================================
+
+
+;===============================================================================
+; MAIN ROOT CONDITIONS
+;===============================================================================
 
 root := phrase &
+"""
+ZZF FB 6-4-2016 taking out 'rp' so PP and ADVP won't be S
+"""
   [ SYNSEM [ LOCAL [ COORD -,
 		     CAT [ VAL [ SUBJ < >,
 				 COMPS < > ],
@@ -18,11 +39,66 @@ root := phrase &
 	     NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
                          QUE 0-dlist & [ LIST < > ] ] ] ].
 
+
+
+root-style-strict := phrase &
+"""
+This root is essentially the same as root, but it enforces STYLE to be strict.
+FIXME: This is likely for generation purposes, should make sure and be clear.
+"""
+  [ STYLE strict,
+    SYNSEM [ LOCAL [ COORD -,
+		     CAT [ VAL [ SUBJ < >,
+				 COMPS < > ],
+			   MC +,
+			   HEAD +vjpc &
+			       [ FORM finite ] ] ],
+	     NON-LOCAL.SLASH 0-dlist]].
+
+
+frag := phrase &
+"""
+This root allows fragments; these should also probably be considered 
+ungrammatical for educational purposes;
+"""
+   [ SYNSEM [ LOCAL [ CAT [ HEAD fragment_head,
+			    VAL [ SUBJ < >,
+				  SPR < >,
+				  COMPS < > ] ] ],
+	      NON-LOCAL.SLASH 0-dlist ] ].
+
+
+
+
+
+lex-root := word-or-lexrule
+"""
+This root condition is mostly useful only for debuging purposes.
+It allows you to parse single words as stand-alone utterances.
+"""
+.
+
+
+
+root-utterance := utterance-phrase
+"""
+FIXME: I'm currently unsure what this is being used for.
+"""
+.
+
+
+
+;===============================================================================
+; ROOTS FOR EDUCATION
+;===============================================================================
+
 root_strict_adj := phrase &
 """
-This  root is enforing that ADJ-predicates MUST have empty SPR. 
-As they always come with the option of 1 (and only 1), this will block multiple degree specifiers and 
-sentences with bare adj-predicates. 
+This root is enforing that ADJ-predicates MUST have empty SPR;
+As they always come with the option of 1 (and only 1), this will block both 
+multiple degree specifiers and sentences with bare adj-predicates;
+<ex>她 很 漂亮 。
+<nex>她 漂亮 。
 """
   [ SYNSEM [ LOCAL [ COORD -,
 		     CAT [ VAL [ SUBJ < >,
@@ -37,8 +113,9 @@ sentences with bare adj-predicates.
 
 root_strict_vpc := phrase &
 """
-This root is similar root_strict_adj, but allows verbs, conjunctions and prepositions to head a sentence.
-Contrary to root_strict_adj, it does not enforce SYNSEM.LOCAL.CAT.VAL.SPR to be empty.
+This root is similar root_strict_adj, but allows verbs, conjunctions and 
+prepositions to head a sentence. Contrary to root_strict_adj, it does not 
+enforce SYNSEM.LOCAL.CAT.VAL.SPR to be empty;
 """
   [ SYNSEM [ LOCAL [ COORD -,
 		     CAT [ VAL [ SUBJ < >,
@@ -51,32 +128,11 @@ Contrary to root_strict_adj, it does not enforce SYNSEM.LOCAL.CAT.VAL.SPR to be 
 
 
 
-;;; type for fragments
-frag := phrase  &
-   [ SYNSEM [ LOCAL [ CAT [ HEAD fragment_head,
-			    VAL [ SUBJ < >,
-				  SPR < >,
-				  COMPS < > ] ] ],
-	      NON-LOCAL.SLASH 0-dlist ] ].
-
-;; SSH 2015-04-23: FIXME
-;; This is a tentative approach.
-
-; frag := phrase &
-;   [ SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ < >,
-; 				 SPR < >,
-; 				 COMPS < > ],
-; 			   HEAD +nr ] ],
-; 	     NON-LOCAL.SLASH 0-dlist ] ].
 
 
+
+; FIXME: Why is this commented out? Should it be removed?
 ; SSH 2014-10-31 This root type should be used for only robust parsig. 
 ; This cannot be used for generation.
 ; root-bridge := phrase &
 ;   [ SYNSEM.LOCAL.CAT.HEAD bridge-head & [ BRIDGED + ] ].
-
-
-; This start symbol allows you to parse single words as stand-alone
-; utterances.  This can be useful for grammar debugging purposes.
-
-;lex-root := word-or-lexrule.

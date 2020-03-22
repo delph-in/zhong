@@ -2,7 +2,7 @@
 ;;; files to load
 
 grammar-top               := "../zhs-gram-mal.tdl".
-parsing-roots             := root.
+parsing-roots             := root_strict_adj root_strict_vpc.
 
 :begin :config.
  :include "config.common".

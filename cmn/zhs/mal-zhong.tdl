@@ -1,32 +1,49 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 
-;============================================================================
+;===============================================================================
 ; LMC 2020-02-13
 ;
 ;
-; this is the types (both rules and lexical) for the educational zhong.
+; These are types (both rules and lexical) for the educational zhong.
 ;
 ; it has the types that will be instantiated by mal-lex and mal-rules.
 ; if it gets bigger in the future, we might want to split it into 
 ; mal-lextype and mal-ruletypes
 ;
-;============================================================================
-
-
-;;; Zhong [|] Grammar
-;;;
-;;; created at:
-;;;     April 24 2019
-;;;
-;;; Authors: LMC FCB
-;;;
+;===============================================================================
 
 
 
-;;;
-;;; LEXTYPES
-;;;
-x_-_qpart_⚠_le := qpart-mal-lex-item.
+
+;===============================================================================
+; REDEFINITION OF EXISTING TYPES: 
+;===============================================================================
+
+pred-adj-lex :+  [SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD noun]
+"""
+this is the lexical type for predicative adjectives, and we are constraining it to require only noun subjects. This might be enough for LVL1, must check.
+"""
+.
+
+
+
+;===============================================================================
+; NEW TYPES: 
+;===============================================================================
+
+qpart-mal-lex-item := spart-lex-item & nonque-item &
+"""
+This is a copy of qpart-lex-item (sentence final particle), that changed NON-LOCAL.QUE to 1-dlist (instead of 0-dlist). This change is requirering that exacly 1 question word be included in the sentence before this particle can attach. This will enable the use of mal-吗-le even after the sentence is already a question.
+"""
+  [ STYLE robust,
+    SYNSEM [ SPART ma,
+             PUNCTUATED -,
+	     LOCAL [ CAT.VAL.COMPS < [ SPART not-ma,
+                                       LOCAL.CAT.VAL.SPR <>,
+                                       NON-LOCAL.QUE 1-dlist ] >, 
+		     CONT.HOOK.INDEX.SF ques ] ] ].
+
+mal_x_-_qpart_le := qpart-mal-lex-item.
 
 
 ;;;main-verb-lex &
@@ -54,20 +71,18 @@ raising_adj_cop :=  no-rels-hcons-lex-item & basic-two-arg-no-hcons & basic-icon
 		     CONT.HOOK [ INDEX #ind2,
 				 CLAUSE-KEY #clause ] ] ] > ].
 
-v_adj_cop_⚠_le := raising_adj_cop
+mal_v_adj_cop_le := raising_adj_cop
 """
-FIXME: This should be moved to mal-lextypes.tdl
 This is used for adjectival sentences to allow a copula.
 <mex>我 是 漂亮 。
 <nex>我 是 学生 。
-
 """
 .
 
 
-;;;
-;;; RULES
-;;;
+;===============================================================================
+; NEW RULES: 
+;===============================================================================
 
 mal-bare-vp-phrase := unary-phrase &
 """
@@ -107,16 +122,5 @@ olist=optional or filled
 	   HOOK #hook &
 		[ LTOP #ltop,
 		  INDEX #index ] ] ].
-
-
-
-
-pred-adj-lex :+
-"""
-this is the lexical type for predicative adjectives, and we are constraining it to require only noun subjects. This might be enough for LVL1, must check.
-"""
-	       [SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD noun].
-
-
 
 

@@ -76,7 +76,12 @@ n_-_tm_le := time-noun-lex & nonque-item.
 c_-_le := classifier-lex & nonque-item.
 
 a_-_num_le := num-adj-lex & nonque-item.
-a_-_att_le := attr-adj-lex & nonque-item.
+a_-_att_le := attr-adj-lex & nonque-item
+"""
+This type refers to adjectives that can directly modify a noun without a relative clause.
+This is not very productive, so we are currently not doing this conversion by a lexical rule.
+<ex>  贝贝 是 我们 的 好 朋友
+""".
 a_-_pred_le := pred-adj-lex & nonque-item.
 a_-_aabb_le := adj-aabb-lex & nonque-item.
 a_-_abb_le := adj-abb-lex & nonque-item.

@@ -923,18 +923,24 @@ int-adv-s-post := basic-int-adv-lex &
 ;; ZZF 2016-12-8: taking out "LIGHT +," from MOD, to allow "不 常 来", "不 太 喜欢"
 neg-adv-lex := basic-scopal-adv-lex &
 """
-FIXME, This doesn't seem to be completely right. -- 他 不 很 高  might also not be possible.
-The SPR was set to  <[ ]> (a list of length one) to make 不 select the adjective before the degree specifier. This current implementation also assumes that negation inside the degree specification is permissible. e.g. 他 很 不 高 (which might be weird) and 他 很 不 好吃 (which should be fine).
+FIXME:
+
+For educational purposes, we want to block 不 before degree specifiers (e.g., 他 不 很 高 。). But it is not clear whether this is problematic in casual speech -- we might not want to block it altogether.
+
+We experimented with setting the SPR to  <[ ]> (a list of length one) to make 不 select the adjective before the degree specifier. But this does not work:
+
+Verbs come with empty specifiers (SPR < >). Adjectives come looking for a optional single specifier (SPR <[ ]>) that is their degree specifier. Therefore, we can't use SPR to block the order in which 不 appears.
+
 <nex>他 不 很 高 。
 <ex>他 不 高 。
 <ex>他 很 不 高 。
 <ex>他 很 不 好吃 。
+<ex>你 不 知道 。
 """
   [ SYNSEM.LOCAL.CAT [ VAL [ COMPS < >,
-                             SPEC < > ],
-                       HEAD.MOD < [ LOCAL.CAT [ HEAD +vj,
-                                                VAL [SUBJ cons,
-						SPR <[ ]> ] ] ] > ] ].
+			     SPEC < > ],
+		       HEAD.MOD < [ LOCAL.CAT [ HEAD +vj,
+						VAL [SUBJ cons ] ] ] > ] ].
 
 
 
@@ -1368,17 +1374,6 @@ qpart-lex-item := spart-lex-item & nonque-item &
                                        NON-LOCAL.QUE 0-dlist ] >,
 		     CONT.HOOK.INDEX.SF ques ] ] ].
 
-qpart-mal-lex-item := spart-lex-item & nonque-item &
-"""
-This is a copy of qpart-lex-item (sentence final particle), that changed NON-LOCAL.QUE to 1-dlist (instead of 0-dlist). This change is requirering that exacly 1 question word be included in the sentence before this particle can attach. This will enable the use of mal-吗-le even after the sentence is already a question.
-"""
-  [ STYLE robust,
-    SYNSEM [ SPART ma,
-             PUNCTUATED -,
-	     LOCAL [ CAT.VAL.COMPS < [ SPART not-ma,
-                                       LOCAL.CAT.VAL.SPR <>,
-                                       NON-LOCAL.QUE 1-dlist ] >, 
-		     CONT.HOOK.INDEX.SF ques ] ] ].
 
 
 
@@ -2175,17 +2170,20 @@ never_unify_rel := predsort.
 ;; SSH 2014-12-19: 狗 [轻轻 地] 叫 了
 ;; [SUBJ < [] > ] is deleted, and +vj is changed to +vjr.
 adv_affix_form_lex := raise-sem-lex-item & basic-icons-lex-item &
+"""
+Added SUBJ <[ ]> on the complement to block sentences such as: (他 很 高兴) 地 唱歌; Removed SPR < > from the complement because we want to accept both bare adjectives, such as 他 很 高兴 地 唱歌 and adjectives with degree modifiers 他 高兴 地 唱歌; SPR < > will enforce adjectives to be degree modified;
+"""
   [ SYNSEM.LOCAL.CAT [ HEAD adv &
-                            [ MOD < [ LOCAL [ CAT [ HEAD verb,
-					          VAL [ SUBJ < [] >,
-						        COMPS < > ] ],
-                                              CONT.HOOK.INDEX #ind ] ] > ],
-		       VAL [ SUBJ <> ] ],
+			    [ MOD < [ LOCAL [ CAT [ HEAD verb,
+						    VAL [ SUBJ <[ ]>,
+							  COMPS < > ] ],
+					      CONT.HOOK.INDEX #ind ] ] > ],
+		       VAL [ SUBJ < > ] ],
     ARG-ST < [ LOCAL [ CAT [ HEAD +vjr & [ PRD + ],
 			     MC na-or--,
 			     VAL [ COMPS < >,
-			           SPR < > ] ],
-                       CONT.HOOK.XARG #ind ] ] > ].
+				   SUBJ <[ ]> ] ],
+		       CONT.HOOK.XARG #ind ] ] > ].
 
 
 ;; ZZF 2016-11-29 adv+di changing adv to be di's comp, as spr is reserved for degree specifier
@@ -2195,7 +2193,7 @@ adv_suffix_form_lex := adv_affix_form_lex &
              POSTCOMP +,
 	     LOCAL.CAT [ POSTHEAD -,
                          HEAD.MOD < [ LOCAL intersective-mod ] >,
-			 VAL [ SPR < >,
+			 VAL [ SPR < >,   
 			       COMPS < #comp > ] ] ],
     ARG-ST < #comp > ].
 

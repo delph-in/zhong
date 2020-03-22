@@ -3,7 +3,7 @@
 
 grammar-top               := "../zhs-gram-strict.tdl".
 generation-ignore-signs   := "../generation.ignore".
-parsing-roots             := root.
+parsing-roots             := root-style-strict.
 preprocessor              := "../repp/vanilla.rpp".
 
 :begin :config.
