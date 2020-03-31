@@ -84,12 +84,15 @@ This is used for adjectival sentences to allow a copula.
 ; NEW RULES: 
 ;===============================================================================
 
-mal-bare-vp-phrase := unary-phrase &
+mal-bare-vp-phrase := unary-phrase & verb-no-spr-item &
 """
 To pump NPs to VPs.
 And [ EMPTY + ] on parent node to signal this VP is not a headed phrase (i.e. there no verb). This might be useful, for example to prevent verb-derivational rules from applied to this case (where there is no vebr). e.g. reduplication of verb, V-Not-V.
 
-olist=optional or filled
+Inheriting from verb-no-spr-item restricts the verb phrase being created form taking degree modifiers.
+
+
+olist = optional or filled
 """
 [ SYNSEM [ LOCAL [ CAT [ HEAD verb & [ EMPTY +,
 				       COP +],

@@ -174,7 +174,8 @@ quant-nom-lex := norm-hook-lex-item & zero-arg-nonslash & zero-arg-nonrel &
 
 ;; SSH 2014-11-13: pronouns introduce a quant-relation. 
 basic-pronoun-lex := quant-nom-lex &
-"""Pronouns don't have NON-LOCAL.SLASH and REL
+"""
+Pronouns don't have NON-LOCAL.SLASH and REL
 """
   [ SYNSEM.LKEYS.KEYREL.PRED pron_rel ].
 
@@ -309,8 +310,10 @@ head :+
 +vjr :+
   [ PRD bool ].
 
-;;ZZF 20161113 removed "VAL.SPR < >" to allow some verbs to take degree specifiers
 verb-lex := lex-item &
+"""
+VAL.SPR is not set to empty < > to allow some verbs to take degree specifiers
+"""
   [ SYNSEM [ PAREN -,
              PUNCTUATED -,
 	     LOCAL.CAT.HEAD verb & [ PRED-KEY #pred ],
@@ -325,13 +328,21 @@ main-verb-lex := verb-lex & basic-verb-lex & tentative-lex-dtr &
                                      COMPS < > ],
                            CONT.HOOK.INDEX #xarg ] ] ].
 
-;;ZZF 20161113 verbs that can take degree specifiers (mental activities and states) 
-verb-spr-item := lex-item & 
+verb-spr-item := lex-item &
+"""
+These are verbs that can take degree specifiers (mental activities and states).
+<ex>他 很 喜欢 狗 。
+FIXME: Why isn't this inheriting from verb-lex instead of lex-item?
+"""
   [ SYNSEM.LOCAL.CAT.VAL.SPR < [ LOCAL.CAT [ HEAD adv,
                                              VAL.SPEC < [ LOCAL.CAT.HEAD verb ] > ] ] > ].
 
-;;ZZF 20161113 verbs that can't take degree specifiers (most of the verbs)
-verb-no-spr-item := lex-item & 
+verb-no-spr-item := lex-item &
+"""
+These are verbs that can't take degree specifiers (i.e., most of the verbs).
+<nex>他 很 买 狗 。
+FIXME: Why isn't this inheriting from verb-lex instead of lex-item?
+"""
   [ SYNSEM.LOCAL.CAT.VAL.SPR <  > ].
 
 aux-lex := verb-lex &
@@ -1361,11 +1372,17 @@ spart-lex-item := part-lex-item &
 
 ;; NE
 frag-qpart-lex-item := part-lex-item & nonque-item &
+"""
+<ex> 你 呢  ？
+"""
   [ ARG-ST < [ LOCAL [ CAT.HEAD noun,
                        CONT.HOOK.INDEX.SF ques ] ] > ].
 
 ; Subtype for question particles. Constrains SF to ques directly. MA.
 qpart-lex-item := spart-lex-item & nonque-item &
+"""
+<ex> 你 是 学生 吗 ？
+"""
   [ STYLE robust,
     SYNSEM [ SPART ma,
              PUNCTUATED -,
@@ -2348,6 +2365,17 @@ punctuation := nonque-item &
 punctuation-end := punctuation &
   [ SYNSEM [ L-PERIPH +,
 	     R-PERIPH + ] ].
+
+
+;;; ques-mark := punctuation-end &
+ques-mark := punctuation-end &
+"""
+There was an ambiguity problem with question-phrase, since the question mark was able to attach before or after question-phrase. 
+To block this, we created this type where we require that ques-mark's complement's  NON-LOCAL.QUE is 0-dlist (i.e. already went through question-phrase).
+"""
+  [SYNSEM.LOCAL.CAT.VAL.COMPS < [LOCAL.CONT.HOOK.INDEX.SF ques,
+				 NON-LOCAL.QUE 0-dlist ]> ].
+
 
 symbol := single-rel-lex-item & basic-icons-lex-item & nonque-item &
   [ SYNSEM [ LOCAL [ CAT [ HEAD punct,

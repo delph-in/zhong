@@ -1954,13 +1954,20 @@ marker-comp-phrase := basic-comp-marker-phrase & marker-initial-phrase & head-fi
 
 question-phrase := unary-phrase-super & headed-phrase &
 """
-<nex>他 买  苹果
-<ex>谁 买 了 苹果
-<ex>他 买 了 什么
-<ex>谁 买 了 什么
-<ex>他 哭 不 哭
-<ex>他 吃 不 吃 苹果
-<nex>他 吃 不 吃 苹果 吗
+This rule transforms something that has an unresolved QUE value (i.e. question word) and transforms it into a sentence. This is currently not being applied to 吗 or 呢 questions because they don't use non-local QUE and they change the SF to ques on their own. 
+The HEAD-DTR is something that has QUE value of 1-dlist (i.e. it has an unresolved question word).
+
+This currently is being used for A-NOT-A questions. A-Not-A is blocking QUE by asserting is already full, but it doesn't say that it is a question. 
+
+<nex>谁 吃不吃 苹果 ？
+<ex>谁 告诉 吃不吃 苹果 ？ 
+<nex>他 买 苹果
+<ex>谁 买 了 苹果 ？
+<ex>他 买 了 什么 ？
+<ex>谁 买 了 什么 ？
+<ex>他 哭 不 哭 ？
+<ex>他 吃 不 吃 苹果 ？
+<nex>他 吃 不 吃 苹果 吗 ？
 """
   [ SYNSEM [ LOCAL [ CAT [ MC +,
 			   HEAD +vjc &

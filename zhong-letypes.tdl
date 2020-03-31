@@ -8,11 +8,17 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+;============================================================================
+; We would expect that all types inherit from a single type in the grammar.
+; Possibly nonque-item and similar should be moved up the hierarchy.
+; Folllowing the ERG, this file can have features added to types, but not
+; multiple inheritance ...  (try to email DAN+developers to know why).
+;
 ; this is the level immediately above lexicon (to allow  
-;  a clean lexicon file, without features) The lexicon
-; file should not carry more than the minimal info i.e. STEM
-; 
-; 
+;  a clean lexicon file, without features). The lexicon
+; file should not carry more than the minimal info e.g STEM/ RELATION
+;============================================================================
+
 
 n_-_pr-1sg_le := personal-pronoun-lex & speaker-lex-item &
 """1st person pronoun
@@ -153,6 +159,8 @@ v_inv-shide_le := cop-verb-cpsubj-lex & nonque-item.
 
 v_np_light_le := v_light-verb-lex & nonque-item.
 v_np-vp_light_le := v_np-vp_light-lex & nonque-item.
+
+
 
 
 conj_-_le := conj-lex & nonque-item.

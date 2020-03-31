@@ -19,14 +19,14 @@ period-marker-robust := punctuation-end &
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
     TRAITS native_token_list ].
 
-question-marker := punctuation-end &
+question-marker := ques-mark &
   [ STEM < "？" >,
     STYLE strict,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "？", LENGTH one ],
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
     TRAITS native_token_list ].
 
-question-marker-robust := punctuation-end &
+question-marker-robust := ques-mark &
   [ STEM < "?" >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "?", LENGTH one ],
