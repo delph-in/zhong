@@ -9,3 +9,95 @@
 ; with instances that generate ambiguity separated from lexicon.tdl which
 ; includes a lot of automatically infered lexicon.
 ;============================================================================
+
+个子_n_1 := n_-_le &
+""" height, stature, build, size """
+  [ STEM < "个子" >, 
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "个子", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_个子_n_1_rel",
+    TRAITS native_token_list ].
+
+
+
+
+
+;============================================================================
+; Testing Separable Verbs
+;============================================================================
+;;; --COMPKEY seems to require a type, so we can't use lexicon instances
+;;; e.g. we can't use 饭_n_1 which is readily available in the lexicon, because
+;;; this is an instance. It seems we need to create a special type for bounded
+;;; morphemes.
+;;;
+;;;
+;;;
+;;;
+
+吃饭_v_1 := v_-_le &
+  [ STEM < "吃饭" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吃", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_吃_v_饭_sep_1_rel" ],
+    TRAITS native_token_list ].
+
+吃_饭_sep_v_1 := v_np_sep_le &
+  [ STEM < "吃" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吃", LENGTH two ],
+    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
+		     CAT.VAL.COMPS < [ OPT - ] > ],
+	     LKEYS [ --COMPKEY 饭_n_selected_rel,   
+		     KEYREL.PRED "_吃_v_饭_sep_1_rel"] ],
+    TRAITS native_token_list ].
+    
+饭_sep_n_1 := n_nosem_selected &
+  [ STEM < "饭" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "饭", LENGTH one ],
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate,
+             LKEYS.KEYREL.PRED 饭_n_selected_rel ],
+    TRAITS native_token_list ].
+
+开车_v_1 := v_-_le &
+  [ STEM < "开车" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "开", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_开_v_车_sep_1_rel" ],
+    TRAITS native_token_list ].
+
+开_车_sep_v_1 := v_np_sep_le &
+  [ STEM < "开" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "开", LENGTH two ],
+    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
+		     CAT.VAL.COMPS < [ OPT - ] > ],
+	     LKEYS [ --COMPKEY 车_n_selected_rel,   
+		     KEYREL.PRED "_开_v_车_sep_1_rel"] ],
+    TRAITS native_token_list ].
+
+车_sep_n_1 := n_nosem_selected &
+  [ STEM < "车" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "车", LENGTH one ],
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate,
+             LKEYS.KEYREL.PRED 车_n_selected_rel ],
+    TRAITS native_token_list ].
+
+
+
+
+; EXIST IN THE LEXICON 
+; 吃_v_1 := v_np_le &
+;   [ STEM < "吃" >,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吃", LENGTH one ],
+;     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+; 	     LKEYS.KEYREL.PRED "_吃_v_1_rel" ],
+;     TRAITS native_token_list ].
+; 吃饭_v_1 := v_-_le &
+;   [ STEM < "吃饭" >,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吃", LENGTH two ],
+;     SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+;              LKEYS.KEYREL.PRED "_吃饭_v_1_rel" ],
+;     TRAITS native_token_list ].
+; 饭_n_1 := n_-_m_le &
+;   [ STEM < "饭" >,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "饭", LENGTH one ],
+;     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.ANIMACY inanimate,
+;              LKEYS.KEYREL.PRED "_饭_n_1_rel" ],
+;     TRAITS native_token_list ].

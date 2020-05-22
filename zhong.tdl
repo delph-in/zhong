@@ -127,6 +127,7 @@ date_n_rel := day_or_month_or_time_rel.
 ;;;
 ;;; do we need subtypes for different numbers of arguments
 unknown_v_rel := predsort.
+ellipsis_v_rel := predsort.
 
 
 ; For fragments (DPF FCB 2005-08-22) expect to appear in the Matrix any moment now
@@ -135,10 +136,184 @@ arg-ev-relation := event-relation &
 unknown-v-relation := arg-ev-relation & 
  [ PRED unknown_v_rel ].
 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; LMC (2020.04.14)
+; Following what the ERG does for selected adverbs and prepositions, we are
+; trying to get separable verbs to behave like a verb that is selected/selects
+; a specific noun. If we follow the ERG, these verbs should introduce the
+; relations (the product of event + noun), and the noun should not introduce
+; any relation.
+; 
+;
+; The ERG is doing something like:
+;
+;
+;     rely_on_v1 := v_pp_e_le &
+;      [ ORTH < "rely" >,
+;        SYNSEM [ LKEYS [ --COMPKEY on_p_upon-sel_rel,
+; 			  KEYREL.PRED "_rely_v_on_rel" ],
+; 		  PHON.ONSET con ] ].
+;
+;     on_prtcl := p_np_ptcl_le &
+;      [ ORTH < "on" >,
+;	SYNSEM [ LKEYS.KEYREL.PRED _on_p_sel_rel,
+;		 PHON.ONSET voc ] ].
+;
+;     p_np_ptcl_le := norm_p_prtcl_lexent
+;     """
+;     Prep, np, sem empty              
+;     <ex>B relies on C.
+;     """
+;     .
+;
+;     norm_p_prtcl_lexent := p_prtcl_lexent &
+;       [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [ LOCAL.CAT.VAL [ SPR *olist*,
+; 							 SPEC *anti_list* ] ] >,
+; 		       CONT [ RELS <! !>,
+; 			      HCONS <! !> ] ] ].
+;
+;
+;                               ;;; Rely on's ORTH is activated when it sees 'rely'  
+;                               ;;; But it introduces the predicate of "_rely_v_on_rel"   (note starting underscore)
+;                               ;;; 'Rely on' uses --COMPKEY to select  "on_p_upon-sel_rel"
+;                               ;;; 
+;                               ;;; 
+;                               ;;; 
+;                               ;;; 
+;
+;
+;     selected_rel := event_rel.
+;     selected_prep_rel := selected_rel & prep_rel.
+;
+;     on_p_sel_rel := selected_prep_rel.
+;     on_p_upon-sel_rel := selected_prep_rel.
+;     _on_p_sel_rel := on_p_sel_rel & on_p_upon-sel_rel.
+;
+;
+;                               ;;; 
+;                               ;;; 
+;                               ;;; 
+;                               ;;; 
+;
+;
+;     v_pp_e_le := main_verb & 
+;     """
+;     Cmps PP(sel,obl)                 
+;     <ex>B looked after C.
+;     """
+;       [ SYNSEM empty_prep_intrans_verb &
+;		[ LKEYS [ --COMPKEY #cmin,
+;			  --+COMPKEY #cmin ] ] ].
+;
+;     empty_prep_intrans_verb := basic_empty_prep_intrans_verb &
+;       [ LOCAL.CONT.RELS <! relation !> ].
+;
+;     basic_empty_prep_intrans_verb := twoarg_verb_synsem & prep_intrans_subst &
+;				empty_prep_intrans_lt &
+;       [ LOCAL [ CAT.VAL.COMPS < [ OPT - ] >,
+;		  CONT.RELS.LIST.FIRST #keyrel ],
+;	  LKEYS.KEYREL #keyrel ].
+;
+;
+;
+;
+;
+; However,
+;     selected-noun-rel := selected-rel & noun-relation.
+; doesn't work because the ARG0 for event-relation is 'event' and for
+; noun-relation is 'ref-ind'. 
+; 
+; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+selected_rel := predsort
+"""
+selected_rel is a sister of norm_rel, and hence both types are not compatible.
+selected_rel is used to define semantically empty predicates (LKEYS.KEYREL.PRED selected_rel), 
+and is being used to allow some lexical entries (e.g. verbs) to require this type of relations in 
+their argument structure.
+""".
+norm_rel := predsort
+""" """.
+
+selected_comp_rel := selected_rel.
+
+
+
+n_nosem_selected := selected-lex &
+"""
+FIXME: Given the syntactic nature of the bound complements, and the way they  
+interact with a range of modifiers between the verb and bound complement, 
+we expect the bound complements to preserve all its syntactic features
+(e.g. countability, noun types, etc.) this is not being done yet.
+"""
+[ ARG-ST < >,
+  SYNSEM [ PAREN -,
+	   PUNCTUATED -,
+	   LOCAL [CAT [HEAD noun,
+		       VAL [ COMPS < >,
+			     SUBJ < >,
+			     SPR <  > ] ] ] ] ].
+
+v_np_sep_le := v_trans-verb-lex & nonque-item &
+  [SYNSEM.LKEYS.--COMPKEY #key,
+   SYNSEM.LOCAL.CAT.VAL.COMPS < [LOCAL.CAT.HEAD.KEYS.KEY #key] > ].
+
+
+
+
+
+; basic-noun-lex := norm-sem-lex-item & basic-icons-lex-item & 
+;   [ SYNSEM [ LOCAL.CAT.HEAD noun,
+; 	     LKEYS.KEYREL noun-relation ]].
+;
+; noun-lex := basic-noun-lex & basic-one-arg & no-hcons-lex-item &
+;   [ ARG-ST < #spr >,
+;     SYNSEM [ PAREN -,
+;              PUNCTUATED -,
+; 	       LOCAL.CAT.VAL [ COMPS < >,
+;                              SUBJ < >,
+;                              SPR < #spr & synsem &
+;                                    [ LOCAL.CAT [ HEAD det,
+;                                                  VAL.SPR < > ] ] > ],
+;              NON-LOCAL.SLASH 0-dlist ] ].
+; common-noun-lex := noun-lex &
+;   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SORT nontime-s ].
+
+
+
+; WE NEED TO BUILD A SEMANTICALLY EMPTY NOUN (SELECTED-COMPLEMENT) LEXICAL ITEM 
+; no-rels-hcons-icons-lex-item := no-hcons-lex-item & 
+;   [ SYNSEM.LOCAL.CONT [ RELS <! !>, ICONS <! !> ] ].
+
+
+
+
+
+;     on_p_sel_rel := selected_prep_rel.
+;     on_p_upon-sel_rel := selected_prep_rel.
+;     _on_p_sel_rel := on_p_sel_rel & on_p_upon-sel_rel.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+
 ;;; used in elipsis  (same as fragment?)
 ellipsis_v_rel := predsort.
 
-cl_x_rel := predsort.
+cl_x_rel := norm_rel 
+"""
+Having cl_x_rel under norm_rel makes the claim that all selected_rel (non-norm_rel) cannot be classified over. This might not be the case. We could use ALTKEY instead of KEY if we want to allow CLs to happen in selected rels.
+""".
 
 intensifier_x_rel := predsort.
 redup_x_rel := intensifier_x_rel.

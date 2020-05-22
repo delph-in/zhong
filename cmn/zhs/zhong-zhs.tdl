@@ -15,6 +15,24 @@
 
 
 
+
+;============================================================================
+; COMPLEMENTS FOR SEPARABLE VERBS
+;============================================================================
+
+
+饭_n_selected_rel := selected_comp_rel.
+车_n_selected_rel := selected_comp_rel.
+
+
+
+
+
+
+
+
+
+
 ;; SSH 2015-05-07: quantifiers in Simplified Mandarin Chinese
 _个中_q_rel := q_rel.
 _其_q_rel := q_rel.
@@ -486,7 +504,6 @@ _卡路里_x_rel := cl_x_rel.
 _辆次_x_rel := cl_x_rel.
 _分贝_x_rel := cl_x_rel.
 _车次_x_rel := cl_x_rel.
-_盘_x_rel := cl_x_rel.
 _盘_x_rel := cl_x_rel.
 _大卡_x_rel := cl_x_rel.
 _秒立方米_x_rel := cl_x_rel.

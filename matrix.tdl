@@ -3780,3 +3780,39 @@ add-icons-subj-comp-verb-rule := lex-rule &
 ; high-high-percent := complex-tone.
 
 
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; UPDATING THE MATRIX  (FIXME LMC)
+comps-change-only-lex-rule := same-subj-lex-rule &
+                             same-spr-lex-rule &
+                             same-spec-lex-rule.
+
+same-subj-lex-rule := lex-rule &
+ [ SYNSEM.LOCAL.CAT.VAL.SUBJ #subj,
+   DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ #subj ].
+
+same-spr-lex-rule := lex-rule &
+ [ SYNSEM.LOCAL.CAT.VAL.SPR #spr,
+   DTR.SYNSEM.LOCAL.CAT.VAL.SPR #spr ].
+
+same-spec-lex-rule := lex-rule &
+ [ SYNSEM.LOCAL.CAT.VAL.SPEC #spec,
+   DTR.SYNSEM.LOCAL.CAT.VAL.SPEC #spec ].
+
+same-comps-lex-rule := lex-rule &
+ [ SYNSEM.LOCAL.CAT.VAL.COMPS #comps,
+   DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #comps ].
+
+same-hc-light-lex-rule := lex-rule &
+ [ SYNSEM.LOCAL.CAT.HC-LIGHT #hcl,
+   DTR.SYNSEM.LOCAL.CAT.HC-LIGHT #hcl ].
+
+same-posthead-lex-rule := lex-rule &
+ [ SYNSEM.LOCAL.CAT.POSTHEAD #ph,
+   DTR.SYNSEM.LOCAL.CAT.POSTHEAD #ph ].
+
+same-mc-lex-rule := lex-rule &
+ [ SYNSEM.LOCAL.CAT.MC #mc,
+   DTR.SYNSEM.LOCAL.CAT.MC #mc ].

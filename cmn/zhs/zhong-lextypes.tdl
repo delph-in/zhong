@@ -68,10 +68,36 @@ bound-lex-item := lex-item &
   [ SYNSEM.BOUND + ]. 
 
 ;;; Lexical types
+normal-lex := lex-item &
+"""
+All normal lex are not selected by the head. Currently being contrasted with KEYS.KEY = selected_rel. 
+"""
+  [SYNSEM.LOCAL.CAT.HEAD.KEYS.KEY norm_rel].
+
+
+selected-lex := lex-item &
+  [ SYNSEM [ LOCAL [CAT.HEAD.KEYS.KEY #key,
+		    CONT [ RELS <! !>, HCONS <! !> ] ],
+	     LKEYS.KEYREL.PRED selected_rel & #key,
+	     NON-LOCAL.SLASH 0-dlist ] ].
+
+
+norm-comps1-lex := lex-item &
+"""
+This type is to ensure that 1st COMPS of normal verbs have normal (non-empty) semantics.
+This is necessary to ensure the contrast with separable verbs like 吃饭. Special
+lexical entries for verbs like 吃 expect COMPS with the semantic type selected_rel, 
+such as the special 饭_n_selected_rel.
+But in order to prevent normal verbs to also take these selected complements as
+their own complements, we must ensure all complements of normal verbs are of 
+norm_rel.  
+"""
+[ SYNSEM.LOCAL.CAT.VAL.COMPS < [LOCAL.CAT.HEAD.KEYS.KEY norm_rel] > ].
+
 
 ;;; Nouns
 
-noun-lex := basic-noun-lex & basic-one-arg & no-hcons-lex-item &
+noun-lex := basic-noun-lex & basic-one-arg & no-hcons-lex-item & normal-lex &
   [ ARG-ST < #spr >,
     SYNSEM [ PAREN -,
              PUNCTUATED -,
@@ -1705,6 +1731,10 @@ classifier := +jd.
 
 basic-classifier-lex := norm-ltop-lex-item & single-rel-lex-item & 
                         intersective-mod-lex & no-icons-lex-item &
+"""
+Cls identifies the KEYS.KEY with the classified noun, to allow nouns to potentially select a range of classifiers (not implemented yet).
+This clashes with the way selected complements are being selected (through KEYS.KEY). If we want to keep both pieces of info we could use KEYS.ALTKEY instead for classifiers.
+"""
   [ SYNSEM [ PAREN -,
              PUNCTUATED -,
 	     LOCAL [ CAT [ HEAD classifier & 
@@ -2054,8 +2084,52 @@ basic-postp-lex := adposition-lex &
 	      OPT - ] > ].
 
 
+
+;;; Lexical rule types for auxiliary verbs
+
+v_aux_ell-lex-rule  := same-head-lex-rule & constant-lex-rule &
+"""
+We want to preserve the auxiliary status of sentences like 他 会 (he is able to) /  他 可以 (he is allowed to)  /  他 应该 (he must to)  where it is assumed that some elided verb exists. This is preferable to having multiple lexical entries for the auxiliary when there is complement dropping. 
+
+This lexical rule allows this by pumping auxiliaries to no longer need complements (see DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < [ ] >); and by fixing the ARGs and QEQ links between the auxiliary verb and an introduced ellipsis_v_rel.
+
+<ex> 他 会 。
+<nex> 他 会 唱歌 。
+<nex> 他 告诉 。
+"""
+		       same-subj-lex-rule &
+		       same-spr-lex-rule &
+		       same-spec-lex-rule &
+		       same-non-local-lex-rule &
+		       same-modified-lex-rule &
+		       same-posthead-lex-rule &
+		       same-light-lex-rule &
+		       same-hc-light-lex-rule &
+		       same-ctxt-lex-rule &
+		       same-cont-lex-rule &
+		       same-agr-lex-rule & 
+  [ SYNSEM.LOCAL [ CAT [ HEAD verb &
+				[ AUX + ], 
+			   VAL [ COMPS < > ], 
+			   MKG #mkg  ],
+		   CONT.HOOK.INDEX.E.ASPECT non-aspect ],
+    DTR  [ SYNSEM [ LOCAL [ CAT [ VAL [ COMPS < [ ] > ], 
+				  MKG #mkg  ],
+			    CONT [ HOOK [ XARG #subj ],   ;;; subject of the aux_v links to ARG1 of ellipsis 
+				   HCONS <!  [ LARG #ellipsis_index ] !> ] ] ] ],  ;;; link the aux verb QEQ LARG to the LBL of the ellipsis_v_rel 
+    C-CONT [ HCONS <! !>,
+	     ICONS <! !>,
+	     RELS <! arg1-relation & event-relation & 
+		   [ LBL  #ellipsis_index,
+		     PRED ellipsis_v_rel,
+		     ARG1 #subj ] !> ] ].
+
+
+
         
 ;;; Lexical rule types for aspect
+
+
 
 
 _v_aspect-lex-rule := add-only-no-ccont-rule & infl-lex-rule &

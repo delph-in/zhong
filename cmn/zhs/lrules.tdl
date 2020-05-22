@@ -1,0 +1,8 @@
+;;; -*- Mode: tdl; Coding: utf-8; -*-
+;;;
+;;;  lrules.tdl
+;;;
+;;;  Inflectional affixes and derivational lexical rules
+;;;
+
+v_aux_ell-lr := v_aux_ell-lex-rule.

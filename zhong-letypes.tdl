@@ -58,6 +58,7 @@ n_-_pr-loc_le := loc-pronoun-lex & nonque-item.
 
 ;; SSH/ZZF 2014-11-26
 ;; Currently, general nouns such as dongxi (东西), shi (事).
+; n_-_le := common-noun-lex & nonque-item & normal-lex.
 n_-_le := common-noun-lex & nonque-item.
 
 ;;ZZF 2015-5-3 temporary for locational nouns (not proper nouns). To be fixed when have time
@@ -65,7 +66,10 @@ n_-_loc_le := common-noun-lex & loc-lex-item & nonque-item.
 
 n_-_c_le := count-noun-lex & nonque-item.
 
-n_-_m_le := mass-noun-lex & nonque-item.
+n_-_m_le := mass-noun-lex & nonque-item
+"""
+Includes mass nouns such as: 饭, 
+""".
 
 ;; proper names
 n_-_pn_le := proper-name-lex & nonque-item.
@@ -119,7 +123,10 @@ adv_-_tq_le := tag-adv-lex.
 v_weather_le := v_weather_type_lex & nonque-item.
 v_-_le := v_intrans-verb-lex & nonque-item.
 v_-_spr_le := v_intrans-verb-spr-lex & nonque-item.
-v_np_le := v_trans-verb-lex & nonque-item.
+v_np_le := v_trans-verb-lex & nonque-item & norm-comps1-lex.
+
+
+
 v_np-spr_le := v_trans-verb-spr-lex & nonque-item.
 v_np-np_le := ditrans-verb-lex & nonque-item.
 v_pp-np_le := ditrans-pp-verb-lex & nonque-item.
@@ -224,3 +231,6 @@ adv_-_scop-post_q_le := scop-adv-posthd-lex & question-item.
 n_-_tm_q_le := time-noun-lex & question-item.
 a_-_pred_q_le := pred-adj-lex & question-item.
 adv_-_vp-pre_q_le := int-adv-vp-pre & question-item.
+
+
+
