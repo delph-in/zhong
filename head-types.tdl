@@ -1003,8 +1003,9 @@
 ; Disjunctive type for nouns and verbs.
 +nv := +nvo & +nvm & +nvd & +nvc & +nvp & +nvr & +nvj.
 
-;In matrix.tdl
 
+
+;In matrix.tdl
 ;conj := +mo & +do & +co & +po & +ro & +jo & +vo & +no.
 ;num := +mo & +dm & +cm & +pm & +rm & +jm & +vm & +nm.
 ;det := +do & +dm & +cd & +pd & +rd & +jd & +vd & +nd.

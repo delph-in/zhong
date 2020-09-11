@@ -100,6 +100,7 @@ some_q_rel := exist_q_rel.
 proper_q_rel := q_rel.
 pronoun_q_rel := q_rel.
 which_q_rel := q_rel.
+_how-many_q_rel := q_rel.
 generic_q_rel := q_rel.
 
 related_p_rel := predsort.
@@ -380,6 +381,15 @@ marker-or-punct := head &
 marker := marker-or-punct.
 punct := marker-or-punct.
 
+
+;============================================================================
+; Below we define PFORM (preposition form) as a feature, and then introduces
+; a mini hierarchy of prepositions that can be selected by verbs.
+; prepositions can say define it's PFORM like so:
+;     SYNSEM.LOCAL.CAT.HEAD.PFORM zai
+; which can be selected by verbs's argument structure like so:
+;     [ ARG-ST  < [], [], [ LOCAL.CAT [ HEAD [ PFORM zai ] ] ] > ].
+;============================================================================
 +np :+ [ PFORM pform ].
 pform := avm.
 gei-or-xiang := pform.
@@ -389,6 +399,7 @@ zai := pform.
 you := pform.
 dui := pform.
 voc := pform.
+
 
 +njd :+ 
  [ HON luk,
@@ -727,25 +738,6 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 			   NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
 				       REL 0-dlist ] ] ].
 
-#|
-nmc-subj-head-phrase := basic-head-subj-phrase & head-final &
-  [ SYNSEM.LOCAL.CAT.MC -,
-    SYNSEM.SPART #spart,
-    HEAD-DTR.SYNSEM.LOCAL.CAT [ VAL [ SPR olist,
-				      COMPS < > ],
-				POSTHEAD + ],
-    HEAD-DTR.SYNSEM [ SPART #spart,
-		      NON-LOCAL.SLASH 1-dlist ],
-    NON-HEAD-DTR.SYNSEM  [ R-PERIPH na-or--,
-			   INTERJECTED na-or--,
-			   LOCAL [ CAT [ MC +,
-					 NONSUBJ -,
-					 HEAD.GENERIC na-or--,
-					 VAL.SPR <> ],
-				   CONT.HOOK.INDEX.SORT nontime-s ],
-			   NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
-				       REL 0-dlist ] ] ].
-|#   
          
 ;; comp-head-phrase requires things that are [ HEAD comp ].
 ;; SSH 2015-07-13: relative-clauses
@@ -758,35 +750,6 @@ comp-head-phrase := basic-head-1st-comp-phrase & head-final &
 			    BOUND na-or--,
 			    NON-LOCAL.SLASH #slash ] ] ].
 
-#|
-relative-clause := binary-phrase & phrasal & head-compositional & head-final &
-  [ SYNSEM [ LOCAL [ CAT [ VAL [ COMPS < >,
-                                 SPR < > ] ] ],
-			 NON-LOCAL.SLASH 0-dlist ],
-    NON-HEAD-DTR [ SYNSEM [ LOCAL [ CAT [ HEAD comp,
-					  VAL.COMPS olist ],
-				    CONT.HOOK.INDEX #clause ],
-			    NON-LOCAL [ SLASH 1-dlist &
-					      [ LIST [ FIRST #slash,
-						       REST < > & #last ],
-						LAST #last ],
-					QUE 0-dlist,
-					REL 0-dlist ] ] ], 
-    HEAD-DTR [ SYNSEM canonical-synsem &
-	       [ LOCAL #slash & local &
-			      [ CAT [ HEAD noun & [ GENERIC na-or-- ],
-				      VAL [ SUBJ olist,
-					    COMPS olist,
-					    SPR olist ] ],
-				CONT.HOOK #hook & [ INDEX #target ],
-				CTXT.ACTIVATED + ],
-			NON-LOCAL.SLASH 0-dlist ] ],
-    C-CONT [ HOOK #hook,
-	     RELS <! !>,
-	     HCONS <! !>,
-	     ICONS <! focus-or-topic & [ IARG1 #clause,
-                                         IARG2 #target ] !> ] ].
-|#
 
 ;; MATRIX REDEFINITION
 ;; SSH 2015-05-07: x_rel and q_rel are defined as types.
@@ -1251,74 +1214,19 @@ basic-head-mod-phrase-simple := head-mod-phrase & binary-headed-phrase &
 ;; as that of the HD-DTR.
 ;;
 
-;;We changed the head daughter's comps list to the empty list, rather than olist
-#|
-basic-head-spec-phrase := head-valence-phrase & phrasal &
-              binary-headed-phrase & 
-  [ INFLECTED infl-satisfied,
-    SYNSEM phr-synsem & [ LOCAL.CAT [ VAL [ SUBJ #subj,
-                        COMPS #spcomps,
-                        SPR #spr,
-                        SPEC #spec ],
-                      POSTHEAD #ph ],
-              MODIFIED #modif ],
-    HEAD-DTR [ INFLECTED infl-satisfied,
-               SYNSEM [ LOCAL [ CAT [ HEAD #head,
-                                      VAL [ SUBJ #subj,
-                                            COMPS <> & #comps,
-                                            SPR < #synsem & 
-                                                  canonical-synsem . #spr >,
-                                            SPEC #spec ],
-                                      POSTHEAD #ph ],
-                                CONT.HOOK #hdhook ],
-                        MODIFIED #hmodif ] ],
-    NON-HEAD-DTR.SYNSEM #synsem &
-          [ LOCAL [ CAT.VAL [ SPEC < [ LOCAL [ CAT [ HEAD #head,
-                             VAL.COMPS #comps ],
-                           CONT.HOOK #hdhook ],
-                       MODIFIED #hmodif ] >,
-                  COMPS #spcomps ],
-            CONT.HOOK #hook ],
-        MODIFIED #modif ],
-    C-CONT [ HOOK #hook,  RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 
-head-spec-phrase := basic-head-spec-phrase & head-final &
-  [ NON-HEAD-DTR.SYNSEM [ LOCAL [ CAT [ VAL.SUBJ < >,
-                    HEAD det ],
-                  CONT.HOOK #hook ] ],
-    C-CONT.HOOK #hook ].
-
-;; Note here, the syntactic head is the semantic head
-;; note, we deleted NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < > : this is already specified in the heads
-;; 
-;;; DPF 21-dec-09 - use head-compositional etc instead...
-
-head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
-  [ SYNSEM.LOCAL.CAT.HEAD.MODIFIABLE +,
-    HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD +jrpd & [ MODIFIABLE + ],
-                            CONT.HOOK #hook ],
-    C-CONT.HOOK #hook ].
-
-; For nominalizer head `de', which must be [HEAD noun], but which is also the
-; semantic head.  Cannot easily collapse with either of the other two head-spec
-; rules, since the non-head-dtr can be [HEAD det] in the hspec-hs rule where
-; the head is a classifier.  FIX someday?
-;
-head-nom-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
-  [ HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
-                CONT.HOOK #hook ],
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +vjp,
-    C-CONT.HOOK #hook ].
-|#
-
-
-;; SSH 2014-08-22 zhong specific basic-head-spec-phrase 
+;; SSH 2014-08-22 zhong specific basic-head-spr-phrase 
 ;; ZZF 2015-9-30 taking out "STYLE robust," as this is preventing sentences from parsing
-basic-head-spec-phrase := head-valence-phrase & phrasal &
-                          binary-headed-phrase & 
-  [ 
-    INFLECTED infl-satisfied,
+basic-head-spr-phrase := head-valence-phrase & phrasal &
+			  binary-headed-phrase &
+"""
+By forcing the non-head daughter's SPEC's COMP to be empty, we can require all 
+determiners to take CLs (e.g. 这 个 东西, but not 这 东西). 
+This was changed but it is now commented out to see how well this was being done through the noun types.
+We need some nouns (few nouns, such as time nouns 天 or 年 to not take a classifier... It is still unclear what is the best way to do that.  
+"""
+  [ INFLECTED infl-satisfied,
     SYNSEM phr-synsem & [ LOCAL [ CAT [ VAL [ SUBJ #subj,
 					      SPR #spr,
 					      SPEC #spec ],
@@ -1326,28 +1234,34 @@ basic-head-spec-phrase := head-valence-phrase & phrasal &
 				  CONT.HOOK.CLAUSE-KEY #clause ],
 			  MODIFIED #modif ],
     HEAD-DTR [ INFLECTED infl-satisfied,
-               SYNSEM [ R-PERIPH na-or--,
-                        L-PERIPH -,
+	       SYNSEM [ R-PERIPH na-or--,
+			L-PERIPH -,
 			LOCAL [ CAT [ HEAD #head,
 				      VAL [ SUBJ #subj,
 					    COMPS <> & #comps,
 					    SPR < #synsem & 
 						  canonical-synsem . #spr >,
 					    SPEC #spec ],
-                                      POSTHEAD #ph ],
+				      POSTHEAD #ph ],
 				CONT.HOOK #hdhook & [ CLAUSE-KEY #clause ] ],
 			MODIFIED #hmodif ] ],
     NON-HEAD-DTR.SYNSEM #synsem &
-     [ R-PERIPH na-or--,
-       LOCAL [ CAT.VAL.SPEC < [ LOCAL [ CAT [ HEAD #head,
-					      VAL.COMPS #comps ],
-					CONT.HOOK #hdhook ],
-				MODIFIED #hmodif ] >,
-	       CONT.HOOK.CLAUSE-KEY #clause ],
-       MODIFIED #modif ],
+	      [ R-PERIPH na-or--,
+		LOCAL [ CAT.VAL [SPEC < [ LOCAL [ CAT [ HEAD #head,
+							VAL.COMPS #comps ],
+						  CONT.HOOK #hdhook ],
+					  MODIFIED #hmodif ] >,
+				 COMPS < > ],
+; 				 COMPS #unconstrained ],
+			CONT.HOOK.CLAUSE-KEY #clause ],
+		MODIFIED #modif ],
     C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
-head-spec-phrase := basic-head-spec-phrase & head-final &
+spr-head-phrase := basic-head-spr-phrase & head-final &
+"""
+The COMPS of the produced phrase is empty  < > (this comes from the HEAD-DTR's, 
+but it's not really linked here -- same output ) 
+"""
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
     NON-HEAD-DTR.SYNSEM [ LOCAL [ CAT [ VAL.SUBJ < >,
                     HEAD det ],
@@ -1355,21 +1269,30 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
     C-CONT.HOOK #hook ].
 
 
-;; Note here, the syntactic head is the semantic head
-;; note, we deleted NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < > : this is already specified in the heads
-;; 
-;;; DPF 21-dec-09 - use head-compositional etc instead...
-;; SSH 2015-04-16 discourse stgatus (definitesness)
-;; ZZF 20161113 added v into HEAD of head-dtr, to allow degree specifiers for verb +vjrpd
-; ---------------------------------------
-;           | cmn             | yue
-; ---------------------------------------
-; DEM-CL-N  | uniq-fam-active (definite)
-; NUME-CL-N | type-id (indefinite)
-; CL-N      | type-id         | active-or-less ((in)definite)
-; N         | active-or-less  | type-id 
-; ---------------------------------------
-head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
+spr-head-h-sem-phrase := basic-head-spr-phrase & head-final &
+"""
+This is passing up the COMPS value of the specifier (NON-HEAD-DTR) to the mother.
+This is being used for 我 很 喜欢 你  （as spr-head-noncl) and 我 买 了 两 只 猫 (as spr-head-cl)
+
+[FIXME] The passing of the NON-HEAD-DTR COMPS here is still a mystery.
+With have a special phrase for something like 3 kilos of cat. 
+
+
+Note here, the syntactic head is the semantic head
+note, we deleted NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < > : this is already specified in the heads
+ 
+DPF 21-dec-09 - use head-compositional etc instead...
+SSH 2015-04-16 discourse stgatus (definitesness)
+ZZF 20161113 added v into HEAD of head-dtr, to allow degree specifiers for verb +vjrpd
+ ---------------------------------------
+           | cmn             | yue
+ ---------------------------------------
+ DEM-CL-N  | uniq-fam-active (definite)
+ NUME-CL-N | type-id (indefinite)
+ CL-N      | type-id         | active-or-less ((in)definite)
+ N         | active-or-less  | type-id 
+ ---------------------------------------
+"""
   [ SYNSEM.LOCAL.CAT [ HEAD.MEASURE -,
 		       VAL.COMPS #spcomps ],
     HEAD-DTR.SYNSEM [ BOUND na-or--,
@@ -1379,20 +1302,22 @@ head-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
                           PUNCTUATED na-or-- ],
     C-CONT.HOOK #hook ].
 
-; For nominalizer head `de', which must be [HEAD noun], but which is also the
-; semantic head.  Cannot easily collapse with either of the other two head-spec
-; rules, since the non-head-dtr can be [HEAD det] in the hspec-hs rule where
-; the head is a classifier.  FIX someday?
-;
 
-head-nom-spec-h-sem-phrase := basic-head-spec-phrase & head-final &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
-    HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
-                CONT.HOOK #hook ],
-    NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
-			  LOCAL.CAT [ HEAD +vjp,
-				      VAL.COMPS #spcomps ] ],
-    C-CONT.HOOK #hook ].
+;spr-head-nom-h-sem-phrase := basic-head-spr-phrase & head-final &
+;"""
+; [LMC] This didn't seem to ever be used
+;For nominalizer head `de', which must be [HEAD noun], but which is also the
+;semantic head.  Cannot easily collapse with either of the other two head-spec
+;rules, since the non-head-dtr can be [HEAD det] in the hspec-hs rule where
+;the head is a classifier.  FIX someday?
+;"""
+;  [ SYNSEM.LOCAL.CAT.VAL.COMPS #spcomps,
+;    HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
+;                CONT.HOOK #hook ],
+;    NON-HEAD-DTR.SYNSEM [ BOUND na-or--,
+;			  LOCAL.CAT [ HEAD +vjp,
+;				      VAL.COMPS #spcomps ] ],
+;    C-CONT.HOOK #hook ].
 
 
 ;; For clauses without SPR (degree specifiers)
@@ -1411,6 +1336,7 @@ basic-bare-spr-phrase := head-only &
              ICONS <! !>,
              HOOK [ INDEX #index,
                     LTOP #ltop ] ] ].
+
 
 bare-s-phrase := basic-bare-spr-phrase &
 """
@@ -1577,6 +1503,16 @@ generic-np-phrase := basic-bare-np-phrase &
 ;; SSH 2014-04-21 noun -> +njd, [NONCOMP +] added for blocking overgeneration.
 ;; why +njd? This includes classifier, which should be handled using head-specifier rule
 meas-np-phrase := head-final & head-valence-phrase & phrasal &
+"""
+[FIXME]  This is being used to parse WRONG NPs like  三 猫
+This can probably be made into a mal-rule and then further atuned to allow MEASURE nouns (e.g. kilo, day, year) to link to the number directly. However, some of them （all if we want to force them) can be counting an NP.
+
+ 3 kilos of cat
+ 3 months sadness
+ 5 years of love
+
+So we would have to do somthing further because we don't want them as Noun-Noun compounds.
+"""
   [ SYNSEM.LOCAL.CAT [ NONCOMP +,
 		       HEAD [ MEASURE + ],
 		       VAL [ SUBJ < >,
@@ -2015,9 +1951,24 @@ non-coord-event := non-coord-index & event.
 non-coord-ref-ind := non-coord-index & ref-ind.
 
 ;; Semantic sorts, initially just to distinguish temporal and non-temporal Ns
+;; Only individuals (i.e. 'x' in the MRS ) have  semsort. It can be used to sort things but.
+;; In principle the the index of the mother is the index of the daughter.
 
 time-s := semsort.
 nontime-s := semsort.
+
+
+common-s := nontime-s
+"""
+All common nouns should be nontime-s.
+""".
+pronproper-s := nontime-s
+"""
+A sort type being used to mark if things are either pronouns or proper nouns.
+This was created to constrain the attachement of MEN.  
+""".
+
+
 
 ;; MATRIX redefinition: Adopted GTOP of modern Matrix, but also relaxed
 ;; constraint on XARG to allow for sentential subjects (with handle as XARG).

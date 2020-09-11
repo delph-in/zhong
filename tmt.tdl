@@ -145,7 +145,7 @@ meas_ne := meas_or_time_ne & card_or_meas_ne.
 meas_noun_ne := named_entity.
 
 ;;; FCB for things that are reduplicated
-redup_le := token_class. 
+redup_le := token_class.
 
 ;; SSH 2015-04-13 七月 七日
 month_ne := date_ne.

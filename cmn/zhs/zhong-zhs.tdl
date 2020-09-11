@@ -19,15 +19,25 @@
 ;============================================================================
 ; COMPLEMENTS FOR SEPARABLE VERBS
 ;============================================================================
-
-
 饭_n_selected_rel := selected_comp_rel.
 车_n_selected_rel := selected_comp_rel.
-
-
-
-
-
+婚_n_selected_rel := selected_comp_rel.
+业_n_selected_rel := selected_comp_rel.
+澡_n_selected_rel := selected_comp_rel.
+雪_n_selected_rel := selected_comp_rel.
+班_n_selected_rel := selected_comp_rel.
+班儿_n_selected_rel := selected_comp_rel.
+病_n_selected_rel := selected_comp_rel.
+班_n_selected_rel := selected_comp_rel.
+烟_n_selected_rel := selected_comp_rel.
+会_n_selected_rel := selected_comp_rel.
+发_n_selected_rel := selected_comp_rel.
+字_n_selected_rel := selected_comp_rel.
+淋浴_n_selected_rel := selected_comp_rel.
+足球_n_selected_rel := selected_comp_rel.
+天_n_selected_rel := selected_comp_rel.
+天儿_n_selected_rel := selected_comp_rel.
+;============================================================================
 
 
 

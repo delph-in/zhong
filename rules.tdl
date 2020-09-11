@@ -5,31 +5,12 @@ head-comp := head-comp-phrase.
 ;; SSH 2015-04-21: The subject cannot be indefinite. 
 subj-head := subj-head-phrase & [ STYLE robust ].
 
-#| ZZF 20161128 removing differentiation between nominal and non-nominal subjects based on COG-ST. Analysis of definiteness of NP is to be refined with Sanghoun later.
-;;nominal subjects ;;zz 2015-09-16 to take out 'STYLE robust,' because it's causing sentences with subject(pronoun) to be 'robust' ==> ask sanghoun
-;;CONT.HOOK.INDEX.COG-ST uniq-or-more
-subj-head-n := subj-head-phrase & 
-  [ STYLE robust,
-    NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD noun,
-                                CONT.HOOK.INDEX.COG-ST uniq-or-more ] ].
-
-;;non-nominal subjects
-subj-head-nn := subj-head-phrase &
-  [ STYLE robust,
-    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +vjp ].
-
-;; subj-head-phrase for relative clauses
-;nmc-subj-head := nmc-subj-head-phrase.
-
-;;subj-head-nd := subj-head-nondecl-phrase.
-|#
-
-head-spec := head-spec-phrase & [ STYLE robust ]. 
+spr-head := spr-head-phrase & [ STYLE robust ]. 
 
 ;; SSH 2015-04-20: head-spec-hs is now divided into two rules.
 ;; head-spec-deg: [[有 多] 高兴] 
 ;; ZZF 2015-9-30: taking out "STYLE robust," to allow "很　甜"
-head-spec-noncl := head-spec-h-sem-phrase &
+spr-head-noncl := spr-head-h-sem-phrase &
 """
 head specifier rule used for adjectives and adverbs.
 """
@@ -37,24 +18,31 @@ head specifier rule used for adjectives and adverbs.
 ;    HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD +jrp,
     
 
-;; head-spec-d: [[我 的] 猫]
-head-spec-d := head-spec-h-sem-phrase &
-"""
-head specifier rule used for determiners.
-"""
-  [ STYLE robust,
-    HEAD-DTR.SYNSEM [ LOCAL [ CAT.HEAD det,
-			      CONT.HOOK.INDEX.COG-ST uniq-or-more ] ] ].
+;spr-head-d := spr-head-h-sem-phrase &
+;"""
+; [LMC] It seems it wasn't being used.
+;;; head-spec-d: [[我 的] 猫]
+;head specifier rule used for determiners.
+;"""
+;  [ STYLE robust,
+;    HEAD-DTR.SYNSEM [ LOCAL [ CAT.HEAD det,
+;			      CONT.HOOK.INDEX.COG-ST uniq-or-more ] ] ].
 
 ;; head-spec-cl: [[一 只] 猫]
 ;; ZZF 20161123 changed COG-ST "type-id" to "cog-st" (underspecified), to allow combining with determiners, which is "uniq+fam+act". Example: [[这 [两 只]] 猫]. To be refined with Sanghoun when reviewing definiteness.
-head-spec-cl := head-spec-h-sem-phrase &
+spr-head-cl := spr-head-h-sem-phrase &
+"""
+"""
   [ STYLE robust,
     HEAD-DTR.SYNSEM [ LOCAL [ CAT.HEAD classifier,
 			      CONT.HOOK.INDEX.COG-ST cog-st ] ] ].
 
 
-headn-spec-hs := head-nom-spec-h-sem-phrase & [ STYLE robust ].
+
+;spr-headn-hs := spr-head-nom-h-sem-phrase & [ STYLE robust ]
+;"""
+; [LMC] This didn't seem to ever be used.  
+;""".
 
 ;==============================================
 ; LMC&FCB trying to solve some ambiguity:
@@ -91,11 +79,6 @@ comp-head := comp-head-phrase &
 ; are defined in matrix.tdl.  The matrix customization script did
 ; not need to add any further constraints, so no corresponding tyes
 ; appear in mandarin chinese.tdl
-
-#|
-head-adj-int := head-adj-int-phrase &
-  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
-|#
 
 
 ;;FB & ZZF 4-11-2015change rule name from "head-adj-int" to "head-mod-int", from "adj-head-int" to "mod-head"

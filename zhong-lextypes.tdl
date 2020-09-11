@@ -1611,81 +1611,11 @@ adj-aabb-lex := adj-redup-lex & redup-lex-item.
 
 adj-abb-lex := adj-redup-lex & basic-pred-adj-lex.
 
-;SSH 2015-03-13: ICONS is left unconstrained until judged by an expert
-;in Chinese pragmatics.
-#|
-adj-redup-lex := lex-item & 
- [ SYNSEM [ LOCAL [ CAT [ HEAD adj,
-                           VAL [ SUBJ < [ LOCAL [ CAT [ HEAD +nv,
-							VAL.SPR < > ],
-						  CONT.HOOK.INDEX #arg1 &
-                                                   [ SF prop-or-ques ] ],
-					  NON-LOCAL.SLASH #slash ] >,
-				 COMPS <>,
-				 SPR <>,
-				 SPEC <> ] ],
-		    CONT [ HOOK [ LTOP #ltop,
-				  XARG #xarg,
-				  INDEX #index,
-				  ICONS-KEY #icons,
-				  CLAUSE-KEY #clause ],
-			   RELS <! #keyrel, #altkeyrel !>,
-			   HCONS <! !>,
-			   ICONS <! semantic-focus & #icons &
-				  [ IARG1 #clause,
-				    IARG2 #index ] !> ] ],
-	    NON-LOCAL.SLASH #slash,
-	    LKEYS [ KEYREL arg1-relation & event-relation & #keyrel &
-			   [ LBL #ltop,
-			     ARG0 #index,
-			     ARG1 #arg1 ],
-		    ALTKEYREL #altkeyrel & arg1-relation & event-relation &
-			   [ LBL #ltop,
-			     PRED redup_x_rel,
-			     ARG1 #index ] ] ] ].
-|#
 
-
-;; DPF 2011-06-03 - We might instead want to treat relative clauses as 
-;; lacking a gap, with the burden of linking the modified noun's index instead
-;; left to pragmatics.  Then we wouldn't need extraction for relative clauses,
-;; so its main motivation would then be for topicalization.  Consider
-;; "I wash car de towel wet" meaning something like "the towel with which I
-;; washed the car is wet".
-;; DPF 2011-07-29 - Okay, we've dropped this entry, and adjusted the nominalizer
-;; `de' to allow both slashed and nonslashed specifier.  Should now do all of
-;; the work.
-;;
-#|
-nom-adj-lex := basic-pred-adj-lex &
-  [ SYNSEM [ LOCAL [ CAT [ VAL [ SPR < [ LOCAL [ CAT [ VAL [ SUBJ olist,
-                                 COMPS < >,
-                                 SPR < > ],
-                               HEAD +vjp ],
-                         CONT.HOOK.LTOP #ltop ],
-                     NON-LOCAL.SLASH 1-dlist & 
-                          <! [ CONT.HOOK.INDEX #index ] !>,
-                     OPT - ] >,
-                 SUBJ < canonical-synsem & 
-                      [ LOCAL [ CAT [ HEAD +nv,
-                                                    VAL [ SPR < >,
-                                                          COMPS < > ] ],
-                                              CONT.HOOK.INDEX #index &
-                                                  [ SF prop-or-ques ] ] ] >,
-                 COMPS < > ],
-               POSTHEAD -,
-               HEAD.MOD < [ LOCAL intersective-mod & 
-                        [ CAT [ HEAD noun,
-                            VAL [ COMPS < >,
-                              SUBJ < >,
-                              SPR < > ] ],
-                          CONT.HOOK.INDEX #index ] ] > ],
-             CONT.HOOK [ LTOP #ltop,
-                 INDEX event ] ],
-         LKEYS.KEYREL.ARG1 #index ] ].
-|#
 
 classifier := +jd.
+sortal-cl := classifer.
+mensural-cl := classifer.
 
 basic-classifier-lex := norm-ltop-lex-item & single-rel-lex-item & 
                         intersective-mod-lex & no-icons-lex-item &

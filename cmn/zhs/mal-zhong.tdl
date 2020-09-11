@@ -21,7 +21,8 @@
 
 pred-adj-lex :+  [SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD noun]
 """
-this is the lexical type for predicative adjectives, and we are constraining it to require only noun subjects. This might be enough for LVL1, must check.
+this is the lexical type for predicative adjectives, and we are constraining it 
+to require only noun subjects. This might be enough for LVL1, must check.
 """
 .
 
@@ -33,7 +34,11 @@ this is the lexical type for predicative adjectives, and we are constraining it 
 
 qpart-mal-lex-item := spart-lex-item & nonque-item &
 """
-This is a copy of qpart-lex-item (sentence final particle), that changed NON-LOCAL.QUE to 1-dlist (instead of 0-dlist). This change is requirering that exacly 1 question word be included in the sentence before this particle can attach. This will enable the use of mal-吗-le even after the sentence is already a question.
+This is a copy of qpart-lex-item (sentence final particle), that changed 
+NON-LOCAL.QUE to 1-dlist (instead of 0-dlist). This change is requirering that 
+exacly 1 question word be included in the sentence before this particle can 
+attach. This will enable the use of mal-吗-le even after the sentence is 
+already a question.
 """
   [ STYLE robust,
     SYNSEM [ SPART ma,
@@ -87,9 +92,13 @@ This is used for adjectival sentences to allow a copula.
 mal-bare-vp-phrase := unary-phrase & verb-no-spr-item &
 """
 To pump NPs to VPs.
-And [ EMPTY + ] on parent node to signal this VP is not a headed phrase (i.e. there no verb). This might be useful, for example to prevent verb-derivational rules from applied to this case (where there is no vebr). e.g. reduplication of verb, V-Not-V.
+And [ EMPTY + ] on parent node to signal this VP is not a headed phrase (i.e. 
+there no verb). This might be useful, for example to prevent verb-derivational 
+rules from applied to this case (where there is no vebr). e.g. reduplication of 
+verb, V-Not-V.
 
-Inheriting from verb-no-spr-item restricts the verb phrase being created form taking degree modifiers.
+Inheriting from verb-no-spr-item restricts the verb phrase being created form 
+taking degree modifiers.
 
 
 olist = optional or filled

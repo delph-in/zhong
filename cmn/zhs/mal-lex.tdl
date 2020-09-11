@@ -4,9 +4,6 @@
 ; instantiation of mal-lexical types
 ;
 ;
-;
-;
-;
 ;============================================================================
 
 
@@ -15,8 +12,8 @@ mal_clause_和_c := conj_-_e_le &
 using 和 to coordinate clauses.
 FIXME: this should probably be introducing the relation 也
 FIXME: This is not working the the example below because of the comma. I'm not sure we .
-<mex>他 不 学 中文 ， 和 不 学 法文 。
-<mex>他 学 中文 ， 和 学 法文 。
+<mex>他 不 学 中文  和 不 学 法文 。
+<mex>他 学 中文  和 学 法文 。
 """
   [ STEM < "和" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "和", LENGTH one ],
@@ -41,12 +38,13 @@ FIXME: this should probably be introducing the relation 也
 mal_extra_吗_qp := mal_x_-_qpart_le &
 """
 This mal 吗 is attaching to sentences that are already a question.
-<mex>  你 学习 什么 吗 ？
+<mex> 你 学习 什么 吗 ？
+<mex> 他 是 谁 吗 ？
+<mex> 他 吃不吃 肉 吗 ？ 
 """
   [ STEM < "吗" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吗", LENGTH one ],
     TRAITS native_token_list ].
-
 
 
 mal_apred_是_cop := mal_v_adj_cop_le &
@@ -57,4 +55,45 @@ This 是 is a special copula that predicates over adjectival phrases. This is ge
 """
   [ STEM < "是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
+    TRAITS native_token_list ].
+
+
+mal_degree_一点儿_r_1 := adv_-_deg-pre_le &
+"""
+This lexical entry enables the use of 一点儿 as a degree modifier.
+It should be 有点儿 instead, and has a confusing parallelism with English
+(e.g. I am a little bit tired.)
+<mex>我 一点儿 累 。
+"""
+  [ STEM < "一点儿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_有点儿_a_1_rel",
+    TRAITS native_token_list ].
+
+
+mal_degree_一点_r_1 := adv_-_deg-pre_le &
+"""
+This lexical entry enables the use of 一点 as a degree modifier.
+It should be 有点 instead, and has a confusing parallelism with English
+(e.g. I am a little bit tired.)
+<mex>我 一点 累 。
+"""
+  [ STEM < "一点" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_有点_a_1_rel",
+    TRAITS native_token_list ].
+
+
+
+mal_了_pfv := pfv-marker &
+"""
+This is a mal entry for 了 that allows it to join predicated that can't take
+any aspect particles. This includes, for example, the copula 是. 
+[FIXME] I'm happy but unsure why this is not applying to predicative adjs.
+Predicative adjs have the same non-lzg.
+<mex> 你 是 了 学生
+"""
+  [ STEM <"了">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
+    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG no-lzg ] >,
     TRAITS native_token_list ].

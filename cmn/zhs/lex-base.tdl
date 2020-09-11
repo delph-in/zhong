@@ -34,6 +34,15 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "啊", LENGTH one ],
     TRAITS native_token_list ].
 
+呀_crs := crs_le &
+"""
+Sentence final particle equivalent to 啊 after a vowel, expressing surprise or doubt
+<ex>  什么 时候 出发 呀 ？
+"""
+  [ STEM <"呀">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "啊", LENGTH one ],
+    TRAITS native_token_list ].
+
 啦_crs := crs_le & 
   [ STEM <"啦">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "啦", LENGTH one ],
@@ -55,12 +64,6 @@
     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le ] >,
     TRAITS native_token_list ].
 
-了_pfv_robust := pfv-marker &
-  [ STEM <"了">,
-    STYLE robust,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
-    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG zhe+guo ] >,
-    TRAITS native_token_list ].
 
 着_dur := dur-marker &
   [ STEM <"着">,
@@ -203,6 +206,7 @@
 	    LKEYS [ ALTKEYREL.PRED every_q_rel ] ],
    TRAITS native_token_list ].
 
+
 有人_n := n_-_pr-q_le &
  [ STEM < "有人" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH more-than-one ],
@@ -228,7 +232,7 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "这", LENGTH two ],
     SYNSEM.LKEYS.ALTKEYREL.PRED prox_dem_q_rel,
     TRAITS native_token_list ].
-;    SYNSEM.LKEYS.KEYREL.PRED place_n_rel,
+
 
 这里_p := n_-_pr-loc_le &
   [ STEM < "这里" >,
@@ -281,11 +285,13 @@
 几_d_q := d_-_wh_le &
   [ STEM < "几" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "几", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED _how-many_q_rel,
     TRAITS native_token_list ].
 
 多少_d_q := d_-_wh_le &
   [ STEM < "多少" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "多", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED _how-many_q_rel,
     TRAITS native_token_list ].
 
 多少_n_q := n_-_pr-wh_le &
@@ -388,10 +394,23 @@
 ;;; Special Verbs
 ;;;;;;;;;;;;;;;;;;;
 
+
+; 把守_v_1 := v_np_le &
+;   [ STEM < "把守" >,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "把", LENGTH two ],
+;     SYNSEM [ LOCAL.CAT.HEAD.LZG no-lzg,
+;              LKEYS.KEYREL.PRED "_把守_v_1_rel" ],
+;     TRAITS native_token_list ].
+
+
 是_v := v_np_cop_le &
+"""
+LMC added 'LOCAL.CAT.HEAD.LZG no-lzg' because aspect particles were not being blocked on the copula.
+"""
   [ STEM < "是" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "是_v_cop_rel",
+    SYNSEM [ LOCAL.CAT.HEAD.LZG no-lzg,
+	     LKEYS.KEYREL.PRED "是_v_cop_rel" ],
     TRAITS native_token_list ].
 
 是_v_2 := v_inv-shide_le &
@@ -771,7 +790,8 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LKEYS.KEYREL.PRED _de_p_assoc_rel,
     TRAITS native_token_list ].
 
-的_comp := x_-_rel-de_le & 
+的_comp := x_-_rel-de_le &
+""" Complementizer 的, used for relative clauses."""
   [ STEM < "的" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "的", LENGTH one ],
     TRAITS native_token_list ].

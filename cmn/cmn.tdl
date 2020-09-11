@@ -6,24 +6,83 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; SSH 2015-04-28: LE-ZHE-GUO restriction 
-;; This is Mandarin-speicific
+
+;================================================================================
+; This file (cmn.tdl) exists to store syntactical information that pertains only
+; Mandarin Chinese (i.e. where it can differ from Cantonese and other varieties)
+; -- expected to be true for both Traditional (zht) and Simplified (zhs).
+;
+; Currently, this includes mainly information on ASPECT and CLASSIFIERS.
+;================================================================================
+
+
+;================================================================================
+; ASPECT
+;================================================================================
+
 +vjp :+ [ LZG lzg ].
+
 lzg := avm. 
-le := lzg.
-zhe := lzg.
-guo := lzg.
-no-lzg := lzg.
-le+zhe := le & zhe.
-le+guo := le & guo.
-zhe+guo := zhe & guo.
-le+zhe+guo := le & zhe & guo.
-basic-pred-adj-lex :+ [ SYNSEM.LOCAL.CAT.HEAD.LZG no-lzg ]. 
+
+le := lzg
+"""
+LZG (LE-ZHE-GUO) restriction: can, at least, take LE.
+""".
+
+zhe := lzg
+"""
+LZG (LE-ZHE-GUO) restriction: can, at least, take ZHE.
+""".
+
+guo := lzg
+"""
+LZG (LE-ZHE-GUO) restriction: can, at least, take GUO.
+""".
+
+no-lzg := lzg
+"""
+LZG (LE-ZHE-GUO) restriction: cannot take any aspectual particle (e.g. 是).
+""".
+
+le+zhe := le & zhe
+"""
+LZG (LE-ZHE-GUO) restriction: can, at least, take LE and ZHE.
+""".
+
+le+guo := le & guo
+"""
+LZG (LE-ZHE-GUO) restriction: can, at least, take LE and GUO.
+""".
+
+zhe+guo := zhe & guo
+"""
+LZG (LE-ZHE-GUO) restriction: can, at least, take ZHE and GUO.
+""".
+
+le+zhe+guo := le & zhe & guo
+"""
+LZG (LE-ZHE-GUO) restriction: can take LE, ZHE and GUO.
+""".
+
+
+basic-pred-adj-lex :+ [ SYNSEM.LOCAL.CAT.HEAD.LZG no-lzg ]
+"""
+This essentially blocks predicative adjectives from taking any kind of aspect.
+This is being done here (and not in zhong-lextypes.tdl) since this is seen as 
+a Mandarin only restriction.
+[FIXME] Need to ask Joanna whether or not this restriction would also happen
+in Cantonese and, if so, more this higher. It is confusing to be split.
+""". 
 
 
 ;; SSH 2015-04-28: verbal particles
 
-pfv-marker := aspect-markers & 
+pfv-marker := aspect-markers &
+"""
+This is used for 了, to mark perfective aspect.
+Aspect markers such as 了 take a complement  (currently +vj)
+
+"""
  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
 				    LOCAL [CONT.HOOK.INDEX.E.ASPECT perfective,
                                            CAT.HEAD +vj] ] > ] ].
@@ -45,8 +104,22 @@ dur-marker := aspect-markers &
 
 ;================================================================================
 ; LE TYPES
+;
 ;================================================================================
 crs_le := spart-lex-item & nonque-item &
+"""
+CRS stands for 'Currently Relevant State', as proposed by Li & Thompson (1981).
+It refers to the uses of 了 (LE) and it broadly encompasses multiple uses:
+(1) change of state, (2) corrects a wrong assumption, (3) reporting progress
+(4) reports what will happen next, (5) marks the speaker's total contribution
+to the conversation at that point.
+
+[FIXME]However 'crs' is being used to refer to sentence final particles in 
+general this should be changed eventually. E.g. 吧_crs, 啊_crs, 啦_crs, etc.
+crs_le is possibly not the right type for all these. 
+We should probably create more subtypes of spart-lex-item, and make sure
+we can encode the possible combinations of sent-final-particles.
+"""
   [ STYLE robust,
     SYNSEM [ R-PERIPH +,
 	     SPART crs,

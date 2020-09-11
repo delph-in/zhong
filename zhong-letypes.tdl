@@ -1,10 +1,10 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Entry Types of the Chinese Languages
-;;; created at:
-;;;     Fri Oct 31 2014
-;;; created by Sanghoun Song (SSH) and 
-;;;            Zhenzhen Fan (ZZF)
+;;; First created: Fri Oct 31 2014
+;;; By Sanghoun Song (SSH) and Zhenzhen Fan (ZZF)
+;;;
+;;; Edited by: Luis Morgado da Costa (LMC) 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -13,18 +13,31 @@
 ; Possibly nonque-item and similar should be moved up the hierarchy.
 ; Folllowing the ERG, this file can have features added to types, but not
 ; multiple inheritance ...  (try to email DAN+developers to know why).
+; 
+; LKB conception there is a layer 'pre terminals' single hinheritance guys
+; in Ann's implementation -- this was done more efficiencly if it was a 
+; separate layer (only for types that occur in the lexicon).  But Dan has 
+; not obbeyed this except for verbs. Only the main verbs have... 
+; Lextypes... Only the naming convention is now in place for everything _le
+; this is not a rule, and everything should work fine if we don't do this
+; the LKB has become more and more efficient over time.
+; ACE probably doesn't care (we can ask Woodley).
 ;
-; this is the level immediately above lexicon (to allow  
-;  a clean lexicon file, without features). The lexicon
-; file should not carry more than the minimal info e.g STEM/ RELATION
+; This is the level immediately above lexicon (to allow a clean lexicon
+; file, without features). The lexicon file should not carry more than
+; the minimal info e.g STEM/ RELATION
 ;============================================================================
 
 
+;============================================================================
+; PERSONAL PRONOUN TYPES
+;============================================================================
 n_-_pr-1sg_le := personal-pronoun-lex & speaker-lex-item &
-"""1st person pronoun
+"""
+1st person pronoun.
 <ex>我 吃 苹果
 <nex>这 我 吃 苹果
-<ex>红 的 我 吃 苹果
+<ex>红 的 我 吃 苹果  [????]
 should be modifiable"""
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1sg ].
 
@@ -49,53 +62,331 @@ n_-_pr-3sg_le := personal-pronoun-lex & basic-icons-lex-item &
 n_-_pr-3pl_le := personal-pronoun-lex & basic-icons-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl ].
 
+
+
 n_-_pr-wh_le := wh-pronoun.
+
 n_-_pr-q_le := quant-pronoun-lex & nonque-item.
 
-n_-_pr-refl_le := attr-adj-posthd-lex & nonque-item.
+a_-_bound-posthead_le := attr-adj-posthd-lex & nonque-item.
+
+a_-_first-bound-posthead_le := a_-_bound-posthead_le &
+"""
+This is attempting MEN 们 to attach before everything else.
+This includes other modifying morphemes (e.g. currently 自己)  
+But also any determiner phrases.
+
+LOCAL.CAT.VAL [SPR 1-list ]  ====> the SPR of what I modify must be non empty 
+
+[FIXME] This is stil able to apply to noun-noun compounds as if it's not modified. 
+This also needs to be blocked.
+
+ 每 个 国家 都 有 们 的 风俗 。
+"""
+  [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL [ CAT.VAL [SPR 1-list],
+					 CONT.HOOK.INDEX.SORT common-s],
+; 					 CONT.HOOK.INDEX.SORT nontime-s],
+				 MODIFIED notmod] >].
 
 n_-_pr-loc_le := loc-pronoun-lex & nonque-item.
 
-;; SSH/ZZF 2014-11-26
-;; Currently, general nouns such as dongxi (东西), shi (事).
-; n_-_le := common-noun-lex & nonque-item & normal-lex.
-n_-_le := common-noun-lex & nonque-item.
 
-;;ZZF 2015-5-3 temporary for locational nouns (not proper nouns). To be fixed when have time
-n_-_loc_le := common-noun-lex & loc-lex-item & nonque-item.
+;============================================================================
+; COMMON NOUN TYPES
+;============================================================================
+; The main difference of nouns is the way they can/have to be specified over
+;============================================================================
+n_-_le := common-noun-lex & nonque-item
+"""
+Currently, general nouns such as dongxi (东西), shi (事).
+these nouns can 
+这里 东西 很 贵 。  >>> parse
+东西 很 贵 。  >>> parse
+这 东西 很 贵 。  >>> parse
+这 个 东西 很 贵 。   >>> parse
+个 东西 很 贵 。  <<<<<<<<<<< this it doesn't parse (OK, should not parse in SUBJ position)
+我 看 东西 。  >>> parse
+我 看 这 东西 。  >>> parse
+我 看 这 个 东西 。  >>> parse
+我 看 个 东西 。  <<<<<<<<<<< this it doesn't parse  （should, mean 一个）
+东西 看 我 。  >>> parse
+这 东西 看 我 。  >>> parse
+这 个 东西 看 我 。  >>> parse
+个 东西 看 我 。  <<<<<<<<<<< this it doesn't parse  (OK, should not parse in SUBJ position)
 
-n_-_c_le := count-noun-lex & nonque-item.
+
+个 苹果 (CL-NOUN) with nothing on the left  are always indefinite.
+一 个 苹果 (NUM-CL-NOUN) with nothing on the left  are always indefinite.
+
+有 'there is' existential must be followed by indefinite NPs. 
+for the verb this is not the case 我有这两个苹果，要不要一个？ this is likely possible.
+
+把 construction cannot take CL-NOUN, but can NUM-CL-NOUN or DET-CL-NOUN  
+
+一个苹果 in SUBJ position is generally not fine。 Exception would include:
+一 个 人 会 吃 三十 苹果 。  (it has a capacity reading, it might be the case
+ that these capacity readings must be aspectless; ) 一 个 here means 'each 
+person' and not 'one person' when in subject position.
+
+A count noun suffixed with -men 们 is interpreted as definite (for sure????)
+他 会 去 找 孩子们。
+count nouns suffixed with -men 们 cannot be preceded by a [Numeral + Classifier] sequence
+even when the numeral is greater than ‘one’ (Iljic 1994, 2001, Li 1998, among others),
+
+
+** Massifiers appear as nouns
+杯_n_1 := n_-_le &  （container)
+瓶_n_1 := n_-_le &    (container)
+(e.g. 箱 by itself it doesn't appear as N)
+
+三 杯 水     （杯 is a measure word) 
+三 杯 的 水   (杯 is a measure word) 
+* 我 买 了 杯 的 水   (杯 is a measure word) 
+
+Can we think of massifiers NOUNS that MUST take a numeral and be fully specified?  Probably not...
+
+
+Weight / Mass (Massifiers)
+磅	bàng (bang)	pound
+吨 (噸)	dūn (dun)	ton
+公斤	gōngjīn (gongjin)	kilogram
+斤	jīn (jin)	1/2 kilogram ( 1/2 kilo of apples 一斤苹果)
+克	kè (ke)	gram
+两 (兩)	liǎng (liang)	50 grams
+千克	qiānkè (qianke)	kilogram
+These also can use DE 的   
+三 磅 （的） 水 
+三 磅 （的） 肉 
+* 我们 需要  磅 （的） 水  (the numeral is necessary)
+* 我们 需要  磅 （的） 肉  (the numeral is necessary)
+
+
+
+
+Time
+辈	bèi (bei)	lifetime (辈子)
+点	diǎn (dian)	o'clock
+分	fēn (fen)	minute
+刻	kè (ke)	quarter, 15 minutes
+秒	miǎo (miao)	second
+年	nián (nian)	year
+日	rì (ri)	day
+时辰 	shíchén (shichen)   2 hours
+世纪 	shìjì (shiji)	century
+岁 	suì (sui)	years old
+天	tiān (tian)	day (十天时间)
+小时 	xiǎoshí (xiaoshi)	hour
+载 	zǎi (zai)	year
+钟 	zhōng (zhong)	hour (found in southern Chinese)
+
+
+岁??? THEY ARE NOT 'REAL' NOUNS / JS: 'or you can say they are nouns that do not take CLs'
+ 
+Some of these CLs can reduplicate to mean 'every X'
+苹果个个都很好吃  （JS says everyone will accept this one）
+？个个苹果都很好吃  (this one is controversial)
+Normally CLs can reduplicate, while nouns can't （maybe only 人人). 
+So this is an argument to see words like 天 or 年 as CLs.
+
+三 年 的 痛苦
+？ 三 年 痛苦   (in a list of misfortunes this can possibly be ok)
+
+
+
+你 要 哪 个 水果 ？
+你 要 哪 一 个 水果 ？   looks indefinite but it's not the same meaning (Which one)
+你 要 哪 两 个 水果 ？   looks indefinite but it's not the same meaning (Which two)
+？ 你 要 哪 水果 ？  JS 'a little bit strange'
+
+
+你是哪年出生的？
+？你是哪个年出生的？   （1982, cow？）
+？你是哪一年出生的？
+*你是哪一个年出生的？
+
+
+哪国人    
+你是哪国的人？  
+JS thinks that this MIGHT be an X-国  where X is replaced by 哪
+哪天？ 哪月？
+
+
+How to say 3 countries signed a treaty?  (3guo signed)
+
+
+几月 （which month)  几个月 (how many months)
+
+
+JS：
+2 x common nouns: count and mass
+kinship terms (哥哥， 老师)
+proper names
+
+
+这 苹果 很 贵 。 WHEN can you use the DEM without classifier?  rint and lisa wrote about 'zhei'
+这 水 很 脏 
+* 这 三 苹果
+
+""".
+
+
+n_-_c_le := count-noun-lex & nonque-item
+"""
+e.g. nouns like 山 (only listed as n_-_c_le countable noun) 
+These nouns are marked as (i.e. BARE -)
+However it is still going through bare-np-phrase (I assume bare-np-phrase
+should only accept BARE + ???). But the follow up question would be: are
+there really BARE - nouns in Mandarin (things that can't be bare?)?
+
+山 很 高 。
+这 个 山 很 高 。
+这 个 山 很 高 。
+""".
 
 n_-_m_le := mass-noun-lex & nonque-item
 """
-Includes mass nouns such as: 饭, 
+Includes mass nouns such as: 水， 米饭， 饭
+There are only 11 of such nouns... which sounds slightly ridiculous.
 """.
 
-;; proper names
-n_-_pn_le := proper-name-lex & nonque-item.
-n_-_l_pn_le := loc-name-lex & nonque-item.
-n_-_l_pn-bound_le := loc-name-lex & bound-lex-item & nonque-item.
-n_-_h_pn_le := human-name-lex & nonque-item.
-n_-_s_pn_le := sir-name-lex & nonque-item.
 
-n_-_h_le := common-noun-lex & nonque-item & human-lex-item.
-n_-_tm-bound_le := bound-time-noun-lex & nonque-item.
-n_-_tm_le := time-noun-lex & nonque-item.
+n_-_loc_le := common-noun-lex & loc-lex-item & nonque-item
+"""
+ZZF 2015-5-3 temporary for locational nouns (not proper nouns). To be fixed when have time
+
+JS: normally these don't use classifiers, in discourse. 
+loc-lex-item only introduces the following constraints:
+[SYNSEM.LOCAL.CAT.HEAD.LOC +]
+However this is never used elsewhere in the grammar
+""".
 
 
+n_-_h_le := common-noun-lex & nonque-item & human-lex-item
+"""
+Includes nouns such as 爷爷, 爸爸, 老师
+"""
+.
+
+n_-_tm-bound_le := bound-time-noun-lex & nonque-item
+"""
+Currently, this type includes only: 点, 分, 分钟. 
+This type should like be used for nouns that must be preceeded by a number,
+and that cannot be used by themselves.
+""".
+
+
+n_-_tm_le := time-noun-lex & nonque-item
+"""
+Includes nouns such as 八七年, 八点, 六二四年, 六日, 冬天, 古代, 周五
+They all seem to indicate time points.
+""".
+
+
+
+
+;============================================================================
+; PROPER NOUN TYPES
+;============================================================================
+n_-_pn_le := proper-name-lex & nonque-item
+"""
+This seems to be used as a catch-all class for proper nouns.
+This might have been used for entries that were not sorted. 
+""".
+
+n_-_l_pn_le := loc-name-lex & nonque-item
+"""
+This is used for locations, including regions and country names. But also for 
+some company names, such as Bank of China (中银) and other basic locations 
+such as estuary (入海口). The last one probably should be deleted at some point.
+According to the comments left on loc-name-lex, this was originally to
+prevent sentences such as *我 要 去 李四 (e.g. 李四 is the name of a person)
+But this is actually not being blocked. Check what else this might be doing.
+[FIX]
+""".
+
+n_-_l_pn-bound_le := loc-name-lex & bound-lex-item & nonque-item
+"""
+This is only being used for capital (都, du). I wonder is this is really 
+necessary.
+""".
+
+n_-_h_pn_le := human-name-lex & nonque-item
+"""
+Proper names for people. e.g. 张三, 朱莉娅罗伯茨 (Julia Roberts), John, Lee.
+This seems to include both first and last names, as well as entries for both
+firs+last names as a single token.
+""".
+
+
+n_-_s_pn_le := surname-lex & nonque-item
+"""
+This includes a list of a few of the common surnames. 
+""".
+
+
+
+;============================================================================
+; CLASSIFIER TYPES
+;============================================================================
 c_-_le := classifier-lex & nonque-item.
 
-a_-_num_le := num-adj-lex & nonque-item.
+
+
+;============================================================================
+; ADJECTIVAL TYPES
+;============================================================================
+a_-_num_le := num-adj-lex & nonque-item
+"""
+This type refers to numbers, percentages and a couple other special numeral
+entries (e.g. ①).
+""".
+
 a_-_att_le := attr-adj-lex & nonque-item
 """
-This type refers to adjectives that can directly modify a noun without a relative clause.
-This is not very productive, so we are currently not doing this conversion by a lexical rule.
+This type refers to adjectives that can directly modify a noun without a 
+relative clause. This is not very productive, so we are currently not doing 
+this conversion by a lexical rule.
 <ex>  贝贝 是 我们 的 好 朋友
 """.
-a_-_pred_le := pred-adj-lex & nonque-item.
+
+a_-_pred_le := pred-adj-lex & nonque-item
+"""
+This types refers to adjectives that can directly predicate without degree
+modifiers. This generally should include some idiomatic phrases that are
+adjectival in their essence, and a restricted number of adjectives.
+<???> 我们  一起。   一起 is listed but it should be an ADV
+
+[FIXME] This should be the exception to our rule that all adjs must have
+SPR empty. This was perhaps completely unconstrained at some point in the 
+past (to raise parsing %) and now we have over-constrained it to never
+allow this. 
+This type currently holds around 1700 entries, and I believe most might 
+incorrectly typed.
+This type includes A LOT of types that should probably be verbs, 
+and even many entries that are SPECIFIED over (e.g. negated) which 
+should not really come here... because the negation would 'specify' the 
+ADJ enough.
+This type fits best  idioms such as 一丝不苟 (yì sī bù gǒu) [idiom. to do 
+something strictly according to the rules or in  a meticulous manner]）
+很一丝不苟的男士
+
+we possibly want to create subtypes:
+a_-_nonopt_spr or  a_-_spr
+a_-_opt_spr
+a_-_no_spr
+""".
+
 a_-_aabb_le := adj-aabb-lex & nonque-item.
+
 a_-_abb_le := adj-abb-lex & nonque-item.
 
+
+
+
+
+;============================================================================
+; ADVERBIAL TYPES
+;============================================================================
 adv_-_deg-pre_le := deg-int-adv-vp-pre & nonque-item.
 adv_-_s-pre-no-rel_le := int-adv-s-pre-no-rel & nonque-item.
 adv_-_s-pre-rel_le := int-adv-s-pre-rel & nonque-item.
@@ -119,31 +410,79 @@ adv_-_polar2_contracted_le := a-not-a-bu-contracted-adv-lex.
 adv_-_polar2_ab-not-ab_le := ab-not-ab-bu-adv-lex.
 adv_-_tq_le := tag-adv-lex.
 
+;============================================================================
+; VERB TYPES
+;============================================================================
 
-v_weather_le := v_weather_type_lex & nonque-item.
-v_-_le := v_intrans-verb-lex & nonque-item.
-v_-_spr_le := v_intrans-verb-spr-lex & nonque-item.
-v_np_le := v_trans-verb-lex & nonque-item & norm-comps1-lex.
+v_-_le := v_intrans-verb-lex & nonque-item
+"""
+Simple intransitive verbs.
+""".
 
+v_np_le := v_trans-verb-lex & nonque-item & norm-comps1-lex
+"""
+Simple transitive verbs (i.e. take NPs as complements).
+""".
 
-
-v_np-spr_le := v_trans-verb-spr-lex & nonque-item.
 v_np-np_le := ditrans-verb-lex & nonque-item.
+v_s_le := v_s-comp-lex & nonque-item.
+
+
+;========================================
+; PSYCHOLOGICAL VERBS (aka 心理动词)
+;========================================
+v_-_spr_le := v_intrans-verb-spr-lex & nonque-item
+"""
+Intransitive psychological verbs.
+Psychological verbs (aka 心理动词) can take a degree modifier.
+The degree modifiers are currently done as specifiers.
+e.g.: 抱歉
+""".
+
+v_np-spr_le := v_trans-verb-spr-lex & nonque-item
+"""
+Basic Transitive psychological verbs.
+Psychological verbs (aka 心理动词) can take a degree modifier.
+The degree modifiers are currently done as specifiers.
+e.g.: 喜欢, 想, 爱
+""".
+
+v_s-spr_le := v_s-comp-spr-lex & nonque-item
+"""
+Transitive psychological verbs, that can take sentencial complements.
+Psychological verbs (aka 心理动词) can take a degree modifier.
+The degree modifiers are currently done as specifiers.
+喜欢, 想
+""".
+
+v_vp_sequi-spr_le := v_sequi-spr-lex & nonque-item
+"""
+Subject-control transitive psychological verbs.
+These verbs can take VP complements, and the subject of the main verb 
+will be indexed with the subject of the VP complement.
+
+Psychological verbs (aka 心理动词) can take a degree modifier.
+The degree modifiers are currently done as specifiers.
+高兴, 喜欢, 想
+""".
+
+
+;========================================
+; VERBS w/PREPOSITIONAL COMPLEMENTS
+;========================================
 v_pp-np_le := ditrans-pp-verb-lex & nonque-item.
 v_prevpp-np_le := ditrans-preverbal-pp-verb-lex & nonque-item.
 v_np-pp_le := trans-loc-verb-lex & nonque-item.
-
-v_s_le := v_s-comp-lex & nonque-item.
-v_s-spr_le := v_s-comp-spr-lex & nonque-item.
 v_pp-s_le := pp-s-comp-verb-lex & nonque-item.
 v_pp-pre_le := v_pp-lex & nonque-item.
+
+
 
 v_np_cs_le := cp-subj-verb-lex & nonque-item.
 v_np-ap_le := np-ap-comp-verb-lex & nonque-item.
 v_bap-ap_le := np-ap-comp-ba-verb-lex & nonque-item.
 
 v_vp_sequi_le := v_sequi-lex & nonque-item.
-v_vp_sequi-spr_le := v_sequi-spr-lex & nonque-item.
 
 v_np-vp_oequi_le := v_np-vp_oequi-lex & nonque-item.
 v_np-vp_sequi_le := v_np-vp_sequi-lex & nonque-item.
@@ -157,19 +496,31 @@ v_np_you_le := v_exist-lex & nonque-item.
 v_vp_aux_le := v_aux-aux-lex & nonque-item.
 
 v_np_cop_le := cop-verb-lex & nonque-item.
+
 v_shide-adp_le := shi-mod-int-dep-lex & nonque-item.
 v_shide-adv-scop_le := shi-mod-scop-dep-lex & nonque-item.
 v_shide-aux_le := shi-aux-dep-lex & nonque-item.
 v_shide-sbj_le := shi-subj-dep-lex & nonque-item.
-;v_shide_le := cop-verb-cpcomp-lex.
 v_inv-shide_le := cop-verb-cpsubj-lex & nonque-item.
 
 v_np_light_le := v_light-verb-lex & nonque-item.
 v_np-vp_light_le := v_np-vp_light-lex & nonque-item.
 
 
+;========================================
+; OTHER (SPECIAL) VERBS
+;========================================
+v_weather_le := v_weather_type_lex & nonque-item
+"""
+Only for 下, probably for 下雨. 
+Not sure what is special with it.
+[FIXME] check
+""".
 
 
+;============================================================================
+; CONJUCTION TYPES
+;============================================================================
 conj_-_le := conj-lex & nonque-item.
 conj_-_e_le := conj-e-lex & nonque-item.
 conj_-_x_le := conj-x-lex & nonque-item.
@@ -177,6 +528,10 @@ conj_-_sub-pre_le := subord-conj-pre-lex & nonque-item.
 conj_-_sub-prepreh_le := subord-conj-pre-preh-lex & nonque-item.
 conj_-_sub-post_le := subord-conj-post-lex & nonque-item.
 
+
+;============================================================================
+; DETERMINER TYPES
+;============================================================================
 d_-_wh_le := wh-determiner-lex.
 d_-_wh-nocls_le := wh-determiner-nocls-lex.
 
@@ -188,6 +543,11 @@ d_-_d-prox-nocls_le := prox_demons-det-nocls-lex & nonque-item.
 d_-_d-dist-nocls_le := dist_demons-det-nocls-lex & nonque-item.
 d_-_prt_le := partitive-lex & nonque-item.
 
+
+;============================================================================
+; PREPOSITION TYPES
+;============================================================================
+
 ;;pp modifies np
 p_-_n-mod_le := prep-n-mod-lex & nonque-item.
 ;;pp modifies verb
@@ -198,16 +558,55 @@ p_-_v_le := prep-vmod-lex & nonque-item.
 p_-_v-pre_le := prep-vmod-pre-lex & nonque-item.
 
 p_loc_zai_le := basic-loc-lex & nonque-item.
-p_loc_post_le := basic-postp-lex & nonque-item. 
+
+p_loc_post_le := basic-postp-lex & nonque-item
+"""
+This is a type seems to be for locative postpositions like 里 边 面.
+This should also include more complex postpositions like 里边儿.
+However, 里边儿 can also be used as full-locative noun.
+
+""".
 
 ;; SSH 2015-04-28: This is Mandarin-specific.
 ;; Dialect-specfic Items are constrained directly.
 ;;x_-_crs_le := crs-lex-item.
 
-x_-_assoc-de-n_le := de-assoc-n-lex & nonque-item.
-x_-_assoc-de-v_le := de-assoc-v-lex & nonque-item.
 
-x_-_rel-de_le := de-comp-lex & nonque-item.
+;============================================================================
+; 的 (DE) TYPES
+;============================================================================
+
+x_-_assoc-de-n_le := de-assoc-n-lex & nonque-item
+"""
+Associative DE combining two noun phrases.
+<ex>张三 的 朋友 哭 了
+<ex>我 的 朋友 哭 了
+<ex>他 知道 学校 的 地址
+<ex>他 解决 了 产品 的 质量 的 问题
+When a noun phrase has >1 DE phrase modifiers, we get bracketing ambiguity, 
+e.g. [产品 的 [质量 的 问题]] or [[产品 的 质量] 的 问题]. The entry allows
+both interpretations, leaving the ambiguity for statistical ranking model to determine later.
+""".
+
+x_-_assoc-de-v_le := de-assoc-v-lex & nonque-item
+"""
+Associative DE linking a clause to a head noun.  
+The head noun is neither subject nor the complement of a verb in the clause.
+<ex>他 写 书 的 地方
+<ex>我 喜欢 他 写 书 的 地方
+""".
+
+x_-_rel-de_le := de-comp-lex & nonque-item
+"""
+This is the type for Complementizer 的, used for relative clauses.
+It introduces no semantics, and links extracted arguments (SUBJ or COMPS).
+<ex>游泳 的 人
+<ex>他 喜欢 的 人
+<ex>吃 的 人
+<nex>他 的 猫
+""".
+
+
 x_-_altobj-de_le := de-4shi-lex & nonque-item.
 
 x_bei_le := v_bei_type_lex & nonque-item.
@@ -221,16 +620,20 @@ adv_-_ij_le := interjection-lex & nonque-item.
 adv_-_ij-pre_le := interjection-pre-lex & nonque-item.
 
 
+;============================================================================
+; QUESTION WORD TYPES
+;============================================================================
+
 ;;question words
 ;qestion particle ma
 x_-_qpart_le := qpart-lex-item.
 x_-_fqpart_le := frag-qpart-lex-item.
+
+
 ;
 adv_-_scop_q_le := scop-adv-lex & question-item.
 adv_-_scop-post_q_le := scop-adv-posthd-lex & question-item.
 n_-_tm_q_le := time-noun-lex & question-item.
 a_-_pred_q_le := pred-adj-lex & question-item.
 adv_-_vp-pre_q_le := int-adv-vp-pre & question-item.
-
-
 

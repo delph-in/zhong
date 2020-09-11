@@ -1,29 +1,130 @@
-;;; -*- Mode: tdl; Coding: utf-8; -*-
-
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; First created in 2012, by Francis Bond
 ;;;
-;;; Copyright (c) 2012 Francis Bond (bond@ieee.org); 
-;;; see `LICENSE' for conditions.
-;;;
+;;; Edited by, Luis Morgado da Costa (LMC) 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;; reduplication: 
-; 她 高 高 -> 她 高々
-; 她 高高   *Not currently matched* (many existing lexicon entries -n/v/a)
-; FCB ! ([^. …]+) \1 
 
-redup_sp := token_mapping_rule  &
-[ +CONTEXT < [ +FORM #form & ^(.+)$, +FROM #from  ],
+;============================================================================
+; TOKEN-MAPPING REDUPLICATION RULES
+;============================================================================
+
+redup_aa := token_mapping_rule  &
+"""
+AA reduplication (non-spaced). The chart is ambiguated by adding new  choices 
+(by using +CONTEXT instead of +INPUT).
+
+Single  tokens that seem to have reduplicated internally such as 高高 are 
+rewritten as 高々AA.
+
+This rule applies to any token that fits the regex. Filtering then happens 
+through both irules.tdl (matching of patterns, e.g. 々AA, 々ABAB) and later 
+by zhong-lextypes.tdl (that redefines types).
+
+This rule is mostly indented for adjective and verb types. 
+<ex>她  高高 
+<ex>她 看看
+"""
+ [ +CONTEXT < [ +FORM  ^(.)\1$,
+	        +FROM #from, +TO #to ] >,
+   +OUTPUT  < [ +FORM "${C1:+FORM:1}々AA",
+                +TRAIT native_trait,
+                +CLASS redup_le,
+	        +FROM #from, +TO #to ] >,
+  +POSITION "O1@C1" ].
+
+
+redup_aa_sp := token_mapping_rule  &
+"""
+AA reduplication separated by a space. The chart is ambiguated by adding 
+new choices (by using +CONTEXT instead of +INPUT).
+
+Adjacent reduplicated tokens such as 高 高 are rewritten as 高々AA.
+
+This rule applies to any token that fits the regex. Filtering then happens 
+through both irules.tdl (matching of patterns, e.g. 々AA, 々ABAB) and later 
+by zhong-lextypes.tdl (that redefines types).
+
+
+This rule is mostly indented for adjective and verb types. 
+<ex>她  高 高 
+<ex>她 看 看
+"""
+[ +CONTEXT < [ +FORM #form & ^(.)$, +FROM #from  ],
              [ +FORM #form, +TO #to ] >,
-  +OUTPUT  < [ +FORM "${C1:+FORM:1}々",
+  +OUTPUT  < [ +FORM "${C1:+FORM:1}々AA",
 	       +TRAIT native_trait,
 	       +CLASS redup_le,
 	       +FROM #from, +TO #to ] >,
   +POSITION "C1<C2, O1@C1, O1@C2" ].
 
-redup := token_mapping_rule  &
- [ +CONTEXT < [ +FORM  ^(.)\1$,
+
+redup_aabb := token_mapping_rule  &
+"""
+AABB reduplication (non-spaced). The chart is ambiguated by adding new  
+choices (by using +CONTEXT instead of +INPUT).
+
+Single tokens that seem to have reduplicated internally such as 漂漂亮亮 are 
+rewritten as 漂亮々AABB.
+
+This rule applies to any token that fits the regex. Filtering then happens 
+through both irules.tdl (matching of patterns, e.g. 々AA, 々ABAB) and later 
+by zhong-lextypes.tdl (that redefines types).
+
+This rule is mostly indented for adjective types. 
+<ex>她 漂漂亮亮
+"""
+ [ +CONTEXT < [ +FORM  ^(.)\1(.)\2$,
 	        +FROM #from, +TO #to ] >,
-   +OUTPUT  < [ +FORM "${C1:+FORM:1}々",
+   +OUTPUT  < [ +FORM "${C1:+FORM:1}${C1:+FORM:2}々AABB",
                 +TRAIT native_trait,
                 +CLASS redup_le,
 	        +FROM #from, +TO #to ] >,
   +POSITION "O1@C1" ].
+
+
+redup_abab := token_mapping_rule  &
+"""
+AABB reduplication (non-spaced). The chart is ambiguated by adding new  
+choices (by using +CONTEXT instead of +INPUT).
+
+Single tokens that seem to have reduplicated internally such as 考虑考虑 are 
+rewritten as 考虑々AABB.
+
+This rule applies to any token that fits the regex. Filtering then happens 
+through both irules.tdl (matching of patterns, e.g. 々AA, 々ABAB) and later 
+by zhong-lextypes.tdl (that redefines types).
+
+This rule is mostly indented for verbal types. 
+<ex>我们 考虑考虑 。
+"""
+ [ +CONTEXT < [ +FORM  ^(.)(.)\1\2$, +FROM #from, +TO #to ] >,
+   +OUTPUT  < [ +FORM "${C1:+FORM:1}${C1:+FORM:2}々ABAB",
+                +TRAIT native_trait,
+                +CLASS redup_le,
+	        +FROM #from, +TO #to ] >,
+  +POSITION "O1@C1" ].
+
+
+redup_abab_sp := token_mapping_rule  &
+"""
+AABB reduplication (non-spaced). The chart is ambiguated by adding new  
+choices (by using +CONTEXT instead of +INPUT).
+
+Adjacent reduplicated tokens such as 考虑 考虑 are rewritten as 考虑々AA.
+
+This rule applies to any token that fits the regex. Filtering then happens 
+through both irules.tdl (matching of patterns, e.g. 々AA, 々ABAB) and later 
+by zhong-lextypes.tdl (that redefines types).
+
+This rule is mostly indented for verbal types. 
+<ex>我们 考虑 考虑 。
+"""
+ [ +CONTEXT < [ +FORM #form & ^(.)(.)$, +FROM #from],
+	      [ +FORM #form, +TO #to ] >,
+   +OUTPUT  < [ +FORM "${C1:+FORM:1}${C1:+FORM:2}々ABAB",
+                +TRAIT native_trait,
+                +CLASS redup_le,
+	        +FROM #from, +TO #to ] >,
+  +POSITION "C1<C2, O1@C1, O1@C2" ].
