@@ -4,10 +4,43 @@
 ;;; to your choices file.
 ;;;
 ;;; 
-:[ \t　"'()<>\[\]{}\*\+-/#$%&=\^_`|]
+; :[ \t　"'()<>\[\]{}\*\+-/#$%&=\^_`|]
+
+;===============================================================================
+;;;;  then it adds spaces padding.
+;;;;  FCB believes that Somewhere in the lookup for things in the lexicon 
+;;;;  needs a word boundary in each side of every word, and so if the 
+;;;   punctuation does not have a space before and after it wasn't being
+;;;   processed. So we need the line that states  !^(.+)$    \1 
+;===============================================================================
+
+;===============================================================================
+; The goal of this patten is to split each sentence by normal spaces, tabs and
+; full width spaces. And substitute each token between there by itself but with
+; a space before and after it. This is necessary for a variety of preprocessing
+; steps that are unknown to the grammarian.
+;===============================================================================
+; NOTE: if by any chance a token doesn't get a space afterwards, then it will
+;       be ignored completely. This is why there must be a space before and
+;       after ' \1 '.
+;       Tabs are substituted by a space and, finally, more than one space will
+;       be substituted by a single space. 
+;===============================================================================
+:[ \t　]
 !^(.+)$								 \1 
 !\t								 
 !  +								 
+
+
+
+
+;;;; If you see any of the characters below, split on them and then throw them away
+;;;;  then it adds spaces padding.
+; :[ \t　"'()<>\[\]{}\*\+-/#$%&=\^_`|]
+; !^(.+)$								 \1 
+; !\t								 
+; !  +
+
 
 ;;need to have one space before pattern, one space after pattern
 

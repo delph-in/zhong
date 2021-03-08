@@ -1,12 +1,11 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Entry Types of the Chinese Languages
 ;;; First created: Fri Oct 31 2014
 ;;; By Sanghoun Song (SSH) and Zhenzhen Fan (ZZF)
 ;;;
 ;;; Edited by: Luis Morgado da Costa (LMC) 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;============================================================================
 ; We would expect that all types inherit from a single type in the grammar.
@@ -38,7 +37,8 @@ n_-_pr-1sg_le := personal-pronoun-lex & speaker-lex-item &
 <ex>我 吃 苹果
 <nex>这 我 吃 苹果
 <ex>红 的 我 吃 苹果  [????]
-should be modifiable"""
+should be modifiable
+"""
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1sg ].
 
 n_-_pr-1pl-incl_le := personal-pronoun-lex & basic-icons-lex-item &
@@ -64,29 +64,61 @@ n_-_pr-3pl_le := personal-pronoun-lex & basic-icons-lex-item &
 
 
 
-n_-_pr-wh_le := wh-pronoun.
+n_-_pr-wh_le := wh-pronoun
+"""
+Interrogative pronoun.
+The pronoun should appear in place of a full noun phrase.
+<ex> 她 要 什么 ？  
+(What does she want)
+""".
 
-n_-_pr-q_le := quant-pronoun-lex & nonque-item.
+n_-_indef-pr_le := quant-common-noun-lex & nonque-item
+"""
+These are generic indefinite pronouns that should have a noun head and some quantifier binding it.
+These can be set directly on the lexical entry (e.g. every+person, some+thing).
 
-a_-_bound-posthead_le := attr-adj-posthd-lex & nonque-item.
+[FIXME] Locative pronouns should probably be changed to inherit from this, so they can have fuller semantics.
+
+[FIXME] This is inheriting from quant-common-noun-lex which defines the sort to be common-s (i.e. non-time). So to add pronouns like 'whenever' we would need to create a new very similar type. 
+
+
+Things that are quantifiers (e.g. some, a few) should not be of this type and should, instead, form a NP by a 0-nom-d phrase.
+ 
+General pronouns. This is currently a quite broad category of pronouns that includes, for example,  大家 (everyone), 这些 (these), 有人(someone), 一点儿 (some), etc. 
+
+It also a includes a long list of the form 一+CL+CL, which would be close to 'each and everyone of'.  However, I do think this is incorrect. They should still be treated as determiners of some sort.
+
+This allows us to set the KEYREL.PRED generic_n_rel,
+		     ALTKEYREL directly in the lexical entry. 
+
+""".
+
+a_-_bound-posthead_le := attr-adj-posthd-lex & bound-lex-item & nonque-item.
 
 a_-_first-bound-posthead_le := a_-_bound-posthead_le &
 """
+们 can only modify nouns of SORT 'common-s' (common nouns that are 
+neither pronouns or proper nouns).
+
 This is attempting MEN 们 to attach before everything else.
 This includes other modifying morphemes (e.g. currently 自己)  
 But also any determiner phrases.
 
-LOCAL.CAT.VAL [SPR 1-list ]  ====> the SPR of what I modify must be non empty 
+LOCAL.CAT.VAL [SPR 1-list] ===> the SPR of what I modify must be non empty. 
+MODIFIED notmod ===> I have not been modified (yet), this includes CL-phrases. 
 
 [FIXME] This is stil able to apply to noun-noun compounds as if it's not modified. 
 This also needs to be blocked.
 
- 每 个 国家 都 有 们 的 风俗 。
+FCB: It would be nice to be able to say that the thing I modify is a WORD (i.e. not a phrase)
+
+Note of failure: we cannot use lex-synsem to specify that the thing being modified has to be a word (i.e. not a phrase yet) because the 'basic-head-mod-phrase-simple' rule doesn't actually link local (which would include the types). 
 """
-  [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL [ CAT.VAL [SPR 1-list],
+  [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL [ CAT [HEAD noun,
+					      VAL [SPR 1-list] ],
 					 CONT.HOOK.INDEX.SORT common-s],
-; 					 CONT.HOOK.INDEX.SORT nontime-s],
-				 MODIFIED notmod] >].
+				 MODIFIED notmod,
+				 LIGHT + ] >].
 
 n_-_pr-loc_le := loc-pronoun-lex & nonque-item.
 
@@ -94,9 +126,15 @@ n_-_pr-loc_le := loc-pronoun-lex & nonque-item.
 ;============================================================================
 ; COMMON NOUN TYPES
 ;============================================================================
-; The main difference of nouns is the way they can/have to be specified over
+; The main difference of nouns is the way they can/have to be specified over.
+;
+; There are also some tests that should be done to decide the correct type:  
+; [n_-_tm_le]: nouns that can be pumped into time adverbials
+; [n_-_c_le]: ??? 
+;
+;
 ;============================================================================
-n_-_le := common-noun-lex & nonque-item
+n_-_le := nonloc-common-noun-lex & nonque-item
 """
 Currently, general nouns such as dongxi (东西), shi (事).
 these nouns can 
@@ -250,18 +288,373 @@ There are only 11 of such nouns... which sounds slightly ridiculous.
 """.
 
 
-n_-_loc_le := common-noun-lex & loc-lex-item & nonque-item
-"""
-ZZF 2015-5-3 temporary for locational nouns (not proper nouns). To be fixed when have time
 
-JS: normally these don't use classifiers, in discourse. 
-loc-lex-item only introduces the following constraints:
-[SYNSEM.LOCAL.CAT.HEAD.LOC +]
-However this is never used elsewhere in the grammar
+; n-rel-loc_le := relational-obl-comp-noun-lex
+n-rel-loc_le := relational-obl-comp-loc-noun-lex
+"""
+This is a relational locative noun (that expects a noun complement). This includes nouns such as 里, 上, etc. The complement is non-optional, effectively barring these nouns to stand on their own.
+
+<nex> 她 在 里 学习 。
+<ex> 她 在 房间 里 学习 。
 """.
 
 
-n_-_h_le := common-noun-lex & nonque-item & human-lex-item
+; n-opt-rel-loc_le := relational-opt-comp-noun-lex
+n-opt-rel-loc_le := relational-opt-comp-loc-noun-lex
+"""
+This is a relational locative noun (that expects a noun complement). This includes nouns such as 里面, 里边, 上面, 上边, etc. The complement is optional. This allows these nouns to stand on their own.
+
+<ex> 她 在 里面 学习 。
+<ex> 她 在 房间 里面 学习 。
+""".
+
+
+
+n_-_loc_le := common-noun-lex & loc-lex-item & nonque-item
+"""
+This type is for 'location' nouns that should not be modified by locative nouns (e.g. 里, 上, 外, etc.).
+They are, in themselves, partially locative. This is marked by [SYNSEM.LOCAL.CAT.HEAD.LOC +] allows these to be pumped into locative adjuncts without the use of 在 (using a robust rule).
+
+These include form formations such as 校外 (off-campus) and 网上 (online), which although might look that could be treated compositionally, they make use of bound morphemes (e.g. 校) for which we do not have a better treatment at the current moment. 
+
+=======================================================
+ZZF 2015-5-3 temporary for locational nouns (not proper nouns). To be fixed when have time.
+JS: Locative Nouns normally don't use classifiers in discourse.
+
+loc-lex-item only introduces the following constraint:
+[SYNSEM.LOCAL.CAT.HEAD.LOC +]
+However this is never used elsewhere in the grammar.
+
+Currently this type has roughly 60 nouns that are a complete mess.
+
+This type should probably be related with the concept 方位词 [fāng wèi cí] (words of locality).
+
+Location adjuncts are mostly PP phrases (using either or both preositions and 'postpositions'/locative nouns). 
+<ex> 她 在 家 吃 火锅 。
+(She is eating/eats hotpot at home.)
+
+<ex> 她 家 里 吃 火锅 。
+(She eats hotpot at home.)
+
+<ex> 她 在 家 里 吃 火锅 。
+(She eats hotpot at home.); JC: with ZAI is a bit better.
+
+<ex> 她 家 里面 吃 火锅 。
+(This predicts that 里面 and 里 behave similarly in allowing themselves to be modified by a noun)
+
+<ex> 她 在 家 里面 吃 火锅 。
+(This predicts that 里面 and 里 behave similarly in allowing themselves to be modified by a noun)
+<ex> 他 在 学校 里面 学习 。
+
+
+
+
+
+Placement of these adjuncts are important. Always pre-verb (unless they 
+are complements); and always after time-adjuncts.
+
+<ex> 我 昨天 在 家 里 吃 火锅 。
+<ex> 昨天 我 在 家 里 吃 火锅 。
+(I ate hotpot at home yesterday)
+<nex> 我 在 家 昨天  里 吃 火锅 。
+
+
+There are some special cases:
+beside/next to (旁边 – páng biān)
+opposite (对面 – duì miàn)
+in the middle (中间 – zhōng jiān)
+
+It seems  边 can NOT be seen as a postposition...
+<nex> 她 每天 学校 边 见 他 的 朋友 。 
+(this would predict that 边 cannot be used with other nouns too. 
+only with a special class 外 里 etc., so they should probably be considered as words for now)
+学校 边  (NO!)
+<ex> 她 每天 学校 旁边 见 他 的 朋友 。 
+
+There are special cases for 边 when it means 'border' (and not side).
+So 边 must also be a word on its own (but as a normal noun)
+池塘 边
+河 边
+海 边
+路 边
+
+<ex> 她 河 边 看 书 。 
+(rare but probably possible)
+<ex> 她 在 河 边 看 书 。 
+(this is much better)
+
+
+ 
+Check if 面 could be used as a postposition. E.g.:
+<nex> 她 房子 面 写 了 他 的 名字 。
+(If this is possible some of the discussion below might not be too relevant) 
+桌面 (this is the SURFACE OF TABLE) -- but this is bound 桌 (this has a class of nouns with ZI ending)
+<nex> 她 房子 的 表面 写 了 他 的 名字 。 
+()
+<ex> 她 在 房子 的 表面 写 了 他 的 名字 。 
+<ex> 她 在 房子 表面 写 了 他 的 名字 。 
+
+
+
+
+
+
+Some words, behave as both 'postpositions' and locative nouns (e.g. 里面).
+These words can not only help build a location PP-like NP; but also be (by itself) a 
+noun and a locative adverb without any help from (other) prepositions.  
+<ex> 她 房子 里面 吃 火锅 。
+<ex> 她 在 房子 的 里面 吃 火锅 。
+
+<ex> 她 房子 里面 吃 火锅 。
+<???> 她 饭馆 的 里面 玩 。
+JC: It seems this one is not perfect, with 在 is better, but in speech should be acceptable.
+(if it's true that 里面 is LOC+, then even with a  的 phrase it should be possible to automatically pump them into locative adjuncts)
+
+她 坐 在 外面。
+
+
+<ex> 她 在 里面 吃 火锅 。
+(this is perfect, no problem)
+
+<???> 她 里面 吃 火锅 。
+(this is she IS inside eating... so without ZAI sounds weird)
+(This predicts that 里面 can be used a locative adjuct without the help of other)
+<ex> 我们 里面 吃 火锅 。
+(the meaning is special: we will GO inside eat... )
+
+SOME OF THESE CAN IN SPEECH (usually use 呢). It becomes very flexible.
+你的女儿干嘛呢?
+她外面玩呢.
+你的女儿干什么呢?
+我家里面吃饭呢
+你在做什么呢?
+我学校里面学习呢
+[BUT ALSO] 我 学校 学习 呢 .   [!!!!!!!!!!]
+接下来, 我们 做 什么 ?
+接下来，我们 家 里面 谈 。
+
+
+
+<ex> 里面 很 大 。
+(This predicts that 里面 can be used as subject;)
+
+<ex> 饭馆 的 里面 非常 漂亮 。
+(This shows 里面 can be the head-noun of a 的 construction.)
+
+What would make sense would be to include only these nouns here, 
+in addition to a rule to allow these to build a loc-adv 
+(similar to what happens to time-nouns).
+
+We probably need some bound loc nouns (里)  which cannot stand on their own.
+And some normal 里面 .
+
+
+Tests with 的 show that these post-position like locative nouns actually 
+behave 100% as nouns (but not the bound ones). 
+<ex> 饭馆 的 里面 很 漂亮 。
+(The inside of the restaurant is very beautiful); 里面 is the head, and it's a NP.
+
+<nex> 饭馆 的 里 很 漂亮 。
+(should not be possible because 里 is bound -- so it can't be picked by 的 on its own)
+
+<nex> 饭馆 的 在 里面 很 漂亮 。   
+(should not be possible, because 的 has the HEAD on the right, and must be a NP -- PP is not acceptable)
+
+
+<ex> 里面 的 桌子 比较 好 。
+(the table inside is [relatively] better); This should be analysed as (NP 的 NP)
+
+<ex> 在 里面 的 桌子 比较 好 。
+(the table inside is [relatively] better); This should be analysed as (PP 的 NP)
+
+
+<ex> 商场 的 饭馆 里 很 安静 。
+(The inside of restaurants in/of malls); ??? Is this possible? 
+If this sentence is possible this would draw a distinction between PP and NP, and suggest 里 is in fact a (complement-taking) NOUN.
+
+
+There are probably some other special nouns that can behave as locative.
+see also '网上' it should be a noun, but can be used directly as loc-adv.
+原地 yuándì  (original place)
+原处 yuánchù (original place)
+北方 (north) VS ​北​面 VS 北​边 (north) -- if 边 is analysed as this special N, then it's fine to behave
+
+桌面 (this is the SURFACE OF TABLE)
+
+
+<ex> 网上 有 很 多 新闻 。
+<ex> CCTV 的 网上 有 很 多 新闻
+<ex> 她 在 网上 找到了 工作 。
+<nex> 她 网上 找到了 工作 。  (needs ZAI because it's not imperative?)
+<nex> 她 在 网上 上 找到了 工作 。
+
+<???> 你 网上 检查 吧！  (since Chinese doesn't use 去网上, this will not be possible)
+<ex> 你 上网 检查 吧！  (BUT 上网 is a sep-v, so this is not the same)
+
+
+So, if these nouns can be to the right of a DE construction, they have to be a NOUN.
+But if they can be used as a location adjuct without a 在 / 从 etc preposition, then this would make them special.
+
+<> XXX  的 网上 VP/AP.
+<> 中国 的 网上 VP/AP.
+
+<nex> 她 说 的 原处 等 你 。
+(???)
+
+<ex> 她 原处 等 你 。
+(but still a bit informal. with ZAI is better.)
+
+<nex> 她 （学校） 北方 等 你 。
+(not too good. Not correct)
+
+<ex> 她 （学校） 北面 等 你 。
+(with ZAI for written)
+<ex> 她 （学校） 北边 等 你 。
+(with ZAI for written)
+
+
+东/西/南/北/前/后 /左/右/上/下/里/外 are often used in conjunction with suffixes such as 边/面. while 旁 takes only 边 , 对only takes 面, and 间 goes only with 中.
+
+
+Single character nouns of locality like the ones listed above are rarely used on their own. They normally attach to other nouns. 
+??? Are all single character LN bound? 东/西/南/北/前/后 /左/右/上/下/里/外
+
+
+
+When 上边/面, 下边/面, 里边/面 ,外边/面and 旁边 are modified by other nouns, the character 边/面 can be omitted. 
+But never 左,右 ,对,中 + suffix, the suffix can be omitted if 的 is omitted. For example:
+
+桌子(的)上(边/面) = 桌子上 Zhuōzi shàng on the table
+门的后边 = 门后 Mén hòu behind the door
+饭馆的前边 = 饭馆前 Fàn guǎn qián front of the restaurant
+房间的里边 = 房间里 Fángjiān lǐ in the room
+床的下边 = 床下 Chuángxià under the bed
+沙发的旁边 = 沙发旁 Shāfā páng next to the sofa
+
+
+Geographical (proper) names (Country /Place) such as 中国,英国,北京,伦敦etc. never work with direction words 里/里面/里边，for example:
+
+<ex> 她 在 上海 工作 。
+(She works in Shanghai.)
+<nex> 她 在 上海 里面 工作 。
+
+<ex> 英国 有 很 多 大学 。
+(There are many universities in UK.)
+<nex> 英国 里边 有 很 多 大学 。
+
+
+How about pronouns?
+她 里面 有 很 多 感染 。
+在 她 里面 有 很 多 感染 。
+她 的 里面 有 很 多 感染 。
+在 她 的 里面 有 很 多 感染 。
+(must use 身体, so can probably block pronouns)
+
+
+Coercion of Locatives in Mandarin Chinese (Qiang Li, 2013)
+Locativesin Chinese include simple and synthetic ones. shàng (上 above)、 xià (下 below) 、 qián( 前 front) 、hòu (后 after)、lǐ (里 in)、 wài ( 外 out) are simple locatives, which compose synthetic ones with suffix like biān (边  side)、 miàn ( 面 surface). This paper will take jiān (间 between) 、 shàng ( 上  above) 、  qián (前 front)、lǐ (里 in) for example
+
+
+
+SUMMARY: 
+- 'Locative-nouns' cannot take Proper Nouns as complements.
+<ex> 我 在 北京 。
+<nex> 我 在 北京 里 。
+<ex> 我 住 在 北京 。
+<nex> 我 住 在 北京 里 。
+<ex> 我 在 北京 吃 了 火锅 。
+<nex> 我 在 北京 里 了 火锅  。
+
+- When container-measure-words are used in locative phrases they MUST use a locative noun/postposition. (We are not dealing with this for now)
+<nex> 巧克力 在 盒子 。
+<ex> 巧克力 在 盒子 里 。
+<ex> 巧克力 在 盒子 里面 。
+<ex> 巧克力 在 盒子 上 。
+
+
+- It seems that bare locative phrases entail 'go' while phrases with a prep (e.g. ZAI) do not.
+Is it the case that bare locative phrases are used only in imperatives? 
+<???> 她 房子 里面 吃 火锅 。
+This sentence doesn't feel right to JC.  This is possible to be imperative. 
+The feeling is that there must be a 'go' meaning, which is similar to imperative. 
+And in non 1st person or 2nd person pronouns is very weird.
+'BARE-LOCATIVE-NP' can be used in imperative sentences. 
+'BARE-LOCATIVE-NP' cannot describe a state.
+
+
+- In imperative clauses, the use of 的 with possibly blocks the possibility to become adjunct.
+<ex> 你们 房子 里面 吃 火锅 。
+<nex> 你们 饭馆 的 里面 玩 。
+<ex> 你 在 家 的 里面 吃 火锅 。     (it feels unnecessary but its grammatical)
+
+<ex> 你 房间 里面 玩儿 ！
+<ex> 你 去 房间 里面 玩儿 ！  (this is the meaning of the above sentence, makes it easier, but the above one have no problem)
+<nex> 你 在 房间 里面 玩儿 ！  (imperative  ****CANNOT**** HAVE ZAI-prep)
+<ex> 你 在 房间 里面 玩儿 吧 。  (BUT with BA is ok ??  THIS is very similar to a QUESTION... so it's compatible with  )
+<ex> 你 在 房间 里面 玩儿 好吗 ？  (or HAO-MA is ok -- this is not an order, this is a description of a possible situation.)
+
+<nex> 你 房间 的 里面 玩儿 ！      (even in imperative sentences cannot add 的)
+<ex> 她 在 房间 里面 玩儿 。       (a description, not an imperative sentnece)
+<ex> 你 在 房间 的 里面 吃 火锅 。 (it feels unnecessary but its 100% grammatical)
+
+'的 里面' does NOT behave the same as 里面
+
+
+
+<ex> 她 在 房间 里 玩儿 。     (obviously ok)
+
+<nex> 她 在 房间 的 里 玩儿 。     (的 里  cannot be used, because 里 is a bound noun/morpheme)
+(should not be possible because 里 is bound -- so it can't be picked by 的 on its own)
+
+
+
+- Under our current analysis of LN as prepositions, we are unable to parse sentences where they necessarily need to be a NOUN. E.g.:
+<ex> 房间 里 很 漂亮  。
+<ex> 房间 里 有 三 个 人 。 
+
+<ex> 桌子 上 很 漂亮 。
+<ex> 商场 的 饭馆 里 很 安静 。
+
+
+- We're also blocking NPs like 房间 里 to serve as complements in verbs like:
+<ex> 我 去 房间 里 。    
+<ex> 我 去 房间 里面 。  (this second is somehow better, but above also can) 
+
+
+
+- Special LN:
+beside/next to (旁边 – páng biān)
+opposite (对面 – duì miàn)
+in the middle (中间 – zhōng jiān)
+<ex> 你 旁边 玩儿 ！
+<ex> 你 外婆 旁边 玩儿 ！     (should be fine, but with 去 should be better)
+<ex> 你 外婆 的 旁边 玩儿 ！  (should be fine, but with 去 should be better)
+<ex> 她 在 房间 旁边 玩儿 。    
+<ex> 她 在 房间 的 旁边 玩儿 。
+<ex> 她 在 外婆 旁边 玩儿 。   
+<ex> 她 在 外婆 的 旁边 玩儿 。
+DE selection seems to have a preference whether it's human or not human, but all are ok.
+
+For imperative sentences, it's proably better to require '去'. Without 去 it's perhaps a bit too colloquial (spoken).
+
+
+<ex> 我 在 外地 学习 。
+<???> 我 在 外地 里 学习 。
+Same as 双方 ... cannot take these morphemes
+
+你 外地 学习 ！
+
+外校 （other school)
+你 外校 学习 。
+
+外校 also doesn't use 里
+
+校外
+
+""".
+
+
+n_-_h_le := nonloc-common-noun-lex & nonque-item & human-lex-item
 """
 Includes nouns such as 爷爷, 爸爸, 老师
 """
@@ -277,8 +670,32 @@ and that cannot be used by themselves.
 
 n_-_tm_le := time-noun-lex & nonque-item
 """
+These are nouns that can be transformed into time-adverbs
+(using np-time-adp) and used to modify predicates. 
+
+<ex> 她 星期天 喜欢 看 书 。
+(She likes to read on Sundays)
+
+<ex> 她 昨天 很 漂亮 。
+(Yesterday she was/looked beautiful)
+
 Includes nouns such as 八七年, 八点, 六二四年, 六日, 冬天, 古代, 周五
 They all seem to indicate time points.
+
+In the past, time nouns were using being blocked to serve as subjects.
+This was deemed too restrictive, as it blocked sentences like: 
+<ex> 一月 是 我 最 喜欢 的 月份 。
+(January is the month I like best) 
+
+This is no longer the case. However, lifting this restriction had a big impact
+on ambiguity (roughly doubling it). This restriction should perhaps exist 
+directly in certain verb classes, asking for their subject's SORT to be of type 
+'nontime-s'.
+
+This noun type is also being blocked from spurious ambiguity through Noun-Noun 
+compounds. It was argued (to be confirmed) that these nouns cannot participate 
+in certain N-N compounds, so it is actually a useful type. This is being done 
+directly on the compound rules.
 """.
 
 
@@ -295,13 +712,11 @@ This might have been used for entries that were not sorted.
 
 n_-_l_pn_le := loc-name-lex & nonque-item
 """
-This is used for locations, including regions and country names. But also for 
-some company names, such as Bank of China (中银) and other basic locations 
-such as estuary (入海口). The last one probably should be deleted at some point.
+This is used for locations, including regions and country names. But also for  some company names, such as Bank of China (中银) and other basic locations such as estuary (入海口). The last one probably should be deleted at some point.
 According to the comments left on loc-name-lex, this was originally to
-prevent sentences such as *我 要 去 李四 (e.g. 李四 is the name of a person)
-But this is actually not being blocked. Check what else this might be doing.
-[FIX]
+prevent sentences such as *我 要 去 李四 (e.g. 李四 is the name of a person), but this is actually not being blocked. 
+
+[FIXME] Check what else this might be doing.
 """.
 
 n_-_l_pn-bound_le := loc-name-lex & bound-lex-item & nonque-item
@@ -347,13 +762,22 @@ This type refers to adjectives that can directly modify a noun without a
 relative clause. This is not very productive, so we are currently not doing 
 this conversion by a lexical rule.
 <ex>  贝贝 是 我们 的 好 朋友
+
+If an adjective can be used both attributively and predicatively, then 
+we currently have two lexical entries. Eg. 好_j_1 (predicative) and 
+好_j_2 (attributive).
 """.
 
-a_-_pred_le := pred-adj-lex & nonque-item
+a_-_pred_le := pred-adj-optspr-lex & nonque-item
 """
-This types refers to adjectives that can directly predicate without degree
-modifiers. This generally should include some idiomatic phrases that are
-adjectival in their essence, and a restricted number of adjectives.
+
+This is where most adjectives are (1700+).
+
+This types refers to adjectives that can be used as predicates with or without degree
+modifiers. 
+
+
+[FIXME] Need to further split adjectives into more types, e.g. adjectives that CAN'T take degree modifiers.   This generally should include some idiomatic phrases that are adjectival in their essence, and a restricted number of adjectives.
 <???> 我们  一起。   一起 is listed but it should be an ADV
 
 [FIXME] This should be the exception to our rule that all adjs must have
@@ -387,18 +811,69 @@ a_-_abb_le := adj-abb-lex & nonque-item.
 ;============================================================================
 ; ADVERBIAL TYPES
 ;============================================================================
-adv_-_deg-pre_le := deg-int-adv-vp-pre & nonque-item.
-adv_-_s-pre-no-rel_le := int-adv-s-pre-no-rel & nonque-item.
-adv_-_s-pre-rel_le := int-adv-s-pre-rel & nonque-item.
-adv_-_vp-pre_le := int-adv-vp-pre & nonque-item.
-adv_-_vp-pre-norel_le := int-adv-vp-pre-no-rel & nonque-item.
-adv_-_neg_le := neg-adv-lex & nonque-item.
-adv_-_scop_le := scop-adv-lex & nonque-item.
-adv_-_scop-prehd_le := scop-adv-prehd-lex & nonque-item.
+adv_-_deg-pre_le := deg-int-adv-vp-pre & nonque-item
+"""
+Basic type for degree specifiers.
+E.g. 很, 非常
+""".
 
+adv_-_s-pre-no-rel_le := int-adv-s-pre-no-rel & nonque-item
+"""
+This adverb type introduces no semantics.
+ 
+[FIXME] Although part of the name ('s-pre') suggests it should only appear pre-hd for full sentences, it is also allowing pre-VP modification.
+[FIXME] There are only a hand full of adverbs with this type, but it's not clear why they would have no semantics.  
+""".
 
-;; SSH/ZZF: This should be analyzed as an adverb.
-adv_-_imp_le := imperative-aux-lex & nonque-item. 
+adv_-_s-pre-rel_le := int-adv-s-pre-rel & nonque-item
+"""
+Intersective pre-sentential adverb.  
+
+[FIXME] Similar to what happens with 'adv_-_s-pre-no-rel_le', although part of the name ('s-pre') suggests it should only appear pre-hd for full sentences, it is also allowing pre-VP modification.
+This should be constrained further to match the type name. We should perhaps have a general type of adverbs that can appear both pre-S and pre-VP (with an adequate name).
+""".
+
+adv_-_vp-pre_le := int-adv-vp-pre & nonque-item
+"""
+Intersective pre-VP adverb.
+
+These adverbs can only occure in pre-VP position (i.e. never before the subject).
+""".
+
+adv_-_vp-pre-norel_le := int-adv-vp-pre-no-rel & nonque-item
+"""
+Intersective (strictly) pre-VP adverb introducing no semantic relations. 
+Currently this is only for 正在. It does change the verb ASPECT to durative.
+
+[FIXME] I'm not 100% sure why 正在 would not introduce a relation. Should motivate and leave some notes here. 
+[FIXME] The name of this type should be changed to better reflect the very specific entry it represents. We could have something like 'aspectual adverbs'.
+""".
+
+adv_-_neg_le := neg-adv-lex & nonque-item
+"""
+Negator adverbs. Currently for 不 and 没.
+""".
+
+adv_-_scop_le := scop-adv-lex & nonque-item
+"""
+""".
+
+adv_-_scop-prehd_le := scop-adv-prehd-lex & nonque-item
+"""
+""".
+
+scop-adv-s-prehd_le := scop-adv-s-prehd-lex & nonque-item
+"""
+Strictly pre-head sentential adverbs. Predicts that some adverbs
+can only appear to the left of a sentence. Currently on mal-也
+is using this, but I have a hunch this might be needed to some
+other (non-mal) adverbs in the future.
+""".
+
+adv_-_imp_le := imperative-aux-lex & nonque-item
+"""
+This type is specifically for 别 (imperative) negation.
+""". 
 
 
 ;; WWJ 2015-02-08: Now known as A NOT A
@@ -421,20 +896,39 @@ Simple intransitive verbs.
 
 v_np_le := v_trans-verb-lex & nonque-item & norm-comps1-lex
 """
-Simple transitive verbs (i.e. take NPs as complements).
+Simple transitive verbs (i.e. taking one NP as complement).
 """.
 
-v_np-np_le := ditrans-verb-lex & nonque-item.
-v_s_le := v_s-comp-lex & nonque-item.
+v_np-np_le := ditrans-verb-lex & nonque-item
+"""
+Simple ditransitive verbs (i.e. taking two NP as complements).
+""".
 
 
-;========================================
-; PSYCHOLOGICAL VERBS (aka 心理动词)
+v_s_le := v_s-comp-lex & nonque-item
+"""
+Verbs capable of taking a sentence as complement. 
+""".
+
+
+;========================================================
+; VERBS THAT CAN BE DEGREE SPECIFIED
+; 
+; Some verbs in Mandarin Chinese can be ; specified with
+; a degree adverb (similar to what happens to most
+; adjectives). These verbs usually fall in one of such
+; classes:
+; VERBS PSYCHOLOGICAL (aka 心理动词)
+; MODAL VERBS (aka 能​愿​动​词)
+; 
+; 
+; 
 ;========================================
 v_-_spr_le := v_intrans-verb-spr-lex & nonque-item
 """
 Intransitive psychological verbs.
 Psychological verbs (aka 心理动词) can take a degree modifier.
+
 The degree modifiers are currently done as specifiers.
 e.g.: 抱歉
 """.
@@ -443,14 +937,16 @@ v_np-spr_le := v_trans-verb-spr-lex & nonque-item
 """
 Basic Transitive psychological verbs.
 Psychological verbs (aka 心理动词) can take a degree modifier.
+
 The degree modifiers are currently done as specifiers.
 e.g.: 喜欢, 想, 爱
 """.
 
 v_s-spr_le := v_s-comp-spr-lex & nonque-item
 """
-Transitive psychological verbs, that can take sentencial complements.
+Transitive psychological verbs, that can take sentential complements.
 Psychological verbs (aka 心理动词) can take a degree modifier.
+
 The degree modifiers are currently done as specifiers.
 喜欢, 想
 """.
@@ -460,8 +956,8 @@ v_vp_sequi-spr_le := v_sequi-spr-lex & nonque-item
 Subject-control transitive psychological verbs.
 These verbs can take VP complements, and the subject of the main verb 
 will be indexed with the subject of the VP complement.
-
 Psychological verbs (aka 心理动词) can take a degree modifier.
+
 The degree modifiers are currently done as specifiers.
 高兴, 喜欢, 想
 """.
@@ -470,11 +966,15 @@ The degree modifiers are currently done as specifiers.
 ;========================================
 ; VERBS w/PREPOSITIONAL COMPLEMENTS
 ;========================================
-v_pp-np_le := ditrans-pp-verb-lex & nonque-item.
-v_prevpp-np_le := ditrans-preverbal-pp-verb-lex & nonque-item.
-v_np-pp_le := trans-loc-verb-lex & nonque-item.
-v_pp-s_le := pp-s-comp-verb-lex & nonque-item.
 v_pp-pre_le := v_pp-lex & nonque-item.
+
+v_pp-np_le := ditrans-pp-verb-lex & nonque-item.
+
+v_np-pp_le := trans-loc-verb-lex & nonque-item.
+
+v_pp-s_le := pp-s-comp-verb-lex & nonque-item.
+
+v_prevpp-np_le := ditrans-preverbal-pp-verb-lex & nonque-item.
 
 
 
@@ -484,16 +984,68 @@ v_bap-ap_le := np-ap-comp-ba-verb-lex & nonque-item.
 
 v_vp_sequi_le := v_sequi-lex & nonque-item.
 
-v_np-vp_oequi_le := v_np-vp_oequi-lex & nonque-item.
+v_np-vp_oequi_le := v_np-vp_oequi-lex & nonque-item
+"""
+This type is used for object control verbs taking an NP and a VP complement. 
+(the NP complement will be the subject of the VP complement).
+<ex> 她 请 我 吃 午饭 。
+
+Under the current treatment, both complements are required. 
+Currently, this requires a special entry for 请 in sentences as:
+<ex> 请 吃 午饭 。
+
+Even though it has roughly the same meaning as:
+<ex> 我 请 你 吃 午饭 。
+
+It is possible that in the future we might want to get a unified analysis for these
+two sentences, but for now 请 is also available as an adverb-like 'expression'.
+""".
+
 v_np-vp_sequi_le := v_np-vp_sequi-lex & nonque-item.
 ;; SSH/ZZF 2014-11-26: This type looks curious. change to sequi
 ;v_np-vp_aequi_le := v_a-equi-lex & nonque-item.
 
-v_np-s_le := v_np-s_lex & nonque-item.
+v_np-s_le := v_np-s_lex & nonque-item
+"""
+A verb that takes two complements (one NP and one S). The sentencial complement has a different subject (omitted or not). So there is no semantic link between the first (NP) complement and the second (S).
+<ex> 我 问 她 妈妈 去 不 去 。
+
+This should not be used for similar sentences such as '我 问 她 去 不 去 。' if the meaning of the sentence is intended to use 她 as both the COMP of 问 and the SUBJ of 去. This would use v_np-vp_oequi_le instead.
+""".
 
 v_np_you_le := v_exist-lex & nonque-item.
 
-v_vp_aux_le := v_aux-aux-lex & nonque-item.
+v_vp_aux_le := v_aux-aux-lex & nonque-item
+"""
+This type is for auxiliary verbs. In our current implementation, auxiliary 
+verbs constrast with v_vp_sequi_le in that they are subject raising (instead 
+of subject control). Aux verbs do not have a subject in the semantics, 
+taking a single VP complement. They are mostly related to Tense and certain
+aspects of Modality.
+
+Our current test is based on their inability to be used as a full VP. For example: 
+
+<ex> 她 要 摔倒 了 。
+(She is going to fall.)
+<ex> 谁 要 摔倒 了 ？
+(Who is going to fall?)
+<nex> 她 要  。
+(* She is.)
+
+This last sentence is not an adequate answer to the question above.
+While the sentence '她 要  。' is grammatical, it's not an adequate response to the
+question above because 要 requires the VP comp, and does not take a subject itself.
+
+Many of these verbs have two entries (both aux and non-aux).  
+For example, when 要 means 'to want', then it should not be considered an auxiliary.
+<ex> 谁 要 学习 汉语 ？
+(Who wants to learn Mandarin Chinese?)
+<nex> 我 要  。
+(I want.)
+
+FCB has pointed out that it would be nice to extend these tests. We could try to 
+see how these aux verbs behave in other syntactic structures, such as 
+""".
 
 v_np_cop_le := cop-verb-lex & nonque-item.
 
@@ -532,8 +1084,18 @@ conj_-_sub-post_le := subord-conj-post-lex & nonque-item.
 ;============================================================================
 ; DETERMINER TYPES
 ;============================================================================
-d_-_wh_le := wh-determiner-lex.
-d_-_wh-nocls_le := wh-determiner-nocls-lex.
+d_-_wh_le := wh-determiner-lex
+"""
+Interrogative determiner (allowing/requestiing the use of classifiers).
+<ex> 她 要 哪 本 书 ？
+""".
+
+d_-_wh-nocls_le := wh-determiner-nocls-lex
+"""
+Interrogative determiner (disallowing the use of classifiers).
+<ex> 她 要 什么 东西 ？
+<nex> 她 要 什么 个 东西 ？
+""".
 
 d_-_le := determiner-cls-lex & nonque-item.
 d_-_nocls_le := determiner-nocls-lex & nonque-item.
@@ -550,6 +1112,7 @@ d_-_prt_le := partitive-lex & nonque-item.
 
 ;;pp modifies np
 p_-_n-mod_le := prep-n-mod-lex & nonque-item.
+
 ;;pp modifies verb
 p_-_v-mod_le := prep-v-mod-lex & nonque-item.
 p_-_nomod_le := prep-no-mod-lex & nonque-item.
@@ -578,7 +1141,7 @@ However, 里边儿 can also be used as full-locative noun.
 
 x_-_assoc-de-n_le := de-assoc-n-lex & nonque-item
 """
-Associative DE combining two noun phrases.
+Associative 的 (DE) combining two noun phrases.
 <ex>张三 的 朋友 哭 了
 <ex>我 的 朋友 哭 了
 <ex>他 知道 学校 的 地址
@@ -590,7 +1153,7 @@ both interpretations, leaving the ambiguity for statistical ranking model to det
 
 x_-_assoc-de-v_le := de-assoc-v-lex & nonque-item
 """
-Associative DE linking a clause to a head noun.  
+Associative 的 (DE) linking a clause to a head noun.  
 The head noun is neither subject nor the complement of a verb in the clause.
 <ex>他 写 书 的 地方
 <ex>我 喜欢 他 写 书 的 地方
@@ -598,7 +1161,7 @@ The head noun is neither subject nor the complement of a verb in the clause.
 
 x_-_rel-de_le := de-comp-lex & nonque-item
 """
-This is the type for Complementizer 的, used for relative clauses.
+This is the type for Complementizer 的 (DE), used for relative clauses.
 It introduces no semantics, and links extracted arguments (SUBJ or COMPS).
 <ex>游泳 的 人
 <ex>他 喜欢 的 人
@@ -616,8 +1179,36 @@ x_suo_le := v_suo_lex & nonque-item.
 x_-_suf-adv_le := adv_suffix_form_lex & nonque-item.
 x_-_pre-adv_le := adv_prefix_form_lex & nonque-item.
 
-adv_-_ij_le := interjection-lex & nonque-item.
-adv_-_ij-pre_le := interjection-pre-lex & nonque-item.
+
+;============================================================================
+; INTERJECTIONS (probably could have a better name)
+; This also includes common phrases used in discourse.
+; This section is most certainly incomplete: some 'interjections' introduce
+; meaningful grammatical restrictions (e.g. 请, 请问, etc.)
+; Some interjections should introduce questions: 请问
+; Other should introduce polite imperives: 请 (etc.)
+; For now this is extremely simplified.
+;============================================================================
+adv_-_ij_le := interjection-lex & nonque-item
+"""
+Interjections/exclamatives (including some expressions) that can occur both 
+pre and post-sentence.
+""".
+
+adv_-_ij-prehd_le := interjection-prehd-lex & nonque-item
+"""
+Sentence-initial interjections/exclamatives (including some expressions).
+
+
+以后 请 来 办公室 。
+""".
+
+adv_-_ij-posthd_le := interjection-posthd-lex & nonque-item
+"""
+Sentence-final interjections/exclamatives (including some expressions).
+""".
+
+
 
 
 ;============================================================================
@@ -634,6 +1225,30 @@ x_-_fqpart_le := frag-qpart-lex-item.
 adv_-_scop_q_le := scop-adv-lex & question-item.
 adv_-_scop-post_q_le := scop-adv-posthd-lex & question-item.
 n_-_tm_q_le := time-noun-lex & question-item.
-a_-_pred_q_le := pred-adj-lex & question-item.
+
+; a_-_pred_q_le := pred-adj-lex & question-item
+a_-_pred_q_le := pred-adj-nospr-lex & question-item
+"""
+Currently, simply inheriting from pred-adj-lex predicts that sentences like 
+the one below should be possible. I doubt that it would be acceptable.
+[FIXME][JC]
+<??>你 的 大学 生活 很 怎么样 ？
+
+Even though 不怎么样的 and 很怎么样的 seem to be available as modifiers, 
+it seems that it can't be used to form a question.
+
+For iTELL, we also need different predictions for base AP (without degree
+modifiers) and special words like 怎么样 (which is almost always, if not 
+strictly, used in bare form).
+
+Currently, root_strict_adj is saying that ADJ predicates must be SPR <>.
+For the time being, we can add this particular restriction directly here.
+This would also block sentences like:
+<??>你 的 大学 生活 很 怎么样 ？
+
+"""
+.
+
+
 adv_-_vp-pre_q_le := int-adv-vp-pre & question-item.
 

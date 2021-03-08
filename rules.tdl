@@ -52,8 +52,22 @@ spr-head-cl := spr-head-h-sem-phrase &
 ; bare-s := bare-s-phrase.
 ;===============================================
 
-bare-adv := bare-adv-phrase.
-bare-np := bare-np-phrase.
+; bare-adv := bare-adv-phrase.
+;==============================================
+; LMC&FCB trying to solve some ambiguity:
+; we might not need bare-adv 
+
+
+
+
+bare-np := bare-np-phrase
+"""
+Noun-phrases without a determiner phrase (with or without classifiers).
+<ex> 她 喜欢 猫 。
+<ex> 她 买 了 两 只 猫 。
+
+Both (猫) and (两 只 猫) are bare NPs. 
+""".
 
 
  
@@ -104,64 +118,64 @@ vp1-top-coord := vp1-top-coord-rule & [ STYLE robust ].
 
 s1-top-coord := s1-top-coord-rule & [ STYLE robust ].
 
-#|
-n3-top-coord := n3-top-coord-rule.
+; #|
+; n3-top-coord := n3-top-coord-rule.
 
-n3-bottom-coord := n3-bottom-coord-rule.
+; n3-bottom-coord := n3-bottom-coord-rule.
 
-np3-top-coord := np3-top-coord-rule.
+; np3-top-coord := np3-top-coord-rule.
 
-np3-bottom-coord := np3-bottom-coord-rule.
+; np3-bottom-coord := np3-bottom-coord-rule.
 
-vp3-top-coord := vp3-top-coord-rule.
+; vp3-top-coord := vp3-top-coord-rule.
 
-vp3-bottom-coord := vp3-bottom-coord-rule.
+; vp3-bottom-coord := vp3-bottom-coord-rule.
 
 
-s3-bottom-coord := s3-bottom-coord-rule.
+; s3-bottom-coord := s3-bottom-coord-rule.
 
-n4-top-coord := n4-top-coord-rule.
+; n4-top-coord := n4-top-coord-rule.
 
-n4-mid-coord := n4-mid-coord-rule.
+; n4-mid-coord := n4-mid-coord-rule.
 
-n4-bottom-coord := n4-bottom-coord-rule.
+; n4-bottom-coord := n4-bottom-coord-rule.
 
-n5-top-coord := n5-top-coord-rule.
+; n5-top-coord := n5-top-coord-rule.
 
-n5-mid-coord := n5-mid-coord-rule.
+; n5-mid-coord := n5-mid-coord-rule.
 
-n5-bottom-coord := n5-bottom-coord-rule.
+; n5-bottom-coord := n5-bottom-coord-rule.
 
-np5-top-coord := np5-top-coord-rule.
+; np5-top-coord := np5-top-coord-rule.
 
-np5-mid-coord := np5-mid-coord-rule.
+; np5-mid-coord := np5-mid-coord-rule.
 
-np5-bottom-coord := np5-bottom-coord-rule.
+; np5-bottom-coord := np5-bottom-coord-rule.
 
-vp5-top-coord := vp5-top-coord-rule.
+; vp5-top-coord := vp5-top-coord-rule.
 
-vp5-mid-coord := vp5-mid-coord-rule.
+; vp5-mid-coord := vp5-mid-coord-rule.
 
-vp5-bottom-coord := vp5-bottom-coord-rule.
+; vp5-bottom-coord := vp5-bottom-coord-rule.
 
-s5-top-coord := s5-top-coord-rule.
+; s5-top-coord := s5-top-coord-rule.
 
-s5-mid-coord := s5-mid-coord-rule.
+; s5-mid-coord := s5-mid-coord-rule.
 
-s5-bottom-coord := s5-bottom-coord-rule.
+; s5-bottom-coord := s5-bottom-coord-rule.
 
-s6-top-coord := s6-top-coord-rule.
+; s6-top-coord := s6-top-coord-rule.
 
-s6-mid-coord := s6-mid-coord-rule.
+; s6-mid-coord := s6-mid-coord-rule.
 
-s6-bottom-coord := s6-bottom-coord-rule.
+; s6-bottom-coord := s6-bottom-coord-rule.
 
-s7-top-coord := s7-top-coord-rule.
+; s7-top-coord := s7-top-coord-rule.
 
-s7-mid-coord := s7-mid-coord-rule.
+; s7-mid-coord := s7-mid-coord-rule.
 
-s7-bottom-coord := s7-bottom-coord-rule.
-|#
+; s7-bottom-coord := s7-bottom-coord-rule.
+; |#
 
 opt-comp := head-opt-comp-phrase & [ STYLE robust ].
 
@@ -191,19 +205,22 @@ n-prp-compound := noun-proper-compound-phrase.
 ;de-n-compound := nom-de-noun-compound-phrase.
 
 
-rslt-1_12 := rslt-1_12-phrase & 
+;============================================================================
+; RESULTATIVE CONSTRUCTIONS
+;============================================================================
+rslt-1_12 := rslt-1_12-phrase &
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < [ OPT - ] > ].
 rslt-12_12 := rslt-12_12-phrase.
 
-rslt-1_1-sbj := rslt-1_1-sbj-phrase. 
+rslt-1_1-sbj := rslt-1_1-sbj-phrase.
 rslt-1_1-obj := rslt-1_1-obj-phrase &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ OPT - ] > ].
-rslt-1_1-ns := rslt-1_1-noshare-phrase & 
+rslt-1_1-ns := rslt-1_1-noshare-phrase &
   [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ < unexpressed & [ OPT + ] > ].
 
 rslt-12_1-sbj := rslt-12_1-sbj-phrase.
-rslt-12_1-obj := rslt-12_1-obj-phrase. 
-rslt-12_1-inv := rslt-12_1-inv-phrase & 
+rslt-12_1-obj := rslt-12_1-obj-phrase.
+rslt-12_1-inv := rslt-12_1-inv-phrase &
   [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < [ OPT - ] > ].
 
 ;; li:90 (p. 200)
@@ -227,24 +244,49 @@ rslt-123_123 := rslt-compound-phrase &
 				    VAL [ SUBJ.FIRST #subj,
 					  COMPS < #comp1, #comp2 >  ] ] ].
 
+;============================================================================
+
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Newly introduced phrase structure rules
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 np-time-adp := np-time-adp-phrase.
-; head-grd := head-gerundive-phrase.
+
+rbst-np-place-adp := np-place-adp-phrase
+"""
+This is a rule that allows certain NP (i.e. mostly headed by locative relational nouns) to assume the role of an adjunct.
+
+This is currently marked as robust because it is understood that in the majority of cases these locative adjuncts need to be included in a  在 phrase. However, in casual speech (not writting) and certain syntactic contexts (e.g. imperatives/suggestions) this is not necessary. 
+""".
+
+
 
 comp-marker := comp-marker-phrase.
+
 marker-comp := marker-comp-phrase &
   [ NON-HEAD-DTR.SYNSEM [ L-PERIPH na-or--,
 			  R-PERIPH na-or--,
 			  LOCAL.CAT [ HEAD marker ] ] ].
+
 punct-comp := marker-comp-phrase &
   [ NON-HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD punct ] ].
 
 
+head-2nd-comp := head-2nd-comp-phrase
+"""
 ;ZZF/SSH 2015-04-01 to handle variations of ditransitive verbs
-head-2nd-comp := head-2nd-comp-phrase.
+
+This is a rule has been restricted to refer to prepositional complements.
+It seems like for sentences such as:
+她 发 (给 你) (一 本 书) 。
+We do need this head-2nd-comp rule. It performs the should be the same as head-comp, but it assumes the order of complements have shifted in the process.
+   
+她 发 (一 本 书) (给 你) 。    
+Can use the normal head-comp twice so it the grammar currently sees  发 as taking an NP + PP .
+If we give it a PP+ NP then we are taking the second complement first, hence the need to use this head-2nd-comp.
+""".
 
 q-phrase := question-phrase.
 

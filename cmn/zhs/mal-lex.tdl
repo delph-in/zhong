@@ -10,28 +10,24 @@
 mal_clause_和_c := conj_-_e_le &
 """
 using 和 to coordinate clauses.
-FIXME: this should probably be introducing the relation 也
+FIXME: this should probably be introducing the a coordination relation 
 FIXME: This is not working the the example below because of the comma. I'm not sure we .
 <mex>他 不 学 中文  和 不 学 法文 。
 <mex>他 学 中文  和 学 法文 。
 """
   [ STEM < "和" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "和", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_和_c_⚠_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_和_c_rel",
     TRAITS native_token_list ].
 
 
-mal_scopal_也_r := adv_-_scop_le &
+mal_presubj_也_r := mal_scop-adv-s-prehd_le &
 """
-A mal-lexical entry for 也, that allows it to be placed before the suject (i.e. as sentencial adverb)
-FIXME: DMRS cannot be created
-FIXME: it competes with 也_r_1 in the correct position; it would be best to restrict it further;
-FIXME: this should probably be introducing the relation 也
-<mex> 我 学 工程 ， 也 我 学 中文 。
+A mal-lexical entry for 也 in pre-subject position.
 """
   [ STEM < "也" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "也", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.PRED "_也_a_⚠_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "_也_a_rel",
     TRAITS native_token_list ].
 
 
@@ -97,3 +93,287 @@ Predicative adjs have the same non-lzg.
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG no-lzg ] >,
     TRAITS native_token_list ].
+
+
+
+
+;============================================================================
+; MISSPELLS (MAL_SPELLS)
+;============================================================================
+; These include frequent misspelling of words. In time, these should be
+; further split into 'phonemic' or 'orthographic' mispells (since the source
+; would be different -- i.e. when typing through pinyin the most likely
+; source of misspellings are phonemic)
+; 
+; However, orthographic based mispells could be included in exercises where
+; the goal is to make sure students know how to distinguish characters.
+;============================================================================
+; They introduce the correct semantics, which could be used for semantic
+; transfer later on.
+;============================================================================
+mal_spell_名字_n_1 := n_-_le &
+"""
+misspelled form of 名字 [míng zi] (name; denomination);
+"""
+  [ STEM < "名子" >, 
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "名", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_名字_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_名字_n_2 := n_-_le &
+"""
+misspelled form of 名字 [míng zi] (name; denomination);
+"""
+  [ STEM < "多字" >, 
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "名", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_名字_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_宿舍_n_1 := n_-_le &
+"""
+"""
+  [ STEM < "宿" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "宿", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "宿舍",
+    TRAITS native_token_list ].
+
+mal_spell_学生_n_1 := n_-_le &
+"""
+"""
+  [ STEM < "学住" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "学", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_学生_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_朋友_n_1 := n_-_h_le &
+  [ STEM < "朋有" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "朋", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_朋友_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_男朋友_n_1 := n_-_h_le &
+"""
+"""
+  [ STEM < "男朋有" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "男", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_男朋友_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_女朋友_n_1 := n_-_h_le &
+"""
+"""
+  [ STEM < "女朋有" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "女", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_女朋友_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_吗_qp := x_-_qpart_le &
+"""
+"""
+  [ STEM < "嘛" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吗", LENGTH one ],
+    TRAITS native_token_list ].
+
+mal_spell_工作_n_1 := n_-_le &
+"""
+"""
+  [ STEM < "功做" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "功", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_工作_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_工作_v_1 := v_-_le &
+"""
+"""
+  [ STEM < "功做" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "功", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_工作_v_1_rel" ],
+    TRAITS native_token_list ].
+
+mal_spell_中国人_n_1 := n_-_h_le &
+"""
+Misspelling of 中国人 [zhōng guó rén] Chinese (person);
+"""
+  [ STEM < "中文人" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "中", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_中国人_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_中国人_n_2 := n_-_h_le &
+"""
+Misspelling of 中国人 [zhōng guó rén] Chinese (person);
+"""
+  [ STEM < "中文入" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "中", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_中国人_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_中国人_n_3 := n_-_h_le &
+"""
+Misspelling of 中国人 [zhōng guó rén] Chinese (person);
+"""
+  [ STEM < "中人" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "中", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_中国人_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_中国人_n_4 := n_-_h_le &
+"""
+Misspelling of 中国人 [zhōng guó rén] Chinese (person);
+"""
+  [ STEM < "中国入" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "中", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_中国人_n_1_rel",
+    TRAITS native_token_list ].
+
+
+mal_spell_学习_v_1 := v_np_le &
+"""
+Misspelling of 学习 [xué xí] to study; to learn; 
+"""
+  [ STEM < "学息" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "学", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+             LKEYS.KEYREL.PRED "_学习_v_1_rel" ],
+    TRAITS native_token_list ].
+
+mal_spell_一点儿_n_1 := n_-_indef-pr_le &
+"""
+Misspelling of 一点儿  
+"""
+  [ STEM < "一点二" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH more-than-two ],
+    SYNSEM.LKEYS.ALTKEYREL.PRED "_一点儿_n_rel",
+    TRAITS native_token_list ].
+
+mal_spell_怎么样_j_1 := a_-_pred_q_le &
+  [ STEM < "真么样" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "真", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_怎么样_a_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_什么_d_q := d_-_wh-nocls_le &
+  [ STEM < "什们" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH two ],
+    TRAITS native_token_list ].
+
+mal_spell_什么_n_q := n_-_pr-wh_le &
+  [ STEM <"什们">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED thing_n_rel,
+    TRAITS native_token_list ].
+
+mal_spell_什么_d_q_2 := d_-_wh-nocls_le &
+  [ STEM < "什吗" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH two ],
+    TRAITS native_token_list ].
+
+mal_spell_什么_n_q_2 := n_-_pr-wh_le &
+  [ STEM <"什吗">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED thing_n_rel,
+    TRAITS native_token_list ].
+
+mal_spell_老师_n_1 := n_-_h_le &
+  [ STEM < "者师" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "老", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_老师_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_老师_n_2 := n_-_h_le &
+  [ STEM < "老是" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "老", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_老师_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_老师_n_3 := n_-_h_le &
+  [ STEM < "老帅" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "老", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_老师_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_二十二_j := a_-_num_le &
+  [ STEM < "二是二" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "二", LENGTH more-than-one ],
+    SYNSEM.LKEYS.KEYREL.CARG "20",
+    TRAITS native_token_list ].
+
+mal_spell_拜拜_v_1 := v_-_le &
+"""
+Not sure if this should be an interjection instead.
+"""
+  [ STEM < "拜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "拜", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le,
+             LKEYS.KEYREL.PRED "_拜拜_v_1_rel" ],
+    TRAITS native_token_list ].
+
+mal_spell_法文_n_1 := n_-_le &
+  [ STEM < "发文" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "发", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_法文_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_喜欢_v_1 := v_np-spr_le &
+  [ STEM < "喜对" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
+	     LKEYS.KEYREL.PRED "_喜欢_v_1_rel" ],
+    TRAITS native_token_list ].
+
+mal_spell_喜欢_v_2 := v_vp_sequi-spr_le &
+  [ STEM < "喜对" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_喜欢_v_2_rel",
+    TRAITS native_token_list ].
+
+mal_spell_喜欢_v_3 := v_s-spr_le &
+  [ STEM < "喜对" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_喜欢_v_3_rel",
+    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
+    TRAITS native_token_list ].
+
+mal_spell_空调_n_1 := n_-_le &
+"""
+Use of English.
+"""
+  [ STEM < "ac" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "空", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_空调_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_日本_n_1 := n_-_l_pn_le &
+"""
+misspelling for 日本 or possible also for 日本国. 
+"""
+  [ STEM < "日国" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "日", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "日本",
+    TRAITS native_token_list ].
+
+mal_spell_对了_ij := adv_-_ij_le & 
+  [ STEM < "对子" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "对", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_对了_x_rel",
+    TRAITS native_token_list ].
+
+mal_spell_人_n_1 := n_-_le &
+  [ STEM < "入" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "人", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_人_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_法国人_n_1 := n_-_le &
+  [ STEM < "法口人" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "法", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_法国人_n_1_rel",
+    TRAITS native_token_list ].
+
+mal_spell_法国人_n_2 := n_-_h_le &
+  [ STEM < "法国入" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "法", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_法国人_n_1_rel",
+    TRAITS native_token_list ].
+

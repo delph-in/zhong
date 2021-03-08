@@ -4,6 +4,60 @@
 ;;; Default Numbers
 ;;;;;;;;;;;;;;;;;;;
 
+０４９５９１_j := a_-_num_le &
+"""
+"""
+  [ STEM < "０４９５９１" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "０４９５９１", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "０４９５９１",
+    TRAITS native_token_list ].
+
+03185692_j := a_-_num_le &
+"""
+"""
+  [ STEM < "03185692" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "03185692", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "03185692",
+    TRAITS native_token_list ].
+
+4一二三_j := a_-_num_le &
+"""
+"""
+  [ STEM < "4一二三" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "4一二三", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "4一二三",
+    TRAITS native_token_list ].
+
+二○○五_j := a_-_num_le &
+"""
+"""
+  [ STEM < "二○○五" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "二○○五", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "二○○五",
+    TRAITS native_token_list ].
+
+
+
+两百_j := a_-_num_le &
+"""
+"""
+  [ STEM < "两百" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "两", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "两百",
+    TRAITS native_token_list ].
+
+
+
+几十_j := a_-_num_le &
+"""
+[jǐ shí] dozens; tens;
+"""
+  [ STEM < "几十" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "几", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "几十",
+    TRAITS native_token_list ].
+
+
 几_j := a_-_num_le &
   [ STEM < "几" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "几", LENGTH one ],
@@ -130214,6 +130268,7 @@
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "9999", LENGTH more-than-one ],
     SYNSEM.LKEYS.KEYREL.CARG "9999",
     TRAITS native_token_list ].
+
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Percentage

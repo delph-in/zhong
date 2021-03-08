@@ -30,8 +30,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Types for Sign, Word, Phrase, and Lex-Entry
 
-sign-min := avm &
-  [ STEM list ].
+
+; sign-min := avm &
+; """
+; Redefined in zhong.tdl
+; """
+;   [ STEM list ].
 
 basic-sign := sign-min &
   [ KEY-ARG bool ].
@@ -223,10 +227,13 @@ intersective-mod := local.
 
 non-local-min := avm.
 
-non-local := non-local-min &
-  [ SLASH 0-1-dlist,
-    QUE 0-1-dlist,
-    REL 0-1-dlist ].
+; non-local := non-local-min &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ SLASH 0-1-dlist,
+;     QUE 0-1-dlist,
+;     REL 0-1-dlist ].
 
 non-local-none := non-local &
   [ SLASH 0-dlist & [ LIST < > ],
@@ -397,13 +404,16 @@ mrs := mrs-min &
 ;                            head and the CLAUSE value of the dependent.
 
 ; SSH 2012-02-16 --ICONS 
-hook := avm &
-  [ GTOP handle,
-    LTOP handle,
-    INDEX individual,
-    XARG individual,
-    ICONS-KEY icons,
-    CLAUSE-KEY event ].
+; hook := avm &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ GTOP handle,
+;     LTOP handle,
+;     INDEX individual,
+;     XARG individual,
+;     ICONS-KEY icons,
+;     CLAUSE-KEY event ].
 
 ; MRSs are divided into psoas (with a distinguished event) and
 ; nom-objs (with a distinguished index).  We use a polymorphic
@@ -701,7 +711,6 @@ quant-relation := arg0-relation &
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; predsorts
 
-norm_rel := predsort.
 named_rel := norm_rel.
 
 
@@ -1261,7 +1270,10 @@ head-nexus-que-phrase := headed-phrase &
 
 ; ERB 2007-01-21 Removed supertype no-msg-phrase.
 
-head-nexus-phrase := head-nexus-rel-phrase & head-nexus-que-phrase.
+; head-nexus-phrase := head-nexus-rel-phrase & head-nexus-que-phrase
+; """
+; This is redefined in zhong.tdl
+; """.
 
 
 ; In a head/local dependent phrase, the SLASH feature of the mother is
@@ -1305,9 +1317,12 @@ basic-unary-phrase := phrase &
 				       ICONS [ LIST #icfirst,
 					       LAST #icmiddle ] ] ] ] ] > ].
 
-unary-phrase := basic-unary-phrase &
-  [ INFLECTED infl-satisfied,
-    ARGS < [ INFLECTED infl-satisfied ] > ].
+; unary-phrase := basic-unary-phrase &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ INFLECTED infl-satisfied,
+;     ARGS < [ INFLECTED infl-satisfied ] > ].
 
 basic-binary-phrase := phrase &
   [ SYNSEM.LOCAL.CONT [ RELS [ LIST #first,
@@ -1493,8 +1508,11 @@ head-compositional := headed-phrase &
 ; ERB 2007-01-21 COMPS olist is no longer a fair constraint on
 ; clauses, under current analysis.
 
-clause := phrasal &
-  [ SYNSEM.NON-LOCAL.QUE 0-dlist ].
+; clause := phrasal &
+; """
+; This was redefined in zhong.tdl
+; """
+;   [ SYNSEM.NON-LOCAL.QUE 0-dlist ].
 
 
 ; The following subtypes of clause will need more constraints,
@@ -1539,15 +1557,18 @@ clause := phrasal &
 
 ; SSH 2012-05-07 ICONS <! !>
 ; SSH 2014-11-26 CLAUSE -> IARG1
-basic-non-rel-clause := clause & head-compositional & 
-  [ SYNSEM.NON-LOCAL.REL 0-dlist,
-    HEAD-DTR.SYNSEM [ LOCAL.CONT.HOOK [ INDEX #index,
-					ICONS-KEY.IARG1 #index,
-					CLAUSE-KEY #index ],
-		      NON-LOCAL [ QUE 0-dlist,
-				  REL 0-dlist ] ],
-    C-CONT [ RELS <! !>,
-	     HCONS <! !> ] ].
+; basic-non-rel-clause := clause & head-compositional &
+; """
+; This was redefined in zhong.tdl
+; """
+;   [ SYNSEM.NON-LOCAL.REL 0-dlist,
+;     HEAD-DTR.SYNSEM [ LOCAL.CONT.HOOK [ INDEX #index,
+; 					ICONS-KEY.IARG1 #index,
+; 					CLAUSE-KEY #index ],
+; 		      NON-LOCAL [ QUE 0-dlist,
+; 				  REL 0-dlist ] ],
+;     C-CONT [ RELS <! !>,
+; 	     HCONS <! !> ] ].
 
 ; For non-interrogative non-rel clauses, hook up 
 ; MARG to head daughter's LTOP.  Subtypes will need
@@ -1695,25 +1716,28 @@ nc-head-filler-phrase := nc-filler-phrase & head-compositional.
 ; JDC 2012-06-02 adding [HC-LIGHT -] to basic-head-* phrases 
 ; (with the exception of except head-comps)
 
-basic-head-subj-phrase := head-valence-phrase & head-compositional & 
-			  basic-binary-headed-phrase & 
-  [ SYNSEM phr-synsem & 
-		   [ LOCAL.CAT [ POSTHEAD +,
-				 HC-LIGHT -,
-				 VAL [ SUBJ < >,
-				       COMPS #comps,
-				       SPR #spr ] ] ],
-	HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #synsem >,
-					COMPS #comps,	
-					SPR #spr ],
-	NON-HEAD-DTR.SYNSEM #synsem & canonical-synsem &
-		   [ LOCAL [ CAT [ VAL [ SUBJ olist,
-					 COMPS olist,
-					 SPR olist ] ] ],
-			 NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
-				     REL 0-dlist,
-			             QUE 0-dlist ] ],
-    C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
+; basic-head-subj-phrase := head-valence-phrase & head-compositional & 
+; 			  basic-binary-headed-phrase &
+; """
+; This was redefined in zhong.tdl
+; """
+;   [ SYNSEM phr-synsem & 
+; 		   [ LOCAL.CAT [ POSTHEAD +,
+; 				 HC-LIGHT -,
+; 				 VAL [ SUBJ < >,
+; 				       COMPS #comps,
+; 				       SPR #spr ] ] ],
+; 	HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [ SUBJ < #synsem >,
+; 					COMPS #comps,	
+; 					SPR #spr ],
+; 	NON-HEAD-DTR.SYNSEM #synsem & canonical-synsem &
+; 		   [ LOCAL [ CAT [ VAL [ SUBJ olist,
+; 					 COMPS olist,
+; 					 SPR olist ] ] ],
+; 			 NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
+; 				     REL 0-dlist,
+; 			             QUE 0-dlist ] ],
+;     C-CONT [ RELS <! !>, HCONS <! !>, ICONS <! !> ] ].
 
 decl-head-subj-phrase := basic-head-subj-phrase & declarative-clause.
 imp-head-subj-phrase := basic-head-subj-phrase & imperative-clause.
@@ -1816,11 +1840,13 @@ basic-head-1st-comp-phrase := basic-head-comp-phrase &
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < #synsem . #comps >,
     NON-HEAD-DTR.SYNSEM #synsem ].
 
-; ERB 2004-12-14 First pass at a rule that realizes complements
-; out of order.
 
 basic-head-2nd-comp-phrase := basic-head-comp-phrase &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #firstcomp . #othercomps >,
+"""
+; ERB 2004-12-14 First pass at a rule that realizes complements
+; out of order.
+"""
+[ SYNSEM.LOCAL.CAT.VAL.COMPS < #firstcomp . #othercomps >,
     HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS [ FIRST #firstcomp,
 					  REST < #synsem . #othercomps > ],
     NON-HEAD-DTR.SYNSEM #synsem ].
@@ -1868,35 +1894,38 @@ basic-head-comp-nmc-phrase := head-valence-phrase & head-compositional &
 ; is, using [ ICONS.LIST.FIRST ... ] is dangerous. Plus, CLAUSE/TARGET
 ; are replaced by IARG1/IARG2.
 
-basic-head-opt-comp-phrase := head-valence-phrase & head-only &
-                              head-compositional &
-  [ INFLECTED #infl,
-    SYNSEM canonical-synsem &
-	      [ LOCAL.CAT [ VAL [ SUBJ #subj,
-				  COMPS #comps,
-				  SPR #spr,
-				  SPEC #spec ],
-			    MC #mc,
-			    POSTHEAD #ph ],
-		MODIFIED #mod ],
-    HEAD-DTR [ INFLECTED #infl & infl-satisfied,
-	       SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ #subj,
-					    COMPS < unexpressed &
-						    [ OPT +,
-						      OPT-CS #def,
-						      LOCAL.CONT.HOOK [ INDEX #index & [ COG-ST #def ],
-									ICONS-KEY #ikey,
-									CLAUSE-KEY #ckey ] ] . #comps >,
-					    SPR #spr,
-					    SPEC #spec ],
-				      MC #mc,
-				      POSTHEAD #ph ],
-				CONT.HOOK.INDEX event ],
-			MODIFIED #mod ] ],
-    C-CONT [ RELS <! !>,
-	     HCONS <! !>,
-	     ICONS <! #ikey & non-focus & [ IARG1 #ckey,
-					    IARG2 #index ] !> ] ].
+; basic-head-opt-comp-phrase := head-valence-phrase & head-only &
+;                               head-compositional &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ INFLECTED #infl,
+;     SYNSEM canonical-synsem &
+; 	      [ LOCAL.CAT [ VAL [ SUBJ #subj,
+; 				  COMPS #comps,
+; 				  SPR #spr,
+; 				  SPEC #spec ],
+; 			    MC #mc,
+; 			    POSTHEAD #ph ],
+; 		MODIFIED #mod ],
+;     HEAD-DTR [ INFLECTED #infl & infl-satisfied,
+; 	       SYNSEM [ LOCAL [ CAT [ VAL [ SUBJ #subj,
+; 					    COMPS < unexpressed &
+; 						    [ OPT +,
+; 						      OPT-CS #def,
+; 						      LOCAL.CONT.HOOK [ INDEX #index & [ COG-ST #def ],
+; 									ICONS-KEY #ikey,
+; 									CLAUSE-KEY #ckey ] ] . #comps >,
+; 					    SPR #spr,
+; 					    SPEC #spec ],
+; 				      MC #mc,
+; 				      POSTHEAD #ph ],
+; 				CONT.HOOK.INDEX event ],
+; 			MODIFIED #mod ] ],
+;     C-CONT [ RELS <! !>,
+; 	     HCONS <! !>,
+; 	     ICONS <! #ikey & non-focus & [ IARG1 #ckey,
+; 					    IARG2 #index ] !> ] ].
 
 
 ; ERB 2004-05-10 For languages that allow "pro-drop" of subjects.
@@ -2029,41 +2058,43 @@ marker-final-phrase := basic-binary-marker-phrase &
 
 ; SSH 2012-03-03 ICONS
 ; SSH 2013-02-19 deleting ICONS ?
-basic-bare-np-phrase := head-only &
-"""
-ERB 2004-12-14 Type for optional specifier (determiner) phrases.
-Build NPs out of N's.  The specification [OPT +] on the head
-daughter's SPR value is meant to allow this rule to apply to
-some nouns and not others.  Nouns which require an overt specifier
-should lexically say [ OPT - ].  Nouns which optionally occur
-with a specifier can leave the OPT value of that argument unmarked.
-Nouns which only appear without a specifier need a SPR value which
-is incompatible with any of the available overt determiners.  This
-could conceivably be regulated on the basis of semantics.
-<ex>Dogs bark.
-<nex> The dogs bark.
-"""
-  [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
-			   SUBJ < >,
-			   COMPS < >,
-			   SPEC < > ],
-    HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun,
-				  VAL [ SPR < [ LOCAL.CAT.HEAD det,
-						OPT + ] >,
-					SUBJ < >,
-					COMPS < > ] ],
-			    CONT.HOOK [ INDEX #index,
-					LTOP #larg ] ],
-    C-CONT [ RELS <! quant-relation &
-		   [ LBL #ltop,
-		     ARG0 #index,
-		     RSTR #harg ] !>,
-	     HCONS <! qeq & 
-		    [ HARG #harg,
-		      LARG #larg ] !>,
-	     ICONS <! !>,
-	     HOOK [ INDEX #index,
-		    LTOP #ltop ] ] ].
+; basic-bare-np-phrase := head-only &
+; """
+; ERB 2004-12-14 Type for optional specifier (determiner) phrases.
+; Build NPs out of N's.  The specification [OPT +] on the head
+; daughter's SPR value is meant to allow this rule to apply to
+; some nouns and not others.  Nouns which require an overt specifier
+; should lexically say [ OPT - ].  Nouns which optionally occur
+; with a specifier can leave the OPT value of that argument unmarked.
+; Nouns which only appear without a specifier need a SPR value which
+; is incompatible with any of the available overt determiners.  This
+; could conceivably be regulated on the basis of semantics.
+; <ex>Dogs bark.
+; <nex> The dogs bark.
+
+; This was redefined in zhong.tdl
+; """
+;   [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
+; 			   SUBJ < >,
+; 			   COMPS < >,
+; 			   SPEC < > ],
+;     HEAD-DTR.SYNSEM.LOCAL [ CAT [ HEAD noun,
+; 				  VAL [ SPR < [ LOCAL.CAT.HEAD det,
+; 						OPT + ] >,
+; 					SUBJ < >,
+; 					COMPS < > ] ],
+; 			    CONT.HOOK [ INDEX #index,
+; 					LTOP #larg ] ],
+;     C-CONT [ RELS <! quant-relation &
+; 		   [ LBL #ltop,
+; 		     ARG0 #index,
+; 		     RSTR #harg ] !>,
+; 	     HCONS <! qeq & 
+; 		    [ HARG #harg,
+; 		      LARG #larg ] !>,
+; 	     ICONS <! !>,
+; 	     HOOK [ INDEX #index,
+; 		    LTOP #ltop ] ] ].
 
 ; Unary rules for extraction
 
@@ -2157,45 +2188,49 @@ extracted-adj-phrase := basic-extracted-adj-phrase &
 ; mother and non-head-daughter, token-identity removed
 
 
-basic-head-mod-phrase-simple := head-mod-phrase & binary-headed-phrase &
-  [ SYNSEM [ LOCAL.CAT.MKG #mkg,
-             NON-LOCAL [ SLASH [ LIST #first,
-				 LAST #last ],
-			 REL 0-dlist ] ],
-    HEAD-DTR.SYNSEM 
-           [ LOCAL [ CAT [ HEAD #head,
-                           VAL #val,
-                           POSTHEAD #ph,
-			   MC #hmc,
-			   HC-LIGHT - ],
-		     CONT.HOOK #hdhook & [ ICONS-KEY.IARG1 #clause,
-                                           CLAUSE-KEY #clause ],  
-                     AGR #agr ],
-             NON-LOCAL #nonloc &
-                   [ SLASH [ LIST #middle,
-                             LAST #last ] ],
-			 LIGHT #light,
-			 MODIFIED #modif ],
-    NON-HEAD-DTR.SYNSEM 
-           [ LOCAL [ CAT [ HEAD [ MOD < [ LOCAL local & 
-                                              [ CAT [ HEAD #head,
-                                                      VAL #val,
-                                                      POSTHEAD #ph,
-                                                      MC #hmc ],
-                                                AGR #agr,
-                                                CONT.HOOK #hdhook ],
-                                        NON-LOCAL #nonloc,
-					LIGHT #light,
-                                        MODIFIED #modif ] > ],
-			   VAL [ COMPS olist, 
-				 SPR olist ], 
-                           MKG #mkg ],
-		     CONT.HOOK [ ICONS-KEY.IARG1 #clause,
-				 CLAUSE-KEY #clause ] ],
-             NON-LOCAL [ SLASH [ LIST #first,
-                                 LAST #middle ],
-                         QUE 0-dlist & [ LIST null ] ] ],
-    C-CONT [ RELS <! !>, ICONS <! !> ] ].
+; basic-head-mod-phrase-simple := head-mod-phrase & binary-headed-phrase &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ SYNSEM [ LOCAL.CAT.MKG #mkg,
+;              NON-LOCAL [ SLASH [ LIST #first,
+; 				 LAST #last ],
+; 			 REL 0-dlist ] ],
+;     HEAD-DTR.SYNSEM 
+;            [ LOCAL [ CAT [ HEAD #head,
+;                            VAL #val,
+;                            POSTHEAD #ph,
+; 			   MC #hmc,
+; 			   HC-LIGHT - ],
+; 		     CONT.HOOK #hdhook & [ ICONS-KEY.IARG1 #clause,
+;                                            CLAUSE-KEY #clause ],  
+;                      AGR #agr ],
+;              NON-LOCAL #nonloc &
+;                    [ SLASH [ LIST #middle,
+;                              LAST #last ] ],
+; 			 LIGHT #light,
+; 			 MODIFIED #modif ],
+;     NON-HEAD-DTR.SYNSEM 
+;            [ LOCAL [ CAT [ HEAD [ MOD < [ LOCAL local & 
+;                                               [ CAT [ HEAD #head,
+;                                                       VAL #val,
+;                                                       POSTHEAD #ph,
+;                                                       MC #hmc ],
+;                                                 AGR #agr,
+;                                                 CONT.HOOK #hdhook ],
+;                                         NON-LOCAL #nonloc,
+; 					LIGHT #light,
+;                                         MODIFIED #modif ] > ],
+; 			   VAL [ COMPS olist, 
+; 				 SPR olist ], 
+;                            MKG #mkg ],
+; 		     CONT.HOOK [ ICONS-KEY.IARG1 #clause,
+; 				 CLAUSE-KEY #clause ] ],
+;              NON-LOCAL [ SLASH [ LIST #first,
+;                                  LAST #middle ],
+;                          QUE 0-dlist & [ LIST null ] ] ],
+;     C-CONT [ RELS <! !>, ICONS <! !> ] ].
+
 
 ;;;2011-11-07 removing head-mod-phrase-simple
 ;;;As pointed out by Bart Cramer, this does not add anything to
@@ -2474,59 +2509,68 @@ zero-arg-slash := zero-arg-nonrel & zero-arg-nonque.
 ; more arguments will require appropriate new types as well, which
 ; amalgamate everything but add a value in addition.
 
-basic-one-arg := lex-item &
-  [ ARG-ST < [ NON-LOCAL [ SLASH #slash,
-			   REL #rel,
-			   QUE #que ] ] >,
-    SYNSEM.NON-LOCAL [ SLASH #slash,
-		       REL #rel,
-		       QUE #que ] ].
+; basic-one-arg := lex-item &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ ARG-ST < [ NON-LOCAL [ SLASH #slash,
+; 			   REL #rel,
+; 			   QUE #que ] ] >,
+;     SYNSEM.NON-LOCAL [ SLASH #slash,
+; 		       REL #rel,
+; 		       QUE #que ] ].
 
-basic-two-arg := lex-item &
-  [ ARG-ST < [ NON-LOCAL [ SLASH [ LIST #smiddle,
-				   LAST #slast ],
-			   REL [ LIST #rmiddle,
-				 LAST #rlast ],
-			   QUE [ LIST #qmiddle,
-				 LAST #qlast ] ] ],
-	     [ NON-LOCAL [ SLASH [ LIST #sfirst,
-				   LAST #smiddle ],
-			   REL [ LIST #rfirst,
-				 LAST #rmiddle ],
-			   QUE [ LIST #qfirst,
-				 LAST #qmiddle ] ] ] >,
-    SYNSEM.NON-LOCAL [ SLASH [ LIST #sfirst,
-			       LAST #slast ],
-		       REL [ LIST #rfirst,
-			     LAST #rlast ],
-		       QUE [ LIST #qfirst,
-			     LAST #qlast ] ] ].
+; basic-two-arg := lex-item &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ ARG-ST < [ NON-LOCAL [ SLASH [ LIST #smiddle,
+; 				   LAST #slast ],
+; 			   REL [ LIST #rmiddle,
+; 				 LAST #rlast ],
+; 			   QUE [ LIST #qmiddle,
+; 				 LAST #qlast ] ] ],
+; 	     [ NON-LOCAL [ SLASH [ LIST #sfirst,
+; 				   LAST #smiddle ],
+; 			   REL [ LIST #rfirst,
+; 				 LAST #rmiddle ],
+; 			   QUE [ LIST #qfirst,
+; 				 LAST #qmiddle ] ] ] >,
+;     SYNSEM.NON-LOCAL [ SLASH [ LIST #sfirst,
+; 			       LAST #slast ],
+; 		       REL [ LIST #rfirst,
+; 			     LAST #rlast ],
+; 		       QUE [ LIST #qfirst,
+; 			     LAST #qlast ] ] ].
 
-basic-three-arg := lex-item &
-  [ ARG-ST < [ NON-LOCAL [ SLASH [ LIST #smiddle2,
-				   LAST #slast ],
-			   REL [ LIST #rmiddle2,
-				 LAST #rlast ],
-			   QUE [ LIST #qmiddle2,
-				 LAST #qlast ] ] ],
-	     [ NON-LOCAL [ SLASH [ LIST #sfirst,
-				   LAST #smiddle1 ],
-			   REL [ LIST #rfirst,
-				 LAST #rmiddle1 ],
-			   QUE [ LIST #qfirst,
-				 LAST #qmiddle1 ] ] ],
-	     [ NON-LOCAL [ SLASH [ LIST #smiddle1,
-				   LAST #smiddle2 ],
-			   REL [ LIST #rmiddle1,
-				 LAST #rmiddle2 ],
-			   QUE [ LIST #qmiddle1,
-				 LAST #qmiddle2 ] ] ] >,
-    SYNSEM.NON-LOCAL [ SLASH [ LIST #sfirst,
-			       LAST #slast ],
-		       REL [ LIST #rfirst,
-			     LAST #rlast ],
-		       QUE [ LIST #qfirst,
-			     LAST #qlast ] ] ].
+; basic-three-arg := lex-item &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ ARG-ST < [ NON-LOCAL [ SLASH [ LIST #smiddle2,
+; 				   LAST #slast ],
+; 			   REL [ LIST #rmiddle2,
+; 				 LAST #rlast ],
+; 			   QUE [ LIST #qmiddle2,
+; 				 LAST #qlast ] ] ],
+; 	     [ NON-LOCAL [ SLASH [ LIST #sfirst,
+; 				   LAST #smiddle1 ],
+; 			   REL [ LIST #rfirst,
+; 				 LAST #rmiddle1 ],
+; 			   QUE [ LIST #qfirst,
+; 				 LAST #qmiddle1 ] ] ],
+; 	     [ NON-LOCAL [ SLASH [ LIST #smiddle1,
+; 				   LAST #smiddle2 ],
+; 			   REL [ LIST #rmiddle1,
+; 				 LAST #rmiddle2 ],
+; 			   QUE [ LIST #qmiddle1,
+; 				 LAST #qmiddle2 ] ] ] >,
+;     SYNSEM.NON-LOCAL [ SLASH [ LIST #sfirst,
+; 			       LAST #slast ],
+; 		       REL [ LIST #rfirst,
+; 			     LAST #rlast ],
+; 		       QUE [ LIST #qfirst,
+; 			     LAST #qlast ] ] ].
 
 ; ERB 2007-01-22  In the message-free universe, many more qeqs are
 ; introduced by lexical items (basically any head that selects a clausal
@@ -2624,14 +2668,17 @@ expl-arg-only-lex-item := basic-one-arg-no-hcons & basic-icons-lex-item &
 ; Kim ga hiru gohan wo taberu.  
 ; Kim mange le dejeuner.  
 
-transitive-lex-item := basic-two-arg-no-hcons & basic-icons-lex-item &
-   [ ARG-ST < [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind1,
-				  ICONS-KEY.IARG1 #clause ] ],
-	      [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind2,
-				  ICONS-KEY.IARG1 #clause ] ] >,
-     SYNSEM [ LKEYS.KEYREL [ ARG1 #ind1,
-			     ARG2 #ind2 ],
-	      LOCAL.CONT.HOOK.CLAUSE-KEY #clause ] ].
+; transitive-lex-item := basic-two-arg-no-hcons & basic-icons-lex-item &
+; """
+; This is redefined in zhong-lextype.tdl
+; """
+;    [ ARG-ST < [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind1,
+; 				  ICONS-KEY.IARG1 #clause ] ],
+; 	      [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind2,
+; 				  ICONS-KEY.IARG1 #clause ] ] >,
+;      SYNSEM [ LKEYS.KEYREL [ ARG1 #ind1,
+; 			     ARG2 #ind2 ],
+; 	      LOCAL.CONT.HOOK.CLAUSE-KEY #clause ] ].
 
 ; Kim gives Sandy a book.
 ; Kim ga Sandy ni hon wo ageru.
@@ -3040,7 +3087,11 @@ basic-adjective-lex := single-rel-lex-item &
 ; (event for adj, index for nouns) preventing coordination from working
 ; changed to norm-sem-lex-item.
 
-basic-mod-adj-lex := basic-adjective-lex & norm-sem-lex-item.
+; basic-mod-adj-lex := basic-adjective-lex & norm-sem-lex-item
+; """
+; This was redefined in zhong-lextypes.tdl
+; """.
+
 basic-scopal-mod-adj-lex := basic-mod-adj-lex & scopal-mod-lex.
 basic-int-mod-adj-lex := basic-mod-adj-lex & intersective-mod-lex.
 basic-nomod-adj-lex := basic-adjective-lex & no-mod-lex & norm-hook-lex-item.
@@ -3087,23 +3138,29 @@ basic-noun-lex := norm-sem-lex-item & basic-icons-lex-item &
 ; language-specific.  In this case, however, it does not concern
 ; a mapping to ARG-ST.
 
-basic-determiner-lex := norm-hook-lex-item & 
-  [ SYNSEM [ LOCAL [ CAT [ HEAD det,
-			   VAL.SPEC.FIRST.LOCAL.CONT.HOOK [ INDEX #ind,
-							    LTOP #larg ]],
-		     CONT [ HCONS <! qeq &
-				   [ HARG #harg,
-				     LARG #larg ] !>,
-			    RELS <! relation !> ] ],
-	     LKEYS.KEYREL quant-relation &
-		   [ ARG0 #ind,
-		     RSTR #harg ] ] ].
+; basic-determiner-lex := norm-hook-lex-item &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ SYNSEM [ LOCAL [ CAT [ HEAD det,
+; 			   VAL.SPEC.FIRST.LOCAL.CONT.HOOK [ INDEX #ind,
+; 							    LTOP #larg ]],
+; 		     CONT [ HCONS <! qeq &
+; 				   [ HARG #harg,
+; 				     LARG #larg ] !>,
+; 			    RELS <! relation !> ] ],
+; 	     LKEYS.KEYREL quant-relation &
+; 		   [ ARG0 #ind,
+; 		     RSTR #harg ] ] ].
 
 ; SSH 2013-12-07: Some determiners mark information structure.
-infostr-marking-determiner-lex := basic-determiner-lex & one-icons-lex-item & 
-  [ SYNSEM.LOCAL [ CAT.VAL.SPEC.FIRST.LOCAL.CONT.HOOK [ INDEX #target,
-							ICONS-KEY #icons ],
-		   CONT.ICONS <! info-str & #icons & [ IARG2 #target] !> ] ].
+; infostr-marking-determiner-lex := basic-determiner-lex & one-icons-lex-item &
+; """
+; This is redifined in zhong.tdl
+; """
+;   [ SYNSEM.LOCAL [ CAT.VAL.SPEC.FIRST.LOCAL.CONT.HOOK [ INDEX #target,
+; 							ICONS-KEY #icons ],
+; 		   CONT.ICONS <! info-str & #icons & [ IARG2 #target] !> ] ].
 
 
 ; Subordinating conjunctions take two clauses, one as an argument
@@ -3229,9 +3286,12 @@ topormid-coord-phrase := coord-phrase &
 top-coord-rule := topormid-coord-phrase &
   [ SYNSEM.LOCAL.COORD - ].
 
-mid-coord-rule := topormid-coord-phrase &
-  [ SYNSEM.LOCAL [ COORD +,
-                   COORD-REL implicit-coord-rel ]].
+; mid-coord-rule := topormid-coord-phrase &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ SYNSEM.LOCAL [ COORD +,
+;                    COORD-REL implicit-coord-rel ]].
 
 bottom-coord-phrase := phrase &
   [ CONJ-DTR sign,
@@ -3458,12 +3518,15 @@ np-coord-phrase := coord-phrase &
     LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD noun,
     RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD noun ].
 
-basic-np-top-coord-rule := np-coord-phrase &
-  [ SYNSEM.LOCAL.CAT.VAL.SPR < >,
-    C-CONT [ HOOK [ LTOP #ltop,
-                    INDEX #ind ],
-             RELS <! [ PRED "exist_q_rel", ARG0 #ind, RSTR #ltop ] !>,
-	     HCONS <! !> ]].
+; basic-np-top-coord-rule := np-coord-phrase &
+; """
+; This was redefined in zhong.tdl
+; """
+;   [ SYNSEM.LOCAL.CAT.VAL.SPR < >,
+;     C-CONT [ HOOK [ LTOP #ltop,
+;                     INDEX #ind ],
+;              RELS <! [ PRED "exist_q_rel", ARG0 #ind, RSTR #ltop ] !>,
+; 	     HCONS <! !> ]].
 
 basic-np-mid-coord-rule := np-coord-phrase &
   [ SYNSEM.LOCAL.COORD-REL #crel,
@@ -3564,11 +3627,14 @@ vp-bottom-coord-phrase := bottom-coord-phrase &
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; S Coordination rules
 
-s-coord-phrase := event-coord-phrase &
-  [ SYNSEM.LOCAL.CAT.VAL.SUBJ < >,
-    SYNSEM.LOCAL.CAT.HEAD verb,
-    LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD verb,
-    RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD verb ].
+; s-coord-phrase := event-coord-phrase &
+; """
+; This is redefined in zhong.tdl
+; """
+;   [ SYNSEM.LOCAL.CAT.VAL.SUBJ < >,
+;     SYNSEM.LOCAL.CAT.HEAD verb,
+;     LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD verb,
+;     RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD verb ].
 
 basic-s-top-coord-rule := s-coord-phrase &
   [ C-CONT [ RELS <! !>,
@@ -3804,15 +3870,3 @@ same-spec-lex-rule := lex-rule &
 same-comps-lex-rule := lex-rule &
  [ SYNSEM.LOCAL.CAT.VAL.COMPS #comps,
    DTR.SYNSEM.LOCAL.CAT.VAL.COMPS #comps ].
-
-same-hc-light-lex-rule := lex-rule &
- [ SYNSEM.LOCAL.CAT.HC-LIGHT #hcl,
-   DTR.SYNSEM.LOCAL.CAT.HC-LIGHT #hcl ].
-
-same-posthead-lex-rule := lex-rule &
- [ SYNSEM.LOCAL.CAT.POSTHEAD #ph,
-   DTR.SYNSEM.LOCAL.CAT.POSTHEAD #ph ].
-
-same-mc-lex-rule := lex-rule &
- [ SYNSEM.LOCAL.CAT.MC #mc,
-   DTR.SYNSEM.LOCAL.CAT.MC #mc ].

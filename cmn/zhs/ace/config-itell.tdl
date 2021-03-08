@@ -1,7 +1,7 @@
 ;;; -*- Mode: TDL; -*-
 
 grammar-top               := "../zhs-gram-itell.tdl".
-parsing-roots             := root_strict_adj root_strict_vpc.
+parsing-roots             := root_strict_adj root_strict_vpc root_ques_nospr_adj root_rbst_frag root_rbst_nospr_adj.
 preprocessor              := "../repp/vanilla.rpp".
 
 :begin :config.

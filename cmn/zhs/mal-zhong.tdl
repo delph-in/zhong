@@ -19,12 +19,14 @@
 ; REDEFINITION OF EXISTING TYPES: 
 ;===============================================================================
 
-pred-adj-lex :+  [SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD noun]
-"""
-this is the lexical type for predicative adjectives, and we are constraining it 
-to require only noun subjects. This might be enough for LVL1, must check.
-"""
-.
+; a_-_pred_le :+  [SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD noun]
+; """
+; this is the lexical type for predicative adjectives, and we are constraining it 
+; to require only noun subjects. This might be enough for LVL1, must check.
+; In fact this was too restrictive. Since there are sentences like:
+; 学习 汉语 很 有意思
+; """
+; .
 
 
 
@@ -51,9 +53,11 @@ already a question.
 mal_x_-_qpart_le := qpart-mal-lex-item.
 
 
-;;;main-verb-lex &
-raising_adj_cop :=  no-rels-hcons-lex-item & basic-two-arg-no-hcons & basic-icons-lex-item
-		   & aspect-rule-dtr & verb-no-spr-item & nonque-item & 
+mal_raising_adj_cop :=  no-rels-hcons-lex-item & basic-two-arg-no-hcons & basic-icons-lex-item
+		   & aspect-rule-dtr & verb-no-spr-item & nonque-item &
+"""
+The COMP is marked as [OPT -] to stop spurious ambiguity.
+"""
 [ SYNSEM [ LOCAL [ CAT [HEAD verb & [COP +,
 				     EMPTY -,
 				     AUX -],
@@ -69,14 +73,15 @@ raising_adj_cop :=  no-rels-hcons-lex-item & basic-two-arg-no-hcons & basic-icon
 		     CONT.HOOK [LTOP #ltop,
 				CLAUSE-KEY #clause] ] ],
 	   #comp &
-	   [ LOCAL [ CAT [ VAL [ SUBJ < #subj >,
+	   [ OPT - ,
+	     LOCAL [ CAT [ VAL [ SUBJ < #subj >,
 				 SPR olist,
 				 COMPS < > ],
 			   HEAD adj ],
 		     CONT.HOOK [ INDEX #ind2,
 				 CLAUSE-KEY #clause ] ] ] > ].
 
-mal_v_adj_cop_le := raising_adj_cop
+mal_v_adj_cop_le := mal_raising_adj_cop
 """
 This is used for adjectival sentences to allow a copula.
 <mex>我 是 漂亮 。
@@ -85,30 +90,70 @@ This is used for adjectival sentences to allow a copula.
 .
 
 
+mal_scop-adv-s-prehd_le := scop-adv-s-prehd_le
+"""
+This is a type designed for misuse of 也 -- allowing it to be placed before the suject (i.e. as sentencial adverb); This essentially should mark the wrong position of 也 within a clause.
+
+FIXME: it competes with 也_r_1 in the correct position (for extracted subjects); it needs to be restricted further so this can't appear in the correct position (i.e. restrict to a VP WITH satisfied subject);
+With scop-adv-s-lex (now required an empty SUBJ), this almost works, but it still misfires first extracting the subject and then filling it. I need to block the subject extraction. 
+
+
+<mex> 我 学 工程 ， 也 我 学 中文 。
+<mex> 也 我 学 中文 。
+<mex> 也 我 很 高 。
+""".
+
+
 ;===============================================================================
 ; NEW RULES: 
 ;===============================================================================
 
-mal-bare-vp-phrase := unary-phrase & verb-no-spr-item &
+mal-np-as-vp-phrase := unary-phrase & verb-no-spr-item &
 """
-To pump NPs to VPs.
+This mal-rule is used to pump  NPs into subject-taking VPs. It introduces a 
+dummy 是_v_cop relation, which would be missing between the two NPs. 
+This is used to catch the error in sentences like:
+<mex> 她 学生 。
+
+Admittedly, this rule causes some havoc around amgibuity, since most NPs were
+trying to be pumped into VPs. We're continuing to add some restrictions to curb
+ambiguity.
+
 And [ EMPTY + ] on parent node to signal this VP is not a headed phrase (i.e. 
 there no verb). This might be useful, for example to prevent verb-derivational 
-rules from applied to this case (where there is no vebr). e.g. reduplication of 
+rules from applied to this case (where there is no verb). e.g. reduplication of 
 verb, V-Not-V.
 
 Inheriting from verb-no-spr-item restricts the verb phrase being created form 
 taking degree modifiers.
 
+Added [OPT -] to the created pumped VP's subject so it doesn't occur when there 
+is no NP to be taken as subject (this should reduce parse ambiguity considerably).
+
+The NP argument is set to [PUNCTUATED na-or-- ] to force punctuation to attach
+higher.
+
+Added [ SORT common-s ] to the original NP's CONT.HOOK.INDEX to block pronouns
+and proper nouns from being pumped into VPs. This allows us to catch common 
+errors like:
+<mex> 她 学生 。
+But not:
+<nex> 学生 她 。
+But gaining control over ambiguity.
 
 olist = optional or filled
+
+We also need to add [COORD -] on the daughter to block the midway of a 
+coordination (e.g. ', 学生')  to be pumped into a VP. Complete/full
+coordinations should be COORD -, so they would be able to be pumped.
 """
 [ SYNSEM [ LOCAL [ CAT [ HEAD verb & [ EMPTY +,
 				       COP +],
-			 VAL [ SUBJ < [LOCAL [ CAT [ HEAD noun,
-						   VAL [ SUBJ < >,
-							 SPR < >,
-							 COMPS < > ] ],
+			 VAL [ SUBJ < [OPT -,
+				       LOCAL [ CAT [ HEAD noun,
+						     VAL [ SUBJ < >,
+							   SPR < >,
+							   COMPS < > ] ],
 					       CONT.HOOK.INDEX #arg1 ] ] >,
 			       COMPS < > ],
 			 POSTHEAD +,
@@ -121,8 +166,10 @@ olist = optional or filled
 					SPR < >,
 					COMPS < > ],
 				  NONSUBJ #ns ],
-			    CONT.HOOK.INDEX #arg2 ],
-		    NON-LOCAL #nonlocal ] ] >,
+			    COORD -,
+			    CONT.HOOK.INDEX #arg2 & [ SORT common-s ]  ],
+		    NON-LOCAL #nonlocal,
+		    PUNCTUATED na-or-- ] ] >,
   C-CONT [ RELS <! arg12-ev-relation &
 		 [ PRED "是_v_cop_rel",
 		   LBL #ltop,
