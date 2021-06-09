@@ -32,8 +32,18 @@ head specifier rule used for adjectives and adverbs.
 ;; ZZF 20161123 changed COG-ST "type-id" to "cog-st" (underspecified), to allow combining with determiners, which is "uniq+fam+act". Example: [[这 [两 只]] 猫]. To be refined with Sanghoun when reviewing definiteness.
 spr-head-cl := spr-head-h-sem-phrase &
 """
+This a version of the specifier head to join numerals with classifiers.
+It inherits from 'spr-head-h-sem-phrase' and 'basic-head-spr-phrase' that is also used to join degree specifiers to adjectives and certain verbs.
+
+In order to be more useful to capture 两 vs 二 distinction, we can further restrict the NON-HEAD-DTR to only allow
+
+This will all have to be revised during the Marie Curie.   
+
+Added [NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD [CARDINAL +]] to require that the numeral in this construction be compatible with CARDINAL +. Currently only  二 is marked as [CARDINAL -].
+
 """
   [ STYLE robust,
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD [CARDINAL +],
     HEAD-DTR.SYNSEM [ LOCAL [ CAT.HEAD classifier,
 			      CONT.HOOK.INDEX.COG-ST cog-st ] ] ].
 
@@ -77,7 +87,13 @@ Both (猫) and (两 只 猫) are bare NPs.
 0-nom-d := bare-nominal-det-phrase.
 0-nom-cls := bare-nominal-cls-phrase.
 
-meas-np := meas-np-phrase.
+rbst-meas-np := meas-np-phrase
+"""
+This rule is currently marked as robust because it allows both common and measure nouns to be modified by a numeral without a classifier. While this is needed to some classes of nouns/cl (measure words) like 'cup' 'kilo' etc, it should definitely not be acceptable with common nouns.
+There is currently no implementation of measure words, and they are sprinkled both as classifiers and common nouns. For this reason, it is not true that everything this mal-rule picks up is, in fact, ungrammatical. 
+
+This needs to be solved in the near future (during Marie Curie).
+""".
 
 ;;FB & ZZF 4/11/2015 comment out this rule as there's bare-np rule to handle this
 ;generic-np := generic-np-phrase.
@@ -252,6 +268,12 @@ rslt-123_123 := rslt-compound-phrase &
 ;;; Newly introduced phrase structure rules
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+np-num := np-num-phrase
+"""
+Rule to pump numbers nouns.
+""".
+
+
 np-time-adp := np-time-adp-phrase.
 
 rbst-np-place-adp := np-place-adp-phrase
@@ -304,3 +326,8 @@ frg-np := frag-np-rule.
 
 frag-vmod-int := frag-vmod-int-rule.
 frag-vmod-scop := frag-vmod-scop-rule.
+
+
+
+
+

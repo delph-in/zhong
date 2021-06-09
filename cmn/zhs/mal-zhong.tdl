@@ -37,10 +37,24 @@
 qpart-mal-lex-item := spart-lex-item & nonque-item &
 """
 This is a copy of qpart-lex-item (sentence final particle), that changed 
-NON-LOCAL.QUE to 1-dlist (instead of 0-dlist). This change is requirering that 
-exacly 1 question word be included in the sentence before this particle can 
-attach. This will enable the use of mal-吗-le even after the sentence is 
-already a question.
+[NON-LOCAL.QUE to 1-dlist]. This change is requirering that exacly 1 question 
+word be included in the sentence before this particle can attach.  
+The original [NON-LOCAL.QUE 0-dlist] meant that the sentence had zero question 
+words embedded anywhere in the sentence.
+
+
+e.g. 'your mom who went to the store to buy a book bought WHICH book?' 
+This is not really English, but shows what this non-locality allows). 
+Nevertheless, questions should always use this NON-LOCAL.QUE. If there is a 
+question word, then the value of this dlist should be the index of that 
+question word (which we can later use to try to point to which question word 
+was already used). So, if we don't constrain NON-LOCAL.QUE to a 0-dlist, 
+(meaning that it can have one or more question words) then ma will be able to 
+attach to that sentence. But it must be constrained to either a non-empty list 
+or to 1, otherwise we get good sentences (that are not really questions).
+
+This will enable the use of mal-吗-le even after the sentence is already 
+a question.
 """
   [ STYLE robust,
     SYNSEM [ SPART ma,
@@ -110,32 +124,20 @@ With scop-adv-s-lex (now required an empty SUBJ), this almost works, but it stil
 
 mal-np-as-vp-phrase := unary-phrase & verb-no-spr-item &
 """
-This mal-rule is used to pump  NPs into subject-taking VPs. It introduces a 
-dummy 是_v_cop relation, which would be missing between the two NPs. 
-This is used to catch the error in sentences like:
+This mal-rule is used to pump  NPs into subject-taking VPs. It introduces a  dummy 是_v_cop relation, which would be missing between the two NPs. This is used to catch the error in sentences like:
 <mex> 她 学生 。
 
-Admittedly, this rule causes some havoc around amgibuity, since most NPs were
-trying to be pumped into VPs. We're continuing to add some restrictions to curb
-ambiguity.
+Admittedly, this rule causes some havoc around amgibuity, since most NPs were trying to be pumped into VPs. We're continuing to add some restrictions to curb ambiguity.
 
-And [ EMPTY + ] on parent node to signal this VP is not a headed phrase (i.e. 
-there no verb). This might be useful, for example to prevent verb-derivational 
-rules from applied to this case (where there is no verb). e.g. reduplication of 
-verb, V-Not-V.
+Added [ EMPTY + ] on parent node to signal this VP is not a normal headed phrase (i.e.  there no verb). This might be useful, for example to prevent verb-derivational rules from applied to this case (where there is no verb). e.g. reduplication of verb, V-Not-V.
 
-Inheriting from verb-no-spr-item restricts the verb phrase being created form 
-taking degree modifiers.
+Inheriting from verb-no-spr-item restricts the verb phrase being created form  taking degree modifiers.
 
-Added [OPT -] to the created pumped VP's subject so it doesn't occur when there 
-is no NP to be taken as subject (this should reduce parse ambiguity considerably).
+Added [OPT -] to the created pumped VP's subject so it doesn't occur when there  is no NP to be taken as subject (this should reduce parse ambiguity considerably).
 
-The NP argument is set to [PUNCTUATED na-or-- ] to force punctuation to attach
-higher.
+The NP argument is set to [PUNCTUATED na-or-- ] to force punctuation to attach higher.
 
-Added [ SORT common-s ] to the original NP's CONT.HOOK.INDEX to block pronouns
-and proper nouns from being pumped into VPs. This allows us to catch common 
-errors like:
+Added [ SORT common-s ] to the original NP's CONT.HOOK.INDEX to block pronouns and proper nouns from being pumped into VPs. This allows us to catch common errors like:
 <mex> 她 学生 。
 But not:
 <nex> 学生 她 。
@@ -143,9 +145,7 @@ But gaining control over ambiguity.
 
 olist = optional or filled
 
-We also need to add [COORD -] on the daughter to block the midway of a 
-coordination (e.g. ', 学生')  to be pumped into a VP. Complete/full
-coordinations should be COORD -, so they would be able to be pumped.
+We also need to add [COORD -] on the daughter to block the midway of a  coordination (e.g. ', 学生')  to be pumped into a VP. Complete/full coordinations should be COORD -, so they would be able to be pumped.
 """
 [ SYNSEM [ LOCAL [ CAT [ HEAD verb & [ EMPTY +,
 				       COP +],
@@ -161,7 +161,8 @@ coordinations should be COORD -, so they would be able to be pumped.
 		   COORD -,
 		   CONT.HOOK #hook ],
 	   NON-LOCAL #nonlocal ],
-  ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [EMPTY -],
+  ARGS < [ SYNSEM [ BOUND na-or--,
+		    LOCAL [ CAT [ HEAD noun & [EMPTY -],
 				  VAL [ SUBJ < >,
 					SPR < >,
 					COMPS < > ],

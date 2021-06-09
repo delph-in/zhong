@@ -4,14 +4,20 @@
 ;;; to your choices file.
 ;;;
 ;;; 
-; :[ \t　"'()<>\[\]{}\*\+-/#$%&=\^_`|]
 
 ;===============================================================================
-;;;;  then it adds spaces padding.
-;;;;  FCB believes that Somewhere in the lookup for things in the lexicon 
-;;;;  needs a word boundary in each side of every word, and so if the 
-;;;   punctuation does not have a space before and after it wasn't being
-;;;   processed. So we need the line that states  !^(.+)$    \1 
+; REPP = Regular Expression Pre-Processing
+;===============================================================================
+
+
+;===============================================================================
+; :[ \t　"'()<>\[\]{}\*\+-/#$%&=\^_`|]
+;
+; [REMOVED ABOVE] then it adds spaces padding.
+; FCB believes that somewhere in the lookup for things in the lexicon 
+; needs a word boundary in each side of every word, and so if the 
+; punctuation does not have a space before and after it wasn't being
+; processed. So we need the line that states  !^(.+)$    \1 
 ;===============================================================================
 
 ;===============================================================================
@@ -26,6 +32,17 @@
 ;       Tabs are substituted by a space and, finally, more than one space will
 ;       be substituted by a single space. 
 ;===============================================================================
+; Not sure what  :[ \t　]   does.
+;
+; Put a space at the beginning of the sentence: 
+; !^(.+)$								 \1 
+;
+; Change all tabs to single spaces:
+; !\t								 
+;
+; Change any double (or larger) spaces into a single space:  
+; !  +								 
+;===============================================================================
 :[ \t　]
 !^(.+)$								 \1 
 !\t								 
@@ -33,13 +50,344 @@
 
 
 
+;===============================================================================
+; SEGMENTATION FIXES
+;===============================================================================
+; Zhong expects sentences to be properly segmented, but there are certain cases
+; where off-the-shelf tokenizers/segmenters don't produce Zhong's intended word
+; boundaries. These next few lines try to fix this.
+;===============================================================================
+; NOTE: words already come with a space before and after (see above), so only
+; must be careful and not add extra spaces at this stage).
+; Many classifier constructions often have problems. Also, separable verbs and 
+; prepositional verbs are also often incorrectly tokenized (as a single token) 
+; whenever aspect particles are not intervening. Locative nouns/prep are also
+; often left attached to normal nouns.
+; These are the kind of things that are being split here.
+;===============================================================================
 
-;;;; If you see any of the characters below, split on them and then throw them away
-;;;;  then it adds spaces padding.
-; :[ \t　"'()<>\[\]{}\*\+-/#$%&=\^_`|]
-; !^(.+)$								 \1 
-; !\t								 
-; !  +
+
+;===============================================================================
+; DETERMINER & NUMBERS & CLASSIFIERS 
+;===============================================================================
+! (那|这|一|两|每|哪)个 						 \1 个 
+! (那|这|一|两|每|哪)条 						 \1 条 
+! (那|这|一|两|每|哪)座 						 \1 座 
+! (那|这|一|两|每|哪)件 						 \1 件 
+! (那|这|一|两|每|哪)位 						 \1 位 
+! (那|这|一|两|每|哪)间 						 \1 间 
+! (那|这|一|两|每|哪)种 						 \1 种 
+
+
+
+! (封)信 							 \1 信 
+;===============================================================================
+; NOTES: There is still a bit problem concerning measure words (especially 
+;        temporal words like 年 月 周 天 etc.);
+;===============================================================================
+
+
+
+
+
+;===============================================================================
+; PREPOSITIONS & LOCATIVES 
+;===============================================================================
+! (放)在 							 \1 在 
+! (坐)在 							 \1 在 
+! (待)在 							 \1 在 
+
+! 跟(你) 							 跟 \1 
+! 跟(我) 							 跟 \1 
+! 跟(他) 							 跟 \1 
+! 跟(您) 							 跟 \1 
+
+! (河)里 							 \1 里 
+! (家)里 							 \1 里 
+! (花园)里 							 \1 里 
+! (城)里 							 \1 里 
+
+! (在)家 							 \1 家 
+
+! (世界)上 							 \1 上 
+! (床)上 							 \1 上 
+! (墙)上 							 \1 上 
+! (脸)上 							 \1 上 
+! (班)上 							 \1 上 
+! (树)上 							 \1 上 
+! (街)上 							 \1 上 
+;===============================================================================
+; There are many bound morphemes that should not be split. We need to come up
+; with a better more consistent treament.
+;===============================================================================
+
+
+
+
+
+! (很)晚 							 \1 晚 
+! (很)大 							 \1 大 
+! (火车)站 							 \1 站 
+! (比)我 							 \1 我 
+! (男)孩子 							 \1 孩子 
+
+! (好)吗 							 \1 吗 
+
+
+
+
+;;; Negation and Other Adverbs (remember order matters!!):
+! (还)有 							 \1 有 
+! (还)(没)有 							 \1 \2 有 
+! (还)没 							 \1 没 
+! (从来)(没)有 							 \1 \2 有 
+! (并)(没)有 							 \1 2 有 
+! (没)有 							 \1 有 
+
+
+! (新)车 							 \1 车 
+! (没)来 							 \1 来 
+
+! 不(知道) 							 不 \1 
+! 不(喜欢) 							 不 \1 
+
+
+;;;; GUO
+! 想(过) 							 想 \1 
+! 吃(过) 							 想 \1 
+
+
+
+;;; Splitting Verb Aux/Resultatives/Verbal Complements:
+! (读)完 							 \1 完 
+! (做)完 							 \1 完 
+! 想(去) 							 想 \1 
+! 想(知道) 							 想 \1 
+! 想(吃) 							 想 \1 
+! 想(做) 							 想 \1 
+! 去(做) 							 去 \1 
+
+
+
+
+;;; Splitting Verbs + Nouns (many are separable verbs):
+! (出)门 							 \1 门 
+! (吸)烟 							 \1 烟 
+! (下)雪 							 \1 雪 
+! (做)饭 							 \1 饭 
+! (犯)错 							 \1 错 
+! (喝)酒 							 \1 酒 
+! (祝)你 							 \1 你 
+! (跑)步 							 \1 步 
+! (帮)我 							 \1 我 
+! (给)我 							 \1 我 
+! (给)他 							 \1 他 
+! (帮)你 							 \1 你 
+! (滑)雪 							 \1 雪 
+! (怀)孕 							 \1 孕 
+! (叫)我 							 \1 我 
+! (吃)午饭 							 \1 午饭 
+! (洗)碗 							 \1 碗 
+! (关)门 							 \1 门 
+! (到)家 							 \1 家 
+! (帮)他 							 \1 他 
+! (喝)茶 							 \1 茶 
+! (开)会 							 \1 会 
+! (洗)手 							 \1 手 
+! (照)相 							 \1 相 
+
+! (加)油 							 \1 油 
+! (做)饭 							 \1 饭 
+! (吃)饭 							 \1 饭 
+! (开)车 							 \1 车 
+! (结)婚 							 \1 婚 
+! (毕)业 							 \1 业 
+! (洗)澡 							 \1 澡 
+! (滑)雪 							 \1 雪 
+! (滑)冰 							 \1 冰 
+! (值)班 							 \1 班 
+! (生)病 							 \1 病 
+! (吸)烟 							 \1 烟 
+! (开)会 							 \1 会 
+! (上)班儿 							 \1 班儿 
+! (上)班 							 \1 班 
+! (洗)淋浴 							 \1 淋浴 
+! (理)发 							 \1 发 
+! (签)字 							 \1 字 
+! (踢)足球 							 \1 足球 
+! (聊)天 							 \1 天 
+! (聊)天儿 							 \1 天儿 
+! (庆)生 							 \1 生 
+! (搬)家 							 \1 家 
+! (出)院 							 \1 院 
+! (下)雪 							 \1 雪 
+! (念)书 							 \1 书 
+! (跑)步 							 \1 步 
+! (打)的 							 \1 的 
+! (开阔)眼界 							 \1 眼界 
+! (撒)谎 							 \1 谎 
+! (说)谎 							 \1 谎 
+! (上)课 							 \1 课 
+! (下)课 							 \1 课 
+! (怀)孕 							 \1 孕 
+! (洗)碗 							 \1 碗 
+! (关)门 							 \1 门 
+
+
+
+
+;===============================================================================
+; 在 (ZAI) -- Mostly split, but not always
+;===============================================================================
+; 在 has multiple usages but, for the most part, it should be seen as single
+; token: a preposition, an aspect particle, a single-character verb, etc.
+; These various usages also mean that sometimes 在 is attached before and other
+; time attached after words.
+;===============================================================================
+! 在(说) 							 在 \1 
+! 在(哪) 							 在 \1 
+! 在(哪儿) 							 在 \1 
+! 在(哪里) 							 在 \1 
+! 在(哪边) 							 在 \1 
+
+! 在(说) 							 在 \1 
+! 在(读) 							 在 \1 
+! 在(看) 							 在 \1 
+! 在(打) 							 在 \1 
+! 在(做) 							 在 \1 
+! 在(床) 							 在 \1 
+! 在(吗) 							 在 \1 
+! 在(等) 							 在 \1 
+;===============================================================================
+; NOTES: for now we only fix a few, since there are many prepositional verbs
+;        in the lexicon that need to be checked.
+;===============================================================================
+
+
+;===============================================================================
+; 的 (DE) -- Mostly split, but not always
+;===============================================================================
+; 的 should, almost always, be split. Many segmenters try to leave 的 attached
+; in multiple different places, including possessives, relative clauses and 
+; adjectives. LMC decided to split it as default, and put it back when needed. 
+;===============================================================================
+;! (.+)的 							 \1 的 
+; ! ([^. …]+)的 							 \1 的 
+! ([^ ]+)的 							 \1 的 
+
+! (中) 的 							 \1的 
+! (别) 的 							 \1的 
+! (有) 的 							 \1的 
+! (标) 的 							 \1的 
+! (目) 的 							 \1的 
+;===============================================================================
+; ! (我|你|您|他|她|它)的 						 \1 的 
+; ! (妈|我妈|你妈|他妈|她妈)的 						 \1 的 
+; 真的    ; !!! this might be a problem [FIXME]
+;===============================================================================
+
+
+;===============================================================================
+; 得 (DE)
+;===============================================================================
+; 得 also needs to be split, but it's not easy to deal with since it is part
+; of many vocabulary, including many some complements that are not being dealt
+; with quite yet in ZHONG. As such, we refrain from splitting it by default
+; for the time being. But it should be looked at later... We split some that 
+; happen frequently:
+;===============================================================================
+! (跑)得 							 \1 得 
+! (长)得 							 \1 得 
+! (睡)得 							 \1 得 
+! (看)得 							 \1 得 
+! (累)得 							 \1 得 
+! (学)得 							 \1 得 
+! (说)得 							 \1 得 
+! (考)得 							 \1 得 
+! (唱)得 							 \1 得 
+! (下)得 							 \1 得 
+! (走)得 							 \1 得 
+! (笑)得 							 \1 得 
+! (过)得 							 \1 得 
+! (变)得 							 \1 得 
+;===============================================================================
+
+
+
+
+;===============================================================================
+; 们 (MEN) -- Mostly split, but not always
+;===============================================================================
+; 们 should always be split except in the case of pronouns. There is a case
+; to be made to either allow this to be treated as a morpheme in pronouns, or
+; to hardcode this split in the lexical entries for pronoun (split STEM).
+; However, this is the treatment for now.
+;===============================================================================
+! ([^ ]+)们 							 \1 们 
+! (我) 们 							 \1们 
+! (咱) 们 							 \1们 
+! (你) 们 							 \1们 
+! (他) 们 							 \1们 
+! (她) 们 							 \1们 
+! (它) 们 							 \1们 
+;===============================================================================
+
+
+
+
+;===============================================================================
+; 了 (LE) -- Mostly split, but not always
+;===============================================================================
+; The aspect and sentence final particle 了 is ubiquitous in Mandarin and, for
+; the most part, it needs to be separated from the main verb it is attached to.
+; However, 了 (most often in it's 'LIAO' phonetic form, but not strictly) can
+; also be part of certain words/expression that we would like to treat as a 
+; single word.
+; As such, this section tries to split 了 as default when it happens at the end
+; of a word token (i.e. has a space after). And then put it back iff it is 
+; deemed necessary.
+;===============================================================================
+! ([^ ]+)了 							 \1 了 
+!(不) 了 							\1了 
+!(得) 了 							\1了 
+! (为) 了 							 \1了 
+! (罢) 了 							 \1了 
+! (除) 了 							 \1了 
+! (不见) 了 							 \1了 
+! (帅呆) 了 							 \1了 
+;===============================================================================
+; [FIXME] the complement 得了 [déliǎo] (possible) needs to be dealt as an
+;         entry with split STEM. Same for the expression 
+;         得了 [déle] (All right!; That's enough!) 
+; [FIXME] 到了 [dàoliǎo] (at last; finally; in the end) need to be dealt as
+;         separate tokens.
+;===============================================================================
+
+
+
+
+;===============================================================================
+; 着 (ZHE)
+;===============================================================================
+; 着 is a bit more complicated than 了, as it appears in many many other words.
+; It can also be a complement of sort (especially in its ZHAO reading).
+; For now we split some annoying missegmentations. But it really should end
+; up looking something like 了.
+;===============================================================================
+! (看)着 							 \1 着 
+! (等)着 							 \1 着 
+! (活)着 							 \1 着 
+! (听)着 							 \1 着 
+! (坐)着 							 \1 着 
+! (拿)着 							 \1 着 
+! (隔)着 							 \1 着 
+! (开)着 							 \1 着 
+! (站)着 							 \1 着 
+! (走)着 							 \1 着 
+;===============================================================================
+
+
+
 
 
 ;;need to have one space before pattern, one space after pattern
@@ -125,7 +473,11 @@
 
 
 
-;;; Penn Treebank Segmentation Fixes
-! (那|这|一)个							\1 个
-! (我|你)的							\1 的
 
+
+
+;===============================================================================
+; Just in case, remove any double spaces again
+;===============================================================================
+!  +								 
+;===============================================================================

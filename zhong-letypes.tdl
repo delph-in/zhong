@@ -13,7 +13,7 @@
 ; Folllowing the ERG, this file can have features added to types, but not
 ; multiple inheritance ...  (try to email DAN+developers to know why).
 ; 
-; LKB conception there is a layer 'pre terminals' single hinheritance guys
+; LKB conception there is a layer 'pre terminals' single inheritance guys
 ; in Ann's implementation -- this was done more efficiencly if it was a 
 ; separate layer (only for types that occur in the lexicon).  But Dan has 
 ; not obbeyed this except for verbs. Only the main verbs have... 
@@ -47,13 +47,13 @@ n_-_pr-1pl-incl_le := personal-pronoun-lex & basic-icons-lex-item &
 n_-_pr-1pl-excl_le :=  personal-pronoun-lex & basic-icons-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1pl_excl ].
 
-n_-_pr-2sg_le := personal-pronoun-lex & non-honorific-hearer-lex-item & 
+n_-_pr-2sg_le := personal-pronoun-lex & ;non-honorific-hearer-lex-item & 
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2sg ].
 
-n_-_pr-2pl_le := personal-pronoun-lex & non-honorific-hearer-lex-item & 
+n_-_pr-2pl_le := personal-pronoun-lex & ;non-honorific-hearer-lex-item & 
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2pl ].
 
-n_-_pr-2sg-hon_le := personal-pronoun-lex & honorific-hearer-lex-item &
+n_-_pr-2sg-hon_le := personal-pronoun-lex & ;honorific-hearer-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2sg ].
 
 n_-_pr-3sg_le := personal-pronoun-lex & basic-icons-lex-item &
@@ -94,6 +94,7 @@ This allows us to set the KEYREL.PRED generic_n_rel,
 """.
 
 a_-_bound-posthead_le := attr-adj-posthd-lex & bound-lex-item & nonque-item.
+
 
 a_-_first-bound-posthead_le := a_-_bound-posthead_le &
 """
@@ -477,7 +478,7 @@ There are probably some other special nouns that can behave as locative.
 see also '网上' it should be a noun, but can be used directly as loc-adv.
 原地 yuándì  (original place)
 原处 yuánchù (original place)
-北方 (north) VS ​北​面 VS 北​边 (north) -- if 边 is analysed as this special N, then it's fine to behave
+北方 (north) VS 北面 VS 北边 (north) -- if 边 is analysed as this special N, then it's fine to behave
 
 桌面 (this is the SURFACE OF TABLE)
 
@@ -750,11 +751,19 @@ c_-_le := classifier-lex & nonque-item.
 ;============================================================================
 ; ADJECTIVAL TYPES
 ;============================================================================
-a_-_num_le := num-adj-lex & nonque-item
+a_-_num_le := card-num-adj-lex & nonque-item
 """
-This type refers to numbers, percentages and a couple other special numeral
-entries (e.g. ①).
+This type refers to numbers, percentages and a couple other special numeral entries (e.g. ①).
+
+They are marked as  [CARDINAL +].
 """.
+
+a_noncard-num_le := noncard-num-adj-lex & nonque-item
+"""
+This type is strictly for non-cardinal numerals. Currently only 二 is considered non-cardinal.
+Non-cardinal numbers are block from participating in specifier-head constructions between numerals and classifiers.
+""".
+
 
 a_-_att_le := attr-adj-lex & nonque-item
 """
@@ -815,14 +824,15 @@ adv_-_deg-pre_le := deg-int-adv-vp-pre & nonque-item
 """
 Basic type for degree specifiers.
 E.g. 很, 非常
+There is also a 不 that is considered a degree specifier.
 """.
 
 adv_-_s-pre-no-rel_le := int-adv-s-pre-no-rel & nonque-item
 """
 This adverb type introduces no semantics.
- 
+
 [FIXME] Although part of the name ('s-pre') suggests it should only appear pre-hd for full sentences, it is also allowing pre-VP modification.
-[FIXME] There are only a hand full of adverbs with this type, but it's not clear why they would have no semantics.  
+[FIXME] There are only a hand full of adverbs with this type, but it's not clear why they would have no semantics.
 """.
 
 adv_-_s-pre-rel_le := int-adv-s-pre-rel & nonque-item
@@ -902,12 +912,82 @@ Simple transitive verbs (i.e. taking one NP as complement).
 v_np-np_le := ditrans-verb-lex & nonque-item
 """
 Simple ditransitive verbs (i.e. taking two NP as complements).
+
+e.g.: 告诉， 卖, 教 
+
+<ex> 我 告诉 她 一 个 消息  。
+<ex> 我 卖 她 一 本 书 。
+<ex> 我 教 她 中文 。
+
+
+我 告诉 LE/GUO 她 一 个 消息  。
+我 卖 LE/GUO 她 一 本 书 。
+我 教 LE/GUO 她 中文 。
+
+
+
+* 我 告诉 ZHE 她 一 个 消息  。 (it has to do with the length of the verb action)
+* 我 卖 ZHE 她 一 本 书 。    (in it's ditransitive    
+* 我 卖 ZHE 新加坡 中文 书 。 
+# if it has an indirect object like this, the verb seems restricted to 'one time' thing, so ZHE makes no sense.
+? 我 教 ZHE 她 中文   (feels unfinished, needs the)
+# The problem seems to be the singular object, which makes it a single action.
+# However even with 
+* 我 告诉 ZHE 她 消息  。 (it has to do with the length of the verb action)
+* 我 卖 ZHE 她 书 。    (in it's ditransitive    
+
+
+
+我 在 告诉 她 一 个 消息  。 
+我 在 卖 她 一 本 书 。     
+我 在 卖 新加坡 中文 书 。 
+我  在 教 她 中文 
+
+
+我 在 告诉 着 她 消息  。    if the object is not single, then it's perfectly fine 
+我 在 卖  着 她 书 。         if the object is not single, then it's perfectly fine 
+我 在 卖  着 新加坡 中文 书 。 
+我  在 教 着 她 中文 。  this one should be ok!
+
+
 """.
 
 
 v_s_le := v_s-comp-lex & nonque-item
 """
 Verbs capable of taking a sentence as complement. 
+
+E.g.: 知道, 发现, 了解,  原定, 
+
+我 知道 她想去北京.        OK
+
+我 知道 LE 她想去北京.    （no...)
+我 知道 GUO 她想去北京.   （NO!!!! really no)
+我 知道 ZHE 她想去北京.   （NO!!!! really no)
+
+我 MEI 知道 她想去北京.       （no...)
+我 MEI 知道 GUO 她想去北京.   （NO!!!! really no)
+我 BU 知道 她想去北京.         OK
+
+
+我 ZAI 知道 她想去北京.       NO
+我 ZAI 发现 她想去北京.       NO
+我 ZAI 了解 她想去北京.       NO
+
+
+
+# This behaves differently but it requires a question!
+# This could be enough reason to be different
+# The complement should be in a form a question, but it doesn't produce a question.
+我 问 谁不来.                OK
+我 问 了 谁不来.             OK
+我 问 过 谁不来.             OK
+我 问 着 谁不来.             Ok
+我 在 问 着 谁不来.          Ok
+
+我 知道 了 谁不来.           OK
+知道 + QUESTION             should be ok
+
 """.
 
 
@@ -919,7 +999,7 @@ Verbs capable of taking a sentence as complement.
 ; adjectives). These verbs usually fall in one of such
 ; classes:
 ; VERBS PSYCHOLOGICAL (aka 心理动词)
-; MODAL VERBS (aka 能​愿​动​词)
+; MODAL VERBS (aka 能愿动词)
 ; 
 ; 
 ; 
@@ -940,15 +1020,47 @@ Psychological verbs (aka 心理动词) can take a degree modifier.
 
 The degree modifiers are currently done as specifiers.
 e.g.: 喜欢, 想, 爱
-""".
 
-v_s-spr_le := v_s-comp-spr-lex & nonque-item
-"""
-Transitive psychological verbs, that can take sentential complements.
-Psychological verbs (aka 心理动词) can take a degree modifier.
+ZHE is ok .
+GUO also can
 
-The degree modifiers are currently done as specifiers.
-喜欢, 想
+LE is NOT OK!!!
+ZAI family is NOT OK!!!
+
+我 讨厌 苹果          OK
+我 喜欢 苹果          OK
+我 爱 苹果            OK
+
+我 讨厌 LE 苹果       NO
+我 喜欢 LE 苹果       NO
+我 爱 LE 苹果         NO
+
+我 MEI 讨厌 GUO/ZHE 苹果     OK (but GUO/ZHE can sometimes be ommited)   
+我 MEI 喜欢 GUO/ZHE 苹果     OK (but GUO/ZHE can sometimes be ommited)
+我 MEI 爱 GUO/ZHE 苹果       OK (but GUO/ZHE can sometimes be ommited)
+
+我 BU 讨厌 苹果       OK 
+我 BU 喜欢 苹果       OK
+我 BU 爱 苹果         OK
+
+  
+我 讨厌 ZHE 苹果      OK 
+我 喜欢 ZHE 苹果      OK
+我 爱 ZHE 苹果        OK
+  
+GUO also can
+
+我 ZAI 讨厌 苹果       NO
+我 ZAI 喜欢 苹果       NO
+我 ZAI 爱 苹果         NO
+
+我 ZAI 讨厌 ZHE 苹果   NO
+我 ZAI 喜欢 ZHE 苹果   NO
+我 ZAI 爱 ZHE 苹果     NO
+
+ZAI/ ZHENGZAI/ ZHENG all same (no).
+
+
 """.
 
 v_vp_sequi-spr_le := v_sequi-spr-lex & nonque-item
@@ -960,29 +1072,227 @@ Psychological verbs (aka 心理动词) can take a degree modifier.
 
 The degree modifiers are currently done as specifiers.
 高兴, 喜欢, 想
+
+
+
+
+我 讨厌 吃 苹果          OK
+我 喜欢 吃 苹果          OK
+我 爱  吃 苹果            OK
+
+我 讨厌 LE 吃  苹果       NO
+我 喜欢 LE 吃 苹果        NO
+我 爱 LE 吃  苹果         NO
+
+我 MEI  讨厌 吃  苹果     OK   (it has experiential connotation)
+我 讨厌 ZHE 吃  苹果       No!!
+我 MEI  讨厌 ZHE 吃  苹果     NO
+
+我 讨厌 GUO 吃  苹果     OK   
+我 喜欢 GUO 吃 苹果      OK
+
+我 MEI 讨厌 GUO 吃  苹果     OK   
+我 MEI 喜欢 GUO 吃 苹果      OK
+
+   
+我 MEI 爱 GUO 吃  苹果       OK  --- NO ZHE
+
+
+我 BU 讨厌 吃 苹果       OK 
+我 BU 喜欢 吃 苹果       OK
+我 BU 爱 吃 苹果         OK
+
+  
+我 讨厌 ZHE 吃  苹果      NO    [this can't be streched? ]
+我 喜欢 ZHE 吃 苹果       NO
+我 爱 ZHE 吃 苹果         NO
+
+我 ZAI 讨厌 吃 苹果       NO
+我 ZAI 喜欢 吃 苹果       NO
+我 ZAI 爱 吃苹果          NO
+
+我 ZAI 讨厌 吃 ZHE 苹果   NO
+我 ZAI 喜欢 吃 ZHE 苹果   NO
+我 ZAI 爱 吃 ZHE 苹果     NO
+
+
+
+
+
+我 喜欢 着 爱 国家        ？？？   [probably yes]
+我 喜欢 着 住 在 这儿 。   YES？  
+
 """.
+
+
+v_s-spr_le := v_s-comp-spr-lex & nonque-item
+"""
+Transitive psychological verbs, that can take sentential complements.
+Psychological verbs (aka 心理动词) can take a degree modifier.
+
+The degree modifiers are currently done as specifiers.
+喜欢, 讨厌, 想
+
+There seems to be some restriction to the kind of sentneces that can be used as complement.
+
+
+
+我 喜欢   他 来 我 家 。       OK
+我 讨厌   他 来 我 家 。       OK
+
+我 BU 喜欢   他 来 我 家 。    OK
+我 BU 讨厌   他 来 我 家 。    OK
+
+我 喜欢 LE   他 来 我 家 。    NO
+我 讨厌 LE   他 来 我 家 。    NO
+
+我 喜欢 ZHE   他 来 我 家 。   NO?
+我 讨厌 ZHE   他 来 我 家 。   NO?
+
+我 喜欢 GUO   他 来 我 家 。   OK
+我 讨厌 GUO   他 来 我 家 。   OK
+
+
+
+我 MEI 喜欢    他 来 我 家 。   OK  (negation of GUO)
+我 MEI 讨厌    他 来 我 家 。   OK (negation of GUO)
+
+我 MEI 喜欢 GUO  他 来 我 家 。   OK
+我 MEI 讨厌 GUO  他 来 我 家 。   OK
+
+
+
+我 ZAI 喜欢   他 来 我 家 。   NO
+我 ZAI 讨厌   他 来 我 家 。   NO
+
+
+
+我 喜欢 着 我们 住 在 一起 。      NO?  (there a sense that it should be possible)
+我 喜欢 着 他 爱 国家 。           YES??? This is seen as a more permanent state   
+
+喜欢, 讨厌
+
+
+
+The use of ZHE in all these verbs, assumes that the information can be made into a 'stable state' that's why some sentences are slightly weird. However, if there were a better classification of verbs, then this could be enforced as a restriction on the COMP.     
+Look at verbs like 坐在  住在 and all psychological verbs can serve as a state.
+
+""".
+
 
 
 ;========================================
 ; VERBS w/PREPOSITIONAL COMPLEMENTS
 ;========================================
-v_pp-pre_le := v_pp-lex & nonque-item.
+; Behaviour seems different especially in
+; the behaviour of ZAI vs OTHER-Preps
+;========================================
 
-v_pp-np_le := ditrans-pp-verb-lex & nonque-item.
+; 由_p := p_-_nomod_le &
+;   [ STEM < "由" >,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "由", LENGTH one ],
+;     SYNSEM.LOCAL [ CAT.HEAD.PFORM you,
+;                    CONT.HOOK.XARG #xarg ],
+;     SYNSEM.LKEYS.KEYREL [ ARG1 #xarg,
+; 			  PRED "_由_p_rel" ],
+;     TRAITS native_token_list ].
 
-v_np-pp_le := trans-loc-verb-lex & nonque-item.
-
-v_pp-s_le := pp-s-comp-verb-lex & nonque-item.
-
-v_prevpp-np_le := ditrans-preverbal-pp-verb-lex & nonque-item.
+v_pp-pre_le := v_pp-lex & nonque-item
+"""
 
 
+""".
 
-v_np_cs_le := cp-subj-verb-lex & nonque-item.
-v_np-ap_le := np-ap-comp-verb-lex & nonque-item.
-v_bap-ap_le := np-ap-comp-ba-verb-lex & nonque-item.
 
-v_vp_sequi_le := v_sequi-lex & nonque-item.
+v_pp-np_le := ditrans-pp-verb-lex & nonque-item
+"""
+
+住 在北京， 停 在车厂
+
+住LE/GUO/ZHE 在北京  -- NO
+住 在LE/GUO/ZHE 北京  -- NO
+
+mei 住在北京  ---- CAN!
+bu 住在北京  ---- CANNOT! (maybe ??? the natural is 不)
+
+放 到 zher.   (put in here) 
+
+
+送给你一本书.
+
+送给你一本书.
+
+我把一本书送给了他 -- OK
+送给了她一本书.   --- OK
+
+
+送给你 .
+
+
+Li gen zhang 结 LE 婚
+Li  结 婚 gen zhang -- NO
+Li  结 婚 he zhang -- NO
+
+many Liheci take prepositional complements before the verb
+gen Ta shuohua
+dui ta shuohua
+
+""".
+
+v_np-pp_le := trans-loc-verb-lex & nonque-item
+"""
+
+放
+""".
+
+v_pp-s_le := pp-s-comp-verb-lex & nonque-item
+"""
+""".
+
+v_prevpp-np_le := ditrans-preverbal-pp-verb-lex & nonque-item
+"""
+""".
+
+
+
+v_np_cs_le := cp-subj-verb-lex & nonque-item
+"""
+""".
+
+v_np-ap_le := np-ap-comp-verb-lex & nonque-item
+"""
+""".
+
+v_bap-ap_le := np-ap-comp-ba-verb-lex & nonque-item
+"""
+""".
+
+
+v_vp_sequi_le := v_sequi-lex & nonque-item
+"""
+Subject Equi
+
+E.g.: 开始, 去, 爱好
+
+This verb type, with subj-equi, was often marked as no LZG. Should double check the restrictions. 
+
+VP 
+
+
+他 开始 吃饭 。   LE-NO， 
+
+
+他 开始 游泳 。LE-NO???， GUO-NO???,   ZHE-NO, MEI=OK, BU=OK？， ZAI=NO   [KAISHI is a special verb?]
+
+
+他 去 买 东西 。   LE-NO,  GUO-NO,  ZHE-NO,   MEI-OK, BU-OK,   ZAI=NO
+
+
+
+他  爱好  玩游戏 。  LE-NO,  GUO-??NO,  ZHE-NO,   MEI-OK, BU-OK,   ZAI=NO  ====   CAN USE HEN 很
+
+
+""".
 
 v_np-vp_oequi_le := v_np-vp_oequi-lex & nonque-item
 """
@@ -999,9 +1309,88 @@ Even though it has roughly the same meaning as:
 
 It is possible that in the future we might want to get a unified analysis for these
 two sentences, but for now 请 is also available as an adverb-like 'expression'.
+
+
+
+(the NP complement will be the subject of the 2nd VP complement).
+兼语句 = Pivotal sentences (Chinese name)
+
+老师 让 我 洗 脸 。   LE-NO??  GUO-NO??   ZHE-NO   ZAI-YES   MEI-OK  BU-OK  (NO HEN) - to ask VS to allow;  -- it's not a hard NO maybe it's acceptable.
+
+妈妈 叫 我 洗澡 。   LE-OK??  GUO-OK   ZHE-NO   ZAI-OK   MEI-OK  BU-OK
+
+
+她 请 我 吃 午饭 。  LE-OK  GUO-OK   ZHE-NO   ZAI-OK   MEI-OK  BU-OK
+
+
+允许 yǔn xǔ
+v. permit, allow
 """.
 
-v_np-vp_sequi_le := v_np-vp_sequi-lex & nonque-item.
+v_np-vp_sequi_le := v_np-vp_sequi-lex & nonque-item
+"""
+sequi = subject equi
+
+CLASH WITH serial verb constructions  // resultatives???
+
+This class of verbs probably enters in competition with some serial verb constructions, which in principle block aspect. So the idea would be that these allow some aspect... ???
+
+
+我 坐 公共汽车 买 游戏机 。
+我 花 钱 买 游戏机 。
+我 去 商店 买 游戏机 。
+
+
+我 BU 坐 公共汽车 买 游戏机 。    OK
+我 BU 花 钱 买 游戏机 。          OK
+我 BU 去 商店 买 游戏机 。        OK
+
+我 坐 LE 公共汽车 买 游戏机 。    ??NO
+我 花 LE 钱 买 游戏机 。          OK   [ABSOLUTELY NO PROBLEM]
+我 去 LE 商店 买 游戏机 。        ??NO
+
+
+##### THESE ones compete with another grammatical structure 'while sitting on the bus played games' this has a manner
+我 坐 ZHE 公共汽车 去 买 游戏机 。      OK This also has a goal reading
+我 花 ZHE 钱 来 这儿  。                NO????
+我 去 ZHE 商店 买 游戏机 。             NO ???   
+***** 我 花 ZHE 钱 爱 他 。             [this is not ok because HUA has an 
+					      iterative reading, not stative]
+***** 我 花 ZHE 钱 住 在 他 的 旁边 。   
+
+
+我 坐 GUO 公共汽车 买 游戏机 。     OK
+我 花 GUO 钱 买 游戏机  。          OK
+我 去 GUO 商店 买 游戏机 。         OK
+
+
+我 MEI 坐 公共汽车 买 游戏机 。     OK
+我 MEI 花 钱 买 游戏机 。           OK
+我 MEI 去 商店 买 游戏机 。         OK
+
+
+我 ZAI 坐 公共汽车 买 游戏 。      OK
+我 ZAI 花 钱 买 游戏 。            OK
+我 ZAI 去 商店 买 游戏 。          ?NO
+
+
+[我 ZHENG+ZAI 去 商店 ] - OK  
+[我 ZAI 去 商店 ] -NO      ZAI+QU is very special
+[我 ZAI 去  买 东西 ]-NO   ZAI+QU is very special
+It has some idiomatic phares where it's ok.  
+我 ZAI 去  ... 的 路上 。   but this is VERBAL ZAI
+ 
+
+我 ZAI 坐 ZHE 公共汽车 买 游戏 。    OK
+我 ZAI 花 ZHE 钱 买 游戏 。          ??NO
+我 ZAI 去 ZHE 商店 买 游戏 。        ?? NO   
+
+听你
+
+""".
+
+
+
 ;; SSH/ZZF 2014-11-26: This type looks curious. change to sequi
 ;v_np-vp_aequi_le := v_a-equi-lex & nonque-item.
 
@@ -1013,7 +1402,10 @@ A verb that takes two complements (one NP and one S). The sentencial complement 
 This should not be used for similar sentences such as '我 问 她 去 不 去 。' if the meaning of the sentence is intended to use 她 as both the COMP of 问 and the SUBJ of 去. This would use v_np-vp_oequi_le instead.
 """.
 
-v_np_you_le := v_exist-lex & nonque-item.
+v_np_you_le := v_exist-lex & nonque-item
+"""
+[FIXME] This is for 有 and 没  (but 没 was removed) for the existential 
+""".
 
 v_vp_aux_le := v_aux-aux-lex & nonque-item
 """
@@ -1047,7 +1439,12 @@ FCB has pointed out that it would be nice to extend these tests. We could try to
 see how these aux verbs behave in other syntactic structures, such as 
 """.
 
-v_np_cop_le := cop-verb-lex & nonque-item.
+v_np_cop_le := cop-verb-lex & nonque-item
+"""
+This type requires the complement to always be present. And used [COP +] to block certain interactions (e.g. interactions with resultatives).  This is being used for 是.
+
+[FIXME] It is not clear if the non-optional requirement of COMP is actually true. E.g. 我不是老师。他是！ (???)
+""".
 
 v_shide-adp_le := shi-mod-int-dep-lex & nonque-item.
 v_shide-adv-scop_le := shi-mod-scop-dep-lex & nonque-item.

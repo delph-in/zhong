@@ -27,6 +27,24 @@
     SYNSEM.LKEYS.KEYREL.PRED "楼",
     TRAITS native_token_list ].
 
+麦克_n_2 := n_-_le &
+"""
+[] microphone;
+"""
+  [ STEM < "麦克" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "麦", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "麦克",
+    TRAITS native_token_list ].
+
+比萨_n_2 := n_-_le &
+"""
+[] pizza;
+"""
+  [ STEM < "比萨" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "比", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "比萨",
+    TRAITS native_token_list ].
+
 
 鸡饭_n_1 := n_-_le &
 """
@@ -56,16 +74,27 @@
     SYNSEM.LKEYS.KEYREL.PRED "_工作_n_1_rel",
     TRAITS native_token_list ].
 
-工作_v_1 := v_-_le &
+
+姓氏_n_1 := n_-_le &
 """
-[] ;  
+[xìng shì] family name; surname;  
 """
-  [ STEM < "工作" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "工", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_工作_v_1_rel" ],
+  [ STEM < "姓氏" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "姓", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_姓氏_n_1_rel",
     TRAITS native_token_list ].
 
+
+姓_n_1 := n_-_le &
+"""
+[xìng] family name; surname;
+
+姓 is more often used as a verb, but it's not incorrect to use it as a noun.
+"""
+  [ STEM < "姓" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "姓", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_姓_n_1_rel",
+    TRAITS native_token_list ].
 
 万事_n_1 := n_-_le &
 """
@@ -1291,6 +1320,339 @@ Department Store
     SYNSEM.LKEYS.KEYREL.PRED "外校",
     TRAITS native_token_list ].
 
+地震_n_1 := n_-_le &
+"""
+[] earthquake; 
+"""
+  [ STEM < "地震" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "地", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_地震_n_1_rel",
+    TRAITS native_token_list ].
+
+派对_n_1 := n_-_le &
+"""
+[] party; 
+"""
+  [ STEM < "派对" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "派", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_派对_n_1_rel",
+    TRAITS native_token_list ].
+
+字典_n_1 := n_-_le &
+"""
+[] (character-based) dictionary; 
+"""
+  [ STEM < "字典" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "字", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_字典_n_1_rel",
+    TRAITS native_token_list ].
+
+信息_n_1 := n_-_le &
+"""
+[] information; 
+"""
+  [ STEM < "信息" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "信", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_信息_n_1_rel",
+    TRAITS native_token_list ].
+
+母语_n_1 := n_-_le &
+"""
+[] mother tongue; 
+"""
+  [ STEM < "母语" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "母", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_母语_n_1_rel",
+    TRAITS native_token_list ].
+
+礼貌_n_1 := n_-_le &
+"""
+[] manners; politeness; 
+"""
+  [ STEM < "礼貌" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "礼貌", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_礼貌_n_1_rel",
+    TRAITS native_token_list ].
+
+公交车_n_1 := n_-_le &
+"""
+[] public transportation; public transport; bus; 
+"""
+  [ STEM < "公交车" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "公", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_公交车_n_1_rel",
+    TRAITS native_token_list ].
+
+错_n_1 := n_-_le &
+"""
+[] mistake; error; 
+"""
+  [ STEM < "错" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "错", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_错_n_1_rel",
+    TRAITS native_token_list ].
+
+噪音_n_1 := n_-_le &
+"""
+[] noise; undesirable sound; 
+"""
+  [ STEM < "噪音" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "噪", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_噪音_n_1_rel",
+    TRAITS native_token_list ].
+
+玫瑰_n_1 := n_-_le &
+"""
+[] rose (flower); 
+"""
+  [ STEM < "玫瑰" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "玫", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_玫瑰_n_1_rel",
+    TRAITS native_token_list ].
+
+火灾_n_1 := n_-_le &
+"""
+[] fire (as a disaster); fire accident;
+"""
+  [ STEM < "火灾" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "火", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_火灾_n_1_rel",
+    TRAITS native_token_list ].
+
+家伙_n_1 := n_-_le &
+"""
+[] tool; weapon; 
+"""
+  [ STEM < "家伙" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "家", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_家伙_n_1_rel",
+    TRAITS native_token_list ].
+
+果汁_n_1 := n_-_le &
+"""
+[] juice; fruit juice; 
+"""
+  [ STEM < "果汁" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "果", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_果汁_n_1_rel",
+    TRAITS native_token_list ].
+
+网络_n_1 := n_-_le &
+"""
+[] internet; 
+"""
+  [ STEM < "网络" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "网", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_网络_n_1_rel",
+    TRAITS native_token_list ].
+
+字母_n_1 := n_-_le &
+"""
+[] letter; alphabetical letter; 
+"""
+  [ STEM < "字母" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "字", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_字母_n_1_rel",
+    TRAITS native_token_list ].
+
+单词_n_1 := n_-_le &
+"""
+[] word; 
+"""
+  [ STEM < "单词" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "单", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_单词_n_1_rel",
+    TRAITS native_token_list ].
+
+对方_n_1 := n_-_le &
+"""
+[] counterpart; opposition; opposite side; 
+"""
+  [ STEM < "对方" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "对", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_对方_n_1_rel",
+    TRAITS native_token_list ].
+
+演唱会_n_1 := n_-_le &
+"""
+[] concert; singing concert; 
+"""
+  [ STEM < "演唱会" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "演", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_演唱会_n_1_rel",
+    TRAITS native_token_list ].
+
+忠告_n_1 := n_-_le &
+"""
+[] advice; 
+"""
+  [ STEM < "忠告" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "忠", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_忠告_n_1_rel",
+    TRAITS native_token_list ].
+
+橙子_n_1 := n_-_le &
+"""
+[] orange (fruit);
+"""
+  [ STEM < "橙子" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "橙", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_橙子_n_1_rel",
+    TRAITS native_token_list ].
+
+野餐_n_1 := n_-_le &
+"""
+[] picnic; 
+"""
+  [ STEM < "野餐" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "野", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_野餐_n_1_rel",
+    TRAITS native_token_list ].
+
+小提琴_n_1 := n_-_le &
+"""
+[] violin; 
+"""
+  [ STEM < "小提琴" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "小", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_小提琴_n_1_rel",
+    TRAITS native_token_list ].
+
+密码_n_1 := n_-_le &
+"""
+[] password; passcode; code; pin; 
+"""
+  [ STEM < "" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "密", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_密码_n_1_rel",
+    TRAITS native_token_list ].
+
+诺言_n_1 := n_-_le &
+"""
+[] promise; 
+"""
+  [ STEM < "诺言" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "诺", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_诺言_n_1_rel",
+    TRAITS native_token_list ].
+
+硬币_n_1 := n_-_le &
+"""
+[] coin; 
+"""
+  [ STEM < "硬币" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "硬", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_硬币_n_1_rel",
+    TRAITS native_token_list ].
+
+奶酪_n_1 := n_-_le &
+"""
+[] cheese; 
+"""
+  [ STEM < "奶酪" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "奶", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_奶酪_n_1_rel",
+    TRAITS native_token_list ].
+
+视力_n_1 := n_-_le &
+"""
+[] eyesight; vision; 
+"""
+  [ STEM < "视力" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "视力", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_视力_n_1_rel",
+    TRAITS native_token_list ].
+
+体重_n_1 := n_-_le &
+"""
+[] weight; body weight; 
+"""
+  [ STEM < "体重" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "体", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_体重_n_1_rel",
+    TRAITS native_token_list ].
+
+故障_n_1 := n_-_le &
+"""
+[] bug; error; malfunction; 
+"""
+  [ STEM < "故障" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "故", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_故障_n_1_rel",
+    TRAITS native_token_list ].
+
+餐馆_n_1 := n_-_le &
+"""
+[] restaurant; 
+"""
+  [ STEM < "餐馆" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "餐", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_餐馆_n_1_rel",
+    TRAITS native_token_list ].
+
+土豆_n_1 := n_-_le &
+"""
+[] potato; 
+"""
+  [ STEM < "土豆" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "土", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_土豆_n_1_rel",
+    TRAITS native_token_list ].
+
+旗袍_n_1 := n_-_le &
+"""
+[] chinese-style dress; cheongsam; qipao; 
+"""
+  [ STEM < "旗袍" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "旗", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_旗袍_n_1_rel",
+    TRAITS native_token_list ].
+
+屋顶_n_1 := n_-_le &
+"""
+[] roof; 
+"""
+  [ STEM < "屋顶" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "屋", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_屋顶_n_1_rel",
+    TRAITS native_token_list ].
+
+绳子_n_1 := n_-_le &
+"""
+[] cord; rope; string; 
+"""
+  [ STEM < "绳子" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "绳", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_绳子_n_1_rel",
+    TRAITS native_token_list ].
+
+软件_n_1 := n_-_le &
+"""
+[] software; 
+"""
+  [ STEM < "软件" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "软", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_软件_n_1_rel",
+    TRAITS native_token_list ].
+
+气温_n_1 := n_-_le &
+"""
+[] temperature; 
+"""
+  [ STEM < "气温" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "气", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_气温_n_1_rel",
+    TRAITS native_token_list ].
+
+友谊_n_1 := n_-_le &
+"""
+[] friendship; 
+"""
+  [ STEM < "友谊" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "友", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_友谊_n_1_rel",
+    TRAITS native_token_list ].
+
 
 
 ;============================================================================
@@ -1709,6 +2071,12 @@ e.g. in between MARY and JOHN.
 ;============================================================================
 ; Basic Nouns (Time)
 ;============================================================================
+; These nouns can be pumped into time-adverbials.
+;============================================================================
+; [FIXME] We need to come up with a strict test to check if they are NOUNS
+;         or adverbs (e.g. be on the right side of a 的 phrase), or being
+;         able to be counted with a classifier.
+;============================================================================
 
 后年_n_1 := n_-_tm_le &
 """
@@ -1727,7 +2095,6 @@ e.g. in between MARY and JOHN.
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "昨", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_昨夜_n_1_rel",
     TRAITS native_token_list ].
-
 
 同时_n_1 := n_-_tm_le &
 """
@@ -1776,6 +2143,35 @@ side of a 的 phrase).
   [ STEM < "到时" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "到", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_到时_n_1_rel",
+    TRAITS native_token_list ].
+
+週末_n_1 := n_-_tm_le &
+"""
+[] weekend;
+
+<ex> 你 周末 喜欢 做 什么 ？
+"""
+  [ STEM < "週末" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "週", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_週末_n_1_rel",
+    TRAITS native_token_list ].
+
+週日_n_1 := n_-_tm_le &
+"""
+[] Sunday;
+"""
+  [ STEM < "週日" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "週", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_週日_n_1_rel",
+    TRAITS native_token_list ].
+
+昨晚_n_1 := n_-_tm_le &
+"""
+[] yesterday evening; yesterday night;
+"""
+  [ STEM < "昨晚" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "昨", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_昨晚_n_1_rel",
     TRAITS native_token_list ].
 
 
@@ -2139,6 +2535,43 @@ Common enough (e.g. 我 妈) that it needs its own entry.
     SYNSEM.LKEYS.KEYREL.PRED "_中国人_n_1_rel",
     TRAITS native_token_list ].
 
+队长_n_1 := n_-_h_le &
+"""
+[] captain; leader;
+"""
+  [ STEM < "队长" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "队", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_队长_n_1_rel",
+    TRAITS native_token_list ].
+
+加拿大人_n_1 := n_-_h_le &
+"""
+[] Canadian (person);
+"""
+  [ STEM < "加拿大人" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "加", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_加拿大人_n_1_rel",
+    TRAITS native_token_list ].
+
+政治家_n_1 := n_-_h_le &
+"""
+[] politician; statesman; 
+"""
+  [ STEM < "政治家" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "政", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_政治家_n_1_rel",
+    TRAITS native_token_list ].
+
+用户_n_1 := n_-_h_le &
+"""
+[] user;
+"""
+  [ STEM < "用户" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "用", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_用户_n_1_rel",
+    TRAITS native_token_list ].
+
+
 
 
 ;============================================================================
@@ -2236,6 +2669,169 @@ Common enough (e.g. 我 妈) that it needs its own entry.
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "徐", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.CARG "徐强",
     TRAITS native_token_list ].
+
+
+
+
+
+萨米_n_1 := n_-_h_pn_le &
+"""
+Sami
+"""
+  [ STEM < "萨米" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "萨", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "萨米",
+    TRAITS native_token_list ].
+
+
+汤姆_n_1 := n_-_h_pn_le &
+"""
+Tom
+"""
+  [ STEM < "汤姆" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "汤", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "汤姆",
+    TRAITS native_token_list ].
+
+
+玛丽_n_1 := n_-_h_pn_le &
+"""
+Mary
+"""
+  [ STEM < "玛丽" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "玛", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "玛丽",
+    TRAITS native_token_list ].
+
+约翰_n_1 := n_-_h_pn_le &
+"""
+John
+"""
+  [ STEM < "约翰" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "约", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "约翰",
+    TRAITS native_token_list ].
+
+
+比尔_n_1 := n_-_h_pn_le &
+"""
+Bill
+"""
+  [ STEM < "比尔" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "比", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "比尔",
+    TRAITS native_token_list ].
+
+杰克_n_1 := n_-_h_pn_le &
+"""
+Jack
+"""
+  [ STEM < "杰克" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "杰", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "杰克",
+    TRAITS native_token_list ].
+
+凯特_n_1 := n_-_h_pn_le &
+"""
+Kate
+"""
+  [ STEM < "凯特" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "凯", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "凯特",
+    TRAITS native_token_list ].
+
+史密斯_n_1 := n_-_h_pn_le &
+"""
+Smith
+"""
+  [ STEM < "史密斯" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "史", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "史密斯",
+    TRAITS native_token_list ].
+
+鲍勃_n_1 := n_-_h_pn_le &
+"""
+Bob
+"""
+  [ STEM < "鲍勃" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "鲍", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "鲍勃",
+    TRAITS native_token_list ].
+
+
+吉姆_n_1 := n_-_h_pn_le &
+"""
+Jim
+"""
+  [ STEM < "吉姆" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吉", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "吉姆",
+    TRAITS native_token_list ].
+
+贝蒂_n_1 := n_-_h_pn_le &
+"""
+Betty
+"""
+  [ STEM < "贝蒂" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "贝", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "贝蒂",
+    TRAITS native_token_list ].
+
+安娜_n_1 := n_-_h_pn_le &
+"""
+Anna
+"""
+  [ STEM < "安娜" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "安", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "安娜",
+    TRAITS native_token_list ].
+
+爱丽丝_n_1 := n_-_h_pn_le &
+"""
+Alice
+"""
+  [ STEM < "爱丽丝" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "爱", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "爱丽丝",
+    TRAITS native_token_list ].
+
+托尼_n_1 := n_-_h_pn_le &
+"""
+Tony
+"""
+  [ STEM < "托尼" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "托", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "托尼",
+    TRAITS native_token_list ].
+
+苏珊_n_1 := n_-_h_pn_le &
+"""
+Susan
+"""
+  [ STEM < "苏珊" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "苏", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "苏珊",
+    TRAITS native_token_list ].
+
+露西_n_1 := n_-_h_pn_le &
+"""
+Lucy
+"""
+  [ STEM < "露西" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "露", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "露西",
+    TRAITS native_token_list ].
+
+麦克_n_1 := n_-_h_pn_le &
+"""
+Mike
+"""
+  [ STEM < "麦克" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "麦", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "麦克",
+    TRAITS native_token_list ].
+
+
 
 
 ;============================================================================
@@ -2407,6 +3003,88 @@ Nanyang Technological University
     SYNSEM.LKEYS.KEYREL.CARG "南洋",
     TRAITS native_token_list ].
 
+澳大利亚_n_1 := n_-_l_pn_le &
+"""
+[] Australia
+"""
+  [ STEM < "澳大利亚" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "澳", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "澳大利亚",
+    TRAITS native_token_list ].
+
+意大利_n_1 := n_-_l_pn_le &
+"""
+[] Italy
+"""
+  [ STEM < "意大利" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "意", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "意大利",
+    TRAITS native_token_list ].
+
+富士山_n_1 := n_-_l_pn_le &
+"""
+[] Mount Fuji
+"""
+  [ STEM < "富士山" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "富", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "富士山",
+    TRAITS native_token_list ].
+
+北海道_n_1 := n_-_l_pn_le &
+"""
+[] Hokkaido
+"""
+  [ STEM < "北海道" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "北", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "北海道",
+    TRAITS native_token_list ].
+
+罗马_n_1 := n_-_l_pn_le &
+"""
+[] Rome (Italy)
+"""
+  [ STEM < "罗马" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "罗", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "罗马",
+    TRAITS native_token_list ].
+
+瑞士_n_1 := n_-_l_pn_le &
+"""
+[] Switzerland
+"""
+  [ STEM < "瑞士" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "瑞", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "瑞士",
+    TRAITS native_token_list ].
+
+英格兰_n_1 := n_-_l_pn_le &
+"""
+[] England
+"""
+  [ STEM < "英格兰" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "英", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "英格兰",
+    TRAITS native_token_list ].
+
+墨西哥_n_1 := n_-_l_pn_le &
+"""
+[] Mexico
+"""
+  [ STEM < "墨西哥" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "墨", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "墨西哥",
+    TRAITS native_token_list ].
+
+比萨_n_1 := n_-_l_pn_le &
+"""
+[] Pisa (Italy)
+"""
+  [ STEM < "比萨" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "比", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "比萨",
+    TRAITS native_token_list ].
+
+
 
 
 
@@ -2506,6 +3184,35 @@ French (language)
     SYNSEM.LKEYS.KEYREL.CARG "马来文",
     TRAITS native_token_list ].
 
+
+世界语_n_1 := n_-_pn_le &
+"""
+[] Esperanto (language);
+"""
+  [ STEM < "世界语" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "世", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "世界语",
+    TRAITS native_token_list ].
+
+意大利语_n_1 := n_-_pn_le &
+"""
+[] Italian (language);
+"""
+  [ STEM < "意大利语" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "意", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "意大利语",
+    TRAITS native_token_list ].
+
+阿拉伯语_n_1 := n_-_pn_le &
+"""
+[] Arabic (language);
+"""
+  [ STEM < "阿拉伯语" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "阿", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.CARG "阿拉伯语",
+    TRAITS native_token_list ].
+
+
 中秋节_n_1 := n_-_pn_le &
 """
 [zhōng qiū jié] the Mid-Autumn Festival (on 15th of 8th lunar month);
@@ -2540,8 +3247,8 @@ Used in many company names, etc.
 ; Adjectives
 ;============================================================================
 ;
-; a_-_att_le  (can directly modify a noun without 的)
-; a_-_pred_le (needs a 的 relative clause to modify a noun)
+; a_-_att_le  (can directly modify a noun prenominally without 的)
+; a_-_pred_le (needs a 的 relative clause to modify a noun prenominally)
 ;
 ;============================================================================
 
@@ -2583,6 +3290,17 @@ Used in many company names, etc.
     SYNSEM.LKEYS.KEYREL.PRED "_女_a_1_rel",
     TRAITS native_token_list ].
 
+
+过时_j_2 := a_-_pred_le &
+"""
+[guò shí] out of date; outdated; old-fashioned;
+"""
+  [ STEM < "过时" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "过", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_过时_a_2_rel",
+    TRAITS native_token_list ].
+
+
 真挚_j_1 := a_-_pred_le &
 """
 [zhēn zhì] sincere; genuine; cordial;
@@ -2614,9 +3332,6 @@ and make the change.
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "恰", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_恰到好处_a_1_rel",
     TRAITS native_token_list ].
-
-
-
 
 笔挺_j_1 := a_-_pred_le &
 """
@@ -2732,6 +3447,23 @@ and make the change.
     SYNSEM.LKEYS.KEYREL.PRED "_手忙脚乱_a_1_rel",
     TRAITS native_token_list ].
 
+愚蠢_j_1 := a_-_pred_le &
+"""
+[yú chǔn] stupid;
+"""
+  [ STEM < "愚蠢" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "愚", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_愚蠢_a_1_rel",
+    TRAITS native_token_list ].
+
+复杂_j_1 := a_-_pred_le &
+"""
+[fù zá] complex; complicated;
+"""
+  [ STEM < "复杂" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "复", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_复杂_a_1_rel",
+    TRAITS native_token_list ].
 
 
 ;============================================================================
@@ -2748,9 +3480,312 @@ Intransitive.
 """
   [ STEM < "出嫁" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "出", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_出嫁_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_出嫁_v_1_rel" ],
     TRAITS native_token_list ].
+
+工作_v_1 := v_-_le &
+"""
+[] ;  
+"""
+  [ STEM < "工作" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "工", LENGTH two ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_工作_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+自杀_v_1 := v_-_le &
+"""
+[] commit suicide;  
+"""
+  [ STEM < "自杀" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "自", LENGTH two ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_自杀_v_1_rel" ],
+    TRAITS native_token_list ].
+
+购物_v_1 := v_-_le &
+"""
+[] to shop; to go shopping;  
+"""
+  [ STEM < "购物" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "购", LENGTH two ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_购物_v_1_rel" ],
+    TRAITS native_token_list ].
+
+病_v_1 := v_-_le &
+"""
+[] to be sick;  
+"""
+  [ STEM < "病" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "病", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_病_v_1_rel" ],
+    TRAITS native_token_list ].
+
+疯_v_1 := v_-_le &
+"""
+[] to go crazy; to madden;  
+"""
+  [ STEM < "疯" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "疯", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_疯_v_1_rel" ],
+    TRAITS native_token_list ].
+
+响_v_1 := v_-_le &
+"""
+[] to ring (i.e. phone);  
+"""
+  [ STEM < "响" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "响", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_响_v_1_rel" ],
+    TRAITS native_token_list ].
+
+缺席_v_1 := v_-_le &
+"""
+[] to be absent; to miss; to be missing;  
+"""
+  [ STEM < "缺席" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "缺席", LENGTH two ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_缺席_v_1_rel" ],
+    TRAITS native_token_list ].
+
+掉_v_1 := v_-_le &
+"""
+[] to fall;  
+"""
+  [ STEM < "掉" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "掉", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_掉_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+掉_v_2 := v_np_le &
+"""
+[] to drop; to lose;  
+"""
+  [ STEM < "掉" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "掉", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_掉_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+修理_v_1 := v_np_le &
+"""
+[] to mend; to repair;  
+"""
+  [ STEM < "修理" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "修", LENGTH two ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_修理_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+胜过_v_1 := v_np_le &
+"""
+[] to surpass;  
+
+This is assumed this is to be a single token because it can take 了 as an aspect particle.
+There are many many examples, but most are semantically very:
+<ex> 你 是 空气 ， 但是 好闻 胜过 了 空气 。
+"""
+  [ STEM < "胜过" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "胜", LENGTH two ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_胜过_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
+
+
+
+
+; 看_v_1 := v_np_le &
+; """
+; TEST TO BREAK ASPECT!!!!!!!!!!!
+; """
+;   [ STEM < "看" >,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "看", LENGTH one ],
+;     SYNSEM [ LOCAL.CAT.HEAD.LZG le|zhe|guo|mei|bu|zai-asp,  ; can interact with all
+; ;     SYNSEM [ LOCAL.CAT.HEAD.LZG le|guo|mei|bu-asp,  ; can't interact with 在 or 着
+; ;     SYNSEM [ LOCAL.CAT.HEAD.LZG zhe|guo|mei|bu|zai-asp,  ; can't interact with 了
+; ;     SYNSEM [ LOCAL.CAT.HEAD.LZG le|zhe|mei|bu|zai-asp,  ; can't interact with 过
+
+;              LKEYS.KEYREL.PRED "_看_v_1_rel" ],
+;     TRAITS native_token_list ].
+
+
+
+; 了_pfv := pfv-marker_le &
+; """
+; TEST perfective marker LE.
+; """
+;   [ STEM <"了">,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
+;     TRAITS native_token_list ].
+
+过_exp := exp-marker_le &
+"""
+TEST
+"""
+  [ STEM <"过">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "过", LENGTH one ],
+    TRAITS native_token_list ].
+
+着_dur := dur-marker_le &
+"""
+TEST
+"""
+  [ STEM <"着">,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "着", LENGTH one ],
+    TRAITS native_token_list ].
+
+在_r_1 := adv_-_vp-pre-norel_le &
+"""
+TEST
+;;adv indicating durative aspect
+ONLY COMPATIBLE WITH ZHE, MEI and ZAI.
+
+NOT SURE WHY IT IS WORKING WITH GUO
+"""
+  [ STEM <"在">,
+    SYNSEM.LOCAL.CAT.HEAD [ CHAR [ FCHAR "在", LENGTH one ],
+                            MOD < [ LOCAL [CAT.HEAD.LZG zhe|mei|zai-asp,
+					   CONT.HOOK.INDEX.E.ASPECT durative] ] > ],
+    TRAITS native_token_list ].
+
+没_r := adv_-_neg_le &
+"""
+TEST
+"""
+  [ STEM < "没" >,
+    SYNSEM.LOCAL.CAT.POSTHEAD -,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.MOD < [ LOCAL [ CAT.HEAD.LZG guo|zhe|mei-asp,
+					    CONT.HOOK.INDEX.E.ASPECT imp-exp-or-dur ] ] >,
+	     LKEYS.KEYREL.PRED _mei_x_rel ],
+    TRAITS native_token_list ].
+
+
+没有_r_1 := adv_-_neg_le &
+"""
+For now, assume this works as 没.
+[FIXME] It's is possible that it's not 100% the same as 没.
+
+Added [EXISTV -] to block 有 from being modified with this.
+"""
+  [ STEM < "没有" >,
+    SYNSEM.LOCAL.CAT.POSTHEAD -,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.MOD < [ LOCAL [ CAT.HEAD [ LZG guo|zhe|mei-asp,
+						       EXISTV -],
+					    CONT.HOOK.INDEX.E.ASPECT imp-exp-or-dur ] ] >,
+	     LKEYS.KEYREL.PRED _mei_x_rel ],
+    TRAITS native_token_list ].
+
+没有_r_2 := adv_-_neg_le &
+"""
+Check: 没有_r for documentation.
+This is an alternative tokenization, because 没有 will be split by default in preprocessing. 
+"""
+  [ STEM < "没","有" >,
+    SYNSEM.LOCAL.CAT.POSTHEAD -,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH two ],
+    SYNSEM [ LOCAL.CAT.HEAD.MOD < [ LOCAL [ CAT.HEAD [ LZG guo|zhe|mei-asp,
+						       EXISTV -],
+					    CONT.HOOK.INDEX.E.ASPECT imp-exp-or-dur ] ] >,
+	     LKEYS.KEYREL.PRED _mei_x_rel ],
+    TRAITS native_token_list ].
+
+
+
+不_r := adv_-_neg_le &
+"""
+TEST
+"""
+  [ STEM < "不" >,
+    SYNSEM.LOCAL.CAT.POSTHEAD -,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED _bu_x_rel,
+	     LOCAL.CAT.HEAD.MOD < [ LOCAL [ CONT.HOOK.INDEX.E.ASPECT non-aspect, 
+		                            CAT.HEAD [LZG bu-asp,
+						      EXISTV -] ] ] > ],
+    TRAITS native_token_list ].
+
+
+mal_you_不_r := adv_-_neg_le &
+"""
+TEST
+"""
+  [ STEM < "不" >,
+    SYNSEM.LOCAL.CAT.POSTHEAD -,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED _bu_x_rel,
+	     LOCAL.CAT.HEAD.MOD < [ LOCAL [ CONT.HOOK.INDEX.E.ASPECT non-aspect, 
+		                            CAT.HEAD [EXISTV +,
+						      CHAR [ FCHAR "有", LENGTH one] ] ] ] > ],
+    TRAITS native_token_list ].
+
+有_v_2 := v_np_le &
+"""
+TEST
+
+It should take all aspect particles, but can't take 不 as negator.
+The feature EXISTV was already being used in A-NOT-A constructions, to block interactions between 不 and 有. We extended this by marking this 有 as [EXISTV +], which effectively blocks 不.
+
+<ex> 她 有 了 一 个 好 工作 。
+<ex> 她 没 有 一 个 好 工作 。
+<ex> 她 有 着 媚人 的 神态 。
+(She has a charming manner.)
+<ex> 我 曾经 有 过 这 样 的 玩具 。
+(I used to have such a toy.)
+"""
+  [ STEM < "有" >,
+    SYNSEM.LOCAL.CAT.HEAD [ EXISTV +,
+			    CHAR [ FCHAR "有", LENGTH one ] ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le|zhe|guo|mei|zai-asp,
+             LKEYS.KEYREL.PRED "_有_v_2_rel" ],
+    TRAITS native_token_list ].
+
+
+mal_spell_有_v_2 := v_np_le &
+"""
+Mispelling entry: 友 as 有. 
+
+"""
+  [ STEM < "友" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le|zhe|guo|mei|zai-asp,
+             LKEYS.KEYREL.PRED "_有_v_2_rel" ],
+    TRAITS native_token_list ].
+
+
+mal_bu_有_v_2 := v_np_le &
+"""
+MAL 有
+"""
+  [ STEM < "有" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG bu-asp,
+             LKEYS.KEYREL.PRED "_有_v_2_rel" ],
+    TRAITS native_token_list ].
+
+
+
+是_v_cop_1 := v_np_cop_le &
+"""
+TEST
+Takes only BU.
+"""
+  [ STEM < "是" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "是", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG bu-asp,
+	     LKEYS.KEYREL.PRED "是_v_cop_rel" ],
+    TRAITS native_token_list ].
+
+
+
+
+
+
+
+
+
 
 送终_v_1 := v_-_le &
 """
@@ -2758,8 +3793,7 @@ Intransitive.
 """
   [ STEM < "送终" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "送", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_送终_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_送终_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -2770,8 +3804,7 @@ Intransitive.
 """
   [ STEM < "过奖" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "过", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_过奖_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_过奖_v_1_rel" ],
     TRAITS native_token_list ].
 
 作息_v_1 := v_-_le &
@@ -2780,8 +3813,7 @@ Intransitive.
 """
   [ STEM < "作息" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "作", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_作息_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_作息_v_1_rel" ],
     TRAITS native_token_list ].
 
 管_v_2 := v_np_le &
@@ -2797,20 +3829,19 @@ Intransitive.
 """
   [ STEM < "管" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "管", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_管_v_2_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_管_v_2_rel" ],
     TRAITS native_token_list ].
 
 订_v_1 := v_np_le &
 """
-[dìng] to subscribe; to order; 
+[dìng] to subscribe; to order; to bind/stable; to book (i.e. a table);
 <ex> 我 家 订 了 三 份 报纸 。
 """
   [ STEM < "填" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "填", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_填_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_填_v_1_rel" ],
     TRAITS native_token_list ].
+
 
 办成_v_1 := v_np_le &
 """
@@ -2818,8 +3849,7 @@ Intransitive.
 """
   [ STEM < "办成" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "办", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_办成_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_办成_v_1_rel" ],
     TRAITS native_token_list ].
 
 学习_v_1 := v_np_le &
@@ -2828,8 +3858,7 @@ Intransitive.
 """
   [ STEM < "学习" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "学", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_学习_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_学习_v_1_rel" ],
     TRAITS native_token_list ].
 
 拦住_v_1 := v_np_le &
@@ -2838,8 +3867,7 @@ Intransitive.
 """
   [ STEM < "拦住" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "拦住", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_拦住_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_拦住_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -2849,8 +3877,7 @@ Intransitive.
 """
   [ STEM < "填" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "填", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_填_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_填_v_1_rel" ],
     TRAITS native_token_list ].
 
 逗留_v_1 := v_np_le &
@@ -2861,8 +3888,7 @@ Intransitive.
 """
   [ STEM < "逗留" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "逗", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_逗留_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_逗留_v_1_rel" ],
     TRAITS native_token_list ].
 
 定做_v_1 := v_np_le &
@@ -2871,8 +3897,7 @@ Intransitive.
 """
   [ STEM < "定做" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "定", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_定做_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_定做_v_1_rel" ],
     TRAITS native_token_list ].
 
 报考_v_1 := v_np_le &
@@ -2882,8 +3907,7 @@ Intransitive.
 """
   [ STEM < "报考" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "报", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_报考_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_报考_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -2893,8 +3917,7 @@ Intransitive.
 """
   [ STEM < "光临" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "光", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_光临_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_光临_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -2906,8 +3929,7 @@ to predict, to forecast
 """
   [ STEM < "预报" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "预", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_预报_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_预报_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -2919,8 +3941,7 @@ to fracture, to break (of bone)
 """
   [ STEM < "骨折" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "骨", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_骨折_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_骨折_v_1_rel" ],
     TRAITS native_token_list ].
 
 复印_v_1 := v_np_le &
@@ -2931,8 +3952,7 @@ to photocopy, to duplicate a document
 """
   [ STEM < "复印" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "复", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_复印_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_复印_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -2944,8 +3964,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "搬走" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "搬", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_搬走_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_搬走_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -2956,8 +3975,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "拆" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "拆", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_拆_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_拆_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -2967,8 +3985,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "思量" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "思", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_思量_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_思量_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -2978,8 +3995,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "织" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "织", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_织_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_织_v_1_rel" ],
     TRAITS native_token_list ].
 
 演_v_1 := v_np_le &
@@ -2990,8 +4006,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "演" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "演", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_演_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_演_v_1_rel" ],
     TRAITS native_token_list ].
 
 恭喜_v_2 := v_np_le &
@@ -3013,8 +4028,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "紧握" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "紧", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_紧握_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_紧握_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -3026,8 +4040,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "借出" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "借", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_借出_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_借出_v_1_rel" ],
     TRAITS native_token_list ].
     
 
@@ -3039,8 +4052,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "托" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "托", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_托_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_托_v_1_rel" ],
     TRAITS native_token_list ].
 
 
@@ -3051,38 +4063,84 @@ It seems that it can't have 了 between both characters.
 ;============================================================================
 
 讨厌_v_1 := v_np-spr_le &
+"""
+[tǎo yàn] to dislike; to hate; to be disgusted;
+"""
   [ STEM < "讨厌" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "讨", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_讨厌_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_讨厌_v_1_rel" ],
     TRAITS native_token_list ].
 
 讨厌_v_2 := v_s-spr_le &
+"""
+[tǎo yàn] to dislike; to hate; to be disgusted;
+"""
   [ STEM < "讨厌" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "讨", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_讨厌_v_2_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_讨厌_v_2_rel" ],
     TRAITS native_token_list ].
 
 讨厌_v_3 := v_vp_sequi-spr_le &
+"""
+[tǎo yàn] to dislike; to hate; to be disgusted;
+"""
   [ STEM < "讨厌" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "讨", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_讨厌_v_3_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_讨厌_v_3_rel" ],
     TRAITS native_token_list ].
 
 抱歉_v_1 := v_-_spr_le &
+"""
+[bào qiàn] to feel apologetic; to be sorry;
+
+Should be tested if it's really a psychological verb or an adjective of sorts.
+"""
   [ STEM < "抱歉" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "抱", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG no-lzg,
-             LKEYS.KEYREL.PRED "_抱歉_v_1_rel" ], 
+    SYNSEM [ LKEYS.KEYREL.PRED "_抱歉_v_1_rel" ], 
     TRAITS native_token_list ].
+
+
+佩服_v_1 := v_np-spr_le &
+"""
+[pèi fú] to admire;
+
+Should be spr verb
+俱乐部 的 人 很 佩服 他 。
+"""
+  [ STEM < "佩服" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "佩", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_佩服_v_1_rel",
+    TRAITS native_token_list ].
+
+
+爱好_v_1 := v_np-spr_le &
+"""
+[ài hào] to like; to be fond of; to be interested (as a hobby) in;
+"""
+  [ STEM < "爱好" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "爱", LENGTH two ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_爱好_v_1_rel" ], 
+    TRAITS native_token_list ].
+
+爱好_v_2 := v_vp_sequi-spr_le &
+"""
+[ài hào] to like; to be fond of; to be interested (as a hobby) in;
+
+Changed to sequi-spr: 
+<ex> 我 很 爱好 骑 自行车 。 
+(I'm very keen on cycling.)
+"""
+  [ STEM < "爱好" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "爱", LENGTH two ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_爱好_v_2_rel" ], 
+    TRAITS native_token_list ].
+
 
 喜欢_v_1 := v_np-spr_le &
   [ STEM < "喜欢" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_喜欢_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_喜欢_v_1_rel" ],
     TRAITS native_token_list ].
 
 喜欢_v_2 := v_vp_sequi-spr_le &
@@ -3095,7 +4153,6 @@ It seems that it can't have 了 between both characters.
   [ STEM < "喜欢" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_喜欢_v_3_rel",
-    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
     TRAITS native_token_list ].
 
 喜爱_v_1 := v_vp_sequi-spr_le &
@@ -3107,36 +4164,31 @@ It seems that it can't have 了 between both characters.
 想_v_1 := v_np-spr_le &
   [ STEM < "想" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "想", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_想_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_想_v_1_rel" ],
     TRAITS native_token_list ].
 
 想_v_2 := v_vp_sequi-spr_le &
   [ STEM < "想" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "想", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_想_v_2_rel",
-    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
     TRAITS native_token_list ].
 
 想_v_3 := v_s-spr_le &
   [ STEM < "想" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "想", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_想_v_3_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_想_v_3_rel" ],
     TRAITS native_token_list ].
 
 爱_v_1 :=  v_np-spr_le &
   [ STEM < "爱" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "爱", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_爱_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_爱_v_1_rel" ],
     TRAITS native_token_list ].
 
 爱_v_2 := v_vp_sequi-spr_le &
   [ STEM < "爱" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "爱", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.PRED "_爱_v_2_rel",
-    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
     TRAITS native_token_list ].
 
 疼爱_v_1 := v_np-spr_le &
@@ -3151,11 +4203,106 @@ It seems that it can't have 了 between both characters.
     SYNSEM.LKEYS.KEYREL.PRED "_钟爱_v_1_rel",
     TRAITS native_token_list ].
 
+爱护_v_1 := v_np-spr_le &
+"""
+[ài hù] to take good care of; to cherish; to be kind to;
+
+[FIXME] Check for other subcats
+
+<ex> 那 个 女孩 总是 非常 爱护 她 的 衣服 。
+(That girl always cherishes her clothing very much.)
+"""
+  [ STEM < "爱护" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "爱", LENGTH two ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_爱护_v_1_rel" ], 
+    TRAITS native_token_list ].
+
+
+挨_v_1 := v_np-spr_le &
+"""
+[ái] to suffer / to endure / to pull through (hard times) / to delay / to stall / to play for time / to dawdle
+
+[FIXME] CAN IT USE 很???, and if not, does it really have zhe+guo restriction? It seems it can actually use LE.
+https://www.lingq.com/en/learn-chinese-online/translate/zh/12910292/%E6%8C%A8-%E4%BA%86/
+"""
+  [ STEM < "﻿挨" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "挨﻿", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_﻿挨_v_1_rel" ], 
+    TRAITS native_token_list ].
+
+体贴_v_1 := v_np-spr_le &
+"""
+[tǐ tiē] to give every care to;
+
+[FIXME] It seems this can be both an adjective AND a verb. (although the adjective reading is missing). This might explain the zhe+guo restriction. However, it seems it might also be a 
+see, for example '他 非常 体贴 人 。'
+[FIXME] Also check other subcat.
+"""
+  [ STEM < "体贴" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "体", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_体贴_v_1_rel",
+    TRAITS native_token_list ].
+
+同情_v_1 := v_np-spr_le &
+"""
+[tóng qíng] to pity; to sympathize;
+
+
+我十分同情她。
+I really felt for her.
+他很同情你的艰难处境。
+He understands how hard things have been for you
+"""
+  [ STEM < "同情" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "同", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_同情_v_1_rel",
+    TRAITS native_token_list ].
+
+希望_v_1 := v_s-spr_le &
+"""
+I hope to arrive towards six o'clock .
+我希望在将近六点的时候到达。
+
+But i particularly wish you not to come .
+但是我非常希望你不要来
+
+"""
+  [ STEM < "希望" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "希", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_希望_v_1_rel",
+    TRAITS native_token_list ].
+
+希望_v_2 := v_vp_sequi-spr_le &
+"""
+I hope to arrive towards six o'clock .
+我希望在将近六点的时候到达。
+
+But i particularly wish you not to come .
+但是我非常希望你不要来
+
+"""
+  [ STEM < "希望" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "希", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_希望_v_1_rel",
+    TRAITS native_token_list ].
+
+
+对待_v_1 := v_np-spr_le &
+"""
+[duì dài]  (of persons, situations) to treat, to approach, to handle
+
+[FIXME] There is evidence of using 非常 and 很 with this verb, even though the meaning is not really clear to me. originally had a  zhe+guo restriction, and LE seems to be hard to find...
+"""
+  [ STEM < "对待" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "对", LENGTH two ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_对待_v_1_rel" ],
+    TRAITS native_token_list ].
+
+
 热爱_v_1 := v_vp_sequi-spr_le &
   [ STEM < "热爱" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "热", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_热爱_v_1_rel",
-    SYNSEM.LOCAL.CAT.HEAD.LZG zhe+guo,
     TRAITS native_token_list ].
 
 高兴_v_2 := v_vp_sequi-spr_le &
@@ -3165,10 +4312,14 @@ It seems that it can't have 了 between both characters.
     TRAITS native_token_list ].
 
 有空_v_2 := v_vp_sequi-spr_le &
+"""
+你很有空吗？
+
+[FIXME] This originally said le + guo; but this would go against some of the assumptions (le should not be acceptable)
+"""
   [ STEM < "有空" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+guo,
-             LKEYS.KEYREL.PRED "_有空_v_2_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_有空_v_2_rel" ],
     TRAITS native_token_list ].
 
 
@@ -3186,15 +4337,13 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "叫" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "叫", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_叫_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_叫_v_1_rel" ],
     TRAITS native_token_list ].
 
 请_v_1 := v_np-vp_oequi_le &
   [ STEM < "请" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "请", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_请_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_请_v_1_rel" ],
     TRAITS native_token_list ].
 
 恭喜_v_1 := v_np-vp_oequi_le &
@@ -3212,7 +4361,6 @@ It seems that it can't have 了 between both characters.
   [ STEM < "欢迎" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "欢", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_欢迎_v_2_rel",
-    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
     TRAITS native_token_list ].
 
 
@@ -3239,11 +4387,19 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "呆" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "呆", LENGTH one ],
-    SYNSEM [ LOCAL.CAT [ HEAD.LZG le+zhe+guo,
-                         VAL.COMPS < [ LOCAL.CAT.HEAD.PFORM zai ] > ],
+    SYNSEM [ LOCAL.CAT [ VAL.COMPS < [ LOCAL.CAT.HEAD.PFORM zai ] > ],
 	     		 LKEYS.KEYREL.PRED "_呆_v_1_rel" ],
     TRAITS native_token_list ].
 
+待_v_1 := v_pp-pre_le &
+"""
+[dāi] to stay in/at; to be in/at; 
+"""
+  [ STEM < "待" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "待", LENGTH one ],
+    SYNSEM [ LOCAL.CAT [ VAL.COMPS < [ LOCAL.CAT.HEAD.PFORM zai ] > ],
+	     		 LKEYS.KEYREL.PRED "_待_v_1_rel" ],
+    TRAITS native_token_list ].
 
 
 ;============================================================================
@@ -3258,13 +4414,13 @@ It seems that it can't have 了 between both characters.
 ; the types for separable verbs complements can be found in zhong-zhs.tdl
 ;
 ;============================================================================
+; All these verbs should be included and forcefully split in REPP. 
+;============================================================================
 
 照_相_sep_v_1 := v_np_sep_le &
   [ STEM < "照" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "照", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 相_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 相_n_selected_rel,   
 		     KEYREL.PRED "_照_v_相_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3278,9 +4434,7 @@ It seems that it can't have 了 between both characters.
 加_油_sep_v_1 := v_np_sep_le &
   [ STEM < "加" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "加", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 油_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 油_n_selected_rel,   
 		     KEYREL.PRED "_加_v_油_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3290,13 +4444,11 @@ It seems that it can't have 了 between both characters.
     SYNSEM [ LKEYS.KEYREL.PRED 油_n_selected_rel ],
     TRAITS native_token_list ].
 
-吃饭_v_1 := v_-_le &
-  [ STEM < "吃饭" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吃", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_吃_v_饭_sep_1_rel" ],
-    TRAITS native_token_list ].
-
+; 吃饭_v_1 := v_-_le &
+;   [ STEM < "吃饭" >,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吃", LENGTH two ],
+;     SYNSEM [ LKEYS.KEYREL.PRED "_吃_v_饭_sep_1_rel" ],
+;     TRAITS native_token_list ].
 
 做_饭_sep_v_1 := v_np_sep_le &
 """ 
@@ -3304,18 +4456,14 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "做" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "做", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 饭_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 饭_n_selected_rel,   
 		     KEYREL.PRED "_做_v_饭_sep_1_rel"] ],
     TRAITS native_token_list ].
 
 吃_饭_sep_v_1 := v_np_sep_le &
   [ STEM < "吃" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吃", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 饭_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 饭_n_selected_rel,   
 		     KEYREL.PRED "_吃_v_饭_sep_1_rel"] ],
     TRAITS native_token_list ].
     
@@ -3325,19 +4473,16 @@ It seems that it can't have 了 between both characters.
     SYNSEM [ LKEYS.KEYREL.PRED 饭_n_selected_rel ],
     TRAITS native_token_list ].
 
-开车_v_1 := v_-_le &
-  [ STEM < "开车" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "开", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_开_v_车_sep_1_rel" ],
-    TRAITS native_token_list ].
+; 开车_v_1 := v_-_le &
+;   [ STEM < "开车" >,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "开", LENGTH two ],
+;     SYNSEM [ LKEYS.KEYREL.PRED "_开_v_车_sep_1_rel" ],
+;     TRAITS native_token_list ].
 
 开_车_sep_v_1 := v_np_sep_le &
   [ STEM < "开" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "开", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 车_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 车_n_selected_rel,   
 		     KEYREL.PRED "_开_v_车_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3351,9 +4496,7 @@ It seems that it can't have 了 between both characters.
 结_婚_sep_v_1 := v_np_sep_le &
   [ STEM < "结" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "结", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 婚_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 婚_n_selected_rel,   
 		     KEYREL.PRED "_结_v_婚_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3366,9 +4509,7 @@ It seems that it can't have 了 between both characters.
 毕_业_sep_v_1 := v_np_sep_le &
   [ STEM < "毕" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "毕", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 业_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 业_n_selected_rel,   
 		     KEYREL.PRED "_毕_v_业_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3381,9 +4522,7 @@ It seems that it can't have 了 between both characters.
 洗_澡_sep_v_1 := v_np_sep_le &
   [ STEM < "洗" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "洗", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 澡_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 澡_n_selected_rel,   
 		     KEYREL.PRED "_洗_v_澡_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3397,9 +4536,7 @@ It seems that it can't have 了 between both characters.
 滑_雪_sep_v_1 := v_np_sep_le &
   [ STEM < "滑" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "滑", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 雪_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 雪_n_selected_rel,   
 		     KEYREL.PRED "_滑_v_雪_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3412,9 +4549,7 @@ It seems that it can't have 了 between both characters.
 滑_冰_sep_v_1 := v_np_sep_le &
   [ STEM < "滑" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "滑", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 冰_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 冰_n_selected_rel,   
 		     KEYREL.PRED "_滑_v_冰_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3428,9 +4563,7 @@ It seems that it can't have 了 between both characters.
 值_班_sep_v_1 := v_np_sep_le &
   [ STEM < "值" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "值", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 班_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 班_n_selected_rel,   
 		     KEYREL.PRED "_值_v_班_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3443,9 +4576,7 @@ It seems that it can't have 了 between both characters.
 生_病_sep_v_1 := v_np_sep_le &
   [ STEM < "生" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "生", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 病_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 病_n_selected_rel,   
 		     KEYREL.PRED "_生_v_病_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3458,9 +4589,7 @@ It seems that it can't have 了 between both characters.
 吸_烟_sep_v_1 := v_np_sep_le &
   [ STEM < "吸" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "吸", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 烟_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 烟_n_selected_rel,   
 		     KEYREL.PRED "_吸_v_烟_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3474,9 +4603,7 @@ It seems that it can't have 了 between both characters.
 开_会_sep_v_1 := v_np_sep_le &
   [ STEM < "开" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "开", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 会_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 会_n_selected_rel,   
 		     KEYREL.PRED "_开_v_会_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3490,9 +4617,7 @@ It seems that it can't have 了 between both characters.
 上_班儿_sep_v_1 := v_np_sep_le &
   [ STEM < "上" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "上", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 班儿_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 班儿_n_selected_rel,   
 		     KEYREL.PRED "_上_v_班儿_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3505,18 +4630,17 @@ It seems that it can't have 了 between both characters.
 上_班_sep_v_1 := v_np_sep_le &
   [ STEM < "上" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "上", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 班_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 班_n_selected_rel,   
 		     KEYREL.PRED "_上_v_班_sep_1_rel"] ],
     TRAITS native_token_list ].
 
 洗_淋浴_sep_v_1 := v_np_sep_le &
+"""
+[] to take a shower;
+"""
   [ STEM < "洗" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "洗", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 淋浴_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 淋浴_n_selected_rel,   
 		     KEYREL.PRED "_洗_v_淋浴_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3530,9 +4654,7 @@ It seems that it can't have 了 between both characters.
 """ get a haircut """
   [ STEM < "理" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "理", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 发_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 发_n_selected_rel,   
 		     KEYREL.PRED "_理_v_发_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3546,9 +4668,7 @@ It seems that it can't have 了 between both characters.
 """ sign with one's initials or name """
   [ STEM < "签" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "签", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 字_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 字_n_selected_rel,   
 		     KEYREL.PRED "_理_v_发_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3563,9 +4683,7 @@ It seems that it can't have 了 between both characters.
 """ play soccer """
   [ STEM < "踢" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "踢", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 足球_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 足球_n_selected_rel,   
 		     KEYREL.PRED "_踢_v_足球_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3579,9 +4697,7 @@ It seems that it can't have 了 between both characters.
 """ to chat / to converse """
   [ STEM < "聊" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "聊", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 天_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 天_n_selected_rel,   
 		     KEYREL.PRED "_聊_v_天_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3595,9 +4711,7 @@ It seems that it can't have 了 between both characters.
 """ to chat / to converse """
   [ STEM < "聊" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "聊", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 天儿_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 天儿_n_selected_rel,   
 		     KEYREL.PRED "_聊_v_天儿_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3614,9 +4728,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "庆" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "庆", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 生_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 生_n_selected_rel,   
 		     KEYREL.PRED "_庆_v_生_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3634,9 +4746,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "搬" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "搬", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 家_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 家_n_selected_rel,   
 		     KEYREL.PRED "_庆_v_家_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3653,9 +4763,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "出" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "出", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 院_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 院_n_selected_rel,   
 		     KEYREL.PRED "_出_v_院_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3671,9 +4779,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "下" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "下", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 雪_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 雪_n_selected_rel,   
 		     KEYREL.PRED "_下_v_雪_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3684,9 +4790,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "念" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "念", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 书_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 书_n_selected_rel,   
 		     KEYREL.PRED "_念_v_书_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3704,9 +4808,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "跑" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "跑", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 步_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 步_n_selected_rel,   
 		     KEYREL.PRED "_跑_v_步_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3723,9 +4825,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "打" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "打", LENGTH one ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 的_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 的_n_selected_rel,   
 		     KEYREL.PRED "_打_v_的_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3742,9 +4842,7 @@ It seems that it can't have 了 between both characters.
 """
   [ STEM < "开阔" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "开阔", LENGTH two ],
-    SYNSEM [ LOCAL [ CAT.HEAD.LZG le+zhe+guo,
-		     CAT.VAL.COMPS < [ OPT - ] > ],
-	     LKEYS [ --COMPKEY 眼界_n_selected_rel,   
+    SYNSEM [ LKEYS [ --COMPKEY 眼界_n_selected_rel,   
 		     KEYREL.PRED "_开阔_v_眼界_sep_1_rel"] ],
     TRAITS native_token_list ].
 
@@ -3753,6 +4851,108 @@ It seems that it can't have 了 between both characters.
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "眼", LENGTH two ],
     SYNSEM [ LKEYS.KEYREL.PRED 眼界_n_selected_rel ],
     TRAITS native_token_list ].
+
+撒_谎_sep_v_1 := v_np_sep_le &
+""" 
+[] to tell a lie;
+"""
+  [ STEM < "撒" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "撒", LENGTH one ],
+    SYNSEM [ LKEYS [ --COMPKEY 谎_n_selected_rel,   
+		     KEYREL.PRED "_撒_v_谎_sep_1_rel"] ],
+    TRAITS native_token_list ].
+
+说_谎_sep_v_1 := v_np_sep_le &
+""" 
+[] to tell a lie;
+"""
+  [ STEM < "说" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "说", LENGTH one ],
+    SYNSEM [ LKEYS [ --COMPKEY 谎_n_selected_rel,   
+		     KEYREL.PRED "_说_v_谎_sep_1_rel"] ],
+    TRAITS native_token_list ].
+
+谎_sep_n_1 := n_nosem_selected &
+  [ STEM < "谎" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "谎", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED 谎_n_selected_rel ],
+    TRAITS native_token_list ].
+
+上_课_sep_v_1 := v_np_sep_le &
+""" 
+[] to have a lesson; to be in class;
+"""
+  [ STEM < "上" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "上", LENGTH one ],
+    SYNSEM [ LKEYS [ --COMPKEY 课_n_selected_rel,   
+		     KEYREL.PRED "_上_v_课_sep_1_rel"] ],
+    TRAITS native_token_list ].
+
+下_课_sep_v_1 := v_np_sep_le &
+""" 
+[] to leave a lesson; to end a class;
+"""
+  [ STEM < "下" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "下", LENGTH one ],
+    SYNSEM [ LKEYS [ --COMPKEY 课_n_selected_rel,   
+		     KEYREL.PRED "_下_v_课_sep_1_rel"] ],
+    TRAITS native_token_list ].
+
+课_sep_n_1 := n_nosem_selected &
+  [ STEM < "课" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "课", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED 课_n_selected_rel ],
+    TRAITS native_token_list ].
+
+怀_孕_sep_v_1 := v_np_sep_le &
+""" 
+[] to be pregnant;
+"""
+  [ STEM < "怀" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "怀", LENGTH one ],
+    SYNSEM [ LKEYS [ --COMPKEY 孕_n_selected_rel,   
+		     KEYREL.PRED "_怀_v_孕_sep_1_rel"] ],
+    TRAITS native_token_list ].
+
+孕_sep_n_1 := n_nosem_selected &
+  [ STEM < "孕" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "孕", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED 孕_n_selected_rel ],
+    TRAITS native_token_list ].
+
+洗_碗_sep_v_1 := v_np_sep_le &
+""" 
+[] to do the dishes; to clean up after a meal;
+"""
+  [ STEM < "洗" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "洗", LENGTH one ],
+    SYNSEM [ LKEYS [ --COMPKEY 碗_n_selected_rel,   
+		     KEYREL.PRED "_洗_v_碗_sep_1_rel"] ],
+    TRAITS native_token_list ].
+
+碗_sep_n_1 := n_nosem_selected &
+  [ STEM < "碗" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "碗", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED 碗_n_selected_rel ],
+    TRAITS native_token_list ].
+
+关_门_sep_v_1 := v_np_sep_le &
+""" 
+[] to close shop; to close a business;
+"""
+  [ STEM < "关" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "关", LENGTH one ],
+    SYNSEM [ LKEYS [ --COMPKEY 门_n_selected_rel,   
+		     KEYREL.PRED "_关_v_门_sep_1_rel"] ],
+    TRAITS native_token_list ].
+
+门_sep_n_1 := n_nosem_selected &
+  [ STEM < "门" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "门", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED 门_n_selected_rel ],
+    TRAITS native_token_list ].
+
+
 
 
 ;============================================================================
@@ -3769,6 +4969,55 @@ However, this would be predicting that it could take 'time'-complements too.
   [ STEM < "呆会儿" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "呆", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_呆会儿_a_1_rel",
+    TRAITS native_token_list ].
+
+事实上_r_1 := adv_-_s-pre-rel_le &
+"""
+[shì shí shàng] in fact; in reality; actually;
+"""
+  [ STEM < "事实上" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "事", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_事实上_a_1_rel",
+    TRAITS native_token_list ].
+
+实际上_r_1 := adv_-_s-pre-rel_le &
+"""
+[shí jì shang] in fact; in reality; actually;
+"""
+  [ STEM < "实际上" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "实", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_实际上_a_1_rel",
+    TRAITS native_token_list ].
+
+
+每天_r_1 := adv_-_vp-pre_le &
+"""
+[] everyday;
+[FIXME] This should eventually be analysed as DET-N(time/measure)
+"""
+  [ STEM < "每天" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "每", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_每天_a_1_rel",
+    TRAITS native_token_list ].
+
+
+从没_r_1 := adv_-_vp-pre_le &
+"""
+[] never;
+[FIXME] Maybe this should be analysed compositionally?
+"""
+  [ STEM < "从没" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "从", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_从没_a_1_rel",
+    TRAITS native_token_list ].
+
+差点_r_1 := adv_-_vp-pre_le &
+"""
+[] nearly; almost;
+"""
+  [ STEM < "差点" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "差", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_差点_a_1_rel",
     TRAITS native_token_list ].
 
 
@@ -3872,11 +5121,47 @@ This is special tokenized form.
 [] what (?); (surprise) 
 """
   [ STEM < "怎么" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "怎么", LENGTH two ],
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "怎", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_怎么_x_rel",
     TRAITS native_token_list ].
 
-幸会_ij := adv_-_ij_le &
+
+
+没有_ij_1 := adv_-_ij-prehd_le & 
+"""
+[] No!
+
+没有 is split in preprocessing, so the STEM must be split.
+"""
+  [ STEM < "没","有" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_没有_x_rel",
+    TRAITS native_token_list ].
+
+
+不是么_ij_1 := adv_-_ij-prehd_le & 
+"""
+[bù shì ma] Is that so ? / right?
+[FIXME] this should be marked as question
+"""
+  [ STEM < "不是么" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_不是么_x_rel",
+    TRAITS native_token_list ].
+
+不是么_ij_2 := adv_-_ij-prehd_le & 
+"""
+[bù shì ma] Is that so ? / right?
+[FIXME] this should be marked as question
+
+"""
+  [ STEM < "不","是","么" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_不是么_x_rel",
+    TRAITS native_token_list ].
+
+
+幸会_ij_1 := adv_-_ij_le &
 """
 [xìng huì] Nice to meet you!;
 """
@@ -3885,3 +5170,22 @@ This is special tokenized form.
     SYNSEM.LKEYS.KEYREL.PRED "_幸会_x_rel",
     TRAITS native_token_list ].
 
+没关系_ij_1 := adv_-_ij_le &
+"""
+[méi guān xi] never mind; no problem; you're welcome;
+"""
+  [ STEM < "没关系" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_没关系_x_rel",
+    TRAITS native_token_list ].
+
+没关系_ij_2 := adv_-_ij_le &
+"""
+[méi guān xi] never mind; no problem; you're welcome;
+
+I expect 没 to eventually be split in preprocessing.
+"""
+  [ STEM < "没","关系" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_没关系_x_rel",
+    TRAITS native_token_list ].

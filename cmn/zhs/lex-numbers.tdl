@@ -59,10 +59,23 @@
 
 
 几_j := a_-_num_le &
+"""
+[FIXME] weird number (?); means 'a few' but satisfies the numeral slot in CL phrases.
+"""
   [ STEM < "几" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "几", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.CARG "几",
     TRAITS native_token_list ].
+
+好几_j := a_-_num_le &
+"""
+[FIXME] weird number (?); means 'quite a few' but satisfies the numeral slot in CL phrases.
+"""
+  [ STEM < "好几" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "好", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.CARG "好几",
+    TRAITS native_token_list ].
+
 
 零_j := a_-_num_le &
   [ STEM < "零" >,
@@ -88,17 +101,27 @@
     SYNSEM.LKEYS.KEYREL.CARG "1",
     TRAITS native_token_list ].
 
-二_j := a_-_num_le &
+二_j := a_noncard-num_le &
+"""
+[èr] two;
+
+This is marked as a NON-CARDINAL number (i.e. can't be used to count sets).
+"""
   [ STEM < "二" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "二", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.CARG "2",
     TRAITS native_token_list ].
 
 两_j := a_-_num_le &
+"""
+[liǎng] two; a couple of; both;
+"""
   [ STEM < "两" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "两", LENGTH one ],
     SYNSEM.LKEYS.KEYREL.CARG "2",
     TRAITS native_token_list ].
+
+
 
 贰_j := a_-_num_le &
   [ STEM < "贰" >,

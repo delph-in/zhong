@@ -1,5 +1,22 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 ; A basic VPM for Matrix grammars.
+
+;============================================================================
+; It is possible that we make distinctions inside the grammar that we don't
+; necessarily want to show to the world (as final output).
+; 
+; For translation rules, also, we want to have a uniform set of values for 
+; the important things for generation.
+;
+; this semi.vpm allows us to collapse very exquisite values into normal
+; values that can be understood by other grammars or by the general public
+; and will also aid in semantic transfer.
+;
+; This is actually an optional step to simplify a translation grammar.
+;============================================================================
+
+
+
 event          <> e
 ref-ind        <> x
 individual     <> i
@@ -66,17 +83,23 @@ PNG.ANIMACY : PNG.ANIMACY
 
 ;E.TENSE : E.TENSE
 ;  * <> *
-	  
+
+
+
+;============================================================================
+; 
+;============================================================================
 E.ASPECT : E.ASPECT
-;  has-aspect >> perfective
-  tentative <> tentative
-  perfective <> perfective
-  imperfective <> imperfective
-  experiential <> experiential
-  delimitative <> delimitative
-  durative <> durative
-  non-aspect <> non-aspect
-  aspect >> non-aspect    
+;   tentative <> tentative
+;   perfective <> perfective
+;   mei-aspect <> mei-aspect
+;   imperfective <> imperfective
+;   experiential <> experiential
+;   delimitative <> delimitative
+;   durative <> durative
+;   non-aspect <> non-aspect
+;   aspect >> non-aspect
+  non-aspect << aspect
   * <> *
 
 ;E.MOOD : E.MOOD

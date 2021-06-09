@@ -1,7 +1,7 @@
 ;============================================================================
 ; LMC 2020-02-13
 ;
-; instantiation of mal-lexical types
+; Instantiation of mal-lexical entries.
 ;
 ;
 ;============================================================================
@@ -81,17 +81,90 @@ It should be 有点 instead, and has a confusing parallelism with English
 
 
 
-mal_了_pfv := pfv-marker &
+
+mal_card_二_j := a_-_num_le &
 """
-This is a mal entry for 了 that allows it to join predicated that can't take
-any aspect particles. This includes, for example, the copula 是. 
-[FIXME] I'm happy but unsure why this is not applying to predicative adjs.
-Predicative adjs have the same non-lzg.
-<mex> 你 是 了 学生
+This lexical entry enables 二 to be used in numeral-classifier constructions.
+Currently 'a_-_num_le' marks numbers as [CARDINAL +], which is incorrect for 二.
 """
-  [ STEM <"了">,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
-    SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG no-lzg ] >,
+  [ STEM < "二" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "二", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "2",
+    TRAITS native_token_list ].
+
+
+
+; mal_了_pfv := pfv-marker &
+; """
+; This is a mal entry for 了 that allows it to join predicated that can't take
+; any aspect particles. This includes, for example, the copula 是. 
+; [FIXME] I'm happy but unsure why this is not applying to predicative adjs.
+; Predicative adjs have the same non-lzg.
+; <mex> 你 是 了 学生
+
+; Maybe we should have a few mal-了, tackling fine grained incompatibility.
+
+; [FIXME] This is no longer working with the new hierarchy.
+; """
+;   [ STEM <"了">,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "了", LENGTH one ],
+;     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG no-lzg-asp ] >,
+;     TRAITS native_token_list ].
+
+
+
+
+;============================================================================
+; MAL-PUNCTUATION
+;============================================================================
+; ZHONG currently has somewhat strict punctuation. E.g. Ending a sentence
+; that must be a question with '。' is enough to be fully rejected.
+; These next couple entries allow for erroneous punctuation.
+;
+; [FIXME] Evidently this generates quite a lot of ambiguity. But I currently
+;         don't see another way to do this.
+;============================================================================
+
+; mal-period-as-question := ques-mark &
+; """
+; Period marking a question.
+; """
+;   [ STEM < "。" >,
+;     STYLE mal,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "。", LENGTH one ],
+;     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
+;     TRAITS native_token_list ].
+
+; mal-rbst-period-as-question := ques-mark &
+; """
+; Non-full-width period marking a question.
+; """
+;   [ STEM < "." >,
+;     STYLE mal,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ".", LENGTH one ],
+;     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
+;     TRAITS native_token_list ].
+
+
+
+
+
+
+
+
+;============================================================================
+; FOREIGN WORDS / CODE-SWITCHING
+;============================================================================
+
+rbst_CD_n_1 := n_-_le &
+"""
+[] CD;
+
+Should use 光盘 instead; 
+"""
+  [ STEM < "CD" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "C", LENGTH two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_光盘_n_1_rel",
     TRAITS native_token_list ].
 
 
@@ -187,8 +260,7 @@ mal_spell_工作_v_1 := v_-_le &
 """
   [ STEM < "功做" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "功", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_工作_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_工作_v_1_rel" ],
     TRAITS native_token_list ].
 
 mal_spell_中国人_n_1 := n_-_h_le &
@@ -227,6 +299,14 @@ Misspelling of 中国人 [zhōng guó rén] Chinese (person);
     SYNSEM.LKEYS.KEYREL.PRED "_中国人_n_1_rel",
     TRAITS native_token_list ].
 
+mal_spell_中国人_n_5 := n_-_h_le &
+"""
+Misspelling of 中国人 [zhōng guó rén] Chinese (person);
+"""
+  [ STEM < "中入" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "中", LENGTH more-than-two ],
+    SYNSEM.LKEYS.KEYREL.PRED "_中国人_n_1_rel",
+    TRAITS native_token_list ].
 
 mal_spell_学习_v_1 := v_np_le &
 """
@@ -234,8 +314,7 @@ Misspelling of 学习 [xué xí] to study; to learn;
 """
   [ STEM < "学息" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "学", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-             LKEYS.KEYREL.PRED "_学习_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_学习_v_1_rel" ],
     TRAITS native_token_list ].
 
 mal_spell_一点儿_n_1 := n_-_indef-pr_le &
@@ -254,12 +333,18 @@ mal_spell_怎么样_j_1 := a_-_pred_q_le &
     TRAITS native_token_list ].
 
 mal_spell_什么_d_q := d_-_wh-nocls_le &
-  [ STEM < "什们" >,
+"""
+Needs to have a split STEM because 们 is alwasy split except for pronouns. 
+"""
+  [ STEM < "什","们" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH two ],
     TRAITS native_token_list ].
 
 mal_spell_什么_n_q := n_-_pr-wh_le &
-  [ STEM <"什们">,
+"""
+Needs to have a split STEM because 们 is alwasy split except for pronouns. 
+"""
+  [ STEM <"什","们">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "什", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED thing_n_rel,
     TRAITS native_token_list ].
@@ -305,7 +390,7 @@ Not sure if this should be an interjection instead.
 """
   [ STEM < "拜" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "拜", LENGTH one ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le,
+    SYNSEM [ LOCAL.CAT.HEAD.LZG no-lzg-asp,
              LKEYS.KEYREL.PRED "_拜拜_v_1_rel" ],
     TRAITS native_token_list ].
 
@@ -318,8 +403,7 @@ mal_spell_法文_n_1 := n_-_le &
 mal_spell_喜欢_v_1 := v_np-spr_le &
   [ STEM < "喜对" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
-    SYNSEM [ LOCAL.CAT.HEAD.LZG le+zhe+guo,
-	     LKEYS.KEYREL.PRED "_喜欢_v_1_rel" ],
+    SYNSEM [ LKEYS.KEYREL.PRED "_喜欢_v_1_rel" ],
     TRAITS native_token_list ].
 
 mal_spell_喜欢_v_2 := v_vp_sequi-spr_le &
@@ -332,7 +416,6 @@ mal_spell_喜欢_v_3 := v_s-spr_le &
   [ STEM < "喜对" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "喜", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_喜欢_v_3_rel",
-    SYNSEM.LOCAL.CAT.HEAD.LZG le+zhe+guo,
     TRAITS native_token_list ].
 
 mal_spell_空调_n_1 := n_-_le &

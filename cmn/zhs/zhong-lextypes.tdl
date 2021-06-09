@@ -26,7 +26,12 @@ speaker-lex-item := basic-icons-lex-item &
   [ SYNSEM.LOCAL.CONT.HOOK [ INDEX #index,
 			     SPEAKER-KEY #index ] ].
 
-non-honorific-hearer-lex-item := basic-icons-lex-item & 
+non-honorific-hearer-lex-item := basic-icons-lex-item &
+"""
+[FIXME] This was blocking perfectly nice sentence such as: 
+你 喜欢 你们 的 外语系 吗 ？
+As such I have disabled the honorific/non-honorific system from pronouns.
+"""
   [ SYNSEM.LOCAL.CONT.HOOK [ INDEX #index,
 			     HEARER-KEY #index ] ].
 
@@ -615,21 +620,6 @@ This split (from 'transitive-lex-item'), also allows us to make another distinct
 
 
 
-ditransitive-lex-item-2 := basic-three-arg & basic-icons-lex-item &
-   [ ARG-ST < [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind1,
-				  ICONS-KEY.IARG1 #clause ] ],
-	      [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind2,
-				  ICONS-KEY.IARG1 #clause ] ],
-	      [ LOCAL.CONT.HOOK [ INDEX event,
-                                  LTOP #ltop, 
-                                  XARG #ind2,
-				  ICONS-KEY.IARG1 #clause ] ] >,
-     SYNSEM [ LKEYS.KEYREL [ ARG1 #ind1,
-			     ARG2 #ind2,
-			     ARG3 #ind3 ],
-	      LOCAL.CONT [ HOOK.CLAUSE-KEY #clause,
-                           HCONS <! qeq & [ HARG #ind3, 
-                                            LARG #ltop ] !> ] ] ].
 
 transitive-verb-lex := main-verb-lex & transitive-lex-item & aspect-rule-dtr &
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp >,
@@ -725,8 +715,11 @@ this first complement (although the second one is acceptable).
 np-ap-comp-ba-verb-lex := np-xp-comp-verb-lex &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < gap, [ LOCAL.CAT.HEAD adj ] > ].
 
-; 'consider him old'
 np-ap-comp-verb-lex := np-xp-comp-verb-lex &
+"""
+Verb with two complements. The first is headed by a noun, and the second is headed by an adjective.
+e.g. 'I consider him old'
+"""
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ ], [ LOCAL.CAT.HEAD adj ] > ].
 
 np-vp-comp-verb-oeq-lex := np-vp-comp-verb-lex &
@@ -824,6 +817,28 @@ ditrans-verb-lex := ditransitive-lex-item & super-ditrans-verb-lex
 """
 .
 
+ditransitive-lex-item-2 := basic-three-arg & basic-icons-lex-item &
+"""
+This seems to be an alternative for ditransitive verbs where the second complement is QEQ'ed with the verb's ltop. It was exclusively used for 'ditrans-pp-verb-lex', which specifies the 
+
+[FIXME] I believe this is generating some weird parses.
+
+"""
+   [ ARG-ST < [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind1,
+				  ICONS-KEY.IARG1 #clause ] ],
+	      [ LOCAL.CONT.HOOK [ INDEX ref-ind & #ind2,
+				  ICONS-KEY.IARG1 #clause ] ],
+	      [ LOCAL.CONT.HOOK [ INDEX event,
+                                  LTOP #ltop, 
+                                  XARG #ind2,
+				  ICONS-KEY.IARG1 #clause ] ] >,
+     SYNSEM [ LKEYS.KEYREL [ ARG1 #ind1,
+			     ARG2 #ind2,
+			     ARG3 #ind3 ],
+	      LOCAL.CONT [ HOOK.CLAUSE-KEY #clause,
+                           HCONS <! qeq & [ HARG #ind3, 
+                                            LARG #ltop ] !> ] ] ].
+
 ditrans-pp-verb-lex := ditransitive-lex-item-2 & super-ditrans-verb-lex &
 """
 """
@@ -834,9 +849,13 @@ ditrans-preverbal-pp-verb-lex := ditrans-pp-verb-lex &
 """
  [ ARG-ST  < [], [], [ LOCAL.CAT [ HEAD [ PFORM xiang ] ] ] > ].
 
+
 trans-loc-verb-lex := basic-three-arg-no-hcons & main-verb-lex & basic-icons-lex-item &
 		      aspect-rule-dtr & verb-no-spr-item &
 """
+This type is for ditransitive verbs where the second complement is a PP (unconstrained).
+The original name was 'trans-loc-verb-lex' but this seems a bit 
+
 """
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS < #comp1,#comp2>,
 	     LKEYS.KEYREL [ ARG1 #arg1, 
@@ -857,12 +876,21 @@ trans-loc-verb-lex := basic-three-arg-no-hcons & main-verb-lex & basic-icons-lex
 			CONT.HOOK.INDEX #arg3 ],
 		OPT -] > ].
 
-v_intrans-verb-lex := intransitive-verb-lex & verb-no-spr-item.
-v_intrans-verb-spr-lex := intransitive-verb-lex & verb-spr-item.
+v_intrans-verb-lex := intransitive-verb-lex & verb-no-spr-item
+"""
+""".
 
-v_trans-verb-lex := transitive-verb-lex & verb-no-spr-item.
+v_intrans-verb-spr-lex := intransitive-verb-lex & verb-spr-item
+"""
+""".
 
-v_trans-verb-spr-lex := transitive-verb-lex & verb-spr-item.
+v_trans-verb-lex := transitive-verb-lex & verb-no-spr-item
+"""
+""".
+
+v_trans-verb-spr-lex := transitive-verb-lex & verb-spr-item
+"""
+""".
 
 
 
@@ -870,47 +898,56 @@ v_trans-verb-spr-lex := transitive-verb-lex & verb-spr-item.
 ;; to account for cases like 学校 有 狗 or 盒子 有 蛋糕, where the PP might be omitted
 ;; EXISTV has been added as a property to block 不 有
 
-v_exist-lex := basic-three-arg & verb-lex & basic-verb-lex & basic-icons-lex-item & verb-no-spr-item &
+v_exist-lex := basic-three-arg &
+	       verb-lex &
+	       basic-verb-lex &
+	       basic-icons-lex-item &
+	       verb-no-spr-item &
 """
 Currently this is being used for sentences like: 学校 里 有 狗 叫
 [FIXME] It's not clear whether this is absolutely necessary, or why is it not picking up examples such as 有 一 个 人 来 我 的 家 。
+
+The subject is now requesting for [ HEAD noun & [LOC +] ] to account for the new way relational locative nouns are being handled.
+
+[FIXME] Should double check if 在 phrases are not equally acceptable. However, it is also plausible to assume that in the presence of a 在 phrase, it should be handled as an adjunct. This option (which would require discharging the subject), however, is being blocked by [EXISTV +] -- which is being blocked by 'opt-subj-declarative-phrase'.
 """
  [ SYNSEM [ POSTCOMP -,
 	    LOCAL [ CAT.VAL [ SUBJ < #subj >,
-                              COMPS < #comp1, #comp2 > ],
+			      COMPS < #comp1, #comp2 > ],
 		    CAT.HEAD [ EXISTV +,
-                               AUX -,
-                               COP - ],
+			       AUX -,
+			       COP - ],
                     CONT [ HOOK [ LTOP #lbl,
-                                  INDEX #event ],
-                           RELS <! #keyrel !>,
+				  INDEX #event ],
+			   RELS <! #keyrel !>,
                            HCONS <! qeq & [ HARG #arg2,
-                                            LARG #vltop ] !> ] ],
-            LKEYS.KEYREL #keyrel &
+					    LARG #vltop ] !> ] ],
+	    LKEYS.KEYREL #keyrel &
                   [ LBL #lbl,
-                    ARG0 #event,
-                    ARG1 #arg1,
-                    ARG2 #arg2,
-                    ARG3 #arg3 ] ],
+		    ARG0 #event,
+		    ARG1 #arg1,
+		    ARG2 #arg2,
+		    ARG3 #arg3 ] ],
    ARG-ST 
-         < #subj &
-         [ LOCAL [ CAT [ VAL [ SPR < >,
-                               COMPS < > ],
-                         HEAD postp ],
-                   CONT.HOOK.INDEX #arg3 ],
-           NON-LOCAL.SLASH 0-dlist ],
-         #comp1 &
-         [ LOCAL [ CAT [ VAL [ SPR < >,
-                               COMPS < > ],
-                         HEAD noun ],
-                   CONT.HOOK.INDEX #arg1 ] ],
-         #comp2 &
-         [ LOCAL [ CAT [ VAL [ SUBJ < [ ] >,
-                               SPR < >,
-                               COMPS < > ],
-                         HEAD verb ],
-                   CONT.HOOK [ LTOP #vltop,
-                           XARG #arg1 ] ] ] > ].
+	  < #subj &
+	    [ OPT +, ; allowing optional but not slashed subjects
+	      LOCAL [ CAT [ VAL [ SPR < >,
+				  COMPS < > ],
+			    HEAD noun & [LOC +] ],
+		      CONT.HOOK.INDEX #arg3 ],
+	      NON-LOCAL.SLASH 0-dlist ],
+	    #comp1 &
+	    [ LOCAL [ CAT [ VAL [ SPR < >,
+				  COMPS < > ],
+			    HEAD noun ],
+		      CONT.HOOK.INDEX #arg1 ] ],
+	    #comp2 &
+	    [ LOCAL [ CAT [ VAL [ SUBJ < [ ] >,
+				  SPR < >,
+				  COMPS < > ],
+			    HEAD verb ],
+		      CONT.HOOK [ LTOP #vltop,
+				  XARG #arg1 ] ] ] > ].
 
 v_light-verb-lexeme := main-verb-lex & basic-two-arg-no-hcons &
 		       basic-icons-lex-item & verb-no-spr-item &
@@ -1354,13 +1391,22 @@ This does not specify the value for POSTHEAD. There are two children of this typ
 further restrict lexical entries that to be strictly pre-head or post-head.
 
 [FIXME] Try to understand and document [PUNCTUATED na-or--] [L-PERIPH -] [R-PERIPH +]
+
+
+Added noun as possible value to the HEAD to allow sentences like:
+<ex> 外婆 ， 您好 ！
+These sentences are then licensed by a strict root condition through 'np-voc-adp'.
+
+
+[NONSUBJ +] to prevent ambiguity in the attachment of interjections. Without it, it could attach both to the NP before becoming a subject, and to the full sentence. 
 """
   [ SYNSEM [ L-PERIPH +,
 	     INTERJECTED +,
 	     LOCAL.CAT [ HEAD.MOD < [ L-PERIPH -,
 				      R-PERIPH +,
 				      PUNCTUATED na-or--,
-				      LOCAL.CAT [ HEAD +vj,
+				      LOCAL.CAT [ HEAD +nvj,
+						  NONSUBJ +,
 						  VAL [ SUBJ <>,
 							COMPS <> ] ],
 				      NON-LOCAL [ SLASH 0-dlist,
@@ -1464,8 +1510,11 @@ imperative-aux-lex := subj-raise-aux-with-pred &
     ARG-ST.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2nd ].
 
 cop-verb-lex :=  transitive-verb-lex & verb-no-spr-item &
-"""adding in COP feature to identify SHI in constraints of other rules, like can't be in VV(rslt) constructions.
+"""
+
+The [COP +] feature identifies 是 as a copula, which is useful to use in constraints of other rules. For example, [COP +] can't be used in VV(rslt) constructions.
 <ex>他 是 张三
+
 """
   [ SYNSEM.LOCAL.CAT [ HEAD.COP +,
                        VAL [ SPR < >,
@@ -2203,6 +2252,8 @@ cat :+ [ NONSUBJ bool,
 classifier-quant-lex := basic-classifier-lex &
   [ SYNSEM.LOCAL.CAT.NONSUBJ + ].
 
+
+
 num-adj-lex := single-rel-lex-item & basic-icons-lex-item &
 """
 This is the main type for basic Numerals.
@@ -2210,13 +2261,14 @@ They have [HEAD num]. And the special head-feature [CARDINAL +].
 
 Their semantics is somewhat special, using CARG in a similar way as named relations.
 
+We want: the ARG0 of the thing it will specify over (SPEC) to be the same as ARG1 on the relation it introduces. 
 """
   [ SYNSEM [ PAREN -,
              PUNCTUATED -,
 	     LOCAL [ CAT [ VAL [ COMPS < >,
 				 SUBJ < >,
 				 SPR < > ],
-			   HEAD num & [ CARDINAL +,
+			   HEAD num & [ ; CARDINAL +,     ;TEST
 					MOD < > ] ],
 		     CONT [ HOOK [ LTOP #lbl, 
 				   INDEX #index ],
@@ -2225,6 +2277,56 @@ Their semantics is somewhat special, using CARG in a similar way as named relati
 	     NON-LOCAL.SLASH 0-dlist,
 	     LKEYS.KEYREL card-relation & #rel & [ LBL #lbl,
 						   ARG1 #index ] ] ].
+
+
+
+card-num-adj-lex:= num-adj-lex &
+"""
+This is a subtype for numbers that distinguishes between cardinal and noncardinal.
+
+This is ultimately to support the distinction between 二 (noncard) and 两 (card). This is being used in the 'spr-head-cl' rule to require that only cardinal numbers be available to serve as specifiers for classifiers.  
+"""
+  [ SYNSEM [ LOCAL [ CAT [ HEAD [ CARDINAL + ] ] ] ] ].
+
+noncard-num-adj-lex:= num-adj-lex &
+"""
+This is a subtype for numbers that distinguishes between cardinal and noncardinal.
+
+This is ultimately to support the distinction between 二 (noncard) and 两 (card). This is being used in the 'spr-head-cl' rule to require that only cardinal numbers be available to serve as specifiers for classifiers.
+
+As such, 二 would not be able to be the specifier of a classifier. 
+"""
+  [ SYNSEM [ LOCAL [ CAT [ HEAD [ CARDINAL - ] ] ] ] ].
+
+
+; num-adj-lex := single-rel-lex-item & basic-icons-lex-item &
+; """
+; This is the main type for basic Numerals.
+; They have [HEAD num]. And the special head-feature [CARDINAL +].
+
+; Their semantics is somewhat special, using CARG in a similar way as named relations.
+
+; We want: the ARG0 of the think it will specify over (SPEC) to be the same as ARG1 on the relation it introduces.
+; [FIXME]  LOOK WHY USING THIS ONE, THE ARG0 and ARG1 is links
+; """
+;   [ SYNSEM [ PAREN -,
+;              PUNCTUATED -,
+; 	     LOCAL [ CAT [ VAL [ COMPS < >,
+; 				 SUBJ < >,
+; 				 SPR < >,
+; 				 SPEC < [ LOCAL.CONT.HOOK.INDEX #arg1 ] > ],
+; 			   HEAD num & [ CARDINAL +,
+; 					MOD < > ] ],
+; 		     CONT [ HOOK [ LTOP #lbl, 
+; 				   INDEX #index ],
+; 			    RELS <! #rel !>,
+; 			    HCONS <! !> ] ],
+; 	     NON-LOCAL.SLASH 0-dlist,
+; 	     LKEYS.KEYREL card-relation & #rel & [ LBL #lbl,
+; 						   ARG0 #index,
+; 						   ARG1 #arg1 ] ] ].
+
+
 
 subj-drop-only-verb-lex := subj-drop-verb-lex & no-obj-drop-verb-lex & basic-icons-lex-item.
 
@@ -2932,10 +3034,13 @@ symbol := single-rel-lex-item & basic-icons-lex-item & nonque-item &
 	     
 comma-or-colon := symbol  &
   [ SYNSEM [ LOCAL [ CAT [ POSTHEAD + ] ] ] ].
+  
 paren := symbol & 
-  [ SYNSEM.PAREN + ].	     
+  [ SYNSEM.PAREN + ].
+
 lparen := paren &
   [ SYNSEM [ LOCAL [ CAT [ POSTHEAD - ] ] ] ].
+
 ;;ZZF 2016-12-06 parenthesis strategy: always combine with rparen first
 rparen := paren &
   [ SYNSEM [ LOCAL [ CAT [ VAL.COMPS < [ PAREN na-or-- ] >,

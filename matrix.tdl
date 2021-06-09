@@ -683,9 +683,12 @@ noun-relation := arg0-relation &
 ; argument
 noun-arg1-relation := noun-relation & arg1-relation.
 
-named-relation := noun-relation &
-  [ PRED named_rel,
-    CARG string ].
+; named-relation := noun-relation &
+; """
+; Redefined in ZHONG
+; """
+;   [ PRED named_rel,
+;     CARG string ].
 
 ; coordinating and subordinating conjunctions
 
@@ -775,23 +778,51 @@ aboutness-topic := topic.
 
 ; pronoun type
 
-; Three-valued sort evoking Polish logician Jan Lukasiewicz
 
+;================================================================================
+; LUK
+;================================================================================
+; Three-valued sort evoking Polish logician Jan Lukasiewicz.
+; These types allow the statement of constraints (e.g., in subcategorization) of
+; the form: If you care, you must have the value + (-), but you don't have to
+; care. Useful for keeping down the number of constructions and
+; subcategorization types.
+;================================================================================
+;                             luk
+;                              |
+;       ----------------------------------------------                       
+;       |               |              |             |
+;    [na-or-+]       [na-or--]     [+-or--]       [bool]
+;       \   \          /  \          /|            / |
+;        \   \        /    \        / |           /  |
+;         \   \      /      \      /  |          /   |
+;          \   \    /        \    /   |         /    |
+;           \   \  /          \  /    |        /     |
+;            \   \/            \/     |       /      |
+;             \  /\            /\     |      /       |
+;            [na]  \          /  \    |     /        |
+;                   \        /    \   |    /         |
+;                    \      /      \  |   /          |
+;                     \    /        \ |  /           | 
+;                      \  /          \| /            |
+;                       \/           [-]             | 
+;                       [+]__________________________|
+;
+;
+;================================================================================
 luk := sort.
-
-; These types allow the statement of constraints (e.g., in 
-; subcategorization) of the form:  If you care, you must have
-; the value + (-), but you don't have to care.  Useful for keeping
-; down the number of constructions and subcategorization types.
 
 na-or-+ := luk.
 na-or-- := luk.
 +-or-- := luk.
+bool := luk.
 
 na := na-or-+ & na-or--.
-bool := luk.
+
 + := bool & na-or-+ & +-or--.
 - := bool & na-or-- & +-or--.
+;================================================================================
+
 
 ; Three-valued sort for distinguishing unmodified signs from both
 ; left-modified and right-modified signs PERIPH indicates whether this
@@ -2141,13 +2172,19 @@ basic-extracted-subj-phrase := basic-extracted-arg-phrase & head-compositional &
 ; the COMPS requirement, whatever it was.
 
 head-mod-phrase := head-nexus-phrase &
-  [ SYNSEM [ LOCAL.CAT.VAL [ SUBJ #subj,
-                             SPR #spr,
-                             COMPS #comps ],
+"""
+
+LMC: Passed [NONSUBJ] up. 
+"""
+  [ SYNSEM [ LOCAL.CAT [ NONSUBJ #nonsubj,
+			 VAL [ SUBJ #subj,
+			       SPR #spr,
+			       COMPS #comps ] ],
              MODIFIED hasmod ],
-    HEAD-DTR.SYNSEM [ LOCAL.CAT.VAL [ SUBJ #subj,
-                                      SPR #spr,
-                                      COMPS #comps ],
+    HEAD-DTR.SYNSEM [ LOCAL.CAT [ NONSUBJ #nonsubj,
+				  VAL [ SUBJ #subj,
+					SPR #spr,
+					COMPS #comps ] ],
                       NON-LOCAL [ REL 0-dlist ] ] ].
 
 basic-extracted-adj-phrase := head-mod-phrase & head-only & phrasal.
@@ -2250,18 +2287,18 @@ adj-head-phrase := basic-head-mod-phrase-simple & head-final &
 				      REL 0-dlist ],
                           MODIFIED.PERIPH #periph ] ].
 
-#|
-adj-head-phrase := basic-head-mod-phrase-simple & head-final &
-  [ SYNSEM [ LOCAL.CAT.POSTHEAD #ph,
-	     MODIFIED lmod & [ PERIPH #periph ],
-             LIGHT #light ],
-    HEAD-DTR.SYNSEM [ LOCAL.CAT.POSTHEAD #ph,
-                      LIGHT #light ],
-    NON-HEAD-DTR.SYNSEM [ LOCAL.CAT [ VAL.COMPS < > ],
-			  NON-LOCAL [ SLASH 0-dlist,
-				      REL 0-dlist ],
-                          MODIFIED.PERIPH #periph ] ].
-|#
+; #|
+; adj-head-phrase := basic-head-mod-phrase-simple & head-final &
+;   [ SYNSEM [ LOCAL.CAT.POSTHEAD #ph,
+; 	     MODIFIED lmod & [ PERIPH #periph ],
+;              LIGHT #light ],
+;     HEAD-DTR.SYNSEM [ LOCAL.CAT.POSTHEAD #ph,
+;                       LIGHT #light ],
+;     NON-HEAD-DTR.SYNSEM [ LOCAL.CAT [ VAL.COMPS < > ],
+; 			  NON-LOCAL [ SLASH 0-dlist,
+; 				      REL 0-dlist ],
+;                           MODIFIED.PERIPH #periph ] ].
+; |#
 
 ;;; 2012-26-09 removed this constraint from head-adj-phrase
 ;;    HEAD-DTR.SYNSEM.MODIFIED notmod-or-rmod,

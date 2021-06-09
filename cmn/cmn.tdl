@@ -19,60 +19,219 @@
 ;================================================================================
 ; ASPECT
 ;================================================================================
+; Right now we can assume that BU has a similar aspect/restriction as a verb
+; allowing only 着. (need to check if they are in fact compatible). [FIXME]
+; We could change this to have more meaningful names in the future.
+; 
+;================================================================================
 
-+vjp :+ [ LZG lzg ].
++vjp :+ [ LZG lzg-asp ].
 
-lzg := avm. 
 
-le := lzg
+
+;================================================================================
+; TEST FOR NEW ASPECT HIERARCHY
+;================================================================================
+; Under this new hierarchy, aspect particles should introduce the highest possible
+; disjunction of aspects for which it can be used.
+;================================================================================
+lzg-asp := avm.
+; lzg-asp := lzg. 
+
+
+; these top types are kinds of verbs. 
+; Most will be le|zhe|guo|mei|bu|zai-asp. 
+; The interactions are restricted by the existence of certain pairs. 
+
+; 她 看 着 电影 。               OK
+; 他 刷 着 牙 。                 OK
+; 他 在 看 着 电影 。            OK
+; 他 在 刷 着 牙 。              OK
+; 他 在 刷 牙 。                 OK
+; 她 没 看 着 电影 。            OK
+; 他 没 刷 着 牙 。              OK
+; 他 没 在 刷 着 牙 。           OK
+; 他 没 在 刷 牙 。              OK
+; 他 不 在 家 。                 OK  (but ZAI is a 'verb')
+; 她 看 了 电影 。               OK
+; 她 不 看 电影 。               OK
+; 她 没 看 电影 。               OK
+; 她 看 过 电影 。               OK
+; 她 没 看 过 电影 。            OK  (didn't + have the experience)       
+
+
+; 他 不 (吃着东西看电影)         OK, but BU is for the main verb. 
+
+; 她 在 看 过 这 个 电影         NO!!!!!!!!
+; 她 BU 看 着 电影 。            NO!!!
+; le|zhe NEVER
+; 她 看 了 着 电影 。            NO!!
+; 她 看 着 了 电影 。            NO!!
+; 他 在 看 了 电影 。            NO!!
+; 他 在 没 看 着 电影 。         NO!!!!!   
+; 他 不 在 看 电影 。              NO!!! -- (only if it's a place)
+; 她 不 看 了 电影 。            NO!!!
+; 她 没 看 了 电影 。            NO!!!  ("did + didn't can't coexist")
+
+; 她 看 了 过 这 个 电影 。      NO!!!
+; 她 看 过 了  这 个 电影 。     NO!!!
+; 她 不 看 过  这 个 电影 。     NO!!!
+
+
+no-lzg-asp := lzg-asp
 """
-LZG (LE-ZHE-GUO) restriction: can, at least, take LE.
+For verbs that cannot interact with any of the aspect-related words.
+This should probably be used very sparingly.
 """.
 
-zhe := lzg
+le|zhe|guo|mei|bu|zai-asp := lzg-asp
 """
-LZG (LE-ZHE-GUO) restriction: can, at least, take ZHE.
-""".
-
-guo := lzg
-"""
-LZG (LE-ZHE-GUO) restriction: can, at least, take GUO.
-""".
-
-no-lzg := lzg
-"""
-LZG (LE-ZHE-GUO) restriction: cannot take any aspectual particle (e.g. 是).
-""".
-
-le+zhe := le & zhe
-"""
-LZG (LE-ZHE-GUO) restriction: can, at least, take LE and ZHE.
-""".
-
-le+guo := le & guo
-"""
-LZG (LE-ZHE-GUO) restriction: can, at least, take LE and GUO.
-""".
-
-zhe+guo := zhe & guo
-"""
-LZG (LE-ZHE-GUO) restriction: can, at least, take ZHE and GUO.
-""".
-
-le+zhe+guo := le & zhe & guo
-"""
-LZG (LE-ZHE-GUO) restriction: can take LE, ZHE and GUO.
+For verbs that can interact with all aspect-related words. 
 """.
 
 
-basic-pred-adj-lex :+ [ SYNSEM.LOCAL.CAT.HEAD.LZG no-lzg ]
+le|guo|mei|bu-asp := le|zhe|guo|mei|bu|zai-asp
 """
-This essentially blocks predicative adjectives from taking any kind of aspect.
+For verbs that cannot interact with 在 or 着 (essentially blocking the progressive aspect).
+
+[FIXME] IS 在 and 着 the same in restrictions like psychological verbs?
+""".
+
+zhe|guo|mei|bu|zai-asp := le|zhe|guo|mei|bu|zai-asp
+"""
+For verbs that cannot interact with 了 (essentially blocking the perfective aspect).
+However they can interact with 过. This, apparently, includes stative/psychological verbs (i.e. verbs that can take degree specifiers).
+
+[FIXME] should be be LE or MEI??? This would probably pose a problem since 过 and 着 are apparently possible.
+""".
+
+le|zhe|mei|bu|zai-asp := le|zhe|guo|mei|bu|zai-asp
+"""
+For verbs that cannot interact with 过 (essentially blocking the experiential aspect).
+""".
+
+
+le|zhe|guo|mei|zai-asp := le|zhe|guo|mei|bu|zai-asp
+"""
+For verbs that cannot interact with 不 (e.g. 有).
+""".
+
+bu-asp := le|zhe|guo|mei|bu|zai-asp &
+	  le|guo|mei|bu-asp &
+	  zhe|guo|mei|bu|zai-asp &
+	  le|zhe|mei|bu|zai-asp
+"""
+For verbs that only interact with 不 (e.g. 是).
+""". 
+
+
+
+
+zhe|guo|mei|zai-asp := le|zhe|guo|mei|zai-asp &
+		       zhe|guo|mei|bu|zai-asp
+"""
+""".
+
+zhe|mei|zai-asp := zhe|guo|mei|zai-asp & le|zhe|mei|bu|zai-asp.
+guo|zhe|mei-asp := zhe|guo|mei|zai-asp.
+
+le|guo-asp := le|zhe|guo|mei|zai-asp & le|guo|mei|bu-asp.
+
+zhe|zai-asp := zhe|mei|zai-asp.
+guo|zhe-asp := guo|zhe|mei-asp.
+guo|mei-asp := guo|zhe|mei-asp & le|guo|mei|bu-asp.
+zhe|mei-asp := guo|zhe|mei-asp & zhe|mei|zai-asp.
+mei|zai-asp := zhe|mei|zai-asp.
+
+; mei-asp := guo|mei-asp & zhe|mei-asp. ; this can't exist because it breaks things
+zhe-asp := zhe|mei-asp & zhe|zai-asp & guo|zhe-asp.
+guo-asp := guo|mei-asp & le|guo-asp & guo|zhe-asp.
+zai-asp := mei|zai-asp & zhe|zai-asp.   ; this should possibly also not exist ?
+
+le-asp :=  le|guo-asp & le|zhe|mei|bu|zai-asp.
+
+;================================================================================
+
+
+
+
+; lzg := avm. 
+
+; le := lzg
+; """
+; LZG (LE-ZHE-GUO) restriction: can, at least, take LE.
+; """.
+
+; zhe := lzg
+; """
+; LZG (LE-ZHE-GUO) restriction: can, at least, take ZHE.
+; """.
+
+; guo := lzg
+; """
+; LZG (LE-ZHE-GUO) restriction: can, at least, take GUO.
+; """.
+
+; no-lzg := lzg
+; """
+; LZG (LE-ZHE-GUO) restriction: cannot take any aspectual particle (e.g. 是).
+; """.
+
+; le+zhe := le+neg & le+pos & zhe
+; """
+; LZG (LE-ZHE-GUO) restriction: can, at least, take LE and ZHE.
+; """.
+
+; le+guo := le+neg & le+pos & guo
+; """
+; Perfective OR Experiential
+
+; LZG (LE-ZHE-GUO) restriction: can, at least, take LE and GUO.
+
+; Should have all but ZAI/ZHE?
+; """.
+
+
+; le+neg := le
+; """
+; This is a dummy type that should not be used directly.
+; This type is to allow MEI to be used alongside GUO, and also as the directly negation of LE.
+; """.
+
+; le+pos := le
+; """
+; Restriction for verbs that can take, at least, 了 as aspectual particle.
+; """.
+
+; mei := guo & le+neg
+; """
+; Restriction for verbs that can take 过 or verbs that can take a negated equivalent of LE (i.e. 没). This should ensure that 没 is compatible with 过 and with verbs that were compatible with 'le'. However, since 'le+neg' is a subtype of 'le', when a verb is compatible with 'le' it is, in fact, compatible with either the positive form (i.e. 了) or it's negative form (i.e. 没)
+; """.
+
+; zhe+guo := zhe & guo
+; """
+; LZG (LE-ZHE-GUO) restriction: can, at least, take ZHE and GUO.
+; """.
+
+; le+zhe+guo := mei & le+neg & le+pos & zhe & guo
+; """
+; LZG (LE-ZHE-GUO) restriction: can take LE, ZHE and GUO.
+; """.
+
+
+
+
+
+
+basic-pred-adj-lex :+ [ SYNSEM.LOCAL.CAT.HEAD.LZG bu-asp ]
+"""
+This essentially restricts adjectives to interactions with 不 (and excludes all other aspect-related words).
 This is being done here (and not in zhong-lextypes.tdl) since this is seen as 
 a Mandarin only restriction.
 [FIXME] Need to ask Joanna whether or not this restriction would also happen
 in Cantonese and, if so, more this higher. It is confusing to be split.
-""". 
+[FIXME] This is also not exactly true, we know adjectives can, in some circunstances, be equated as verbs when interacting with aspect (e.g. LE). We need to understand how this can be processed.   
+""".
 
 
 ;; SSH 2015-04-28: verbal particles
@@ -84,16 +243,44 @@ Aspect markers such as 了 take a complement  (currently +vj)
 
 """
  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
-				    LOCAL [CONT.HOOK.INDEX.E.ASPECT perfective,
-                                           CAT.HEAD +vj] ] > ] ].
+				    LOCAL [ CONT.HOOK.INDEX.E.ASPECT perfective,
+					    CAT.HEAD +vj ] ] > ] ].
+
+pfv-marker_le := pfv-marker &
+"""
+TEST FOR NEW HIERARCHY
+This required that the COMP for perfective markers are compatible only with verbs that can take 'LE' as a perfective marker.
+"""
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG le-asp] > ] ].
+
+
 
 exp-marker := aspect-markers & 
  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CONT.HOOK.INDEX.E.ASPECT experiential ] > ] ].
-  
+
+exp-marker_le := exp-marker &
+"""
+TEST
+"""
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG guo|mei-asp ] > ] ].
+;  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG guo-asp ] > ] ].
+
+
+
 ;; SSH 2014-09-02: removing irules.
 dur-marker := aspect-markers & 
  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ BOUND na-or--,
 				    LOCAL.CONT.HOOK.INDEX.E.ASPECT durative ] > ] ].
+
+dur-marker_le := dur-marker &
+"""
+TEST
+"""
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG zhe|mei-asp ] > ] ].
+;  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG zhe-asp ] > ] ].
+
+
+
 
 
 ;; SSH 2014-09-11: [SPEC <>] is added to block 了 不.
@@ -169,4 +356,4 @@ _mei_polar_x_rel := neg_x_rel.
 
 _hen_x_rel := intensifier_x_rel.
 _feichang_x_rel := intensifier_x_rel.
-
+_ting_x_rel := intensifier_x_rel.

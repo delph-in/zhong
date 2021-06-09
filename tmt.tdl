@@ -68,6 +68,21 @@ c-cont-2 := phrase-or-lexrule &
 		[ CFROM #from, 
 		  CTO #to ] !>].
 
+
+
+;================================================================================
+; TOKENS 
+;================================================================================
+; Currently only 'native_token_list' and 'generic_token_list' are actually being
+; used by the grammar.
+; However, EVERY SINGLE lexical entry is being marked as 'native_token_list'
+; which seems a horrible waste of space and elegance.
+;
+; maybe we should create two types: 'generic-token-lex' and 'native-token-lex'
+; and ambiguate things like 'v_trans-verb-lex' into two:
+; 'v_trans-verb-lex' and 'v_trans-verb-gen-lex'
+; and the same for every other thing.
+;================================================================================
 tokens := *top* &
 [ +LIST list,
   +LAST token ].
@@ -99,6 +114,9 @@ generic_token_list := list.
 generic_token_cons := generic_token_list & cons &
 [ FIRST.+TRAIT generic_trait, REST generic_token_list ].
 generic_token_null := generic_token_list & null.
+
+
+
 
 
 pos := *top* &

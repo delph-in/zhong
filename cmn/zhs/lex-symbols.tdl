@@ -12,7 +12,10 @@ period-marker := punctuation-end &
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop,
     TRAITS native_token_list ].
 
-period-marker-robust := punctuation-end &
+rbst-period-marker := punctuation-end &
+"""
+Non-full-width character.
+"""
   [ STEM < "." >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ".", LENGTH one ],
@@ -26,7 +29,10 @@ question-marker := ques-mark &
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
     TRAITS native_token_list ].
 
-question-marker-robust := ques-mark &
+rbst-question-marker := ques-mark &
+"""
+Non-full-width character.
+"""
   [ STEM < "?" >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "?", LENGTH one ],
@@ -39,7 +45,10 @@ bang-marker := punctuation-end &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "！", LENGTH one ],
     TRAITS native_token_list ].
 
-bang-marker-robust := punctuation-end &
+rbst-bang-marker := punctuation-end &
+"""
+Non-full-width character.
+"""
   [ STEM < "!" >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "!", LENGTH one ],
@@ -58,8 +67,21 @@ ellipsis-marker-alt := punctuation-end &
     TRAITS native_token_list ].
 
 comma-marker := punctuation &
+"""
+Comma-marker can be taken up by a phrase through the 'comp-marker' preventing it from having to behave like a coordination. 
+"""
   [ STEM < "，" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
+    TRAITS native_token_list ].
+
+; rbst-comma-marker := punctuation &
+rbst-comma-marker := comma-or-colon &
+"""
+Comma-marker can be taken up by a phrase through the 'comp-marker' preventing it from having to behave like a coordination. 
+"""
+  [ STEM < "," >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ",", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG ",",
     TRAITS native_token_list ].
 
 
@@ -67,21 +89,21 @@ comma-marker := punctuation &
 ;;; Symbols
 ;;;;;;;;;;;;;;;;;;;
 
-#|
-comma-marker := comma-or-colon &
-  [ STEM < "，" >,
-    STYLE strict,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.CARG "，",
-    TRAITS native_token_list ].
 
-comma-marker-robust := comma-or-colon &
-  [ STEM < "," >,
-    STYLE robust,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ",", LENGTH one ],
-    SYNSEM.LKEYS.KEYREL.CARG "，",
-    TRAITS native_token_list ].
-|#
+; comma-marker := comma-or-colon &
+;   [ STEM < "，" >,
+;     STYLE strict,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
+;     SYNSEM.LKEYS.KEYREL.CARG "，",
+;     TRAITS native_token_list ].
+
+; comma-marker-robust := comma-or-colon &
+;   [ STEM < "," >,
+;     STYLE robust,
+;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ",", LENGTH one ],
+;     SYNSEM.LKEYS.KEYREL.CARG "，",
+;     TRAITS native_token_list ].
+
 
 colon-marker := comma-or-colon &
   [ STEM < "：" >,
@@ -90,7 +112,10 @@ colon-marker := comma-or-colon &
     SYNSEM.LKEYS.KEYREL.CARG "：",
     TRAITS native_token_list ].
 
-colon-marker-robust := comma-or-colon &
+rbst-colon-marker := comma-or-colon &
+"""
+Non-full-width character.
+"""
   [ STEM < ":" >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ":", LENGTH one ],
@@ -104,7 +129,10 @@ semicolon-marker := comma-or-colon &
     SYNSEM.LKEYS.KEYREL.CARG "；",
     TRAITS native_token_list ].
 
-semicolon-marker-robust := comma-or-colon &
+rbst-semicolon-marker := comma-or-colon &
+"""
+Non-full-width character.
+"""
   [ STEM < ";" >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ";", LENGTH one ],
