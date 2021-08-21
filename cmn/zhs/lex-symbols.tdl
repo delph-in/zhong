@@ -3,7 +3,7 @@
 ;;;;;;;;;;;;;;;;;;;
 ;;; Punctuations
 ;;;;;;;;;;;;;;;;;;;
-
+; prop-or-comm
 
 period-marker := punctuation-end &
   [ STEM < "。" >,
@@ -43,6 +43,7 @@ bang-marker := punctuation-end &
   [ STEM < "！" >,
     STYLE strict,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "！", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop-or-comm,
     TRAITS native_token_list ].
 
 rbst-bang-marker := punctuation-end &
@@ -52,6 +53,7 @@ Non-full-width character.
   [ STEM < "!" >,
     STYLE robust,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "!", LENGTH one ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop-or-comm,
     TRAITS native_token_list ].
 
 ellipsis-marker := punctuation-end &
@@ -90,19 +92,6 @@ Comma-marker can be taken up by a phrase through the 'comp-marker' preventing it
 ;;;;;;;;;;;;;;;;;;;
 
 
-; comma-marker := comma-or-colon &
-;   [ STEM < "，" >,
-;     STYLE strict,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "，", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.CARG "，",
-;     TRAITS native_token_list ].
-
-; comma-marker-robust := comma-or-colon &
-;   [ STEM < "," >,
-;     STYLE robust,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR ",", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.CARG "，",
-;     TRAITS native_token_list ].
 
 
 colon-marker := comma-or-colon &

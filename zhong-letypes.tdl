@@ -669,6 +669,8 @@ and that cannot be used by themselves.
 """.
 
 
+
+
 n_-_tm_le := time-noun-lex & nonque-item
 """
 These are nouns that can be transformed into time-adverbs
@@ -744,9 +746,23 @@ This includes a list of a few of the common surnames.
 ;============================================================================
 ; CLASSIFIER TYPES
 ;============================================================================
-c_-_le := classifier-lex & nonque-item.
+c_-_le := classifier-lex & nonque-item
+"""
+The default CLs are currently able to be pumped into time adverbials if they are 0-nom-phrases.
+Some of them (e.g. 个 should most definitely be able to, but not all should). This would require a bit more in-depth study of classifiers in context. [FIXME] 
+""".
 
+tm_cl_le := time-classifier-lex & nonque-item
+"""
+Currently used only for ambiguous cases, where a classifier can be both time words and normal classifiers (to reduce ambiguity)
+these classifiers are allowed to be pumped into a time adverbial.
+""".
 
+ntm_cl_le := nontime-classifier-lex & nonque-item
+"""
+Currently used only for ambiguous cases, where a classifier can be both time words and normal classifiers (to reduce ambiguity). 
+these classifiers are prevented from 
+""".
 
 ;============================================================================
 ; ADJECTIVAL TYPES
@@ -908,6 +924,8 @@ v_np_le := v_trans-verb-lex & nonque-item & norm-comps1-lex
 """
 Simple transitive verbs (i.e. taking one NP as complement).
 """.
+
+
 
 v_np-np_le := ditrans-verb-lex & nonque-item
 """
@@ -1471,10 +1489,15 @@ Not sure what is special with it.
 ; CONJUCTION TYPES
 ;============================================================================
 conj_-_le := conj-lex & nonque-item.
+
 conj_-_e_le := conj-e-lex & nonque-item.
+
 conj_-_x_le := conj-x-lex & nonque-item.
+
 conj_-_sub-pre_le := subord-conj-pre-lex & nonque-item.
+
 conj_-_sub-prepreh_le := subord-conj-pre-preh-lex & nonque-item.
+
 conj_-_sub-post_le := subord-conj-post-lex & nonque-item.
 
 
@@ -1483,7 +1506,7 @@ conj_-_sub-post_le := subord-conj-post-lex & nonque-item.
 ;============================================================================
 d_-_wh_le := wh-determiner-lex
 """
-Interrogative determiner (allowing/requestiing the use of classifiers).
+Interrogative determiner (requesting the use of classifiers).
 <ex> 她 要 哪 本 书 ？
 """.
 
@@ -1495,7 +1518,13 @@ Interrogative determiner (disallowing the use of classifiers).
 """.
 
 d_-_le := determiner-cls-lex & nonque-item.
-d_-_nocls_le := determiner-nocls-lex & nonque-item.
+
+d_-_nocls_le := determiner-nocls-lex & nonque-item
+"""
+Determiners that don't allow the user of classifiers.
+""".
+
+
 d_-_d-prox_le := prox_demons-determiner-lex & nonque-item.
 d_-_d-dist_le := dist_demons-determiner-lex & nonque-item.
 d_-_d-prox-nocls_le := prox_demons-det-nocls-lex & nonque-item.
@@ -1645,6 +1674,13 @@ This would also block sentences like:
 
 """
 .
+
+
+num_q_le := num-adj-lex & question-item
+"""
+This is a test to stop thinking of 几 as a determiner, and let it work as a number. 
+""".
+
 
 
 adv_-_vp-pre_q_le := int-adv-vp-pre & question-item.

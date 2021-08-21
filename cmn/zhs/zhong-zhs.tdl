@@ -49,6 +49,7 @@
 碗_n_selected_rel := selected_comp_rel.
 门_n_selected_rel := selected_comp_rel.
 课_n_selected_rel := selected_comp_rel.
+号_n_selected_rel := selected_comp_rel.
 ;============================================================================
 
 
@@ -929,7 +930,6 @@ _国_x_rel := cl_x_rel.
 ; _唛_x_rel := cl_x_rel.
 ; _垡儿_x_rel := cl_x_rel.
 ; _部份_x_rel := cl_x_rel.
-; _就_x_rel := cl_x_rel.
 ; _象限_x_rel := cl_x_rel.
 ; _爵_x_rel := cl_x_rel.
 ; _开尔文_x_rel := cl_x_rel.

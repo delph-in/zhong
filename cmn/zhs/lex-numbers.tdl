@@ -58,7 +58,7 @@
     TRAITS native_token_list ].
 
 
-几_j := a_-_num_le &
+few_几_j := a_-_num_le &
 """
 [FIXME] weird number (?); means 'a few' but satisfies the numeral slot in CL phrases.
 """

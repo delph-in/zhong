@@ -604,11 +604,31 @@ tam := avm &
 
 ; ERB 2007-01-22 MSG renamed SF.
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; IFORCE Hierarchy
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; I added a prop-or-comm to allow exclamation points to block [SF ques].
+; This is currently relevant to diagnose adjectival predicates without a
+; degree specifier (which is not a problem iff it is a question);
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;                              avm
+;                               |
+;                             iforce
+;                            /      \
+;                  prop-or-ques    prop-or-comm
+;                      |    \        /  |
+;                      |     \      /   |
+;                      |      \    /    |
+;                     ques     prop    comm        
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 iforce := avm.
 prop-or-ques := iforce.
-prop := prop-or-ques.
+prop-or-comm := iforce.
+prop := prop-or-ques & prop-or-comm.
 ques := prop-or-ques.
-comm := iforce.
+comm := prop-or-comm.
 
 event := event-or-ref-index &
   [ E tam,
@@ -807,6 +827,7 @@ aboutness-topic := topic.
 ;                      \  /          \| /            |
 ;                       \/           [-]             | 
 ;                       [+]__________________________|
+;
 ;
 ;
 ;================================================================================
@@ -3301,8 +3322,12 @@ nosem-conj-lex := basic-conj-lex &
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Coordination phrases and rules
 coord-phrase := binary-phrase &
+"""
+[HEAD.LOC -], LMC making sure coordinated clauses can't be pumped into place adjuncts.  
+"""
   [ SYNSEM.LOCAL [ COORD-STRAT #cstrat,
-                   CAT [ HEAD.MOD #mod,
+                   CAT [ HEAD [MOD #mod,
+			       LOC -],
                          VAL #val ]],
     LCOORD-DTR #ldtr & sign & [ SYNSEM.LOCAL [ CAT [ HEAD.MOD #mod,
                                                      VAL #val ]]],
@@ -3331,7 +3356,12 @@ top-coord-rule := topormid-coord-phrase &
 ;                    COORD-REL implicit-coord-rel ]].
 
 bottom-coord-phrase := phrase &
-  [ CONJ-DTR sign,
+"""
+
+[SYNSEM.LOCAL.CAT.HEAD.LOC -] to ensure none of these coordinated clauses gets pumped into locative adjuncts
+"""
+  [ SYNSEM.LOCAL [ CAT [ HEAD.LOC -] ],
+    CONJ-DTR sign,
     NONCONJ-DTR sign ].
 
 unary-bottom-coord-rule := bottom-coord-phrase & unary-phrase &

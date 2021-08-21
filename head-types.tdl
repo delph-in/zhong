@@ -18,6 +18,8 @@
 +nvjrpcdo := head.
 ; Disjunctive type for nouns, verbs, adjectives, adverbs, adpositions, complementizers, determiners and number names.
 +nvjrpcdm := head.
+
+
 ; Disjunctive type for adjectives, adverbs, adpositions, complementizers, determiners, number names and conjunctions.
 +jrpcdmo := +vjrpcdmo & +njrpcdmo.
 ; Disjunctive type for verbs, adverbs, adpositions, complementizers, determiners, number names and conjunctions.
@@ -930,6 +932,7 @@
 +nvr := +nvro & +nvrm & +nvrd & +nvrc & +nvrp & +nvjr.
 ; Disjunctive type for nouns, verbs and adjectives.
 +nvj := +nvjo & +nvjm & +nvjd & +nvjc & +nvjp & +nvjr.
+
 ; Disjunctive type for number names and conjunctions.
 +mo := +dmo & +cmo & +pmo & +rmo & +jmo & +vmo & +nmo.
 ; Disjunctive type for determiners and conjunctions.

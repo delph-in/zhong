@@ -184,21 +184,21 @@ generic_year_ne := time-noun-lex & nonque-item &
 					  +CARG #carg,
 					  +CLASS year_ne ] > ]. 
 
-generic_month_ne := time-noun-lex & nonque-item &
-  [ SYNSEM.LKEYS.KEYREL [ PRED month_n_rel,
-                          CARG #carg ],
-    STEM < "_generic_month_ne_" >,
-    TOKENS.+LIST generic_token_list & < [ +POS.+TAGS null,
-					  +CARG #carg,
-					  +CLASS month_ne ] > ]. 
+; generic_month_ne := time-noun-lex & nonque-item &
+;   [ SYNSEM.LKEYS.KEYREL [ PRED month_n_rel,
+;                           CARG #carg ],
+;     STEM < "_generic_month_ne_" >,
+;     TOKENS.+LIST generic_token_list & < [ +POS.+TAGS null,
+; 					  +CARG #carg,
+; 					  +CLASS month_ne ] > ]. 
 
-generic_day_ne := time-noun-lex & nonque-item &
-  [ SYNSEM.LKEYS.KEYREL [ PRED day_n_rel,
-                          CARG #carg ],
-    STEM < "_generic_day_ne_" >,
-    TOKENS.+LIST generic_token_list & < [ +POS.+TAGS null,
-					  +CARG #carg,
-					  +CLASS day_ne ] > ]. 
+; generic_day_ne := time-noun-lex & nonque-item &
+;   [ SYNSEM.LKEYS.KEYREL [ PRED day_n_rel,
+;                           CARG #carg ],
+;     STEM < "_generic_day_ne_" >,
+;     TOKENS.+LIST generic_token_list & < [ +POS.+TAGS null,
+; 					  +CARG #carg,
+; 					  +CLASS day_ne ] > ]. 
 
 generic_date_ne := time-noun-lex & nonque-item &
   [ SYNSEM.LKEYS.KEYREL [ PRED date_n_rel,
@@ -209,6 +209,7 @@ generic_date_ne := time-noun-lex & nonque-item &
 					  +CLASS date_ne ] > ]. 
 
 
+
 generic_time_noun_ne := time-noun-lex & nonque-item &
   [ SYNSEM.LKEYS.KEYREL [ PRED time_n_rel,
                           CARG #carg ],
@@ -217,15 +218,18 @@ generic_time_noun_ne := time-noun-lex & nonque-item &
 					  +CARG #carg,
 					  +CLASS time_ne ] > ]. 
 
-#|not working
-generic_email_noun_ne := proper-name-lex & nonque-item &
-  [ SYNSEM.LKEYS.KEYREL [ PRED named_rel,
-                          CARG #carg ],
-    STEM < "_generic_email_ne_" >,
-    TOKENS.+LIST generic_token_list & < [ +POS.+TAGS null,
-					  +CARG #carg,
-					  +CLASS email_ne ] > ].
-|#
+
+
+
+
+; generic_email_noun_ne := proper-name-lex & nonque-item &
+;   [ SYNSEM.LKEYS.KEYREL [ PRED named_rel,
+;                           CARG #carg ],
+;     STEM < "_generic_email_ne_" >,
+;     TOKENS.+LIST generic_token_list & < [ +POS.+TAGS null,
+; 					  +CARG #carg,
+; 					  +CLASS email_ne ] > ].
+
 
 ;;for numeral phrases like "五号", treating as proper noun temporarily
 generic_meas_noun_ne := proper-name-lex & nonque-item &

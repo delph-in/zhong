@@ -120,13 +120,16 @@ root_strict_vpc := phrase &
 This root is similar root_strict_adj, but allows verbs, conjunctions and 
 prepositions to head a sentence. Contrary to root_strict_adj, it does not 
 enforce SYNSEM.LOCAL.CAT.VAL.SPR to be empty;
+
+This root condition is allowing was allowing 'np-time-adp' to be strict roots because the head of all 'np-adp-phrase' is preposition. Forcing [MOD < >] rules out other things from being 'strict', like sentences headed by conjunctions that didn't satisfy this MOD requirement. However, this would still be consistent with the ERG, in treating sentences like 'But he is happy.' as fragments. So, we're trying.
 """
   [ SYNSEM [ LOCAL [ COORD -,
 		     CAT [ VAL [ SUBJ < >,
 				 COMPS < > ],
 			   MC +,
 			   HEAD +vpc &
-			       [ FORM finite ] ] ],
+			       [ FORM finite,
+				 MOD < > ] ] ],
 	     NON-LOCAL [ SLASH 0-dlist & [ LIST < > ],
                          QUE 0-dlist & [ LIST < > ] ] ] ].
 

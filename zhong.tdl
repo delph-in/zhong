@@ -85,7 +85,7 @@
 
 ;============================================================================
 
-;; SSH 2014-09-04: Teh style feature for efficient generation
+;; SSH 2014-09-04: The style feature for efficient generation
 sign :+
  [ STYLE style,
    IDIOMATIC luk ].
@@ -113,6 +113,26 @@ dialect := robust.
 
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; WE CAN SELECT THINGS, e.g. COMPS, WITH FCHAR !!! (WORKS)
+; SO INSTEAD OF FCHAR, WE COULD HAVE THE WHOLE WORD
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; test_不_v := v_np_le &
+; """
+; This is a test to see if we could CHAR.FCHAR to select things!
+; DELETE ME ASAP
+; """
+;   [ STEM < "不" >,
+;     SYNSEM.LOCAL.CAT.HEAD [ CHAR [ FCHAR "不", LENGTH one ] ],
+;     SYNSEM [ LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.CHAR.FCHAR "猫" ] >,
+;              LKEYS.KEYREL.PRED "_不_v_2_rel" ],
+;     TRAITS native_token_list ].
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+
 
 lex-rule :+ 
  [ STYLE #style,
@@ -133,6 +153,9 @@ synsem :+
 ;; cannot be combined with the other of itself.
 ;; POSTCOMP is a feature to be used on HEAD to indicate the COMP's position is after the head.
 ;; CH is defined in the COMPS list to indicate the position of COMPS: CH+ == COMP before HEAD, CH- == COMP after HEAD, allowing HEAD to have one COMP before and one COMP after
+
+
+CLASSIF  (THIS IS A TEST TO TRY TO MOVE IT AWAY FROM HEAD FEATURE), CURRENTLY WE'LL HAVE 2
 """
   [ PUNCTUATED luk,
     INTERJECTED luk,
@@ -143,8 +166,15 @@ synsem :+
     BARE luk,
     SPART spart,
     UTTERED luk,
+    CLASSIF bool,       ;;;; TESTING
     BOUND luk ].
 
+
+
+
+;============================================================================
+; SENTENCE FINAL PARTICLES
+;============================================================================
 spart := avm.
 not-crs := spart.
 not-ma := spart.
@@ -152,6 +182,10 @@ crs := not-ma.
 ma := not-crs.
 no-spart := spart.
 not-crs-not-ma := not-crs & not-ma.
+
+
+
+
 
 
 ;; SSH 2014-10-24: for chart mapping
@@ -202,6 +236,7 @@ q_rel := predsort.
 every_q_rel := q_rel.
 exist_q_rel := q_rel.
 some_q_rel := exist_q_rel.
+many_q_rel := exist_q_rel.
 proper_q_rel := q_rel.
 pronoun_q_rel := q_rel.
 which_q_rel := q_rel.
@@ -771,7 +806,7 @@ Using OPT on non-head-dtr to prevent a special DeP from being taken as a normal 
                           PUNCTUATED na-or--,
                           LOCAL.CAT.HEAD.MOD < [ OPT na-or-- ] > ] ].
 
-;; WWJ (2015-03-28): NHD's SPART and Phrase's NHD are identi-fied... is this ok?
+;; WWJ (2015-03-28): NHD's SPART and Phrase's NHD are identified... is this ok?
 head-adj-scop-phrase :+
   [ SYNSEM.SPART #spart,
     HEAD-DTR.SYNSEM.ASPECTED +-or--,
@@ -1290,7 +1325,10 @@ adj-head-phrase :+
 
 ;; SSH 2015-03-17: *张三 哦 哭 了 。
 scopal-mod-phrase :+
-  [ SYNSEM.INTERJECTED #interjecepted,
+"""
+These were not properly linked (they had a typo); Should run a sanity check; 
+"""
+  [ SYNSEM.INTERJECTED #interjected,
     NON-HEAD-DTR.SYNSEM.INTERJECTED #interjected ].
 
 ;; SSH 2014-12-19: BOUND for blocking [狗 轻轻 [地 [叫 了]].
@@ -1298,6 +1336,12 @@ scopal-mod-phrase :+
 ;; 2016-11-7: "SPEC < >" to block degree specifier (adverb hen) being treated as modifier.
 ;; remove PUNCTUATED na-or-- to allow comma between modifier and head
 adj-head-int-mc := adj-head-int-phrase &
+"""
+This is the super-type for intersective adj-head phrases.
+This is currently being used for many things, most importantly, it mixes normal modification with classifiers. 
+
+This is being split into classifiers/non-classifier below, so we can pass the feature CLASSIF.
+"""
   [ SYNSEM [ LOCAL.CAT [ NONSUBJ #ns,
 		       NONCOMP #nc ],
              LIGHT - ],
@@ -1312,6 +1356,27 @@ adj-head-int-mc := adj-head-int-phrase &
                                       VAL.SPEC < >,
 				      NONSUBJ #ns,
 				      NONCOMP #nc ] ] ].
+
+
+
+adj-head-int-noncls := adj-head-int-mc &
+"""
+For non classifier phrases, [CLASSIF #classif] is passed from the head daughter.
+"""
+  [ SYNSEM [ CLASSIF #classif ],
+    HEAD-DTR.SYNSEM [ CLASSIF #classif ] ].
+
+
+adj-head-int-cls := adj-head-int-mc &
+"""
+[CLASSIF +] is always true if this rule activates. This is done so we can create 'classifier/numeral predicates' which only seem viable if a NP is classifier (but without determiners). 
+"""
+  [ SYNSEM [ CLASSIF + ],
+    NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD classifier & [EMPTY -],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD classifier & [CLASSIFIED -]].
+
+
+
 
 
 ;; 2016-2-21 ZZF: added phr-synsem to mother. 
@@ -1472,8 +1537,10 @@ basic-head-mod-phrase-simple := head-mod-phrase & binary-headed-phrase &
 """
 
 Added [NONSUBJ] feature to the copying.
+Added [INTERJECTED] feature to the copying.
 """
-  [ SYNSEM [ LOCAL.CAT.MKG #mkg,
+  [ SYNSEM [ INTERJECTED #interjected,
+	     LOCAL.CAT.MKG #mkg,
 	     NON-LOCAL [ SLASH [ LIST #first,
 				 LAST #last ],
 			 REL 0-dlist ] ],
@@ -1493,7 +1560,8 @@ Added [NONSUBJ] feature to the copying.
 	     LIGHT #light,
 	     MODIFIED #modif ],
     NON-HEAD-DTR.SYNSEM 
-	   [ LOCAL [ CAT [ HEAD [ MOD < [ LOCAL local & 
+	   [ INTERJECTED #interjected,
+	     LOCAL [ CAT [ HEAD [ MOD < [ LOCAL local & 
 						[ CAT [ HEAD #head,
 							NONSUBJ #nonsubj,
 							VAL #val,
@@ -1596,9 +1664,13 @@ spr-head-phrase := basic-head-spr-phrase & head-final &
 """
 The COMPS of the produced phrase is empty  < > (this comes from the HEAD-DTR's, 
 but it's not really linked here -- same output ) 
+
+[CLASSIF #classif] added to allow phrases like 多少 钱 to allow numeral predicates
 """
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
-    NON-HEAD-DTR.SYNSEM [ LOCAL [ CAT [ VAL.SUBJ < >,
+  [ SYNSEM [ CLASSIF #classif,
+	     LOCAL.CAT.VAL.COMPS < >],
+    NON-HEAD-DTR.SYNSEM [ CLASSIF #classif,
+			  LOCAL [ CAT [ VAL.SUBJ < >,
                     HEAD det ],
                   CONT.HOOK #hook ] ],
     C-CONT.HOOK #hook ].
@@ -1669,6 +1741,11 @@ Immediatly comming to mind: 很 喜欢; 这 个 猫
 basic-bare-spr-phrase := head-only &
 """
 Not sure where this would be useful.
+
+This rule (and their children) seem to be allowing phrases such as:
+一 个 漂亮 的 姑娘
+
+However, they are EXTREMLY  ambiguous.
 """
   [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
                            COMPS < > ],
@@ -1751,15 +1828,19 @@ This is not a 'headed rule', since it changes the valency. So we must carefully 
 
 <ex>我 吃 苹果 。
 (I eat apples.)
+
+Added [INTERJECTED #interjected] to copying. This helps block modification (with interjections) of NPs if they are going through further process. At the very least, this blocks certain phrases from being pumped by np-time-adp.
 """
   [ SYNSEM [ BARE +,
              LIGHT #light,
+	     INTERJECTED #interjected,
 	     LOCAL.CAT [ HEAD noun & [ GENERIC -,
 				       LOC #loc],
                          NONSUBJ #ns ],
              NON-LOCAL [ SLASH 0-dlist,
                          QUE #que ] ],
     HEAD-DTR.SYNSEM [ LIGHT #light,
+		      INTERJECTED #interjected,
                       LOCAL [ CAT [ HEAD.LOC #loc,
 				    NONSUBJ #ns ],
 			      CONT.HOOK.INDEX.COG-ST activ-or-less ],
@@ -1770,8 +1851,12 @@ This is not a 'headed rule', since it changes the valency. So we must carefully 
 
 ;; CL-phrase => nominal phrase
 basic-bare-nominal-phrase := unary-phrase &
-"""[ EMPTY - ] on child node to prevent temporal phrases like 昨天 from being converted from ADP to NP again.
+"""
+[ EMPTY - ] on child node to prevent temporal phrases like 昨天 from being converted from ADP to NP again.
 And [ EMPTY + ] on parent node to signal this NP has no head noun.
+
+
+LMC: Why was this forced as [INDEX.SORT nontime-s] ?
 """
   [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [ EMPTY +],
                            VAL [ SUBJ < >,
@@ -1779,7 +1864,8 @@ And [ EMPTY + ] on parent node to signal this NP has no head noun.
                            POSTHEAD +,
                            NONSUBJ #ns ],
                      COORD -,
-                     CONT.HOOK #hook & [ INDEX.SORT nontime-s ] ],
+;                      CONT.HOOK #hook & [ INDEX.SORT nontime-s ] ],
+                     CONT.HOOK #hook ],
              NON-LOCAL #nonlocal ],
     ARGS < [ SYNSEM [ LOCAL.CAT [ HEAD.EMPTY -,
                                   VAL [ SUBJ < >,
@@ -1826,10 +1912,13 @@ We want 0-nom-p would need to block the associative DE (not sure how yet).
 This 0-nom-p phrases were also allowed to be pumped into locative adjuncts.
 As such, we want to add SYNSEM.LOCAL.CAT.HEAD.LOC na-or--  to the NPs produced by this 的 in case of 'missing NPs'.
 
+
+[SORT nontime-s] to block these pumped postposition phrases into time adjucts.
 """
-  [ SYNSEM.LOCAL.CAT [ HEAD.LOC na-or--,
+  [ SYNSEM.LOCAL [ CAT [ HEAD.LOC na-or--,
 		       VAL.SPR < [ LOCAL.CAT.HEAD det,
 				   OPT + ] > ],
+		   CONT.HOOK.INDEX.SORT nontime-s ],
     ARGS < [ SYNSEM.LOCAL.CAT [ HEAD postp-nominalizable &
                                      [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
 					                         INDEX #index ] ] > ],
@@ -1841,31 +1930,79 @@ bare-nominal-det-phrase := basic-bare-nominal-phrase &
 """
 This rule is looking for a determiner that is still looking for a SPEC (something to specify over)
 and will produce a nominal-phrase (from the inherited type) that is fully specified (i.e. an NP).
+
+The comps cannot be empty because there are sentences like:
+<ex>  这 是 他 的 地址 。
+Where a single determiner has to become an NP
+
+
+
+
+SPEC < [OPT +] >
 """
-  [ SYNSEM.LOCAL.CAT [ HEAD.LOC na-or--,
-		       VAL.SPR < > ],
-    ARGS < [ SYNSEM.LOCAL.CAT [ HEAD det,
-                                VAL.SPEC < [ LOCAL.CONT.HOOK 
-                                             [ LTOP #ltop,
-                                               INDEX #index ] ] > ] ] >,
+  [ SYNSEM.LOCAL [ CAT [ HEAD.LOC na-or--,
+			 VAL.SPR < > ] ],
+    ARGS < [ SYNSEM.LOCAL [ COORD na-or--,
+			    CAT [ HEAD det,
+				  VAL [ SPEC < [ OPT +,
+						 LOCAL.CONT.HOOK [ LTOP #ltop,
+								   INDEX #index ] ] >
+					     ] ] ] ] >,
     C-CONT.HOOK [ LTOP #ltop,
 		  INDEX #index ] ].
 
+
+
+bare-nominal-det-cl-phrase := bare-nominal-det-phrase &
+"""
+This is for bare determiner+classifier phrases being pumped into NPs. The classifier should always be present.
+<ex> 这 个 是 我 的 朋友 。 
+
+
+In this case, [COMPS < >] means that this determiner found a classifier being pumped into an NP. In this case, we rely on the fact that determiners with classifiers are picking up the SORT value from their classifiers to decide if they can be pumped into time adverbials or not.
+
+"""
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.SORT  #sort ],
+    ARGS < [ SYNSEM.LOCAL [ CAT [ VAL [ COMPS < > ] ],
+			    CONT.HOOK.INDEX.SORT #sort ] ] > ].
+
+
+bare-nominal-det-nocl-phrase := bare-nominal-det-phrase &
+"""
+This is for hyper-bare determiners being pumped into NPs. 
+<ex> 这 是 我 的 朋友 。 
+
+COMPS < [ ] > means that this determiner phrase didn't find a classifier before being pumped. 
+In this case, we want to state the result is [SORT nontime-s] because we don't want these hyper-bare determiner phrases from being pumped into time adjuncts. 
+"""
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.SORT nontime-s ],
+    ARGS < [ SYNSEM.LOCAL [ CAT [ VAL [ COMPS < [ ] > ] ] ] ] > ].
+
+
+
 bare-nominal-cls-phrase := basic-bare-nominal-phrase &
 """pushing num + classifier to be NP
-<ex>我　买　三　本
+<ex> 我　买　三　本
 
 This 0-nom-p phrases were also allowed to be pumped into locative adjuncts.
 As such, we want to add SYNSEM.LOCAL.CAT.HEAD.LOC na-or--  to the NPs produced by this 的 in case of 'missing NPs'.
 
+Some classifiers (i.e. time classifiers) expect to be able to pumped into time adverbials because they ought to 'classify' a time noun (e.g. 点 in 三 点 中). So, in order to allow phrases like 三 点 to be pumped into time adverbials, we need to pass the values of SORT between what it ought to modify to what it has become. If this is indeed the sort 'time-s', then it should allow it to be pumped into a time adverbial 
+
+
+[VAL.SPR < > ] In the current treatment of zero-nominal CLS and DET phrases separately, it is probably safe to require that 0-nominal-classifier phrases to have been specified (i.e. to have taken a numeral before the classifier).
+
+
 """
-  [ SYNSEM.LOCAL.CAT [ HEAD.LOC na-or--,
-		       VAL.SPR < [ LOCAL.CAT.HEAD det,
-                                 OPT + ] > ],
+  [ SYNSEM.LOCAL [ CAT [ HEAD.LOC na-or--,
+			 VAL.SPR < [ LOCAL.CAT.HEAD det,
+				     OPT + ] > ],
+		   CONT.HOOK.INDEX.SORT #sort ],
     ARGS < [ SYNSEM.LOCAL [ COORD na-or--,
-                            CAT.HEAD classifier &
-                                     [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
-					                         INDEX #index ] ] > ] ] ] >,
+                            CAT [ HEAD classifier &
+				       [ MOD < [ LOCAL.CONT.HOOK [ LTOP #ltop,
+								   INDEX #index & [SORT #sort] ] ] > ],
+				  VAL.SPR < > ] ] ] >,
     C-CONT.HOOK [ LTOP #ltop,
 		  INDEX #index ] ].
 
@@ -1898,6 +2035,8 @@ So we would have to do something further because we don't want them as Noun-Noun
 ;; SSH 2014-04-16 added [CLASSIFIED na-or--]
 ;; SSH 2014-04-21 noun -> +njd, [NONCOMP +] added for blocking overgeneration.
 ;; why +njd? This includes classifier, which should be handled using head-specifier rule
+
+[EMPTY -] on the HEAD-DTR to prevent empty nouns from applying (e.g., from 0-nom-cls... which are essentially classifier phrases)
 """
   [ SYNSEM.LOCAL.CAT [ NONCOMP +,
 		       HEAD [ MEASURE + ],
@@ -1909,7 +2048,8 @@ So we would have to do something further because we don't want them as Noun-Noun
 				CONT.HOOK [ LTOP #ltop,
 					    INDEX #nhind ] ],
     HEAD-DTR.SYNSEM lex-synsem & [ BARE -,
-				   LOCAL [ CAT [ HEAD noun & [ GENERIC na-or--,
+				   LOCAL [ CAT [ HEAD noun & [ EMPTY -,
+							       GENERIC na-or--,
 							       CLASSIFIED na-or-- ],
 						 VAL.SPR < [ ] > ],
 					   CONT.HOOK [ LTOP #ltop,
@@ -2291,14 +2431,14 @@ It introduces a special 'xxx_p' relation in the semantics to make this link.
 We've also added [COMPS < >] to the only daughter since we want to force optional complements to be discharged or filled before going through this. Some relational nouns have obligatory complements
 """
   [ SYNSEM [ LOCAL.CAT [ HEAD prep & 
-                         [ EMPTY +,
-                           MOD < [ LOCAL intersective-mod &
-                                   [ CAT [ HEAD +vj,
-                                           VAL [ COMPS < > ] ],
-                                     CONT.HOOK [ LTOP #ltop,
-                                                 INDEX #modind ] ] ] > ],
-                         POSTHEAD -,
-                         VAL [ SPR < >,
+			      [ EMPTY +,
+				MOD < [ LOCAL intersective-mod &
+					      [ CAT [ HEAD +vj,
+						      VAL [ COMPS < > ] ],
+						CONT.HOOK [ LTOP #ltop,
+							    INDEX #modind ] ] ] > ],
+			 POSTHEAD -,
+			 VAL [ SPR < >,
                                SUBJ < >,
                                COMPS < > ] ],
              NON-LOCAL [ SLASH <! !>,
@@ -2319,36 +2459,6 @@ We've also added [COMPS < >] to the only daughter since we want to force optiona
          ICONS <! !> ] ].
 
 
-; np-num-phrase := unary-phrase &
-; """
-; This unary rule pumps a number (which has [HEAD num]) into a NP. 
-; This need to happen so it can be used in sentences like:
-; <ex> 我 的 手机 号码 是 一二三 。
-; <ex> 一二三 也 是 我 的 楼号 。
-
-; <?> 这 些 五 比较 厚 。
-; <?> 这 个 五 太 大 了 ！
-
-; For now we assume that these numbers just become a N, and a bare NP would be formed if they have are used without a specifier. However, the ERG introduces some special numeric qantifier to block some interactions -- namely on N-N compounds. Since this would not have an immediate usage, we don't do it ('for now'?).
-
-; In pumping rules we need to pass CONT if we want the labels and indexes (etc.) to remain the same for linking the semantics properly. Else they would get a new one and remain unliked with previous things.
-
-; """
-;   [ ARG-ST < #spr >,
-;     SYNSEM [ LOCAL [ CAT [ HEAD noun,
-; 			   VAL [ SPR < #spr & synsem &
-;                                    [ LOCAL.CAT [ HEAD det,
-;                                                  VAL.SPR < > ] ] >,
-; 				 SUBJ < >,
-; 				 COMPS < > ] ],
-; 		     CONT.HOOK #hook ],
-; 	     NON-LOCAL [ SLASH <! !> ] ],
-;     ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD num ],
-; 			      CONT.HOOK #hook ] ] ] >,
-;     C-CONT [ RELS <! !>,
-; 	     HCONS <! !>,
-; 	     ICONS <! !> ] ].
-
 
 np-num-phrase := unary-phrase &
 """
@@ -2367,16 +2477,21 @@ In pumping rules we need to pass CONT if we want the labels and indexes (etc.) t
 
 [EMPTY +] is being used to block pumped numbers from being used in NOUN-NOUN compounds.
 [LOC -] because these shouldn't be able to be pumped into location-adverbs. 
+[SORT nontime-s] to block pumped numbers from become time adverbials by themselves;
+
+
+2021.08.02 LKB-FOS was complaining about ARG-ST being redefined here. Commented it out for now. It feels it would be redundant.
 """
-  [ ARG-ST < #spr >,
+  [ ; ARG-ST < #spr >,
     SYNSEM [ LOCAL [ CAT [ HEAD noun & [EMPTY +,
 					LOC -],
-			   VAL [ SPR < #spr & synsem &
-                                   [ LOCAL.CAT [ HEAD det,
-                                                 VAL.SPR < > ] ] >,
+;			   VAL [ SPR < #spr & synsem &
+			   VAL [ SPR < synsem &
+				       [ LOCAL.CAT [ HEAD det,
+						     VAL.SPR < > ] ] >,
 				 SUBJ < >,
 				 COMPS < > ] ],
-		     CONT.HOOK [ INDEX #index,
+		     CONT.HOOK [ INDEX #index & [SORT nontime-s],
 				 LTOP #ltop ] ],
 	     NON-LOCAL [ SLASH <! !> ] ],
     ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD num ],
@@ -2398,10 +2513,17 @@ This is a specific case of 'np-adp-phrase'. It transforms temporal nouns into pr
 [BOUND -] is necessary to block the empty semantic comps from separable verbs.
 (but it generally makes sense)
 
-[EMPTY -] is being used to block the pumpting of pumped N (e.g. from numbers)
+**** [EMPTY -] was previously being used to block further pumping of pumped N (e.g. from numbers); However, if we want to pump certain empty phrases (e.g. 三 点 of  三 点 钟), then we must allow this ot happen. Numbers were directly marked as nontime-s.  
+
+
+[FIXME] We need to stop interjected things from being pumped further.
+[INTERJECTED na-or--] should prevent things that have been interjected from being pumped further
+[PUNCTUATED na-or--] should prevent the pumping for already punctuated phrases (i.e. pump first)
+
 """
-  [ ARGS < [ SYNSEM [ LOCAL [ CAT.HEAD.EMPTY -,
-			      CONT.HOOK.INDEX [ SORT time-s,
+  [ ARGS < [ SYNSEM [ INTERJECTED na-or--,
+		      PUNCTUATED na-or--,
+		      LOCAL [ CONT.HOOK.INDEX [ SORT time-s,
 						SPECI - ] ],
 		      BOUND - ] ] >,
     C-CONT.RELS <! [ PRED time_p_rel ] !> ].
@@ -2410,9 +2532,11 @@ This is a specific case of 'np-adp-phrase'. It transforms temporal nouns into pr
 
 np-place-adp-phrase := np-adp-phrase &
 """
-This is a specific case of 'np-adp-phrase'. It transforms certain nouns marked as [LOC +] into adjuncts.  This is currently marked as robust (since it's not clear if this is actually acceptable in written/formal contexts).
+This is a specific case of 'np-adp-phrase'. It transforms certain nouns compatible with [LOC +] into adjuncts.  This is currently marked as robust (since it's not clear if this is actually acceptable in written/formal contexts).
 
 Ensuring tha the  [SUBJ < [] >] on the MOD restricts the placement of this adjunct between the subject and the VP/AP (which is desired). 
+
+we need to block coordinations to be pumped into location adjuncts. This might be a sweeping statement, but reduces a lot of ambiguity. It seems COORD is not the right feature for this. [FIXME]
 """
   [ SYNSEM [ LOCAL [ CAT [ HEAD [ MOD < [ LOCAL [ CAT [ VAL [ SUBJ < [] > ] ] ] ] > ] ] ] ],
     ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [LOC +] ] ] ] ] >,
@@ -2617,6 +2741,8 @@ marker-comp-phrase := basic-comp-marker-phrase & marker-initial-phrase & head-fi
 
 question-phrase := unary-phrase-super & headed-phrase &
 """
+[FIXME] Using [QUE 1-dlist] is blocking sentences from having more than one QUE-word. This needs to change, and it would solve a lot of no-parses. We need to create a 1-plus-dlist (one-or-more things in QUE).
+
 This rule transforms something that has an unresolved QUE value (i.e. question word) and transforms it into a sentence. This is currently not being applied to 吗 or 呢 questions because they don't use non-local QUE and they change the SF to ques on their own. 
 The HEAD-DTR is something that has QUE value of 1-dlist (i.e. it has an unresolved question word).
 
@@ -2828,9 +2954,12 @@ The prevents things like the complements of separable verbs to go through this r
 
 EMPTY -, however does limit building fragments of type 一个   红的  (0-nom-* rules)
 EMPTY + technically means I'm the output of a pumping rule (related to putting a generic thing in).
+
+Leaving [EMPTY -] actually prevents quite common sentences like '这 本 呢 ？' etc. 
+LMC: I have removed it and will check how bad the ambiguity gets. [FIXME] most Cls should be marked as nontime.
 """
  [ ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD  noun & 
-					 [ EMPTY -,
+					 [ ; EMPTY -,                ;TESTING
 ; 					 [ EMPTY bool,
 					   GENERIC - ],
 				   VAL saturated ],

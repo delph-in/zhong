@@ -20,10 +20,29 @@ FIXME: This is not working the the example below because of the comma. I'm not s
     SYNSEM.LKEYS.KEYREL.PRED "_和_c_rel",
     TRAITS native_token_list ].
 
+mal_不_r := mal_neg_不+有_le &
+"""
+Mal lexical entry for 不, that allows 不+有.
+"""
+  [ STEM < "不" >,
+    SYNSEM.LOCAL.CAT.POSTHEAD -,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
+    SYNSEM [ LKEYS.KEYREL.PRED _bu_x_rel ],
+    TRAITS native_token_list ].
 
-mal_presubj_也_r := mal_scop-adv-s-prehd_le &
+mal_presubj_也_r := mal_presubj_也_le &
 """
 A mal-lexical entry for 也 in pre-subject position.
+"""
+  [ STEM < "也" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "也", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_也_a_rel",
+    TRAITS native_token_list ].
+
+
+mal_postv_也_r := mal-也-postv-precomp-lex &
+"""
+A mal-lexical entry for 也 in post-verbal position (before complements).
 """
   [ STEM < "也" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "也", LENGTH one ],
@@ -54,32 +73,37 @@ This 是 is a special copula that predicates over adjectival phrases. This is ge
     TRAITS native_token_list ].
 
 
-mal_degree_一点儿_r_1 := adv_-_deg-pre_le &
+mal_degree_s_一点儿_r_1 := adv_-_deg-pre_le &
 """
 This lexical entry enables the use of 一点儿 as a degree modifier.
 It should be 有点儿 instead, and has a confusing parallelism with English
 (e.g. I am a little bit tired.)
 <mex>我 一点儿 累 。
 """
-  [ STEM < "一点儿" >,
+  [ STEM < "一","点儿" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH more-than-two ],
     SYNSEM.LKEYS.KEYREL.PRED "_有点儿_a_1_rel",
     TRAITS native_token_list ].
 
 
-mal_degree_一点_r_1 := adv_-_deg-pre_le &
+mal_degree_s_一点_r_1 := adv_-_deg-pre_le &
 """
 This lexical entry enables the use of 一点 as a degree modifier.
 It should be 有点 instead, and has a confusing parallelism with English
 (e.g. I am a little bit tired.)
 <mex>我 一点 累 。
 """
-  [ STEM < "一点" >,
+  [ STEM < "一","点" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "一", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_有点_a_1_rel",
     TRAITS native_token_list ].
 
 
+mal_几_det_nocls_q := mal-几-wh-det-nocls_le &
+  [ STEM < "几" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "几", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED _how-many_q_rel,
+    TRAITS native_token_list ].
 
 
 mal_card_二_j := a_-_num_le &
@@ -92,6 +116,17 @@ Currently 'a_-_num_le' marks numbers as [CARDINAL +], which is incorrect for 二
     SYNSEM.LKEYS.KEYREL.CARG "2",
     TRAITS native_token_list ].
 
+
+mal_spell_有_v_2 := v_np_le &
+"""
+Mispelling entry: 友 as 有. 
+
+"""
+  [ STEM < "友" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH one ],
+    SYNSEM [ LOCAL.CAT.HEAD.LZG le-zhe-guo-mei-zai-asp,
+             LKEYS.KEYREL.PRED "_有_v_2_rel" ],
+    TRAITS native_token_list ].
 
 
 ; mal_了_pfv := pfv-marker &
@@ -125,7 +160,7 @@ Currently 'a_-_num_le' marks numbers as [CARDINAL +], which is incorrect for 二
 ;         don't see another way to do this.
 ;============================================================================
 
-; mal-period-as-question := ques-mark &
+; mal-period-as-question : = ques-mark &
 ; """
 ; Period marking a question.
 ; """
@@ -135,7 +170,7 @@ Currently 'a_-_num_le' marks numbers as [CARDINAL +], which is incorrect for 二
 ;     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques,
 ;     TRAITS native_token_list ].
 
-; mal-rbst-period-as-question := ques-mark &
+; mal-rbst-period-as-question : = ques-mark &
 ; """
 ; Non-full-width period marking a question.
 ; """

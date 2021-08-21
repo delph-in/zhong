@@ -44,27 +44,6 @@ check: 没有_qp
 
 
 
-好吗_qp_1 := x_-_qpart_le &
-"""
-This effectively transforms a statement into a question, by asking if it's ok. /please/ polite request.
-[FIXME] Technically, they ought to be two different clauses... think about it. Maybe it should be an interrogative interjection.
-"""
-  [ STEM < "好吗" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "好", LENGTH two ],
-    TRAITS native_token_list ].
-
-好吗_qp_2 := x_-_qpart_le &
-"""
-This effectively transforms a statement into a question, by asking if it's ok. /please/ polite request.
-[FIXME] Technically, they ought to be two different clauses... think about it. Maybe it should be an interrogative interjection.
-
-STEM split because we hope 吗 will eventually be split by preprocessing [FIXME], needs to be done.
-"""
-  [ STEM < "好","吗" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "好", LENGTH two ],
-    TRAITS native_token_list ].
-
-
 
 
 
@@ -129,20 +108,6 @@ This is the normal perfective marker LE.
     TRAITS native_token_list ].
 
 
-; 着_dur_robust := dur-marker &
-;   [ STEM <"着">,
-;     STYLE robust,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "着", LENGTH one ],
-;     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le+guo ] >,
-;     TRAITS native_token_list ].
-
-
-; 过_exp_robust := exp-marker &
-;   [ STEM <"过">,
-;     STYLE robust,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "过", LENGTH one ],
-;     SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD.LZG le+zhe ] >,
-;     TRAITS native_token_list ].
 
 被_v := x_bei_le &
   [ STEM <"被">,
@@ -160,12 +125,6 @@ This is the normal perfective marker LE.
     SYNSEM.LKEYS.KEYREL.PRED "_地_a_rel",
     TRAITS native_token_list ].
 
-; ;LMC: COMMENTED OUT BECAUSE THIS WAS UPGRADED TO A MODAL VERB
-; 得_r := x_-_pre-adv_le &
-; [ STEM < "得" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "得", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.PRED "_得_a_rel",
-;     TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Basic Pronouns
@@ -251,7 +210,7 @@ This is the normal perfective marker LE.
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "你", LENGTH more-than-one ],
     TRAITS native_token_list ].
 
-你们_n_split := n_-_pr-2pl_le &
+s_你们_n := n_-_pr-2pl_le &
   [ STEM < "你", "们" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "你", LENGTH more-than-one ],
     TRAITS native_token_list ].
@@ -379,28 +338,33 @@ This is the normal perfective marker LE.
     TRAITS native_token_list ].
 
 
-几_d_q := d_-_wh_le &
+几_num_q := num_q_le &
   [ STEM < "几" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "几", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.CARG "how_many",
+    TRAITS native_token_list ].
+
+
+多少_d_q_2 := d_-_wh-nocls_le &
+"""
+多少 allows both the use and omission of CLS, so we need to have them in both types
+"""
+  [ STEM < "多少" >,
+    SYNSEM.CLASSIF +,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "多", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED _how-many_q_rel,
     TRAITS native_token_list ].
 
-多少_d_q := d_-_wh_le &
+多少_d_q_1 := d_-_wh_le &
+"""
+多少 allows both the use and omission of CLS, so we need to have them in both types
+"""
   [ STEM < "多少" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "多", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED _how-many_q_rel,
     TRAITS native_token_list ].
 
-多少_n_q := n_-_pr-wh_le &
-  [ STEM <"多少">,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "多", LENGTH two ],
-    TRAITS native_token_list ].
 
-多少_n_1 := n_-_indef-pr_le &
-  [ STEM < "多少" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "多", LENGTH two ],
-    SYNSEM.LKEYS.ALTKEYREL.PRED "_多少_n_rel",
-    TRAITS native_token_list ].
 
 哪_d_q := d_-_wh_le &
   [ STEM < "哪" >,
@@ -409,25 +373,19 @@ This is the normal perfective marker LE.
 	     LKEYS.KEYREL.PRED which_q_rel ],
     TRAITS native_token_list ].
 
-哪些_d_q := d_-_wh-nocls_le &
-  [ STEM < "哪些" >,
-    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
-    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED which_q_rel ],
-    TRAITS native_token_list ].
 
 哪_n_q := n_-_pr-wh_le &
 [ STEM <"哪">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH one ],
     TRAITS native_token_list ].
 
-哪儿_n_q := n_-_pr-wh_le &
+哪儿_n_q := loc-wh-pronoun &
   [ STEM <"哪儿">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED place_n_rel,
     TRAITS native_token_list ].
 
-哪里_n_q := n_-_pr-wh_le &
+哪里_n_q := loc-wh-pronoun &
   [ STEM <"哪里">,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "哪", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED place_n_rel,
@@ -451,7 +409,7 @@ This is the normal perfective marker LE.
     SYNSEM.LKEYS.KEYREL.PRED "_有没有_a_1_rel",
     TRAITS native_token_list ].
 
-有没有_r_q_2 := adv_-_scop_q_le &
+s_有没有_r_q := adv_-_scop_q_le &
 """
 有没 will be split in preprocessing, so we need this split entry.
 """
@@ -493,7 +451,7 @@ This is the normal perfective marker LE.
     SYNSEM.LKEYS.KEYREL.PRED "_没有_a_2_rel",
     TRAITS native_token_list ].
 
-没有_r_q_2 := adv_-_scop-post_q_le &
+s_没有_r_q_1 := adv_-_scop-post_q_le &
 """
 
 没有 is being split in in GREP, so we need this split entry.
@@ -623,7 +581,27 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LKEYS.KEYREL.PRED every_q_rel,
     TRAITS native_token_list ].
 
-有些_d := d_-_le &
+很多_d := d_-_nocls_le &
+  [ STEM < "很多" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "很", LENGTH two ],
+	SYNSEM.LKEYS.KEYREL.PRED many_q_rel,
+    TRAITS native_token_list ].
+
+s_很多_d := d_-_nocls_le &
+  [ STEM < "很","多" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "很", LENGTH two ],
+	SYNSEM.LKEYS.KEYREL.PRED many_q_rel,
+    TRAITS native_token_list ].
+
+不少_d := d_-_nocls_le &
+  [ STEM < "不少" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH more-than-one ],
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
+	     LKEYS.KEYREL.PRED many_q_rel ],
+    TRAITS native_token_list ].
+
+
+有些_d := d_-_nocls_le &
   [ STEM < "有些" >,
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "有", LENGTH more-than-one ],
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
@@ -647,6 +625,9 @@ shide_sbj := v_shide-sbj_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "每", LENGTH one ],
 	SYNSEM.LKEYS.KEYREL.PRED every_q_rel,
     TRAITS native_token_list ].
+
+
+
 
 这_d := d_-_d-prox_le &
   [ STEM < "这" >,
@@ -726,39 +707,7 @@ shide_sbj := v_shide-sbj_le &
     TRAITS native_token_list ].
 
 
-; 不_polar_basic_r := adv_-_polar2_basic_le &
-;   [ STEM < "不" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.PRED _bu_polar_x_rel,
-;     TRAITS native_token_list ].
 
-; 不_polar_contracted_r := adv_-_polar2_contracted_le &
-;   [ STEM < "不" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.PRED _bu_polar_x_rel,
-;     TRAITS native_token_list ].
-
-; 不_polar_ab-not-ab_r := adv_-_polar2_ab-not-ab_le &
-;   [ STEM < "不" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "不", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.PRED _bu_polar_x_rel,
-;     TRAITS native_token_list ].
-
-
-; 没_v_1 := v_np_you_le &
-; """
-; [FIXME] This should possibly not exist.
-; <???>学校 里 没 狗 叫 。
-; (at school there isn't a dog that barks)?
-
-; And if it's possible, what other ASPECT can it take? 
-; Set to 'no-lzg-asp for' now.
-; """
-;   [ STEM < "没" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.PRED "_没有_v_1_rel",
-;     SYNSEM.LOCAL.CAT.HEAD.LZG no-lzg-asp,
-;     TRAITS native_token_list ].
 
 
 没_v_2 := v_np_le &
@@ -775,23 +724,8 @@ shide_sbj := v_shide-sbj_le &
 	     NON-LOCAL.SLASH 0-dlist],
     TRAITS native_token_list ].
 
-; 没_polar_basic_r := adv_-_polar_basic_le &
-;   [ STEM < "没" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.PRED _mei_polar_x_rel,
-;     TRAITS native_token_list ].
 
-; 没_polar_contracted_r := adv_-_polar_contracted_le &
-;   [ STEM < "没" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.PRED _mei_polar_x_rel,
-;     TRAITS native_token_list ].
 
-; 没_polar_ab-not-ab_r := adv_-_polar_ab-not-ab_le &
-;   [ STEM < "没" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "没", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.PRED _mei_polar_x_rel,
-;     TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Intensifiers
@@ -861,15 +795,6 @@ Being a bit more strict with 在 since it competes a lot with other entries.
              LKEYS.KEYREL.PRED "_在_v_rel" ],
     TRAITS native_token_list ]. 
 
-; #|
-; 在_p_1 := p_-_nomod_le &
-;   [ STEM < "在" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ],
-;     SYNSEM.LOCAL.CAT.HEAD.PFORM zai,
-;     SYNSEM [ LOCAL.CAT.HEAD.LZG le,
-; 	     LKEYS.KEYREL.PRED "_在_p_rel" ],
-;     TRAITS native_token_list ].
-; |#
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; [2] ordinary preposition 在 (ex. 我 在 教室 哭 了 。)
@@ -888,27 +813,8 @@ Being a bit more strict with 在 since it competes a lot with other entries.
 ;;   (ii) the lexical item itself is semantically empty (like 'by' in English passives).
 ;;         cf. 我 教室 里 哭 了
 ;;;;;;;;;;;;;;;;;;;;;;;;;; 
-; 在_loc := p_loc_zai_le &
-;   [ STEM < "在" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ],
-;     SYNSEM.LOCAL.CAT.HEAD.PFORM zai,
-;     SYNSEM [ LOCAL.CAT.HEAD.LZG le ],
-;     TRAITS native_token_list ].
 
 
-; 在_r_2 := adv_-_vp-pre_le &
-;   [ STEM < "在" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.PRED "_在_a_2_rel",
-;     TRAITS native_token_list ].
-
-; 在_v_1 := v_np_le &
-;   [ STEM < "在" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "在", LENGTH one ], 
-;     SYNSEM.LOCAL.CAT.HEAD.STATIVE +,
-;     SYNSEM.LKEYS.KEYREL.PRED "_在_v_1_rel",
-;     SYNSEM.LOCAL.CAT.HEAD.LZG le,
-;     TRAITS native_token_list ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; DE 
@@ -943,13 +849,6 @@ Being a bit more strict with 在 since it competes a lot with other entries.
     SYNSEM.LKEYS.KEYREL.PRED _zhi_dem_q_rel,
     TRAITS native_token_list ].
 
-; #|need to change to pronoun
-; 之_nominalizer_n := x_-_nom-de_le &
-;   [ STEM < "之" >,
-;     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "之", LENGTH one ],
-;     SYNSEM.LKEYS.KEYREL.PRED _zhi_nom_rel,
-;     TRAITS native_token_list ].
-; |#
 
 所_x := x_suo_le &
   [ STEM < "所" >,
@@ -1123,7 +1022,7 @@ OK_ij := adv_-_ij_le &
     SYNSEM.LKEYS.KEYREL.PRED "_你好_x_rel",
     TRAITS native_token_list ].
 
-对了_ij := adv_-_ij_le &
+s_对了_ij := adv_-_ij_le &
 """
 
 了 is split by default, so this requires 2 tokens.
@@ -1132,6 +1031,15 @@ OK_ij := adv_-_ij_le &
     SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "对", LENGTH two ],
     SYNSEM.LKEYS.KEYREL.PRED "_对了_x_rel",
     TRAITS native_token_list ].
+
+对_ij := adv_-_ij_le &
+"""
+"""
+  [ STEM < "对" >,
+    SYNSEM.LOCAL.CAT.HEAD.CHAR [ FCHAR "对", LENGTH one ],
+    SYNSEM.LKEYS.KEYREL.PRED "_对_x_rel",
+    TRAITS native_token_list ].
+
 
 谢谢_ij := adv_-_ij_le & 
   [ STEM < "谢谢" >,

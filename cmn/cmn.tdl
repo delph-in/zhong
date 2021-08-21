@@ -2,7 +2,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of Mandarin Chinese - Core
 ;;;
-;;; created by Sanghoun Song (2014-08-28)
+;;; 
+;;; origially created by Sanghoun Song (2014-08-28)
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -40,8 +41,13 @@ lzg-asp := avm.
 
 
 ; these top types are kinds of verbs. 
-; Most will be le|zhe|guo|mei|bu|zai-asp. 
+; Most will be le-zhe-guo-mei-bu-zai-asp. 
 ; The interactions are restricted by the existence of certain pairs. 
+
+; 门在开 - The door is opening.
+; 门开着 - The door is open.
+; 在坐 - Taking a seat.
+; 坐着 - Sitting.
 
 ; 她 看 着 电影 。               OK
 ; 他 刷 着 牙 。                 OK
@@ -69,7 +75,7 @@ lzg-asp := avm.
 ; 她 看 着 了 电影 。            NO!!
 ; 他 在 看 了 电影 。            NO!!
 ; 他 在 没 看 着 电影 。         NO!!!!!   
-; 他 不 在 看 电影 。              NO!!! -- (only if it's a place)
+; 他 不 在 看 电影 。              NO!!! -- (only if it's a place, e.g. TA BU ZAI JIA)
 ; 她 不 看 了 电影 。            NO!!!
 ; 她 没 看 了 电影 。            NO!!!  ("did + didn't can't coexist")
 
@@ -84,20 +90,20 @@ For verbs that cannot interact with any of the aspect-related words.
 This should probably be used very sparingly.
 """.
 
-le|zhe|guo|mei|bu|zai-asp := lzg-asp
+le-zhe-guo-mei-bu-zai-asp := lzg-asp
 """
 For verbs that can interact with all aspect-related words. 
 """.
 
 
-le|guo|mei|bu-asp := le|zhe|guo|mei|bu|zai-asp
+le-guo-mei-bu-asp := le-zhe-guo-mei-bu-zai-asp
 """
 For verbs that cannot interact with 在 or 着 (essentially blocking the progressive aspect).
 
 [FIXME] IS 在 and 着 the same in restrictions like psychological verbs?
 """.
 
-zhe|guo|mei|bu|zai-asp := le|zhe|guo|mei|bu|zai-asp
+zhe-guo-mei-bu-zai-asp := le-zhe-guo-mei-bu-zai-asp
 """
 For verbs that cannot interact with 了 (essentially blocking the perfective aspect).
 However they can interact with 过. This, apparently, includes stative/psychological verbs (i.e. verbs that can take degree specifiers).
@@ -105,21 +111,20 @@ However they can interact with 过. This, apparently, includes stative/psycholog
 [FIXME] should be be LE or MEI??? This would probably pose a problem since 过 and 着 are apparently possible.
 """.
 
-le|zhe|mei|bu|zai-asp := le|zhe|guo|mei|bu|zai-asp
+le-zhe-mei-bu-zai-asp := le-zhe-guo-mei-bu-zai-asp
 """
 For verbs that cannot interact with 过 (essentially blocking the experiential aspect).
 """.
 
 
-le|zhe|guo|mei|zai-asp := le|zhe|guo|mei|bu|zai-asp
+le-zhe-guo-mei-zai-asp := le-zhe-guo-mei-bu-zai-asp
 """
 For verbs that cannot interact with 不 (e.g. 有).
 """.
 
-bu-asp := le|zhe|guo|mei|bu|zai-asp &
-	  le|guo|mei|bu-asp &
-	  zhe|guo|mei|bu|zai-asp &
-	  le|zhe|mei|bu|zai-asp
+bu-asp := le-guo-mei-bu-asp &
+	  zhe-guo-mei-bu-zai-asp &
+	  le-zhe-mei-bu-zai-asp
 """
 For verbs that only interact with 不 (e.g. 是).
 """. 
@@ -127,28 +132,28 @@ For verbs that only interact with 不 (e.g. 是).
 
 
 
-zhe|guo|mei|zai-asp := le|zhe|guo|mei|zai-asp &
-		       zhe|guo|mei|bu|zai-asp
+zhe-guo-mei-zai-asp := le-zhe-guo-mei-zai-asp &
+		       zhe-guo-mei-bu-zai-asp
 """
 """.
 
-zhe|mei|zai-asp := zhe|guo|mei|zai-asp & le|zhe|mei|bu|zai-asp.
-guo|zhe|mei-asp := zhe|guo|mei|zai-asp.
+zhe-mei-zai-asp := zhe-guo-mei-zai-asp & le-zhe-mei-bu-zai-asp.
+guo-zhe-mei-asp := zhe-guo-mei-zai-asp.
 
-le|guo-asp := le|zhe|guo|mei|zai-asp & le|guo|mei|bu-asp.
+le-guo-asp := le-zhe-guo-mei-zai-asp & le-guo-mei-bu-asp.
 
-zhe|zai-asp := zhe|mei|zai-asp.
-guo|zhe-asp := guo|zhe|mei-asp.
-guo|mei-asp := guo|zhe|mei-asp & le|guo|mei|bu-asp.
-zhe|mei-asp := guo|zhe|mei-asp & zhe|mei|zai-asp.
-mei|zai-asp := zhe|mei|zai-asp.
+zhe-zai-asp := zhe-mei-zai-asp.
+guo-zhe-asp := guo-zhe-mei-asp.
+guo-mei-asp := guo-zhe-mei-asp & le-guo-mei-bu-asp.
+zhe-mei-asp := guo-zhe-mei-asp & zhe-mei-zai-asp.
+mei-zai-asp := zhe-mei-zai-asp.
 
-; mei-asp := guo|mei-asp & zhe|mei-asp. ; this can't exist because it breaks things
-zhe-asp := zhe|mei-asp & zhe|zai-asp & guo|zhe-asp.
-guo-asp := guo|mei-asp & le|guo-asp & guo|zhe-asp.
-zai-asp := mei|zai-asp & zhe|zai-asp.   ; this should possibly also not exist ?
+; mei-asp := guo-mei-asp & zhe-mei-asp. ; this can't exist because it breaks things
+zhe-asp := zhe-mei-asp & zhe-zai-asp & guo-zhe-asp.
+guo-asp := guo-mei-asp & le-guo-asp & guo-zhe-asp.
+zai-asp := mei-zai-asp & zhe-zai-asp.   ; this should possibly also not exist ?
 
-le-asp :=  le|guo-asp & le|zhe|mei|bu|zai-asp.
+le-asp :=  le-guo-asp & le-zhe-mei-bu-zai-asp.
 
 ;================================================================================
 
@@ -262,7 +267,7 @@ exp-marker_le := exp-marker &
 """
 TEST
 """
- [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG guo|mei-asp ] > ] ].
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG guo-mei-asp ] > ] ].
 ;  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG guo-asp ] > ] ].
 
 
@@ -276,7 +281,7 @@ dur-marker_le := dur-marker &
 """
 TEST
 """
- [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG zhe|mei-asp ] > ] ].
+ [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG zhe-mei-asp ] > ] ].
 ;  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.LZG zhe-asp ] > ] ].
 
 

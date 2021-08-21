@@ -84,7 +84,8 @@ Both (猫) and (两 只 猫) are bare NPs.
 ;;assuming nominalization is done using adj+DE
 ;;0-nom-j := bare-nominal-adj-phrase.
 0-nom-p := bare-nominal-postp-phrase.
-0-nom-d := bare-nominal-det-phrase.
+0-nom-d := bare-nominal-det-cl-phrase.
+0-nom-d-nocl := bare-nominal-det-nocl-phrase.
 0-nom-cls := bare-nominal-cls-phrase.
 
 rbst-meas-np := meas-np-phrase
@@ -116,8 +117,25 @@ head-mod-int := head-adj-int-phrase &
   [ STYLE #style,
     NON-HEAD-DTR.STYLE #style ].
 
-mod-head-int := adj-head-int-mc &   [ STYLE #style,
+; mod-head-int := adj-head-int-mc &   [ STYLE #style,     ;;; this is the old (unsplit) version
+;     NON-HEAD-DTR.STYLE #style ].
+mod-head-int := adj-head-int-noncls &
+"""
+mod-head only for non classifiers.
+"""
+  [ STYLE #style,
     NON-HEAD-DTR.STYLE #style ].
+
+mod-head-int-cls := adj-head-int-cls &
+"""
+
+mod-head only for classifiers.
+"""
+  [ STYLE #style,
+    NON-HEAD-DTR.STYLE #style ].
+
+
+
 
 head-mod-scop := head-adj-scop-phrase & [ STYLE robust ].
 
