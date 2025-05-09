@@ -31,8 +31,8 @@ CONTACT_EMAIL="bond@ieee.org"
 ## Grammar name and web presence
 ## Note: if SHORT_GRAMMAR_NAME is not defined, the directory name is used.
 
-GRAMMAR_NAME=""
-SHORT_GRAMMAR_NAME=""
+GRAMMAR_NAME="Zhong (Mandarin Chinese Traditional)"
+SHORT_GRAMMAR_NAME="zhong-zht"
 WEBSITE="https://github.com/delph-in/zhong"
 DEMO_WEBSITE=""
 DOCUMENTATION_URL="http://wiki.delph-in.net/moin/ZhongTop"
@@ -99,3 +99,4 @@ BCP_47="zh_Hant"
 
 LKB_SCRIPT_FILE="lkb/script"
 CHEAP_GRM_FILE_NAME="mandarint.grm"
+ACE_CONFIG_FILE="ace/config.tdl"
