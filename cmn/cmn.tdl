@@ -135,6 +135,7 @@ For verbs that only interact with 不 (e.g. 是).
 zhe-guo-mei-zai-asp := le-zhe-guo-mei-zai-asp &
 		       zhe-guo-mei-bu-zai-asp
 """
+
 """.
 
 zhe-mei-zai-asp := zhe-guo-mei-zai-asp & le-zhe-mei-bu-zai-asp.

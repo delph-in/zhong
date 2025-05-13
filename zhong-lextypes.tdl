@@ -275,6 +275,7 @@ However this would also block certain nonsensical senteces such as:
 
 common-noun-lex := noun-lex &
 """
+
 """
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SORT common-s ].
 
@@ -793,6 +794,7 @@ v_np-s_lex := main-verb-lex & basic-three-arg & basic-icons-lex-item & verb-no-s
 ;; 张三 把 香烟 递 给 了 李四
 np-vp-comp-verb-light-lex := np-vp-comp-verb-lex & basic-three-arg-no-hcons & 
 """
+
 """
   [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [ ],
 				   [ LOCAL.CONT.HOOK [ XARG #event,
@@ -851,6 +853,7 @@ Currently all ditransitive verbs are [BOUND -], blocking the complements of sepa
 
 ditrans-verb-lex := ditransitive-lex-item & super-ditrans-verb-lex
 """
+
 """
 .
 
@@ -878,11 +881,13 @@ This seems to be an alternative for ditransitive verbs where the second compleme
 
 ditrans-pp-verb-lex := ditransitive-lex-item-2 & super-ditrans-verb-lex &
 """
+
 """
  [ ARG-ST  < [], [], [ LOCAL.CAT.HEAD adp & [ PFORM gei-or-xiang ] ] > ].
 
 ditrans-preverbal-pp-verb-lex := ditrans-pp-verb-lex &
 """
+
 """
  [ ARG-ST  < [], [], [ LOCAL.CAT [ HEAD [ PFORM xiang ] ] ] > ].
 
@@ -915,18 +920,22 @@ The original name was 'trans-loc-verb-lex' but this seems a bit
 
 v_intrans-verb-lex := intransitive-verb-lex & verb-no-spr-item
 """
+
 """.
 
 v_intrans-verb-spr-lex := intransitive-verb-lex & verb-spr-item
 """
+
 """.
 
 v_trans-verb-lex := transitive-verb-lex & verb-no-spr-item
 """
+
 """.
 
 v_trans-verb-spr-lex := transitive-verb-lex & verb-spr-item
 """
+
 """.
 
 
@@ -2584,6 +2593,7 @@ on the slash. So it's not clear why it allows opt-subj-decl  in relative clauses
 
 adposition-lex := basic-adposition-lex & no-hcons-lex-item &
 """
+
 """
   [ SYNSEM [ PAREN -,
              PUNCTUATED -,

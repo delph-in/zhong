@@ -4,7 +4,8 @@
 grammar-top               := "../zhs-gram.tdl".
 parsing-roots             := root frag.
 preprocessor              := "../repp/vanilla.rpp".
-
+version                   := "../Version.lsp".
+orth-path                 := STEM.
 :begin :config.
  :include "config.common".
 :end :config.

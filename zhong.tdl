@@ -383,10 +383,12 @@ their argument structure.
 
 norm_rel := predsort
 """ 
+
 """.
 
 selected_comp_rel := selected_rel
 """
+
 """.
 
 n_nosem_selected := selected-lex & no-rels-hcons-icons-lex-item &
@@ -951,6 +953,7 @@ This was redefined from Matrix. The info that existed in 'matrix.tdl' is now in 
 
 unary-phrase :+
 """
+
 """
   [ SYNSEM.LOCAL.CONT.HOOK [ SPEAKER-KEY #skey,
 			     HEARER-KEY #hkey ],

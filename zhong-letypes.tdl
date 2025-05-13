@@ -882,10 +882,12 @@ Negator adverbs. Currently for 不 and 没.
 
 adv_-_scop_le := scop-adv-lex & nonque-item
 """
+
 """.
 
 adv_-_scop-prehd_le := scop-adv-prehd-lex & nonque-item
 """
+
 """.
 
 scop-adv-s-prehd_le := scop-adv-s-prehd-lex & nonque-item
@@ -1265,24 +1267,29 @@ v_np-pp_le := trans-loc-verb-lex & nonque-item
 
 v_pp-s_le := pp-s-comp-verb-lex & nonque-item
 """
+
 """.
 
 v_prevpp-np_le := ditrans-preverbal-pp-verb-lex & nonque-item
 """
+
 """.
 
 
 
 v_np_cs_le := cp-subj-verb-lex & nonque-item
 """
+
 """.
 
 v_np-ap_le := np-ap-comp-verb-lex & nonque-item
 """
+
 """.
 
 v_bap-ap_le := np-ap-comp-ba-verb-lex & nonque-item
 """
+
 """.
 
 

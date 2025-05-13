@@ -20,25 +20,25 @@
 ;;; olr = orthography-changing lexical rule
 
 redup-verb-olr :=
+%suffix (* 々AA) (* 々ABAB)
+redup-verb-lex-rule
 """
 This rule will only apply to reduplicated verbs (which end in 々AA or 々ABAB, once they have been through chartmapping rules) and applies unto them the type constraints of redup-verb-lex-rule.
 <ex> 你 看看 。
 <ex> 你 看 看 。
 <ex>我们 考虑考虑 。
 <ex>我们 考虑 考虑 。
-"""
-%suffix (* 々AA) (* 々ABAB)
-redup-verb-lex-rule.
+""".
 
 redup-adj-olr :=
+%suffix (* 々AA) (* 々AABB)
+redup-adj-lex-rule
 """
 This rule will only apply to reduplicated adjectives (which end in 々AA 々AABB or once they have been through chartmapping rules) and applies unto them the type constraints of redup-adj-lex-rule.
 <ex>她 高高 。
 <ex>她 高 高 。
 <ex>她 漂漂亮亮
-"""
-%suffix (* 々AA) (* 々AABB)
-redup-adj-lex-rule.
+""".
 
 
 
