@@ -784,7 +784,7 @@ question-marker := punctuation &
 那些_d := d_-_d-dist_le &
   [ STEM < "那些" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
-	     LKEYS.KEYREL.PRED dist_demons_rel" ],
+	     LKEYS.KEYREL.PRED dist_demons_rel ],
     TRAITS native_token_list ].
 
 每_d := d_-_le &
