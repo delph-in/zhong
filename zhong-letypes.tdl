@@ -72,6 +72,8 @@ The pronoun should appear in place of a full noun phrase.
 (What does she want)
 """.
 
+n_-_pr-q_le := quant-pronoun-lex & nonque-item.
+
 n_-_indef-pr_le := quant-common-noun-lex & nonque-item
 """
 These are generic indefinite pronouns that should have a noun head and some quantifier binding it.
@@ -1692,3 +1694,5 @@ This is a test to stop thinking of 几 as a determiner, and let it work as a num
 
 adv_-_vp-pre_q_le := int-adv-vp-pre & question-item.
 
+v_np-vp_aequi_le := v_a-equi-lex & nonque-item.
+v_shide_le := cop-verb-cpcomp-lex.

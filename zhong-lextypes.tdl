@@ -3195,3 +3195,10 @@ bullet := symbol &
 						     VAL [ SUBJ <>, COMPS <> ] ] ] >,
 			   POSTHEAD - ] ] ] ].
 
+quant-pronoun-lex := basic-pronoun-lex & 
+		     basic-icons-lex-item &
+  [ SYNSEM [ LOCAL.CONT.RELS <! relation,
+			      #altkeyrel !>,
+	     LKEYS.ALTKEYREL #altkeyrel ] ].
+
+v_a-equi-lex := np-vp-comp-verb-seq-lex & ditrans-first-arg-control-lex-item.

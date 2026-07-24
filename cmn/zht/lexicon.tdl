@@ -761,28 +761,52 @@ question-marker := punctuation &
 
 ;;; Particles
 
+#|
 這_d := d_-_d-prox_le &
   [ STEM < "這" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
 	     LKEYS.KEYREL.PRED prox_demons_rel ],
     TRAITS native_token_list ].
+|#
+這_d := d_-_d-prox_le &
+  [ STEM < "這" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ],
+    TRAITS native_token_list ].
 
+#|
 那_d := d_-_d-dist_le &
   [ STEM < "那" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
 	     LKEYS.KEYREL.PRED dist_demons_rel ],
     TRAITS native_token_list ].
+|#
+那_d := d_-_d-dist_le &
+  [ STEM < "那" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ],
+    TRAITS native_token_list ].
 
+#|
 這些_d := d_-_d-prox_le &
   [ STEM < "這些" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
 	     LKEYS.KEYREL.PRED prox_demons_rel ],
     TRAITS native_token_list ].
+|#
+這些_d := d_-_d-prox_le &
+  [ STEM < "這些" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl ],
+    TRAITS native_token_list ].
 
+#|
 那些_d := d_-_d-dist_le &
   [ STEM < "那些" >,
     SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl,
 	     LKEYS.KEYREL.PRED dist_demons_rel ],
+    TRAITS native_token_list ].
+|#
+那些_d := d_-_d-dist_le &
+  [ STEM < "那些" >,
+    SYNSEM [ LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3pl ],
     TRAITS native_token_list ].
 
 每_d := d_-_le &
@@ -839,20 +863,24 @@ question-marker := punctuation &
     SYNSEM.LKEYS.KEYREL.PRED which_q_rel,
     TRAITS native_token_list ].
 
+#|
 的_ASSOC_d := x_-_poss-de_le &
  [ STEM < "的" >,
     SYNSEM.LKEYS.KEYREL.PRED _de_demons_rel,
     TRAITS native_token_list ].
+|#
 
 ;的_NOM_nj := nom-adj-lex &
 ;  [ STEM < "的" >,
 ;    SYNSEM.LKEYS.KEYREL.PRED "_de_a_rel",
 ;    TRAITS native_token_list ].
 
+#|
 的_nominalizer_n := x_-_nom-de_le &
   [ STEM < "的" >,
     SYNSEM.LKEYS.KEYREL.PRED _de_nom_rel,
     TRAITS native_token_list ].
+|#
 
 所有_partitive_d := d_-_prt_le &
   [ STEM < "所有" >,
@@ -970,6 +998,7 @@ comma_c := conj_-_le &
     CFORM "1",
     TRAITS native_token_list ].
 
+#|
 因為_sc := conj_-_sub_le &
   [ STEM < "因為" >,
      SYNSEM.LKEYS.KEYREL.PRED "_因為_coord_rel",
@@ -989,7 +1018,7 @@ comma_c := conj_-_le &
   [ STEM < "然后" >,
      SYNSEM.LKEYS.KEYREL.PRED "_然后_coord_rel",
     TRAITS native_token_list ].
-
+|#
 
 
 ;;; Additions
@@ -1421,10 +1450,12 @@ comma_c := conj_-_le &
     SYNSEM.LKEYS.KEYREL.PRED "_自己_n_rel",
     TRAITS native_token_list ].
 
+#|
 自己_a := n_-_pr-refl_le &
   [ STEM < "自己" >,
     SYNSEM.LKEYS.KEYREL.PRED "_自己_n_rel",
     TRAITS native_token_list ].
+|#
 
 花_v_1 := v_np_le &
   [ STEM < "花" >,
@@ -1584,7 +1615,7 @@ comma_c := conj_-_le &
     SYNSEM.LKEYS.KEYREL.PRED "_煙草園_n_1_rel",
     TRAITS native_token_list ].
 
-#|
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; Lexical Items taken from SINICA
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -6618,4 +6649,4 @@ comma_c := conj_-_le &
     SYNSEM [ LOCAL.CAT.HEAD.LZG le-guo-mei-bu-asp,
              LKEYS.KEYREL.PRED "_齟齬_v_1_rel" ],
     TRAITS native_token_list ].
-|#
+
